@@ -1,6 +1,6 @@
 # Roadmap jugable
 
-Status: **CITY-URBAN-00 DONE / NEXT: PROD-ASSET-00** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
+Status: **PRODUCTION FOUNDATIONS DONE / NEXT: ENV-01 + CHAR-01 + ANIM-01** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
 
 ## Immediate sequence
 
@@ -8,11 +8,10 @@ Status: **CITY-URBAN-00 DONE / NEXT: PROD-ASSET-00** — authoring path `BOUNDED
 2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` adopted.
 3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera working in Play Mode.
 4. **Production foundations:**
-   - `PROD-ASSET-00` — existing-pipeline spikes + searchable catalogue, lineage, intake and validators; **current open foundation**;
+   - ~~`PROD-ASSET-00`~~ — **done / accepted**: searchable catalogue, lineage, deterministic intake, validators and B0 coverage/gaps;
    - ~~`CITY-URBAN-00`~~ — **done / accepted**: five-zone topology + final B0 Mercado–Muelle route/programme/elevation + factory-demand matrix.
-   **← NEXT: complete PROD-ASSET-00**
-5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks asset/CITY research.
-6. **Factories:** ENV starts after `ASSET-00 + CITY-URBAN-00`; CHAR/ANIM can start after ASSET-00 while consuming B0 role priorities.
+5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks the graphical factories.
+6. **Factories — NEXT:** start `ENV-01`, `CHAR-01` and `ANIM-01`; ENV now has both required prerequisites (`ASSET-00 + CITY-URBAN-00`), while CHAR/ANIM consume ASSET-00 plus B0 role priorities.
 7. **Factory scale proofs** — multi-scene ENV, civilian batch and animation runtime/batch; UI follows Dialogue.
 8. **B0 Keeper Block (`CITY-URBAN-01`)** — physical third-person realization of the accepted city brief using the factories.
 9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.
@@ -38,7 +37,7 @@ A factory without city demand tends to optimize whatever assets happen to be eas
 
 CITY-URBAN-00 now gives ENV a demand matrix for actual B0 needs: mixed commercial frontage, shop/service thresholds, lodging frontage, ordinary closed fabric, stairs/retaining/railings, working-water edge, port/market props, shallow interiors, access truth and local elevation relationships.
 
-ENV then builds the smallest scalable factory that covers those demands and enough adjacent vocabulary for later blocks.
+ENV now consumes that accepted demand together with the accepted ASSET substrate and builds the smallest scalable factory that covers those demands and enough adjacent vocabulary for later blocks.
 
 ## Product/factory path
 
@@ -46,7 +45,7 @@ ENV then builds the smallest scalable factory that covers those demands and enou
 |---|---|---|---|
 | Bootstrap Unity ✅ | Unity + GC2 operational | player/camera baseline | Play Mode + hand test work. |
 | CITY-URBAN-00 ✅ | decide enough city/B0 product space to drive production | topology + B0 programme + demand matrix | **PASS / accepted** — ENV no longer has to guess what to manufacture. |
-| PROD-ASSET-00 | make lawful source corpus searchable/reproducible | shared catalogue/intake/validators | routine source discovery no longer needs path archaeology. |
+| PROD-ASSET-00 ✅ | make lawful source corpus searchable/reproducible | shared catalogue/intake/validators | **PASS / accepted** — routine source discovery no longer needs path archaeology. |
 | M0 | validate camera/scale/reach/interaction | tiny gameplay fixture | walk + world/NPC interaction work. |
 | ENV Factory | manufacture city architecture/urban vocabulary repeatedly | reusable kit + assembly grammar + validation | normal new ENV unit is production, not R&D. |
 | CHAR Factory | manufacture ordinary civilians repeatedly | civilian/wardrobe factory | normal civilian is production, not bespoke repair. |

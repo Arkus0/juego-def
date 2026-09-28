@@ -1,9 +1,11 @@
 # WP-PROD-ASSET-00 — Shared Graphical Asset Factory Substrate
 
-Status: **READY / START NOW**  
+Status: **PASS / ACCEPTED 2026-09-28**  
 Class: PRODUCTION FACTORY / SHARED ASSET SUBSTRATE  
 Depends on: Bootstrap Unity + GC2 Core PASS  
 Blocks: `WP-PROD-ENV-01`, `WP-PROD-CHAR-01`, `WP-PROD-ANIM-01`
+
+Accepted implementation: PR #7, reviewed `PRODUCT_SHA` `1332a1e956d37079e2909843253745a25de8cf6f`, merged as `620235f917e20e967c8f7d0a4ca751eac3c2a362`.
 
 ## Claim
 
@@ -133,4 +135,8 @@ FAIL if the result is only a prose list, every later WP still needs exact owner-
 
 ## Handoff
 
-On PASS, start `PROD-ENV-01`, `PROD-CHAR-01` and `PROD-ANIM-01` in parallel. Their job is to turn this substrate into lane-specific **factories capable of producing the B0 vocabulary first and later content at batch scale**.
+Accepted handoff after PASS:
+
+- `PROD-CHAR-01` and `PROD-ANIM-01` may start now, consuming the shared substrate and B0 role priorities;
+- `PROD-ENV-01` requires both accepted `PROD-ASSET-00` and accepted `CITY-URBAN-00`; both prerequisites are now satisfied, so ENV may also start;
+- lane factories turn this substrate into B0-first production capability and later batch-scale content.
