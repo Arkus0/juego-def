@@ -9,8 +9,9 @@ This directory turns the roadmap into executable product/production contracts. T
 
 The separation is deliberate:
 
-- `CITY-URBAN-00` = **what town/block we need** — now accepted;
-- `PROD-ASSET/ENV/CHAR/ANIM/...` = **how we industrialize the content needed to build it**;
+- `CITY-URBAN-00` = **what town/block we need** — accepted;
+- `PROD-ASSET-00` = **shared lawful production substrate** — accepted;
+- `PROD-ENV/CHAR/ANIM/...` = **how we industrialize the content needed to build it**;
 - `CITY-URBAN-01` = **physical keeper realization** of the first block with those factories.
 
 The first concrete customer is [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md), governed by [`../design/CITY_PRODUCTION_KNOWLEDGE.md`](../design/CITY_PRODUCTION_KNOWLEDGE.md).
@@ -57,33 +58,33 @@ M0 is only a small gameplay-integration fixture for player scale, camera, collis
 ```text
 BOOTSTRAP-UNITY-GC2 (PASS)
       |
-      +----> PROD-ASSET-00 -------------------+----> CHAR-01 -> CHAR-02 ----+
-      |                                      +----> ANIM-01 -> ANIM-02 ----+
-      |                                      |                              |
-      +----> CITY-URBAN-00 (PASS) ------------+----> ENV-01  -> ENV-02 -----+
-      |          what to build                                               |
-      +----> M0-00 ----------------------------------------------------------+
-      |                                                                      |
-      +----> DIALOGUE-01 -> UI-01 -------------------------------------------+
-                                                                             |
-                                                                             v
-                                                               CITY-URBAN-01 realize B0
-                                                                             |
-                                                                             v
-                                                                    PROD-LOOK-GATE
-                                                                             |
-                                                                             v
-                                                               CONTENT PRODUCTION AT SCALE
+      +----> PROD-ASSET-00 (PASS) ----------+----> CHAR-01 -> CHAR-02 ----+
+      |                                     +----> ANIM-01 -> ANIM-02 ----+
+      |                                     |                              |
+      +----> CITY-URBAN-00 (PASS) -----------+----> ENV-01  -> ENV-02 -----+
+      |          what to build                                              |
+      +----> M0-00 ---------------------------------------------------------+
+      |                                                                     |
+      +----> DIALOGUE-01 -> UI-01 ------------------------------------------+
+                                                                            |
+                                                                            v
+                                                              CITY-URBAN-01 realize B0
+                                                                            |
+                                                                            v
+                                                                   PROD-LOOK-GATE
+                                                                            |
+                                                                            v
+                                                              CONTENT PRODUCTION AT SCALE
 ```
 
-`CITY-URBAN-00` is accepted. `PROD-ASSET-00` is the remaining immediate prerequisite before ENV-01 can start; together they provide product demand and production substrate.
+`CITY-URBAN-00` and `PROD-ASSET-00` are accepted. Product demand and shared production substrate are both available, so the three graphical lane factories are now dependency-valid.
 
 ## Workpacks
 
 | WP | Outcome | Depends on |
 | --- | --- | --- |
 | `WP-CITY-URBAN-00` ✅ | Five-zone topology + accepted B0 programme/route/elevation + factory-demand matrix | **PASS / accepted** |
-| `WP-PROD-ASSET-00` | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | Bootstrap PASS |
+| `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
 | `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory | ENV-01 |
@@ -98,6 +99,6 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 
 ## Immediate sequence
 
-**Continue `WP-PROD-ASSET-00` as the remaining production foundation.** `WP-CITY-URBAN-00` is already accepted.
+**Start `WP-PROD-ENV-01`, `WP-PROD-CHAR-01` and `WP-PROD-ANIM-01`.** Both shared foundations are now accepted.
 
-M0 and Dialogue may progress independently. As soon as ASSET-00 passes, ENV-01 is unblocked because CITY-URBAN-00 is already PASS; CHAR-01 and ANIM-01 may also begin from ASSET-00.
+M0 and Dialogue may continue independently. ENV consumes accepted ASSET + CITY demand; CHAR and ANIM consume the accepted ASSET substrate and B0 role priorities.
