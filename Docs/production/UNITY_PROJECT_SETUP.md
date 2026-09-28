@@ -12,6 +12,7 @@ Status: **BOOTSTRAPPED 2026-09-28** — evidence in [`../evidence/BOOTSTRAP-UNIT
 | Game Creator 2 | Core **2.19.61** only | owner-licensed, never committed (see below) |
 | Input | Input System **1.20.0**, *Active Input Handling = Input System Package* | GC2 Core uses only the Input System (no legacy `Input.*` calls) |
 | Editor operator | MCP for Unity `com.coplaydev.unity-mcp` **v10.2.0** (git tag) | editor-only; see [`../architecture/PRODUCTION_AUTHORING_DECISION.md`](../architecture/PRODUCTION_AUTHORING_DECISION.md) |
+| Quaternius import utility | `firstkindgamer/QuaterniusUnityUtils` commit `62a4f8e790330e089488a6bd66df2734c28a8796` | Unlicense; included Editor-only for UAL import and optional collision-prefab tasks; see [`../evidence/WP-PROD-ASSET-00/REUSE_DECISIONS.md`](../evidence/WP-PROD-ASSET-00/REUSE_DECISIONS.md) |
 
 Direct packages are pinned in `Packages/manifest.json`; the full resolution is committed in `packages-lock.json`. The GC2 vendor `Packages/manifest.json` inside the `.unitypackage` is the vendor's own project manifest and is **never applied**.
 
@@ -26,7 +27,7 @@ Direct packages are pinned in `Packages/manifest.json`; the full resolution is c
 3. Open `Unity/JuegoDef` in Unity Hub. Packages resolve from the committed manifest/lock.
 4. Open `Assets/JuegoDef/Scenes/Bootstrap_GC2Core.unity` and press Play: WASD moves the Player, the mouse orbits the GC2 third-person camera (orbit sensitivity 0.5; GC2's default 1.0 felt too fast).
 
-**Never commit GC2 bytes.** The repository is public and the Asset Store EULA is per seat and not redistributable. `.gitignore` covers `Assets/Plugins/GameCreator/`, its `.meta` and `Assets/Plugins.meta`. GC2 also generates its settings under that folder on first windowed open; they are regenerated and stay ignored.
+**Never commit GC2 bytes.** The repository is public and the Asset Store EULA is per seat and not redistributable. `.gitignore` covers `Assets/Plugins/GameCreator/` and its `.meta`. `Assets/Plugins.meta` is tracked because the public-domain Quaternius import utility now lives under `Assets/Plugins/QuaterniusUnityUtils/`. GC2 also generates its settings under its ignored folder on first windowed open.
 
 ## Project conventions
 

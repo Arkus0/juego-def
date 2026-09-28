@@ -28,7 +28,11 @@ Unity/JuegoDef/Assets/Screenshots.meta
 # This repository is public: GC2 bytes are never committed. Restore with `python Tools/gc2-provision.py install`.
 Unity/JuegoDef/Assets/Plugins/GameCreator/
 Unity/JuegoDef/Assets/Plugins/GameCreator.meta
-Unity/JuegoDef/Assets/Plugins.meta
+
+# Quaternius source copies are restored from C:/Juego2-Assets by Tools/asset_catalog.py.
+Unity/JuegoDef/Assets/ThirdParty/Quaternius/
+Unity/JuegoDef/Assets/ThirdParty/Quaternius.meta
+Unity/JuegoDef/Assets/ThirdParty.meta
 # GC2 writes its generated settings/installs under Assets/Plugins/GameCreator (ignored above).
 
 # OS / tooling noise.

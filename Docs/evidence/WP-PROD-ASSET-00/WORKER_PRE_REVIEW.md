@@ -1,0 +1,15 @@
+# Worker pre-review — independent review still required
+
+Scope checked against the complete `WP-PROD-ASSET-00` claim, B0 demand, the binding research input and the baseline-to-candidate diff. This is Worker readiness evidence, **not** an independent PASS.
+
+| Plausible falsifier | Probe and finding |
+| --- | --- |
+| Catalogue is a hand-entered or stale list with little real corpus coverage. | Regeneration reads the owned Unity URP archive and selected Unity FBX exports; 796 stable IDs across seven families. UAL1's 120 parsed clip names agree with Unity's importer count. Snapshot generation is deterministic (same SHA-256 on a second build). Removing one item from an in-memory snapshot made `validate` report it stale. |
+| A later Worker still needs owner-supplied paths for each B0 asset. | Five semantic queries return doors (31), stairs (22), dock wardrobe donors (14), talk motions (3) and market/port props (15). `inspect --id` resolves a candidate to vault source, license, digest, GUID/import path, notes and pack preview. The B0 gap table prevents these broad hits from being mistaken for finished art. |
+| Local intake works once but cannot be reproduced or extended. | All seven families installed in the isolated worktree. Re-running Props added 0 files; re-running Medieval added 0 and preserved Unity's 14 local material upgrades. Source archive hash and installed GUIDs remained valid. In an isolated two-FBX Props fixture, first intake installed one file and repeat intake added the newly supplied second file. |
+| Lineage exists only as an empty JSON file. | Temporary owned derivative was rejected while unrecorded; adding a valid `sourceIds` record made validation pass and populated the source's reverse `derivedIds`. Probe and record were removed after the test. |
+| Import validation misses real broken references. | Unity scanned 840 models and 304 prefabs, flagged unconfigured UAL1/2, then stopped flagging them after the pinned utility applied Humanoid settings. It still finds a missing GUID in vendor `MI_Plaster.mat`; the same GUID is absent from the source archive. |
+| A new tool adds hidden licensing/runtime cost or replaces native source data. | Utility source is pinned at commit `62a4f8e790330e089488a6bd66df2734c28a8796`, Unlicense, Editor-only; representative UAL and collision fixtures worked on Unity 6000.3.24f1. Quaternius assets are CC0 per vault license files. No asset bytes, account secrets, paid dependency or runtime package are committed. |
+| The factory calls fantasy/medieval content production-ready. | Every entry remains `admission: candidate`; normal search excludes `REJECT`, and role-appropriate donors carry incompatibility notes. B0 coverage distinguishes candidate counts from missing modern frontage, quay, civilian role and port-work output. Owner/lanes retain visual acceptance. |
+
+Known technical source defect: `MI_Plaster.mat` references missing texture GUID `e3d3ccd904634374eb1eb4eda636d12d`. The validator makes this visible; ENV should select another material or create an owned corrected derivative. It does not invalidate the shared catalogue/intake claim.
