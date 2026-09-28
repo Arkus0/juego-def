@@ -1,103 +1,125 @@
-# WP-PROD-CHAR-01 — Ordinary Character + Wardrobe Recipe
+# WP-PROD-CHAR-01 — Civilian Character + Wardrobe Factory
 
-Status: **READY AFTER M0**  
+Status: **READY AFTER ASSET-00**  
 Class: PRODUCTION FACTORY / CHARACTERS  
-Depends on: `WP-M0-00` PASS  
+Depends on: `WP-PROD-ASSET-00` PASS  
 Blocks: `WP-PROD-CHAR-02`, `WP-PROD-ANIM-02`
 
 ## Claim
 
-juego-def has a repeatable, lawful recipe for producing visually coherent ordinary townspeople from the available Quaternius/shared character ecosystem without bespoke manual repair for every NPC.
+juego-def has a repeatable civilian-character factory that can transform the admitted character/body/wardrobe corpus into coherent ordinary townspeople without bespoke manual repair for each NPC.
 
-This WP proves the **recipe and one representative set**, not population scale.
+The factory must make **adding another ordinary civilian routine production work**. Hero/narrative characters may use bespoke treatment later.
 
-## Binding inputs
+## Required factory outputs
 
-- Visual Bible
-- Quaternius Production Knowledge
-- retained M0 scale/camera baseline
-- Production Authoring Decision
+By PASS, retain:
 
-## Required outputs
+1. `CHAR_FACTORY.md` — authoritative production workflow;
+2. accepted base body/rig/avatar families;
+3. machine-readable compatibility matrix for body/rig/wardrobe/accessory families actually used;
+4. reusable wardrobe/material/palette variation mechanism;
+5. prefab/variant creation template or small batch tool;
+6. clipping/scale/material/avatar validation path;
+7. Blender/source adaptation route for donor garments/meshes when useful;
+8. semantic tags for civilian roles/silhouettes;
+9. a non-trivial seed batch proving the factory.
 
-1. `CHAR_RECIPE.md` describing the accepted base/rig/wardrobe path;
-2. at least **4 materially distinct ordinary civilian variants** using the same recipe;
-3. reusable Unity prefabs/variants or equivalent retained assets;
-4. compatibility/provenance notes for every source family actually used;
-5. visual/clipping/scale evidence in the real third-person camera.
+## Minimum seed batch
 
-The four variants are not a final population quota. They exist to prove that variation is systematic rather than four unrelated one-offs.
+Produce **6+ materially distinct civilian seed variants** through the same factory path. The goal is not the final population count; it is to prove the factory can generate distinct ordinary people without six unrelated one-off workflows.
 
-## Recipe must define
+Variants should exercise multiple combinations across:
 
-- accepted base body/rig/avatar family;
-- clothing/wardrobe source families and compatibility rules;
-- material/palette/accessory variation;
-- hair/head/face options where available;
-- scale/body-proportion bounds if safely adjustable;
-- naming/prefab organization;
-- collider/GC2 Character integration boundary;
-- what changes are safe in Unity vs require Blender/source editing;
-- clipping/skin-weight checks;
-- fallback when a fantasy/medieval garment has useful donor geometry but unsuitable final styling;
-- rejection rule for combinations that technically fit but look culturally/visually wrong.
+- body/silhouette where supported;
+- tops/bottoms/full outfits;
+- hair/head/accessories;
+- palette/material families;
+- at least several different civilian role cues.
 
-## Visual target
+Do not satisfy the batch with recolours only.
 
-Variants should read as ordinary inhabitants of the same northern Spanish port town, not fantasy adventurers, random asset-pack mannequins or costume-shop caricatures.
+## Compatibility + adaptation rules
 
-A source garment's original theme is not an automatic rejection. Adaptation is allowed when the final silhouette/material/details fit the product.
+The factory must know, for each admitted source family:
 
-## Operator loop
+- rig/avatar compatibility;
+- clothing/body assumptions;
+- whether it is `DIRECT`, `ADAPTABLE`, `DONOR` or requires `CREATE_DERIVED`;
+- safe Unity-side changes;
+- changes requiring Blender/source editing;
+- known clipping/weighting/scale failure patterns;
+- animation compatibility expectations.
 
-`inspect available character/wardrobe corpus -> choose compatible bases -> assemble variants -> place in gameplay camera/lighting -> inspect clipping/scale -> correct -> owner review`
+Fantasy/medieval source labels are not automatic rejection. Final civilian coherence governs acceptance.
 
-Use Blender/source tools only where they materially simplify adaptation. Do not build a generalized character generator unless the repeated work proves one is necessary.
+## Civilian semantics
 
-## Required checks
+Support useful role tags that help batch generation/composition, for example:
 
-For each accepted variant:
+- dock/warehouse worker;
+- market/shop worker;
+- service/office worker;
+- older resident;
+- younger resident;
+- casual/nightlife visitor;
+- neutral everyday pedestrian.
 
-- rig/avatar valid;
-- no severe skinning/exploded mesh issue;
-- no obvious body-through-clothing clipping in idle + basic locomotion pose;
-- feet/ground scale plausible;
-- materials render correctly in current URP setup;
-- prefab can be instantiated again without hidden hand setup;
-- visual role is recorded in simple terms (age band / work-social role / silhouette) without overdesigning story.
+These are production roles, not narrative biographies.
+
+## Tooling expectation
+
+Use the simplest mix of:
+
+- catalogue metadata;
+- prefab variants/templates;
+- material/palette presets;
+- small Editor/batch scripts;
+- MCP operator assembly;
+- Blender derivation for incompatible/over-themed garments.
+
+A large procedural character generator is not required. But repeated operations should not stay manual if a tiny tool/template can eliminate them.
+
+## Validation baseline
+
+For every generated civilian, cheaply check where relevant:
+
+- valid rig/avatar;
+- severe skinning/exploded mesh issue;
+- body-through-clothing clipping in idle/basic locomotion poses;
+- foot/ground/scale plausibility;
+- URP/material correctness;
+- missing references;
+- duplicate/invalid generated identity/path;
+- prefab reproducibility.
 
 ## Evidence
 
 Retain under `Docs/evidence/WP-PROD-CHAR-01/`:
 
-- recipe;
-- source/provenance notes;
-- third-person captures of all accepted variants;
-- at least one rejected/bad combination and why;
-- operator intervention/failure notes;
-- owner verdict on whether the group belongs to the intended game.
+- factory workflow;
+- compatibility matrix;
+- seed batch inventory + lineage;
+- third-person group captures;
+- at least one bad/incompatible combination and factory response;
+- retained tooling/templates that reduce repeated work;
+- known source/wardrobe gaps.
 
 ## PASS
 
 PASS when:
 
-- 4+ materially distinct civilian variants are retained;
-- all share a repeatable base/wardrobe process;
-- no variant requires unexplained bespoke repair;
-- clipping/scale/rendering are acceptable for normal gameplay distance;
-- owner accepts the group as a coherent starting civilian language;
-- recipe is clear enough to generate more variants later.
+- 6+ distinct seed civilians are produced through one repeatable factory;
+- compatibility/adaptation is encoded rather than remembered ad hoc;
+- routine generation does not require unexplained manual mesh/rig repair;
+- common bad combinations are detected/rejected cheaply;
+- output prefabs are animation-ready and reproducible;
+- creating the next ordinary civilian from covered source families is mostly selection/production, not pipeline R&D.
 
 ## FAIL
 
-FAIL if:
+FAIL if six characters are unrelated one-offs, wardrobe compatibility remains tribal knowledge, fantasy/source identity dominates final civilians, most variants need bespoke repair, or tooling effort expands into an unnecessary universal character system.
 
-- success is four unrelated manually repaired characters;
-- fantasy/source identity dominates the final civilians;
-- clothing/rig compatibility is unresolved;
-- variants only differ by trivial recolor;
-- the solution depends on a large new character framework before proving simple prefab/recipe production.
+## Handoff
 
-## Non-goals
-
-No hero/narrative character polish, facial dialogue system, final crowd count, full demographic plan or procedural population generator.
+`WP-PROD-CHAR-02` must prove the factory at population-batch scale and expose clone/coherence/performance problems before CITY integration.
