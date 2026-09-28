@@ -1,0 +1,6 @@
+1: ual2:idle_no_loop | 10%, 45%, 80%; male blue, female orange
+2: ual2:idle_rail_call | 10%, 45%, 80%; male blue, female orange
+3: ual2:idle_rail_loop | 10%, 45%, 80%; male blue, female orange
+4: ual2:surprise | 10%, 45%, 80%; male blue, female orange
+5: ual2:turn180_l | 10%, 45%, 80%; male blue, female orange
+6: ual2:turn180_r | 10%, 45%, 80%; male blue, female orange

@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "role": "Worker visual pre-review; not independent PASS",
+  "runtimeReportSha256": "4fe718ed422ee80dd5545f71eee368092a0449e91744dc2f0a6aef19940a7cc8",
+  "view": "Native Unity Play Mode skinning snapshots on regular male (blue) and female (orange), 480x360 per panel; temporal sequences 12 samples.",
+  "clips": [
+    {
+      "id": "ual1:a_tpose",
+      "status": "REJECT",
+      "observation": "Static source reference pose, detected by both semantic and measured no-motion checks; not production animation.",
+      "captures": [
+        "captures/batch-01.png"
+      ],
+      "captureSha256": {
+        "captures/batch-01.png": "3fda28d74a9543e837cbf340bf85abb6df780971d09fefc4178e644e550b257f"
+      }
+    },
+    {
+      "id": "ual1:counter_angry",
+      "status": "ADAPT",
+      "observation": "Counter-dependent stance/gesture retargets, but the support hand floats without a counter. Author and verify a matched counter before admission.",
+      "captures": [
+        "captures/batch-01.png"
+      ],
+      "captureSha256": {
+        "captures/batch-01.png": "3fda28d74a9543e837cbf340bf85abb6df780971d09fefc4178e644e550b257f"
+      }
+    },
+    {
+      "id": "ual1:counter_give",
+      "status": "ADAPT",
+      "observation": "Counter-dependent stance/gesture retargets, but the support hand floats without a counter. Author and verify a matched counter before admission.",
+      "captures": [
+        "captures/batch-01.png"
+      ],
+      "captureSha256": {
+        "captures/batch-01.png": "3fda28d74a9543e837cbf340bf85abb6df780971d09fefc4178e644e550b257f"
+      }
+    },
+    {
+      "id": "ual1:counter_idle_loop",
+      "status": "ADAPT",
+      "observation": "Counter-dependent stance/gesture retargets, but the support hand floats without a counter. Author and verify a matched counter before admission.",
+      "captures": [
+        "captures/batch-01.png"
+      ],
+      "captureSha256": {
+        "captures/batch-01.png": "3fda28d74a9543e837cbf340bf85abb6df780971d09fefc4178e644e550b257f"
+      }
+    },
+    {
+      "id": "ual1:counter_show",
+      "status": "ADAPT",
+      "observation": "Counter-dependent stance/gesture retargets, but the support hand floats without a counter. Author and verify a matched counter before admission.",
+      "captures": [
+        "captures/batch-01.png"
+      ],
+      "captureSha256": {
+        "captures/batch-01.png": "3fda28d74a9543e837cbf340bf85abb6df780971d09fefc4178e644e550b257f"
+      }
+    },
+    {
+      "id": "ual1:drink",
+      "status": "ADAPT",
+      "observation": "Hand-to-face gesture requires a prop and mouth/hand fit; motion retargets but object contact is not admitted.",
+      "captures": [
+        "captures/batch-01.png"
+      ],
+      "captureSha256": {
+        "captures/batch-01.png": "3fda28d74a9543e837cbf340bf85abb6df780971d09fefc4178e644e550b257f"
+      }
+    },
+    {
+      "id": "ual1:fixing_kneeling",
+      "status": "ADAPT",
+      "observation": "Kneeling hand work retargets but tool, work surface and exact contact are unresolved.",
+      "captures": [
+        "captures/batch-02.png"
+      ],
+      "captureSha256": {
+        "captures/batch-02.png": "1ae716ce5ae3110131f6db4ab38a7bdd5b5aaffb4585208c933bda1942520191"
+      }
+    },
+    {
+      "id": "ual1:groundsit_idle_loop",
+      "status": "ADMIT",
+      "observation": "Ground-seated rest pose coherent on both bodies. Admit this idle on flat ground only; enter/exit transitions not included.",
+      "captures": [
+        "captures/batch-02.png"
+      ],
+      "captureSha256": {
+        "captures/batch-02.png": "1ae716ce5ae3110131f6db4ab38a7bdd5b5aaffb4585208c933bda1942520191"
+      }
+    },
+    {
+      "id": "ual1:hit_chest",
+      "status": "ADMIT",
+      "observation": "Short upper-body chest recoil with stable lower-body support; light reaction vocabulary only.",
+      "captures": [
+        "captures/batch-02.png"
+      ],
+      "captureSha256": {
+        "captures/batch-02.png": "1ae716ce5ae3110131f6db4ab38a7bdd5b5aaffb4585208c933bda1942520191"
+      }
+    },
+    {
+      "id": "ual1:hit_head",
+      "status": "ADMIT",
+      "observation": "Small head/upper-body recoil without visible severe pose distortion; blend-out is consumer-owned.",
+      "captures": [
+        "captures/batch-02.png"
+      ],
+      "captureSha256": {
+        "captures/batch-02.png": "1ae716ce5ae3110131f6db4ab38a7bdd5b5aaffb4585208c933bda1942520191"
+      }
+    },
+    {
+      "id": "ual1:hit_shoulder_l",
+      "status": "ADMIT",
+      "observation": "Left shoulder recoil reads on both bodies with stable support; no combat authority implied.",
+      "captures": [
+        "captures/batch-02.png"
+      ],
+      "captureSha256": {
+        "captures/batch-02.png": "1ae716ce5ae3110131f6db4ab38a7bdd5b5aaffb4585208c933bda1942520191"
+      }
+    },
+    {
+      "id": "ual1:hit_shoulder_r",
+      "status": "ADMIT",
+      "observation": "Right shoulder recoil reads on both bodies with stable support; no combat authority implied.",
+      "captures": [
+        "captures/batch-02.png"
+      ],
+      "captureSha256": {
+        "captures/batch-02.png": "1ae716ce5ae3110131f6db4ab38a7bdd5b5aaffb4585208c933bda1942520191"
+      }
+    },
+    {
+      "id": "ual1:hit_stomach",
+      "status": "ADMIT",
+      "observation": "Added next-clip proof. Forward torso recoil with coherent limb shape on both bodies; ends in a recovery posture and needs consumer blend-out.",
+      "captures": [
+        "captures/batch-03.png"
+      ],
+      "captureSha256": {
+        "captures/batch-03.png": "4ba4cd6f83d5b1b3edd243642601daacb8be6553933705764bbfae275897adfb"
+      }
+    },
+    {
+      "id": "ual1:idle_lookaround_loop",
+      "status": "ADMIT",
+      "observation": "Looks and raises hand to brow; readable searching/observing gesture. Not a neutral listening pose.",
+      "captures": [
+        "captures/batch-03.png"
+      ],
+      "captureSha256": {
+        "captures/batch-03.png": "4ba4cd6f83d5b1b3edd243642601daacb8be6553933705764bbfae275897adfb"
+      }
+    },
+    {
+      "id": "ual1:idle_loop",
+      "status": "ADMIT",
+      "observation": "Neutral standing breathing; stable feet and no visible deformation on either regular body.",
+      "captures": [
+        "captures/batch-03.png"
+      ],
+      "captureSha256": {
+        "captures/batch-03.png": "4ba4cd6f83d5b1b3edd243642601daacb8be6553933705764bbfae275897adfb"
+      }
+    },
+    {
+      "id": "ual1:idle_talking_loop",
+      "status": "ADMIT",
+      "observation": "Subtle two-hand conversational gesture; stable planted stance. Full-cycle sequence checked on both bodies.",
+      "captures": [
+        "captures/batch-03.png",
+        "captures/sequence-ual1-idle_talking_loop.png"
+      ],
+      "captureSha256": {
+        "captures/batch-03.png": "4ba4cd6f83d5b1b3edd243642601daacb8be6553933705764bbfae275897adfb",
+        "captures/sequence-ual1-idle_talking_loop.png": "a518ad64cdd9f3004e02cd33cf0a7d155d9fd2d835c7dbeb0b18a73232414f73"
+      }
+    },
+    {
+      "id": "ual1:idle_tired_loop",
+      "status": "ADMIT",
+      "observation": "Bent resting/fatigue posture with hands near knees; coherent on both bodies. Use in fatigue contexts, not ordinary neutral idle.",
+      "captures": [
+        "captures/batch-03.png"
+      ],
+      "captureSha256": {
+        "captures/batch-03.png": "4ba4cd6f83d5b1b3edd243642601daacb8be6553933705764bbfae275897adfb"
+      }
+    },
+    {
+      "id": "ual1:interact",
+      "status": "ADMIT",
+      "observation": "Short forward reach and return with stable feet. Admit as a generic contact-free use/inspect gesture; no specific door or object contact certified.",
+      "captures": [
+        "captures/batch-03.png",
+        "captures/sequence-ual1-interact.png"
+      ],
+      "captureSha256": {
+        "captures/batch-03.png": "4ba4cd6f83d5b1b3edd243642601daacb8be6553933705764bbfae275897adfb",
+        "captures/sequence-ual1-interact.png": "1420363c0b310535ada440852bef0e00ed8c78ac94e9edd25dc202f0b3f4d71a"
+      }
+    },
+    {
+      "id": "ual1:jog_fwd_loop",
+      "status": "ADMIT",
+      "observation": "Full-cycle sequence shows alternating stride and arm swing with coherent limb shape on both bodies. Match consumer speed; do not slide a stationary actor.",
+      "captures": [
+        "captures/batch-04.png",
+        "captures/sequence-ual1-jog_fwd_loop.png"
+      ],
+      "captureSha256": {
+        "captures/batch-04.png": "f15e953cd24ec215ede4774a62dfb763c6bd78933fe50117ccd7c44f8790aa5c",
+        "captures/sequence-ual1-jog_fwd_loop.png": "fb9f4be629c181fe3a6a3f0a8480eef002341602756eab5add342fc25be219b9"
+      }
+    },
+    {
+      "id": "ual1:pickup_kneeling",
+      "status": "ADAPT",
+      "observation": "Reach/kneel motion retargets but object height, hand attachment and pickup timing need scene-specific contact proof.",
+      "captures": [
+        "captures/batch-04.png"
+      ],
+      "captureSha256": {
+        "captures/batch-04.png": "f15e953cd24ec215ede4774a62dfb763c6bd78933fe50117ccd7c44f8790aa5c"
+      }
+    },
+    {
+      "id": "ual1:pickup_table",
+      "status": "ADAPT",
+      "observation": "Reach/kneel motion retargets but object height, hand attachment and pickup timing need scene-specific contact proof.",
+      "captures": [
+        "captures/batch-04.png"
+      ],
+      "captureSha256": {
+        "captures/batch-04.png": "f15e953cd24ec215ede4774a62dfb763c6bd78933fe50117ccd7c44f8790aa5c"
+      }
+    },
+    {
+      "id": "ual1:push_loop",
+      "status": "ADAPT",
+      "observation": "Forward pushing gait needs a physical target, aligned hands and synchronized movement; not ready as a standalone work action.",
+      "captures": [
+        "captures/batch-04.png"
+      ],
+      "captureSha256": {
+        "captures/batch-04.png": "f15e953cd24ec215ede4774a62dfb763c6bd78933fe50117ccd7c44f8790aa5c"
+      }
+    },
+    {
+      "id": "ual1:sitting_enter",
+      "status": "ADAPT",
+      "observation": "Retargeted sitting motion is coherent, but seat height, hand/thigh contact and enter/exit placement are not demonstrated against a chair; retained for contact adaptation.",
+      "captures": [
+        "captures/batch-04.png"
+      ],
+      "captureSha256": {
+        "captures/batch-04.png": "f15e953cd24ec215ede4774a62dfb763c6bd78933fe50117ccd7c44f8790aa5c"
+      }
+    },
+    {
+      "id": "ual1:sitting_exit",
+      "status": "ADAPT",
+      "observation": "Retargeted sitting motion is coherent, but seat height, hand/thigh contact and enter/exit placement are not demonstrated against a chair; retained for contact adaptation.",
+      "captures": [
+        "captures/batch-04.png"
+      ],
+      "captureSha256": {
+        "captures/batch-04.png": "f15e953cd24ec215ede4774a62dfb763c6bd78933fe50117ccd7c44f8790aa5c"
+      }
+    },
+    {
+      "id": "ual1:sitting_idle_loop",
+      "status": "ADAPT",
+      "observation": "Retargeted sitting motion is coherent, but seat height, hand/thigh contact and enter/exit placement are not demonstrated against a chair; retained for contact adaptation.",
+      "captures": [
+        "captures/batch-05.png"
+      ],
+      "captureSha256": {
+        "captures/batch-05.png": "4aad2f46eca4a976875720407b2bf32be64a3d5ffa2f6dd40eeeeb6377bf3dc9"
+      }
+    },
+    {
+      "id": "ual1:sitting_nodding_loop",
+      "status": "ADAPT",
+      "observation": "Retargeted sitting motion is coherent, but seat height, hand/thigh contact and enter/exit placement are not demonstrated against a chair; retained for contact adaptation.",
+      "captures": [
+        "captures/batch-05.png"
+      ],
+      "captureSha256": {
+        "captures/batch-05.png": "4aad2f46eca4a976875720407b2bf32be64a3d5ffa2f6dd40eeeeb6377bf3dc9"
+      }
+    },
+    {
+      "id": "ual1:sitting_talking_loop",
+      "status": "ADAPT",
+      "observation": "Retargeted sitting motion is coherent, but seat height, hand/thigh contact and enter/exit placement are not demonstrated against a chair; retained for contact adaptation.",
+      "captures": [
+        "captures/batch-05.png"
+      ],
+      "captureSha256": {
+        "captures/batch-05.png": "4aad2f46eca4a976875720407b2bf32be64a3d5ffa2f6dd40eeeeb6377bf3dc9"
+      }
+    },
+    {
+      "id": "ual1:sprint_loop",
+      "status": "ADMIT",
+      "observation": "Forward running stride readable on both bodies; usable chase-support motion. No navigation or start/stop transition implied.",
+      "captures": [
+        "captures/batch-05.png"
+      ],
+      "captureSha256": {
+        "captures/batch-05.png": "4aad2f46eca4a976875720407b2bf32be64a3d5ffa2f6dd40eeeeb6377bf3dc9"
+      }
+    },
+    {
+      "id": "ual1:turn90_l",
+      "status": "ADAPT",
+      "observation": "In-place foot reposition is coherent, but the body does not complete the named world-space turn. Requires explicit facing/time synchronization; not admitted as an autonomous turn.",
+      "captures": [
+        "captures/batch-05.png",
+        "captures/sequence-ual1-turn90_l.png"
+      ],
+      "captureSha256": {
+        "captures/batch-05.png": "4aad2f46eca4a976875720407b2bf32be64a3d5ffa2f6dd40eeeeb6377bf3dc9",
+        "captures/sequence-ual1-turn90_l.png": "d32541f01d7cfd84acc0ceeef21ee29bbeec8e5225859c78d71f1a3c8da6f20f"
+      }
+    },
+    {
+      "id": "ual1:turn90_r",
+      "status": "ADAPT",
+      "observation": "In-place foot reposition is coherent, but the body does not complete the named world-space turn. Requires explicit facing/time synchronization; not admitted as an autonomous turn.",
+      "captures": [
+        "captures/batch-05.png"
+      ],
+      "captureSha256": {
+        "captures/batch-05.png": "4aad2f46eca4a976875720407b2bf32be64a3d5ffa2f6dd40eeeeb6377bf3dc9"
+      }
+    },
+    {
+      "id": "ual1:walk_formal_loop",
+      "status": "ADMIT",
+      "observation": "Upright restrained walk with a clean cycle; appropriate for a deliberate civilian pace. Consumer movement required.",
+      "captures": [
+        "captures/batch-06.png"
+      ],
+      "captureSha256": {
+        "captures/batch-06.png": "22f4fb310cfe413c685d2fc4bcbfe2cdca93006ab3772c483f5ccde53b92bdf8"
+      }
+    },
+    {
+      "id": "ual1:walk_loop",
+      "status": "ADMIT",
+      "observation": "Readable alternating walk gait on both bodies through twelve full-cycle samples. In-place asset; locomotion must match gait.",
+      "captures": [
+        "captures/batch-06.png",
+        "captures/sequence-ual1-walk_loop.png"
+      ],
+      "captureSha256": {
+        "captures/batch-06.png": "22f4fb310cfe413c685d2fc4bcbfe2cdca93006ab3772c483f5ccde53b92bdf8",
+        "captures/sequence-ual1-walk_loop.png": "6844eb07500b63d37ccc284e76c5f505f91d9afb27b5059b0ed1c548fcf98fb1"
+      }
+    },
+    {
+      "id": "ual2:chest_open",
+      "status": "ADAPT",
+      "observation": "Bending two-hand opening gesture is chest-specific; hinge/contact geometry untested and it is not a door animation.",
+      "captures": [
+        "captures/batch-06.png"
+      ],
+      "captureSha256": {
+        "captures/batch-06.png": "22f4fb310cfe413c685d2fc4bcbfe2cdca93006ab3772c483f5ccde53b92bdf8"
+      }
+    },
+    {
+      "id": "ual2:consume",
+      "status": "ADAPT",
+      "observation": "Hand-to-face gesture requires a prop and mouth/hand fit; motion retargets but object contact is not admitted.",
+      "captures": [
+        "captures/batch-06.png"
+      ],
+      "captureSha256": {
+        "captures/batch-06.png": "22f4fb310cfe413c685d2fc4bcbfe2cdca93006ab3772c483f5ccde53b92bdf8"
+      }
+    },
+    {
+      "id": "ual2:hit_knockback",
+      "status": "ADAPT",
+      "observation": "Falls onto the ground and remains down; unsuitable as a light surprise/recoil. Needs fall/recovery and collision integration.",
+      "captures": [
+        "captures/batch-06.png"
+      ],
+      "captureSha256": {
+        "captures/batch-06.png": "22f4fb310cfe413c685d2fc4bcbfe2cdca93006ab3772c483f5ccde53b92bdf8"
+      }
+    },
+    {
+      "id": "ual2:idle_foldarms_loop",
+      "status": "ADMIT",
+      "observation": "Folded-arm waiting pose remains coherent through the cycle on both regular bodies. Future bulkier clothing must be sampled for intersection.",
+      "captures": [
+        "captures/batch-06.png",
+        "captures/sequence-ual2-idle_foldarms_loop.png"
+      ],
+      "captureSha256": {
+        "captures/batch-06.png": "22f4fb310cfe413c685d2fc4bcbfe2cdca93006ab3772c483f5ccde53b92bdf8",
+        "captures/sequence-ual2-idle_foldarms_loop.png": "9b0c20d5dd3f123c2dade853ac6c99ebb80eea5b785ec98999d0041d4f06dd03"
+      }
+    },
+    {
+      "id": "ual2:idle_no_loop",
+      "status": "ADMIT",
+      "observation": "Small head-shake/no gesture with stable stance; admitted as one-shot by factory policy.",
+      "captures": [
+        "captures/batch-07.png"
+      ],
+      "captureSha256": {
+        "captures/batch-07.png": "4c5dca1f17fe7a06b7e9f4657817f67582d4b74d9adcbffbbaea41822eb2be5d"
+      }
+    },
+    {
+      "id": "ual2:idle_rail_call",
+      "status": "ADAPT",
+      "observation": "Rail-lean/contact pose needs an authored rail height and hand/forearm support. Retarget proved; contextual contact remains unverified.",
+      "captures": [
+        "captures/batch-07.png"
+      ],
+      "captureSha256": {
+        "captures/batch-07.png": "4c5dca1f17fe7a06b7e9f4657817f67582d4b74d9adcbffbbaea41822eb2be5d"
+      }
+    },
+    {
+      "id": "ual2:idle_rail_loop",
+      "status": "ADAPT",
+      "observation": "Rail-lean/contact pose needs an authored rail height and hand/forearm support. Retarget proved; contextual contact remains unverified.",
+      "captures": [
+        "captures/batch-07.png"
+      ],
+      "captureSha256": {
+        "captures/batch-07.png": "4c5dca1f17fe7a06b7e9f4657817f67582d4b74d9adcbffbbaea41822eb2be5d"
+      }
+    },
+    {
+      "id": "ual2:surprise",
+      "status": "ADMIT",
+      "observation": "Brief head/upper-body surprise gesture; subtle at third-person scale, without severe deformation. Full sequence inspected.",
+      "captures": [
+        "captures/batch-07.png",
+        "captures/sequence-ual2-surprise.png"
+      ],
+      "captureSha256": {
+        "captures/batch-07.png": "4c5dca1f17fe7a06b7e9f4657817f67582d4b74d9adcbffbbaea41822eb2be5d",
+        "captures/sequence-ual2-surprise.png": "93933acde1adc68e355807e3ca56353b1e749a98123db4823982de5b0f6b859a"
+      }
+    },
+    {
+      "id": "ual2:turn180_l",
+      "status": "ADAPT",
+      "observation": "In-place foot reposition is coherent, but the body does not complete the named world-space turn. Requires explicit facing/time synchronization; not admitted as an autonomous turn.",
+      "captures": [
+        "captures/batch-07.png"
+      ],
+      "captureSha256": {
+        "captures/batch-07.png": "4c5dca1f17fe7a06b7e9f4657817f67582d4b74d9adcbffbbaea41822eb2be5d"
+      }
+    },
+    {
+      "id": "ual2:turn180_r",
+      "status": "ADAPT",
+      "observation": "In-place foot reposition is coherent, but the body does not complete the named world-space turn. Requires explicit facing/time synchronization; not admitted as an autonomous turn.",
+      "captures": [
+        "captures/batch-07.png"
+      ],
+      "captureSha256": {
+        "captures/batch-07.png": "4c5dca1f17fe7a06b7e9f4657817f67582d4b74d9adcbffbbaea41822eb2be5d"
+      }
+    },
+    {
+      "id": "ual2:walk_carry_loop",
+      "status": "ADAPT",
+      "observation": "Coherent carry gait, but empty hands and unspecified object dimensions; needs sockets and a carried-prop contact check.",
+      "captures": [
+        "captures/batch-08.png"
+      ],
+      "captureSha256": {
+        "captures/batch-08.png": "53fa6e5a2b479ddf55dc2de8d721835c6c44f898f19ed191f98cb2a7f102f710"
+      }
+    },
+    {
+      "id": "ual2:walk_fwd_loop",
+      "status": "ADAPT",
+      "observation": "Equivalent gait to canonical ual1:walk_loop in this corpus; retain as indexed alternative, do not count twice as newly admitted vocabulary.",
+      "captures": [
+        "captures/batch-08.png"
+      ],
+      "captureSha256": {
+        "captures/batch-08.png": "53fa6e5a2b479ddf55dc2de8d721835c6c44f898f19ed191f98cb2a7f102f710"
+      }
+    },
+    {
+      "id": "ual2:yes",
+      "status": "ADMIT",
+      "observation": "Affirmative outward hand gesture, not just a nod. Stable stance and return visible in twelve samples; useful as witness acknowledgement.",
+      "captures": [
+        "captures/batch-08.png",
+        "captures/sequence-ual2-yes.png"
+      ],
+      "captureSha256": {
+        "captures/batch-08.png": "53fa6e5a2b479ddf55dc2de8d721835c6c44f898f19ed191f98cb2a7f102f710",
+        "captures/sequence-ual2-yes.png": "8f11ec62fd53150a3b288b3df695b3871b12aeae3655e30df6b9d0f7db08571e"
+      }
+    }
+  ]
+}

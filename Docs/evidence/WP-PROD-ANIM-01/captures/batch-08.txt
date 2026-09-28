@@ -1,0 +1,3 @@
+1: ual2:walk_carry_loop | 10%, 45%, 80%; male blue, female orange
+2: ual2:walk_fwd_loop | 10%, 45%, 80%; male blue, female orange
+3: ual2:yes | 10%, 45%, 80%; male blue, female orange

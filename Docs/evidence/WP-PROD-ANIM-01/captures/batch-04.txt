@@ -1,0 +1,6 @@
+1: ual1:jog_fwd_loop | 10%, 45%, 80%; male blue, female orange
+2: ual1:pickup_kneeling | 10%, 45%, 80%; male blue, female orange
+3: ual1:pickup_table | 10%, 45%, 80%; male blue, female orange
+4: ual1:push_loop | 10%, 45%, 80%; male blue, female orange
+5: ual1:sitting_enter | 10%, 45%, 80%; male blue, female orange
+6: ual1:sitting_exit | 10%, 45%, 80%; male blue, female orange

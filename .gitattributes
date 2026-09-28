@@ -15,6 +15,11 @@ Unity/JuegoDef/**/*.asmdef        text eol=lf
 .gitignore                        text eol=lf
 .gitattributes                    text eol=lf
 
+# ANIM evidence hashes must survive Windows checkout without newline conversion.
+Docs/asset_catalog/anim*.json      text eol=lf
+Docs/evidence/WP-PROD-ANIM-01/*.json text eol=lf
+Docs/evidence/WP-PROD-ANIM-01/captures/*.txt text eol=lf
+
 *.png   binary
 *.jpg   binary
 *.fbx   binary

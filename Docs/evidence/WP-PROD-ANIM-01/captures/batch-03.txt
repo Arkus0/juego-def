@@ -1,0 +1,6 @@
+1: ual1:hit_stomach | 10%, 45%, 80%; male blue, female orange
+2: ual1:idle_lookaround_loop | 10%, 45%, 80%; male blue, female orange
+3: ual1:idle_loop | 10%, 45%, 80%; male blue, female orange
+4: ual1:idle_talking_loop | 10%, 45%, 80%; male blue, female orange
+5: ual1:idle_tired_loop | 10%, 45%, 80%; male blue, female orange
+6: ual1:interact | 10%, 45%, 80%; male blue, female orange
