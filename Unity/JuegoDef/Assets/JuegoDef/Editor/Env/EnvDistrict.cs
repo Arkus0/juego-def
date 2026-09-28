@@ -233,7 +233,8 @@ namespace JuegoDef.Env
                 float y = ys[Mathf.Clamp(Mathf.RoundToInt((xc - x0) / 2f), 0, ys.Length - 1)];
                 if (gate > 0 && Mathf.Abs(xc - (x0 + gate)) < seg / 2f)
                 {
-                    EnvKit.Place("Prop_WoodenFence_Single", g, new Vector3(xc, y, -0.25f), 0, new Vector3(seg / 2f, 1, 1));
+                    // plank gate into the huerta (the kit timber fence is a banned alpine cue)
+                    EnvKit.Place("ENV_Gate_Timber", g, new Vector3(xc, y, -0.05f), 0, new Vector3(seg / 1.6f, 0.8f, 1));
                     continue;
                 }
                 EnvKit.Place("ENV_Retaining_Wall_2x2", g, new Vector3(xc, y + h, -0.1f), 0, new Vector3(seg / 2f, (h + 0.6f) / 2f, 0.6f));

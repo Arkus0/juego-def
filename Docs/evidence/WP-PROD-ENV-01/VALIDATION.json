@@ -99,12 +99,22 @@
   ],
   "scenes": [
     {
+      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity",
+      "stats": {
+        "thresholds": 406,
+        "openWalkable": 0,
+        "closedBlocked": 406,
+        "renderers": 27220
+      },
+      "issues": []
+    },
+    {
       "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes.unity",
       "stats": {
         "thresholds": 37,
         "openWalkable": 3,
         "closedBlocked": 34,
-        "renderers": 2718
+        "renderers": 2882
       },
       "issues": []
     },
@@ -114,7 +124,7 @@
         "thresholds": 37,
         "openWalkable": 3,
         "closedBlocked": 34,
-        "renderers": 2718
+        "renderers": 2768
       },
       "issues": []
     },
@@ -124,7 +134,7 @@
         "thresholds": 20,
         "openWalkable": 2,
         "closedBlocked": 18,
-        "renderers": 1194
+        "renderers": 1156
       },
       "issues": []
     },
@@ -134,7 +144,7 @@
         "thresholds": 10,
         "openWalkable": 0,
         "closedBlocked": 10,
-        "renderers": 660
+        "renderers": 649
       },
       "issues": []
     }

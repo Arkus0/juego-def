@@ -199,7 +199,7 @@ namespace JuegoDef.Env
                 }
                 bool pipe = module == EnvClearance.Pipe;
                 var (core, sweep) = EnvClearance.ServiceBoxes(bld, svc.gameObject, 0.01f);
-                var hitItem = field.Hit(core, it => it.go != svc.gameObject && !it.module.StartsWith("ENV_Plinth") && it.module != (pipe ? EnvClearance.Cable : EnvClearance.Pipe));
+                var hitItem = field.Hit(core, it => it.go != svc.gameObject && !it.module.StartsWith("ENV_Plinth") && !it.module.StartsWith("ENV_Downpipe_") && it.module != (pipe ? EnvClearance.Cable : EnvClearance.Pipe));
                 if (hitItem == null && sweep.HasValue)
                     hitItem = field.Hit(sweep.Value, it => it.go != svc.gameObject && !EnvClearance.IsStandOff(it.module) && !EnvClearance.IsService(it.module));
                 if (hitItem != null) issues.Add($"ENV_SERVICE_CLASH {module} crosses {hitItem.module} at {Path(svc)}");

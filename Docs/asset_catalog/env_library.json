@@ -15,7 +15,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U01_Mixed_Commercial_8m.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U01_Mixed_Commercial_8m.jpg",
       "size": [
-        9.07,
+        8.24,
         12.06,
         8.25
       ],
@@ -29,18 +29,16 @@
         "awning": "ENV_Canvas_Green"
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 12,
         "DoorFrame_Flat_Brick": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Awning": 2,
         "ENV_Balcony_Iron": 1,
-        "ENV_Cable_Run_2m": 2,
         "ENV_Door_Balcony": 1,
         "ENV_Door_Portal_Reformed": 1,
         "ENV_Door_Service": 1,
-        "ENV_Downpipe": 2,
         "ENV_Gallery_Bay": 1,
         "ENV_Plinth_Pier": 8,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_6": 2,
         "ENV_Shop_Fascia": 2,
         "ENV_Shopfront_Door": 1,
@@ -70,7 +68,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U02_Mixed_Gallery_6m.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U02_Mixed_Gallery_6m.jpg",
       "size": [
-        7.07,
+        6.59,
         15.06,
         8.07
       ],
@@ -89,18 +87,17 @@
         ]
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 16,
         "Door_6_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Balcony_Iron": 1,
         "ENV_Door_Balcony": 1,
-        "ENV_Downpipe": 1,
         "ENV_Gallery_Bay": 2,
         "ENV_Plant_Bush_Flowers": 2,
-        "ENV_Plant_Small": 1,
-        "ENV_Planter_Pot": 3,
+        "ENV_Plant_Small": 2,
+        "ENV_Planter_Pot": 4,
         "ENV_Plinth_Pier": 6,
+        "ENV_Quoin_Ashlar": 16,
         "ENV_Roof_Gable_6": 2,
         "ENV_Shop_Fascia": 2,
         "ENV_Shopfront_Door": 1,
@@ -130,7 +127,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U03_Shop_Witness_Threshold.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U03_Shop_Witness_Threshold.jpg",
       "size": [
-        7.07,
+        6.24,
         13.1,
         8.25
       ],
@@ -150,20 +147,20 @@
         "awning": "ENV_Canvas_Red"
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 12,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Awning": 3,
         "ENV_Balcony_Iron": 1,
         "ENV_Counter_Shop": 1,
         "ENV_Door_Balcony": 1,
         "ENV_Door_Service": 1,
-        "ENV_Downpipe": 2,
         "ENV_Plinth_Pier": 6,
         "ENV_Prop_FarmCrate_Apple": 1,
         "ENV_Prop_FarmCrate_Carrot": 1,
         "ENV_Prop_Shelf_Bottles": 1,
         "ENV_Prop_Shelf_Simple": 1,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_6": 2,
+        "ENV_Sat_Dish": 1,
         "ENV_Shop_Fascia": 3,
         "ENV_Shopfront_Door_Open": 1,
         "ENV_Shopfront_Frame": 2,
@@ -196,7 +193,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U04_Lodging_Frontage_10m.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U04_Lodging_Frontage_10m.jpg",
       "size": [
-        11.07,
+        10.24,
         15.94,
         8.25
       ],
@@ -214,7 +211,6 @@
         "sign": "bracket"
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 16,
         "Door_5_Round": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "DoorFrame_Round_Brick": 1,
@@ -222,9 +218,12 @@
         "ENV_Counter_Shop": 1,
         "ENV_Door_Balcony": 1,
         "ENV_Downpipe": 2,
+        "ENV_Downpipe_Head": 2,
+        "ENV_Downpipe_Shoe": 2,
         "ENV_Plant_Small": 1,
         "ENV_Plinth_2m": 4,
         "ENV_Plinth_Pier": 2,
+        "ENV_Quoin_Ashlar": 16,
         "ENV_Roof_Gable_6": 2,
         "ENV_Sat_Dish": 1,
         "ENV_Sign_Bracket": 1,
@@ -257,7 +256,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U05_Corner_Mixed_8x8.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U05_Corner_Mixed_8x8.jpg",
       "size": [
-        9.07,
+        8.8,
         15.06,
         10.13
       ],
@@ -283,17 +282,17 @@
         ]
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 16,
         "Door_2_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Balcony_Iron": 1,
         "ENV_Door_Balcony": 1,
-        "ENV_Downpipe": 2,
         "ENV_Plant_Bush_Flowers": 2,
-        "ENV_Planter_Pot": 2,
+        "ENV_Plant_Small": 2,
+        "ENV_Planter_Pot": 4,
         "ENV_Plinth_2m": 2,
         "ENV_Plinth_Pier": 12,
+        "ENV_Quoin_Ashlar": 16,
         "ENV_Roof_Gable_8": 2,
         "ENV_Sat_Dish": 1,
         "ENV_Shop_Fascia": 3,
@@ -305,7 +304,7 @@
         "ENV_Wall_Plaster_Clean_Window": 18,
         "ENV_Wall_Plaster_Shopfront": 5,
         "Prop_Chimney2": 1,
-        "Prop_Vine1": 1,
+        "Prop_Vine2": 1,
         "Roof_Modular_RoundTiles_8_L": 1,
         "Roof_Modular_RoundTiles_8_Mid": 2,
         "Roof_Modular_RoundTiles_8_R": 1,
@@ -325,8 +324,8 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U06_Closed_Residential_6m.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U06_Closed_Residential_6m.jpg",
       "size": [
-        7.07,
-        12.02,
+        6.67,
+        12.0,
         8.07
       ],
       "request": {
@@ -338,11 +337,13 @@
         "palette": "sage_oxblood"
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 12,
         "Door_1_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
-        "ENV_Downpipe": 2,
+        "ENV_Plant_Small": 2,
+        "ENV_Planter_Pot": 2,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_6": 2,
+        "ENV_Sat_Dish": 1,
         "ENV_Shop_Fascia": 1,
         "ENV_Shutter_Roller": 1,
         "ENV_Wall_Plaster_Clean": 20,
@@ -373,7 +374,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U07_Closed_Narrow_4m.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U07_Closed_Narrow_4m.jpg",
       "size": [
-        5.07,
+        4.61,
         12.92,
         8.25
       ],
@@ -387,12 +388,16 @@
         "ground": "plaster"
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 12,
         "DoorFrame_Flat_Brick": 1,
         "ENV_Door_Portal_Reformed": 1,
         "ENV_Downpipe": 1,
+        "ENV_Downpipe_Head": 1,
+        "ENV_Downpipe_Shoe": 1,
+        "ENV_Plant_Small": 1,
+        "ENV_Planter_Pot": 1,
         "ENV_Plinth_2m": 1,
         "ENV_Plinth_Pier": 2,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_6": 2,
         "ENV_TV_Aerial": 1,
         "ENV_Wall_Plaster_Clean": 16,
@@ -420,7 +425,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U08_Closed_Residential_8m_4F.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U08_Closed_Residential_8m_4F.jpg",
       "size": [
-        9.07,
+        8.24,
         15.02,
         8.07
       ],
@@ -437,15 +442,17 @@
         ]
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 16,
         "Door_1_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Balcony_Iron": 1,
         "ENV_Door_Balcony": 1,
-        "ENV_Downpipe": 2,
+        "ENV_Downpipe": 1,
+        "ENV_Downpipe_Head": 1,
+        "ENV_Downpipe_Shoe": 1,
         "ENV_Plinth_2m": 2,
         "ENV_Plinth_Pier": 4,
+        "ENV_Quoin_Ashlar": 16,
         "ENV_Roof_Gable_6": 2,
         "ENV_Sat_Dish": 1,
         "ENV_Shop_Fascia": 1,
@@ -476,8 +483,8 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U09_Terrace_End_Termination.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U09_Terrace_End_Termination.jpg",
       "size": [
-        7.07,
-        12.92,
+        6.24,
+        12.9,
         8.25
       ],
       "request": {
@@ -490,13 +497,15 @@
         "exposeLeft": true
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 12,
         "DoorFrame_Flat_Brick": 1,
         "ENV_Door_Portal_Reformed": 1,
         "ENV_Downpipe": 2,
+        "ENV_Downpipe_Head": 2,
+        "ENV_Downpipe_Shoe": 2,
         "ENV_Plant_Small": 1,
         "ENV_Planter_Pot": 1,
         "ENV_Prop_Lantern_Wall": 1,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_6": 2,
         "ENV_Shop_Fascia": 1,
         "ENV_Shutter_Roller": 1,
@@ -533,7 +542,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U10_Port_Warehouse_8x10.jpg",
       "size": [
         10.98,
-        8.72,
+        8.7,
         14.13
       ],
       "request": {
@@ -549,9 +558,11 @@
         "chimney": false
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 8,
         "ENV_Downpipe": 2,
+        "ENV_Downpipe_Head": 2,
+        "ENV_Downpipe_Shoe": 2,
         "ENV_Gate_Timber": 2,
+        "ENV_Quoin_Ashlar": 8,
         "ENV_Roof_Gable_8": 2,
         "ENV_Sat_Dish": 1,
         "ENV_Wall_Plaster_Clean": 12,
@@ -661,7 +672,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U14_Quay_Public_Overlook_12m.jpg",
       "size": [
         52.0,
-        6.93,
+        7.28,
         26.0
       ],
       "request": {
@@ -770,7 +781,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U18_Street_Furniture_Utilities.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U18_Street_Furniture_Utilities.jpg",
       "size": [
-        8.69,
+        8.71,
         1.58,
         2.1
       ],
@@ -796,9 +807,9 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U19_Ground_Frontage_Vocabulary.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U19_Ground_Frontage_Vocabulary.jpg",
       "size": [
-        15.07,
-        3.21,
-        5.59
+        14.32,
+        3.41,
+        5.18
       ],
       "request": {
         "type": "mixed_commercial",
@@ -818,15 +829,17 @@
         "chimney": false
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 4,
         "Door_5_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
         "ENV_Awning": 3,
         "ENV_Door_Service": 1,
         "ENV_Downpipe": 2,
+        "ENV_Downpipe_Head": 2,
+        "ENV_Downpipe_Shoe": 2,
         "ENV_Gate_Timber": 1,
         "ENV_Plinth_2m": 4,
         "ENV_Plinth_Pier": 14,
+        "ENV_Quoin_Ashlar": 4,
         "ENV_Shop_Fascia": 4,
         "ENV_Shopfront_Door": 1,
         "ENV_Shopfront_Door_Open": 1,
@@ -851,7 +864,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U20_Landmark_Tower_4x4.jpg",
       "size": [
         5.65,
-        21.81,
+        21.79,
         5.43
       ],
       "request": {
@@ -869,9 +882,9 @@
         "exposeRight": true
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 20,
         "Door_5_Round": 1,
         "DoorFrame_Round_Brick": 1,
+        "ENV_Quoin_Ashlar": 20,
         "ENV_Window_Insert_Thin": 13,
         "ENV_Window_Insert_Wide": 4,
         "Roof_Tower_RoundTiles": 1,
@@ -935,7 +948,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U22_Quay_Composed_24m.jpg",
       "size": [
         64.0,
-        6.93,
+        7.28,
         25.0
       ],
       "request": {
@@ -982,8 +995,8 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U23_Core_House_Narrow_Stone.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U23_Core_House_Narrow_Stone.jpg",
       "size": [
-        5.07,
-        12.02,
+        4.7,
+        12.0,
         10.13
       ],
       "request": {
@@ -997,12 +1010,13 @@
         "era": "old"
       },
       "modules": {
-        "Corner_ExteriorWide_Brick": 12,
         "Door_6_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
-        "ENV_Downpipe": 1,
+        "ENV_Eave_Canecillos": 4,
+        "ENV_Plant_Small": 2,
+        "ENV_Planter_Pot": 2,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_8": 2,
-        "ENV_Utility_Box": 1,
         "ENV_Wall_Plaster_Clean": 20,
         "ENV_Wall_Plaster_Clean_Window": 4,
         "Prop_Chimney2": 1,
@@ -1026,8 +1040,8 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U24_Core_House_Stone_Solana.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U24_Core_House_Stone_Solana.jpg",
       "size": [
-        7.07,
-        12.02,
+        6.58,
+        12.0,
         10.17
       ],
       "request": {
@@ -1047,14 +1061,15 @@
       },
       "modules": {
         "Balcony_Simple_Straight": 1,
-        "Corner_ExteriorWide_Brick": 12,
         "Door_2_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Door_Balcony": 1,
+        "ENV_Eave_Canecillos": 6,
         "ENV_Plant_Bush_Flowers": 2,
-        "ENV_Plant_Small": 1,
-        "ENV_Planter_Pot": 3,
+        "ENV_Plant_Small": 2,
+        "ENV_Planter_Pot": 4,
+        "ENV_Quoin_Ashlar": 12,
         "ENV_Roof_Gable_8": 2,
         "ENV_Shop_Fascia": 1,
         "ENV_Shutter_Roller": 1,

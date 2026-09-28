@@ -19,7 +19,8 @@ namespace JuegoDef.Env
 
         static readonly string[] Passive = { "ENV_Wall_", "Wall_", "THR_" };
         // pieces a pipe may stand in front of (it takes a longer bracket) rather than being refused by
-        static readonly string[] StandOff = { "Corner_", "ENV_Plinth" };
+        // pieces a service may stand off in front of: corner quoins/pilasters, plinths, and the pipe's own hopper head/shoe
+        static readonly string[] StandOff = { "Corner_", "ENV_Quoin_", "ENV_Plinth", "ENV_Downpipe_" };
 
         public static bool IsService(string module) => module == Pipe || module == Cable;
         public static bool IsStandOff(string module) => StandOff.Any(module.StartsWith);
