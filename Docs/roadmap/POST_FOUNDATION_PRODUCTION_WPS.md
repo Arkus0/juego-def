@@ -1,85 +1,107 @@
 # Post-foundation production workpacks — factory phase
 
 Status: **SUPERSEDED AS EXECUTION CONTRACT BY `Docs/workpacks/`**  
-Purpose: retain the high-level production decomposition while the executable requirements live in one place.
+Purpose: retain the high-level decomposition while executable requirements live in `Docs/workpacks/`.
 
 ## Current production strategy
 
-juego-def does **not** jump straight into hand-producing lots of scenes/NPCs. It first builds the smallest effective graphical/content factories so that later breadth is cheap and repeatable.
+juego-def builds two things in parallel before environment production becomes serious:
 
-The factories have a concrete first customer: [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md), the migrated CITY brief for B0 Mercado–Muelle. CITY supplies **what the first keeper block needs**; the production lanes build **how to manufacture it repeatedly**.
+1. **production substrate** — searchable lawful assets, existing-pipeline reuse, lineage and validators (`PROD-ASSET-00`);
+2. **product demand** — actual port-town/B0 spatial programme and factory-demand matrix (`CITY-URBAN-00`).
 
-The exit condition is not “we made one attractive example”. The exit condition is:
+This keeps the factories scalable **and** pointed at the right game.
+
+The separation is:
+
+- CITY = what spatial/product content is required;
+- factories = how to manufacture it repeatedly;
+- keeper realization = compose/tune those outputs into actual game space.
+
+The first concrete demand brief is [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md); reusable migrated CITY principles live in [`../design/CITY_PRODUCTION_KNOWLEDGE.md`](../design/CITY_PRODUCTION_KNOWLEDGE.md).
+
+## Factory exit principle
+
+The exit condition is not “we made one attractive example”. It is:
 
 > creating the next normal asset/content item is mostly production work, not new pipeline R&D.
 
-The factories may consist of metadata/catalogues, MCP/Unity workflows, adapted existing tools, Blender derivation recipes, prefab/templates, small Editor/batch tools, validators and semantic briefs. They should not become giant frameworks for their own sake.
+Factories may consist of metadata/catalogues, MCP/Unity workflows, adapted existing tools, Blender derivation recipes, prefabs/templates, small Editor/batch tools, validators and semantic briefs. They should not become giant frameworks for their own sake.
 
 ## Reuse-first rule
 
-The migrated pipeline research is a binding input: [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md).
+[`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md) is binding input. Relevant existing/native techniques must be bounded-tested/dispositioned before equivalent custom tooling is written.
 
-Before writing equivalent custom tooling, the owning factory must bounded-test/disposition relevant existing techniques/tools. The goal is **existing solution -> adapt -> minimal missing glue**, not invention-first.
+The goal is **existing solution -> adapt -> minimal missing glue**.
 
 ## Executable sequence
 
-Canonical contracts are under [`../workpacks/`](../workpacks/README.md):
+1. In parallel now:
+   - `WP-PROD-ASSET-00` — research spikes + shared asset catalogue/intake/lineage/validation;
+   - `WP-CITY-URBAN-00` — five-zone topology + accepted B0 route/programme/elevation + production-demand matrix;
+   - `WP-M0-00` — small gameplay fixture when useful;
+   - `WP-PROD-DIALOGUE-01` may start independently.
+2. After ASSET-00:
+   - `CHAR-01` and `ANIM-01` may begin, prioritising B0 roles.
+3. After **ASSET-00 + CITY-URBAN-00**:
+   - `ENV-01` builds the environment factory against explicit city demand.
+4. Scale proofs:
+   - `ENV-02`, `CHAR-02`, `ANIM-02`.
+5. `UI-01` follows Dialogue.
+6. `CITY-URBAN-01` realizes accepted B0 using M0 integration truth + accepted factories.
+7. `PROD-LOOK-GATE` runs a fresh-production challenge.
+8. Then shift to content at scale.
 
-1. `WP-PROD-ASSET-00` — start now from the accepted bootstrap: research spikes + shared asset catalogue, semantic discovery, lineage, intake conventions, cheap validation and B0 coverage view.
-2. `WP-M0-00` — small gameplay integration fixture in parallel; not a gate on factory R&D.
-3. Parallel graphical factories after ASSET-00:
-   - `WP-PROD-ENV-01` — environment asset + assembly factory serving B0 vocabulary first;
-   - `WP-PROD-CHAR-01` — civilian/wardrobe factory serving B0 roles first;
-   - `WP-PROD-ANIM-01` — animation intake + retarget factory serving B0 motion needs first.
-4. Scale proofs: `ENV-02`, `CHAR-02`, `ANIM-02`.
-5. In parallel from bootstrap: `PROD-DIALOGUE-01` and `PROD-UI-01`.
-6. `WP-CITY-URBAN-01` — realize B0 Mercado–Muelle as the first integrated keeper block, requiring M0 + accepted factory outputs.
-7. `WP-PROD-LOOK-GATE` — fresh-production challenge proving the factories are ready for content at scale.
+## Why CITY precedes ENV but not all factories
 
-## Factory intent by lane
+Environment vocabulary depends strongly on topology, streets, thresholds, public/service relations, elevation and programme. ENV therefore consumes both ASSET-00 and CITY-URBAN-00.
 
-### ENV
-
-Produce a searchable/reusable architectural and urban kit from real source material. Its first demand is B0: mixed commercial frontage, shop/service thresholds, lodging entrance language, stairs/retaining/railings, public quay/working-water edge, market/port props, signage mounting and ordinary closed fabric.
-
-### CHAR
-
-Start from the shared Quaternius humanoid/wardrobe ecosystem and audited character/clothing pipeline techniques. First cover B0 roles such as shop/market worker, dock/port worker, residents and ordinary service people; then prove batch production without clones or bespoke repairs.
-
-### ANIM
-
-Start from real UAL/shared-rig/import research. Prioritize B0 locomotion, conversation, ambient, market/port work, interaction and follow/chase-support motions before unrelated breadth.
-
-### DIALOGUE/UI
-
-Make contextual investigation conversations and their no-voice presentation repeatable content production rather than scene-specific Unity wiring, using the B0 shop/witness and changed-return patterns as initial demand.
+Character and animation factories can industrialize their shared Quaternius/rig/wardrobe/UAL paths as soon as ASSET-00 is ready. They consume B0 civilian/motion roles as priorities, but do not need the full street topology to establish those pipelines.
 
 ## CITY migration rule
 
-Juego2 CITY is **not** copied wholesale.
+Migrated selectively:
 
-Migrated:
-
-- accepted B0 Mercado–Muelle product brief;
-- direct/alternate routes and real loop intent;
-- lodging/market/shop/port/overlook/observation roles;
-- public/service/private truth;
-- expansion seams;
-- CITY-07/CITY-09 game-space lessons: route learning, compression/expansion/reveal, threshold readability, coherent elevation, framed views, nooks and third-person staging.
+- compact density and loops over empty acreage;
+- useful neighbourhood contrast and expansion seams;
+- route/access families;
+- place importance separate from spatial/interior depth;
+- reusable street/parcel/building-family thinking;
+- selective public/private/service/vertical interior layers;
+- CITY-07 keeper realization principles: layered building/street construction, compression/expansion/reveal, framed views, coherent local elevation, readable thresholds and third-person traversal/follow/search/chase affordances.
 
 Not migrated:
 
-- old inland Puente Viejo/Liébana geometry;
-- H1/H2F prerequisites;
-- CITY-04 historical remeasurement bureaucracy;
-- old causal-owner governance as production architecture.
+- Puente Viejo/Liébana exact geography;
+- old river/crossing IDs or matrices;
+- H0/H1/H2F authority/lifecycle requirements;
+- historical remeasurement/review bureaucracy;
+- old Y values, route costs or seed polygons.
+
+## Factory intent
+
+### ENV
+
+Manufacture reusable architectural/urban vocabulary demanded by accepted CITY/B0: mixed commercial fabric, thresholds, lodging frontage, corners, ground/street systems, elevation/retaining components, public quay/work-water edge, ordinary closed fabric, props/signage and shallow interiors. Then prove several different keeper compositions without restarting the pipeline.
+
+### CHAR
+
+Use the shared Quaternius humanoid/wardrobe ecosystem and audited character pipelines to make ordinary civilians repeatably. Prioritise roles required by B0 and prove batch variation without bespoke repairs.
+
+### ANIM
+
+Use real UAL/shared-rig/import research to batch admit and map locomotion, conversation, ambient, work/interaction and bounded action-support vocabulary relevant to B0.
+
+### DIALOGUE/UI
+
+Make contextual investigation conversation and no-voice presentation reusable content production, initially serving shop/witness/context/changed-return patterns.
 
 ## Production lock
 
-`PROD-LOOK-GATE` includes a fresh brief challenge that must create new environment/civilians/animation breadth/dialogue using the accepted factories **without foundational tooling changes**.
+`PROD-LOOK-GATE` must demonstrate a fresh environment/civilian/animation/dialogue brief using accepted factories **without foundational tooling changes**.
 
-After PASS, roadmap emphasis moves to routines/living block, investigation content, jobs/minigames, chase, melee/confrontation, 20–30 minute slice and district/population expansion.
+After PASS, emphasis moves to routines/living block, investigation content, jobs/minigames, chase, melee/confrontation, the 20–30 minute slice and district/population expansion.
 
 ## Anti-pattern
 
-Do not recreate Juego2's infrastructure-heavy gates, but also do not mistake one polished demo for a production pipeline. The goal is a small-team asset/content factory that can feed the game repeatedly and is grounded in a real city-content demand brief.
+Do not recreate Juego2 infrastructure-heavy gates, but do not let “simpler” mean “generic asset factory with no game demand”. The target is a small production system that can repeatedly build **this** city.
