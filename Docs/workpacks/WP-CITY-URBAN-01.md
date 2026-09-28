@@ -2,12 +2,14 @@
 
 Status: **READY AFTER FACTORY BATCH PROOFS**  
 Class: PRODUCT INTEGRATION / URBAN BLOCK  
-Depends on: `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS  
+Depends on: `WP-M0-00` PASS + `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS  
 Blocks: `WP-PROD-LOOK-GATE`
 
 ## Claim
 
 juego-def can integrate the accepted graphical/content factories into one small keeper urban block that feels like the actual game. The block must be produced **from the factories**, not by bypassing them with one-off hand work.
+
+M0 is required here only because it freezes the basic player/camera/interaction integration fixture before the keeper block consumes the graphical factories. It is not a prerequisite for building those factories.
 
 ## Recommended context
 
