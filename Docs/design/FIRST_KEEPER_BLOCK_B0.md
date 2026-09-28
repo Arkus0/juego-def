@@ -11,13 +11,13 @@ It is the demand brief consumed by the graphical/content factories. The factorie
 
 ## Source disposition
 
-Migrated from accepted Juego2 `CITY-URBAN-00` plus useful game-space design lessons from CITY-07/CITY-09.
+Distilled from accepted Juego2 port-town product/roadmap decisions that assigned the new topology and first-block brief to the planned `CITY-URBAN-00`, plus reusable accepted CITY-00..07 planning/game-space knowledge. The old `CITY-URBAN-00` responsibility is **not** represented here as a completed historical WP; juego-def's executable `WP-CITY-URBAN-00` now owns validation of this brief.
 
 ### Migrated as product truth / design input
 
 - final setting: large fictional northern-Spain working port town, late 1990s / early 2000s;
 - five production zones: MERCADO, MUELLE, CASCO, VIVIENDAS, TALLERES;
-- first keeper urban block: **B0 Mercado–Muelle**;
+- first keeper urban block hypothesis: **B0 Mercado–Muelle**;
 - compact density, recurring social routes, ordinary places and working waterfront;
 - B0 functional programme and route/loop concept;
 - public/service/private access distinction;
@@ -32,7 +32,7 @@ Migrated from accepted Juego2 `CITY-URBAN-00` plus useful game-space design less
 - old node/edge owners as governance mechanism;
 - exact provisional B0 coordinates as immutable shipping coordinates.
 
-The B0 layout below is therefore a **production brief with measurable starting hypotheses**. juego-def may tune local geometry through actual third-person realization while preserving the intended roles, loops and access truth.
+The B0 layout below is therefore a **production brief with measurable starting hypotheses**. `WP-CITY-URBAN-00` may amend it before ENV production; later keeper realization may tune local geometry while preserving the accepted roles, loops and access truth.
 
 ## B0 product role
 
@@ -116,7 +116,7 @@ B0 should imply continuation without pretending future zones already exist.
 
 Use blocked/scenic continuation, rooflines, street alignment, sound/light/landmark cues and partial geometry honestly. Do not create invisible traversable streets.
 
-## Game-space realization principles migrated from CITY-07 / CITY-09
+## Game-space realization principles migrated from CITY
 
 The keeper block must feel like an authored third-person level, not a planning diagram extruded into Unity.
 
@@ -199,7 +199,7 @@ No gameplay system is required merely to prove those affordances.
 
 ## Keeper acceptance intent
 
-The eventual `WP-CITY-URBAN-01` realization may tune the starting layout, but must preserve the block's functional truth:
+The eventual `WP-CITY-URBAN-01` realization may tune the accepted starting layout, but must preserve the block's functional truth unless `CITY-URBAN-00` is explicitly amended:
 
 - Mercado -> Muelle relationship reads clearly;
 - direct and alternative routes exist;
