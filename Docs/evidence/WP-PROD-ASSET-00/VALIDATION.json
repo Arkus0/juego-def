@@ -1,4 +1,42 @@
 {
+  "schemaVersion": 2,
   "items": 796,
+  "packIntakeIdentities": {
+    "base": {
+      "kind": "path+content-sha256-v1",
+      "sha256": "4e361747e951c8623c06e202441f7ac219a198451cc9817b378787944f1d51be",
+      "files": 98
+    },
+    "medieval": {
+      "kind": "archive-sha256",
+      "sha256": "b9d757dd2608a5cee4d9ee1e8183f6cb4cad9d27480841a905180def9c7d8b10",
+      "files": 1
+    },
+    "nature": {
+      "kind": "path+content-sha256-v1",
+      "sha256": "7d41d0df67b36d85503f8837e1dd36eaab95507e0b30900130f78b5ccbcda352",
+      "files": 88
+    },
+    "outfits": {
+      "kind": "path+content-sha256-v1",
+      "sha256": "a08f2cf7f13fd1a9ae342e676c717d1766b7f84a2d4a992d4944432a55e0c6b4",
+      "files": 46
+    },
+    "props": {
+      "kind": "path+content-sha256-v1",
+      "sha256": "837fd1ad9ebda9c5aaa098efa89d628e40c8fcc90d19bebccbbfa380cdd34d34",
+      "files": 111
+    },
+    "ual1": {
+      "kind": "path+content-sha256-v1",
+      "sha256": "cb2b9a4321031d925bc45c49b03f0125aa1a00ab0e336bc3b19b7dc18d35abe1",
+      "files": 1
+    },
+    "ual2": {
+      "kind": "path+content-sha256-v1",
+      "sha256": "8867e032153aa20624f49050d1482d4b039d158ed868cc8986cc03a84c97c67f",
+      "files": 1
+    }
+  },
   "problems": []
 }

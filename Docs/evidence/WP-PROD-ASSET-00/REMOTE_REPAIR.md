@@ -32,18 +32,14 @@ Python syntax compilation of the repaired tool and the one-command refresh helpe
 
 The repair branch was reconciled with current `main` after accepted `CITY-URBAN-00` / DocSync. No ASSET implementation file overlapped those main changes; the branch now consumes the current B0/CITY authority rather than the pre-CITY snapshot.
 
-## Required bounded local vault refresh
+## Local vault refresh completed
 
-The committed `catalog.json` still reflects schema v1 because the remote Worker cannot access `C:/Juego2-Assets`. This branch is therefore **not yet frozen for Reviewer**.
-
-The local completion has been reduced to one command from repository root:
+The local Worker ran the bounded refresh against `C:/Juego2-Assets` on 2026-09-28:
 
 ```powershell
 python Tools/refresh_asset_intake_evidence.py
 ```
 
-The helper does not commit, push, open Unity or modify the vault. It runs the regression probe, rebuilds the schema-v2 catalogue, refreshes all seven pack receipts, validates the complete intake and rewrites `Docs/evidence/WP-PROD-ASSET-00/VALIDATION.json` with the pack identities and final problem list.
+The regression probe passed. The schema-v2 catalogue contains the same 796 semantic candidates and populated identities for all seven packs. Intake found zero new source files; the Medieval archive identity remained pinned and 14 local Unity material upgrades were preserved. `validate` reported zero problems after comparing the catalogue, vault, installed receipts and copied source bytes. The resulting identities and problem list are recorded in [VALIDATION.json](VALIDATION.json).
 
-Expected completion condition: catalogue remains 796 semantic candidates unless the actual vault changed, each `sourcePacks.*.intakeIdentity` is populated, all installed receipts carry the same identities, and final Python validation reports zero problems. If candidate count or source identities differ unexpectedly, stop and inspect the vault change instead of treating it as routine refresh.
-
-After that bounded local run, commit the regenerated `catalog.json` plus refreshed `VALIDATION.json`, freeze the new exact `PRODUCT_SHA`, and request a fresh independent Reviewer.
+The helper did not open Unity or modify the vault. The earlier Unity Editor validation remains recorded in [UNITY_VALIDATION.md](UNITY_VALIDATION.md). This local run closes the source-identity evidence gap and is ready for fresh independent review of the new frozen commit.
