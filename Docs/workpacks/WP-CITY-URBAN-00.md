@@ -1,9 +1,16 @@
 # WP-CITY-URBAN-00 — Port-town topology + first keeper-block brief
 
-Status: **READY / PARALLEL**  
+Status: **COMPLETE / ACCEPTED**  
 Class: PRODUCT DESIGN / CITY PROGRAMME  
 Depends on: current `GAME_VISION.md` + `PORT_TOWN_WORLD_MODEL.md` + `VISUAL_BIBLE.md`  
 Blocks: `WP-PROD-ENV-01`; feeds `WP-CITY-URBAN-01`
+
+Accepted candidate: `e77e4b300e16bb2b880f8ace86ef488903fde450`  
+Canonical PR: `#6`  
+Reviewer PASS: `#5338907941`  
+Implementation merge: `2fdd75d6db10d71e5676c0b0d1c161d100e11c15`  
+Owner acceptance: `2026-09-28`  
+DocSync: `Docs/evidence/WP-CITY-URBAN-00/DOCSYNC.md`
 
 ## Claim
 
