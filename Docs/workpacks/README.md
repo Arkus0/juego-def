@@ -9,7 +9,7 @@ This directory turns the roadmap into executable product/production contracts. T
 
 The separation is deliberate:
 
-- `CITY-URBAN-00` = **what town/block we need**;
+- `CITY-URBAN-00` = **what town/block we need** — now accepted;
 - `PROD-ASSET/ENV/CHAR/ANIM/...` = **how we industrialize the content needed to build it**;
 - `CITY-URBAN-01` = **physical keeper realization** of the first block with those factories.
 
@@ -60,7 +60,7 @@ BOOTSTRAP-UNITY-GC2 (PASS)
       +----> PROD-ASSET-00 -------------------+----> CHAR-01 -> CHAR-02 ----+
       |                                      +----> ANIM-01 -> ANIM-02 ----+
       |                                      |                              |
-      +----> CITY-URBAN-00 -------------------+----> ENV-01  -> ENV-02 -----+
+      +----> CITY-URBAN-00 (PASS) ------------+----> ENV-01  -> ENV-02 -----+
       |          what to build                                               |
       +----> M0-00 ----------------------------------------------------------+
       |                                                                      |
@@ -76,13 +76,13 @@ BOOTSTRAP-UNITY-GC2 (PASS)
                                                                CONTENT PRODUCTION AT SCALE
 ```
 
-`CITY-URBAN-00` and `PROD-ASSET-00` are the two immediate parallel prerequisites for ENV: product demand and production substrate.
+`CITY-URBAN-00` is accepted. `PROD-ASSET-00` is the remaining immediate prerequisite before ENV-01 can start; together they provide product demand and production substrate.
 
 ## Workpacks
 
 | WP | Outcome | Depends on |
 | --- | --- | --- |
-| `WP-CITY-URBAN-00` | Five-zone topology + accepted B0 programme/route/elevation + factory-demand matrix | product/design docs; parallel |
+| `WP-CITY-URBAN-00` ✅ | Five-zone topology + accepted B0 programme/route/elevation + factory-demand matrix | **PASS / accepted** |
 | `WP-PROD-ASSET-00` | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | Bootstrap PASS |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
@@ -98,6 +98,6 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 
 ## Immediate sequence
 
-**Start `WP-PROD-ASSET-00` and `WP-CITY-URBAN-00` now, in parallel.**
+**Continue `WP-PROD-ASSET-00` as the remaining production foundation.** `WP-CITY-URBAN-00` is already accepted.
 
-M0 and Dialogue may also progress independently. After both ASSET-00 and CITY-URBAN-00 pass, start ENV-01; CHAR-01 and ANIM-01 need only ASSET-00 and may begin as soon as it passes.
+M0 and Dialogue may progress independently. As soon as ASSET-00 passes, ENV-01 is unblocked because CITY-URBAN-00 is already PASS; CHAR-01 and ANIM-01 may also begin from ASSET-00.
