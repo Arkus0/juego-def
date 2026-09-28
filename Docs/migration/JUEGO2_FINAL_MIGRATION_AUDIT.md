@@ -20,7 +20,9 @@ Classification:
 | Juego2 family | Status | juego-def destination / rationale |
 | --- | --- | --- |
 | Product vision / port-city amendments | `MIGRATED` | `Docs/design/GAME_VISION.md`, `PORT_TOWN_WORLD_MODEL.md`, roadmap |
+| NPC depth tiers / population-depth distinction | `MIGRATED` | `Docs/design/NPC_DEPTH_TIERS.md`; routine-bearing, visible, named and deeply systemic NPCs are separate budgets |
 | Visual Bible / asset reuse direction | `MIGRATED` | `Docs/design/VISUAL_BIBLE.md`, production factory contracts |
+| Old Potes visual-ref source index | `DROP` as current authority / `REFERENCE_ONLY` historical | setting is obsolete; useful generic/style observations are already absorbed by current Visual Bible/anti-greybox rules |
 | CITY current port-city/B0 direction | `MIGRATED` | `CITY_PRODUCTION_KNOWLEDGE.md`, `FIRST_KEEPER_BLOCK_B0.md`, CITY WPs |
 | Old inland/Potes CITY geometry/governance | `DROP` | obsolete geography and heavy causal-owner machinery |
 | CITY grammar/interiors/location/mobility source corpus | `REFERENCE_ONLY` + `ABSORBED` | current CITY docs are authority; source index preserves deeper detail |
@@ -40,6 +42,7 @@ Classification:
 | Immersive object interaction scope | `MIGRATED` | `GAMEPLAY_SYSTEMS_KNOWLEDGE.md` |
 | GameFlow/condition/outcome/persistent-vs-ambient/schedule/full-abstract lessons | `MIGRATED` | `GAMEPLAY_SYSTEMS_KNOWLEDGE.md` |
 | Old Juego knowledge ledger / fixture bank | `REFERENCE_ONLY` + `ABSORBED` | source index; strongest lessons distilled locally |
+| GC2↔Arkus runtime-split/H1 ADRs | `DROP` as architecture / `ABSORBED` where useful | current `GC2_FIRST_ARCHITECTURE.md` governs; avoid duplicate authority, but no Arkus owner is assumed |
 | H0 HK harness/runtime/CAS/snapshot/replay/MCP | `DROP` by default | no current product need justifies importing it; individual mechanism may return only via concrete WP evidence |
 | H1 bridge/materialize/observe/reconcile | `DROP` | direct Unity + GC2 + bounded operator is current production path |
 | CTX bootstrap/capsules/envelopes | `DROP` implementation | new repo is small; direct authoritative context is cheaper now |
@@ -55,6 +58,8 @@ Classification:
 | `.claude` wrappers | `MIGRATED` as thin routing wrappers | no duplicate policy logic |
 | Juego2 Unity project/generated bridge assets | `DROP` | juego-def owns its own Unity project/bootstrap |
 | Juego2 code/tests/scripts tied to Arkus | `DROP` | no architecture-by-sunk-cost |
+| SESSION_HANDOFF / accepted-state navigation caches | `DROP` implementation | live GitHub + current repo are small enough; no derived handoff database needed now |
+| `Docs/history` chronology | `REFERENCE_ONLY` | old repo remains historical archive; no need to copy chronology |
 | historical PR/evidence archive | `REFERENCE_ONLY` | remains in Juego2; use when provenance/reviewer history matters |
 | production purchase history | `REFERENCE_ONLY` | ownership may be rechecked; old price/version/license is not current adoption evidence |
 
