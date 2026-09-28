@@ -23,6 +23,8 @@ juego-def is allowed to learn from Juego2. It is not required to remain compatib
 - final town proper name remains undecided;
 - layered NPC depth, with routine complexity separate from narrative depth.
 
+`Docs/design/NPC_DEPTH_TIERS.md` preserves the accepted planning distinction between ~10–15 deeply systemic A actors, ~20–40 named/reactive B actors and a broader ambient/population C layer within an initial ~80–120 visible/recurring town population. It also preserves the separate rough goal of ~60–100 routine-bearing identities without implying that all require Tier-A memory/relationship/agency cost.
+
 ### CITY / game-space
 
 Migrated from accepted `CITY-URBAN-00` plus useful CITY-07/CITY-09 design lessons into `Docs/design/FIRST_KEEPER_BLOCK_B0.md`:
@@ -129,7 +131,7 @@ The useful operating discipline has been migrated and simplified:
 - H0 harness as default game kernel;
 - H1 canonical->Unity bridge/materialize/reconcile lifecycle;
 - whole-world CAS/replay/snapshot architecture;
-- old Potes/Liébana setting authority;
+- old Potes/Liébana setting authority and its visual-reference index as current art direction;
 - old inland CITY node/edge matrices as final geography;
 - old CITY causal-owner bureaucracy as production architecture;
 - old H2F/H2 gates and workpack DAG as governance;
