@@ -27,7 +27,7 @@ juego-def is allowed to learn from Juego2. It is not required to remain compatib
 
 ### CITY / game-space
 
-Migrated from accepted `CITY-URBAN-00` plus useful CITY-07/CITY-09 design lessons into `Docs/design/FIRST_KEEPER_BLOCK_B0.md`:
+The source transition in **Juego2** `WP-CITY-URBAN-00` is `COMPLETE / ACCEPTED` (PR #265). Its useful result plus CITY-07/CITY-09 game-space lessons were migrated into juego-def, especially `Docs/design/FIRST_KEEPER_BLOCK_B0.md`:
 
 - first keeper block is B0 Mercado–Muelle;
 - lodging/return, market/activity, shop+witness threshold, commercial run, port reveal/public quay, upper observation/alternate route and expansion seams;
@@ -35,6 +35,8 @@ Migrated from accepted `CITY-URBAN-00` plus useful CITY-07/CITY-09 design lesson
 - public/service/private and public-port/controlled-work access truth;
 - compact third-person game-space composition: route learning, compression/expansion/reveal, threshold readability, framed views, useful nooks and coherent local elevation;
 - spatial support for follow/search/chase/conversation without implementing those gameplay systems merely to prove geometry.
+
+**Important:** migration of that accepted source does not automatically PASS the separate executable `juego-def/WP-CITY-URBAN-00`. The local WP remains `READY / PARALLEL` and owns formal closure of the five-zone topology handoff, factory-demand coverage statuses and deferred-question list before `PROD-ENV-01` starts.
 
 Not migrated as product authority: old inland Puente Viejo/Liébana exact geometry, crossings, masks, route costs, CITY-04 historical remeasurement machinery or H1/H2F prerequisites.
 
