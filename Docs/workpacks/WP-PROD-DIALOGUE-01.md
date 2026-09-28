@@ -1,100 +1,81 @@
-# WP-PROD-DIALOGUE-01 — Investigation Dialogue Runtime + Authoring Decision
+# WP-PROD-DIALOGUE-01 — Investigation Dialogue Authoring Factory
 
 Status: **READY AFTER M0**  
-Class: PRODUCT TOOLING / DIALOGUE  
+Class: PRODUCTION FACTORY / DIALOGUE AUTHORING  
 Depends on: `WP-M0-00` PASS  
 Blocks: `WP-PROD-UI-01`
 
 ## Claim
 
-juego-def has selected the simplest dialogue authoring/presentation path that materially supports an investigation game with contextual questions, without making a paid module or unnecessary framework a prerequisite.
+juego-def has a reusable dialogue authoring/runtime path that lets a writer/agent produce contextual investigation conversations repeatedly without low-level Unity surgery or mandatory paid tooling.
 
-## Candidates
+## Candidate order
 
-Evaluate only candidates that are actually available and lawful, in this order of simplicity:
+Evaluate the simplest lawful options first:
 
 1. GC2 Core/local presentation;
-2. GC2 Dialogue if owned/available and materially useful;
-3. a small lawful authoring accelerator inspired by audited Hub text-to-dialogue ideas;
-4. another tool/plugin only if it demonstrates a concrete material advantage.
+2. GC2 Dialogue if owned/available and materially better;
+3. a small lawful text-to-dialogue/import accelerator inspired by audited Hub ideas;
+4. another tool/plugin only if it proves a concrete advantage.
 
 Dialogue 2 remains optional. Alias remains research-only until exact evidence exists.
 
-## Required decision fixture
+## Factory outputs
 
-Build one small retained investigation conversation with:
+By PASS, retain:
 
-- one NPC;
-- player can ask about at least **two contexts** among person/photo/place/object;
-- one known/unknown fact or variable changes the NPC response;
-- at least one player choice;
-- at least one gesture/expression/presentation callback if the chosen path supports it economically;
-- content can be edited without low-level scene surgery.
+- selected runtime/authoring disposition;
+- stable writer/agent-facing content format/workflow;
+- reusable contextual question/response template;
+- reusable variable/condition binding pattern;
+- import/build/update path if text/data is transformed into Unity/GC2 assets;
+- validation/debug path for missing speakers, broken choices/conditions and invalid references;
+- one small batch of conversations produced through the same workflow.
 
-The fixture must be small enough that competing paths can be compared without building the real story system.
+## Batch proof
+
+Create at least **3 small investigation conversations** using the same authoring path, with collectively:
+
+- person/photo/place/object-style contexts;
+- known/unknown fact response variation;
+- player choices;
+- at least one gesture/presentation callback where economically supported;
+- content edits followed by reliable rebuild/update without rebuilding scene plumbing.
 
 ## Evaluate
 
-Record for each serious candidate actually tested:
-
-- setup friction;
-- writer/content-editing friction;
-- branching/context clarity;
-- presentation quality;
-- integration with GC2 Variables/Instructions/Conditions;
-- debugging/inspection;
-- persistence implications if any;
-- replacement/uninstall cost;
-- license/acquisition cost where relevant.
-
-No false benchmark is required against unavailable paid packages.
-
-## Required disposition
-
-End with exactly one:
-
-- `CORE_LOCAL`
-- `GC2_DIALOGUE`
-- `OTHER_ADOPTED`
-- `DEFERRED` only if M0 can proceed but a real content blocker prevents a fair decision
-
-The decision must state why the selected path is materially preferable for current production.
-
-## Authoring requirement
-
-A writer-facing or agent-facing content format should be understandable enough that dialogue text/choices can be changed without hand-editing arbitrary serialized Unity internals.
-
-This does **not** require a custom dialogue DSL. If the chosen tool already provides a good authoring surface, use it.
+For serious candidates actually tested, record setup friction, writer editing friction, branching/context clarity, GC2 integration, debugging, replacement cost and any acquisition/license burden.
 
 ## State boundary
 
-NPC identity, clue facts and durable investigation meaning should remain understandable at juego-def/GC2 gameplay level. Avoid locking all canonical story meaning into opaque plugin-private IDs when a simple explicit variable/reference works.
+NPC identity, clue facts and durable investigation meaning should remain understandable at juego-def/GC2 gameplay level. Avoid locking canonical story meaning exclusively in opaque plugin-private IDs.
 
 ## Evidence
 
 Retain under `Docs/evidence/WP-PROD-DIALOGUE-01/`:
 
 - selected disposition + rationale;
-- fixture scene/content paths;
-- Play Mode captures/proof of contextual response change;
-- editing workflow note;
-- any package/license/version record if a module/plugin is adopted;
-- rejected/deferred candidate notes only where actually evaluated.
+- authoring workflow/template;
+- 3+ conversation fixtures/content paths;
+- Play Mode proof of contextual response changes;
+- edit/rebuild proof;
+- validation/debug output;
+- package/version/license record if a module/plugin is adopted.
 
 ## PASS
 
 PASS when:
 
-- the fixture works end to end in Play Mode;
-- response changes from actual context/state;
-- content is reasonably editable;
-- chosen path does not impose unjustified economic/architectural burden;
-- downstream UI work has a concrete runtime surface to style.
+- 3+ conversations are produced through one reusable authoring workflow;
+- contextual state genuinely changes responses;
+- a writer/agent can edit content without arbitrary serialized-scene surgery;
+- adding another normal conversation is mainly content authoring, not new plumbing;
+- chosen path does not impose unjustified cost/architecture.
 
 ## FAIL
 
-FAIL if a module is adopted merely because the roadmap names it, context branching is faked, content editing requires fragile hidden surgery, or the WP expands into the full investigation narrative.
+FAIL if a module is adopted because the roadmap names it, conversations are one-off scene wiring, context branching is faked, or each new dialogue needs custom low-level Unity edits.
 
 ## Non-goals
 
-No final story graph, no complete quest system, no voice acting, no localization pipeline lock and no requirement to solve every future narrative condition.
+No final story graph, full quest system, voice acting, localization production lock or complete narrative content.
