@@ -4,55 +4,76 @@ Status: **BOOTSTRAP DONE / NEXT: M0 FIRST STREET** — authoring path `BOUNDED_O
 
 ## Immediate sequence
 
-1. ~~**Knowledge migration**~~ — done (PR #1).
-2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` (MCP for Unity) adopted by the owner on 2026-09-28 without waiting for Juego2 `WP-AI-UNITY-AUTHORING-00`; compared against Juego2's H0/H1 evidence. See [`PRODUCTION_AUTHORING_DECISION.md`](../architecture/PRODUCTION_AUTHORING_DECISION.md).
-3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera walking in Play Mode. See [`UNITY_PROJECT_SETUP.md`](../production/UNITY_PROJECT_SETUP.md) and [evidence](../evidence/BOOTSTRAP-UNITY-GC2/README.md).
-4. **M0 — GC2 Walking Street** — player, camera, first street, one object/hotspot and one NPC interaction. **← next**
-5. **Production lanes** — prove ENV / CHAR / ANIM / Dialogue-UI repeatability on the real port-town look.
-6. **First Living Block** — routine-bearing small block with investigation value.
-7. **Action/content** — chase, melee/confrontation, activities/jobs and 20–30 minute slice.
-8. **Expansion** — additional neighbourhoods and population breadth.
+1. ~~**Knowledge migration**~~ — done.
+2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` adopted; see `PRODUCTION_AUTHORING_DECISION.md`.
+3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera working in Play Mode.
+4. **M0 — First Walking Street** — retained playable street, one world interaction and one NPC interaction. **← NEXT**
+5. **Shared graphical asset substrate (`PROD-ASSET-00`)** — searchable catalogue, semantic discovery, source/derived lineage, intake conventions and cheap validators.
+6. **Graphical factories in parallel** — ENV / CHAR / ANIM build scalable production paths, not isolated examples.
+7. **Factory scale proofs** — ENV multi-scene production, civilian batch, animation runtime/batch; Dialogue/UI authoring factory proceeds in parallel from M0.
+8. **First Keeper Block (`CITY-URBAN-01`)** — integrate factory outputs in actual game space.
+9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves new content can be produced without foundational pipeline work.
+10. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, 20–30 minute slice, then district/population breadth.
 
-The authoring benchmark is deliberately consumed **before** we invest heavily in a competing environment/character tooling architecture. A minimal bootstrap may happen earlier if useful; a large custom production framework should not.
+Executable contracts live in [`../workpacks/`](../workpacks/README.md). The roadmap states sequence; workpacks state PASS/FAIL.
+
+## Why factories come before breadth
+
+The purpose of ENV/CHAR/ANIM/UI work is not merely to make one attractive sample. When the production gate passes, juego-def should be able to make the next normal building/street/civilian/animation/conversation primarily by using a known factory rather than inventing another pipeline.
+
+A factory can be lightweight: metadata/catalogues, MCP/Unity recipes, Blender derivation, prefab/templates, small batch tooling and validators. We explicitly do **not** need H1-style infrastructure or giant procedural generators.
 
 ## M0 and gameplay path
 
-Each gameplay step produces a visible retained feature. Paid modules are acquired only if not already owned and only when the real feature justifies them.
+Each gameplay step produces a visible retained feature. Paid modules are adopted only when a real feature proves the material value.
 
 | Step | Visible objective | Default tech | Keeper output | Observable PASS |
 |---|---|---|---|---|
 | Bootstrap Unity ✅ | Project opens, scene plays, real versions/pipeline recorded | Unity | minimal project | Open/Play without blocking errors. |
 | GC2 Core ✅ | third-person player + camera | Core | player/camera | Walk, turn and follow in Play Mode. |
-| First Street | short dense port-town street at human scale | chosen authoring path + Unity | retained street seed | Walkable/readable route with credible composition. |
-| First Interaction | door/hotspot + examinable object | Core | interactions | Approach/activate with different visible results. |
-| First NPC | recognizable person with brief response/gesture | Core | NPC interaction | Activate interaction in the same street. **Closes M0.** |
-| Dialogue | ask about person/photo/place | Dialogue if justified; otherwise Core/local | contextual conversation | Known fact changes response. |
-| First Investigation Loop | contrast testimony + physical clue | Core + chosen dialogue path | clue loop | Player reaches lead through world references, not mandatory waypoint chain. |
-| Inventory / Quests | carry a needed object / represent a thread only when required | modules only if proven useful | persistent object/thread | Acquire/use/load state successfully. |
-| Behavior | first useful schedule/routine | Behavior if justified + Unity navigation | routine with gameplay value | Return at another time and find a meaningful changed state/location. |
-| First Living Block | street + commerce + a few coherent NPC routines | GC2 + production lanes | retained lived-in block | Morning/evening visit yields different opportunity/context. |
-| Melee | brief sparring/fight with purpose | Melee if adopted | retained encounter | Start, play, finish, receive coherent consequence. |
-| First Chase | suspect route through market/alley/port | Core/Behavior; Perception only if needed | retained chase | Can catch or lose suspect without dead-ending investigation. |
-| 20–30 minute slice | investigation -> daily life -> chase/confrontation -> changed return | modules actually proven useful | complete slice | First-play timed run works end to end. |
-| Expansion | additional neighbourhood/content | proven stack | incremental retained content | each increment adds a playable route/activity/person. |
+| M0 First Street | short port-town route + object/hotspot + NPC interaction | operator + GC2 Core | retained scale/interaction fixture | Owner can walk/interact in Play Mode. |
+| Shared Asset Factory | source corpus becomes searchable/reproducible | catalogue + small tooling | production substrate | ENV/CHAR/ANIM can discover/intake assets without repeated manual path archaeology. |
+| Environment Factory | reusable architecture/urban asset + assembly system | MCP/Unity + Blender where useful | reusable kit + tooling | Normal new environment units are routine to produce. |
+| Character Factory | reusable civilian/wardrobe production | source corpus + prefab/batch tooling | civilian factory | Normal new civilian is routine to produce. |
+| Animation Factory | semantic batch intake/retarget + runtime mapping | Unity/GC2 | animation factory | Normal compatible clip is routine to admit/use. |
+| Dialogue/UI Factory | contextual conversations + reusable no-voice presentation | simplest justified GC2/local path | content/UI authoring factory | New normal dialogue is content work, not scene plumbing. |
+| Factory Scale Proofs | demonstrate volume/repeatability | accepted factories | multi-scene/batch outputs | ENV/CHAR/ANIM scale without pipeline restart. |
+| First Keeper Block | integrate factories into real urban content | proven stack | retained lived-in block seed | Owner accepts it as keep-and-expand game content. |
+| PROD-LOOK-GATE | fresh-production challenge | proven factories | production lock | New brief succeeds without foundational tooling changes. |
+| First Investigation Loop | testimony + physical/context clue | GC2 + chosen dialogue path | clue loop | Player reaches a lead through world references. |
+| Routines/Living Block | meaningful time/location changes | Behavior/local only if useful | living block | revisit produces changed opportunity/context. |
+| Jobs/minigames | daily-life activity integrated in places/people | selected modules/local | retained activity | playable and contextually integrated. |
+| First Chase | suspect route through real city content | proven gameplay stack | retained chase | can catch/lose without investigation dead-end. |
+| Melee | brief purposeful confrontation | Melee if adopted | retained encounter | starts/plays/ends with consequence. |
+| 20–30 minute slice | investigation -> daily life -> action -> changed return | proven stack | complete slice | first-play timed run works end to end. |
+| Expansion | more districts/population/content | factories + proven systems | incremental content | each increment adds real playable density. |
 
-## Production lock before broad expansion
+## M0 — First Walking Street
 
-The old Juego2 insight remains valuable: one attractive demo is not enough. Before scaling to many districts/NPCs, juego-def should pass the lightweight `PROD-LOOK-GATE` described in [`POST_FOUNDATION_PRODUCTION_WPS.md`](POST_FOUNDATION_PRODUCTION_WPS.md).
+M0 is deliberately small. It establishes the truthful gameplay camera/scale/interaction baseline that the graphical factories must serve.
 
-This gate asks whether we can repeatedly produce the game, not whether we reproduced old infrastructure.
+**Limit:** Unity opens; GC2 Core works; player/camera; one short port-town route; one door/hotspot; one examinable object; one NPC; real interaction. Arkus absent. Dialogue/Inventory/Quests/Behavior/Melee/Perception are not M0 requirements.
 
-## M0 — GC2 Walking Street
+**PASS:** owner can walk the route, interact with object/world and interact with the NPC in Play Mode. Proxies must be explicit; M0 cannot pretend dressed cubes are final architecture.
 
-**Limit:** Unity opens; GC2 Core works; third-person player/camera; one short port-town street; one door/hotspot; one examinable object; one NPC; real GC2 interaction. Arkus absent. Dialogue/Inventory/Quests/Behavior/Melee/Perception are not M0 requirements.
+## Production factory phase
 
-**PASS:** the player can open the project, walk the street, approach an NPC/object and interact in Play Mode.
+After M0:
 
-The street should already respect the migrated Visual Bible enough to avoid proving gameplay inside an obviously misleading cube test, but M0 does not require final art breadth.
+1. `PROD-ASSET-00` first;
+2. ENV/CHAR/ANIM factories in parallel;
+3. Dialogue/UI in parallel from M0;
+4. batch scale proofs;
+5. integrated keeper block;
+6. fresh-production Gate.
+
+See [`POST_FOUNDATION_PRODUCTION_WPS.md`](POST_FOUNDATION_PRODUCTION_WPS.md) for the high-level rationale and [`../workpacks/README.md`](../workpacks/README.md) for executable DAG/contracts.
 
 ## Tooling boundary
 
-The pause on production is lifted by the authoring decision: M0 and the production lanes proceed with the MCP operator.
+- default: operator + GC2 native + source corpus + lightweight factory tooling/validation;
+- build small scripts/templates when they eliminate repeated work;
+- use Blender/derived assets where source components need real adaptation;
+- still defer giant scenario generators, universal character generators, H1-style lifecycle infrastructure and tooling whose only justification is elegance rather than throughput/quality.
 
-- **default:** operator + GC2 native + briefs/recipes + small validations;
-- **still defer:** bespoke scenario generators, large character factories, H1-style lifecycle infrastructure, or other heavy tooling, until the operator's revisit trigger (after `PROD-ENV-01`) shows a concrete gap it cannot close.
+The operator decision is revisited with actual factory evidence after ENV batch proof, not by theoretical architecture comparison.
