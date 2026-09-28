@@ -11,19 +11,35 @@ juego-def has a repeatable civilian-character factory that can transform the adm
 
 The factory must make **adding another ordinary civilian routine production work**. Hero/narrative characters may use bespoke treatment later.
 
+## Binding research input — mandatory
+
+Consume [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md) before implementing a custom character/wardrobe generator.
+
+Retain `Docs/evidence/WP-PROD-CHAR-01/REUSE_DECISIONS.md` covering at minimum:
+
+1. Universal Base Characters as the shared-body/rig baseline hypothesis;
+2. real Modular Character Outfits adaptation/donor tests;
+3. a bounded reproduction of the useful Chilyer `blender-character-pipeline` techniques on our actual source family;
+4. Tinqs staged garment architecture as `REFERENCE_ONLY` unless exact code licensing is verified;
+5. Avelune composition/shared-animation architecture as a reference before duplicating packaging logic;
+6. only the missing repetitive steps should become juego-def-specific tooling.
+
+A candidate may be rejected; reinvention without evaluation is not acceptable.
+
 ## Required factory outputs
 
 By PASS, retain:
 
 1. `CHAR_FACTORY.md` — authoritative production workflow;
-2. accepted base body/rig/avatar families;
-3. machine-readable compatibility matrix for body/rig/wardrobe/accessory families actually used;
-4. reusable wardrobe/material/palette variation mechanism;
-5. prefab/variant creation template or small batch tool;
-6. clipping/scale/material/avatar validation path;
-7. Blender/source adaptation route for donor garments/meshes when useful;
-8. semantic tags for civilian roles/silhouettes;
-9. a non-trivial seed batch proving the factory.
+2. `REUSE_DECISIONS.md`;
+3. accepted base body/rig/avatar families;
+4. machine-readable compatibility matrix for body/rig/wardrobe/accessory families actually used;
+5. reusable wardrobe/material/palette variation mechanism;
+6. prefab/variant creation template or small batch tool;
+7. clipping/scale/material/avatar validation path;
+8. Blender/source adaptation route for donor garments/meshes when useful;
+9. semantic tags for civilian roles/silhouettes;
+10. a non-trivial seed batch proving the factory.
 
 ## Minimum seed batch
 
@@ -71,6 +87,7 @@ These are production roles, not narrative biographies.
 
 Use the simplest mix of:
 
+- existing/adapted pipeline techniques;
 - catalogue metadata;
 - prefab variants/templates;
 - material/palette presets;
@@ -97,6 +114,7 @@ For every generated civilian, cheaply check where relevant:
 
 Retain under `Docs/evidence/WP-PROD-CHAR-01/`:
 
+- `REUSE_DECISIONS.md`;
 - factory workflow;
 - compatibility matrix;
 - seed batch inventory + lineage;
@@ -109,6 +127,7 @@ Retain under `Docs/evidence/WP-PROD-CHAR-01/`:
 
 PASS when:
 
+- relevant existing character/wardrobe pipelines were tested or explicitly dispositioned before equivalent custom tooling was built;
 - 6+ distinct seed civilians are produced through one repeatable factory;
 - compatibility/adaptation is encoded rather than remembered ad hoc;
 - routine generation does not require unexplained manual mesh/rig repair;
@@ -118,7 +137,7 @@ PASS when:
 
 ## FAIL
 
-FAIL if six characters are unrelated one-offs, wardrobe compatibility remains tribal knowledge, fantasy/source identity dominates final civilians, most variants need bespoke repair, or tooling effort expands into an unnecessary universal character system.
+FAIL if six characters are unrelated one-offs, wardrobe compatibility remains tribal knowledge, audited reusable techniques were skipped in favor of unexplained custom tooling, fantasy/source identity dominates final civilians, most variants need bespoke repair, or tooling effort expands into an unnecessary universal character system.
 
 ## Handoff
 
