@@ -5,12 +5,12 @@ Purpose: retain the high-level decomposition while executable requirements live 
 
 ## Current production strategy
 
-juego-def builds two complementary foundations before environment production becomes serious:
+juego-def has completed the two complementary foundations required before environment production becomes serious:
 
-1. **production substrate** — searchable lawful assets, existing-pipeline reuse, lineage and validators (`PROD-ASSET-00`);
+1. **production substrate** — searchable lawful assets, existing-pipeline reuse, lineage and validators (`PROD-ASSET-00`) — **accepted**;
 2. **product demand** — actual port-town/B0 spatial programme and factory-demand matrix (`CITY-URBAN-00`) — **accepted**.
 
-CITY-URBAN-00 is already complete; PROD-ASSET-00 is the remaining immediate foundation before ENV-01 can begin.
+Both are now complete. ENV-01, CHAR-01 and ANIM-01 are dependency-valid next work.
 
 The separation is:
 
@@ -36,26 +36,27 @@ The goal is **existing solution -> adapt -> minimal missing glue**.
 
 ## Executable sequence
 
-1. Current/parallel work:
-   - `WP-PROD-ASSET-00` — research spikes + shared asset catalogue/intake/lineage/validation — **remaining immediate foundation**;
-   - ~~`WP-CITY-URBAN-00`~~ — **PASS / accepted**: five-zone topology + accepted B0 route/programme/elevation + production-demand matrix;
+1. Accepted foundations:
+   - ~~`WP-PROD-ASSET-00`~~ — **PASS / accepted**: shared asset catalogue/intake/lineage/validation;
+   - ~~`WP-CITY-URBAN-00`~~ — **PASS / accepted**: five-zone topology + accepted B0 route/programme/elevation + production-demand matrix.
+2. Current graphical factory work:
+   - `ENV-01` may begin because ASSET-00 + CITY-URBAN-00 are both accepted;
+   - `CHAR-01` and `ANIM-01` may begin, prioritising B0 roles.
+3. Parallel integration/content infrastructure:
    - `WP-M0-00` — small gameplay fixture when useful;
-   - `WP-PROD-DIALOGUE-01` may start independently.
-2. After ASSET-00:
-   - `CHAR-01` and `ANIM-01` may begin, prioritising B0 roles;
-   - `ENV-01` may begin immediately because CITY-URBAN-00 is already accepted.
-3. Scale proofs:
+   - `WP-PROD-DIALOGUE-01` may progress independently.
+4. Scale proofs:
    - `ENV-02`, `CHAR-02`, `ANIM-02`.
-4. `UI-01` follows Dialogue.
-5. `CITY-URBAN-01` realizes accepted B0 using M0 integration truth + accepted factories.
-6. `PROD-LOOK-GATE` runs a fresh-production challenge.
-7. Then shift to content at scale.
+5. `UI-01` follows Dialogue.
+6. `CITY-URBAN-01` realizes accepted B0 using M0 integration truth + accepted factories.
+7. `PROD-LOOK-GATE` runs a fresh-production challenge.
+8. Then shift to content at scale.
 
 ## Why CITY precedes ENV but not all factories
 
-Environment vocabulary depends strongly on topology, streets, thresholds, public/service relations, elevation and programme. ENV therefore consumes both ASSET-00 and the now-accepted CITY-URBAN-00.
+Environment vocabulary depends strongly on topology, streets, thresholds, public/service relations, elevation and programme. ENV therefore consumes both accepted ASSET-00 and accepted CITY-URBAN-00.
 
-Character and animation factories can industrialize their shared Quaternius/rig/wardrobe/UAL paths as soon as ASSET-00 is ready. They consume B0 civilian/motion roles as priorities, but do not need the full street topology to establish those pipelines.
+Character and animation factories can industrialize their shared Quaternius/rig/wardrobe/UAL paths from accepted ASSET-00. They consume B0 civilian/motion roles as priorities, but do not need the full street topology to establish those pipelines.
 
 ## CITY migration rule
 
