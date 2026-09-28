@@ -26,7 +26,7 @@ PASS: intake identity changes on texture mutation/addition and is stable otherwi
 
 The probe specifically creates a synthetic Props FBX + texture pair, verifies stable identity with unchanged bytes, mutates the texture at the same path and requires the identity to change, then adds another texture and requires identity + file count to change.
 
-Python syntax compilation of the repaired tool also passed remotely.
+Python syntax compilation of the repaired tool and the one-command refresh helper passed remotely.
 
 ## Main reconciliation
 
@@ -34,21 +34,16 @@ The repair branch was reconciled with current `main` after accepted `CITY-URBAN-
 
 ## Required bounded local vault refresh
 
-The committed `catalog.json` still reflects schema v1 because the remote Worker cannot access `C:/Juego2-Assets`. This branch is therefore **not yet frozen for Reviewer**. On the machine that owns the vault, run from repository root:
+The committed `catalog.json` still reflects schema v1 because the remote Worker cannot access `C:/Juego2-Assets`. This branch is therefore **not yet frozen for Reviewer**.
+
+The local completion has been reduced to one command from repository root:
 
 ```powershell
-python Tools/test_asset_intake_identity.py
-python Tools/asset_catalog.py build
-python Tools/asset_catalog.py install --pack medieval
-python Tools/asset_catalog.py install --pack props
-python Tools/asset_catalog.py install --pack nature
-python Tools/asset_catalog.py install --pack base
-python Tools/asset_catalog.py install --pack outfits
-python Tools/asset_catalog.py install --pack ual1
-python Tools/asset_catalog.py install --pack ual2
-python Tools/asset_catalog.py validate
+python Tools/refresh_asset_intake_evidence.py
 ```
+
+The helper does not commit, push, open Unity or modify the vault. It runs the regression probe, rebuilds the schema-v2 catalogue, refreshes all seven pack receipts, validates the complete intake and rewrites `Docs/evidence/WP-PROD-ASSET-00/VALIDATION.json` with the pack identities and final problem list.
 
 Expected completion condition: catalogue remains 796 semantic candidates unless the actual vault changed, each `sourcePacks.*.intakeIdentity` is populated, all installed receipts carry the same identities, and final Python validation reports zero problems. If candidate count or source identities differ unexpectedly, stop and inspect the vault change instead of treating it as routine refresh.
 
-After that bounded local run, commit the regenerated `catalog.json` plus refreshed validation/evidence, freeze the new exact `PRODUCT_SHA`, and request a fresh independent Reviewer.
+After that bounded local run, commit the regenerated `catalog.json` plus refreshed `VALIDATION.json`, freeze the new exact `PRODUCT_SHA`, and request a fresh independent Reviewer.
