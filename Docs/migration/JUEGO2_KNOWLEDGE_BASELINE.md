@@ -47,7 +47,10 @@ juego-def is allowed to learn from Juego2. It is not required to remain compatib
 - buy/adopt modules only when real features justify them;
 - Hub triage rule: `GC2 native -> Hub -> adapt source -> custom code`;
 - useful Hub authoring ideas exist, especially reusable Actions arguments, spatial iteration/navigation helpers and dialogue import/authoring;
-- Hub does not provide a proven whole living-city solution.
+- Hub does not provide a proven whole living-city solution;
+- Dialogue 2 is optional and materiality-driven; Core/local is a legitimate retained path;
+- no-voice dialogue presentation is a valid production baseline;
+- Alias remains `RESEARCH_PENDING` until exact documentation/source/compatibility/license evidence is available again.
 
 ### Production
 
@@ -89,6 +92,7 @@ High-value source records at migration time include:
 - `Docs/discovery/GC2_HUB_REUSE_AUDIT.md`
 - `Docs/discovery/GC2_HUB_EXTENSION_CATALOG.csv`
 - `Docs/discovery/GC2_HUB_COVERAGE_INVENTORY.csv`
+- `Docs/workpacks/GC2/WP-GC2-DIALOGUE-00.md`
 - `Docs/workpacks/ART/WP-AI-UNITY-AUTHORING-00.md`
 
 These remain historical/source evidence. The distilled juego-def documents govern this repository unless deliberately amended here.
