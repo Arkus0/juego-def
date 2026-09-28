@@ -81,5 +81,6 @@ El siguiente workpack de producción sigue siendo `WP-PROD-ASSET-00`; M0 puede a
 - [Adquisición de módulos](Docs/roadmap/GC2_MODULE_ACQUISITION.md)
 - [Baseline de migración](Docs/migration/JUEGO2_KNOWLEDGE_BASELINE.md)
 - [Quaternius production knowledge](Docs/production/QUATERNIUS_PRODUCTION_KNOWLEDGE.md)
+- [Asset catalogue and intake](Docs/asset_catalog/README.md) · [PROD-ASSET-00 evidence](Docs/evidence/WP-PROD-ASSET-00/README.md)
 - [GC2 Hub reuse knowledge](Docs/production/GC2_HUB_REUSE_KNOWLEDGE.md)
 - [Dialogue authoring knowledge](Docs/production/DIALOGUE_AUTHORING_KNOWLEDGE.md)
