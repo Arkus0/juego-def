@@ -26,7 +26,7 @@ No se acepta como objetivo visual final el patrón **greybox + assets pegados**.
 
 `juego-def` está siendo preparado como **repo de producción limpio y landing zone del conocimiento útil de Juego2**.
 
-Ya se migra aquí el conocimiento de producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub y factories post-foundation. La inversión técnica pesada queda deliberadamente en pausa hasta consumir el resultado del benchmark de authoring AI.
+Ya se migra aquí el conocimiento de producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub, dialogue authoring y factories post-foundation. La inversión técnica pesada queda deliberadamente en pausa hasta consumir el resultado del benchmark de authoring AI.
 
 El siguiente hito jugable sigue siendo **M0 — GC2 Walking Street**, pero no vamos a congelar antes un gran framework de escenarios/personajes que el operador ganador pueda volver innecesario.
 
@@ -44,3 +44,4 @@ El siguiente hito jugable sigue siendo **M0 — GC2 Walking Street**, pero no va
 - [Baseline de conocimiento migrado](Docs/migration/JUEGO2_KNOWLEDGE_BASELINE.md)
 - [Quaternius production knowledge](Docs/production/QUATERNIUS_PRODUCTION_KNOWLEDGE.md)
 - [GC2 Hub reuse knowledge](Docs/production/GC2_HUB_REUSE_KNOWLEDGE.md)
+- [Dialogue authoring knowledge](Docs/production/DIALOGUE_AUTHORING_KNOWLEDGE.md)
