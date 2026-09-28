@@ -16,9 +16,26 @@ This WP does **not** pass because one street looks good. It passes when the mach
 - Visual Bible
 - Port Town World Model
 - Quaternius Production Knowledge
+- [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md)
 - `PROD-ASSET-00` catalogue/lineage conventions
 - Production Authoring Decision (`BOUNDED_OPERATOR`)
-- retained M0 scene as gameplay-scale reference
+- bootstrap/M0 gameplay-scale evidence where available
+
+## Mandatory reuse-first spike
+
+Before writing an environment generator/exporter/material pipeline from scratch, evaluate the relevant existing research on a bounded real task and record `Docs/evidence/WP-PROD-ENV-01/REUSE_DECISIONS.md`.
+
+At minimum:
+
+1. inspect Medieval Village Source modularity and any other already-owned relevant urban/environment packs as **component libraries**, not theme locks;
+2. use `osm_building_grammar` as the first semantic-role/taxonomy reference before inventing facade/donor metadata;
+3. consume the `QuaterniusUnityUtils` spike result for collision/import work;
+4. inspect/test `codec-xyz/game_export` techniques if Blender -> Unity handoff is materially repetitive;
+5. evaluate Material Batch Tools or equivalent external batch tooling if material normalization is materially repetitive;
+6. only if repeated building assembly remains a real bottleneck, compare Auto-Building vs Geo-Buildings before building a large custom procedural solution;
+7. retain only the missing juego-def glue/templates/validators.
+
+A candidate may be rejected for compatibility, quality, license, cost or insufficient value. Silent reinvention is not allowed.
 
 ## Factory scope
 
@@ -33,20 +50,21 @@ The factory must cover the environment families needed for near-term city produc
 - materials/palette variants;
 - small interior/threshold kit sufficient for enterable edges.
 
-Not every family needs a custom generator. The factory is the **combined production path**: searchable source components + adaptation/derivation + templates/prefabs + assembly rules + validators + operator recipe.
+Not every family needs a custom generator. The factory is the **combined production path**: searchable source components + existing/adapted tooling + derivation + templates/prefabs + assembly rules + validators + operator recipe.
 
 ## Required factory outputs
 
 By PASS, retain:
 
 1. `ENV_FACTORY.md` — authoritative short workflow;
-2. lane-specific semantic catalogue/tags built on `PROD-ASSET-00`;
-3. reusable juego-def-owned prefab/module library;
-4. material/palette adaptation system or repeatable batch recipe;
-5. donor-component extraction / derived-asset path using Blender/source editing where needed;
-6. assembly templates/rules for facades, corners, thresholds, ground contact and repeated frontage;
-7. cheap validation for scale, missing refs/materials, obvious collision/threshold faults and illegal proxy-as-keeper states;
-8. a non-trivial **factory output batch**.
+2. `REUSE_DECISIONS.md` — what existing pipelines/tools were used, adapted, rejected or deferred and why;
+3. lane-specific semantic catalogue/tags built on `PROD-ASSET-00`;
+4. reusable juego-def-owned prefab/module library;
+5. material/palette adaptation system or repeatable batch recipe;
+6. donor-component extraction / derived-asset path using Blender/source editing where needed;
+7. assembly templates/rules for facades, corners, thresholds, ground contact and repeated frontage;
+8. cheap validation for scale, missing refs/materials, obvious collision/threshold faults and illegal proxy-as-keeper states;
+9. a non-trivial **factory output batch**.
 
 ## Minimum batch proof
 
@@ -91,7 +109,7 @@ This is not a procedural city generator. It is a vocabulary for repeatable assis
 
 ## Operator/tooling loop
 
-`semantic brief -> catalogue search -> choose/reuse/adapt/derive -> prefab/module output -> validate -> gameplay-scale preview -> correct -> admit to factory library`
+`semantic brief -> catalogue search -> reuse/spike known tooling -> choose/reuse/adapt/derive -> prefab/module output -> validate -> gameplay-scale preview -> correct -> admit to factory library`
 
 Use MCP in Unity for inspection/assembly/validation and Blender MCP/source tools for mesh derivation when materially useful. Small batch scripts/editor utilities are expected where they turn repeated manual work into routine production.
 
@@ -99,6 +117,7 @@ Use MCP in Unity for inspection/assembly/validation and Blender MCP/source tools
 
 Retain under `Docs/evidence/WP-PROD-ENV-01/`:
 
+- `REUSE_DECISIONS.md`;
 - factory workflow;
 - output inventory with lineage/reuse class;
 - captures/previews of the batch;
@@ -111,6 +130,7 @@ Retain under `Docs/evidence/WP-PROD-ENV-01/`:
 
 PASS when:
 
+- relevant existing environment pipeline/tool candidates were bounded-tested or explicitly dispositioned before equivalent custom tooling was built;
 - 15+ meaningful reusable production units exist across several environment roles;
 - operator can discover and manufacture/adapt units without owner-provided exact paths for routine cases;
 - derived assets have clean lineage and live outside vendor packages;
@@ -127,6 +147,7 @@ FAIL if:
 - every asset still needs bespoke import/material/mesh surgery;
 - operator discovery depends on exact path spoon-feeding;
 - source packages are destructively modified;
+- audited existing solutions were ignored and equivalent functionality rebuilt without evidence;
 - a huge city generator is built instead of modular production tooling.
 
 ## Handoff
