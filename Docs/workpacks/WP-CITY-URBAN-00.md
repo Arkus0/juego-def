@@ -7,33 +7,71 @@ Blocks: `WP-PROD-ENV-01`; feeds `WP-CITY-URBAN-01`
 
 ## Claim
 
-juego-def has enough accepted spatial/product definition to tell the environment factory **what it must be capable of manufacturing** and to later realize the first keeper block without inventing a different city inside Unity.
+juego-def already inherits a **reviewed port-town topology and first-block design baseline** from the accepted Juego2 `WP-CITY-URBAN-00`. This local WP exists to reconcile that solved design with current juego-def product truth and turn it into a clean factory handoff; it is **not** a greenfield repetition of the old planning exercise.
 
 This WP is planning/product work. It does not build the block and does not choose asset-pipeline implementation.
 
-## Binding inputs
+## Binding local inputs
 
 - `Docs/design/GAME_VISION.md`
 - `Docs/design/PORT_TOWN_WORLD_MODEL.md`
 - `Docs/design/VISUAL_BIBLE.md`
 - `Docs/design/CITY_PRODUCTION_KNOWLEDGE.md`
-- existing `Docs/design/FIRST_KEEPER_BLOCK_B0.md` draft/baseline
+- `Docs/design/FIRST_KEEPER_BLOCK_B0.md`
+
+These local documents govern juego-def.
+
+## Inherited accepted evidence from Juego2
+
+Historical source evidence is the accepted Juego2 **PR #265**, `WP-CITY-URBAN-00 — port-town neighbourhood and first-block brief`, reviewed on exact candidate `189f675a5bc16b99106a2848cd637761e46d2ef1` with independent **PASS**.
+
+That accepted work already established, at planning fidelity:
+
+- five connected production neighbourhoods;
+- B0 Mercado–Muelle as the first keeper block;
+- B0 lodging, market/activity, shop/witness, commercial, port threshold, overlook and upper-route roles;
+- public/service/private truth;
+- direct + alternate routes and genuine cycles;
+- expansion seams;
+- third-person route/readability questions to be proved physically later;
+- the rule that provisional plan coordinates are not keeper geometry.
+
+Later Juego2 product amendments superseded details such as the provisional town name and nightlife distribution. Those current product decisions are already distilled into juego-def local documents and win over the historical wording.
+
+### Default inherited town topology
+
+Treat this as the **starting semantic adjacency**, not measured geometry and not a frozen final street map:
+
+| Relation | Role |
+| --- | --- |
+| `MERCADO <-> MUELLE` | primary public commercial-to-port connection |
+| `MERCADO <-> MUELLE` | secondary/alternate pedestrian lookout-waterside relation |
+| `MERCADO <-> CASCO` | uphill old-town connection |
+| `MERCADO <-> VIVIENDAS` | main everyday residential connection |
+| `CASCO <-> VIVIENDAS` | quieter upper/residential relation |
+| `MUELLE <-> TALLERES` | working-waterfront relation with public edge distinct from controlled yards |
+| `VIVIENDAS <-> TALLERES` | work-to-home connector preventing universal Mercado routing |
+| `CASCO <-> MUELLE` | optional future direct descent candidate; not required for B0 |
+
+This gives a later genuine loop through `CASCO–MERCADO–MUELLE–TALLERES–VIVIENDAS–CASCO` without forcing every cross-town routine through one hub.
+
+Reopen or replace this topology only if current juego-def product truth or later physical/play evidence materially contradicts it.
 
 ## Required outputs
 
-### 1. Five-zone town topology
+### 1. Reconciled five-zone topology
 
-Publish/retain a compact semantic topology showing how:
+Confirm or minimally amend the inherited topology for the current product:
 
 - CASCO;
 - MERCADO;
 - MUELLE;
 - TALLERES;
-- VIVIENDAS
+- VIVIENDAS.
 
-relate spatially and functionally.
+Record only changes that are actually needed. Do **not** redraw the whole town merely to reproduce accepted work.
 
-It must be enough to understand:
+The retained topology must still make clear:
 
 - which zones directly touch;
 - which connections are primary vs secondary/quiet/service;
@@ -44,17 +82,17 @@ It must be enough to understand:
 
 Do **not** freeze a full street map of all five zones before production evidence exists.
 
-### 2. B0 first-block decision
+### 2. B0 first-block reconciliation
 
-Validate and, where necessary, amend `FIRST_KEEPER_BLOCK_B0.md` as the actual first keeper-block brief.
+Treat `FIRST_KEEPER_BLOCK_B0.md` as a migrated accepted baseline rather than an unproven blank-slate hypothesis.
 
-Default remains **Mercado–Muelle seam** because it exercises commercial frontage, working-port identity, public/controlled thresholds, elevation, ordinary population, investigation and route loops in one bounded piece.
+Default remains **Mercado–Muelle seam** because the accepted Juego2 planning already showed why it exercises commercial frontage, working-port identity, public/controlled thresholds, elevation, ordinary population, investigation and route loops in one bounded piece.
 
-If another location materially dominates, record the reason and update the brief rather than silently drifting during ENV/CITY-URBAN-01 execution.
+Only replace B0 if new local evidence materially dominates that accepted result. Record the reason rather than silently drifting during ENV/CITY-URBAN-01 execution.
 
 ### 3. Route + game-space brief
 
-B0 must define enough to constrain production:
+Confirm that B0 retains enough to constrain production:
 
 - semantic anchors/destinations;
 - direct route and at least one meaningful cycle/alternate path;
@@ -66,9 +104,11 @@ B0 must define enough to constrain production:
 - a coherent local elevation concept and key vertical relationships;
 - likely conversation/observation/follow/chase pockets without implementing those systems.
 
+Do not spend this WP re-proving the accepted B01..B10 graph unless it is being changed.
+
 ### 4. Place/programme brief
 
-Define the physical homes required by B0, including at minimum:
+Confirm the physical homes required by B0, including at minimum:
 
 - lodging/return anchor;
 - market/everyday activity space;
@@ -91,7 +131,7 @@ Importance and spatial depth must remain independent.
 
 ### 5. Production-demand matrix
 
-Publish the demand handed to factories.
+This is the main genuinely unfinished output of the local WP: publish the demand handed to factories and classify current coverage.
 
 #### ENV
 
@@ -120,7 +160,7 @@ Prioritize locomotion, conversation, ambient/social, work/handling, object-use a
 
 Require questioning/context, changed-return response and readable street/threshold interaction presentation.
 
-For every material demand, allow status `COVERED`, `FACTORY_REQUIRED`, `PROXY_ALLOWED_FOR_INTEGRATION`, or `DEFERRED_OUTSIDE_B0`.
+For every material demand, use status `COVERED`, `FACTORY_REQUIRED`, `PROXY_ALLOWED_FOR_INTEGRATION`, or `DEFERRED_OUTSIDE_B0`.
 
 ## CITY-07 knowledge carried forward
 
@@ -140,10 +180,11 @@ In particular:
 Retain at minimum:
 
 - final/current `FIRST_KEEPER_BLOCK_B0.md`;
-- one semantic five-zone topology diagram/table;
-- B0 route/anchor/programme summary;
+- one reconciled semantic five-zone topology table/diagram, allowed to be the inherited topology unchanged;
+- B0 route/anchor/programme confirmation or explicit amendment;
 - factory-demand matrix with coverage statuses;
-- unresolved questions intentionally deferred to physical realization/playtest.
+- unresolved questions intentionally deferred to physical realization/playtest;
+- short provenance note identifying Juego2 PR #265 as accepted source evidence and any local divergences from it.
 
 No Unity scene is required for PASS.
 
@@ -151,12 +192,14 @@ No Unity scene is required for PASS.
 
 PASS when:
 
+- accepted Juego2 CITY-URBAN-00 knowledge has been explicitly consumed rather than silently redone;
 - the five zones form a plausible connected town rather than five isolated themes;
-- B0 is clearly selected and bounded as the first keeper production customer;
+- B0 is clearly retained or explicitly replaced with evidence;
 - B0 has loops/alternate movement and is not only a corridor;
 - working-port, commercial, quiet/ordinary and access-control roles are spatially credible;
 - ENV can read the brief and know which reusable asset/assembly families to manufacture;
 - CHAR/ANIM/DIALOGUE can read their near-term role demand;
+- every material factory demand has a coverage status;
 - enough is specified to prevent ENV from manufacturing a generic fantasy/asset-pack town, but local keeper geometry remains free to improve through play;
 - no old inland geometry or H0/H1 architecture has become authoritative again.
 
@@ -164,12 +207,14 @@ PASS when:
 
 FAIL if:
 
+- the Worker treats the accepted Juego2 CITY-URBAN-00 result as if it never existed and spends the WP redesigning the same topology without causal evidence;
 - the output is only five zone names with no meaningful connections;
 - B0 remains a vague “make a nice port street” instruction;
 - every meaningful place/route is funnelled through one hub;
 - the factory-demand matrix is missing, so ENV still has to guess what the city needs;
 - the plan attempts to freeze the full final town before production/play evidence;
-- old Puente Viejo/CITY IDs are copied as final geography by convenience.
+- old Puente Viejo/CITY IDs are copied as final geography by convenience;
+- superseded `Villa Bruma` naming or old nightlife allocation is reintroduced as current truth.
 
 ## Handoff
 
