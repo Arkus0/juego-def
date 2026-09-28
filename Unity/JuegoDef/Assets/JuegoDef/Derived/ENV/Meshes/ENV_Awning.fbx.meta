@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_Metal_Galvanised
+    second: {fileID: 2100000, guid: c19fb6c27a3c47448bf507b27090be48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Metal_Iron
     second: {fileID: 2100000, guid: 36e138e812f88604d859c298a98660f4, type: 2}
   materials:

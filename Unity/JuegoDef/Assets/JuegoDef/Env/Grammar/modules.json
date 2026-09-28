@@ -24,7 +24,15 @@
     "ENV_Mooring_Line",
     "ENV_Buoy",
     "ENV_Parasol",
-    "ENV_Utility_Box"
+    "ENV_Utility_Box",
+    "ENV_Downpipe_Head",
+    "ENV_Downpipe_Shoe",
+    "ENV_Eave_Canecillos",
+    "ENV_Quoin_Ashlar",
+    "ENV_Escudo",
+    "ENV_Window_Wide_Ashlar",
+    "ENV_Solana_Bay",
+    "ENV_Solana_Wing"
   ],
   "boxCollider": [
     "ENV_Bollard_Mooring",
@@ -44,6 +52,9 @@
     "ENV_Net_Pile",
     "ENV_Lifebuoy_Post",
     "ENV_Sign_NoEntry"
+  ],
+  "trunkCollider": [
+    "ENV_Tree_Plaza"
   ],
   "wrappers": [
     {

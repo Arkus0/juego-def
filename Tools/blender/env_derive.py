@@ -34,6 +34,7 @@ WOOD_LIGHT = (0.72, 0.97)  # MI_WoodTrim trim-sheet band: light planks (painted 
 WOOD_DARK = (0.44, 0.66)   # MI_WoodTrim band: dark planks
 ROCK_SLAB = (0.43, 0.66)   # MI_RockTrim band: smooth grey slab (copings, kerbs, sills)
 ROCK_ASHLAR = (0.02, 0.40) # MI_RockTrim band: ashlar blocks
+ROCK_BLOCK = (0.64, 0.97)  # MI_RockTrim band: large dressed blocks (sillería; the lower band reads as brick once tinted)
 
 # Lineage classes: DONOR = geometry copied from named kit modules (listed as donors); CREATE_DERIVED = new
 # geometry textured with kit materials/trim sheets (material provenance is traced by Tools/env_catalog.py);
@@ -611,63 +612,6 @@ def gallery_bay():
     return join("ENV_Gallery_Bay", parts)
 
 
-@recipe("ENV_Shop_Fascia", "ORIGINAL")
-def shop_fascia():
-    """Blank painted fascia board over a shop opening (typography stays out of ENV): board + moulded frame."""
-    parts = [
-        box("board", (-0.92, 2.46, WALL_FACE), (0.92, 2.9, WALL_FACE + 0.05), "ENV_Sign_Board", bevel=0.01),
-        box("capT", (-0.95, 2.88, WALL_FACE), (0.95, 2.93, WALL_FACE + 0.09), "MI_WoodTrim", uv="band", band=WOOD_LIGHT),
-        box("capB", (-0.95, 2.43, WALL_FACE), (0.95, 2.47, WALL_FACE + 0.08), "MI_WoodTrim", uv="band", band=WOOD_LIGHT),
-    ]
-    return join("ENV_Shop_Fascia", parts)
-
-
-@recipe("ENV_Sign_Bracket", "ORIGINAL")
-def sign_bracket():
-    """Projecting blade sign on a wrought-iron bracket, mounted at the left edge of a door bay (blank board)."""
-    y = 3.05
-    parts = [
-        box("plate", (-0.05, y - 0.35, WALL_FACE), (0.05, y + 0.1, WALL_FACE + 0.03), "ENV_Metal_Iron"),
-        box("arm", (-0.02, y, WALL_FACE), (0.02, y + 0.04, WALL_FACE + 0.85), "ENV_Metal_Iron"),
-        box("strut", (-0.015, y - 0.3, WALL_FACE + 0.02), (0.015, y - 0.26, WALL_FACE + 0.4), "ENV_Metal_Iron"),
-        box("board", (-0.025, y - 0.62, WALL_FACE + 0.22), (0.025, y - 0.08, WALL_FACE + 0.8), "ENV_Sign_Board", bevel=0.01),
-        box("hookA", (-0.01, y - 0.08, WALL_FACE + 0.3), (0.01, y, WALL_FACE + 0.32), "ENV_Metal_Iron"),
-        box("hookB", (-0.01, y - 0.08, WALL_FACE + 0.7), (0.01, y, WALL_FACE + 0.72), "ENV_Metal_Iron"),
-    ]
-    return join("ENV_Sign_Bracket", parts)
-
-
-@recipe("ENV_Awning", "ORIGINAL")
-def awning():
-    """Fixed canvas shop awning (toldo) over a 2 m bay: sloped canvas, valance, iron arms. Canvas colour is a slot."""
-    bm = bmesh.new()
-    y_wall, y_front, zf = 2.72, 2.28, 1.05
-    pts = [U(-0.95, y_wall, WALL_FACE), U(0.95, y_wall, WALL_FACE), U(0.95, y_front, zf), U(-0.95, y_front, zf)]
-    vs = [bm.verts.new(p) for p in pts]
-    bm.faces.new(vs)
-    ob = new_object("canvas", bm)
-    ob.data.materials.append(material("ENV_Canvas_Green"))
-    sol = ob.modifiers.new("t", "SOLIDIFY")
-    sol.thickness = 0.02
-    bpy.context.view_layer.objects.active = ob
-    bpy.ops.object.modifier_apply(modifier="t")
-    uv_box(ob)
-    parts = [ob, box("valance", (-0.95, y_front - 0.22, zf - 0.01), (0.95, y_front, zf + 0.01), "ENV_Canvas_Green")]
-    for sx in (-1, 1):
-        parts.append(box(f"arm{sx}", (sx * 0.9 - 0.015, 2.1, WALL_FACE), (sx * 0.9 + 0.015, 2.13, zf - 0.02), "ENV_Metal_Iron"))
-    return join("ENV_Awning", parts)
-
-
-@recipe("ENV_Downpipe", "ORIGINAL")
-def downpipe():
-    """Rain-water downpipe, 3 m per unit height (assembler scales y by storeys), with shoe and wall clips."""
-    parts = [cylinder("pipe", (0, 1.5, 0.0), 0.045, 3.0, "ENV_Metal_Downpipe", segments=8)]
-    parts.append(box("shoe", (-0.05, 0.0, -0.05), (0.05, 0.12, 0.12), "ENV_Metal_Downpipe"))
-    for y in (0.9, 2.1):
-        parts.append(box(f"clip{y}", (-0.06, y, -0.12), (0.06, y + 0.04, 0.02), "ENV_Metal_Iron"))
-    return join("ENV_Downpipe", parts)
-
-
 # ---------------------------------------------------------------- recipes: ground, elevation, waterfront
 
 @recipe("ENV_Kerb_2m", "CREATE_DERIVED")
@@ -850,28 +794,6 @@ def counter_shop():
     return join("ENV_Counter_Shop", parts)
 
 
-@recipe("ENV_Bin_Street", "ORIGINAL")
-def bin_street():
-    """Wall/post-mounted galvanised litter bin (papelera) on a short post."""
-    parts = [
-        cylinder("post", (0, 0.45, 0), 0.03, 0.9, "ENV_Metal_Iron", segments=8),
-        cylinder("bin", (0, 0.75, 0.18), 0.17, 0.45, "ENV_Metal_Galvanised", segments=12),
-        box("strap", (-0.03, 0.8, 0.0), (0.03, 0.86, 0.05), "ENV_Metal_Iron"),
-    ]
-    return join("ENV_Bin_Street", parts)
-
-
-@recipe("ENV_Bollard_Street", "ORIGINAL")
-def bollard_street():
-    """Cast-iron street bollard (pilona) 0.9 m, used to protect thresholds and pedestrian edges."""
-    parts = [
-        cylinder("body", (0, 0.42, 0), 0.08, 0.84, "ENV_Metal_Iron", segments=12),
-        sphere("cap", (0, 0.88, 0), 0.09, "ENV_Metal_Iron", segments=12),
-        cylinder("ring", (0, 0.7, 0), 0.095, 0.04, "ENV_Metal_Iron", segments=12),
-    ]
-    return join("ENV_Bollard_Street", parts)
-
-
 # ---------------------------------------------------------------- helpers for street life / vehicles / port
 
 def tube(name, a, b, radius, mat, segments=8):
@@ -1048,16 +970,6 @@ def corner_column():
 
 # ---------------------------------------------------------------- recipes: street life
 
-@recipe("ENV_Lamp_Post", "ORIGINAL")
-def lamp_post():
-    """Late-20th-century cast-iron street lamp (farola), 4 m, lantern on a short arm towards +z."""
-    parts = [cylinder("base", (0, 0.2, 0), 0.13, 0.4, "ENV_Metal_Iron", segments=10),
-             cylinder("post", (0, 2.0, 0), 0.055, 3.3, "ENV_Metal_Iron", segments=8),
-             tube("arm", (0, 3.5, 0), (0, 3.62, 0.45), 0.025, "ENV_Metal_Iron"),
-             box("lantern", (-0.14, 3.2, 0.33), (0.14, 3.55, 0.61), "ENV_Lamp_Glass"),
-             frustum("cap", (0, 3.55, 0.47), 0.22, 0.03, 0.18, "ENV_Metal_Iron", segments=4)]
-    return join("ENV_Lamp_Post", parts)
-
 
 @recipe("ENV_Sign_NoEntry", "ORIGINAL")
 def sign_no_entry():
@@ -1144,13 +1056,6 @@ def clothesline():
     for i, (x, z, w, h, m) in enumerate(cloth):
         parts.append(box(f"c{i}", (x - w / 2, -h, z - 0.006), (x + w / 2, -0.01, z + 0.006), m))
     return join("ENV_Clothesline", parts)
-
-
-@recipe("ENV_Planter_Pot", "ORIGINAL")
-def planter_pot():
-    """Terracotta planter pot (0.5 m) for doorsteps and balconies; plants are placed separately."""
-    return join("ENV_Planter_Pot", [frustum("pot", (0, 0, 0), 0.18, 0.25, 0.42, "ENV_Terracotta", segments=12),
-                                    cylinder("soil", (0, 0.4, 0), 0.22, 0.02, "ENV_Soil", segments=12)])
 
 
 @recipe("ENV_Trash_Bags", "ORIGINAL")
@@ -1248,14 +1153,6 @@ def tv_aerial():
         w = 0.4 - i * 0.03
         parts.append(tube(f"e{i}", (-w, 2.1, z), (w, 2.1, z), 0.006, "ENV_Metal_Galvanised"))
     return join("ENV_TV_Aerial", parts)
-
-
-@recipe("ENV_Utility_Box", "ORIGINAL")
-def utility_box():
-    """Electricity/gas meter cabinet fixed on a ground-floor facade (grey plastic)."""
-    return join("ENV_Utility_Box", [box("b", (-0.3, 0.6, 0.09), (0.3, 1.4, 0.3), "ENV_Plastic_Grey", bevel=0.015),
-                                    box("d", (-0.26, 0.64, 0.3), (0.26, 1.36, 0.305), "ENV_Plastic_Grey"),
-                                    box("pipe", (-0.02, 0.0, 0.12), (0.02, 0.6, 0.16), "ENV_Plastic_Grey")])
 
 
 @recipe("ENV_Cable_Run_2m", "ORIGINAL")
@@ -1443,6 +1340,467 @@ def parapet_rail():
 def mooring_line():
     """Unit mooring rope along +z (1 m); the assembler stretches it from bollard to boat."""
     return join("ENV_Mooring_Line", [tube("r", (0, 0, 0), (0, 0, 1), 0.02, "ENV_Rope")])
+
+
+# ---------------------------------------------------------------- recipes: casco quality pass (owner 2026-09-28)
+# "los assets creados propios no están al nivel de los quaternius": every piece below is modelled for the kit's
+# stylised look — chunky readable silhouettes, bevelled edges, revolved profiles instead of bare cylinders, and
+# painted textures (kit trim sheets or the generated T_ENV_* painted maps) instead of flat colours. Lebaniego
+# vocabulary for the CASCO: deep eaves on carved rafter tails (canecillos), solanas, ashlar quoins and window
+# surrounds in sandstone, a casona shield.
+
+def lathe(name, profile, mat, segments=16, center=(0.0, 0.0), band=None):
+    """Surface of revolution about the vertical axis through (x, z) = center. profile: [(radius, y), ...] bottom to
+    top; radius 0 at an end closes it to a point. UVs wrap once around (U) and follow the profile length (V)."""
+    bm = bmesh.new()
+    rings = []
+    for r, y in profile:
+        ring = []
+        for i in range(segments):
+            a = 2 * math.pi * i / segments
+            ring.append(bm.verts.new(U(center[0] + r * math.cos(a), y, center[1] + r * math.sin(a))))
+        rings.append(ring)
+    for a, b in zip(rings, rings[1:]):
+        for i in range(segments):
+            bm.faces.new([a[i], a[(i + 1) % segments], b[(i + 1) % segments], b[i]])
+    if profile[0][0] > 1e-4:
+        bm.faces.new(rings[0][::-1])
+    if profile[-1][0] > 1e-4:
+        bm.faces.new(rings[-1])
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    # cylindrical UVs: U wraps once around at kit density (perimeter of the widest ring), V runs up in metres
+    me = ob.data
+    layer = _uv_layer(me).data
+    bx, by = -center[0], -center[1]          # the axis in Blender coordinates (see U())
+    rmax = max(r for r, _ in profile) or 0.1
+    for p in me.polygons:
+        angs = [math.atan2(me.vertices[me.loops[li].vertex_index].co.y - by, me.vertices[me.loops[li].vertex_index].co.x - bx) for li in p.loop_indices]
+        if max(angs) - min(angs) > math.pi:  # face across the seam
+            angs = [a + 2 * math.pi if a < 0 else a for a in angs]
+        for li, ang in zip(p.loop_indices, angs):
+            z = me.vertices[me.loops[li].vertex_index].co.z
+            v = z * UV_PER_M
+            if band:
+                v = band[0] + (v % 1.0) * (band[1] - band[0])
+            layer[li].uv = (ang * rmax * UV_PER_M, v)
+    return ob
+
+
+def rafter(name, x, z0, z1, top0, slope, w, h, mat, carve=True):
+    """Timber rafter/joist tail running out along +z: top follows y = top0 - slope*(z - z0); the tip is carved
+    (bottom rises in a quarter round) as on lebaniego eaves."""
+    xs = (x - w / 2, x + w / 2)
+    secs = []
+    n = 6
+    for k in range(n + 1):
+        t = k / n
+        z = z0 + (z1 - z0) * t
+        top = top0 - slope * (z - z0)
+        if carve and t > 0.55:
+            q = (t - 0.55) / 0.45
+            bot = top - max(0.035, h * math.cos(q * math.pi / 2) ** 0.8)
+        else:
+            bot = top - h
+        secs.append((z, [(xs[0], bot), (xs[1], bot), (xs[1], top), (xs[0], top)]))
+    ob = loft(name, secs, mat)
+    uv_band(ob, WOOD_DARK)
+    return ob
+
+
+@recipe("ENV_Downpipe", "ORIGINAL")
+def downpipe():
+    """Rain-water downpipe, 3 m per unit height (the assembler scales y by storeys): painted iron pipe with socket
+    collars and wall brackets. Hopper head and shoe are separate modules so scaling never stretches them."""
+    parts = [lathe("pipe", [(0.05, 0.0), (0.05, 3.0)], "ENV_Metal_Downpipe", segments=12)]
+    for y in (0.5, 1.5, 2.5):
+        parts.append(lathe(f"socket{y}", [(0.058, y - 0.05), (0.064, y - 0.035), (0.064, y + 0.035), (0.058, y + 0.05)], "ENV_Metal_Downpipe", segments=12))
+        parts.append(box(f"clip{y}", (-0.018, y - 0.02, -0.14), (0.018, y + 0.02, -0.045), "ENV_Metal_Iron", bevel=0.005))
+    return join("ENV_Downpipe", parts)
+
+
+@recipe("ENV_Downpipe_Head", "ORIGINAL")
+def downpipe_head():
+    """Hopper head (embudo) under the eave: flared box collecting the gutter, short neck into the pipe. Pipe top at
+    y = 0; the hopper sits above it."""
+    parts = []
+    secs = [(y, [(-w, -d), (w, -d), (w, d), (-w, d)]) for y, w, d in ((0.0, 0.06, 0.06), (0.1, 0.07, 0.07), (0.28, 0.15, 0.11), (0.32, 0.16, 0.12))]
+    bm = bmesh.new()
+    rings = [[bm.verts.new(U(x, y, z - 0.03)) for x, z in pts] for y, pts in secs]
+    for a, b in zip(rings, rings[1:]):
+        for i in range(4):
+            bm.faces.new([a[i], a[(i + 1) % 4], b[(i + 1) % 4], b[i]])
+    bm.faces.new(rings[0][::-1])
+    bm.faces.new(rings[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    hop = new_object("hopper", bm)
+    hop.data.materials.append(material("ENV_Metal_Downpipe"))
+    uv_box(hop)
+    parts.append(hop)
+    parts.append(lathe("rim", [(0.0, 0.32), (0.17, 0.32), (0.17, 0.35), (0.0, 0.35)], "ENV_Metal_Iron", segments=4))
+    parts.append(box("outlet", (-0.04, 0.24, -0.16), (0.04, 0.3, -0.09), "ENV_Metal_Downpipe", bevel=0.005))
+    return join("ENV_Downpipe_Head", parts)
+
+
+@recipe("ENV_Downpipe_Shoe", "ORIGINAL")
+def downpipe_shoe():
+    """Pipe shoe (zapata): the pipe kicks forward at the foot and ends in a cast-iron boot over the channel."""
+    parts = [tube("kick", (0, 0.42, 0), (0, 0.16, 0.12), 0.05, "ENV_Metal_Downpipe", segments=12),
+             lathe("boot", [(0.075, 0.0), (0.08, 0.04), (0.066, 0.18), (0.058, 0.2)], "ENV_Metal_Iron", segments=12, center=(0.0, 0.14)),
+             lathe("socket", [(0.058, 0.36), (0.066, 0.38), (0.066, 0.44), (0.058, 0.46)], "ENV_Metal_Downpipe", segments=12)]
+    return join("ENV_Downpipe_Shoe", parts)
+
+
+@recipe("ENV_Awning", "ORIGINAL")
+def awning():
+    """Shop awning (toldo) over a 2 m bay: striped canvas on a gentle convex curve, scalloped valance, iron arms and
+    front bar. The canvas slot (ENV_Canvas_*) carries the stripes; one texture tile across the bay = 4 stripes."""
+    y_wall, y_front, z_wall, z_front = 2.74, 2.26, WALL_FACE + 0.02, 1.05
+    n = 6
+    bm = bmesh.new()
+    cols = []
+    for k in range(n + 1):
+        t = k / n
+        z = z_wall + (z_front - z_wall) * t
+        y = y_wall + (y_front - y_wall) * t + 0.06 * math.sin(t * math.pi)  # slight belly
+        cols.append((z, y))
+    xs = [-0.95 + 1.9 * i / 8 for i in range(9)]
+    grid = [[bm.verts.new(U(x, y, z)) for x in xs] for z, y in cols]
+    for a, b in zip(grid, grid[1:]):
+        for i in range(len(xs) - 1):
+            bm.faces.new([a[i], a[i + 1], b[i + 1], b[i]])
+    # valance with scallops: 5 tongues along the front edge
+    zf, yf = cols[-1]
+    val = []
+    m = 40
+    for i in range(m + 1):
+        x = -0.95 + 1.9 * i / m
+        s = abs(math.sin(i / m * 5 * math.pi))
+        val.append((x, yf - 0.16 - 0.06 * s))
+    top = [bm.verts.new(U(x, yf, zf + 0.004)) for x, _ in val]
+    bot = [bm.verts.new(U(x, y, zf + 0.004)) for x, y in val]
+    for i in range(m):
+        bm.faces.new([top[i], top[i + 1], bot[i + 1], bot[i]])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    canvas = new_object("canvas", bm)
+    canvas.data.materials.append(material("ENV_Canvas_Green"))
+    sol = canvas.modifiers.new("t", "SOLIDIFY")
+    sol.thickness = 0.012
+    bpy.context.view_layer.objects.active = canvas
+    bpy.ops.object.modifier_apply(modifier="t")
+    me = canvas.data
+    layer = _uv_layer(me).data
+    for p in me.polygons:
+        for li in p.loop_indices:
+            co = me.vertices[me.loops[li].vertex_index].co
+            layer[li].uv = ((-co.x + 0.95) / 1.9, (co.z + (-co.y)) * 0.6)  # U across the bay, V down the slope
+    parts = [canvas]
+    for sx in (-1, 1):
+        parts.append(tube(f"arm{sx}", (sx * 0.9, 2.02, WALL_FACE), (sx * 0.9, yf - 0.03, zf - 0.02), 0.014, "ENV_Metal_Iron"))
+        parts.append(box(f"plate{sx}", (sx * 0.9 - 0.04, 1.96, WALL_FACE - 0.01), (sx * 0.9 + 0.04, 2.1, WALL_FACE + 0.015), "ENV_Metal_Iron", bevel=0.004))
+    parts.append(tube("bar", (-0.95, yf - 0.03, zf - 0.02), (0.95, yf - 0.03, zf - 0.02), 0.018, "ENV_Metal_Iron", segments=8))
+    parts.append(box("roller", (-0.97, y_wall - 0.02, WALL_FACE), (0.97, y_wall + 0.12, WALL_FACE + 0.12), "ENV_Metal_Galvanised", bevel=0.03))
+    return join("ENV_Awning", parts)
+
+
+@recipe("ENV_Lamp_Post", "ORIGINAL")
+def lamp_post():
+    """Cast-iron street lamp in the classic Spanish 'fernandina' line (about 3.9 m): moulded base, fluted-looking
+    tapering shaft with collars, four-sided lantern with a pyramid hood and finial."""
+    prof = [(0.21, 0.0), (0.21, 0.08), (0.17, 0.12), (0.17, 0.22), (0.14, 0.26), (0.155, 0.36), (0.12, 0.46), (0.085, 0.62),
+            (0.07, 0.8), (0.062, 2.6), (0.058, 2.95), (0.08, 2.98), (0.08, 3.04), (0.06, 3.07), (0.05, 3.2), (0.09, 3.24), (0.09, 3.28), (0.0, 3.28)]
+    parts = [lathe("post", prof, "ENV_Metal_Iron", segments=14)]
+    # lantern: glass body tapering out, iron corner bars, hood and finial
+    secs = [(3.28, 0.12), (3.72, 0.19)]
+    bm = bmesh.new()
+    rings = [[bm.verts.new(U(x * r, y, z * r)) for x, z in ((-1, -1), (1, -1), (1, 1), (-1, 1))] for y, r in secs]
+    for i in range(4):
+        bm.faces.new([rings[0][i], rings[0][(i + 1) % 4], rings[1][(i + 1) % 4], rings[1][i]])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    glass = new_object("glass", bm)
+    glass.data.materials.append(material("ENV_Lamp_Glass"))
+    uv_box(glass)
+    parts.append(glass)
+    for cx, cz in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
+        parts.append(tube(f"bar{cx}{cz}", (cx * 0.12, 3.28, cz * 0.12), (cx * 0.19, 3.72, cz * 0.19), 0.012, "ENV_Metal_Iron", segments=6))
+    parts.append(box("gallery", (-0.15, 3.24, -0.15), (0.15, 3.3, 0.15), "ENV_Metal_Iron", bevel=0.01))
+    hood = [(0.23, 3.72), (0.23, 3.76), (0.0, 3.98)]
+    parts.append(lathe("hood", hood, "ENV_Metal_Iron", segments=4))
+    parts.append(lathe("finial", [(0.02, 3.96), (0.035, 4.0), (0.0, 4.08)], "ENV_Metal_Iron", segments=8))
+    return join("ENV_Lamp_Post", parts)
+
+
+@recipe("ENV_Bollard_Street", "ORIGINAL")
+def bollard_street():
+    """Cast-iron street bollard (pilona), 0.95 m: moulded foot, slightly tapering body, collar and domed cap."""
+    prof = [(0.12, 0.0), (0.12, 0.05), (0.095, 0.09), (0.085, 0.12), (0.078, 0.68), (0.098, 0.7), (0.098, 0.76), (0.075, 0.79),
+            (0.08, 0.84), (0.07, 0.9), (0.04, 0.94), (0.0, 0.95)]
+    return join("ENV_Bollard_Street", [lathe("b", prof, "ENV_Metal_Iron", segments=14)])
+
+
+@recipe("ENV_Bin_Street", "CREATE_DERIVED")
+def bin_street():
+    """Rustic litter bin: ring of dark timber slats (kit MI_WoodTrim dark band) bound by two iron hoops, iron rim,
+    dark liner inside. Free-standing, 0.8 m."""
+    parts = []
+    n = 14
+    r = 0.22
+    for i in range(n):
+        a = 2 * math.pi * i / n
+        x, z = r * math.cos(a), r * math.sin(a)
+        slat = box(f"s{i}", (-0.042, 0.02, -0.018), (0.042, 0.78, 0.018), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.006)
+        slat.rotation_euler = (0, 0, a + math.pi / 2)  # long side tangent to the ring (see U())
+        slat.location = U(x, 0, z)
+        apply_transform(slat)
+        parts.append(slat)
+    for y in (0.14, 0.64):
+        parts.append(lathe(f"hoop{y}", [(0.245, y), (0.252, y + 0.01), (0.252, y + 0.05), (0.245, y + 0.06)], "ENV_Metal_Iron", segments=16))
+    parts.append(lathe("rim", [(0.2, 0.76), (0.255, 0.77), (0.255, 0.81), (0.2, 0.82)], "ENV_Metal_Iron", segments=16))
+    parts.append(lathe("liner", [(0.0, 0.08), (0.19, 0.08), (0.2, 0.78)], "ENV_Metal_Iron", segments=12))
+    return join("ENV_Bin_Street", parts)
+
+
+@recipe("ENV_Utility_Box", "ORIGINAL")
+def utility_box():
+    """Meter cabinet (hornacina de contadores) on a ground-floor facade: galvanised steel box with a recessed door,
+    hinges, lock, louvres and the service conduit down to the ground."""
+    z0, z1 = WALL_FACE, WALL_FACE + 0.2
+    parts = [box("body", (-0.32, 0.55, z0), (0.32, 1.45, z1), "ENV_Metal_Galvanised", bevel=0.02),
+             box("door", (-0.27, 0.6, z1 - 0.004), (0.27, 1.4, z1 + 0.012), "ENV_Metal_Shutter", bevel=0.008),
+             box("roof", (-0.34, 1.44, z0), (0.34, 1.49, z1 + 0.04), "ENV_Metal_Galvanised", bevel=0.01)]
+    for y in (0.72, 1.28):
+        parts.append(box(f"hinge{y}", (-0.3, y, z1), (-0.26, y + 0.07, z1 + 0.03), "ENV_Metal_Iron", bevel=0.004))
+    parts.append(box("lock", (0.19, 0.98, z1 + 0.01), (0.23, 1.06, z1 + 0.035), "ENV_Metal_Iron", bevel=0.004))
+    for k in range(4):
+        y = 1.18 + k * 0.045
+        parts.append(box(f"louvre{k}", (-0.16, y, z1 + 0.01), (0.16, y + 0.02, z1 + 0.03), "ENV_Metal_Galvanised"))
+    parts.append(box("plate", (-0.08, 0.72, z1 + 0.01), (0.08, 0.8, z1 + 0.018), "ENV_Sign_Board"))
+    parts.append(lathe("conduit", [(0.022, 0.0), (0.022, 0.56)], "ENV_Metal_Iron", segments=8, center=(0.0, z0 + 0.06)))
+    return join("ENV_Utility_Box", parts)
+
+
+@recipe("ENV_Sign_Bracket", "ORIGINAL")
+def sign_bracket():
+    """Hanging shop sign on a wrought-iron bracket (the Pyrenean/lebaniego street's signature): wall plate, top bar,
+    a scrolled strut, two rings and a painted board in a moulded dark-timber frame (blank: no lettering in ENV)."""
+    y = 3.05
+    parts = [box("plate", (-0.06, y - 0.4, WALL_FACE - 0.005), (0.06, y + 0.12, WALL_FACE + 0.025), "ENV_Metal_Iron", bevel=0.008),
+             tube("bar", (0, y + 0.03, WALL_FACE), (0, y + 0.03, WALL_FACE + 0.9), 0.016, "ENV_Metal_Iron"),
+             sphere("knob", (0, y + 0.03, WALL_FACE + 0.92), 0.03, "ENV_Metal_Iron", segments=8)]
+    # scrolled strut: from low on the plate up to the bar, ending in a spiral curl
+    pts = []
+    for k in range(13):
+        t = k / 12
+        pts.append((0.0, y - 0.36 + 0.36 * t ** 0.7, WALL_FACE + 0.02 + 0.5 * t))
+    curl_c = (0.0, y - 0.1, WALL_FACE + 0.36)
+    for k in range(14):
+        a = math.pi * 0.2 + k / 13 * math.pi * 1.6
+        rr = 0.09 * (1 - k / 18)
+        pts.append((0.0, curl_c[1] + rr * math.sin(a), curl_c[2] - rr * math.cos(a)))
+    for i, (a, b) in enumerate(zip(pts, pts[1:])):
+        parts.append(tube(f"sc{i}", a, b, 0.011, "ENV_Metal_Iron", segments=6))
+    for zz in (WALL_FACE + 0.3, WALL_FACE + 0.78):
+        parts.append(torus(f"ring{zz}", (0, y - 0.03, zz), 0.035, 0.007, "ENV_Metal_Iron", axis="x", segments=10))
+    bx0, bx1, by0, by1 = WALL_FACE + 0.22, WALL_FACE + 0.86, y - 0.62, y - 0.08
+    parts.append(box("board", (-0.022, by0 + 0.04, bx0 + 0.04), (0.022, by1 - 0.04, bx1 - 0.04), "ENV_Sign_Board", bevel=0.004))
+    for nm, lo, hi in (("fT", (-0.032, by1 - 0.05, bx0), (0.032, by1, bx1)), ("fB", (-0.032, by0, bx0), (0.032, by0 + 0.05, bx1)),
+                       ("fL", (-0.032, by0, bx0), (0.032, by1, bx0 + 0.05)), ("fR", (-0.032, by0, bx1 - 0.05), (0.032, by1, bx1))):
+        parts.append(box(nm, lo, hi, "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.008))
+    return join("ENV_Sign_Bracket", parts)
+
+
+@recipe("ENV_Shop_Fascia", "CREATE_DERIVED")
+def shop_fascia():
+    """Painted fascia board over a shop opening in a moulded timber frame with end consoles (blank board)."""
+    z = WALL_FACE
+    parts = [box("board", (-0.9, 2.47, z), (0.9, 2.88, z + 0.05), "ENV_Sign_Board", bevel=0.008),
+             box("capT", (-0.97, 2.87, z), (0.97, 2.95, z + 0.11), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.015),
+             box("capB", (-0.95, 2.42, z), (0.95, 2.48, z + 0.09), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.012)]
+    for sx in (-1, 1):
+        parts.append(loft(f"console{sx}", [(z, [(sx * 0.93 - 0.04, 2.3), (sx * 0.93 + 0.04, 2.3), (sx * 0.93 + 0.04, 2.95), (sx * 0.93 - 0.04, 2.95)]),
+                                          (z + 0.12, [(sx * 0.93 - 0.04, 2.8), (sx * 0.93 + 0.04, 2.8), (sx * 0.93 + 0.04, 2.95), (sx * 0.93 - 0.04, 2.95)])], "MI_WoodTrim"))
+        uv_band(parts[-1], WOOD_DARK)
+    return join("ENV_Shop_Fascia", parts)
+
+
+@recipe("ENV_Planter_Pot", "ORIGINAL")
+def planter_pot():
+    """Terracotta planter pot (0.45 m): foot ring, flared body, rolled rim; soil top. Plants are placed separately."""
+    prof = [(0.0, 0.0), (0.15, 0.0), (0.16, 0.03), (0.155, 0.05), (0.19, 0.2), (0.225, 0.36), (0.25, 0.37), (0.255, 0.42), (0.235, 0.43), (0.215, 0.41)]
+    return join("ENV_Planter_Pot", [lathe("pot", prof, "ENV_Terracotta", segments=16),
+                                    lathe("soil", [(0.0, 0.39), (0.215, 0.39)], "ENV_Soil", segments=16)])
+
+
+@recipe("ENV_Tree_Plaza", "ORIGINAL")
+def tree_plaza():
+    """Plaza tree (plane/lime, pollarded): tapering trunk with bark (Nature pack bark), three limbs and a solid
+    painted crown of clustered lobes — no alpha cards (owner: card crowns read as big cards)."""
+    import random
+    rnd = random.Random(5)
+    parts = [lathe("trunk", [(0.22, 0.0), (0.17, 0.25), (0.15, 1.2), (0.13, 2.4), (0.1, 2.9)], "ENV_Src_Bark_NormalTree", segments=10)]
+    limbs = [((0, 2.5, 0), (0.9, 4.0, 0.3)), ((0, 2.6, 0), (-0.7, 4.2, 0.6)), ((0, 2.7, 0), (0.1, 4.3, -0.9))]
+    for i, (a, b) in enumerate(limbs):
+        parts.append(tube(f"limb{i}", a, b, 0.07, "ENV_Src_Bark_NormalTree", segments=7))
+    lobes = [(0.0, 4.9, 0.0, 1.5), (1.1, 4.4, 0.4, 1.15), (-0.9, 4.5, 0.7, 1.1), (0.2, 4.6, -1.1, 1.1), (0.9, 5.2, -0.6, 0.95),
+             (-0.8, 5.3, -0.4, 0.95), (-0.2, 5.6, 0.6, 1.0), (0.5, 4.0, 1.0, 0.8)]
+    for i, (x, y, z, r) in enumerate(lobes):
+        parts.append(lump(f"lobe{i}", (x, y - r * 0.55, z), (r, r * 0.85, r), "ENV_Foliage", seed=10 + i, rough=0.12))
+    return join("ENV_Tree_Plaza", parts)
+
+
+# ---- lebaniego vocabulary
+
+EAVE_SLOPE = 0.48  # kit roof underside at the front: falls 0.48 m per m (measured on the 6 m eaves roof, pitch 0.45)
+
+
+@recipe("ENV_Eave_Canecillos", "CREATE_DERIVED")
+def eave_canecillos():
+    """Lebaniego deep eave for one 2 m bay, fitted under the kit roof overhang: timber boarding (tablazón) following
+    the roof underside, five carved rafter tails (canecillos) and the wall plate. y = 0 is the facade top (floors x
+    3 m), the street face is at z = WALL_FACE. Kit MI_WoodTrim trim sheet (palette joinery: chestnut)."""
+    z0, z1 = WALL_FACE, 0.88
+    parts = []
+    # boarding: thin sloped plank surface just under the roof
+    bm = bmesh.new()
+    pts = [(-1.0, z0), (1.0, z0), (1.0, z1), (-1.0, z1)]
+    top = [bm.verts.new(U(x, -0.045 - EAVE_SLOPE * (z - z0), z)) for x, z in pts]
+    bot = [bm.verts.new(U(x, -0.075 - EAVE_SLOPE * (z - z0), z)) for x, z in pts]
+    bm.faces.new(top)
+    bm.faces.new(bot[::-1])
+    for i in range(4):
+        bm.faces.new([top[i], bot[i], bot[(i + 1) % 4], top[(i + 1) % 4]])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    boards = new_object("boards", bm)
+    boards.data.materials.append(material("MI_WoodTrim"))
+    uv_band(boards, WOOD_LIGHT)
+    parts.append(boards)
+    for i, x in enumerate((-0.8, -0.4, 0.0, 0.4, 0.8)):
+        parts.append(rafter(f"can{i}", x, z0, z1 - 0.04, -0.075, EAVE_SLOPE, 0.11, 0.17, "MI_WoodTrim"))
+    parts.append(box("plate", (-1.0, -0.26, z0 - 0.02), (1.0, -0.075, z0 + 0.13), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.01))
+    return join("ENV_Eave_Canecillos", parts)
+
+
+@recipe("ENV_Solana_Bay", "CREATE_DERIVED")
+def solana_bay():
+    """Solana for one 2 m bay of the top floor (slot frame, y = 0 at the floor): board floor on carved joist tails,
+    front fascia, balustrade of turned balusters between rails, a post at the bay's left edge rising to the eave with
+    a zapata. Bays chain along the facade; ENV_Solana_Wing closes the ends. Kit MI_WoodTrim (palette joinery)."""
+    zf = 1.0
+    parts = [box("floor", (-1.0, -0.02, WALL_FACE - 0.02), (1.0, 0.06, zf), "MI_WoodTrim", uv="band", band=WOOD_LIGHT, bevel=0.008),
+             box("fascia", (-1.0, -0.12, zf - 0.03), (1.0, 0.06, zf + 0.02), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.006)]
+    for i, x in enumerate((-0.66, 0.0, 0.66)):
+        parts.append(rafter(f"joist{i}", x, WALL_FACE, zf + 0.12, -0.02, 0.0, 0.1, 0.18, "MI_WoodTrim"))
+    rail_z = zf - 0.07
+    parts.append(box("rail_b", (-1.0, 0.07, rail_z - 0.04), (1.0, 0.13, rail_z + 0.04), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.008))
+    parts.append(box("rail_t", (-1.0, 0.98, rail_z - 0.055), (1.0, 1.05, rail_z + 0.055), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.012))
+    bal = [(0.02, 0.13), (0.028, 0.18), (0.022, 0.26), (0.034, 0.44), (0.036, 0.56), (0.022, 0.74), (0.028, 0.86), (0.02, 0.98)]
+    x = -0.86
+    k = 0
+    while x < 0.95:
+        parts.append(lathe(f"bal{k}", bal, "MI_WoodTrim", segments=8, center=(x, rail_z), band=WOOD_DARK))
+        x += 0.125
+        k += 1
+    parts.append(box("post", (-0.99, 0.06, rail_z - 0.06), (-0.87, 2.9, rail_z + 0.06), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.012))
+    parts.append(box("zapata", (-1.2, 2.78, rail_z - 0.07), (-0.66, 2.92, rail_z + 0.07), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.015))
+    parts.append(box("beam", (-1.0, 2.92, rail_z - 0.08), (1.0, 3.06, rail_z + 0.08), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.012))
+    return join("ENV_Solana_Bay", parts)
+
+
+@recipe("ENV_Solana_Wing", "CREATE_DERIVED")
+def solana_wing():
+    """Masonry wing wall (cortavientos) closing one end of a solana: 0.3 m thick, as deep as the solana, one storey,
+    in the building's wall material (MI_Plaster slot, palette remapped) with an ashlar coping. Slot frame at the
+    facade end; the wing projects along +z."""
+    parts = [box("wing", (-0.15, -0.1, WALL_FACE - 0.05), (0.15, 3.0, 1.12), "MI_Plaster", uv="box", bevel=0.01),
+             box("cope", (-0.18, 3.0, WALL_FACE - 0.05), (0.18, 3.1, 1.16), "ENV_Stone_Sandstone", uv="band", band=ROCK_SLAB, bevel=0.01)]
+    return join("ENV_Solana_Wing", parts)
+
+
+@recipe("ENV_Quoin_Ashlar", "CREATE_DERIVED")
+def quoin_ashlar():
+    """Ashlar quoins for one storey (3 m) of an exposed building corner: ten courses alternating long and short
+    blocks on the two faces, 3 cm proud of the render — slimmer than the kit pilaster the owner rejected. Local frame
+    as the kit corner piece: the outer corner is at (WALL_FACE, WALL_FACE), faces towards +x and +z."""
+    c = WALL_FACE
+    parts = []
+    h = 0.3
+    for k in range(10):
+        y0 = k * h + 0.004
+        y1 = (k + 1) * h - 0.004
+        long_front = k % 2 == 0
+        lf, ls = (0.5, 0.26) if long_front else (0.28, 0.46)
+        parts.append(box(f"f{k}", (c - lf, y0, c - 0.06), (c + 0.03, y1, c + 0.03), "ENV_Stone_Sandstone", uv="band", band=ROCK_SLAB, bevel=0.012))
+        parts.append(box(f"s{k}", (c - 0.06, y0, c - ls), (c + 0.03, y1, c - 0.06), "ENV_Stone_Sandstone", uv="band", band=ROCK_SLAB, bevel=0.012))
+    return join("ENV_Quoin_Ashlar", parts)
+
+
+@recipe("ENV_Window_Wide_Ashlar", "CREATE_DERIVED")
+def window_wide_ashlar():
+    """Wide window for rendered walls in the casco manner: sandstone surround (jambs in alternating blocks, lintel
+    with ears, projecting sill) around the kit opening (±0.6, 1.05-2.31) and a recessed glazed sash. Replaces the
+    kit's white timber trim window where the grammar asks for ashlar surrounds."""
+    c = WALL_FACE
+    st = "ENV_Stone_Sandstone"
+    parts = []
+    ys = [1.05, 1.365, 1.68, 1.995, 2.31]
+    for k in range(4):
+        w = 0.24 if k % 2 == 0 else 0.17
+        for sx in (-1, 1):
+            xa, xb = sorted((sx * 0.6, sx * (0.6 + w)))
+            parts.append(box(f"j{k}{sx}", (xa, ys[k] + 0.004, c - 0.12), (xb, ys[k + 1] - 0.004, c + 0.03), st, uv="band", band=ROCK_SLAB, bevel=0.01))
+    parts.append(box("lintel", (-0.9, 2.31, c - 0.12), (0.9, 2.57, c + 0.035), st, uv="band", band=ROCK_SLAB, bevel=0.012))
+    parts.append(box("sill", (-0.82, 0.97, c - 0.12), (0.82, 1.05, c + 0.08), st, uv="band", band=ROCK_SLAB, bevel=0.01))
+    x0, x1, y0, y1, zf, zb = -0.6, 0.6, 1.05, 2.31, -0.02, -0.1
+    parts += _frame_rect("sash", x0, x1, y0, y1, zf, zb, 0.07)
+    parts.append(box("mul", (-0.03, y0 + 0.07, zb + 0.01), (0.03, y1 - 0.07, zf - 0.01), "MI_WoodTrim", uv="band", band=WOOD_LIGHT))
+    parts.append(box("tr", (x0 + 0.07, 1.86, zb + 0.01), (x1 - 0.07, 1.91, zf - 0.01), "MI_WoodTrim", uv="band", band=WOOD_LIGHT))
+    parts.append(box("glass", (x0 + 0.07, y0 + 0.07, -0.07), (x1 - 0.07, y1 - 0.07, -0.06), "MI_WindowGlass"))
+    return join("ENV_Window_Wide_Ashlar", parts)
+
+
+@recipe("ENV_Escudo", "CREATE_DERIVED")
+def escudo():
+    """Generic casona shield (escudo) in sandstone, 0.7 x 1.0 m: moulded cartouche, heater-shaped field with a plain
+    cross-quartering, crest scroll on top and a corbel below. Heraldry-neutral: no real family arms."""
+    c = WALL_FACE
+    st = "ENV_Stone_Sandstone"
+
+    def slab(name, pts, z0, z1, mat, bevel=0.0):
+        bm = bmesh.new()
+        f = [bm.verts.new(U(x, y, z1)) for x, y in pts]
+        b = [bm.verts.new(U(x, y, z0)) for x, y in pts]
+        bm.faces.new(f)
+        bm.faces.new(b[::-1])
+        n = len(pts)
+        for i in range(n):
+            bm.faces.new([f[i], b[i], b[(i + 1) % n], f[(i + 1) % n]])
+        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        ob = new_object(name, bm)
+        ob.data.materials.append(material(mat))
+        if bevel:
+            do_bevel(ob, bevel)
+        uv_band(ob, ROCK_SLAB)
+        return ob
+
+    def heater(w, h, y0, n=16):
+        right = [(w * (1 - (t ** 2.2) * 0.98), y0 + h - h * t) for t in (i / n for i in range(n + 1))]
+        left = [(-x, y) for x, y in reversed(right)]
+        return [(-w, y0 + h)] + [(w, y0 + h)] + right[1:] + left[:-1]
+
+    parts = [slab("cartouche", heater(0.44, 1.02, 0.12), c - 0.02, c + 0.08, st, 0.012),
+             slab("field", heater(0.36, 0.9, 0.2), c + 0.08, c + 0.115, st),
+             box("barV", (-0.03, 0.34, c + 0.11), (0.03, 1.08, c + 0.14), st, uv="band", band=ROCK_SLAB),
+             box("barH", (-0.34, 0.74, c + 0.11), (0.34, 0.8, c + 0.14), st, uv="band", band=ROCK_SLAB),
+             box("crown", (-0.3, 1.14, c - 0.01), (0.3, 1.24, c + 0.1), st, uv="band", band=ROCK_SLAB, bevel=0.012),
+             box("corbel", (-0.16, -0.04, c - 0.02), (0.16, 0.14, c + 0.07), st, uv="band", band=ROCK_SLAB, bevel=0.012)]
+    for k, x in enumerate((-0.22, 0.0, 0.22)):
+        parts.append(sphere(f"fleuron{k}", (x, 1.3, c + 0.04), 0.06, st, segments=8))
+    for sx in (-1, 1):  # mantling scrolls at the flanks, not at the top (a top pair read as vase handles)
+        parts.append(torus(f"scroll{sx}", (sx * 0.5, 0.62, c + 0.03), 0.08, 0.025, st, axis="z", segments=12))
+        parts.append(torus(f"scroll2{sx}", (sx * 0.47, 0.95, c + 0.03), 0.06, 0.02, st, axis="z", segments=12))
+    return join("ENV_Escudo", parts)
 
 
 # ---------------------------------------------------------------- driver

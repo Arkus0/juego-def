@@ -7,8 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_Metal_Galvanised
+    second: {fileID: 2100000, guid: c19fb6c27a3c47448bf507b27090be48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_Metal_Iron
+    second: {fileID: 2100000, guid: 36e138e812f88604d859c298a98660f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_Metal_Shutter
+    second: {fileID: 2100000, guid: c9eb73cfb160a2b45ab9682dceef00aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Plastic_Grey
     second: {fileID: 2100000, guid: 1a0b8a9ae98f7ae45814cedd87de0760, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_Sign_Board
+    second: {fileID: 2100000, guid: 2cff450530c371c4c835f509d89a1eb9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

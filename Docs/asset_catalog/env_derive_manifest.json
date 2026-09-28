@@ -2,12 +2,13 @@
   "ENV_Awning": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Fixed canvas shop awning (toldo) over a 2 m bay: sloped canvas, valance, iron arms. Canvas colour is a slot.",
+    "method": "Shop awning (toldo) over a 2 m bay: striped canvas on a gentle convex curve, scalloped valance, iron arms and\nfront bar. The canvas slot (ENV_Canvas_*) carries the stripes; one texture tile across the bay = 4 stripes.",
     "materials": [
       "ENV_Canvas_Green",
+      "ENV_Metal_Galvanised",
       "ENV_Metal_Iron"
     ],
-    "triangles": 48,
+    "triangles": 788,
     "donorSource": null
   },
   "ENV_Balcony_Iron": {
@@ -45,14 +46,14 @@
     "donorSource": null
   },
   "ENV_Bin_Street": {
-    "class": "ORIGINAL",
+    "class": "CREATE_DERIVED",
     "donors": [],
-    "method": "Wall/post-mounted galvanised litter bin (papelera) on a short post.",
+    "method": "Rustic litter bin: ring of dark timber slats (kit MI_WoodTrim dark band) bound by two iron hoops, iron rim,\ndark liner inside. Free-standing, 0.8 m.",
     "materials": [
-      "ENV_Metal_Galvanised",
-      "ENV_Metal_Iron"
+      "ENV_Metal_Iron",
+      "MI_WoodTrim"
     ],
-    "triangles": 84,
+    "triangles": 1034,
     "donorSource": null
   },
   "ENV_Boat_Small": {
@@ -82,11 +83,11 @@
   "ENV_Bollard_Street": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Cast-iron street bollard (pilona) 0.9 m, used to protect thresholds and pedestrian edges.",
+    "method": "Cast-iron street bollard (pilona), 0.95 m: moulded foot, slightly tapering body, collar and domed cap.",
     "materials": [
       "ENV_Metal_Iron"
     ],
-    "triangles": 208,
+    "triangles": 306,
     "donorSource": null
   },
   "ENV_Box_Cardboard": {
@@ -227,12 +228,34 @@
   "ENV_Downpipe": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Rain-water downpipe, 3 m per unit height (assembler scales y by storeys), with shoe and wall clips.",
+    "method": "Rain-water downpipe, 3 m per unit height (the assembler scales y by storeys): painted iron pipe with socket\ncollars and wall brackets. Hopper head and shoe are separate modules so scaling never stretches them.",
     "materials": [
       "ENV_Metal_Downpipe",
       "ENV_Metal_Iron"
     ],
-    "triangles": 64,
+    "triangles": 452,
+    "donorSource": null
+  },
+  "ENV_Downpipe_Head": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Hopper head (embudo) under the eave: flared box collecting the gutter, short neck into the pipe. Pipe top at\ny = 0; the hopper sits above it.",
+    "materials": [
+      "ENV_Metal_Downpipe",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 88,
+    "donorSource": null
+  },
+  "ENV_Downpipe_Shoe": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Pipe shoe (zapata): the pipe kicks forward at the foot and ends in a cast-iron boot over the channel.",
+    "materials": [
+      "ENV_Metal_Downpipe",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 228,
     "donorSource": null
   },
   "ENV_Drain_Grate": {
@@ -243,6 +266,26 @@
       "ENV_Metal_Iron"
     ],
     "triangles": 96,
+    "donorSource": null
+  },
+  "ENV_Eave_Canecillos": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Lebaniego deep eave for one 2 m bay, fitted under the kit roof overhang: timber boarding (tablaz\u00f3n) following\nthe roof underside, five carved rafter tails (canecillos) and the wall plate. y = 0 is the facade top (floors x\n3 m), the street face is at z = WALL_FACE. Kit MI_WoodTrim trim sheet (palette joinery: chestnut).",
+    "materials": [
+      "MI_WoodTrim"
+    ],
+    "triangles": 316,
+    "donorSource": null
+  },
+  "ENV_Escudo": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Generic casona shield (escudo) in sandstone, 0.7 x 1.0 m: moulded cartouche, heater-shaped field with a plain\ncross-quartering, crest scroll on top and a corbel below. Heraldry-neutral: no real family arms.",
+    "materials": [
+      "ENV_Stone_Sandstone"
+    ],
+    "triangles": 1464,
     "donorSource": null
   },
   "ENV_Fence_Yard_2m": {
@@ -311,12 +354,12 @@
   "ENV_Lamp_Post": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Late-20th-century cast-iron street lamp (farola), 4 m, lantern on a short arm towards +z.",
+    "method": "Cast-iron street lamp in the classic Spanish 'fernandina' line (about 3.9 m): moulded base, fluted-looking\ntapering shaft with collars, four-sided lantern with a pyramid hood and finial.",
     "materials": [
       "ENV_Lamp_Glass",
       "ENV_Metal_Iron"
     ],
-    "triangles": 116,
+    "triangles": 650,
     "donorSource": null
   },
   "ENV_Lifebuoy_Post": {
@@ -422,12 +465,12 @@
   "ENV_Planter_Pot": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Terracotta planter pot (0.5 m) for doorsteps and balconies; plants are placed separately.",
+    "method": "Terracotta planter pot (0.45 m): foot ring, flared body, rolled rim; soil top. Plants are placed separately.",
     "materials": [
       "ENV_Soil",
       "ENV_Terracotta"
     ],
-    "triangles": 88,
+    "triangles": 316,
     "donorSource": null
   },
   "ENV_Plinth_2m": {
@@ -500,6 +543,16 @@
       "MI_UnevenBrick"
     ],
     "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Quoin_Ashlar": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Ashlar quoins for one storey (3 m) of an exposed building corner: ten courses alternating long and short\nblocks on the two faces, 3 cm proud of the render \u2014 slimmer than the kit pilaster the owner rejected. Local frame\nas the kit corner piece: the outer corner is at (WALL_FACE, WALL_FACE), faces towards +x and +z.",
+    "materials": [
+      "ENV_Stone_Sandstone"
+    ],
+    "triangles": 880,
     "donorSource": null
   },
   "ENV_Railing_Quay_2m": {
@@ -593,14 +646,14 @@
     "donorSource": null
   },
   "ENV_Shop_Fascia": {
-    "class": "ORIGINAL",
+    "class": "CREATE_DERIVED",
     "donors": [],
-    "method": "Blank painted fascia board over a shop opening (typography stays out of ENV): board + moulded frame.",
+    "method": "Painted fascia board over a shop opening in a moulded timber frame with end consoles (blank board).",
     "materials": [
       "ENV_Sign_Board",
       "MI_WoodTrim"
     ],
-    "triangles": 68,
+    "triangles": 156,
     "donorSource": null
   },
   "ENV_Shopfront_Door": {
@@ -654,12 +707,13 @@
   "ENV_Sign_Bracket": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Projecting blade sign on a wrought-iron bracket, mounted at the left edge of a door bay (blank board).",
+    "method": "Hanging shop sign on a wrought-iron bracket (the Pyrenean/lebaniego street's signature): wall plate, top bar,\na scrolled strut, two rings and a painted board in a moulded dark-timber frame (blank: no lettering in ENV).",
     "materials": [
       "ENV_Metal_Iron",
-      "ENV_Sign_Board"
+      "ENV_Sign_Board",
+      "MI_WoodTrim"
     ],
-    "triangles": 104,
+    "triangles": 1132,
     "donorSource": null
   },
   "ENV_Sign_Direction": {
@@ -694,6 +748,27 @@
       "MI_RockTrim"
     ],
     "triangles": 36,
+    "donorSource": null
+  },
+  "ENV_Solana_Bay": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Solana for one 2 m bay of the top floor (slot frame, y = 0 at the floor): board floor on carved joist tails,\nfront fascia, balustrade of turned balusters between rails, a post at the bay's left edge rising to the eave with\na zapata. Bays chain along the facade; ENV_Solana_Wing closes the ends. Kit MI_WoodTrim (palette joinery).",
+    "materials": [
+      "MI_WoodTrim"
+    ],
+    "triangles": 2324,
+    "donorSource": null
+  },
+  "ENV_Solana_Wing": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Masonry wing wall (cortavientos) closing one end of a solana: 0.3 m thick, as deep as the solana, one storey,\nin the building's wall material (MI_Plaster slot, palette remapped) with an ashlar coping. Slot frame at the\nfacade end; the wing projects along +z.",
+    "materials": [
+      "ENV_Stone_Sandstone",
+      "MI_Plaster"
+    ],
+    "triangles": 88,
     "donorSource": null
   },
   "ENV_Street_Name_Plate": {
@@ -738,14 +813,28 @@
     "triangles": 96,
     "donorSource": null
   },
+  "ENV_Tree_Plaza": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Plaza tree (plane/lime, pollarded): tapering trunk with bark (Nature pack bark), three limbs and a solid\npainted crown of clustered lobes \u2014 no alpha cards (owner: card crowns read as big cards).",
+    "materials": [
+      "ENV_Foliage",
+      "ENV_Src_Bark_NormalTree"
+    ],
+    "triangles": 808,
+    "donorSource": null
+  },
   "ENV_Utility_Box": {
     "class": "ORIGINAL",
     "donors": [],
-    "method": "Electricity/gas meter cabinet fixed on a ground-floor facade (grey plastic).",
+    "method": "Meter cabinet (hornacina de contadores) on a ground-floor facade: galvanised steel box with a recessed door,\nhinges, lock, louvres and the service conduit down to the ground.",
     "materials": [
-      "ENV_Plastic_Grey"
+      "ENV_Metal_Galvanised",
+      "ENV_Metal_Iron",
+      "ENV_Metal_Shutter",
+      "ENV_Sign_Board"
     ],
-    "triangles": 68,
+    "triangles": 352,
     "donorSource": null
   },
   "ENV_Vehicle_Car": {
@@ -937,6 +1026,18 @@
       "MI_WoodTrim"
     ],
     "triangles": 212,
+    "donorSource": null
+  },
+  "ENV_Window_Wide_Ashlar": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Wide window for rendered walls in the casco manner: sandstone surround (jambs in alternating blocks, lintel\nwith ears, projecting sill) around the kit opening (\u00b10.6, 1.05-2.31) and a recessed glazed sash. Replaces the\nkit's white timber trim window where the grammar asks for ashlar surrounds.",
+    "materials": [
+      "ENV_Stone_Sandstone",
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 652,
     "donorSource": null
   }
 }

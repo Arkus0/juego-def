@@ -381,15 +381,18 @@ namespace JuegoDef.Env
                 bool eastExposed = east == null && (i < row.Count - 1 || eastOpen);
                 bool westQuoins = west == null || p.spec.floors > west.spec.floors || westParty == 0;
                 bool eastQuoins = east == null || p.spec.floors >= east.spec.floors || eastParty == 0;
+                bool westTip = false, eastTip = false;
                 if (i == 0 && west == null && westKind != "open" && westKind != "hidden")
                 {
                     westParty = westKind.StartsWith("tip") ? p.spec.floors : 0;
                     westQuoins = westKind == "tip_keep";
+                    westTip = westQuoins;
                 }
                 if (i == row.Count - 1 && east == null && eastKind != "open" && eastKind != "hidden")
                 {
                     eastParty = eastKind.StartsWith("tip") ? p.spec.floors : 0;
                     eastQuoins = eastKind == "tip_keep";
+                    eastTip = eastQuoins;
                 }
                 // building local left = west for the south row, east for the north row (rotated 180)
                 if (!p.north)
@@ -397,12 +400,14 @@ namespace JuegoDef.Env
                     p.spec.partyLeft = westParty; p.spec.partyRight = eastParty;
                     p.spec.exposeLeft |= westExposed; p.spec.exposeRight |= eastExposed;
                     p.spec.quoinsLeft = westQuoins; p.spec.quoinsRight = eastQuoins;
+                    p.spec.tipLeft = westTip; p.spec.tipRight = eastTip;
                 }
                 else
                 {
                     p.spec.partyLeft = eastParty; p.spec.partyRight = westParty;
                     p.spec.exposeLeft |= eastExposed; p.spec.exposeRight |= westExposed;
                     p.spec.quoinsLeft = eastQuoins; p.spec.quoinsRight = westQuoins;
+                    p.spec.tipLeft = eastTip; p.spec.tipRight = westTip;
                 }
             }
         }

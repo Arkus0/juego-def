@@ -263,9 +263,16 @@ namespace JuegoDef.Env
             if (s.floors > 1 && rng.NextDouble() < balconyChance)
                 balcony = windowCols.Where(i => i != gallery).OrderBy(i => Math.Abs(i - (n - 1) / 2.0)).DefaultIfEmpty(-1).First();
             char balconyCode = rng.NextDouble() < 0.65 ? 'I' : 'B';
+            // Solana: the top floor opens onto the gallery through ONE door; it is the facade's only balcony door
+            if (s.solana && s.floors > 1)
+            {
+                balcony = -1;
+                if (s.floors - 1 <= 2) gallery = -1;
+            }
             for (int f = 1; f < s.floors; f++)
                 for (int i = 0; i < n; i++)
                 {
+                    if (s.solana && f == s.floors - 1) continue;
                     bool galleryHere = i == gallery && f <= 2 && (f == 1 || floorAxes[f][i] == 'W');
                     if (floorAxes[f][i] != 'W' && !galleryHere) continue;
                     char c;
@@ -280,6 +287,14 @@ namespace JuegoDef.Env
                     }
                     rows[f][i] = c;
                 }
+            if (s.solana && s.floors > 1)
+            {
+                int top = s.floors - 1;
+                var ax = floorAxes[top];
+                var cols = Enumerable.Range(0, n).Where(i => ax[i] == 'W').ToList();
+                int door = cols.Count > 0 ? cols.OrderBy(i => Math.Abs(i - (n - 1) / 2.0)).First() : n / 2;
+                for (int i = 0; i < n; i++) rows[top][i] = i == door ? 'N' : (ax[i] == 'W' ? 'w' : 'P');
+            }
             return rows.Select(r => new string(r)).ToArray();
         }
 
@@ -345,8 +360,9 @@ namespace JuegoDef.Env
                     if (o[f][i] != 'W') continue;
                     int n = o[f].Length;
                     bool edge = i == 0 || i == n - 1;
-                    bool crowded = (i > 0 && "WBIL".IndexOf(o[f][i - 1]) >= 0) || (i < n - 1 && "WBIL".IndexOf(o[f][i + 1]) >= 0);
-                    if (edge || crowded) o[f][i] = rng.NextDouble() < 0.4 ? 'c' : 'w';
+                    bool crowded = (i > 0 && "WBILN".IndexOf(o[f][i - 1]) >= 0) || (i < n - 1 && "WBILN".IndexOf(o[f][i + 1]) >= 0);
+                    // ashlar-framed windows carry interior shutters: no exterior leaves over the stone
+                    if (edge || crowded || s.surrounds) o[f][i] = s.surrounds ? 'w' : rng.NextDouble() < 0.4 ? 'c' : 'w';
                 }
             return o.Select(r => new string(r)).ToArray();
         }
@@ -366,6 +382,7 @@ namespace JuegoDef.Env
             void WideWindow()
             {
                 if (stone) { Stone("Window_Wide_Flat_Rocks"); Join("ENV_Window_Insert_Wide"); }
+                else if (s.surrounds) parts.Add(new EnvPart("ENV_Window_Wide_Ashlar", "stone"));  // casco: sandstone surround + sash
                 else Join("Window_Wide_Flat1");
             }
 
@@ -450,6 +467,12 @@ namespace JuegoDef.Env
                     Join("Balcony_Simple_Straight");
                     Join("Floor_WoodDark_Half3", new Vector3(0, 0, 1f));
                     break;
+                case 'N':
+                    // door onto the solana (the gallery itself is placed by the assembler across the top floor)
+                    Wall("Door_Flat");
+                    Join("DoorFrame_Flat_WoodDark");
+                    Join("ENV_Door_Balcony");
+                    break;
                 case 'I':
                     Wall("Door_Flat");
                     Join("DoorFrame_Flat_WoodDark");
@@ -515,6 +538,8 @@ namespace JuegoDef.Env
                         if (field.Hit(core) != null) continue;                                          // quoin: longer brackets
                         var go = EnvKit.Place(EnvClearance.Pipe, parent, new Vector3(x, 0, zc), 0, new Vector3(1, height / 3f, 1));
                         field.Add(go);
+                        EnvKit.Place("ENV_Downpipe_Head", parent, new Vector3(x, height, zc), 0);
+                        EnvKit.Place("ENV_Downpipe_Shoe", parent, new Vector3(x, 0, zc), 0);
                         pipes.Add(x);
                         return go;
                     }
@@ -538,7 +563,9 @@ namespace JuegoDef.Env
 
             // rain-water downpipes: one per party line (the right one only where no neighbour brings its own), beside
             // the quoin pilaster if free, else at the nearest free bay joint
-            if (s.type != "landmark")
+            // Lebaniego deep eaves drip onto the street, so most casco houses have none (owner: "demasiadas bajantes,
+            // se leen como un bosque de postes")
+            if (s.type != "landmark" && !s.solana && (s.eave != "canecillos" || rng.NextDouble() < 0.25))
             {
                 var inner = Enumerable.Range(1, Math.Max(0, s.bays - 1)).Select(k => 2f * k).ToList();
                 Pipe(dress, new[] { 0.29f, 0.56f }.Concat(inner.Where(x => x <= width / 2f)), top);
@@ -613,15 +640,9 @@ namespace JuegoDef.Env
         /// assembler turns ours off there), so services on our side of the party line clear it too.</summary>
         static List<GameObject> GhostQuoins(BuildingSpec s, Transform root, EnvClearance.Field field)
         {
-            var holder = EnvKit.Group(root, "_GhostQuoins");
-            int width = s.bays * 2;
-            for (int f = 0; f < s.floors; f++)
-            {
-                float y = f * BuildingAssembler.Storey;
-                if (!s.quoinsLeft && f < s.partyLeft) field.Add(EnvKit.Place("Corner_ExteriorWide_Brick", holder, new Vector3(0, y, 0), 0));
-                if (!s.quoinsRight && f < s.partyRight) field.Add(EnvKit.Place("Corner_ExteriorWide_Brick", holder, new Vector3(width, y, 0), 270));
-            }
-            return new List<GameObject> { holder.gameObject };
+            // shared party lines carry no pilaster on either side any more (ashlar quoins only on seen corners), so
+            // there is nothing of the neighbour's to keep services clear of
+            return new List<GameObject> { EnvKit.Group(root, "_GhostQuoins").gameObject };
         }
     }
 }

@@ -26,16 +26,30 @@ namespace JuegoDef.Env
         /// <summary>Paving zone -> material and UV tile size (m). Kit floor textures repeat every 2 m tile.</summary>
         static readonly Dictionary<string, (string mat, float tile)> GroundMats = new Dictionary<string, (string, float)>
         {
-            { "core", ("ENV_Ground_Setts_Warm", 2f) },
+            { "core", ("ENV_Ground_Canto", 1.4f) },          // canto rodado: smaller, darker river cobbles
             { "core_band", ("ENV_Ground_Flag_Light", 2f) },
-            { "lane", ("ENV_Ground_Setts_Old", 2f) },
-            { "plaza", ("ENV_Ground_Flag_Warm", 2f) },
+            { "strip", ("ENV_Ground_Flag_Light", 2.6f) },    // central strip of big flags (casco street, owner photo)
+            { "lane", ("ENV_Ground_Canto_Old", 1.4f) },
+            { "plaza", ("ENV_Ground_Flag_Warm", 2.4f) },
             { "yard", ("ENV_Ground_Grass", 4f) },
             { "huerta", ("ENV_Ground_Earth", 6f) },
             { "outer", ("ENV_Ground_Grass", 4f) },
         };
 
-        static Transform Root => GameObject.Find(id)?.transform;
+        static Transform Root { get { EnsureSpec(); return GameObject.Find(id)?.transform; } }
+
+        /// <summary>Static state does not survive a domain reload between chunked calls: recover the district id from
+        /// the open scene (its root object) and reload the spec and the unit library.</summary>
+        static void EnsureSpec()
+        {
+            if (spec != null && units != null && id != null) return;
+            if (id == null)
+                id = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects()
+                        .Select(g => g.name).FirstOrDefault(n => n.StartsWith("ENV01_") && System.IO.File.Exists($"{DistrictSpecs}/{n}.json"));
+            if (id == null) throw new System.InvalidOperationException("JD_DISTRICT_NO_STATE: call Begin(id) first");
+            spec = JObject.Parse(EnvKit.ReadText($"{DistrictSpecs}/{id}.json"));
+            units = JObject.Parse(EnvKit.ReadText(EnvKit.Specs + "/units.json"))["units"].ToDictionary(u => (string)u["id"], u => (JObject)u);
+        }
         static string MeshFolder => $"{EnvKit.Derived}/District/{id}";
 
         [MenuItem("JuegoDef/ENV/7 Build District (CASCO)")]
@@ -114,6 +128,7 @@ namespace JuegoDef.Env
 
         public static string BuildRows(int from, int count)
         {
+            EnsureSpec();
             var root = Root;
             var rows = (JArray)spec["rows"];
             var rg = EnvKit.Group(root, "Rows");
@@ -155,9 +170,10 @@ namespace JuegoDef.Env
 
         static readonly Dictionary<int, string[]> CasonaRows = new Dictionary<int, string[]>
         {
-            // few openings, one balcony (the solana axis) per facade, windows thinning upwards, arched portal
-            { 4, new[] { "WPAP", "WPBP", "wPPw" } },
-            { 5, new[] { "PWAWP", "WPBPW", "PwPwP" } },
+            // few openings: arched portal with the shield above it, windows on the principal floor, the top floor opening
+            // onto the solana through its one door
+            { 4, new[] { "WPAP", "PWPW", "wPNw" } },
+            { 5, new[] { "PWAWP", "WPPPW", "PwNwP" } },
         };
 
         static BuildingSpec SpecOf(JObject p, string name)
@@ -178,10 +194,16 @@ namespace JuegoDef.Env
             if (p["era"] != null) bs.era = (string)p["era"];
             if (p["rows"] is JArray rows) bs.rows = rows.Select(x => (string)x).ToArray();
             if (p["awning"] != null) bs.awning = (string)p["awning"];
+            bs.solana = (bool?)p["solana"] == true;
+            bs.surrounds = (bool?)p["surrounds"] == true;
+            bs.escudo = (bool?)p["escudo"] == true;
             if ((bool?)p["casona"] == true)
             {
                 bs.era = "old";
                 bs.ground = "stone";
+                bs.solana = bs.floors >= 3;
+                bs.escudo = true;
+                bs.surrounds = true;
                 if (CasonaRows.TryGetValue(bs.bays, out var cr)) bs.rows = cr.Take(bs.floors).ToArray();
             }
             bs.basement = (float?)p["basement"] ?? 0f;
@@ -217,6 +239,7 @@ namespace JuegoDef.Env
 
         public static string Finish()
         {
+            EnsureSpec();
             var root = Root;
             var river = (JObject)spec["river"];
             var rv = EnvKit.Group(root, "River");
@@ -341,7 +364,7 @@ namespace JuegoDef.Env
                     if (Inside(poly, p) && EdgeDistance(poly, p) > 3.2f && Physics.OverlapSphere(new Vector3(x, GroundY(x, z, 0) + 1.5f, z), 1.1f).Length == 0) cands.Add(p);
                 }
             var chosen = new List<Vector2>();
-            string[] kinds = { "ENV_Tree_Common_A", "ENV_Tree_Common_C", "ENV_Tree_Common_B" };
+            string[] kinds = { "ENV_Tree_Plaza", "ENV_Tree_Plaza", "ENV_Tree_Plaza" };  // solid painted crowns, no alpha cards
             foreach (var p in cands.OrderBy(_ => rng.Next()))
             {
                 if (chosen.Count >= trees) break;

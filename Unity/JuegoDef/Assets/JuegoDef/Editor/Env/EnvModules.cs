@@ -25,6 +25,7 @@ namespace JuegoDef.Env
             var policy = JObject.Parse(EnvKit.ReadText(EnvKit.Grammar + "/modules.json"));
             var none = new HashSet<string>(policy["noCollider"].Select(t => (string)t));
             var boxes = new HashSet<string>(policy["boxCollider"].Select(t => (string)t));
+            var trunks = new HashSet<string>((policy["trunkCollider"] ?? new JArray()).Select(t => (string)t));
             int derived = 0, wrapped = 0;
             var produced = new HashSet<string>();
 
@@ -40,7 +41,7 @@ namespace JuegoDef.Env
                     foreach (var m in r.sharedMaterials)
                         if (!m || AssetDatabase.GetAssetPath(m) == path)
                             throw new System.InvalidOperationException($"ENV_MODULE_UNBOUND_MATERIAL {name}: {(m ? m.name : "null")} has no project material of that name");
-                SaveModule(name, model, none.Contains(name) ? "none" : boxes.Contains(name) ? "box" : "mesh");
+                SaveModule(name, model, none.Contains(name) ? "none" : boxes.Contains(name) ? "box" : trunks.Contains(name) ? "trunk" : "mesh");
                 produced.Add(name);
                 derived++;
             }

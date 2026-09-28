@@ -41,6 +41,11 @@ namespace JuegoDef.Env
         public bool cornerEntrance;              // chamfered ground-floor entrance at a front corner (needs that side exposed)
         public string cornerSide = "right";      // right | left: which front corner is chamfered
         public float basement;                   // m of stone base below the ground floor (sloping ground, river walls)
+        public bool tipLeft, tipRight;           // mitred block tip on that side (set by the street assembler): keep a quoin
+        public string eave = "";                 // "" (resolved: casco palettes -> canecillos unless reformed) | canecillos | plain
+        public bool solana;                      // lebaniego solana across the top floor (door onto it, wing walls)
+        public bool surrounds;                   // sandstone ashlar surrounds on rendered windows (casco)
+        public bool escudo;                      // casona shield above the portal
     }
 
     public static class BuildingAssembler
@@ -93,6 +98,9 @@ namespace JuegoDef.Env
             bool cl = s.cornerSide == "left";
             if (s.cornerEntrance && ((cl ? !s.exposeLeft : !s.exposeRight) || s.bays < 2)) throw new ArgumentException(s.id + ": cornerEntrance needs the chamfered side exposed and >= 2 bays");
             var rng = new System.Random(s.seed * 7919 + s.id.GetHashCode());
+            if (string.IsNullOrEmpty(s.eave))
+                s.eave = s.roof == "eaves" && (s.palette ?? "").StartsWith("core_") && s.era != "reformed" ? "canecillos" : "plain";
+            if (s.solana && s.floors < 2) s.solana = false;
             var rows = FacadeGrammar.Rows(s, rng);
             s.era = FacadeGrammar.ResolveEra(s, rng);
             rows = FacadeGrammar.ApplyEra(s, rows, rng);
@@ -138,8 +146,10 @@ namespace JuegoDef.Env
                         Slot(s, right, fam, rightRows[f][j], f, new Vector3(width, y, -1 - 2 * j), 90, rng, wm, joinMap, plinth: s.exposeRight);
                 }
                 var corners = EnvKit.Group(EnvKit.Group(root, "Corners"), "F" + f);
-                string corner = "Corner_ExteriorWide_Brick";
-                bool qL = s.quoinsLeft || f >= s.partyLeft, qR = s.quoinsRight || f >= s.partyRight;
+                // Ashlar quoins only where a corner is seen: an exposed side at this storey, or a mitred block tip.
+                // Shared party lines get none (owner review: the kit pilaster on every party wall was too heavy).
+                string corner = "ENV_Quoin_Ashlar";
+                bool qL = f >= s.partyLeft || s.tipLeft, qR = f >= s.partyRight || s.tipRight;
                 foreach (var c in new[] { new Vector3(0, y, 0), new Vector3(width, y, 0), new Vector3(width, y, -s.depth), new Vector3(0, y, -s.depth) })
                 {
                     if (f == 0 && s.cornerEntrance && (cl ? c.x < 0.5f : c.x > 0.5f) && c.z > -0.5f) continue;  // the column replaces it
@@ -162,7 +172,25 @@ namespace JuegoDef.Env
                 EnvTemplates.LodgingVestibule(root, portal, s.bays, s.depth);
             }
             if (s.basement > 0.05f) Basement(s, root, wallMap);
+            if (s.solana) Solana(s, root, joinMap, wallMap);
+            if (s.escudo)
+            {
+                int portal = rows[0].IndexOfAny(new[] { 'A', 'O', 'D', 'o' });
+                if (portal >= 0 && s.floors > 1) EnvKit.Place("ENV_Escudo", EnvKit.Group(root, "Dressing"), new Vector3(1 + 2 * portal, Storey + 0.55f, 0), 0, Vector3.one * 1.3f);
+            }
             BuildRoof(s, root, roofMap, wallMap);
+            if (s.eave == "canecillos" && s.roof == "eaves")
+            {
+                // lebaniego deep eave: carved rafter tails and boarding under the kit roof overhang, front and back
+                var eave = EnvKit.Group(EnvKit.Group(root, "Roof"), "Eave");
+                float top = s.floors * Storey;
+                int w = s.bays * 2;
+                for (int i = 0; i < s.bays; i++)
+                {
+                    EnvKit.Remap(EnvKit.Place("ENV_Eave_Canecillos", eave, new Vector3(1 + 2 * i, top, 0), 0), joinMap);
+                    EnvKit.Remap(EnvKit.Place("ENV_Eave_Canecillos", eave, new Vector3(w - 1 - 2 * i, top, -s.depth), 180), joinMap);
+                }
+            }
             if (s.dress) FacadeGrammar.Dress(s, root, rows, rng, joinMap, history);
             foreach (var t in root.GetComponentsInChildren<Transform>(true))
                 if (!t.GetComponent<Light>()) GameObjectUtility.SetStaticEditorFlags(t.gameObject, (StaticEditorFlags)~0);
@@ -214,6 +242,19 @@ namespace JuegoDef.Env
                 Piece(new Vector3(0, 0, -s.depth + 1 + 2 * j), 270);
                 Piece(new Vector3(width, 0, -1 - 2 * j), 90);
             }
+        }
+
+        /// <summary>Lebaniego solana across the top floor: a timber gallery bay per 2 m bay (floor on carved joists,
+        /// turned balusters, posts up to the eave) closed at both ends by masonry wing walls in the facade material.</summary>
+        static void Solana(BuildingSpec s, Transform root, Dictionary<string, string> joinMap, Dictionary<string, string> wallMap)
+        {
+            var g = EnvKit.Group(root, "Solana");
+            float y = (s.floors - 1) * Storey;
+            int width = s.bays * 2;
+            for (int i = 0; i < s.bays; i++)
+                EnvKit.Remap(EnvKit.Place("ENV_Solana_Bay", g, new Vector3(1 + 2 * i, y, 0), 0), joinMap);
+            EnvKit.Remap(EnvKit.Place("ENV_Solana_Wing", g, new Vector3(0.15f, y, 0), 0), wallMap);
+            EnvKit.Remap(EnvKit.Place("ENV_Solana_Wing", g, new Vector3(width - 0.15f, y, 0), 0), wallMap);
         }
 
         static float CornerRot(Vector3 c, int width, int depth)

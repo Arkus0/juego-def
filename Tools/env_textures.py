@@ -87,6 +87,73 @@ def earth(rng):
     return img.filter(ImageFilter.SMOOTH)
 
 
+def painted(rng, lo, hi, steps=5, streak=0.0, n=256):
+    """Flat painted base with soft quantised mottling (hand-painted look); optional vertical brush streaks."""
+    v = quantise(fbm(n, rng), steps)
+    if streak > 0:
+        s = periodic_noise(n, 32, rng)[:, :1].repeat(n, axis=1).T  # varies along x only -> vertical streaks
+        v = np.clip(v * (1 - streak) + s * streak, 0, 1)
+    return lerp(np.array(lo, float), hi, v)
+
+
+def iron(rng):
+    """Cast/wrought iron painted near-black green-grey, worn lighter edges read from the mottling, sparse rust."""
+    n = 256
+    base = painted(rng, (34, 40, 41), (62, 70, 70), 5, 0.25, n)
+    rust = fbm(n, rng, (8, 16, 32), (1, 0.5, 0.25)) > 0.84
+    base[rust] = base[rust] * 0.4 + np.array([112, 72, 48]) * 0.6
+    return Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB").filter(ImageFilter.SMOOTH)
+
+
+def galvanised(rng):
+    n = 256
+    base = painted(rng, (150, 156, 154), (196, 200, 196), 6, 0.35, n)
+    spots = fbm(n, rng, (16, 32, 64), (1, 0.6, 0.3)) > 0.8
+    base[spots] = base[spots] * 0.85
+    return Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB").filter(ImageFilter.SMOOTH)
+
+
+def canvas(rng, colour, stripes=True):
+    """Awning canvas: 8 stripes per tile (colour / cream) with weave mottling; U runs across the stripes."""
+    n = 256
+    weave = painted(rng, (0.86, 0.86, 0.86), (1.0, 1.0, 1.0), 6, 0.2, n)
+    x = np.arange(n)[None, :].repeat(n, axis=0)
+    band = ((x // (n // 8)) % 2 == 0) if stripes else np.ones((n, n), bool)
+    col = np.where(band[..., None], np.array(colour, float), np.array((226, 214, 186), float))
+    return Image.fromarray(np.clip(col * weave, 0, 255).astype(np.uint8), "RGB").filter(ImageFilter.SMOOTH)
+
+
+def terracotta(rng):
+    n = 256
+    base = painted(rng, (150, 78, 50), (196, 112, 70), 6, 0.0, n)
+    return Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB").filter(ImageFilter.SMOOTH)
+
+
+def foliage(rng):
+    """Solid stylised tree crowns: leaf clusters painted as overlapping soft blobs, light from above."""
+    n = 512
+    base = lerp(np.array([44, 74, 38], float), [70, 104, 50], quantise(fbm(n, rng), 4))
+    img = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB")
+    dr = ImageDraw.Draw(img)
+    for _ in range(1400):
+        x, y = rng.random() * n, rng.random() * n
+        r = rng.uniform(5, 13)
+        light = rng.random()
+        c = (int(58 + light * 60), int(92 + light * 62), int(42 + light * 30))
+        for ox in (-n, 0, n):
+            for oy in (-n, 0, n):
+                dr.ellipse([x + ox - r, y + oy - r * 0.8, x + ox + r, y + oy + r * 0.8], fill=c)
+    return img.filter(ImageFilter.GaussianBlur(0.8))
+
+
+def board(rng):
+    """Painted sign board: cream paint over timber, grain showing through and worn edges (no lettering)."""
+    n = 256
+    grain = periodic_noise(n, 4, rng)[:, :1].repeat(n, axis=1) * 0.5 + fbm(n, rng) * 0.5
+    base = lerp(np.array([206, 192, 160], float), [236, 226, 200], quantise(grain, 6))
+    return Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB").filter(ImageFilter.SMOOTH)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", required=True)
@@ -94,7 +161,10 @@ def main():
     os.makedirs(a.out, exist_ok=True)
     rng = np.random.default_rng(7)
     random.seed(7)
-    for name, fn in (("T_ENV_Ground_Grass", grass), ("T_ENV_Ground_Earth", earth)):
+    for name, fn in (("T_ENV_Ground_Grass", grass), ("T_ENV_Ground_Earth", earth), ("T_ENV_Iron", iron),
+                     ("T_ENV_Galvanised", galvanised), ("T_ENV_Canvas_Red", lambda r: canvas(r, (150, 52, 40))),
+                     ("T_ENV_Canvas_Green", lambda r: canvas(r, (54, 98, 70))), ("T_ENV_Canvas_Cream", lambda r: canvas(r, (226, 214, 186), False)),
+                     ("T_ENV_Terracotta", terracotta), ("T_ENV_Foliage", foliage), ("T_ENV_Sign_Board", board)):
         path = os.path.join(a.out, name + ".png")
         fn(rng).save(path)
         print(path)

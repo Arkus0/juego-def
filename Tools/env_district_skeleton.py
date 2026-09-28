@@ -607,6 +607,14 @@ def build(trace, doc, frame):
             p["seed"] = rng.randint(1, 9999)
             p["ground"] = "stone" if rng.random() < 0.7 else ""
             p["upper"] = "stone" if rng.random() < 0.12 else "plaster"
+            # lebaniego vocabulary: solanas on the sunny upper floors of ordinary houses, sandstone window surrounds on
+            # rendered fronts, a rare shield outside the casonas
+            if p["type"] in ("closed_residential", "lodging") and p["floors"] >= 3 and e["role"] in ("lane", "secondary", "river", "steps", "plaza"):
+                p["solana"] = rng.random() < 0.3
+            if p["upper"] == "plaster" and p["type"] != "landmark":
+                p["surrounds"] = rng.random() < 0.4
+            if p["type"] == "closed_residential" and e["role"] in ("main", "plaza") and rng.random() < 0.04:
+                p["escudo"] = True
             if p.get("casona"):
                 p.update({"ground": "stone", "upper": "stone" if rng.random() < 0.6 else "plaster", "era": "old",
                           "palette": rng.choice(["core_sandstone_chestnut", "core_lime_chestnut"])})
@@ -617,7 +625,11 @@ def build(trace, doc, frame):
     deck = unary_union([spoly[s.id] for s in bridges]).intersection(C) if bridges else Polygon()
     ground_space = street_space.difference(stair_polys)
     core_ids = {s.id for s in streets if s.profile == "core"}
-    band = ground_space.intersection(Bu.buffer(0.9, join_style="mitre"))
+    # casco paving (owner photo): canto rodado with a central strip of big flags along core streets and lanes
+    strip = unary_union([s.line.buffer(0.6 if s.profile == "core" else 0.45, cap_style="flat")
+                         for s in streets if s.profile in ("core", "lane")]).intersection(ground_space)
+    strip = strip.difference(unary_union([p["poly"] for p in plazas if p["y"] is not None]))
+    band = strip
     gz = {}
 
     def zone_of(pt, in_band):
@@ -654,12 +666,18 @@ def build(trace, doc, frame):
                         out.setdefault(lab, []).append(cs)
         return out
 
-    for lab, tris in mesh(band, lambda c: zone_of(c, True)).items():
+    for lab, tris in mesh(band, lambda c: "strip").items():
         gz.setdefault(lab, []).extend(tris)
     for lab, tris in mesh(ground_space.difference(band), lambda c: zone_of(c, False)).items():
         gz.setdefault(lab, []).extend(tris)
     fps = unary_union([p["fp"] for e in edges for p in e["plots"] if "fp" in p])
-    yards = Bu.difference(fps.buffer(-0.05))
+    # the rim of every block (forecourts of set-back houses, gaps beside garden walls) is paved like a lane; only
+    # the block interior is garden (a strip of lawn at the foot of a street facade read wrong)
+    inner = Bu.buffer(-1.6, join_style="mitre")
+    rim = Bu.difference(inner).difference(fps.buffer(-0.05))
+    for lab, tris in mesh(rim, lambda c: "lane").items():
+        gz.setdefault(lab, []).extend(tris)
+    yards = inner.difference(fps.buffer(-0.05))
     for lab, tris in mesh(yards, lambda c: "huerta" if any(z["poly"].contains(c) for z in zones) else "yard").items():
         gz.setdefault(lab, []).extend(tris)
     outer = D.buffer(14, join_style="mitre").difference(D).difference(C)
