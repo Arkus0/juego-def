@@ -2,7 +2,7 @@
 
 Status: **READY AFTER FACTORY BATCH PROOFS**  
 Class: PRODUCT INTEGRATION / KEEPER GAME-SPACE REALIZATION  
-Depends on: `WP-M0-00` PASS + `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS  
+Depends on: `WP-CITY-URBAN-00` PASS + `WP-M0-00` PASS + `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS  
 Blocks: `WP-PROD-LOOK-GATE`
 
 ## Claim
@@ -11,9 +11,13 @@ juego-def can realize the accepted **B0 Mercado–Muelle** product brief as one 
 
 This WP is the juego-def successor to the useful part of Juego2 CITY-07: **keeper game-space realization**. It deliberately does not import the old inland pilot geometry, H1/H2F prerequisites or CITY-04 remeasurement machinery.
 
-## Binding city brief
+`CITY-URBAN-00` owns what B0 means spatially/programmatically. This WP owns the physical third-person realization and may tune local geometry without silently changing those roles/routes/access semantics.
 
-Consume [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
+## Binding city inputs
+
+- accepted `WP-CITY-URBAN-00` outputs;
+- [`../design/CITY_PRODUCTION_KNOWLEDGE.md`](../design/CITY_PRODUCTION_KNOWLEDGE.md);
+- [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
 
 The semantic anchors and route roles are binding product intent:
 
@@ -48,7 +52,7 @@ At minimum:
 12. one additional world interaction/examinable;
 13. enough prop/signage/material/lighting treatment to judge the block as retained game content.
 
-## Keeper game-space realization — migrated CITY design rules
+## Keeper game-space realization — migrated CITY rules
 
 The block may not be an extruded plan or a dressing exercise. Perform a deliberate third-person design pass covering:
 
@@ -59,6 +63,20 @@ The block may not be an extruded plan or a dressing exercise. Perform a delibera
 - genuine cycles rather than arbitrary shortcuts;
 - route learning through storefronts, water/work cues, elevation and landmarks;
 - ordinary fabric between authored moments.
+
+### Layered building/street assembly
+
+At least one representative building and one representative street segment must be reviewable as coherent assemblies, not decorated proxies.
+
+Building order where applicable:
+
+`site datum -> footprint/access level -> base/retaining -> massing -> facade hosts/corners -> openings -> doors/windows -> roof/eaves -> thresholds -> ground/street connection -> dressing`
+
+Street order where applicable:
+
+`terrain/support -> traversable surface -> width/grade -> edge/kerb/drainage -> retaining/building contacts -> thresholds -> collision ownership -> dressing`
+
+Useful relationships such as `HOSTS`, `FILLS`, `MEETS/CAPS`, `SUPPORTED_BY/ATTACHED_TO`, `TRANSITIONS_TO` and `CLEAR_OF` may be documented compactly. They are design evidence, not a new runtime semantic framework.
 
 ### Views + staging
 
@@ -73,6 +91,8 @@ The block may not be an extruded plan or a dressing exercise. Perform a delibera
 - one coherent local elevation frame;
 - intentional relation among street surfaces, stairs/ramps, retaining edges, thresholds and interior floors;
 - no arbitrary per-building Y truths;
+- public thresholds derive from the same route/site logic rather than local visual hacks;
+- use compact longitudinal profiles/cross-sections only where they materially help judge difficult vertical relationships;
 - elevation changes should improve route character/views while remaining comfortable and readable during walking/follow/chase.
 
 ### Threshold/access truth
@@ -82,6 +102,21 @@ The block may not be an extruded plan or a dressing exercise. Perform a delibera
 - shop service access never becomes a fake public shortcut;
 - public quay remains distinct from controlled port work space;
 - scenic expansion seams must not masquerade as traversable roads.
+
+## Iteration boundary
+
+Local keeper iteration is expected and should be fast. Adjusting facade setback, route interpolation, edge/retaining placement, threshold response, local grade smoothing or view composition inside accepted CITY intent does **not** require reopening planning every click.
+
+Amend/reopen `CITY-URBAN-00` if realization needs a material change to:
+
+- route connectivity or removal/addition of a meaningful loop;
+- public/service/private access role;
+- block programme/anchor role;
+- controlled-port boundary;
+- expansion seam direction;
+- elevation class/major stair/route concept.
+
+When a local physical change can affect route/collision/access/readability, rerun the **affected checks**, not a historical full CITY campaign.
 
 ## Factory integrity rule
 
@@ -121,10 +156,10 @@ The desired result is that most work is selection/composition/content authoring,
 
 PASS when:
 
-- B0 Mercado–Muelle functional roles and loops survive realization;
+- accepted `CITY-URBAN-00` functional roles and loops survive realization;
 - the block looks and plays like a credible early piece of the intended game;
 - environment, civilian, animation and UI outputs all come through accepted factories;
-- route rhythm, views, thresholds and elevation have received deliberate third-person composition rather than plan extrusion;
+- route rhythm, views, thresholds, layered assembly and elevation have received deliberate third-person composition rather than plan extrusion;
 - public/service/private and public-port/controlled-work boundaries remain truthful;
 - 8+ civilians coexist without obvious systemic clone/rig/material failures;
 - investigation/world interactions work in Play Mode;
@@ -135,7 +170,7 @@ PASS when:
 
 ## FAIL
 
-FAIL if the block bypasses factories, abandons the accepted B0 roles without product reason, still looks like dressed greybox, reads as a planning diagram rather than authored game space, service/controlled areas become fake shortcuts, elevation is incoherent, integration reveals unresolved systemic lane failures, or it becomes a one-off showcase that cannot seed the next district/content block.
+FAIL if the block bypasses factories, silently changes accepted CITY-URBAN-00 roles/connectivity, still looks like dressed greybox, reads as a planning diagram rather than authored game space, service/controlled areas become fake shortcuts, elevation is incoherent, integration reveals unresolved systemic lane failures, or it becomes a one-off showcase that cannot seed the next district/content block.
 
 ## Non-goals
 
