@@ -37,6 +37,8 @@ Principios centrales:
 - gobernar cambia reglas/oportunidades, no la mente de los ciudadanos;
 - control de simulación limita coste/propagación sin robar semántica ni impedir transformación deliberada.
 
+La escala de NPCs separa explícitamente **profundidad sistémica, rutina, identidad visual y población visible**; ver [`Docs/design/NPC_DEPTH_TIERS.md`](Docs/design/NPC_DEPTH_TIERS.md).
+
 ## Operación con agentes
 
 Root [`AGENTS.md`](AGENTS.md) define el modelo ligero de trabajo.
@@ -49,7 +51,7 @@ Skills canónicas viven en `.agents/skills/`; `.claude/skills/` contiene wrapper
 
 `juego-def` es el repo de producción GC2-first.
 
-Ya contiene el conocimiento migrado de producto, Visual Bible, CITY/B0, Quaternius/tooling, GC2 Hub, dialogue authoring, Living World/PA, gameplay-system lessons y el operating model de agentes. Unity + URP + GC2 Core están levantados y el player/cámara funcionan en Play Mode.
+Ya contiene el conocimiento migrado de producto, Visual Bible, CITY/B0, Quaternius/tooling, GC2 Hub, dialogue authoring, Living World/PA, gameplay-system lessons, NPC depth tiers y el operating model de agentes. Unity + URP + GC2 Core están levantados y el player/cámara funcionan en Play Mode.
 
 La siguiente fase construye **factorías gráficas/contenido** para que el siguiente edificio, civil, animación o conversación sea producción y no nueva I+D. Las factorías consumen dos entradas vinculantes:
 
@@ -63,6 +65,7 @@ El siguiente workpack de producción sigue siendo `WP-PROD-ASSET-00`; M0 puede a
 - [Visión del juego](Docs/design/GAME_VISION.md)
 - [Visual Bible](Docs/design/VISUAL_BIBLE.md)
 - [Modelo de ciudad portuaria](Docs/design/PORT_TOWN_WORLD_MODEL.md)
+- [NPC depth tiers](Docs/design/NPC_DEPTH_TIERS.md)
 - [B0 Mercado–Muelle: first keeper block](Docs/design/FIRST_KEEPER_BLOCK_B0.md)
 - [Arquitectura GC2-first](Docs/architecture/GC2_FIRST_ARCHITECTURE.md)
 - [Production authoring decision](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
