@@ -1,4 +1,4 @@
-# WP-PROD-UI-01 — No-Voice Dialogue + Interaction UI Language
+# WP-PROD-UI-01 — Dialogue + Interaction UI Factory
 
 Status: **READY AFTER DIALOGUE-01**  
 Class: PRODUCTION FACTORY / UI PRESENTATION  
@@ -7,83 +7,75 @@ Blocks: `WP-CITY-URBAN-01`
 
 ## Claim
 
-juego-def has a reusable, readable no-voice presentation language for investigation dialogue and nearby world interactions that fits the intended late-1990s/early-2000s, PS2+ visual identity without overwhelming third-person exploration.
+juego-def has a reusable no-voice presentation factory for investigation dialogue and nearby world interactions. New conversations/interactions can consume the same visual system without rebuilding UI per scene.
 
-## Binding inputs
+## Factory outputs
 
-- Visual Bible
-- selected dialogue runtime from `WP-PROD-DIALOGUE-01`
-- M0 interaction patterns
-- accepted third-person camera baseline
+By PASS, retain:
 
-## Required output
-
-Create a retained UI/presentation pattern covering:
-
-- speaker identity/name treatment;
-- dialogue text/subtitle area;
-- player choices;
-- world interaction prompt/hotspot feedback;
+- reusable speaker/name treatment;
+- reusable dialogue text/subtitle component;
+- reusable choice component;
+- world interaction prompt/hotspot feedback pattern;
+- typography/spacing/state tokens or equivalent reusable style source;
 - pacing/reveal behavior if used;
-- gesture/acting timing coexistence;
-- camera framing coexistence;
-- readable normal/selected/disabled states where applicable.
+- camera/acting coexistence conventions;
+- prefab/style/template assets or equivalent;
+- simple validation/checklist for overflow, missing speaker/style bindings and unreadable states.
 
-Normal production assumption: **no spoken voice acting is required**.
+Normal production assumption: **no spoken voice acting required**.
 
-## Required fixture
+## Batch proof
 
-Use the investigation fixture from `PROD-DIALOGUE-01` and show:
+Apply the UI factory to the 3+ conversations from `PROD-DIALOGUE-01` plus at least **2 different world-interaction prompts**.
+
+Show:
 
 1. NPC line;
 2. player choice;
 3. contextual response change;
-4. one gesture/acting beat or deliberate visual pause;
-5. return to exploration without UI residue or camera breakage;
-6. one nearby world interaction prompt using the same visual language family.
+4. gesture/acting beat or deliberate pause;
+5. clean return to exploration;
+6. multiple prompt types without custom rebuilding.
 
 ## Visual requirements
 
-- readable at the target gameplay resolution/window;
-- strong hierarchy without giant HUD panels dominating the scene;
-- compatible with damp/low-poly/PS2+ world rather than generic modern SaaS/game UI;
-- no dependency on voice to communicate speaker/intent;
-- typography and spacing consistent enough to reuse;
-- supports future localization length variation without immediately collapsing.
+- readable at target gameplay resolution/window;
+- belongs to the late-1990s/early-2000s PS2+ game rather than generic programmer UI;
+- strong hierarchy without giant panels dominating exploration;
+- works without voice acting;
+- supports reasonable text-length variation;
+- normal/selected/disabled states are coherent where applicable.
 
-Final brand polish is not required, but the pattern should be keeper-capable rather than programmer UI.
+## Production loop
 
-## Operator + human loop
-
-`apply style -> Play Mode -> capture dialogue/choice/exploration transition -> inspect readability/occlusion -> correct -> owner visual review`
-
-The owner is final authority on look/readability.
+`apply reusable style/template -> Play Mode -> capture -> inspect readability/occlusion/overflow -> validate -> correct -> owner review`
 
 ## Evidence
 
 Retain under `Docs/evidence/WP-PROD-UI-01/`:
 
-- style/presentation note;
-- captures of line, choice, interaction prompt and return-to-play;
-- relevant reusable prefab/style paths;
-- owner verdict;
+- factory/style description;
+- reusable asset/template paths;
+- captures across 3+ conversations and 2+ world prompts;
+- overflow/state validation notes;
+- owner visual verdict;
 - known polish items deferred.
 
 ## PASS
 
 PASS when:
 
-- dialogue fixture is readable and coherent in Play Mode;
-- choice/context state is visually clear;
-- UI and acting/camera can coexist;
-- interaction prompt belongs to the same presentation language;
-- return to exploration is clean;
-- pattern can be reused without rebuilding UI per conversation.
+- one reusable presentation system serves the dialogue batch and multiple world prompts;
+- UI/acting/camera coexist cleanly;
+- new normal dialogue/prompt content does not require bespoke layout construction;
+- owner accepts the visual language as keeper-capable;
+- adding more dialogue/interactions is mainly content production and styling refinement.
 
 ## FAIL
 
-FAIL if the UI is only debug/programmer presentation, depends on voice to make sense, obscures gameplay excessively, or requires bespoke layout logic for the single fixture.
+FAIL if UI remains debug/programmer presentation, every conversation needs bespoke layout, voice is required for clarity, or reusable styles/templates cannot handle the existing batch.
 
 ## Non-goals
 
-No final full HUD, settings menus, inventory UI, accessibility suite, localization production pipeline or final branding lock.
+No full HUD, settings menus, inventory UI, accessibility suite, final localization pipeline or final branding lock.
