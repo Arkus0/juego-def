@@ -40,3 +40,10 @@ Unity/JuegoDef/Assets/ThirdParty.meta
 Thumbs.db
 __pycache__/
 *.py[cod]
+
+# Generated districts (WP-PROD-ENV-01): scenes of ~100 MB and their ground meshes are rebuilt from the committed
+# spec (Env/Specs/districts/*.json) with JuegoDef > ENV > 7 Build District; never commit them.
+Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity
+Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity.meta
+Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District/
+Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District.meta

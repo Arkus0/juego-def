@@ -34,7 +34,7 @@ def fetch(bbox, out):
     s, w, n, e = bbox
     b = f"({s},{w},{n},{e})"
     q = (f'[out:json][timeout:60];(way["building"]{b};way["highway"]{b};way["waterway"]{b};'
-         f'way["place"="square"]{b};way["area:highway"]{b};relation["building"]{b};);out geom tags;')
+         f'way["place"="square"]{b};way["area:highway"]{b};relation["building"]{b};);out body geom;')
     data = urllib.parse.urlencode({"data": q}).encode()
     for url in MIRRORS:
         try:

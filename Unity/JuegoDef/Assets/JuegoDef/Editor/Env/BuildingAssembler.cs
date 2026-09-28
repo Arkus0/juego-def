@@ -40,6 +40,7 @@ namespace JuegoDef.Env
         public bool history = true;              // allow the 10-20 % of later additions (dish, meters, cables, clothes, odd window)
         public bool cornerEntrance;              // chamfered ground-floor entrance at a front corner (needs that side exposed)
         public string cornerSide = "right";      // right | left: which front corner is chamfered
+        public float basement;                   // m of stone base below the ground floor (sloping ground, river walls)
     }
 
     public static class BuildingAssembler
@@ -160,6 +161,7 @@ namespace JuegoDef.Env
                 if (portal < 0) throw new ArgumentException(s.id + ": lodging interior needs a portal bay (O/o/A/D)");
                 EnvTemplates.LodgingVestibule(root, portal, s.bays, s.depth);
             }
+            if (s.basement > 0.05f) Basement(s, root, wallMap);
             BuildRoof(s, root, roofMap, wallMap);
             if (s.dress) FacadeGrammar.Dress(s, root, rows, rng, joinMap, history);
             foreach (var t in root.GetComponentsInChildren<Transform>(true))
@@ -192,6 +194,26 @@ namespace JuegoDef.Env
             var soffit = EnvKit.Place("Floor_WoodDark", g, left ? new Vector3(1, 2.97f, -1) : new Vector3(w - 1, 2.97f, -1), 0);
             soffit.transform.localRotation = Quaternion.Euler(180, 0, 0);
             EnvKit.Remap(soffit, new Dictionary<string, string> { { "MI_WoodTrim", "ENV_Trim_Stone" } });
+        }
+
+        /// <summary>Stone base below the ground floor, down to the lowest ground around the building (a sloping
+        /// street, a terraced yard, a river wall): rubble retaining-wall pieces on every face, coping at floor level.</summary>
+        static void Basement(BuildingSpec s, Transform root, Dictionary<string, string> wallMap)
+        {
+            var g = EnvKit.Group(root, "Basement");
+            int width = s.bays * 2;
+            var k = new Vector3(1, s.basement / 2f, 1);
+            void Piece(Vector3 at, float rot) => EnvKit.Remap(EnvKit.Place("ENV_Retaining_Wall_2x2", g, at, rot, k), wallMap);
+            for (int i = 0; i < s.bays; i++)
+            {
+                Piece(new Vector3(1 + 2 * i, 0, 0), 0);
+                Piece(new Vector3(width - 1 - 2 * i, 0, -s.depth), 180);
+            }
+            for (int j = 0; j < s.depth / 2; j++)
+            {
+                Piece(new Vector3(0, 0, -s.depth + 1 + 2 * j), 270);
+                Piece(new Vector3(width, 0, -1 - 2 * j), 90);
+            }
         }
 
         static float CornerRot(Vector3 c, int width, int depth)

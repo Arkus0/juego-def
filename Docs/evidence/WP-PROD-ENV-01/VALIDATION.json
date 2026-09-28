@@ -102,9 +102,9 @@
       "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes.unity",
       "stats": {
         "thresholds": 37,
-        "openWalkable": 4,
-        "closedBlocked": 33,
-        "renderers": 2774
+        "openWalkable": 3,
+        "closedBlocked": 34,
+        "renderers": 2718
       },
       "issues": []
     },
@@ -112,9 +112,9 @@
       "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes_KitPalette.unity",
       "stats": {
         "thresholds": 37,
-        "openWalkable": 4,
-        "closedBlocked": 33,
-        "renderers": 2774
+        "openWalkable": 3,
+        "closedBlocked": 34,
+        "renderers": 2718
       },
       "issues": []
     },

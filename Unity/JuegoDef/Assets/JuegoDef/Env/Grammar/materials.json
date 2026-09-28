@@ -96,6 +96,8 @@
     { "name": "ENV_Joinery_Chestnut", "copy": ["MI_WoodTrim_Wear"], "colors": { "_Color": "#8A6A52" }, "floats": { "_Wear": 0 } },
     { "name": "ENV_Plaster_Lime", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#E4DED0" }, "floats": { "_Wear": 0 } },
     { "name": "ENV_Plaster_Sandstone", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#C8B596" }, "floats": { "_Wear": 0 } },
-    { "name": "ENV_Plaster_PaleOchre", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#DCC49A" }, "floats": { "_Wear": 0 } }
+    { "name": "ENV_Plaster_PaleOchre", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#DCC49A" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Ground_Grass", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Ground_Grass" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.05 } },
+    { "name": "ENV_Ground_Earth", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Ground_Earth" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.08 } }
   ]
 }

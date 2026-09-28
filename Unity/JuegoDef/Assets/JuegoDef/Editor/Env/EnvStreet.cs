@@ -20,10 +20,11 @@ namespace JuegoDef.Env
         public const string StreetSpecs = EnvKit.Specs + "/streets";
         static Dictionary<string, string> paletteMap;
 
-        class Placed
+        internal class Placed
         {
             public BuildingSpec spec;
             public float x0, width, setback, scale = 1f;
+            public float y;          // ground-floor level (districts on sloping ground; 0 on flat streets)
             public bool north;
         }
 
@@ -345,7 +346,7 @@ namespace JuegoDef.Env
         /// <summary>West/east neighbours along the row (null entries are gaps/alleys). Shared storeys hide both side
         /// walls when the neighbour is at least as deep; the taller (or western, on a tie) building keeps the quoins of
         /// the shared edge; open ends expose.</summary>
-        static void ResolveNeighbours(List<Placed> row, JObject ends)
+        internal static void ResolveNeighbours(List<Placed> row, JObject ends)
         {
             // row ends: open (exposed, quoins) | hidden (a neighbour beyond the spec) | tip_keep / tip_cede (convex block
             // tip at a bend: no side walls, one quoin) | concave (outer corner of a bend: side wall to the back notch, no quoins)
@@ -360,8 +361,22 @@ namespace JuegoDef.Env
                 // a neighbour only covers our side wall if it is at least as deep and on the same building line
                 // (else the rear part, or the step of a setback, would be a hole)
                 bool Covers(Placed o) => o.spec.depth >= p.spec.depth && Mathf.Abs(o.setback - p.setback) < 0.01f;
-                int westParty = west != null ? (Covers(west) ? Mathf.Min(west.spec.floors, p.spec.floors) : 0) : (i == 0 && !westOpen ? p.spec.floors : 0);
-                int eastParty = east != null ? (Covers(east) ? Mathf.Min(east.spec.floors, p.spec.floors) : 0) : (i == row.Count - 1 && !eastOpen ? p.spec.floors : 0);
+                // storeys of p (from the ground floor up) that lie entirely within the neighbour's height, so a
+                // neighbour one step up or down a sloping street never leaves a sliver of missing side wall
+                int Shared(Placed o)
+                {
+                    if (!Covers(o)) return 0;
+                    float bottom = o.y - o.spec.basement - 0.05f, top = o.y + o.spec.floors * BuildingAssembler.Storey + 0.05f;
+                    int n = 0;
+                    for (int f = 0; f < p.spec.floors; f++)
+                    {
+                        if (p.y + f * BuildingAssembler.Storey < bottom || p.y + (f + 1) * BuildingAssembler.Storey > top) break;
+                        n++;
+                    }
+                    return n;
+                }
+                int westParty = west != null ? Shared(west) : (i == 0 && !westOpen ? p.spec.floors : 0);
+                int eastParty = east != null ? Shared(east) : (i == row.Count - 1 && !eastOpen ? p.spec.floors : 0);
                 bool westExposed = west == null && (i > 0 || westOpen);
                 bool eastExposed = east == null && (i < row.Count - 1 || eastOpen);
                 bool westQuoins = west == null || p.spec.floors > west.spec.floors || westParty == 0;
@@ -393,7 +408,7 @@ namespace JuegoDef.Env
         }
 
         /// <summary>Copies the bootstrap GC2 player, camera and camera shot into the street scene at the spec's spawn.</summary>
-        static void BringPlayer(JObject spec)
+        internal static void BringPlayer(JObject spec)
         {
             var active = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
             var boot = EditorSceneManager.OpenScene("Assets/JuegoDef/Scenes/Bootstrap_GC2Core.unity", OpenSceneMode.Additive);

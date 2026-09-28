@@ -1,0 +1,1009 @@
+{
+  "id": "ENV01_Casco_District",
+  "brief": "CASCO district, ~180 x 220 m, authored from the measured Potes historic core (box A, owner 2026-09-28) as the soul of the casco, not a 1:1 trace: the main spine along a plaza that opens onto a small channelled river, a short stretch of casco on the other bank reached by a stone bridge and a footbridge, a calle alta parallel to the spine on the hillside, 2-3 transversals, the Solana terrace up to a mirador, huertas and casonas on the upper edge. The river continues north towards the port district (downstream); the town rises from the port to the casco. Owner rules: 70 % comfortable / 20 % perceptible / 10 % strong-or-stairs, stairs as accent, 2-3 breathing spaces, legible landmarks. Fictional town: no Potes names, signs or landmarks. Street ids are our own.",
+  "reference": {
+    "origin": [
+      43.1542,
+      -4.6237
+    ],
+    "box": [
+      -60,
+      -230,
+      120,
+      -10
+    ],
+    "frame": "x east, y north, metres around the origin (Env reference frame of the CASCO study)",
+    "attribution": [
+      "(c) OpenStreetMap contributors, ODbL 1.0",
+      "MDT05 (c) Instituto Geografico Nacional (IGN), CC BY 4.0"
+    ]
+  },
+  "margin": 8,
+  "unityOffset": [
+    68,
+    238
+  ],
+  "roles": {
+    "main": {
+      "profile": "core",
+      "width": 6.2
+    },
+    "secondary": {
+      "profile": "core",
+      "width": 4.4
+    },
+    "lane": {
+      "profile": "lane",
+      "width": 3.6
+    },
+    "steps": {
+      "profile": "steps",
+      "width": 3.0
+    },
+    "bridge": {
+      "profile": "bridge",
+      "width": 5.0
+    },
+    "footbridge": {
+      "profile": "bridge",
+      "width": 2.6
+    }
+  },
+  "nodes": {
+    "E1": [
+      128,
+      -31.8,
+      2.0
+    ],
+    "J_X": [
+      76,
+      -57,
+      1.2
+    ],
+    "J_A": [
+      47,
+      -69.8,
+      0.7
+    ],
+    "N0": [
+      19,
+      -78,
+      0.4
+    ],
+    "BR1_S": [
+      0,
+      -63.5,
+      0.2
+    ],
+    "NB_J": [
+      -15,
+      -47.5,
+      0.2
+    ],
+    "J_SOL": [
+      -30,
+      -34,
+      0.0
+    ],
+    "SOL_W": [
+      -68,
+      -57,
+      0.0
+    ],
+    "CP_N": [
+      -58,
+      -2,
+      -2.5
+    ],
+    "CV_N": [
+      -26,
+      -2,
+      -2.2
+    ],
+    "BR2_S": [
+      31,
+      -43.5,
+      0.3
+    ],
+    "BR2_N": [
+      23,
+      -24,
+      0.3
+    ],
+    "IN_N": [
+      -7,
+      -2,
+      -2.0
+    ],
+    "RB_N": [
+      116,
+      -2,
+      -2.4
+    ],
+    "J_C": [
+      -30,
+      -107,
+      1.0
+    ],
+    "J_L": [
+      -54,
+      -110,
+      1.2
+    ],
+    "W1": [
+      -68,
+      -108,
+      1.3
+    ],
+    "J_CW": [
+      -15,
+      -124,
+      3.7
+    ],
+    "J_CS": [
+      9,
+      -129,
+      3.2
+    ],
+    "J_A2": [
+      38,
+      -128.6,
+      4.0
+    ],
+    "J_SP": [
+      53,
+      -125.5,
+      4.4
+    ],
+    "J_OE": [
+      117,
+      -84,
+      5.0
+    ],
+    "E2": [
+      128,
+      -77,
+      5.0
+    ],
+    "J_OS": [
+      80.5,
+      -63.5,
+      2.2
+    ],
+    "J_S0": [
+      1,
+      -138,
+      3.4
+    ],
+    "J_S1": [
+      3,
+      -147,
+      6.2
+    ],
+    "J_S2": [
+      25,
+      -141,
+      6.2
+    ],
+    "J_S4": [
+      26,
+      -176,
+      9.8
+    ],
+    "MIR": [
+      60,
+      -199,
+      10.4
+    ],
+    "SP2": [
+      93,
+      -174,
+      10.0
+    ],
+    "SP_S": [
+      128,
+      -221,
+      10.4
+    ],
+    "J_FR": [
+      -43,
+      -178,
+      7.0
+    ],
+    "J_FL": [
+      -28,
+      -140,
+      3.9
+    ],
+    "J_A3": [
+      41,
+      -112,
+      1.6
+    ]
+  },
+  "streets": [
+    {
+      "id": "Espina_E",
+      "name": "spine east",
+      "role": "main",
+      "from": "E1",
+      "to": "J_X"
+    },
+    {
+      "id": "Espina_Plaza",
+      "name": "spine along the river plaza",
+      "role": "main",
+      "from": "J_X",
+      "via": [
+        [
+          74,
+          -58
+        ]
+      ],
+      "to": "J_A",
+      "width": 6.5
+    },
+    {
+      "id": "Espina_Nodo",
+      "name": "spine to the node",
+      "role": "main",
+      "from": "J_A",
+      "to": "N0",
+      "width": 6.5
+    },
+    {
+      "id": "Subida_Puente",
+      "name": "road up to the stone bridge",
+      "role": "main",
+      "from": "N0",
+      "via": [
+        [
+          11,
+          -73
+        ]
+      ],
+      "to": "BR1_S",
+      "width": 6.0
+    },
+    {
+      "id": "Puente_Piedra",
+      "name": "stone arch bridge",
+      "role": "bridge",
+      "from": "BR1_S",
+      "to": "NB_J"
+    },
+    {
+      "id": "Cantabra",
+      "name": "narrower continuation, axis shifted at the node",
+      "role": "secondary",
+      "from": "N0",
+      "via": [
+        [
+          13,
+          -87
+        ]
+      ],
+      "to": "J_C",
+      "width": 4.5
+    },
+    {
+      "id": "Callejon_Oeste",
+      "name": "west lane out of the casco",
+      "role": "lane",
+      "from": "J_C",
+      "via": [
+        [
+          -40,
+          -104
+        ]
+      ],
+      "to": "J_L"
+    },
+    {
+      "id": "Callejon_Oeste_Salida",
+      "role": "lane",
+      "from": "J_L",
+      "to": "W1"
+    },
+    {
+      "id": "Cimavilla_Baja",
+      "name": "west transversal up to the calle alta",
+      "role": "lane",
+      "from": "J_C",
+      "via": [
+        [
+          -27,
+          -117
+        ]
+      ],
+      "to": "J_CW",
+      "width": 3.8
+    },
+    {
+      "id": "Calle_Alta_O",
+      "name": "calle alta, west",
+      "role": "secondary",
+      "from": "J_CW",
+      "to": "J_CS"
+    },
+    {
+      "id": "Calle_Alta_C",
+      "name": "calle alta, centre",
+      "role": "secondary",
+      "from": "J_CS",
+      "via": [
+        [
+          28,
+          -129
+        ]
+      ],
+      "to": "J_A2"
+    },
+    {
+      "id": "Calle_Alta_C2",
+      "role": "secondary",
+      "from": "J_A2",
+      "to": "J_SP"
+    },
+    {
+      "id": "Calle_Alta_E",
+      "name": "calle alta, east",
+      "role": "secondary",
+      "from": "J_SP",
+      "via": [
+        [
+          63,
+          -123
+        ],
+        [
+          79,
+          -116
+        ]
+      ],
+      "to": "J_OE",
+      "width": 4.6
+    },
+    {
+      "id": "Calle_Alta_Salida",
+      "role": "secondary",
+      "from": "J_OE",
+      "to": "E2",
+      "width": 4.6
+    },
+    {
+      "id": "Obispo_Escalera",
+      "name": "short stair accent off the spine",
+      "role": "steps",
+      "from": "J_X",
+      "to": "J_OS",
+      "width": 3.2
+    },
+    {
+      "id": "Obispo_Bajo",
+      "name": "east transversal",
+      "role": "secondary",
+      "from": "J_OS",
+      "via": [
+        [
+          89,
+          -82
+        ],
+        [
+          105,
+          -85
+        ]
+      ],
+      "to": "J_OE",
+      "width": 4.2
+    },
+    {
+      "id": "Callejon_Arco",
+      "name": "central passage through the long block (new: continuity)",
+      "role": "lane",
+      "from": "J_A",
+      "via": [
+        [
+          44,
+          -90
+        ]
+      ],
+      "to": "J_A3",
+      "width": 3.4
+    },
+    {
+      "id": "Arco_Escalera",
+      "name": "stair accent up to the calle alta",
+      "role": "steps",
+      "from": "J_A3",
+      "to": "J_A2",
+      "width": 3.0
+    },
+    {
+      "id": "Ribera",
+      "name": "road down towards the port (downstream)",
+      "role": "secondary",
+      "from": "J_X",
+      "via": [
+        [
+          71,
+          -52
+        ],
+        [
+          70,
+          -41
+        ],
+        [
+          80,
+          -31
+        ],
+        [
+          104,
+          -18
+        ]
+      ],
+      "to": "RB_N"
+    },
+    {
+      "id": "Capitan",
+      "name": "north bank, from the bridgehead",
+      "role": "secondary",
+      "from": "NB_J",
+      "to": "J_SOL",
+      "width": 4.6
+    },
+    {
+      "id": "Capitan_Salida",
+      "role": "secondary",
+      "from": "J_SOL",
+      "via": [
+        [
+          -50,
+          -13
+        ]
+      ],
+      "to": "CP_N",
+      "width": 4.6
+    },
+    {
+      "id": "El_Sol",
+      "name": "north bank along the river, houses on the water",
+      "role": "lane",
+      "from": "J_SOL",
+      "via": [
+        [
+          -38,
+          -43
+        ],
+        [
+          -51,
+          -54
+        ]
+      ],
+      "to": "SOL_W",
+      "width": 3.8
+    },
+    {
+      "id": "Cervantes",
+      "name": "north bank, north",
+      "role": "lane",
+      "from": "NB_J",
+      "via": [
+        [
+          -14,
+          -40
+        ],
+        [
+          -21,
+          -34
+        ],
+        [
+          -27,
+          -26
+        ]
+      ],
+      "to": "CV_N",
+      "width": 4.0
+    },
+    {
+      "id": "Pasarela",
+      "name": "footbridge from the plaza to the north bank",
+      "role": "footbridge",
+      "from": "BR2_S",
+      "to": "BR2_N"
+    },
+    {
+      "id": "Independencia",
+      "name": "north bank lane",
+      "role": "lane",
+      "from": "BR2_N",
+      "via": [
+        [
+          9,
+          -26
+        ],
+        [
+          1,
+          -24
+        ]
+      ],
+      "to": "IN_N",
+      "width": 4.0
+    },
+    {
+      "id": "Solana_Acceso",
+      "role": "lane",
+      "from": "J_CS",
+      "to": "J_S0"
+    },
+    {
+      "id": "Solana_Escalera",
+      "name": "stair accent up to the Solana terrace",
+      "role": "steps",
+      "from": "J_S0",
+      "to": "J_S1"
+    },
+    {
+      "id": "Solana_Terraza",
+      "name": "Solana terrace lane",
+      "role": "lane",
+      "from": "J_S1",
+      "to": "J_S2",
+      "width": 3.8
+    },
+    {
+      "id": "Solana_Bajada",
+      "role": "lane",
+      "from": "J_S2",
+      "via": [
+        [
+          49,
+          -129
+        ]
+      ],
+      "to": "J_SP",
+      "width": 3.8
+    },
+    {
+      "id": "Solana_Baja",
+      "role": "lane",
+      "from": "J_S1",
+      "via": [
+        [
+          3,
+          -157
+        ],
+        [
+          8,
+          -167
+        ]
+      ],
+      "to": "J_S4",
+      "width": 3.4
+    },
+    {
+      "id": "Subida_Mirador",
+      "role": "lane",
+      "from": "J_S4",
+      "via": [
+        [
+          46,
+          -193
+        ]
+      ],
+      "to": "MIR"
+    },
+    {
+      "id": "Ronda_Mirador",
+      "role": "lane",
+      "from": "MIR",
+      "via": [
+        [
+          76,
+          -190
+        ]
+      ],
+      "to": "SP2"
+    },
+    {
+      "id": "San_Pedro",
+      "name": "climb to the upper edge",
+      "role": "secondary",
+      "from": "J_SP",
+      "via": [
+        [
+          74,
+          -150,
+          6.4
+        ]
+      ],
+      "to": "SP2",
+      "width": 4.2
+    },
+    {
+      "id": "San_Pedro_Salida",
+      "role": "secondary",
+      "from": "SP2",
+      "to": "SP_S",
+      "width": 4.2
+    },
+    {
+      "id": "Ronda_Huertas",
+      "name": "upper edge above the huertas",
+      "role": "lane",
+      "from": "MIR",
+      "via": [
+        [
+          40,
+          -212
+        ],
+        [
+          21,
+          -213
+        ],
+        [
+          -1,
+          -202
+        ]
+      ],
+      "to": "J_FR",
+      "width": 3.8
+    },
+    {
+      "id": "Llano",
+      "name": "west edge",
+      "role": "lane",
+      "from": "J_FR",
+      "via": [
+        [
+          -50,
+          -150
+        ],
+        [
+          -57,
+          -128,
+          3.4
+        ]
+      ],
+      "to": "J_L",
+      "width": 4.0
+    },
+    {
+      "id": "Fuente",
+      "name": "diagonal lane from the calle alta to the west edge",
+      "role": "lane",
+      "from": "J_CW",
+      "via": [
+        [
+          -24,
+          -134
+        ]
+      ],
+      "to": "J_FL",
+      "width": 3.4
+    },
+    {
+      "id": "Fuente_Baja",
+      "role": "lane",
+      "from": "J_FL",
+      "via": [
+        [
+          -31,
+          -146
+        ]
+      ],
+      "to": "J_FR",
+      "width": 3.4
+    }
+  ],
+  "plazas": [
+    {
+      "id": "Plaza_Rio",
+      "name": "river plaza (main breathing space; tower, bar terrace, parapet over the water, stair down to the river)",
+      "y": 0.2,
+      "poly": [
+        [
+          3,
+          -62
+        ],
+        [
+          0,
+          -54
+        ],
+        [
+          8,
+          -45
+        ],
+        [
+          18,
+          -38
+        ],
+        [
+          26,
+          -33
+        ],
+        [
+          33,
+          -38
+        ],
+        [
+          36,
+          -49
+        ],
+        [
+          46,
+          -55
+        ],
+        [
+          60,
+          -57
+        ],
+        [
+          66,
+          -59
+        ],
+        [
+          44,
+          -67.5
+        ],
+        [
+          19,
+          -74.5
+        ],
+        [
+          12,
+          -71
+        ]
+      ]
+    },
+    {
+      "id": "Plazuela_Fuente",
+      "name": "calle alta widening with a fountain",
+      "disc": [
+        53,
+        -125.5,
+        7.5
+      ]
+    },
+    {
+      "id": "Mirador",
+      "name": "upper mirador",
+      "y": 10.4,
+      "poly": [
+        [
+          52,
+          -193
+        ],
+        [
+          66,
+          -191
+        ],
+        [
+          70,
+          -202
+        ],
+        [
+          58,
+          -207
+        ]
+      ]
+    },
+    {
+      "id": "Cabeza_Puente",
+      "name": "north bridgehead",
+      "disc": [
+        -15,
+        -47.5,
+        5.5
+      ]
+    },
+    {
+      "id": "Plazuela_Oeste",
+      "name": "small triangle at the west junction",
+      "disc": [
+        -30,
+        -107,
+        5.5
+      ]
+    }
+  ],
+  "river": {
+    "name": "casco river (small, channelled, flows north to the port)",
+    "pts": [
+      [
+        -76,
+        -80.6
+      ],
+      [
+        -40,
+        -76.3
+      ],
+      [
+        -15.4,
+        -64.8
+      ],
+      [
+        8.3,
+        -44.7
+      ],
+      [
+        24.4,
+        -35
+      ],
+      [
+        38,
+        -22
+      ],
+      [
+        47.4,
+        -11.5
+      ],
+      [
+        51,
+        6
+      ]
+    ],
+    "width": 9.0,
+    "water": -3.0
+  },
+  "relief": {
+    "note": "authored node heights (y, metres above the river plaza); streets interpolate between nodes by arc length. Real relief 281-315 m compressed to -3..+9.6 and redistributed into a comfortable spine, a perceptible calle alta and short stair accents."
+  },
+  "zones": [
+    {
+      "id": "Huertas_SE",
+      "kind": "huertas",
+      "keep": [
+        "Calle_Alta_E",
+        "Calle_Alta_Salida",
+        "Obispo_Bajo"
+      ],
+      "poly": [
+        [
+          60,
+          -131
+        ],
+        [
+          118,
+          -92
+        ],
+        [
+          136,
+          -92
+        ],
+        [
+          136,
+          -246
+        ],
+        [
+          88,
+          -246
+        ],
+        [
+          90,
+          -178
+        ],
+        [
+          72,
+          -153
+        ]
+      ],
+      "casonas": [
+        [
+          84,
+          -156
+        ],
+        [
+          103,
+          -190
+        ],
+        [
+          112,
+          -120
+        ]
+      ]
+    },
+    {
+      "id": "Huertas_S",
+      "kind": "huertas",
+      "keep": [],
+      "poly": [
+        [
+          -76,
+          -246
+        ],
+        [
+          88,
+          -246
+        ],
+        [
+          88,
+          -205
+        ],
+        [
+          60,
+          -199
+        ],
+        [
+          40,
+          -212
+        ],
+        [
+          21,
+          -213
+        ],
+        [
+          -1,
+          -202
+        ],
+        [
+          -43,
+          -178
+        ],
+        [
+          -76,
+          -178
+        ]
+      ],
+      "casonas": [
+        [
+          10,
+          -214
+        ],
+        [
+          -30,
+          -194
+        ]
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "Torre",
+      "name": "singular tower closing the view along the spine (Demo C rule 7), town-hall tower of our town",
+      "at": [
+        12,
+        -80
+      ],
+      "unit": "U20_Landmark_Tower_4x4",
+      "floors": 6,
+      "setback": -1.2
+    },
+    {
+      "id": "Casona_Plazuela",
+      "name": "stone casona with arched portal and a plain shield on the plazuela",
+      "at": [
+        57,
+        -133
+      ],
+      "casona": true
+    }
+  ],
+  "features": [
+    {
+      "kind": "corner_bar",
+      "at": [
+        20,
+        -82
+      ],
+      "name": "bar on a chamfered corner facing the node"
+    },
+    {
+      "kind": "corner_bar",
+      "at": [
+        79,
+        -61
+      ],
+      "name": "bar at the spine crossing"
+    }
+  ],
+  "riverStairs": [
+    {
+      "at": [
+        22,
+        -47
+      ],
+      "name": "stair down from the plaza to a landing at the water (bajada al rio)",
+      "length": 9
+    }
+  ]
+}
