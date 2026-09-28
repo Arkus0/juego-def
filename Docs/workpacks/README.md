@@ -5,18 +5,32 @@ Authority: `Docs/roadmap/ROADMAP.md` + `Docs/architecture/PRODUCTION_AUTHORING_D
 
 ## Purpose
 
-This directory turns the product roadmap into small executable contracts. Workpacks are intentionally lighter than Juego2's infrastructure-heavy governance: each one exists to produce a visible keeper result, prove a reusable production recipe, or close a concrete product decision.
+This directory turns the roadmap into small executable contracts. The immediate objective after M0 is not merely to prove that one good scene/character/animation can be made: it is to build the **graphical production factories** that let juego-def manufacture content repeatedly and cheaply.
+
+### Factory exit principle
+
+A production lane is not finished because it produced a nice sample. It finishes when:
+
+- the real lawful source corpus is discoverable by worker/operator;
+- intake/adaptation/derivation rules are repeatable;
+- routine work is automated or templatized where that materially helps;
+- common failures have cheap validators;
+- a non-trivial batch has been produced through the same path;
+- creating the next asset is primarily **production**, not new R&D or bespoke plumbing.
+
+The factory may be scripts, Editor tools, Blender recipes, templates, metadata, prompts/briefs and validators. It does **not** need to be a huge custom framework.
 
 ## Execution rules
 
-1. **Product first.** A WP passes by producing/validating the stated game output, not by manufacturing infrastructure around it.
-2. **GC2-first.** Use GC2 Core/modules where they materially reduce work; modules are not bought/adopted merely because a WP mentions them.
-3. **Bounded operator by default.** Claude Code + MCP for Unity is the default physical Unity operator in the lanes listed by `PRODUCTION_AUTHORING_DECISION.md`. It must inspect -> act -> observe -> correct, not merely emit scripts.
-4. **Human look authority.** The owner decides whether composition/feel is keeper-worthy. Automated evidence supports that decision but does not replace it.
-5. **No H0/H1 compatibility tax.** H0/H1, materialize/reconcile and old H2F gates are not requirements.
-6. **Evidence proportional to risk.** Keep captures, Play Mode proof, console/runtime observations and important intervention/failure notes. Do not create ceremony unrelated to a real risk.
-7. **Reuse before invention.** Prefer GC2 native -> audited Hub/known tooling -> adaptation -> small local code. Prefer `DIRECT -> ADAPTABLE -> DONOR -> CREATE_DERIVED` for art reuse.
-8. **No fake keeper art.** Primitive/proxy geometry is allowed only when clearly temporary. A WP that claims keeper environment output may not hide greybox behind pasted assets.
+1. **Product first.** Factory work exists to unlock content volume and quality, not tooling for its own sake.
+2. **GC2-first.** Use GC2 where it materially reduces gameplay/presentation work; do not duplicate it.
+3. **Bounded operator by default.** Claude Code + MCP for Unity performs the physical Editor loop where adopted: inspect -> act -> observe -> correct.
+4. **Human look authority.** Owner is final authority on whether graphical output belongs in the game.
+5. **No H0/H1 compatibility tax.** Old materialize/reconcile/gate machinery is not inherited.
+6. **Evidence proportional to risk.** Keep batch output, runtime/capture evidence, validator results and meaningful intervention/failure notes.
+7. **Reuse before invention.** `GC2/native -> known tooling -> adapt -> small custom`. For art: `DIRECT -> ADAPTABLE -> DONOR -> CREATE_DERIVED`.
+8. **No fake keeper art.** Proxies are explicit; dressed greybox cannot count as keeper production output.
+9. **Source packages are inputs, not workspaces.** Do not destructively mutate vendor/source packages; generated/derived outputs live in juego-def-owned locations with lineage.
 
 ## DAG
 
@@ -25,40 +39,55 @@ BOOTSTRAP-UNITY-GC2 (PASS)
         |
         v
 WP-M0-00  First Walking Street
-   |        |          |          |
-   |        |          |          +--> PROD-DIALOGUE-01 --> PROD-UI-01
-   |        |          +--> PROD-ANIM-01 --> PROD-ANIM-02
-   |        +--> PROD-CHAR-01 --> PROD-CHAR-02
-   +--> PROD-ENV-01
-
-PROD-ENV-01 + PROD-CHAR-02 + PROD-ANIM-02 + PROD-UI-01
-                         |
-                         v
-                   CITY-URBAN-01
-                         |
-                         v
-                   PROD-LOOK-GATE
+        |
+        +-----------------------> PROD-DIALOGUE-01 -> PROD-UI-01
+        |
+        v
+PROD-ASSET-00  Shared catalogue/intake/lineage/validation substrate
+   |              |                 |
+   v              v                 v
+ENV-01          CHAR-01           ANIM-01
+Environment     Character         Animation
+factory         factory           intake/retarget factory
+   |              |                 |
+   v              v                 v
+ENV-02          CHAR-02           ANIM-02
+batch scene     population batch  runtime/batch vocabulary
+   \              |                 /
+    \             |                /
+     +------------+---------------+
+                  |
+                  v
+            CITY-URBAN-01
+                  |
+                  v
+            PROD-LOOK-GATE
+                  |
+                  v
+         CONTENT PRODUCTION AT SCALE
 ```
 
-The production lanes should run in parallel once M0 provides a stable shared scene/baseline. `PROD-DIALOGUE-01` may begin earlier if the NPC fixture is already stable.
+`PROD-DIALOGUE-01/UI-01` can progress in parallel once M0 has a stable NPC interaction fixture. The graphical asset factories share `PROD-ASSET-00` so they do not each rediscover the same corpus/provenance/import problems.
 
 ## Workpacks
 
-| WP | Purpose | Depends on |
+| WP | Factory/product outcome | Depends on |
 | --- | --- | --- |
-| `WP-M0-00` | First retained GC2 walking street with interaction | Bootstrap PASS |
-| `WP-PROD-ENV-01` | Keeper environment recipe + repeated-build proof | M0 |
-| `WP-PROD-CHAR-01` | Ordinary character/wardrobe recipe | M0 |
-| `WP-PROD-CHAR-02` | Representative population batch | CHAR-01 |
-| `WP-PROD-ANIM-01` | Animation intake/coverage truth | M0 |
-| `WP-PROD-ANIM-02` | Runtime animation vocabulary on real characters | ANIM-01 + CHAR-01 |
-| `WP-PROD-DIALOGUE-01` | Choose real investigation dialogue authoring/presentation path | M0 |
-| `WP-PROD-UI-01` | No-voice dialogue/UI presentation language | DIALOGUE-01 |
-| `WP-CITY-URBAN-01` | First real keeper block | ENV-01 + CHAR-02 + ANIM-02 + UI-01 |
-| `WP-PROD-LOOK-GATE` | Prove production repeatability before broad content | CITY-URBAN-01 |
+| `WP-M0-00` | First retained playable GC2 street | Bootstrap PASS |
+| `WP-PROD-ASSET-00` | Shared machine-readable asset catalogue, intake, lineage, discovery and validators | M0 |
+| `WP-PROD-ENV-01` | Environment asset/assembly factory | ASSET-00 |
+| `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory | ENV-01 |
+| `WP-PROD-CHAR-01` | Civilian/wardrobe production factory | ASSET-00 |
+| `WP-PROD-CHAR-02` | Representative civilian batch from factory | CHAR-01 |
+| `WP-PROD-ANIM-01` | Animation intake/retarget/coverage factory | ASSET-00 |
+| `WP-PROD-ANIM-02` | Runtime animation vocabulary + batch proof | ANIM-01 + CHAR-01 |
+| `WP-PROD-DIALOGUE-01` | Investigation dialogue authoring/runtime production path | M0 |
+| `WP-PROD-UI-01` | Reusable no-voice dialogue/interaction presentation system | DIALOGUE-01 |
+| `WP-CITY-URBAN-01` | First integrated keeper block produced from factories | ENV-02 + CHAR-02 + ANIM-02 + UI-01 |
+| `WP-PROD-LOOK-GATE` | Prove factories are ready for content-scale production | CITY-URBAN-01 |
 
-## Immediate next WP
+## Immediate sequence
 
 **Execute `WP-M0-00` now.**
 
-Do not wait for every production lane to be specified further before starting M0; this v1 contract is intended to remove that ambiguity.
+After M0: execute `WP-PROD-ASSET-00`. Dialogue may proceed in parallel. Once ASSET-00 passes, ENV/CHAR/ANIM factories can run concurrently.
