@@ -7,15 +7,23 @@ Status: **BOOTSTRAP DONE / NEXT: PROD-ASSET-00** — authoring path `BOUNDED_OPE
 1. ~~**Knowledge migration**~~ — done.
 2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` adopted; see `PRODUCTION_AUTHORING_DECISION.md`.
 3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera working in Play Mode.
-4. **Shared graphical asset substrate (`PROD-ASSET-00`)** — consume existing pipeline research first; searchable catalogue, semantic discovery, source/derived lineage, import/adaptation conventions and cheap validators. **← NEXT**
-5. **M0 gameplay fixture — parallel** — short route + one world interaction + one NPC interaction; validates camera/scale/reach/GC2 integration but does not block factory R&D.
-6. **Graphical factories in parallel after ASSET-00** — ENV / CHAR / ANIM build scalable production paths, explicitly reusing/adapting existing pipelines before custom tooling.
-7. **Factory scale proofs** — ENV multi-scene production, civilian batch, animation runtime/batch. Dialogue/UI authoring factory can proceed in parallel from bootstrap.
-8. **First Keeper Block (`CITY-URBAN-01`)** — integrate M0 interaction fixture + accepted factory outputs in actual game space.
+4. **Shared graphical asset substrate (`PROD-ASSET-00`)** — research spikes + searchable catalogue, semantic discovery, lineage, intake conventions and validators, driven by the B0 Mercado–Muelle demand. **← NEXT**
+5. **M0 fixture in parallel** — small retained player/camera/world/NPC interaction fixture; required before keeper integration, not before factory R&D.
+6. **Graphical factories in parallel** — ENV / CHAR / ANIM build scalable production paths serving B0 first, not isolated examples.
+7. **Factory scale proofs** — ENV multi-scene production, civilian batch, animation runtime/batch; Dialogue/UI authoring factory proceeds in parallel.
+8. **B0 Keeper Block (`CITY-URBAN-01`)** — realize the migrated Mercado–Muelle first-block brief using the factories and CITY game-space design principles.
 9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves new content can be produced without foundational pipeline work.
 10. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, 20–30 minute slice, then district/population breadth.
 
 Executable contracts live in [`../workpacks/`](../workpacks/README.md). The roadmap states sequence; workpacks state PASS/FAIL.
+
+## What vs how
+
+- [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md) is the migrated CITY answer to **what the first retained city content must contain**.
+- `PROD-ASSET/ENV/CHAR/ANIM/DIALOGUE/UI` define **how to industrialize the assets/content needed to build it repeatedly**.
+- `CITY-URBAN-01` integrates those factories back into the actual keeper B0 game space.
+
+We migrate CITY product/game-space knowledge, not the old inland pilot or H1/H2F governance.
 
 ## Why factories come before breadth
 
@@ -27,18 +35,18 @@ Existing pipeline research is binding input. See [`../research/EXISTING_ASSET_PI
 
 ## Product/factory path
 
-| Step | Visible objective | Default tech | Keeper output | Observable PASS |
+| Step | Visible/product objective | Default tech | Keeper/factory output | Observable PASS |
 |---|---|---|---|---|
 | Bootstrap Unity ✅ | Project opens, scene plays, real versions/pipeline recorded | Unity | minimal project | Open/Play without blocking errors. |
 | GC2 Core ✅ | third-person player + camera | Core | player/camera | Walk, turn and follow in Play Mode. |
-| Shared Asset Factory | source corpus becomes searchable/reproducible and existing pipeline candidates are evaluated | catalogue + bounded research spikes + small tooling | production substrate | ENV/CHAR/ANIM can discover/intake assets without repeated manual path archaeology or blind reinvention. |
+| Shared Asset Factory | B0-relevant source corpus becomes searchable/reproducible and existing pipeline candidates are evaluated | catalogue + bounded research spikes + small tooling | production substrate | ENV/CHAR/ANIM discover/intake assets without repeated path archaeology; B0 gaps visible. |
 | M0 Gameplay Fixture | short route + object/hotspot + NPC interaction | operator + GC2 Core | retained scale/interaction fixture | Owner can walk/interact in Play Mode; may run in parallel. |
-| Environment Factory | reusable architecture/urban asset + assembly system | existing/adapted tooling + MCP/Unity + Blender where useful | reusable kit + tooling | Normal new environment units are routine to produce. |
-| Character Factory | reusable civilian/wardrobe production | existing/adapted Quaternius pipelines + prefab/batch tooling | civilian factory | Normal new civilian is routine to produce. |
-| Animation Factory | semantic batch intake/retarget + runtime mapping | existing/adapted import rules + Unity/GC2 | animation factory | Normal compatible clip is routine to admit/use. |
+| Environment Factory | reusable architecture/urban asset + assembly system serving B0 | existing/adapted tooling + MCP/Unity + Blender where useful | reusable kit + tooling | Normal new environment units are routine to produce. |
+| Character Factory | reusable civilian/wardrobe production serving B0 roles | existing/adapted Quaternius pipelines + prefab/batch tooling | civilian factory | Normal new civilian is routine to produce. |
+| Animation Factory | semantic batch intake/retarget serving B0 motions | existing/adapted import rules + Unity/GC2 | animation factory | Normal compatible clip is routine to admit/use. |
 | Dialogue/UI Factory | contextual conversations + reusable no-voice presentation | simplest justified GC2/local path | content/UI authoring factory | New normal dialogue is content work, not scene plumbing. |
 | Factory Scale Proofs | demonstrate volume/repeatability | accepted factories | multi-scene/batch outputs | ENV/CHAR/ANIM scale without pipeline restart. |
-| First Keeper Block | integrate factories into real urban content | proven stack | retained lived-in block seed | Owner accepts it as keep-and-expand game content. |
+| B0 Keeper Block | Mercado–Muelle lodging/market/shop/port/upper-loop game space | proven stack | first retained city block | Owner accepts it as keep-and-expand game content. |
 | PROD-LOOK-GATE | fresh-production challenge | proven factories | production lock | New brief succeeds without foundational tooling changes. |
 | First Investigation Loop | testimony + physical/context clue | GC2 + chosen dialogue path | clue loop | Player reaches a lead through world references. |
 | Routines/Living Block | meaningful time/location changes | Behavior/local only if useful | living block | revisit produces changed opportunity/context. |
@@ -48,23 +56,27 @@ Existing pipeline research is binding input. See [`../research/EXISTING_ASSET_PI
 | 20–30 minute slice | investigation -> daily life -> action -> changed return | proven stack | complete slice | first-play timed run works end to end. |
 | Expansion | more districts/population/content | factories + proven systems | incremental content | each increment adds real playable density. |
 
-## M0 — why it still exists
+## M0 fixture
 
-M0 is deliberately tiny and **not** the gateway to factory development.
+M0 is deliberately small and parallel. It establishes the truthful gameplay camera/scale/interaction baseline used to validate factory output before B0 integration.
 
-The bootstrap already proves player/camera. M0 adds only the smallest retained gameplay fixture needed to validate assets later at real third-person conditions: route width, camera framing, collision/reach and an NPC/world interaction.
+**PASS:** owner can walk the route, interact with object/world and interact with the NPC in Play Mode. Proxies must be explicit; M0 cannot pretend dressed cubes are final architecture.
 
-It may run in parallel with `PROD-ASSET-00` and the early factory work. It must be ready before `CITY-URBAN-01`, when the first keeper block integrates all lanes.
+## B0 city target
+
+The first keeper block is the Mercado–Muelle seam defined in `FIRST_KEEPER_BLOCK_B0.md`: lodging/return, market/activity, everyday shop + witness threshold, commercial run, port reveal/public quay, upper observation/alternate route, honest expansion seams and genuine route cycles.
+
+The useful CITY-07/CITY-09 lessons are retained as design criteria: route learning, compression/expansion/reveal, threshold readability, framed views, useful nooks, coherent elevation and third-person support for follow/search/chase. The old inland exact geometry and lifecycle gates are not.
 
 ## Production factory phase
 
 Start now with:
 
-1. `PROD-ASSET-00`, including reuse-first research spikes;
+1. `PROD-ASSET-00`, including reuse-first research spikes and B0 demand coverage;
 2. M0 and Dialogue may proceed in parallel;
 3. after ASSET-00, ENV/CHAR/ANIM factories run concurrently;
 4. batch scale proofs;
-5. integrated keeper block;
+5. B0 keeper realization;
 6. fresh-production Gate.
 
 See [`POST_FOUNDATION_PRODUCTION_WPS.md`](POST_FOUNDATION_PRODUCTION_WPS.md) for high-level rationale and [`../workpacks/README.md`](../workpacks/README.md) for executable DAG/contracts.
