@@ -11,18 +11,10 @@ Un juego de aventura en tercera persona ambientado en una ciudad portuaria ficti
 
 ## Tecnología
 
-- **Unity 6000.3.24f1 + URP 17.3** como runtime/editor (proyecto en `Unity/JuegoDef`).
-- **Game Creator 2 first** para gameplay: Core 2.19.61 y módulos sólo cuando una feature real los justifique.
-- **Production authoring: Claude Code + MCP for Unity** como operador de editor (`BOUNDED_OPERATOR`, confirmado por el owner tras compararlo con H0/H1 de Juego2); el juicio visual final es humano. Unity AI Assistant descartado (requiere suscripción).
+- **Unity** como runtime/editor.
+- **Game Creator 2 first** para gameplay: Core y módulos sólo cuando una feature real los justifique.
+- **Production authoring:** `BOUNDED_OPERATOR` con MCP for Unity como superficie principal en las lanes donde aporta valor; reevaluación tras la primera factory ENV a escala.
 - **H0/H1 no se heredan** como foundation. Una pieza causal de Arkus sólo puede reaparecer frente a un problema concreto que GC2/local no resuelva económicamente.
-
-### Abrir el proyecto
-
-1. Instalar Unity **6000.3.24f1**.
-2. Restaurar GC2 Core (licencia por puesto; **nunca se commitea**, el repo es público): `python Tools/gc2-provision.py install`.
-3. Abrir `Unity/JuegoDef` y la escena `Assets/JuegoDef/Scenes/Bootstrap_GC2Core.unity`.
-
-Detalles en [Unity project setup](Docs/production/UNITY_PROJECT_SETUP.md).
 
 ## Dirección visual y producción
 
@@ -32,25 +24,30 @@ No se acepta como objetivo visual final el patrón **greybox + assets pegados**.
 
 ## Estado actual
 
-`juego-def` es el **repo de producción limpio** y la landing zone del conocimiento útil de Juego2 (producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub, dialogue authoring y factories post-foundation).
+`juego-def` es el repo de producción GC2-first.
 
-**Bootstrap hecho:** proyecto Unity + URP + GC2 Core con player y cámara en tercera persona caminando en Play Mode, construido por el operador MCP ([evidencia](Docs/evidence/BOOTSTRAP-UNITY-GC2/README.md)).
+Ya contiene el conocimiento migrado de producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub, dialogue authoring y el baseline de producción. Unity + URP + GC2 Core están levantados y el player/cámara funcionan en Play Mode.
 
-El siguiente hito jugable es **M0 — GC2 Walking Street**. Seguimos sin congelar un gran framework de escenarios/personajes: primero se prueba hasta dónde llega el operador.
+La siguiente fase construye **factorías gráficas/contenido** para que el siguiente edificio, civil, animación o conversación sea producción y no nueva I+D. Las factorías consumen dos entradas vinculantes:
+
+- [`Docs/design/FIRST_KEEPER_BLOCK_B0.md`](Docs/design/FIRST_KEEPER_BLOCK_B0.md): el **qué construir** migrado desde CITY — B0 Mercado–Muelle y sus reglas de game-space;
+- [`Docs/research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](Docs/research/EXISTING_ASSET_PIPELINE_RESEARCH.md): el **qué reutilizar/probar antes de inventar tooling propio**.
+
+El siguiente workpack es `WP-PROD-ASSET-00`; M0 puede avanzar en paralelo como fixture jugable mínimo.
 
 ## Documentos clave
 
 - [Visión del juego](Docs/design/GAME_VISION.md)
 - [Visual Bible](Docs/design/VISUAL_BIBLE.md)
 - [Modelo de ciudad portuaria](Docs/design/PORT_TOWN_WORLD_MODEL.md)
+- [B0 Mercado–Muelle: first keeper block](Docs/design/FIRST_KEEPER_BLOCK_B0.md)
 - [Arquitectura GC2-first](Docs/architecture/GC2_FIRST_ARCHITECTURE.md)
-- [Decisión de production authoring](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
-- [Unity project setup](Docs/production/UNITY_PROJECT_SETUP.md)
+- [Production authoring decision](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
 - [Roadmap](Docs/roadmap/ROADMAP.md)
-- [Factories post-foundation](Docs/roadmap/POST_FOUNDATION_PRODUCTION_WPS.md)
+- [Executable workpacks](Docs/workpacks/README.md)
+- [Existing asset-pipeline research](Docs/research/EXISTING_ASSET_PIPELINE_RESEARCH.md)
 - [Adquisición de módulos](Docs/roadmap/GC2_MODULE_ACQUISITION.md)
-- [Auditoría de reutilización de Juego2](Docs/migration/JUEGO2_REUSE_AUDIT.md)
-- [Baseline de conocimiento migrado](Docs/migration/JUEGO2_KNOWLEDGE_BASELINE.md)
+- [Baseline de migración](Docs/migration/JUEGO2_KNOWLEDGE_BASELINE.md)
 - [Quaternius production knowledge](Docs/production/QUATERNIUS_PRODUCTION_KNOWLEDGE.md)
 - [GC2 Hub reuse knowledge](Docs/production/GC2_HUB_REUSE_KNOWLEDGE.md)
 - [Dialogue authoring knowledge](Docs/production/DIALOGUE_AUTHORING_KNOWLEDGE.md)
