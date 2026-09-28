@@ -50,8 +50,21 @@ Current juego-def authorities:
 - `Docs/design/CITY_PRODUCTION_KNOWLEDGE.md`
 - `Docs/design/FIRST_KEEPER_BLOCK_B0.md`
 - `Docs/design/PORT_TOWN_WORLD_MODEL.md`
+- local executable `Docs/workpacks/WP-CITY-URBAN-00.md` for formal closure.
 
-Do not restore old inland/Potes geography or H1-linked CITY governance merely because a source document contains useful spatial detail.
+The migrated baseline is **not** equivalent to a PASS of local CITY-URBAN-00. Do not restore old inland/Potes geography or H1-linked CITY governance merely because a source document contains useful spatial detail.
+
+## NPC depth / population planning
+
+Raw source:
+
+- `Docs/design/NPC_DEPTH_TIERS.md`
+
+Current authority:
+
+- `juego-def/Docs/design/NPC_DEPTH_TIERS.md`
+
+Preserve the distinction between visible population, routine-bearing population, named recurring actors and deeply systemic actors. Old Arkus persistence ownership is not imported.
 
 ## Living World / PA
 
@@ -70,11 +83,24 @@ Use raw PA only when a future implementation/review needs a specific fixture, fa
 ## Gameplay-system harvest
 
 - `Docs/reference/JUEGO_KNOWLEDGE_LEDGER.md`
+- `Docs/reference/JUEGO_PRIOR_ART_QUESTION_BANK.md`
 - `Docs/product/IMMERSIVE_OBJECT_INTERACTION_SCOPE.md`
 
 Current juego-def distillation: `Docs/research/GAMEPLAY_SYSTEMS_KNOWLEDGE.md`.
 
-The ledger is especially valuable as a fixture/failure-case bank and prior-art question bank. Its old DFU/Shenmue/WorldState/H0/H1 wrappers are not architecture authority.
+The ledger is especially valuable as a fixture/failure-case bank. The prior-art question bank is useful before starting broad research: ask the concrete mechanism question first and look for existing solutions before inventing a subsystem. Old DFU/Shenmue/WorldState/H0/H1 wrappers are not architecture authority.
+
+## H2 / H2F production-planning archive
+
+Potentially useful source detail:
+
+- `Docs/workpacks/H2/ASSEMBLY_GRAMMAR_PLANNING_INPUT.md`
+- `Docs/workpacks/H2/DIMENSION_ELEVATION_ITERATION_PLANNING_INPUT.md`
+- `Docs/workpacks/H2/WORLD_AUTHORING_PLANNING_INPUT.md`
+- `Docs/workpacks/H2/README.md`
+- H2F package/tool decision evidence where an exact historical choice needs provenance.
+
+Current juego-def factories, CITY knowledge, Visual Bible and `BOUNDED_OPERATOR` decision are authoritative. Use H2/H2F only for omitted production questions, not to restore H1 lifecycle or the old inland keeper benchmark.
 
 ## Product source corpus
 
@@ -90,6 +116,12 @@ Useful sources already largely absorbed:
 
 Current juego-def product/design docs govern where wording differs.
 
+## Visual reference archive
+
+Juego2 `Docs/art/Refs/` is **not current visual authority** because its curated index was built around the old Potes/Liébana setting.
+
+Use current juego-def Visual Bible and port-town design docs first. Historical generic style/anti-reference observations may be consulted selectively, but do not bulk-migrate the old location-reference set.
+
 ## Agent/process archive
 
 Useful source process:
@@ -104,6 +136,10 @@ Useful source process:
 - `Docs/engineering/DEPENDENCY_IP_POLICY.md`
 
 Current juego-def operating authority is local `AGENTS.md` and `.agents/skills/**`. Do not re-import Automation V2, CTX capsules, H1 execution or harness governance from the archive.
+
+### Future-only unattended operation
+
+Juego2 `Docs/engineering/LOCAL_WP_AUTOPILOT.md` and its Telegram/driver machinery remain a **future-only idea**. Revisit only when repeated production WPs create enough routing/polling overhead to justify automation. Do not import its Automation-V2, quota, polling or button machinery pre-emptively.
 
 ## Freshness rule
 
