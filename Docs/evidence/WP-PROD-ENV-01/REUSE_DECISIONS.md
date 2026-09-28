@@ -15,6 +15,9 @@ Date: 2026-09-28. Binding input: [existing-pipeline research](../../research/EXI
 | 7 | Unity AssetDatabase / ModelImporter / AssetPostprocessor (native) | Fixed two intake failure classes met here: Props/Nature FBX imported **100× too large** (file scale ignored) and their textures imported as **Cubemap** (every prop white) because intake writes minimal `.meta`. Kit-material binding for derived FBX via `SearchAndRemapMaterials`. | Unity. | **USE**. | `EnvImportRules.cs` (repeatable on a clean clone). |
 | 8 | Blender 5.2.1 headless + Python (`bpy`, `bmesh`) | 41 derivation recipes, full run ≈6 s; donor copy from the vault `.blend`, boolean opening cuts (hole-tolerant exact solver — kit walls are open shells), trim-sheet UV banding. | Blender GPL tool, outputs owned. | **USE** as the donor/derived path. Blender MCP was not needed: headless scripts are more repeatable. | `Tools/blender/env_derive.py`. |
 | 9 | Downtown City MegaKit (not owned) | Considered for modern shopfronts/street pieces. The missing modern pieces (roller shutter, shop doors/fascias, kerbs, bins, bollards, fish crates) were cheap to derive/author on kit trim sheets. | Not owned. | **DEFER** — no purchase justified by a blocked role. | — |
+| 10 | **OpenStreetMap** via Overpass API (mirrors `overpass-api.de`, `overpass.kumi.systems`, `maps.mail.ru`) | Fetched the Potes historic core (buildings, streets with node ids, waterways) for the Demo C node and the 180 × 220 m CASCO district; measured widths, jogs, plots, blocks, junctions (`Tools/env_morphology.py`, `Tools/env_district.py`). | ODbL 1.0 — derived measures carry "(c) OpenStreetMap contributors"; raw extracts are not committed. | **USE** as morphology reference (structure only: no buildings, names or landmarks enter the game). | `env_morphology.py`, `env_district.py`, `env_district_skeleton.py`. |
+| 11 | **IGN MDT05** (5 m terrain) via the IDEE WCS `servicios.idee.es/wcs-inspire/mdt` | Street-level heights and grades of the reference network (relief 281–315 m, 55 % steep by length). | CC BY 4.0 ("MDT05 (c) Instituto Geográfico Nacional"); raw GeoTIFF not committed. | **USE** as terrain reference; game heights are authored (owner 70/20/10 rule). | `env_district.py dem/measure`. |
+| 12 | `shapely` 2.1 (Python, BSD-3) | Polygon algebra for blocks/street space, constrained Delaunay for the heightfield ground meshes. | BSD-3, installed with pip (tool dependency, not vendored). | **USE** for tooling only (nothing ships). | — |
 
 ## Owned-but-rejected source pieces (enforced)
 
@@ -24,3 +27,10 @@ Date: 2026-09-28. Binding input: [existing-pipeline research](../../research/EXI
 
 1. "Ojo con tanta ventana y sobre todo puertas en las plantas de arriba" — upper floors now carry at most **one** glazed balcony door per facade (principal floor); balcony codes use the derived `ENV_Door_Balcony`, not kit plank doors.
 2. "Compáralo con fotos reales… dejar respirar" — compared with Wikimedia Commons photos of the [Castro Urdiales harbour front](https://commons.wikimedia.org/wiki/File:Harbour_of_Castro_Urdiales.jpg) and [Combarro](https://commons.wikimedia.org/wiki/File:2018._Combarro,_Poio._Galiza-15.jpg): one opening axis every 3–4 m, much plain wall, near-solid ground floors, bracket lanterns, downpipes. Rhythms were recalibrated accordingly (`FacadeGrammar.Rhythms`).
+
+## Owner decisions, CASCO district (2026-09-28) — DocSync pending
+
+"Mini Potes" also in the palette, knowingly against `Docs/design/PORT_TOWN_WORLD_MODEL.md` and
+`Docs/research/LEGACY_RESEARCH_SOURCE_INDEX.md`, which retired Potes as art direction; the reference box, the edge
+river, the 70/20/10 terrain rule, "reference = soul, not a literal trace" and the asset quality pass are recorded in
+[CASCO_REFERENCE_STUDY.md](CASCO_REFERENCE_STUDY.md). The design docs must be synced (DocSync) before ENV-01 closes.

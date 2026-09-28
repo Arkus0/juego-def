@@ -23,3 +23,9 @@ Source of demand: the ENV factory-demand matrix in [`CITY_URBAN_00_HANDOFF.md`](
 ## Summary
 
 All 13 `FACTORY_REQUIRED`/yard rows have at least one validated unit (19 units in total). The most important **asset-creation gaps** for the next ENV/PROP content are: a post-1960 infill building family, vehicles, overhead utilities/aerials/period street furniture, a ramp/sloped-street module and a chamfered/hipped corner. None blocks `WP-PROD-ENV-02`; they are breadth, not pipeline.
+
+**CASCO district update (2026-09-28):** closed since this table — vehicles, antennas/cables/signs, chamfered bar corner,
+drain grates/manholes (rounds 3–4); sloping streets, stairs, terraces, river walls, stone bridges and a stair to the
+water (district builder); period street furniture rebuilt to kit level (lamp post, bollard, bin, hanging sign,
+awning, pot, fountain, plaza kiosk). Still open: post-1960 infill block, hipped/trapezoid corner buildings, a corner
+interior for the chamfered bar.

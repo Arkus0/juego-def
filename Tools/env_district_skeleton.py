@@ -444,7 +444,21 @@ def build(trace, doc, frame):
         return best
 
     def split_plot(e, p, t, w):
-        """Carves a plot of width w centred at t out of plot p; slivers under 3 m go to the new plot."""
+        """Carves a plot of width w centred at t out of plot p; slivers under 3 m go to the new plot. A plot narrower
+        than w first absorbs its neighbours on the same edge."""
+        i = e["plots"].index(p)
+        while p["w"] < w - 0.05:
+            nxt = e["plots"][i + 1] if i + 1 < len(e["plots"]) and not e["plots"][i + 1].get("wall") else None
+            prv = e["plots"][i - 1] if i > 0 and not e["plots"][i - 1].get("wall") else None
+            if nxt is None and prv is None:
+                break
+            if nxt is not None:
+                p["w"] += nxt["w"]
+                e["plots"].pop(i + 1)
+            else:
+                p["x0"], p["w"] = prv["x0"], p["w"] + prv["w"]
+                e["plots"].pop(i - 1)
+                i -= 1
         x0, x1 = p["x0"], p["x0"] + p["w"]
         c0, c1 = max(x0, t - w / 2), min(x1, t + w / 2)
         parts = []
@@ -469,7 +483,7 @@ def build(trace, doc, frame):
             continue
         _, e, p, t = hit
         if lm.get("unit"):
-            q = split_plot(e, p, t, 4.0)
+            q = split_plot(e, p, t, min(4.0, e["s1"] - e["s0"]))
             q.update({"unit": lm["unit"], "type": "landmark", "bays": 2, "depth": 4, "floors": lm.get("floors", 5),
                       "setback": lm.get("setback", 0.0), "landmark": lm["id"]})
         else:
@@ -540,6 +554,11 @@ def build(trace, doc, frame):
             for p in e["plots"]:
                 if p.get("wall"):
                     continue
+                if p.get("landmark"):
+                    # a singular building may stand proud of the street line (Demo C rule 7): never trimmed or dropped
+                    p["fp"] = footprint(e, p, p["depth"])
+                    placed.append((e["i"], p["fp"]))
+                    continue
                 ok = None
                 for d in [x for x in (8, 6, 4) if x <= p["depth"]] or [4]:
                     fp = footprint(e, p, d)
@@ -573,6 +592,23 @@ def build(trace, doc, frame):
                 p["depth"] = ok
                 p["fp"] = footprint(e, p, ok)
                 placed.append((e["i"], p["fp"]))
+
+    # row ends that assumed a neighbour (corner cede, mitred tip, straight continuation, concave notch) are exposed
+    # again when that neighbour's plot was dropped, walled or never built: a side wall must never be left open
+    for bi, bes in by_block.items():
+        n = len(bes)
+        for k in range(n):
+            e1, e2 = bes[k - 1], bes[k]
+            live1 = [p for p in e1["plots"] if not p.get("drop") and not p.get("wall")]
+            live2 = [p for p in e2["plots"] if not p.get("drop") and not p.get("wall")]
+            has1 = bool(live1) and live1[-1] is e1["plots"][-1] and live1[-1]["x0"] + live1[-1]["w"] >= e1["s1"] - 0.5
+            has2 = bool(live2) and live2[0] is e2["plots"][0] and live2[0]["x0"] <= e2["s0"] + 0.5
+            if e2["start"] != "open" and not has1:
+                e2["start"] = "open"
+                report["reopened_ends"] = report.get("reopened_ends", 0) + 1
+            if e1["end"] != "open" and not has2:
+                e1["end"] = "open"
+                report["reopened_ends"] = report.get("reopened_ends", 0) + 1
 
     # heights, palettes, eras, basements
     for e in edges:
@@ -621,7 +657,9 @@ def build(trace, doc, frame):
             p["mid"] = mid
 
     # ground meshes by zone
-    stair_polys = unary_union([spoly[s.id] for s in stairs]) if stairs else Polygon()
+    # the stair footprint is exactly between its end nodes (flat caps): a square cap would punch a hole in the
+    # junction it starts from (the route probe fell through one)
+    stair_polys = unary_union([s.line.buffer(s.width / 2, cap_style="flat") for s in stairs]) if stairs else Polygon()
     deck = unary_union([spoly[s.id] for s in bridges]).intersection(C) if bridges else Polygon()
     ground_space = street_space.difference(stair_polys)
     core_ids = {s.id for s in streets if s.profile == "core"}
@@ -731,6 +769,24 @@ def build(trace, doc, frame):
     bank = C.boundary.intersection(D.buffer(2))
     bank_lines = [list(g.coords) for g in (bank.geoms if hasattr(bank, "geoms") else [bank]) if g.length > 1]
     open_bank = C.buffer(1.2).boundary  # parapets where the bank is public space
+    river_stairs = []
+    bank_geoms = list(bank.geoms) if hasattr(bank, "geoms") else [bank]
+    for rs in trace.get("riverStairs", []):
+        pt = Point(rs["at"])
+        g = min(bank_geoms, key=lambda g: g.distance(pt))
+        t = g.project(pt)
+        a0, a1 = g.interpolate(max(0.0, t - 1.0)), g.interpolate(min(g.length, t + 1.0))
+        u = np.array([a1.x - a0.x, a1.y - a0.y])
+        u /= max(np.linalg.norm(u), 1e-6)
+        o = np.array(g.interpolate(t).coords[0])
+        n = np.array([-u[1], u[0]])
+        if not C.contains(Point(o + n * 1.5)):
+            n = -n
+        # the module runs along +x with +z over the water; a Unity yaw frame has +z to the left of +x, so n must be
+        # to the left of u (cross > 0)
+        if u[0] * n[1] - u[1] * n[0] < 0:
+            u = -u
+        river_stairs.append({"at": o, "u": u, "n": n, "y": float(T([o])[0]), "length": rs.get("length", 9)})
     parapets = []
     for g in (bank.geoms if hasattr(bank, "geoms") else [bank]):
         for k in np.arange(0, g.length, 2.0):
@@ -738,8 +794,66 @@ def build(trace, doc, frame):
             p1 = g.interpolate(min(g.length, k + 2.0))
             mid = LineString([p0, p1]).interpolate(0.5, normalized=True)
             probe = mid.buffer(1.6).difference(C)
-            if probe.intersection(Bu).area < 0.3 and D.contains(mid) and probe.intersection(deck.buffer(0.5)).area < 0.1:
+            near_stairs = any(np.linalg.norm(np.array([mid.x, mid.y]) - (r["at"] + r["u"] * 3.0)) < 4.2 for r in river_stairs)
+            if probe.intersection(Bu).area < 0.3 and D.contains(mid) and probe.intersection(deck.buffer(0.5)).area < 0.1 and not near_stairs:
                 parapets.append([p0.x, p0.y, p1.x, p1.y])
+    garden = []
+    grng = random.Random(77)
+    for poly, kind in ((yards, "yard"),):
+        for g in (poly.geoms if hasattr(poly, "geoms") else [poly]):
+            if g.geom_type != "Polygon" or g.area < 25:
+                continue
+            x0, y0, x1, y1 = g.bounds
+            for gx in np.arange(x0 + 3, x1 - 2, 7.5):
+                for gy in np.arange(y0 + 3, y1 - 2, 7.5):
+                    q = Point(gx + grng.uniform(-2, 2), gy + grng.uniform(-2, 2))
+                    if not g.buffer(-2.2).contains(q) or fps.distance(q) < 2.5:
+                        continue
+                    zone = next((z["id"] for z in zones if z["poly"].contains(q)), None)
+                    r = grng.random()
+                    item = "tree" if r < (0.35 if zone else 0.45) else "bush" if r < 0.8 else None
+                    if item:
+                        garden.append({"at": U2((q.x, q.y)), "y": round(float(T([(q.x, q.y)])[0]), 3), "item": item,
+                                       "scale": round(grng.uniform(0.55, 0.85) if item == "tree" else grng.uniform(0.8, 1.4), 2),
+                                       "rot": grng.randint(0, 359)})
+    fountains = []
+    for pz in trace.get("plazas", []):
+        if pz["id"] != "Plazuela_Fuente":
+            continue
+        c = Point(pz["disc"][:2])
+        ring = Bu.boundary
+        q = ring.interpolate(ring.project(c))
+        d = np.array([c.x - q.x, c.y - q.y])
+        d /= max(np.linalg.norm(d), 1e-6)
+        at = np.array([q.x, q.y]) + d * 0.35
+        fountains.append({"at": U2(at), "y": round(float(T([at])[0]), 3), "face": [round(float(d[0]), 4), round(float(d[1]), 4)]})
+    crossings = []
+    for sb in bridges:
+        seg = sb.line.intersection(C)
+        if seg.is_empty:
+            continue
+        cs = list(seg.coords) if seg.geom_type == "LineString" else [c for g in seg.geoms for c in g.coords]
+        a, b = np.array(cs[0]), np.array(cs[-1])
+        mid = (a + b) / 2
+        crossings.append({"id": sb.id, "mid": U2(mid), "dir": [round(float(v), 5) for v in (b - a) / max(np.linalg.norm(b - a), 1e-6)],
+                          "span": round(float(np.linalg.norm(b - a)), 3), "width": sb.width, "y": round(float(sb.y_at(sb.line.project(Point(mid)))), 3)})
+    # route probe: the authored node tour, sampled every ~6 m along the connecting street centrelines
+    route = []
+    tour = trace.get("route", [])
+    for na, nb in zip(tour[:-1], tour[1:]):
+        st = next((s for s in streets if {s.a, s.b} == {na, nb}), None)
+        if st is None:
+            report.setdefault("route_gaps", []).append(f"{na}-{nb}")
+            continue
+        L = st.line.length
+        ts = np.linspace(0, L, max(2, int(L / 6) + 1))
+        if st.a != na:
+            ts = ts[::-1]
+        for k, tt in enumerate(ts):
+            if route and k == 0:
+                continue
+            q = st.line.interpolate(tt)
+            route.append(U2((q.x, q.y)) + [round(float(st.y_at(tt)), 3)])
     spec = {
         "id": trace["id"], "brief": trace["brief"], "generatedBy": "Tools/env_district_skeleton.py",
         "reference": trace["reference"], "unityOffset": [ox, oy],
@@ -756,6 +870,11 @@ def build(trace, doc, frame):
         "bridges": [{"id": s.id, "role": s.role, "width": s.width,
                      "pts": [U2(c) + [round(float(y), 3)] for c, y in zip(s.line.coords, s.ys)]} for s in bridges],
         "stairs": [{"id": s.id, "width": s.width, "pts": [U2(c) + [round(float(y), 3)] for c, y in zip(s.line.coords, s.ys)]} for s in stairs],
+        "riverStairs": [{"at": U2(r["at"]), "u": [round(float(v), 5) for v in r["u"]], "y": round(r["y"], 3)} for r in river_stairs],
+        "bridgeArches": crossings,
+        "fountains": fountains,
+        "garden": garden,
+        "route": route,
         "rows": rows_out,
         "ground": ground,
         "report": report,

@@ -961,8 +961,8 @@
       "id": "Torre",
       "name": "singular tower closing the view along the spine (Demo C rule 7), town-hall tower of our town",
       "at": [
-        12,
-        -80
+        14.6,
+        -79.8
       ],
       "unit": "U20_Landmark_Tower_4x4",
       "floors": 6,
@@ -1005,5 +1005,39 @@
       "name": "stair down from the plaza to a landing at the water (bajada al rio)",
       "length": 9
     }
+  ],
+  "route": [
+    "E1",
+    "J_X",
+    "J_A",
+    "N0",
+    "BR1_S",
+    "NB_J",
+    "J_SOL",
+    "SOL_W",
+    "J_SOL",
+    "NB_J",
+    "BR1_S",
+    "N0",
+    "J_C",
+    "J_CW",
+    "J_CS",
+    "J_S0",
+    "J_S1",
+    "J_S2",
+    "J_SP",
+    "SP2",
+    "MIR",
+    "J_S4",
+    "J_S1",
+    "J_S0",
+    "J_CS",
+    "J_A2",
+    "J_A3",
+    "J_A",
+    "J_X",
+    "J_OS",
+    "J_OE",
+    "E2"
   ]
 }

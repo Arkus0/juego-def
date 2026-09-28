@@ -101,6 +101,17 @@
     "triangles": 56,
     "donorSource": null
   },
+  "ENV_Bridge_Arch": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Stone arch under a casco bridge, as a 1 m wide slice along z that the district builder scales to the deck\nwidth and along x to the span: segmental arch (span 10 m, springing 3.4 m below the deck, crown 0.6 m below it),\na ring of dressed voussoirs on both faces, rubble spandrels up to a moulded string course, rubble soffit.\nDeck top at y = 0 (the builder lays the paved deck on it).",
+    "materials": [
+      "ENV_Stone_Sandstone",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 620,
+    "donorSource": null
+  },
   "ENV_Buoy": {
     "class": "ORIGINAL",
     "donors": [],
@@ -299,6 +310,18 @@
     "triangles": 284,
     "donorSource": null
   },
+  "ENV_Fountain_Trough": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Village fountain and trough (fuente-abrevadero): dressed stone pillar with a moulded cap and an iron spout, a\nlong stone trough with water, a step. Back against a wall at z = 0, facing +z.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Stone_Sandstone",
+      "ENV_Water_Port"
+    ],
+    "triangles": 464,
+    "donorSource": null
+  },
   "ENV_Gallery_Bay": {
     "class": "CREATE_DERIVED",
     "donors": [],
@@ -331,6 +354,17 @@
     "triangles": 100,
     "donorSource": null
   },
+  "ENV_Hill_Tree": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Low-cost backdrop tree for the hills around the town: a conifer/oak blob of 2-3 solid painted lobes on a short\ntrunk, readable in silhouette through the valley fog.",
+    "materials": [
+      "ENV_Foliage",
+      "ENV_Src_Bark_NormalTree"
+    ],
+    "triangles": 272,
+    "donorSource": null
+  },
   "ENV_Kerb_2m": {
     "class": "CREATE_DERIVED",
     "donors": [],
@@ -349,6 +383,20 @@
       "MI_RockTrim"
     ],
     "triangles": 48,
+    "donorSource": null
+  },
+  "ENV_Kiosk_Plaza": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Octagonal plaza kiosk (templete de m\u00fasica): stone base with two steps, eight slim cast-iron columns with\nbrackets, a frieze, a tiled octagonal roof with a finial. About 7 m across, 6 m high: a landmark for the river\nplaza (the real plaza has one) without copying any real building.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Roof_Terracotta",
+      "ENV_Stone_Granite",
+      "ENV_Stone_Sandstone",
+      "MI_WoodTrim"
+    ],
+    "triangles": 1812,
     "donorSource": null
   },
   "ENV_Lamp_Post": {
@@ -596,6 +644,18 @@
       "MI_UnevenBrick"
     ],
     "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_River_Stairs": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Bajada al r\u00edo: stone steps running down the face of the channel wall from the bank (y = 0) to a landing just\nabove the water (3 m lower), 1.3 m wide, with an iron handrail on the open side. Runs along +x; the wall face is\nat z = 0 and the steps stand in front of it (+z, over the water).",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Stone_Granite",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 1032,
     "donorSource": null
   },
   "ENV_Roof_Gable_4": {

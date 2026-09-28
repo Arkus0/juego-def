@@ -129,7 +129,7 @@ namespace JuegoDef.Env
                 if (s.floors > 1 && rng.NextDouble() < 0.25) { h.dishFloor = s.floors - 1; h.dishBay = rng.Next(s.bays); }
                 h.aerial = s.roof == "eaves" && rng.NextDouble() < 0.35;
                 var solid = Enumerable.Range(0, s.bays).Where(i => rows[0][i] == 'P').ToList();
-                if (solid.Count > 0 && rng.NextDouble() < 0.4) h.meterBay = solid[rng.Next(solid.Count)];
+                if (solid.Count > 0 && rng.NextDouble() < 0.15) h.meterBay = solid[rng.Next(solid.Count)];  // meters: occasional, not on every house
                 h.cable = s.type != "warehouse" && rng.NextDouble() < 0.3;
                 if (windows.Count > 0 && rng.NextDouble() < (home ? 0.4 : s.type == "mixed_commercial" ? 0.15 : 0.0))
                 {

@@ -72,3 +72,15 @@ Counts: owner manual clicks **0**, exact-path hints **0**, owner interventions *
 ## Repeatability boundary
 
 Vendor bytes stay ignored; on a clean clone: intake (`install --pack medieval|props|nature`) → open Unity (import rules apply on first import) → `JuegoDef > ENV > 1…5`. Committed derived meshes carry their `.meta` material remaps to vendor GUIDs (deterministic from the admitted archive/intake). Re-running Blender recipes rewrites FBX bytes (timestamps) but not GUIDs or geometry semantics.
+
+## CASCO district (owner request 2026-09-28: grow Demo C into a ~180 × 220 m "mini Potes" casco)
+
+ENV-01 stays open until this district is built and judged (owner decision). Study, decisions and numbers:
+[CASCO_REFERENCE_STUDY.md](CASCO_REFERENCE_STUDY.md); rules: [`ENV_COMPOSITION_RULES.md`](../../production/ENV_COMPOSITION_RULES.md).
+
+| Milestone | Result | Evidence |
+| --- | --- | --- |
+| H1 skeleton | authored network over the measured Potes core (box A): 38 streets, 18 blocks, 311 plots from the real subdivision; grades **69/23/8 %** vs the reference's 21/24/55 % | [plan](reference/casco_district_skeleton.png), [box options](reference/casco_district_box_options.jpg) |
+| H2 first build | `EnvDistrict` builds the whole district from the spec in ~4 s: heightfield ground, rows on the terrain with stone bases, garden walls, channelled river, bridges, stairs, plazas, player | [sheet](captures/district/H2_first_build_sheet.jpg), [top view](captures/district/H2_top_view.jpg) |
+| H3 asset quality + lebaniego vocabulary | painted textures instead of flat colours; street pieces rebuilt to kit level; canecillo eaves, solanas, ashlar quoins on seen corners only, sandstone surrounds, casona shield; canto rodado with a central flag strip; far fewer downpipes | [asset lab](captures/district/H3_asset_lab_sheet.jpg), [district](captures/district/H3_district_potizado_sheet.jpg) |
+| H4 composition | tower closing the spine, stone arch bridges, stair down to the river, plazuela fountain, huerta trees, valley backdrop with the sea to the north, route probe over the whole tour | [sheet](captures/district/H4_composition_sheet.jpg), [route](ROUTE_PROBES.md#casco-district) |

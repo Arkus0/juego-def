@@ -17,6 +17,11 @@ CITY/B0 brief ─► request units by outcome (units.json / street spec)
       ▼                                   ▼
  Unity: 1 Generate Materials → 2 Build Modules → 3 Build Library → 4 Build Street Demos → 5 Validate
       │     palettes/textures      prefabs+colliders    units+previews     scenes+probe        report
+      │
+      │  districts: real reference (OSM + IGN MDT05) ─► Tools/env_district.py measure
+      │             authored trace (Env/Specs/districts/<id>.trace.json) ─► Tools/env_district_skeleton.py
+      │             ─► district spec (blocks, rows, plots, terrain, ground meshes, river, stairs, route)
+      │             ─► 7 Build District (EnvDistrict, chunked) ─► Play: route probe over the whole tour
       ▼
  python Tools/env_catalog.py lineage → check → inventory ;  python Tools/asset_catalog.py build → validate
       ▼
@@ -36,6 +41,9 @@ Not a city generator: buildings, streets and edges are assembled from a vocabula
 | Blender derivation recipes | `Tools/blender/env_derive.py` (reads the vault `.blend`, never writes it) |
 | Owned outputs (with lineage) | `Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/{Meshes,Modules,Materials,Textures,Units}` |
 | Demo/test street scenes | `Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/` |
+| District specs (authored trace + generated spec) | `Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/` |
+| District tools | `Tools/env_morphology.py` (street study), `Tools/env_district.py` (district metrics, IGN DEM), `Tools/env_district_skeleton.py` (trace → spec), `Tools/env_textures.py` (painted tileable textures) |
+| Composition rules | [`ENV_COMPOSITION_RULES.md`](ENV_COMPOSITION_RULES.md) |
 | Searchable indexes | `Docs/asset_catalog/env_library.json`, `env_derive_manifest.json`, `lineage.json` |
 
 ## Run it (clean clone or after a change)
@@ -53,6 +61,18 @@ python Tools/asset_catalog.py build ; python Tools/asset_catalog.py validate
 ```
 
 Every step is idempotent (assets are updated in place, GUIDs kept). A module whose recipe/wrapper disappears is deleted by step 2, so no orphan lineage survives.
+
+**A district** (the CASCO, ~180 × 220 m, 311 buildings):
+
+```powershell
+python Tools/env_morphology.py fetch --bbox <S,W,N,E> --out <scratch>/osm.json     # Overpass, ODbL
+python Tools/env_district.py dem --bbox <S,W,N,E> --out <scratch>/mdt05.tif       # IGN MDT05, CC BY 4.0
+python Tools/env_district.py measure --osm ... --dem ... --origin <lat,lon> --box <x0,y0,x1,y1> --out metrics.json --plan ref.png
+python Tools/env_district_skeleton.py --trace Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/<id>.trace.json --osm ... --out .../<id>.json --plan plan.png --metrics metrics.json
+```
+
+Then `JuegoDef > ENV > 7 Build District (CASCO)` (or `EnvDistrict.Begin(id)`, `BuildRows(from, count)`…, `Finish()`
+from the operator). The generated scene (~95 MB) and its ground meshes are not committed; rebuild them from the spec.
 
 ## Vocabulary
 
@@ -79,6 +99,22 @@ Grammar rules that encode owner reviews and real references (Castro Urdiales, Co
 ### Palettes (`Env/Grammar/palettes.json`)
 
 A palette names `facade`, `trim`, `joinery`, `roof`, `tiles`, `glass`. Vendor material slots are remapped by **module role** (`wall`, `joinery`, `shop`, `roof`, `stone`), so the same kit piece becomes cream/ochre/sage/blue-grey/rose/white render, painted green-blue/white/oxblood/blue joinery, terracotta/wet-brown/slate roofs. Add a palette = one JSON line; add a colour = one recipe in `materials.json`.
+
+### Casco vocabulary (quality pass, owner 2026-09-28)
+
+- `BuildingSpec.eave` resolves to **canecillos** (deep eave on carved rafter tails under the kit overhang) for casco
+  palettes unless reformed; `solana` adds a timber gallery across the top floor (bay code **`N`** is its door; wing
+  walls close the ends; no other balcony door on that facade); `surrounds` swaps rendered windows for the sandstone
+  `ENV_Window_Wide_Ashlar` (no exterior shutters over stone); `escudo` hangs `ENV_Escudo` over the portal; `basement`
+  gives a stone base down to the lowest ground (slopes, river walls).
+- **Ashlar quoins** (`ENV_Quoin_Ashlar`) only where a corner is seen (exposed side at that storey, or a mitred tip);
+  no pilaster on shared party lines.
+- Downpipes are rare under canecillo eaves and absent on solana houses; when present they get `ENV_Downpipe_Head` and
+  `ENV_Downpipe_Shoe`.
+- Street pieces rebuilt to kit level: lathe-profiled iron (lamp post, bollard), slatted bin, meter cabinet, wrought-iron
+  hanging sign, fascia, striped scalloped awning, terracotta pot, solid-crown `ENV_Tree_Plaza`, `ENV_Hill_Tree`,
+  `ENV_Bridge_Arch`, `ENV_River_Stairs`, `ENV_Fountain_Trough`. Flat-colour ENV materials now carry painted textures
+  (`Tools/env_textures.py`).
 
 ### Templates (`EnvTemplates`)
 
@@ -112,7 +148,16 @@ Units and street scenes are checked for: banned kit modules (medieval/alpine cue
 - `M_Plaster` cannot be recoloured (non-modifiable base texture, brick-reveal masks): owned plaster uses `M_BaseWear`.
 - Emission on window glass reads as beige under the project volume; shop glass is dark, moderately smooth, and streets bake a reflection probe.
 - Clear door height ≥ 2.22 m for the current GC2 capsule; no sills above 0.1 m; keep furniture out of the door lane.
+- Trim-sheet bands: a tinted small-block band reads as **brick**; dressed stone uses one block per modelled piece on the
+  smooth slab band.
+- Anything cut out of a heightfield ground (stairs) uses flat caps: a square cap punched a hole in a junction and the
+  route probe fell through it.
+- Several editors named `JuegoDef` may be connected to the MCP (Codex worktrees): pin by hash and check
+  `Application.dataPath` before mutating.
 
 ## Current limits (see `Docs/evidence/WP-PROD-ENV-01/B0_COVERAGE.md`)
 
-Two wall families only (render, rubble stone) — no post-1960 infill block; no vehicles, overhead utilities, aerials, period street furniture; flat street segments (no ramp/slope module); no chamfered/hipped corner; lighting/sky/water are placeholders. These are content breadth for later work, not missing pipeline.
+Two wall families only (render, rubble stone) — no post-1960 infill block; no hipped roofs or trapezoid corner
+buildings (corners are rectangles with ashlar quoins or chamfers); lighting/sky/water are placeholders. Slopes,
+stairs, terraces, river walls, bridges and districts are now covered (district builder). Remaining items are content
+breadth, not missing pipeline.

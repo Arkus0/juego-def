@@ -49,3 +49,30 @@ JD_ROUTE END reached=8/8 stalls=0 walked=77,6m time=21,2s
 | 5 | `STUCK` leaving the shop, `blockers=none` | 0.3 m slot with no floor under the doorway (wall thickness between pavement and shop floor) | flush granite threshold slab in the shop door modules; interior floor reaches it |
 
 The same capsule rules are now part of `EnvValidator` (open/closed thresholds) so the next building catches these without a Play run.
+
+## CASCO district
+
+Scene `ENV01_Casco_District` (built from `Env/Specs/districts/ENV01_Casco_District.json`), route = the authored node tour
+in the trace (spine from the east, river plaza, stone bridge, north bank and El Sol, back over the bridge, Cántabra,
+calle alta, Solana stairs up, Solana terrace, plazuela, San Pedro, mirador, Solana stairs down, central passage and
+its stairs, spine crossing, Obispo stairs, east exit), sampled every ~6 m: 139 waypoints.
+
+### Final run — 139/139, 0 stalls, 917 m
+
+```text
+JD_ROUTE START waypoints=139 at=(196,00,3,08,206,20)
+JD_ROUTE wp=0 REACHED t=0,0s at=(196,00,3,08,206,20)
+JD_ROUTE wp=1 REACHED t=1,8s at=(190,55,3,00,203,56)
+JD_ROUTE wp=2 REACHED t=1,8s at=(184,89,2,91,200,82)
+...
+JD_ROUTE wp=137 REACHED t=1,8s at=(189,95,6,08,157,18)
+JD_ROUTE wp=138 REACHED t=1,8s at=(195,45,6,08,160,65)
+JD_ROUTE END reached=139/139 stalls=0 walked=916,8m time=261,7s
+```
+
+### Defects the probe found (first run) and fixes
+
+| Symptom | Cause | Fix (at the source) |
+| --- | --- | --- |
+| `TIMEOUT`, player at y ≈ −1846 (wp 10, 70, 107, 108 and the Arco stairs) | the stair footprint cut out of the heightfield ground used a **square cap**, punching a hole into the junction at each end of every stair | `env_district_skeleton.py`: stair footprints use flat caps (exactly between the end nodes) |
+| `STUCK` at the north bridgehead, `blockers=Cabeza_Puente/ENV_Bench_Street` | plaza dressing placed a bench on the walking line crossing a junction plaza | `EnvDistrict.DressPlaza` keeps trees, benches and the kiosk clear of every street lane crossing a plaza |

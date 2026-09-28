@@ -1803,6 +1803,197 @@ def escudo():
     return join("ENV_Escudo", parts)
 
 
+@recipe("ENV_Bridge_Arch", "CREATE_DERIVED")
+def bridge_arch():
+    """Stone arch under a casco bridge, as a 1 m wide slice along z that the district builder scales to the deck
+    width and along x to the span: segmental arch (span 10 m, springing 3.4 m below the deck, crown 0.6 m below it),
+    a ring of dressed voussoirs on both faces, rubble spandrels up to a moulded string course, rubble soffit.
+    Deck top at y = 0 (the builder lays the paved deck on it)."""
+    span, y_spring, y_crown = 10.0, -3.4, -0.6
+    half = span / 2
+    rise = y_crown - y_spring
+    radius = (half * half + rise * rise) / (2 * rise)
+    cy = y_crown - radius
+    parts = []
+    n = 17
+    a0 = math.asin(half / radius)
+    ring_t = 0.5
+
+    def arc_pt(a, r):
+        return (r * math.sin(a), cy + r * math.cos(a))
+
+    for zf, zb in ((0.5, 0.2), (-0.2, -0.5)):
+        for k in range(n):
+            t0, t1 = -a0 + 2 * a0 * k / n, -a0 + 2 * a0 * (k + 1) / n
+            gap = 0.012
+            p = [arc_pt(t0 + gap, radius), arc_pt(t1 - gap, radius), arc_pt(t1 - gap, radius + ring_t), arc_pt(t0 + gap, radius + ring_t)]
+            ob = loft(f"v{k}{zf}", [(zb, p), (zf, p)], "ENV_Stone_Sandstone")
+            uv_band(ob, ROCK_SLAB)
+            parts.append(ob)
+    # spandrels: from the extrados up to the string course, both faces (x beyond the arch to the abutments)
+    for zf, zb in ((0.5, 0.35), (-0.35, -0.5)):
+        pts = []
+        m = 24
+        for k in range(m + 1):
+            a = -a0 + 2 * a0 * k / m
+            pts.append(arc_pt(a, radius + ring_t))
+        pts = [(half + 0.8, y_spring)] + pts[::-1] + [(-half - 0.8, y_spring), (-half - 0.8, -0.3), (half + 0.8, -0.3)]
+        bm = bmesh.new()
+        f = [bm.verts.new(U(x, y, zf)) for x, y in pts]
+        b = [bm.verts.new(U(x, y, zb)) for x, y in pts]
+        bm.faces.new(f)
+        bm.faces.new(b[::-1])
+        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        sp = new_object(f"spandrel{zf}", bm)
+        sp.data.materials.append(material("MI_UnevenBrick"))
+        uv_box(sp)
+        parts.append(sp)
+    # soffit: the arch intrados as a vault under the slice
+    m = 24
+    bm = bmesh.new()
+    rows = []
+    for k in range(m + 1):
+        a = -a0 + 2 * a0 * k / m
+        x, y = arc_pt(a, radius)
+        rows.append((bm.verts.new(U(x, y, 0.5)), bm.verts.new(U(x, y, -0.5))))
+    for (a1, b1), (a2, b2) in zip(rows, rows[1:]):
+        bm.faces.new([a1, a2, b2, b1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    so = new_object("soffit", bm)
+    so.data.materials.append(material("MI_UnevenBrick"))
+    uv_box(so)
+    for p in so.data.polygons:  # face down, into the arch
+        if p.normal.z > 0:
+            p.flip()
+    parts.append(so)
+    parts.append(box("string", (-half - 0.9, -0.42, -0.56), (half + 0.9, -0.28, 0.56), "ENV_Stone_Sandstone", uv="band", band=ROCK_SLAB, bevel=0.02))
+    parts.append(box("fill", (-half - 0.8, -0.28, -0.5), (half + 0.8, -0.02, 0.5), "MI_UnevenBrick", uv="box"))
+    return join("ENV_Bridge_Arch", parts)
+
+
+@recipe("ENV_Fountain_Trough", "CREATE_DERIVED")
+def fountain_trough():
+    """Village fountain and trough (fuente-abrevadero): dressed stone pillar with a moulded cap and an iron spout, a
+    long stone trough with water, a step. Back against a wall at z = 0, facing +z."""
+    st = "ENV_Stone_Sandstone"
+    parts = [box("step", (-1.35, 0.0, 0.0), (1.35, 0.12, 1.25), st, uv="band", band=ROCK_SLAB, bevel=0.02),
+             box("pillar", (-0.34, 0.12, 0.0), (0.34, 1.75, 0.34), st, uv="band", band=ROCK_SLAB, bevel=0.02),
+             box("cap", (-0.42, 1.75, -0.02), (0.42, 1.9, 0.42), st, uv="band", band=ROCK_SLAB, bevel=0.025),
+             lathe("ball", [(0.0, 1.9), (0.12, 1.94), (0.14, 2.02), (0.1, 2.1), (0.0, 2.14)], st, segments=10, center=(0.0, 0.2)),
+             box("plaque", (-0.2, 1.2, 0.34), (0.2, 1.45, 0.37), st, uv="band", band=ROCK_SLAB, bevel=0.01),
+             tube("spout", (0.0, 1.02, 0.34), (0.0, 0.96, 0.62), 0.025, "ENV_Metal_Iron", segments=8)]
+    # trough: floor + four walls
+    x0, x1, z0, z1, y0, y1 = -1.2, 1.2, 0.36, 1.12, 0.12, 0.66
+    t = 0.12
+    parts += [box("tb", (x0, y0, z0), (x1, y0 + 0.1, z1), st, uv="band", band=ROCK_SLAB),
+              box("tf", (x0, y0, z1 - t), (x1, y1, z1), st, uv="band", band=ROCK_SLAB, bevel=0.02),
+              box("tk", (x0, y0, z0), (x1, y1, z0 + t), st, uv="band", band=ROCK_SLAB, bevel=0.02),
+              box("tl", (x0, y0, z0), (x0 + t, y1, z1), st, uv="band", band=ROCK_SLAB, bevel=0.02),
+              box("tr", (x1 - t, y0, z0), (x1, y1, z1), st, uv="band", band=ROCK_SLAB, bevel=0.02),
+              box("water", (x0 + t, y1 - 0.1, z0 + t), (x1 - t, y1 - 0.09, z1 - t), "ENV_Water_Port")]
+    return join("ENV_Fountain_Trough", parts)
+
+
+@recipe("ENV_River_Stairs", "CREATE_DERIVED")
+def river_stairs():
+    """Bajada al río: stone steps running down the face of the channel wall from the bank (y = 0) to a landing just
+    above the water (3 m lower), 1.3 m wide, with an iron handrail on the open side. Runs along +x; the wall face is
+    at z = 0 and the steps stand in front of it (+z, over the water)."""
+    parts = []
+    n = 14
+    rise, tread, w = 3.0 / n, 0.34, 1.3
+    for i in range(n):
+        y = -rise * (i + 1)
+        parts.append(box(f"st{i}", (i * tread, y, 0.0), (i * tread + tread + 0.02, y + rise, w), "ENV_Stone_Granite", uv="band", band=ROCK_SLAB, bevel=0.01))
+        parts.append(box(f"fl{i}", (i * tread, -3.5, 0.02), (i * tread + tread + 0.02, y, w - 0.02), "MI_UnevenBrick"))
+    lx = n * tread
+    parts.append(box("landing", (lx, -3.0 - 0.12, 0.0), (lx + 1.5, -3.0, w), "ENV_Stone_Granite", uv="band", band=ROCK_SLAB, bevel=0.012))
+    parts.append(box("landfill", (lx, -3.5, 0.02), (lx + 1.5, -3.12, w - 0.02), "MI_UnevenBrick"))
+    parts.append(box("cheek", (-0.05, -3.5, w), (lx + 1.55, -0.02, w + 0.25), "MI_UnevenBrick"))
+    parts.append(box("cope", (-0.08, -0.02, w - 0.02), (0.6, 0.1, w + 0.3), "ENV_Stone_Granite", uv="band", band=ROCK_SLAB, bevel=0.01))
+    for i in range(0, n + 1, 4):
+        x = min(i * tread, lx)
+        y = -rise * i
+        parts.append(tube(f"post{i}", (x, y, w + 0.12), (x, y + 0.95, w + 0.12), 0.02, "ENV_Metal_Iron", segments=6))
+    parts.append(tube("rail", (0.0, 0.95, w + 0.12), (lx, 0.95 - 3.0, w + 0.12), 0.022, "ENV_Metal_Iron", segments=8))
+    parts.append(tube("rail2", (lx, -2.05, w + 0.12), (lx + 1.5, -2.05, w + 0.12), 0.022, "ENV_Metal_Iron", segments=8))
+    return join("ENV_River_Stairs", parts)
+
+
+@recipe("ENV_Hill_Tree", "ORIGINAL")
+def hill_tree():
+    """Low-cost backdrop tree for the hills around the town: a conifer/oak blob of 2-3 solid painted lobes on a short
+    trunk, readable in silhouette through the valley fog."""
+    parts = [lathe("trunk", [(0.25, 0.0), (0.18, 1.6), (0.12, 2.6)], "ENV_Src_Bark_NormalTree", segments=6)]
+    for i, (x, y, z, r) in enumerate(((0, 4.2, 0, 2.2), (0.9, 3.4, 0.5, 1.5), (-0.8, 3.6, -0.4, 1.6))):
+        parts.append(lump(f"l{i}", (x, y - r * 0.55, z), (r, r * 1.1, r), "ENV_Foliage", seed=30 + i, rough=0.1))
+    return join("ENV_Hill_Tree", parts)
+
+
+@recipe("ENV_Kiosk_Plaza", "CREATE_DERIVED")
+def kiosk_plaza():
+    """Octagonal plaza kiosk (templete de música): stone base with two steps, eight slim cast-iron columns with
+    brackets, a frieze, a tiled octagonal roof with a finial. About 7 m across, 6 m high: a landmark for the river
+    plaza (the real plaza has one) without copying any real building."""
+    parts = []
+    n = 8
+    r_base, r_col = 3.3, 2.9
+
+    def ring(r, y, rot=math.pi / n):
+        return [(r * math.cos(rot + 2 * math.pi * i / n), r * math.sin(rot + 2 * math.pi * i / n)) for i in range(n)]
+
+    def prism(name, pts, y0, y1, mat, band=ROCK_SLAB):
+        bm = bmesh.new()
+        lo = [bm.verts.new(U(x, y0, z)) for x, z in pts]
+        hi = [bm.verts.new(U(x, y1, z)) for x, z in pts]
+        bm.faces.new(lo[::-1])
+        bm.faces.new(hi)
+        for i in range(len(pts)):
+            bm.faces.new([lo[i], lo[(i + 1) % len(pts)], hi[(i + 1) % len(pts)], hi[i]])
+        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+        ob = new_object(name, bm)
+        ob.data.materials.append(material(mat))
+        if band:
+            uv_band(ob, band)
+        else:
+            uv_box(ob)
+        return ob
+
+    parts.append(prism("step1", ring(r_base + 0.6, 0), 0.0, 0.2, "ENV_Stone_Granite"))
+    parts.append(prism("step2", ring(r_base + 0.3, 0), 0.2, 0.4, "ENV_Stone_Granite"))
+    parts.append(prism("base", ring(r_base, 0), 0.4, 0.95, "ENV_Stone_Sandstone"))
+    parts.append(prism("floor", ring(r_base - 0.05, 0), 0.95, 1.0, "ENV_Stone_Granite"))
+    for i, (x, z) in enumerate(ring(r_col, 0)):
+        parts.append(lathe(f"col{i}", [(0.1, 1.0), (0.1, 1.12), (0.065, 1.2), (0.055, 3.6), (0.09, 3.7), (0.12, 3.78)], "ENV_Metal_Iron", segments=8, center=(x, z)))
+        parts.append(tube(f"brk{i}", (x * 0.97, 3.3, z * 0.97), (x * 0.86, 3.75, z * 0.86), 0.025, "ENV_Metal_Iron", segments=6))
+    parts.append(prism("frieze", ring(r_col + 0.18, 0), 3.78, 4.1, "MI_WoodTrim", band=WOOD_DARK))
+    # railing between the columns
+    pts = ring(r_col, 0)
+    for i in range(n):
+        if i == 0:
+            continue  # the entrance gap faces +x
+        a, b = pts[i], pts[(i + 1) % n]
+        parts.append(tube(f"rail{i}", (a[0], 1.9, a[1]), (b[0], 1.9, b[1]), 0.02, "ENV_Metal_Iron", segments=6))
+        for k in range(1, 6):
+            t = k / 6
+            x, z = a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t
+            parts.append(tube(f"bal{i}{k}", (x, 1.0, z), (x, 1.9, z), 0.012, "ENV_Metal_Iron", segments=5))
+    # octagonal roof: tiled pyramid, slight eaves
+    bm = bmesh.new()
+    eave = [bm.verts.new(U(x, 4.1, z)) for x, z in ring(r_col + 0.7, 0)]
+    apex = bm.verts.new(U(0, 6.0, 0))
+    for i in range(n):
+        bm.faces.new([eave[i], eave[(i + 1) % n], apex])
+    bm.faces.new(eave[::-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    roof = new_object("roof", bm)
+    roof.data.materials.append(material("ENV_Roof_Terracotta"))
+    uv_box(roof, scale=0.35)
+    parts.append(roof)
+    parts.append(lathe("finial", [(0.08, 5.95), (0.1, 6.1), (0.05, 6.3), (0.08, 6.45), (0.0, 6.7)], "ENV_Metal_Iron", segments=8))
+    return join("ENV_Kiosk_Plaza", parts)
+
+
 # ---------------------------------------------------------------- driver
 
 def main(argv):
