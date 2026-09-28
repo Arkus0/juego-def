@@ -1,0 +1,495 @@
+{
+  "ENV_Awning": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Fixed canvas shop awning (toldo) over a 2 m bay: sloped canvas, valance, iron arms. Canvas colour is a slot.",
+    "materials": [
+      "ENV_Canvas_Green",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 48,
+    "donorSource": null
+  },
+  "ENV_Balcony_Iron": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Shallow stone-slab balcony with a wrought-iron railing and two iron brackets (balconera).\nSlab on the kit MI_RockTrim slab band; ironwork is owned flat iron.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "MI_RockTrim"
+    ],
+    "triangles": 356,
+    "donorSource": null
+  },
+  "ENV_Bin_Street": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Wall/post-mounted galvanised litter bin (papelera) on a short post.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 84,
+    "donorSource": null
+  },
+  "ENV_Bollard_Mooring": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Cast-iron mooring bollard (noray) for the quay coping: base plate, waisted body, mushroom cap.",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 208,
+    "donorSource": null
+  },
+  "ENV_Bollard_Street": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Cast-iron street bollard (pilona) 0.9 m, used to protect thresholds and pedestrian edges.",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 208,
+    "donorSource": null
+  },
+  "ENV_Counter_Shop": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Shop counter 1.8 x 0.6 x 0.95 m: painted timber front panels, stone-slab top.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_WoodTrim"
+    ],
+    "triangles": 136,
+    "donorSource": null
+  },
+  "ENV_Crate_Fish": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Stackable plastic fish crate (0.6 x 0.4 x 0.22 m) with hand holes; colour is a material slot.",
+    "materials": [
+      "ENV_Plastic_Blue",
+      "ENV_Sign_Board"
+    ],
+    "triangles": 200,
+    "donorSource": null
+  },
+  "ENV_Door_Balcony": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Glazed double balcony door (balconera / ventanal) for the kit Door_Flat wall opening: two leaves with kick\npanels and 2x3 panes. Replaces the kit's plank doors on upper floors. Kit MI_WoodTrim + MI_WindowGlass.",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 472,
+    "donorSource": null
+  },
+  "ENV_Door_Service": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Plain galvanised service door for the kit Door_Flat wall opening (1.3 m): reads as back-of-house, not public.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Metal_Iron",
+      "ENV_Metal_Shutter"
+    ],
+    "triangles": 104,
+    "donorSource": null
+  },
+  "ENV_Downpipe": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Rain-water downpipe, 3 m per unit height (assembler scales y by storeys), with shoe and wall clips.",
+    "materials": [
+      "ENV_Metal_Downpipe",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 64,
+    "donorSource": null
+  },
+  "ENV_Fence_Yard_2m": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Controlled work-yard boundary, 2 m panel x 2.1 m: galvanised palisade on a low plinth. Distinct from the\npublic quay railing by height, material and permeability (you see through, you cannot pass).",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "MI_RockTrim"
+    ],
+    "triangles": 284,
+    "donorSource": null
+  },
+  "ENV_Gallery_Bay": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Glazed gallery bay (galer\u00eda/mirador) for one 2 m bay and one storey, projecting 0.55 m: timber base panel,\n3x3 glazing grid, cornice and a small lead-grey cap. Stacks storey on storey. Kit MI_WoodTrim + MI_WindowGlass.",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 252,
+    "donorSource": null
+  },
+  "ENV_Gate_Timber": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Double-leaf plank gate (warehouse / yard) for the shop/gate opening; kit MI_WoodTrim planks + iron straps.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "MI_WoodTrim"
+    ],
+    "triangles": 524,
+    "donorSource": null
+  },
+  "ENV_Gutter_Channel_2m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Central drainage channel for pedestrian streets: two sloped granite slabs forming a shallow V (0.6 m).",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 100,
+    "donorSource": null
+  },
+  "ENV_Kerb_2m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Granite kerb 2 m x 0.28 m, top at +0.15 (pavement datum); kit MI_RockTrim slab band.",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 44,
+    "donorSource": null
+  },
+  "ENV_Kerb_Corner": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Quarter-round kerb corner (radius 1 m) joining two ENV_Kerb_2m runs; kit MI_RockTrim slab band.",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 48,
+    "donorSource": null
+  },
+  "ENV_Pallet": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Euro pallet 1.2 x 0.8 x 0.14 m; kit MI_WoodTrim dark plank band.",
+    "materials": [
+      "MI_WoodTrim"
+    ],
+    "triangles": 156,
+    "donorSource": null
+  },
+  "ENV_Quay_Ladder": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Iron ladder fixed to the quay face (top at the coping, 3 m down).",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 168,
+    "donorSource": null
+  },
+  "ENV_Quay_Wall_4m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Public quay edge block 4 m long, 3.2 m face down to below water; rubble face + granite coping at y = 0.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Railing_Quay_2m": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Public waterfront guard rail, 2 m, 1.05 m high: tube posts + three rails (painted iron).",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 140,
+    "donorSource": null
+  },
+  "ENV_Retaining_Wall_2x1": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Retaining wall 2 m long, 1 m face, coping on top (upper datum at y = 0, lower street at -1).",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Retaining_Wall_2x2": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Retaining wall 2 m long, 2 m face, coping on top.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Retaining_Wall_2x3": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Retaining wall 2 m long, 3 m face (one storey), coping on top.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Roof_Gable_4": {
+    "class": "DONOR",
+    "donors": [
+      "Roof_Front_Brick4"
+    ],
+    "method": "Plain plaster gable for a 4 m span (roof ends above party walls and gable-fronted sheds).",
+    "materials": [
+      "MI_Plaster"
+    ],
+    "triangles": 12,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Roof_Gable_6": {
+    "class": "DONOR",
+    "donors": [
+      "Roof_Front_Brick6"
+    ],
+    "method": "Plain plaster gable for a 6 m span (roof ends above party walls and gable-fronted sheds).",
+    "materials": [
+      "MI_Plaster"
+    ],
+    "triangles": 16,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Roof_Gable_8": {
+    "class": "DONOR",
+    "donors": [
+      "Roof_Front_Brick8"
+    ],
+    "method": "Plain plaster gable for a 8 m span (roof ends above party walls and gable-fronted sheds).",
+    "materials": [
+      "MI_Plaster"
+    ],
+    "triangles": 12,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Shop_Fascia": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Blank painted fascia board over a shop opening (typography stays out of ENV): board + moulded frame.",
+    "materials": [
+      "ENV_Sign_Board",
+      "MI_WoodTrim"
+    ],
+    "triangles": 68,
+    "donorSource": null
+  },
+  "ENV_Shopfront_Door": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Shop entrance for the shop opening: glazed door leaf (0.95 m) + side light, flush threshold (closed).\nNew geometry on the kit MI_WoodTrim trim sheet + MI_WindowGlass.",
+    "materials": [
+      "MI_MetalOrnaments",
+      "MI_RockTrim",
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 404,
+    "donorSource": null
+  },
+  "ENV_Shopfront_Door_Open": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Same shop entrance with the leaf swung 88 degrees inwards: a walkable 0.9 m public threshold into a shallow\nshop interior (the gameplay open/close interaction belongs to later GC2 work).",
+    "materials": [
+      "MI_MetalOrnaments",
+      "MI_RockTrim",
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 404,
+    "donorSource": null
+  },
+  "ENV_Shopfront_Frame": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Display window for the shop opening: painted timber frame, stall-riser panel, mullion, transom light.\nNew geometry on the kit MI_WoodTrim trim sheet + MI_WindowGlass (materials from Window_Wide_Flat1).",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 332,
+    "donorSource": null
+  },
+  "ENV_Shutter_Roller": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Closed metal roller shutter (persiana) filling the shop opening: ribbed curtain, guide rails, housing box.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Metal_Shutter"
+    ],
+    "triangles": 1324,
+    "donorSource": null
+  },
+  "ENV_Sign_Bracket": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Projecting blade sign on a wrought-iron bracket, mounted at the left edge of a door bay (blank board).",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Sign_Board"
+    ],
+    "triangles": 104,
+    "donorSource": null
+  },
+  "ENV_Wall_Plaster_Clean": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Straight"
+    ],
+    "method": "Plain plaster bay without half-timbering: keeps only the floor-line band.",
+    "materials": [
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 56,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Clean_Base": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Straight_Base"
+    ],
+    "method": "Ground-floor plaster bay with the kit brick plinth kept, sill band/timber removed.",
+    "materials": [
+      "MI_Brick",
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 56,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Clean_Door": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Door_Flat"
+    ],
+    "method": "Plaster bay with the flat door opening (portals, balcony doors); side sill bands removed.",
+    "materials": [
+      "MI_Plaster",
+      "MI_RockTrim",
+      "MI_WoodTrim"
+    ],
+    "triangles": 76,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Clean_DoorRound": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Door_Round"
+    ],
+    "method": "Plaster bay with the arched door opening; timber removed.",
+    "materials": [
+      "MI_Plaster",
+      "MI_RockTrim",
+      "MI_WoodTrim"
+    ],
+    "triangles": 121,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Clean_Thin": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Window_Thin_Round"
+    ],
+    "method": "Plaster bay with the small round-head window; timber removed.",
+    "materials": [
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 158,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Clean_Window": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Window_Wide_Flat"
+    ],
+    "method": "Plaster bay with the wide window opening; sill band removed, brick spandrel rendered over.",
+    "materials": [
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 88,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Shopfront": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Straight_Base"
+    ],
+    "method": "Clean plaster ground-floor wall with a 1.6 x 2.38 m shop opening cut by boolean; reveals in kit stone trim.",
+    "materials": [
+      "MI_Brick",
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 81,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_UnevenBrick_Shopfront": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_UnevenBrick_Straight"
+    ],
+    "method": "Kit rubble-stone wall with the same shop/gate opening; reveals in kit stone trim.",
+    "materials": [
+      "MI_Plaster",
+      "MI_UnevenBrick",
+      "MI_WoodTrim"
+    ],
+    "triangles": 81,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Water_Plane_20m": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Port water surface tile 20 x 20 m (y = 0 is the water level; place it below the quay coping).",
+    "materials": [
+      "ENV_Water_Port"
+    ],
+    "triangles": 12,
+    "donorSource": null
+  },
+  "ENV_Window_Insert_Thin": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Glazed insert for the kit rubble-stone round-head window (\u00b10.32 m, springing 2.31 m, crown 2.51 m):\nrectangular sash plus a segmental glass head.",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 211,
+    "donorSource": null
+  },
+  "ENV_Window_Insert_Wide": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Glazed joinery insert for the kit rubble-stone wide window opening (\u00b10.60 x 1.05\u20132.31 m, measured on the\ndonor wall). The kit's `Window_Wide_Flat_Rocks` is only a stone surround; without this the building's empty\ninterior shows through. Recessed behind the surround: frame, mullion, transom, glass.",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 212,
+    "donorSource": null
+  }
+}

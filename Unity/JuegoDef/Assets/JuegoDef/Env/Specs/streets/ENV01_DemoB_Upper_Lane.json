@@ -1,0 +1,28 @@
+{
+  "id": "ENV01_DemoB_Upper_Lane",
+  "brief": "Quiet residential lane (Casco/Viviendas side): single cobbled level with a central drainage channel, closed ordinary frontage with stone ground floors, one alley, and a stepped public connector rising 3 m to an upper terrace at the end. Composition test only — not B0 keeper geometry.",
+  "length": 28, "width": 6, "ground": "pedestrian",
+  "ends": { "south": { "west": "open", "east": "open" }, "north": { "west": "open", "east": "open" } },
+  "rows": {
+    "south": [
+      { "unit": "U06_Closed_Residential_6m", "palette": "bluegrey_white", "seed": 41 },
+      { "unit": "U07_Closed_Narrow_4m", "palette": "weathered_timber", "seed": 42, "ground": "stone" },
+      { "unit": "U08_Closed_Residential_8m_4F", "palette": "sage_oxblood", "seed": 43, "rows": ["DPPW"] },
+      { "unit": "U06_Closed_Residential_6m", "palette": "ochre_white", "seed": 44 },
+      { "unit": "U09_Terrace_End_Termination", "bays": 2, "palette": "rose_green", "seed": 45, "exposeLeft": false }
+    ],
+    "north": [
+      { "unit": "U07_Closed_Narrow_4m", "palette": "white_blue", "seed": 51 },
+      { "unit": "U06_Closed_Residential_6m", "palette": "port_stone", "seed": 52, "floors": 2 },
+      { "gap": 2 },
+      { "unit": "U02_Mixed_Gallery_6m", "palette": "rose_green", "seed": 53, "type": "closed_residential", "rows": ["DPP", "LPW", "LPW", "wPw"] },
+      { "unit": "U06_Closed_Residential_6m", "palette": "cream_green", "seed": 54 },
+      { "unit": "U07_Closed_Narrow_4m", "palette": "sage_oxblood", "seed": 55 }
+    ]
+  },
+  "templates": [
+    { "name": "SteppedConnectorUp", "kind": "stepped_connector", "at": [33, 0, 3], "rotY": -90, "params": { "height": 3, "terraceBays": 2 } }
+  ],
+  "spawn": [2, 0.2, 3],
+  "route": [ [14, 0, 3], [26, 0, 3], [31, 0, 3], [38.6, 3, 3], [41, 3, 3], [38.6, 3, 3], [31, 0, 3], [2, 0, 3] ]
+}

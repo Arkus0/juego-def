@@ -1,0 +1,19 @@
+{
+  "comment": "Material families for the ENV assembly grammar. A building asks for a palette id; the assembler remaps vendor material slots by module role (wall / joinery / roof). Colours come from Docs/design/VISUAL_BIBLE.md families.",
+  "roleRemaps": {
+    "wall": { "MI_Plaster": "facade", "MI_WoodTrim": "trim", "MI_WoodTrim_Wear": "trim" },
+    "joinery": { "MI_WoodTrim": "joinery", "MI_WoodTrim_Wear": "joinery", "MI_WindowGlass": "glass" },
+    "roof": { "MI_RoundTiles": "roof", "MI_FlatTiles": "roof", "MI_WoodTrim": "trim", "MI_Plaster": "facade" },
+    "stone": {}
+  },
+  "palettes": [
+    { "id": "cream_green", "facade": "ENV_Plaster_Cream", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_GreenBlue", "roof": "ENV_Roof_Terracotta", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "white_blue", "facade": "ENV_Plaster_OffWhite", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Blue", "roof": "ENV_Roof_Slate", "tiles": "FlatTiles", "glass": "ENV_Glass_Street" },
+    { "id": "ochre_white", "facade": "ENV_Plaster_Ochre", "trim": "ENV_Trim_White", "joinery": "ENV_Joinery_White", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "sage_oxblood", "facade": "ENV_Plaster_Sage", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Oxblood", "roof": "ENV_Roof_Slate", "tiles": "FlatTiles", "glass": "ENV_Glass_Street" },
+    { "id": "bluegrey_white", "facade": "ENV_Plaster_BlueGrey", "trim": "ENV_Trim_White", "joinery": "ENV_Joinery_White", "roof": "ENV_Roof_Terracotta", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "rose_green", "facade": "ENV_Plaster_Rose", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_GreenBlue", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "weathered_timber", "facade": "ENV_Plaster_Weathered", "trim": "ENV_Trim_Dark", "joinery": "ENV_Joinery_Timber", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "port_stone", "facade": "ENV_Plaster_Weathered", "trim": "ENV_Trim_Dark", "joinery": "ENV_Joinery_GreenBlue", "roof": "ENV_Roof_Slate", "tiles": "FlatTiles", "glass": "ENV_Glass_Street" }
+  ]
+}

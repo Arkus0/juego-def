@@ -1,0 +1,128 @@
+{
+  "units": [
+    {
+      "id": "U01_Mixed_Commercial_8m",
+      "issues": []
+    },
+    {
+      "id": "U02_Mixed_Gallery_6m",
+      "issues": []
+    },
+    {
+      "id": "U03_Shop_Witness_Threshold",
+      "issues": []
+    },
+    {
+      "id": "U04_Lodging_Frontage_10m",
+      "issues": []
+    },
+    {
+      "id": "U05_Corner_Mixed_8x8",
+      "issues": []
+    },
+    {
+      "id": "U06_Closed_Residential_6m",
+      "issues": []
+    },
+    {
+      "id": "U07_Closed_Narrow_4m",
+      "issues": []
+    },
+    {
+      "id": "U08_Closed_Residential_8m_4F",
+      "issues": []
+    },
+    {
+      "id": "U09_Terrace_End_Termination",
+      "issues": []
+    },
+    {
+      "id": "U10_Port_Warehouse_8x10",
+      "issues": []
+    },
+    {
+      "id": "U11_Street_Kerbed_8x8",
+      "issues": []
+    },
+    {
+      "id": "U12_Street_Pedestrian_8x6",
+      "issues": []
+    },
+    {
+      "id": "U13_Stepped_Connector_3m",
+      "issues": []
+    },
+    {
+      "id": "U14_Quay_Public_Overlook_12m",
+      "issues": []
+    },
+    {
+      "id": "U15_Yard_Boundary_10m",
+      "issues": []
+    },
+    {
+      "id": "U16_Market_Stall_Set",
+      "issues": []
+    },
+    {
+      "id": "U17_Port_Work_Props",
+      "issues": []
+    },
+    {
+      "id": "U18_Street_Furniture_Utilities",
+      "issues": []
+    },
+    {
+      "id": "U19_Ground_Frontage_Vocabulary",
+      "issues": []
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_DemoA_Commercial_To_Quay.unity",
+      "stats": {
+        "thresholds": 21,
+        "openWalkable": 2,
+        "closedBlocked": 19,
+        "renderers": 1070
+      },
+      "issues": []
+    },
+    {
+      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_DemoB_Upper_Lane.unity",
+      "stats": {
+        "thresholds": 10,
+        "openWalkable": 0,
+        "closedBlocked": 10,
+        "renderers": 622
+      },
+      "issues": []
+    }
+  ],
+  "problems": 0,
+  "selfTest": {
+    "expected": {
+      "banned module": "DETECTED",
+      "primitive": "DETECTED",
+      "blocked open threshold": "DETECTED",
+      "open service shortcut": "DETECTED",
+      "machine-local material": "DETECTED",
+      "duplicated tile": "DETECTED",
+      "open party wall": "DETECTED"
+    },
+    "missed": 0,
+    "issuesReported": [
+      "banned kit module Wall_Plaster_Straight at SelfTest/Wall_Plaster_Straight",
+      "machine-local vendor material T_Trim_Furniture_BaseColor on SelfTest/Barrel",
+      "machine-local vendor material T_Trim_Metal_BaseColor on SelfTest/Barrel",
+      "Unity primitive mesh used as content: SelfTest/Cube",
+      "THR_Public_Shop blocked by ENV_Counter_Shop at (0.80, 0.73, -0.36) (SelfTest/Front/F0/e_0/THR_Public_Shop)",
+      "THR_Service_Closed is not closed (walkable shortcut) at SelfTest/Front/F0b/V_0/THR_Service_Closed",
+      "building Shallow threshold not on the street surface",
+      "building Deep threshold not on the street surface",
+      "open party wall: Deep Side_L storey 0 at local z -7,2",
+      "open party wall: Deep Side_L storey 1 at local z -7,2",
+      "duplicated coplanar tile SelfTest/Floor_Brick"
+    ]
+  }
+}

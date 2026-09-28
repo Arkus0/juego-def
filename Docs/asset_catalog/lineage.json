@@ -1,4 +1,1804 @@
 {
   "schemaVersion": 1,
-  "assets": []
+  "assets": [
+    {
+      "id": "env:materials:ENV_Canvas_Cream",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Canvas_Cream.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Canvas_Green",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Canvas_Green.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Canvas_Red",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Canvas_Red.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Glass_Shop",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Glass_Shop.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Glass_Street",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Glass_Street.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Ground_WetCobble",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Ground_WetCobble.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:floor_roundrocks"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Interior_Dark",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Interior_Dark.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Joinery_Blue",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Joinery_Blue.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Joinery_GreenBlue",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Joinery_GreenBlue.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Joinery_Oxblood",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Joinery_Oxblood.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Joinery_Timber",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Joinery_Timber.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Joinery_White",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Joinery_White.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Metal_Downpipe",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Metal_Downpipe.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Metal_Galvanised",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Metal_Galvanised.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Metal_Iron",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Metal_Iron.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Metal_Shutter",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Metal_Shutter.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Plaster_BlueGrey",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_BlueGrey.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plaster_Cream",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_Cream.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plaster_Ochre",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_Ochre.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plaster_OffWhite",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_OffWhite.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plaster_Rose",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_Rose.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plaster_Sage",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_Sage.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plaster_Weathered",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plaster_Weathered.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Plastic_Blue",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plastic_Blue.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Plastic_Red",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Plastic_Red.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Roof_Slate",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Roof_Slate.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:roof_flattiles_6x8"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Roof_Terracotta",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Roof_Terracotta.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:roof_roundtiles_6x8"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Roof_WetBrown",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Roof_WetBrown.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:roof_roundtiles_6x8"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Sign_Board",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Sign_Board.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:materials:ENV_Src_Leaves",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Src_Leaves.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "nature:plant_1"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Src_Leaves_TwistedTree_C",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Src_Leaves_TwistedTree_C.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "nature:bush_common"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Src_T_Trim_Cloth_BaseColor",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Src_T_Trim_Cloth_BaseColor.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "props:bag",
+        "props:stall_cart_empty",
+        "props:stall_empty"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Src_T_Trim_Furniture_BaseColor",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Src_T_Trim_Furniture_BaseColor.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "props:barrel",
+        "props:bench",
+        "props:crate_wooden",
+        "props:table_large"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Src_T_Trim_Metal_BaseColor",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Src_T_Trim_Metal_BaseColor.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "props:bucket_metal",
+        "props:chain_coil",
+        "props:lantern_wall"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Src_T_Trim_Props_BaseColor",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Src_T_Trim_Props_BaseColor.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "props:barrel_apples",
+        "props:farmcrate_apple",
+        "props:shelf_small_bottles"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Trim_Dark",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Trim_Dark.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Trim_Stone",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Trim_Stone.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Trim_White",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Trim_White.mat",
+      "reuseClass": "ADAPTABLE",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:materials:ENV_Water_Port",
+      "path": "Assets/JuegoDef/Derived/ENV/Materials/ENV_Water_Port.mat",
+      "reuseClass": "ORIGINAL",
+      "method": "palette/source material recipe in Env/Grammar/materials.json (JuegoDef > ENV > 1 Generate Materials)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Awning",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Awning.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Awning: Fixed canvas shop awning (toldo) over a 2 m bay: sloped canvas, valance, iron arms. Canvas colour is a slot.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Balcony_Iron",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Balcony_Iron.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Balcony_Iron: Shallow stone-slab balcony with a wrought-iron railing and two iron brackets (balconera).\nSlab on the kit MI_RockTrim slab band; ironwork is owned flat iron.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Bin_Street",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Bin_Street.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Bin_Street: Wall/post-mounted galvanised litter bin (papelera) on a short post.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Bollard_Mooring",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Bollard_Mooring.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Bollard_Mooring: Cast-iron mooring bollard (noray) for the quay coping: base plate, waisted body, mushroom cap.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Bollard_Street",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Bollard_Street.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Bollard_Street: Cast-iron street bollard (pilona) 0.9 m, used to protect thresholds and pedestrian edges.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Counter_Shop",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Counter_Shop.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Counter_Shop: Shop counter 1.8 x 0.6 x 0.95 m: painted timber front panels, stone-slab top.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Crate_Fish",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Crate_Fish.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Crate_Fish: Stackable plastic fish crate (0.6 x 0.4 x 0.22 m) with hand holes; colour is a material slot.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Door_Balcony",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Door_Balcony.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Door_Balcony: Glazed double balcony door (balconera / ventanal) for the kit Door_Flat wall opening: two leaves with kick\npanels and 2x3 panes. Replaces the kit's plank doors on upper floors. Kit MI_WoodTrim + MI_WindowGlass.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Door_Service",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Door_Service.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Door_Service: Plain galvanised service door for the kit Door_Flat wall opening (1.3 m): reads as back-of-house, not public.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Downpipe",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Downpipe.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Downpipe: Rain-water downpipe, 3 m per unit height (assembler scales y by storeys), with shoe and wall clips.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Fence_Yard_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Fence_Yard_2m.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Fence_Yard_2m: Controlled work-yard boundary, 2 m panel x 2.1 m: galvanised palisade on a low plinth. Distinct from the\npublic quay railing by height, material and permeability (you see through, you cannot pass).",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Gallery_Bay",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Gallery_Bay.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Gallery_Bay: Glazed gallery bay (galer\u00eda/mirador) for one 2 m bay and one storey, projecting 0.55 m: timber base panel,\n3x3 glazing grid, cornice and a small lead-grey cap. Stacks storey on storey. Kit MI_WoodTrim + MI_WindowGlass.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Gate_Timber",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Gate_Timber.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Gate_Timber: Double-leaf plank gate (warehouse / yard) for the shop/gate opening; kit MI_WoodTrim planks + iron straps.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Gutter_Channel_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Gutter_Channel_2m.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Gutter_Channel_2m: Central drainage channel for pedestrian streets: two sloped granite slabs forming a shallow V (0.6 m).",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Kerb_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Kerb_2m.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Kerb_2m: Granite kerb 2 m x 0.28 m, top at +0.15 (pavement datum); kit MI_RockTrim slab band.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Kerb_Corner",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Kerb_Corner.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Kerb_Corner: Quarter-round kerb corner (radius 1 m) joining two ENV_Kerb_2m runs; kit MI_RockTrim slab band.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Pallet",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Pallet.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Pallet: Euro pallet 1.2 x 0.8 x 0.14 m; kit MI_WoodTrim dark plank band.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Quay_Ladder",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Quay_Ladder.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Quay_Ladder: Iron ladder fixed to the quay face (top at the coping, 3 m down).",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Quay_Wall_4m",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Quay_Wall_4m.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Quay_Wall_4m: Public quay edge block 4 m long, 3.2 m face down to below water; rubble face + granite coping at y = 0.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Railing_Quay_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Railing_Quay_2m.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Railing_Quay_2m: Public waterfront guard rail, 2 m, 1.05 m high: tube posts + three rails (painted iron).",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Retaining_Wall_2x1",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Retaining_Wall_2x1.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Retaining_Wall_2x1: Retaining wall 2 m long, 1 m face, coping on top (upper datum at y = 0, lower street at -1).",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Retaining_Wall_2x2",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Retaining_Wall_2x2.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Retaining_Wall_2x2: Retaining wall 2 m long, 2 m face, coping on top.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Retaining_Wall_2x3",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Retaining_Wall_2x3.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Retaining_Wall_2x3: Retaining wall 2 m long, 3 m face (one storey), coping on top.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Roof_Gable_4",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Roof_Gable_4.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Roof_Gable_4: Plain plaster gable for a 4 m span (roof ends above party walls and gable-fronted sheds).",
+      "sourceIds": [
+        "medieval:roof_front_brick4",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Roof_Gable_6",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Roof_Gable_6.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Roof_Gable_6: Plain plaster gable for a 6 m span (roof ends above party walls and gable-fronted sheds).",
+      "sourceIds": [
+        "medieval:roof_front_brick6",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Roof_Gable_8",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Roof_Gable_8.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Roof_Gable_8: Plain plaster gable for a 8 m span (roof ends above party walls and gable-fronted sheds).",
+      "sourceIds": [
+        "medieval:roof_front_brick8",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Shop_Fascia",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Shop_Fascia.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Shop_Fascia: Blank painted fascia board over a shop opening (typography stays out of ENV): board + moulded frame.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Shopfront_Door",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Shopfront_Door.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Shopfront_Door: Shop entrance for the shop opening: glazed door leaf (0.95 m) + side light, flush threshold (closed).\nNew geometry on the kit MI_WoodTrim trim sheet + MI_WindowGlass.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:prop_metalfence_simple",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Shopfront_Door_Open",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Shopfront_Door_Open.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Shopfront_Door_Open: Same shop entrance with the leaf swung 88 degrees inwards: a walkable 0.9 m public threshold into a shallow\nshop interior (the gameplay open/close interaction belongs to later GC2 work).",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:prop_metalfence_simple",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Shopfront_Frame",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Shopfront_Frame.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Shopfront_Frame: Display window for the shop opening: painted timber frame, stall-riser panel, mullion, transom light.\nNew geometry on the kit MI_WoodTrim trim sheet + MI_WindowGlass (materials from Window_Wide_Flat1).",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Shutter_Roller",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Shutter_Roller.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Shutter_Roller: Closed metal roller shutter (persiana) filling the shop opening: ribbed curtain, guide rails, housing box.",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Sign_Bracket",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Sign_Bracket.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Sign_Bracket: Projecting blade sign on a wrought-iron bracket, mounted at the left edge of a door bay (blank board).",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Clean",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Clean.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Clean: Plain plaster bay without half-timbering: keeps only the floor-line band.",
+      "sourceIds": [
+        "medieval:wall_plaster_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Clean_Base",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Clean_Base.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Clean_Base: Ground-floor plaster bay with the kit brick plinth kept, sill band/timber removed.",
+      "sourceIds": [
+        "medieval:floor_brick",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Clean_Door",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Clean_Door.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Clean_Door: Plaster bay with the flat door opening (portals, balcony doors); side sill bands removed.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Clean_DoorRound",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Clean_DoorRound.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Clean_DoorRound: Plaster bay with the arched door opening; timber removed.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_plaster_door_round",
+        "medieval:wall_plaster_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Clean_Thin",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Clean_Thin.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Clean_Thin: Plaster bay with the small round-head window; timber removed.",
+      "sourceIds": [
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_thin_round",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Clean_Window",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Clean_Window.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Clean_Window: Plaster bay with the wide window opening; sill band removed, brick spandrel rendered over.",
+      "sourceIds": [
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_Plaster_Shopfront",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_Plaster_Shopfront.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_Plaster_Shopfront: Clean plaster ground-floor wall with a 1.6 x 2.38 m shop opening cut by boolean; reveals in kit stone trim.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_brick",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Wall_UnevenBrick_Shopfront",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Wall_UnevenBrick_Shopfront.fbx",
+      "reuseClass": "DONOR",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Wall_UnevenBrick_Shopfront: Kit rubble-stone wall with the same shop/gate opening; reveals in kit stone trim.",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_unevenbrick_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Water_Plane_20m",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Water_Plane_20m.fbx",
+      "reuseClass": "ORIGINAL",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Water_Plane_20m: Port water surface tile 20 x 20 m (y = 0 is the water level; place it below the quay coping).",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:meshes:ENV_Window_Insert_Thin",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Window_Insert_Thin.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Window_Insert_Thin: Glazed insert for the kit rubble-stone round-head window (\u00b10.32 m, springing 2.31 m, crown 2.51 m):\nrectangular sash plus a segmental glass head.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:meshes:ENV_Window_Insert_Wide",
+      "path": "Assets/JuegoDef/Derived/ENV/Meshes/ENV_Window_Insert_Wide.fbx",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "Blender recipe Tools/blender/env_derive.py::ENV_Window_Insert_Wide: Glazed joinery insert for the kit rubble-stone wide window opening (\u00b10.60 x 1.05\u20132.31 m, measured on the\ndonor wall). The kit's `Window_Wide_Flat_Rocks` is only a stone surround; without this the building's empty\ninterior shows through. Recessed behind the surround: frame, mullion, transom, glass.",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Awning",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Awning.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Awning.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Balcony_Iron",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Balcony_Iron.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Balcony_Iron.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Bin_Street",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Bin_Street.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Bin_Street.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Bollard_Mooring",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Bollard_Mooring.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Bollard_Mooring.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Bollard_Street",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Bollard_Street.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Bollard_Street.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Counter_Shop",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Counter_Shop.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Counter_Shop.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Crate_Fish",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Crate_Fish.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Crate_Fish.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Door_Balcony",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Door_Balcony.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Door_Balcony.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Door_Service",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Door_Service.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Door_Service.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Downpipe",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Downpipe.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Downpipe.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Fence_Yard_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Fence_Yard_2m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Fence_Yard_2m.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Gallery_Bay",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Gallery_Bay.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Gallery_Bay.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Gate_Timber",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Gate_Timber.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Gate_Timber.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Gutter_Channel_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Gutter_Channel_2m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Gutter_Channel_2m.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Kerb_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Kerb_2m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Kerb_2m.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Kerb_Corner",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Kerb_Corner.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Kerb_Corner.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Pallet",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Pallet.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Pallet.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Plant_Bush",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Plant_Bush.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Bush_Common (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "nature:bush_common"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Plant_Small",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Plant_Small.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Plant_1 (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "nature:plant_1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Bag",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Bag.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Bag (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:bag"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Barrel",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Barrel.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Barrel (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:barrel"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Barrel_Apples",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Barrel_Apples.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Barrel_Apples (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:barrel_apples"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Bench",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Bench.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Bench (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:bench"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Bucket",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Bucket.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Bucket_Metal (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:bucket_metal"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Cabinet",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Cabinet.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Cabinet (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:cabinet"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Chain_Coil",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Chain_Coil.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Chain_Coil (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:chain_coil"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Chair",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Chair.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Chair_1 (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:chair_1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Crate_Wooden",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Crate_Wooden.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Crate_Wooden (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:crate_wooden"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_FarmCrate_Apple",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_FarmCrate_Apple.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of FarmCrate_Apple (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:farmcrate_apple"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_FarmCrate_Carrot",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_FarmCrate_Carrot.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of FarmCrate_Carrot (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:farmcrate_carrot"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_FarmCrate_Empty",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_FarmCrate_Empty.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of FarmCrate_Empty (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:farmcrate_empty"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Lantern_Wall",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Lantern_Wall.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Lantern_Wall (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:lantern_wall"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Rope_Coil",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Rope_Coil.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Rope_1 (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:rope_1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Shelf_Bottles",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Shelf_Bottles.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Shelf_Small_Bottles (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:shelf_small_bottles"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Shelf_Simple",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Shelf_Simple.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Shelf_Simple (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:shelf_simple"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Stall",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Stall.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Stall_Empty (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:stall_empty"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Stall_Cart",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Stall_Cart.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Stall_Cart_Empty (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:stall_cart_empty"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Stool",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Stool.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Stool (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:stool"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Prop_Table_Large",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Prop_Table_Large.prefab",
+      "reuseClass": "ADAPTABLE",
+      "method": "collider/material wrapper of Table_Large (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "props:table_large"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Quay_Ladder",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Quay_Ladder.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Quay_Ladder.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Quay_Wall_4m",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Quay_Wall_4m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Quay_Wall_4m.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Railing_Quay_2m",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Railing_Quay_2m.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Railing_Quay_2m.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Retaining_Wall_2x1",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Retaining_Wall_2x1.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Retaining_Wall_2x1.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Retaining_Wall_2x2",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Retaining_Wall_2x2.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Retaining_Wall_2x2.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Retaining_Wall_2x3",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Retaining_Wall_2x3.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Retaining_Wall_2x3.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Roof_Gable_4",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Roof_Gable_4.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Roof_Gable_4.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:roof_front_brick4",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Roof_Gable_6",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Roof_Gable_6.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Roof_Gable_6.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:roof_front_brick6",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Roof_Gable_8",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Roof_Gable_8.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Roof_Gable_8.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:roof_front_brick8",
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Shop_Fascia",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Shop_Fascia.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Shop_Fascia.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Shopfront_Door",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Shopfront_Door.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Shopfront_Door.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:prop_metalfence_simple",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Shopfront_Door_Open",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Shopfront_Door_Open.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Shopfront_Door_Open.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:prop_metalfence_simple",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Shopfront_Frame",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Shopfront_Frame.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Shopfront_Frame.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Shutter_Roller",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Shutter_Roller.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Shutter_Roller.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Sign_Bracket",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Sign_Bracket.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Sign_Bracket.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Clean",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Clean.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Clean.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:wall_plaster_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Clean_Base",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Clean_Base.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Clean_Base.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:floor_brick",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Clean_Door",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Clean_Door.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Clean_Door.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Clean_DoorRound",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Clean_DoorRound.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Clean_DoorRound.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_plaster_door_round",
+        "medieval:wall_plaster_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Clean_Thin",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Clean_Thin.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Clean_Thin.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_thin_round",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Clean_Window",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Clean_Window.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Clean_Window.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_Plaster_Shopfront",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_Plaster_Shopfront.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_Plaster_Shopfront.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_brick",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Wall_UnevenBrick_Shopfront",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Wall_UnevenBrick_Shopfront.prefab",
+      "reuseClass": "DONOR",
+      "method": "module prefab of Meshes/ENV_Wall_UnevenBrick_Shopfront.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_unevenbrick_straight",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Water_Plane_20m",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Water_Plane_20m.prefab",
+      "reuseClass": "ORIGINAL",
+      "method": "module prefab of Meshes/ENV_Water_Plane_20m.fbx with collider policy (Env/Grammar/modules.json)",
+      "origin": "ORIGINAL",
+      "sourceIds": []
+    },
+    {
+      "id": "env:modules:ENV_Window_Insert_Thin",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Window_Insert_Thin.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Window_Insert_Thin.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:modules:ENV_Window_Insert_Wide",
+      "path": "Assets/JuegoDef/Derived/ENV/Modules/ENV_Window_Insert_Wide.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "module prefab of Meshes/ENV_Window_Insert_Wide.fbx with collider policy (Env/Grammar/modules.json)",
+      "sourceIds": [
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:textures:T_ENV_FlatTiles_Neutral",
+      "path": "Assets/JuegoDef/Derived/ENV/Textures/T_ENV_FlatTiles_Neutral.png",
+      "reuseClass": "ADAPTABLE",
+      "method": "neutralised greyscale copy of vendor T_FlatTiles_BaseColor (Env/Grammar/materials.json)",
+      "sourceIds": [
+        "medieval:roof_flattiles_6x8"
+      ]
+    },
+    {
+      "id": "env:textures:T_ENV_Plaster_Neutral",
+      "path": "Assets/JuegoDef/Derived/ENV/Textures/T_ENV_Plaster_Neutral.png",
+      "reuseClass": "ADAPTABLE",
+      "method": "neutralised greyscale copy of vendor T_Plaster_BaseColor (Env/Grammar/materials.json)",
+      "sourceIds": [
+        "medieval:wall_plaster_straight"
+      ]
+    },
+    {
+      "id": "env:textures:T_ENV_RoundTiles_Neutral",
+      "path": "Assets/JuegoDef/Derived/ENV/Textures/T_ENV_RoundTiles_Neutral.png",
+      "reuseClass": "ADAPTABLE",
+      "method": "neutralised greyscale copy of vendor T_RoundTiles_BaseColor (Env/Grammar/materials.json)",
+      "sourceIds": [
+        "medieval:roof_roundtiles_6x8"
+      ]
+    },
+    {
+      "id": "env:textures:T_ENV_Trim_Painted",
+      "path": "Assets/JuegoDef/Derived/ENV/Textures/T_ENV_Trim_Painted.png",
+      "reuseClass": "ADAPTABLE",
+      "method": "neutralised greyscale copy of vendor T_WoodTrim_BaseColor (Env/Grammar/materials.json)",
+      "sourceIds": [
+        "medieval:door_4_flat"
+      ]
+    },
+    {
+      "id": "env:units:U01_Mixed_Commercial_8m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U01_Mixed_Commercial_8m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_2_flat",
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:floor_brick",
+        "medieval:prop_chimney2",
+        "medieval:prop_metalfence_simple",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_roundtiles_6_l",
+        "medieval:roof_modular_roundtiles_6_mid",
+        "medieval:roof_modular_roundtiles_6_r",
+        "medieval:roof_roundtiles_6x8",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_open"
+      ]
+    },
+    {
+      "id": "env:units:U02_Mixed_Gallery_6m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U02_Mixed_Gallery_6m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:door_6_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:floor_brick",
+        "medieval:prop_chimney2",
+        "medieval:prop_metalfence_simple",
+        "medieval:roof_flattiles_6x8",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_flattiles_6_l",
+        "medieval:roof_modular_flattiles_6_mid",
+        "medieval:roof_modular_flattiles_6_r",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_open",
+        "props:lantern_wall"
+      ]
+    },
+    {
+      "id": "env:units:U03_Shop_Witness_Threshold",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U03_Shop_Witness_Threshold.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:floor_brick",
+        "medieval:floor_wooddark",
+        "medieval:prop_chimney2",
+        "medieval:prop_metalfence_simple",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_roundtiles_6_l",
+        "medieval:roof_modular_roundtiles_6_mid",
+        "medieval:roof_modular_roundtiles_6_r",
+        "medieval:roof_roundtiles_6x8",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_closed",
+        "medieval:windowshutters_wide_flat_open",
+        "props:farmcrate_apple",
+        "props:farmcrate_carrot",
+        "props:shelf_simple",
+        "props:shelf_small_bottles"
+      ]
+    },
+    {
+      "id": "env:units:U04_Lodging_Frontage_10m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U04_Lodging_Frontage_10m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:door_5_round",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:doorframe_round_brick",
+        "medieval:floor_brick",
+        "medieval:floor_wooddark",
+        "medieval:prop_chimney2",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_roundtiles_6_l",
+        "medieval:roof_modular_roundtiles_6_mid",
+        "medieval:roof_modular_roundtiles_6_r",
+        "medieval:roof_roundtiles_6x8",
+        "medieval:stair_interior_solid",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_door_round",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_closed",
+        "medieval:windowshutters_wide_flat_open",
+        "nature:plant_1",
+        "props:lantern_wall"
+      ]
+    },
+    {
+      "id": "env:units:U05_Corner_Mixed_8x8",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U05_Corner_Mixed_8x8.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_2_flat",
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:floor_brick",
+        "medieval:prop_chimney2",
+        "medieval:prop_metalfence_simple",
+        "medieval:roof_front_brick8",
+        "medieval:roof_modular_roundtiles_8_l",
+        "medieval:roof_modular_roundtiles_8_mid",
+        "medieval:roof_modular_roundtiles_8_r",
+        "medieval:roof_roundtiles_6x8",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_closed",
+        "medieval:windowshutters_wide_flat_open",
+        "props:lantern_wall"
+      ]
+    },
+    {
+      "id": "env:units:U06_Closed_Residential_6m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U06_Closed_Residential_6m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_1_flat",
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:prop_chimney2",
+        "medieval:roof_flattiles_6x8",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_flattiles_6_l",
+        "medieval:roof_modular_flattiles_6_mid",
+        "medieval:roof_modular_flattiles_6_r",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:wall_unevenbrick_door_flat",
+        "medieval:wall_unevenbrick_straight",
+        "medieval:wall_unevenbrick_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:window_wide_flat_rocks",
+        "medieval:windowshutters_wide_flat_open"
+      ]
+    },
+    {
+      "id": "env:units:U07_Closed_Narrow_4m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U07_Closed_Narrow_4m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:door_6_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:floor_brick",
+        "medieval:prop_chimney2",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_roundtiles_6_l",
+        "medieval:roof_modular_roundtiles_6_r",
+        "medieval:roof_roundtiles_6x8",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_closed"
+      ]
+    },
+    {
+      "id": "env:units:U08_Closed_Residential_8m_4F",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U08_Closed_Residential_8m_4F.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_1_flat",
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:doorframe_flat_wooddark",
+        "medieval:floor_brick",
+        "medieval:prop_chimney2",
+        "medieval:roof_flattiles_6x8",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_flattiles_6_l",
+        "medieval:roof_modular_flattiles_6_mid",
+        "medieval:roof_modular_flattiles_6_r",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_open"
+      ]
+    },
+    {
+      "id": "env:units:U09_Terrace_End_Termination",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U09_Terrace_End_Termination.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:door_5_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:prop_chimney2",
+        "medieval:roof_front_brick6",
+        "medieval:roof_modular_roundtiles_6_l",
+        "medieval:roof_modular_roundtiles_6_mid",
+        "medieval:roof_modular_roundtiles_6_r",
+        "medieval:roof_roundtiles_6x8",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_thin_round",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:wall_unevenbrick_door_flat",
+        "medieval:wall_unevenbrick_straight",
+        "medieval:window_thin_round1",
+        "medieval:window_wide_flat1",
+        "medieval:windowshutters_wide_flat_open",
+        "props:lantern_wall"
+      ]
+    },
+    {
+      "id": "env:units:U10_Port_Warehouse_12m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U10_Port_Warehouse_12m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:roof_flattiles_6x8",
+        "medieval:roof_flattiles_8x12",
+        "medieval:roof_front_brick8",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_window_thin_round",
+        "medieval:wall_plaster_window_wide_flat",
+        "medieval:wall_unevenbrick_straight",
+        "medieval:window_thin_round1",
+        "medieval:window_wide_flat1"
+      ]
+    },
+    {
+      "id": "env:units:U11_Street_Kerbed_8x8",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U11_Street_Kerbed_8x8.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_roundrocks",
+        "medieval:floor_unevenbrick"
+      ]
+    },
+    {
+      "id": "env:units:U12_Street_Pedestrian_8x6",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U12_Street_Pedestrian_8x6.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_roundrocks"
+      ]
+    },
+    {
+      "id": "env:units:U13_Stepped_Connector_3m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U13_Stepped_Connector_3m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:door_4_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_roundrocks",
+        "medieval:floor_unevenbrick",
+        "medieval:stairs_exterior_straight",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:units:U14_Quay_Public_Overlook_12m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U14_Quay_Public_Overlook_12m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_unevenbrick",
+        "medieval:wall_unevenbrick_straight"
+      ]
+    },
+    {
+      "id": "env:units:U15_Yard_Boundary_10m",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U15_Yard_Boundary_10m.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:doorframe_flat_brick"
+      ]
+    },
+    {
+      "id": "env:units:U16_Market_Stall_Set",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U16_Market_Stall_Set.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "props:bag",
+        "props:barrel_apples",
+        "props:farmcrate_apple",
+        "props:farmcrate_carrot",
+        "props:farmcrate_empty",
+        "props:stall_cart_empty",
+        "props:stall_empty",
+        "props:stool",
+        "props:table_large"
+      ]
+    },
+    {
+      "id": "env:units:U17_Port_Work_Props",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U17_Port_Work_Props.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:window_wide_flat1",
+        "props:barrel",
+        "props:bucket_metal",
+        "props:chain_coil",
+        "props:rope_1"
+      ]
+    },
+    {
+      "id": "env:units:U18_Street_Furniture_Utilities",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U18_Street_Furniture_Utilities.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "nature:bush_common",
+        "nature:plant_1",
+        "props:bench"
+      ]
+    },
+    {
+      "id": "env:units:U19_Ground_Frontage_Vocabulary",
+      "path": "Assets/JuegoDef/Derived/ENV/Units/U19_Ground_Frontage_Vocabulary.prefab",
+      "reuseClass": "CREATE_DERIVED",
+      "method": "ENV library unit assembled by JuegoDef > ENV > 3 Build Library from Env/Specs/units.json",
+      "sourceIds": [
+        "medieval:corner_exteriorwide_brick",
+        "medieval:door_4_flat",
+        "medieval:door_5_flat",
+        "medieval:doorframe_flat_brick",
+        "medieval:floor_brick",
+        "medieval:prop_metalfence_simple",
+        "medieval:wall_plaster_door_flat",
+        "medieval:wall_plaster_straight",
+        "medieval:wall_plaster_straight_base",
+        "medieval:window_wide_flat1",
+        "props:lantern_wall"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,56 @@
+{
+  "comment": "ENV material recipe. JuegoDef > ENV > 1 Generate Materials writes Assets/JuegoDef/Derived/ENV/Materials and /Textures. Vendor materials/textures are read, never edited. Colours are sRGB multipliers on the (derived) base colour texture. Plaster uses the kit M_BaseWear graph: the vendor M_Plaster graph has a non-modifiable base texture and reveals brick through wear masks (a medieval-ruin cue).",
+  "textures": [
+    { "name": "T_ENV_Plaster_Neutral", "source": "T_Plaster_BaseColor", "target": 0.9, "contrast": 1.8 },
+    { "name": "T_ENV_Trim_Painted", "source": "T_WoodTrim_BaseColor", "target": 0.84, "contrast": 0.35 },
+    { "name": "T_ENV_FlatTiles_Neutral", "source": "T_FlatTiles_BaseColor", "target": 0.72, "contrast": 1.0 },
+    { "name": "T_ENV_RoundTiles_Neutral", "source": "T_RoundTiles_BaseColor", "target": 0.72, "contrast": 1.0 }
+  ],
+  "materials": [
+    { "name": "ENV_Plaster_OffWhite", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#EBE6DA" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Plaster_Cream", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#E8D6B2" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Plaster_Ochre", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#D6B27A" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Plaster_Sage", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#B3BCA4" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Plaster_BlueGrey", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#AEBCC0" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Plaster_Rose", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#D9B8A4" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Plaster_Weathered", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#BDB7AA" }, "floats": { "_Wear": 0 } },
+
+    { "name": "ENV_Trim_Stone", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#D2CBBB" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Trim_White", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#F0EEE8" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Trim_Dark", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#8A847A" }, "floats": { "_Wear": 0 } },
+
+    { "name": "ENV_Joinery_GreenBlue", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#4E726D" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Joinery_White", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#F2F2EE" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Joinery_Oxblood", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#7C3C33" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Joinery_Blue", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Trim_Painted" }, "colors": { "_Color": "#4D6685" }, "floats": { "_Wear": 0 } },
+    { "name": "ENV_Joinery_Timber", "copy": ["MI_WoodTrim_Wear"], "colors": { "_Color": "#C8B8A6" }, "floats": { "_Wear": 0 } },
+
+    { "name": "ENV_Roof_Terracotta", "copy": ["MI_RoundTiles"], "textures": { "_Base_Color_Texture": "T_ENV_RoundTiles_Neutral" }, "colors": { "_Color": "#A8624A", "_WearA": "#4B573A", "_WearB": "#5E6844" } },
+    { "name": "ENV_Roof_WetBrown", "copy": ["MI_RoundTiles"], "textures": { "_Base_Color_Texture": "T_ENV_RoundTiles_Neutral" }, "colors": { "_Color": "#7A5448", "_WearA": "#48533A", "_WearB": "#566042" } },
+    { "name": "ENV_Roof_Slate", "copy": ["MI_FlatTiles"], "textures": { "_Base_Color_Texture": "T_ENV_FlatTiles_Neutral" }, "colors": { "_Color": "#76808A", "_WearA": "#4A5540", "_WearB": "#59634A" } },
+
+    { "name": "ENV_Glass_Street", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#34434A" }, "floats": { "_Smoothness": 0.93, "_Metallic": 0.15 } },
+    { "name": "ENV_Glass_Shop", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#1E2528" }, "floats": { "_Smoothness": 0.7, "_Metallic": 0.0 } },
+
+    { "name": "ENV_Ground_WetCobble", "copy": ["MI_RoundTiles", "MI_RoundRocks"], "colors": { "_Color": "#8C8C92" }, "floats": { "_Wear": 0 } },
+
+    { "name": "ENV_Metal_Shutter", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#8E9791" }, "floats": { "_Smoothness": 0.3, "_Metallic": 0.35 } },
+    { "name": "ENV_Metal_Iron", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#2F3533" }, "floats": { "_Smoothness": 0.35, "_Metallic": 0.5 } },
+    { "name": "ENV_Metal_Downpipe", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#555B59" }, "floats": { "_Smoothness": 0.35, "_Metallic": 0.3 } },
+    { "name": "ENV_Metal_Galvanised", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#9DA3A2" }, "floats": { "_Smoothness": 0.4, "_Metallic": 0.6 } },
+    { "name": "ENV_Canvas_Green", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#3F6A4E" }, "floats": { "_Smoothness": 0.1 } },
+    { "name": "ENV_Canvas_Red", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#8C3D31" }, "floats": { "_Smoothness": 0.1 } },
+    { "name": "ENV_Canvas_Cream", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#D8CBAA" }, "floats": { "_Smoothness": 0.1 } },
+    { "name": "ENV_Plastic_Blue", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#2E5E9C" }, "floats": { "_Smoothness": 0.45 } },
+    { "name": "ENV_Plastic_Red", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#A63B2E" }, "floats": { "_Smoothness": 0.45 } },
+    { "name": "ENV_Sign_Board", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#E4DDCB" }, "floats": { "_Smoothness": 0.2 } },
+    { "name": "ENV_Water_Port", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#3B5558" }, "floats": { "_Smoothness": 0.88, "_Metallic": 0.1 } },
+    { "name": "ENV_Src_T_Trim_Cloth_BaseColor", "sources": ["props:stall_empty", "props:stall_cart_empty", "props:bag"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Cloth_BaseColor", "_BumpMap": "T_Trim_Cloth_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.1 }, "keywords": ["_NORMALMAP"] },
+    { "name": "ENV_Src_T_Trim_Furniture_BaseColor", "sources": ["props:barrel", "props:crate_wooden", "props:bench", "props:table_large"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Furniture_BaseColor", "_BumpMap": "T_Trim_Furniture_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.15 }, "keywords": ["_NORMALMAP"] },
+    { "name": "ENV_Src_T_Trim_Metal_BaseColor", "sources": ["props:lantern_wall", "props:bucket_metal", "props:chain_coil"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Metal_BaseColor", "_BumpMap": "T_Trim_Metal_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.35, "_Metallic": 0.4 }, "keywords": ["_NORMALMAP"] },
+    { "name": "ENV_Src_T_Trim_Props_BaseColor", "sources": ["props:barrel_apples", "props:farmcrate_apple", "props:shelf_small_bottles"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Props_BaseColor", "_BumpMap": "T_Trim_Props_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.2 }, "keywords": ["_NORMALMAP"] },
+    { "name": "ENV_Src_Leaves", "sources": ["nature:plant_1"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Leaves" }, "colors": { "_BaseColor": "#B8C8A0" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Src_Leaves_TwistedTree_C", "sources": ["nature:bush_common"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Leaves_TwistedTree_C" }, "colors": { "_BaseColor": "#B8C8A0" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Interior_Dark", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#2A2622" }, "floats": { "_Smoothness": 0.05 } }
+  ]
+}
