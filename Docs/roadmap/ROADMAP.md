@@ -1,58 +1,85 @@
 # Roadmap jugable
 
-Status: **BOOTSTRAP DONE / NEXT: M0 FIRST STREET** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
+Status: **BOOTSTRAP DONE / NEXT: PROD-ASSET-00 + CITY-URBAN-00** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
 
 ## Immediate sequence
 
-1. ~~**Knowledge migration**~~ — done (PR #1).
-2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` (MCP for Unity) adopted by the owner on 2026-09-28 without waiting for Juego2 `WP-AI-UNITY-AUTHORING-00`; compared against Juego2's H0/H1 evidence. See [`PRODUCTION_AUTHORING_DECISION.md`](../architecture/PRODUCTION_AUTHORING_DECISION.md).
-3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera walking in Play Mode. See [`UNITY_PROJECT_SETUP.md`](../production/UNITY_PROJECT_SETUP.md) and [evidence](../evidence/BOOTSTRAP-UNITY-GC2/README.md).
-4. **M0 — GC2 Walking Street** — player, camera, first street, one object/hotspot and one NPC interaction. **← next**
-5. **Production lanes** — prove ENV / CHAR / ANIM / Dialogue-UI repeatability on the real port-town look.
-6. **First Living Block** — routine-bearing small block with investigation value.
-7. **Action/content** — chase, melee/confrontation, activities/jobs and 20–30 minute slice.
-8. **Expansion** — additional neighbourhoods and population breadth.
+1. ~~**Knowledge migration**~~ — done.
+2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` adopted.
+3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera working in Play Mode.
+4. **Two parallel foundations for production:**
+   - `PROD-ASSET-00` — existing-pipeline spikes + searchable catalogue, lineage, intake and validators;
+   - `CITY-URBAN-00` — five-zone topology + final B0 Mercado–Muelle route/programme/elevation + factory-demand matrix.
+   **← NEXT**
+5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks asset/CITY research.
+6. **Factories:** ENV starts after `ASSET-00 + CITY-URBAN-00`; CHAR/ANIM can start after ASSET-00 while consuming B0 role priorities.
+7. **Factory scale proofs** — multi-scene ENV, civilian batch and animation runtime/batch; UI follows Dialogue.
+8. **B0 Keeper Block (`CITY-URBAN-01`)** — physical third-person realization of the accepted city brief using the factories.
+9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.
+10. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, 20–30 minute slice, then district/population breadth.
 
-The authoring benchmark is deliberately consumed **before** we invest heavily in a competing environment/character tooling architecture. A minimal bootstrap may happen earlier if useful; a large custom production framework should not.
+Executable contracts live in [`../workpacks/`](../workpacks/README.md).
 
-## M0 and gameplay path
+## What vs how
 
-Each gameplay step produces a visible retained feature. Paid modules are acquired only if not already owned and only when the real feature justifies them.
+The new production architecture has three distinct owners:
 
-| Step | Visible objective | Default tech | Keeper output | Observable PASS |
-|---|---|---|---|---|
-| Bootstrap Unity ✅ | Project opens, scene plays, real versions/pipeline recorded | Unity | minimal project | Open/Play without blocking errors. |
-| GC2 Core ✅ | third-person player + camera | Core | player/camera | Walk, turn and follow in Play Mode. |
-| First Street | short dense port-town street at human scale | chosen authoring path + Unity | retained street seed | Walkable/readable route with credible composition. |
-| First Interaction | door/hotspot + examinable object | Core | interactions | Approach/activate with different visible results. |
-| First NPC | recognizable person with brief response/gesture | Core | NPC interaction | Activate interaction in the same street. **Closes M0.** |
-| Dialogue | ask about person/photo/place | Dialogue if justified; otherwise Core/local | contextual conversation | Known fact changes response. |
-| First Investigation Loop | contrast testimony + physical clue | Core + chosen dialogue path | clue loop | Player reaches lead through world references, not mandatory waypoint chain. |
-| Inventory / Quests | carry a needed object / represent a thread only when required | modules only if proven useful | persistent object/thread | Acquire/use/load state successfully. |
-| Behavior | first useful schedule/routine | Behavior if justified + Unity navigation | routine with gameplay value | Return at another time and find a meaningful changed state/location. |
-| First Living Block | street + commerce + a few coherent NPC routines | GC2 + production lanes | retained lived-in block | Morning/evening visit yields different opportunity/context. |
-| Melee | brief sparring/fight with purpose | Melee if adopted | retained encounter | Start, play, finish, receive coherent consequence. |
-| First Chase | suspect route through market/alley/port | Core/Behavior; Perception only if needed | retained chase | Can catch or lose suspect without dead-ending investigation. |
-| 20–30 minute slice | investigation -> daily life -> chase/confrontation -> changed return | modules actually proven useful | complete slice | First-play timed run works end to end. |
-| Expansion | additional neighbourhood/content | proven stack | incremental retained content | each increment adds a playable route/activity/person. |
+- [`WP-CITY-URBAN-00`](../workpacks/WP-CITY-URBAN-00.md) = **what city / what first block / what spatial roles are needed**;
+- `PROD-ASSET/ENV/CHAR/ANIM/DIALOGUE/UI` = **how to manufacture those roles repeatedly**;
+- [`WP-CITY-URBAN-01`](../workpacks/WP-CITY-URBAN-01.md) = **realize and tune the keeper block in actual third-person game space**.
 
-## Production lock before broad expansion
+The useful historical CITY knowledge is distilled in [`../design/CITY_PRODUCTION_KNOWLEDGE.md`](../design/CITY_PRODUCTION_KNOWLEDGE.md). The first concrete production brief is [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
 
-The old Juego2 insight remains valuable: one attractive demo is not enough. Before scaling to many districts/NPCs, juego-def should pass the lightweight `PROD-LOOK-GATE` described in [`POST_FOUNDATION_PRODUCTION_WPS.md`](POST_FOUNDATION_PRODUCTION_WPS.md).
+We preserve compact density, route logic, programme, access/threshold layers, reusable street/building families, selective interiors, coherent elevation and CITY-07 game-space principles. We do **not** restore the old Puente Viejo/inland topology, old IDs or H0/H1 governance.
 
-This gate asks whether we can repeatedly produce the game, not whether we reproduced old infrastructure.
+## Why CITY-URBAN-00 exists before ENV
 
-## M0 — GC2 Walking Street
+A factory without city demand tends to optimize whatever assets happen to be easiest to process. That is how we risk producing a technically good but visually/product-wrong generic kit.
 
-**Limit:** Unity opens; GC2 Core works; third-person player/camera; one short port-town street; one door/hotspot; one examinable object; one NPC; real GC2 interaction. Arkus absent. Dialogue/Inventory/Quests/Behavior/Melee/Perception are not M0 requirements.
+CITY-URBAN-00 must give ENV a demand matrix for actual B0 needs: mixed commercial frontage, shop/service thresholds, lodging frontage, ordinary closed fabric, stairs/retaining/railings, working-water edge, port/market props, shallow interiors, access truth and local elevation relationships.
 
-**PASS:** the player can open the project, walk the street, approach an NPC/object and interact in Play Mode.
+ENV then builds the smallest scalable factory that covers those demands and enough adjacent vocabulary for later blocks.
 
-The street should already respect the migrated Visual Bible enough to avoid proving gameplay inside an obviously misleading cube test, but M0 does not require final art breadth.
+## Product/factory path
 
-## Tooling boundary
+| Step | Objective | Output | PASS signal |
+|---|---|---|---|
+| Bootstrap Unity ✅ | Unity + GC2 operational | player/camera baseline | Play Mode + hand test work. |
+| CITY-URBAN-00 | decide enough city/B0 product space to drive production | topology + B0 programme + demand matrix | ENV no longer has to guess what to manufacture. |
+| PROD-ASSET-00 | make lawful source corpus searchable/reproducible | shared catalogue/intake/validators | routine source discovery no longer needs path archaeology. |
+| M0 | validate camera/scale/reach/interaction | tiny gameplay fixture | walk + world/NPC interaction work. |
+| ENV Factory | manufacture city architecture/urban vocabulary repeatedly | reusable kit + assembly grammar + validation | normal new ENV unit is production, not R&D. |
+| CHAR Factory | manufacture ordinary civilians repeatedly | civilian/wardrobe factory | normal civilian is production, not bespoke repair. |
+| ANIM Factory | batch discover/import/retarget/use motions | animation catalogue + runtime vocabulary | normal compatible motion is routine to admit/use. |
+| Dialogue/UI Factory | author contextual investigation conversations repeatedly | authoring + no-voice presentation factory | new dialogue is content work, not scene plumbing. |
+| Scale proofs | demonstrate volume and variation | ENV/CHAR/ANIM batches | no pipeline restart on later examples. |
+| CITY-URBAN-01 | realize B0 as keeper game space | first retained city block | owner says keep and extend. |
+| PROD-LOOK-GATE | fresh production challenge | production lock | new brief succeeds without foundational rework. |
+| Content production | make the game | living block → slice → districts | breadth grows on proven factories/systems. |
 
-The pause on production is lifted by the authoring decision: M0 and the production lanes proceed with the MCP operator.
+## B0 target
 
-- **default:** operator + GC2 native + briefs/recipes + small validations;
-- **still defer:** bespoke scenario generators, large character factories, H1-style lifecycle infrastructure, or other heavy tooling, until the operator's revisit trigger (after `PROD-ENV-01`) shows a concrete gap it cannot close.
+B0 Mercado–Muelle is the first retained city customer: lodging/return anchor, market/activity, ordinary shop + witness threshold, commercial run, port reveal/public quay, raised observation/alternate route, genuine cycles and honest expansion seams.
+
+Its starting dimensions/coordinates are hypotheses. `CITY-URBAN-01` may improve local keeper geometry while preserving programme, route connectivity, access truth and expansion intent.
+
+## CITY-07 knowledge retained
+
+Keeper realization is not a literal extrusion of a planning diagram. It must resolve:
+
+- compression → expansion → reveal;
+- landmark/framed-view orientation;
+- conversation/observation pockets;
+- layered building assembly rather than decorated cuboids;
+- coherent street/ground/threshold construction;
+- one shared local elevation frame;
+- public/service/private and public-port/controlled-work boundaries;
+- third-person support for walking, following, searching and bounded chase movement.
+
+Local level-design iteration is encouraged. Material topology/programme changes go back to CITY-URBAN-00; ordinary local geometry corrections do not require historical CITY bureaucracy.
+
+## Tooling rule
+
+Existing pipeline research remains binding: [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md).
+
+Default production path is **existing/native solution → adapt → minimal missing glue**, using MCP/Unity and Blender where useful. No H1-style lifecycle infrastructure or giant universal generator is justified merely by elegance.
