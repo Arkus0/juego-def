@@ -24,7 +24,7 @@ Direct packages are pinned in `Packages/manifest.json`; the full resolution is c
    ```
    It reads the owner's Asset Store download from `%APPDATA%/Unity/Asset Store-5.x/Catsoft Works/Editor ExtensionsGame Toolkits/Game Creator 2.unitypackage`, refuses anything that is not the admitted Core 2.19.61 (SHA-256 `1e4f3ba0…2f3380b`, 28,236,878 bytes), extracts `Assets/**` only into `Assets/Plugins/GameCreator/` and writes a receipt. `status` and `remove` are also available.
 3. Open `Unity/JuegoDef` in Unity Hub. Packages resolve from the committed manifest/lock.
-4. Open `Assets/JuegoDef/Scenes/Bootstrap_GC2Core.unity` and press Play: WASD moves the Player, the mouse orbits the GC2 third-person camera.
+4. Open `Assets/JuegoDef/Scenes/Bootstrap_GC2Core.unity` and press Play: WASD moves the Player, the mouse orbits the GC2 third-person camera (orbit sensitivity 0.5; GC2's default 1.0 felt too fast).
 
 **Never commit GC2 bytes.** The repository is public and the Asset Store EULA is per seat and not redistributable. `.gitignore` covers `Assets/Plugins/GameCreator/`, its `.meta` and `Assets/Plugins.meta`. GC2 also generates its settings under that folder on first windowed open; they are regenerated and stay ignored.
 
@@ -46,6 +46,6 @@ Direct packages are pinned in `Packages/manifest.json`; the full resolution is c
 - Package installs/removals trigger a domain reload; tool calls made meanwhile time out. Wait for the Editor status to report `ready`.
 - MCP for Unity rewrites the MCP client configs it knows about on Editor start-up (`[StartupConfigRewrite]`). Expected behaviour of the package, but be aware it touches global client configuration.
 
-## Optional packages currently installed by the owner
+## Not used
 
-`com.unity.ai.assistant` 2.20.0-pre.1 and `com.unity.ai.inference` 2.6.1 were added to try Unity's own AI tools. Without a Unity AI subscription the Assistant logs `NoSubscription` errors from `generators.ai.unity.com` on every Play Mode entry, which is noise for console-based validation. Keep or remove them deliberately; they are not required by juego-def.
+Unity AI Assistant / AI Toolkit (`com.unity.ai.assistant`, `com.unity.ai.inference`): tried and removed on 2026-09-28. They need a Unity AI subscription the owner will not buy and, without it, log `NoSubscription` errors on every Play Mode entry, which pollutes console-based validation. Do not reinstall.

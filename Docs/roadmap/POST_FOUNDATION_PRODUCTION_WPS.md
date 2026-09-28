@@ -1,6 +1,6 @@
 # Post-foundation production workpacks — migrated draft
 
-Status: **DRAFT / READY TO START WITH PROVISIONAL `BOUNDED_OPERATOR`** (see `PRODUCTION_AUTHORING_DECISION.md`)  
+Status: **DRAFT / READY TO START WITH `BOUNDED_OPERATOR` (MCP for Unity)** (see `PRODUCTION_AUTHORING_DECISION.md`)  
 Purpose: preserve the useful post-H2F production decomposition from Juego2 without importing H1/H2F dependencies.
 
 These are **product-production lanes**, not accepted executable contracts yet. Their final execution form depends on `Docs/architecture/PRODUCTION_AUTHORING_DECISION.md`.

@@ -1576,10 +1576,10 @@ MonoBehaviour:
               rid: 8575488752992911420
           m_SensitivityX:
             m_Property:
-              rid: 8575488752992911421
+              rid: 8575488752992911512
           m_SensitivityY:
             m_Property:
-              rid: 8575488752992911422
+              rid: 8575488752992911513
           m_MaxPitch: 150
           m_MaxYaw:
             m_IsEnabled: 0
@@ -1616,16 +1616,18 @@ MonoBehaviour:
     - rid: 8575488752992911420
       type: {class: InputValueVector2MotionSecondary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 8575488752992911421
-      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 8575488752992911422
-      type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
     - rid: 8575488752992911423
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 0.15000000596046448
+    - rid: 8575488752992911512
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
+    - rid: 8575488752992911513
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.5
 --- !u!4 &725536952
 Transform:
   m_ObjectHideFlags: 0

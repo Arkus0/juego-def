@@ -7,7 +7,7 @@ Date: 2026-09-28 · Roadmap steps: **Bootstrap Unity** + **GC2 Core** · Operato
 | Roadmap PASS | Result | Evidence |
 |---|---|---|
 | Project opens, scene plays, versions/pipeline recorded | **PASS** | Unity 6000.3.24f1; batch import + windowed open with 0 compile errors; URP active (`JD_URP`); `Bootstrap_GC2Core` enters/exits Play Mode repeatedly |
-| Walk, turn and follow in Play Mode (GC2 Core player + camera) | **PASS by operator; keyboard feel pending owner check** | see runtime checks below |
+| Walk, turn and follow in Play Mode (GC2 Core player + camera) | **PASS** — operator runtime checks + owner hand test | see runtime checks below; owner: "La prueba real va perfect (la cámara se mueve muy rápido pero es algo menor)" |
 
 GC2 Core provisioned with `Tools/gc2-provision.py install` → `GC2_INSTALLED version=2.19.61 imported=3630 excluded=['Packages/manifest.json']`. Compiled assemblies: `GameCreator.Runtime.Core`, `GameCreator.Editor.Core`, `GameCreator.Tests.Core`, `MCPForUnity.Runtime`, `MCPForUnity.Editor`.
 
@@ -49,16 +49,19 @@ Lightweight version of the intervention accounting in `PRODUCTION_AUTHORING_DECI
 | 6 | Shot type could not be set with generic tools | GC2 uses `[SerializeReference]` | `SerializedObject.managedReferenceValue` in `execute_code` |
 | 7 | Sky showed an orange sunset band | procedural sky atmosphere too thick | retuned; sky remains a placeholder (ENV work) |
 | 8 | Player "not initialized" / `MoveToLocation` NRE | `Time.time` did not advance between calls: Editor froze the player loop while unfocused (`runInBackground = false`) | `PlayerSettings.runInBackground = true`; re-ran Play — OK |
-| 9 | Simulated `W` key had no effect | Input System keeps disabling the keyboard while the Editor is unfocused | **unresolved** → owner manual check |
+| 9 | Simulated `W` key had no effect | Input System keeps disabling the keyboard while the Editor is unfocused | unresolved for automation → owner hand test PASS |
 | 10 | Tool calls timed out mid-run | owner installed packages (AI Assistant/Inference) → domain reload | waited for Editor `ready`; no damage |
 
 Counts: owner manual clicks for building the scene **0**; exact-path hints **0**; rescue scripts **0** (one one-shot batch script configured URP and was deleted); `execute_code` escape hatch used for GC2 managed references, scene save/build settings, runtime probes and motion checks.
 
 Assessment: the operator handled GC2 wiring, lighting, materials, Play Mode and visual readback end to end and diagnosed its own failures (#8 in particular required reasoning from runtime evidence, not a tool error). Weak spots: generic tools do not cover GC2's polymorphic fields, and real input can't be exercised while the Editor is in the background.
 
+## Owner hand test and follow-up
+
+- Owner played the scene with keyboard and mouse: **PASS**. Only note: camera orbit too fast → third-person `SensitivityX/Y` lowered from GC2's default 1.0 to **0.5** (fine-tune later by feel).
+- Unity AI Assistant/Inference packages that were tried during the session were **removed** (no subscription; console noise).
+
 ## Residuals
 
-- **Owner check (≈30 s):** press Play in `Bootstrap_GC2Core`, walk with WASD, orbit with the mouse.
 - GC2 default speed (~4 m/s) is a jog; tune a walking pace for the Shenmue-like street in M0.
 - Mannequin, bollards and the procedural sky are placeholders; they carry no art approval.
-- Optional Unity AI packages add console noise without a subscription (see `UNITY_PROJECT_SETUP.md`).

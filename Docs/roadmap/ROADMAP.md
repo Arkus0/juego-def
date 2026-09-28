@@ -1,11 +1,11 @@
 # Roadmap jugable
 
-Status: **BOOTSTRAP DONE / NEXT: M0 FIRST STREET** — authoring path provisionally `BOUNDED_OPERATOR` (MCP for Unity)
+Status: **BOOTSTRAP DONE / NEXT: M0 FIRST STREET** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
 
 ## Immediate sequence
 
 1. ~~**Knowledge migration**~~ — done (PR #1).
-2. ~~**Production authoring decision**~~ — provisional `BOUNDED_OPERATOR` taken by the owner on 2026-09-28 without waiting for Juego2 `WP-AI-UNITY-AUTHORING-00`; that benchmark now confirms or overturns it. See [`PRODUCTION_AUTHORING_DECISION.md`](../architecture/PRODUCTION_AUTHORING_DECISION.md).
+2. ~~**Production authoring decision**~~ — `BOUNDED_OPERATOR` (MCP for Unity) adopted by the owner on 2026-09-28 without waiting for Juego2 `WP-AI-UNITY-AUTHORING-00`; compared against Juego2's H0/H1 evidence. See [`PRODUCTION_AUTHORING_DECISION.md`](../architecture/PRODUCTION_AUTHORING_DECISION.md).
 3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera walking in Play Mode. See [`UNITY_PROJECT_SETUP.md`](../production/UNITY_PROJECT_SETUP.md) and [evidence](../evidence/BOOTSTRAP-UNITY-GC2/README.md).
 4. **M0 — GC2 Walking Street** — player, camera, first street, one object/hotspot and one NPC interaction. **← next**
 5. **Production lanes** — prove ENV / CHAR / ANIM / Dialogue-UI repeatability on the real port-town look.
@@ -52,7 +52,7 @@ The street should already respect the migrated Visual Bible enough to avoid prov
 
 ## Tooling boundary
 
-The pause on production is lifted by the provisional authoring decision: M0 and the production lanes proceed with the MCP operator.
+The pause on production is lifted by the authoring decision: M0 and the production lanes proceed with the MCP operator.
 
 - **default:** operator + GC2 native + briefs/recipes + small validations;
 - **still defer:** bespoke scenario generators, large character factories, H1-style lifecycle infrastructure, or other heavy tooling, until the operator's revisit trigger (after `PROD-ENV-01`) shows a concrete gap it cannot close.

@@ -23,7 +23,7 @@ Registrar un problema reproducible antes de comprar otro paquete o programar un 
 | Combate | GC2 Melee cuando exista un encuentro que conservar | Combate ligado a personajes/lugares/narrativa. |
 | Detección/sigilo/reacción | GC2 Perception cuando una escena lo necesite | Persecuciones dirigidas pueden existir antes. |
 | Trabajos, tiendas, minijuegos y persecuciones | composición GC2 + Unity | Extender sólo frente a una carencia concreta. |
-| Authoring físico de ENV/CHAR/ANIM | **Provisional `BOUNDED_OPERATOR`**: Claude Code + MCP for Unity; juicio visual humano | Revisar tras `PROD-ENV-01` según `PRODUCTION_AUTHORING_DECISION`. |
+| Authoring físico de ENV/CHAR/ANIM | **`BOUNDED_OPERATOR`** (owner-confirmed): Claude Code + MCP for Unity; juicio visual humano | Revisar tras `PROD-ENV-01` según `PRODUCTION_AUTHORING_DECISION`. |
 
 ## GC2 Hub precheck
 

@@ -1,11 +1,11 @@
 # Production authoring decision
 
-Status: **PROVISIONAL `BOUNDED_OPERATOR` — owner-delegated, 2026-09-28** (see [Provisional decision](#provisional-decision-2026-09-28))  
+Status: **ADOPTED `BOUNDED_OPERATOR` — owner-confirmed, 2026-09-28** (see [Decision](#decision-2026-09-28))  
 Original decision source: `Arkus0/Juego2` workpack `WP-AI-UNITY-AUTHORING-00` — now **confirming evidence**, not a blocker.
 
-## Provisional decision (2026-09-28)
+## Decision (2026-09-28)
 
-The owner chose not to wait for the Juego2 benchmark and delegated the choice. Decision:
+The owner chose not to wait for the Juego2 benchmark, delegated the recommendation, tested the bootstrap by hand ("la prueba real va perfect") and voted to keep this path unless a better option appears. Decision:
 
 **Claude Code + [MCP for Unity](https://github.com/CoplayDev/unity-mcp) (CoplayDev, MIT) is the default Editor operator for bounded lanes**, pinned in `Packages/manifest.json` as `com.coplaydev.unity-mcp` `v10.2.0` (editor-only; nothing ships in a player build).
 
@@ -26,7 +26,24 @@ Why this candidate:
 - low lock-in: an Editor package plus normal Unity assets; removing it is one manifest line and leaves no hidden state;
 - first real use (the Unity + GC2 bootstrap) is recorded in [`../evidence/BOOTSTRAP-UNITY-GC2/README.md`](../evidence/BOOTSTRAP-UNITY-GC2/README.md), including every failure and correction.
 
-Not chosen as default: **Unity AI Assistant** (`com.unity.ai.assistant`) — requires a Unity AI subscription (this account reports `NoSubscription`), is prerelease, and ties the loop to Unity's own models. It may stay installed for the owner to try, but it is not a production dependency.
+**Rejected: Unity AI Assistant / AI Toolkit** (`com.unity.ai.assistant`, `com.unity.ai.inference`) — needs a Unity AI subscription the owner will not buy (the account reports `NoSubscription` on every Play Mode entry), is prerelease and ties the loop to Unity's own models. Removed from the project; not an option for juego-def.
+
+### Compared with Juego2's H0/H1 path
+
+H0/H1 is not an authoring tool but a canonical-state + materialize/observe/reconcile architecture; the comparison that matters is **cost to reach visible, playable product**. Evidence from `Arkus0/Juego2` and its sessions:
+
+| | Juego2 H0/H1 (2026-09-18 → 28) | Juego2 "Del Puente Viejo al Bar" prototype (outside H1, one session) | juego-def bootstrap (MCP operator) |
+|---|---|---|---|
+| Effort | 2,413 commits, 247 merged PRs, 20 H1 workpacks, ~63k lines of C# in harness/tools + ~7.5k Unity-side | one session; code-generated scene builder in a separate, disposable Unity project | ~1 session: project, GC2, URP, playable scene, docs |
+| Visible result | CITY-04 greybox + ART-01 kit; owner (H2F-02): houses "todavía parecen assets pegados … siguen siendo muy irregulares" | playable 134 m route to an enterable bar, NPCs, secrets, weather state; auto walk-through found 2 real collision bugs | walking third-person GC2 player; owner hand test: "perfect" |
+| GC2 | GC2 feel judged "arguably smoother", but a minimal controller was kept for authority reasons | not used | GC2 is the gameplay framework |
+
+Conclusions:
+
+- **Stay with the MCP operator.** H0/H1 spent most of the effort on infrastructure without reaching the look; it is not an alternative authoring path and stays `DO_NOT_PORT`.
+- The one alternative with real evidence is **Claude writing scene builders in code** (the prototype). It is complementary, not competing: the operator uses it (via `execute_code` or a small builder script) for genuinely procedural parts such as terrain, retaining walls or repeated façades, and hand-places/corrects everything else in the Editor.
+- Adopt the prototype's best practice: an **automated walk-through of the route** in Play Mode that logs where the `CharacterController` gets stuck, plus captures from the running game. Screenshots alone missed its collision bugs.
+- The prototype's honest limit also applies here: the Quaternius kit "still rules" the look (timber beams, steep roofs). Solving that is `PROD-ENV-01` work (Blender/derived pieces), not an operator question.
 
 **Revisit trigger:** after `PROD-ENV-01` (first keeper-quality environment + repeated build). Downgrade to `TOOL_SOURCE_ONLY` if the operator still needs frequent manual rescue or produces compositions the owner repeatedly rejects; upgrade to `PRIMARY_AUTHORING_PATH` if repeated builds are materially cheaper than manual Unity work. The Juego2 benchmark (being executed separately) can confirm or overturn this with controlled evidence.
 
@@ -115,4 +132,4 @@ H0/H1 are **not** contingency defaults for juego-def. A future proposal to reuse
 
 ## Pause boundary
 
-With the provisional decision, production lanes (M0, `PROD-ENV-01`, …) may start using the operator. The original caution still holds: do not build a large bespoke environment/character authoring framework while the operator is being proven; prefer briefs, recipes and small validations over new code.
+With this decision, production lanes (M0, `PROD-ENV-01`, …) may start using the operator. The original caution still holds: do not build a large bespoke environment/character authoring framework while the operator is being proven at scale; prefer briefs, recipes and small validations over new code.

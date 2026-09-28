@@ -13,7 +13,7 @@ Un juego de aventura en tercera persona ambientado en una ciudad portuaria ficti
 
 - **Unity 6000.3.24f1 + URP 17.3** como runtime/editor (proyecto en `Unity/JuegoDef`).
 - **Game Creator 2 first** para gameplay: Core 2.19.61 y módulos sólo cuando una feature real los justifique.
-- **Production authoring: Claude Code + MCP for Unity** como operador de editor en modo `BOUNDED_OPERATOR` provisional; el juicio visual final es humano. El benchmark `WP-AI-UNITY-AUTHORING-00` de Juego2 confirmará o corregirá la decisión.
+- **Production authoring: Claude Code + MCP for Unity** como operador de editor (`BOUNDED_OPERATOR`, confirmado por el owner tras compararlo con H0/H1 de Juego2); el juicio visual final es humano. Unity AI Assistant descartado (requiere suscripción).
 - **H0/H1 no se heredan** como foundation. Una pieza causal de Arkus sólo puede reaparecer frente a un problema concreto que GC2/local no resuelva económicamente.
 
 ### Abrir el proyecto
@@ -44,7 +44,7 @@ El siguiente hito jugable es **M0 — GC2 Walking Street**. Seguimos sin congela
 - [Visual Bible](Docs/design/VISUAL_BIBLE.md)
 - [Modelo de ciudad portuaria](Docs/design/PORT_TOWN_WORLD_MODEL.md)
 - [Arquitectura GC2-first](Docs/architecture/GC2_FIRST_ARCHITECTURE.md)
-- [Decisión de production authoring (provisional)](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
+- [Decisión de production authoring](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
 - [Unity project setup](Docs/production/UNITY_PROJECT_SETUP.md)
 - [Roadmap](Docs/roadmap/ROADMAP.md)
 - [Factories post-foundation](Docs/roadmap/POST_FOUNDATION_PRODUCTION_WPS.md)
