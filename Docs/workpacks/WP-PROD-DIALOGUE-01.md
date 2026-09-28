@@ -1,13 +1,15 @@
 # WP-PROD-DIALOGUE-01 — Investigation Dialogue Authoring Factory
 
-Status: **READY AFTER M0**  
+Status: **READY / PARALLEL**  
 Class: PRODUCTION FACTORY / DIALOGUE AUTHORING  
-Depends on: `WP-M0-00` PASS  
+Depends on: Bootstrap Unity + GC2 Core PASS  
 Blocks: `WP-PROD-UI-01`
 
 ## Claim
 
 juego-def has a reusable dialogue authoring/runtime path that lets a writer/agent produce contextual investigation conversations repeatedly without low-level Unity surgery or mandatory paid tooling.
+
+M0 is not a dependency. The dialogue factory may use a tiny temporary NPC fixture and later consume the retained M0/keeper NPCs.
 
 ## Candidate order
 
