@@ -1,0 +1,6 @@
+1: ual1:a_tpose | 10%, 45%, 80%; male blue, female orange
+2: ual1:counter_angry | 10%, 45%, 80%; male blue, female orange
+3: ual1:counter_give | 10%, 45%, 80%; male blue, female orange
+4: ual1:counter_idle_loop | 10%, 45%, 80%; male blue, female orange
+5: ual1:counter_show | 10%, 45%, 80%; male blue, female orange
+6: ual1:drink | 10%, 45%, 80%; male blue, female orange

@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "preset": "ual-in-place-v1",
+  "targetIds": [
+    "base:regular_male_fullbody",
+    "base:regular_female_fullbody"
+  ],
+  "batch": [
+    {
+      "id": "ual1:idle_loop",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "idle",
+        "wait",
+        "listen"
+      ],
+      "constraints": [
+        "Neutral full-body standing idle. No navigation or dialogue state machine implied."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:walk_loop",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "walk",
+        "follow"
+      ],
+      "constraints": [
+        "Consumer owns movement and facing; tune locomotion speed to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:walk_formal_loop",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "walk",
+        "follow"
+      ],
+      "constraints": [
+        "Consumer owns movement and facing; tune locomotion speed to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:jog_fwd_loop",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "jog",
+        "follow",
+        "chase"
+      ],
+      "constraints": [
+        "Consumer owns movement and facing; tune locomotion speed to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:sprint_loop",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "run",
+        "sprint",
+        "chase"
+      ],
+      "constraints": [
+        "Consumer owns movement and facing; tune locomotion speed to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:turn90_l",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "turn",
+        "facing"
+      ],
+      "constraints": [
+        "Consumer owns movement and facing; tune locomotion speed to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:turn90_r",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "turn",
+        "facing"
+      ],
+      "constraints": [
+        "Consumer owns movement and facing; tune locomotion speed to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual2:walk_fwd_loop",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "walk",
+        "follow"
+      ],
+      "constraints": [
+        "Consumer owns movement/facing; turning must be synchronized with navigation."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual2:turn180_l",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "turn",
+        "facing"
+      ],
+      "constraints": [
+        "Consumer owns movement/facing; turning must be synchronized with navigation."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual2:turn180_r",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "turn",
+        "facing"
+      ],
+      "constraints": [
+        "Consumer owns movement/facing; turning must be synchronized with navigation."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:idle_talking_loop",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "shop",
+        "witness",
+        "conversation",
+        "talk"
+      ],
+      "constraints": [
+        "Full-body standing conversation. Consumer owns dialogue timing and transitions."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:sitting_talking_loop",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "seat",
+        "sit",
+        "conversation",
+        "talk"
+      ],
+      "constraints": [
+        "Full-body gesture; align seats/counter if applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:sitting_nodding_loop",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "seat",
+        "sit",
+        "conversation",
+        "nod",
+        "listen"
+      ],
+      "constraints": [
+        "Full-body gesture; align seats/counter if applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:counter_show",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "shop",
+        "market",
+        "counter",
+        "show"
+      ],
+      "constraints": [
+        "Full-body gesture; align seats/counter if applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:counter_angry",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "shop",
+        "market",
+        "counter",
+        "angry"
+      ],
+      "constraints": [
+        "Full-body gesture; align seats/counter if applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:yes",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "shop",
+        "witness",
+        "conversation",
+        "yes",
+        "acknowledge"
+      ],
+      "constraints": [
+        "Affirmative outward hand gesture; not a pure nod."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:idle_no_loop",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "shop",
+        "witness",
+        "conversation",
+        "no",
+        "disagree"
+      ],
+      "constraints": [
+        "One-shot head-shake by factory policy; consumer owns blend-out."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:idle_rail_call",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "muelle",
+        "rail",
+        "lean"
+      ],
+      "constraints": [
+        "Rail-dependent support pose: author and validate hand/forearm contact against rail height."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:idle_lookaround_loop",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "observe",
+        "look",
+        "search"
+      ],
+      "constraints": [
+        "Includes hand-to-brow observation gesture. Use with clear arm/head space."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:idle_tired_loop",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "wait",
+        "tired",
+        "recover"
+      ],
+      "constraints": [
+        "Bent fatigue posture; not neutral standing idle."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:sitting_enter",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "seat",
+        "sit",
+        "enter"
+      ],
+      "constraints": [
+        "Seat/ground placement must match the authored pose when applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:sitting_exit",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "seat",
+        "sit",
+        "stand",
+        "exit"
+      ],
+      "constraints": [
+        "Seat/ground placement must match the authored pose when applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:sitting_idle_loop",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "seat",
+        "sit"
+      ],
+      "constraints": [
+        "Seat/ground placement must match the authored pose when applicable."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:groundsit_idle_loop",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "sit",
+        "ground",
+        "rest"
+      ],
+      "constraints": [
+        "Flat-ground idle only. Ground-sit transitions are not admitted."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:idle_foldarms_loop",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "wait",
+        "listen",
+        "foldarms"
+      ],
+      "constraints": [
+        "Regular-body compatibility only; bulky clothing requires arm/torso intersection check."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:idle_rail_loop",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "muelle",
+        "rail",
+        "lean"
+      ],
+      "constraints": [
+        "Rail-dependent support pose: author and validate hand/forearm contact against rail height."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:counter_idle_loop",
+      "family": "work_activity",
+      "tags": [
+        "b0",
+        "shop",
+        "market",
+        "counter",
+        "idle"
+      ],
+      "constraints": [
+        "Contact animation: prop dimensions, hand alignment and task timing require scene authoring."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:counter_give",
+      "family": "work_activity",
+      "tags": [
+        "b0",
+        "shop",
+        "market",
+        "counter",
+        "give"
+      ],
+      "constraints": [
+        "Contact animation: prop dimensions, hand alignment and task timing require scene authoring."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:fixing_kneeling",
+      "family": "work_activity",
+      "tags": [
+        "b0",
+        "market",
+        "port",
+        "work",
+        "repair",
+        "kneel"
+      ],
+      "constraints": [
+        "Contact animation: prop dimensions, hand alignment and task timing require scene authoring."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:push_loop",
+      "family": "work_activity",
+      "tags": [
+        "b0",
+        "market",
+        "port",
+        "work",
+        "push"
+      ],
+      "constraints": [
+        "Contact animation: prop dimensions, hand alignment and task timing require scene authoring."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:walk_carry_loop",
+      "family": "work_activity",
+      "tags": [
+        "b0",
+        "mercado",
+        "muelle",
+        "locomotion",
+        "walk",
+        "follow",
+        "work",
+        "market",
+        "port",
+        "carry"
+      ],
+      "constraints": [
+        "Requires carried object sockets and consumer locomotion matched to gait."
+      ],
+      "moving": true
+    },
+    {
+      "id": "ual1:interact",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "shop",
+        "use",
+        "inspect",
+        "reach"
+      ],
+      "constraints": [
+        "Generic contact-free reach gesture only; does not certify door handles, object contact or gameplay outcomes."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:pickup_table",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "shop",
+        "market",
+        "pickup",
+        "reach",
+        "table"
+      ],
+      "constraints": [
+        "Motion only; no object transfer or interaction outcome. Author hand-object alignment."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:pickup_kneeling",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "shop",
+        "market",
+        "pickup",
+        "reach",
+        "kneel"
+      ],
+      "constraints": [
+        "Motion only; no object transfer or interaction outcome. Author hand-object alignment."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:drink",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "mercado",
+        "consume",
+        "drink"
+      ],
+      "constraints": [
+        "Motion only; no object transfer or interaction outcome. Author hand-object alignment."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:chest_open",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "use",
+        "chest",
+        "open"
+      ],
+      "constraints": [
+        "Object-specific contact remains an adaptation task."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:consume",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "mercado",
+        "consume",
+        "eat"
+      ],
+      "constraints": [
+        "Object-specific contact remains an adaptation task."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:hit_chest",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "react",
+        "recoil",
+        "chest"
+      ],
+      "constraints": [
+        "Full-body reaction; consumer owns recovery/blend-out. No combat or damage authority implied."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:hit_head",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "react",
+        "recoil",
+        "head"
+      ],
+      "constraints": [
+        "Full-body reaction; consumer owns recovery/blend-out. No combat or damage authority implied."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:hit_shoulder_l",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "react",
+        "recoil",
+        "shoulder_l"
+      ],
+      "constraints": [
+        "Full-body reaction; consumer owns recovery/blend-out. No combat or damage authority implied."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:hit_shoulder_r",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "react",
+        "recoil",
+        "shoulder_r"
+      ],
+      "constraints": [
+        "Full-body reaction; consumer owns recovery/blend-out. No combat or damage authority implied."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:surprise",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "witness",
+        "react",
+        "surprise"
+      ],
+      "constraints": [
+        "Subtle full-body surprise reaction. Consumer owns return transition."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual2:hit_knockback",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "react",
+        "recoil",
+        "knockback"
+      ],
+      "constraints": [
+        "Full-body reaction; consumer owns recovery/blend-out. No combat or damage authority implied."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:a_tpose",
+      "family": "special_minigame_combat",
+      "tags": [
+        "b0",
+        "reference",
+        "negative"
+      ],
+      "constraints": [
+        "Reference pose must be rejected as a production motion."
+      ],
+      "moving": false
+    },
+    {
+      "id": "ual1:hit_stomach",
+      "family": "reactions_action",
+      "tags": [
+        "b0",
+        "react",
+        "recoil",
+        "stomach"
+      ],
+      "constraints": [
+        "Full-body reaction; consumer owns recovery/blend-out. No combat or damage authority implied."
+      ],
+      "moving": false
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap:point",
+      "status": "GAP",
+      "family": "conversation_acting",
+      "tags": [
+        "b0",
+        "witness",
+        "point"
+      ],
+      "reason": "No dedicated neutral pointing clip; Counter_Show is a counter-dependent alternative."
+    },
+    {
+      "id": "gap:door",
+      "status": "GAP",
+      "family": "object_interaction",
+      "tags": [
+        "b0",
+        "door",
+        "handle"
+      ],
+      "reason": "No door-handle/open/close sequence validated; Interact is only a generic gesture."
+    },
+    {
+      "id": "gap:port-work",
+      "status": "GAP",
+      "family": "work_activity",
+      "tags": [
+        "b0",
+        "port",
+        "market",
+        "shop"
+      ],
+      "reason": "Crate carry, sorting, weighing, wrapping, mooring and port tools need prop/contact adaptation."
+    },
+    {
+      "id": "gap:civilian-family",
+      "status": "GAP",
+      "family": "ambient_social",
+      "tags": [
+        "b0",
+        "civilian",
+        "wardrobe"
+      ],
+      "reason": "Technical retarget targets are regular source bodies. CHAR-01 production outfits/proportions require compatibility sampling; ANIM-02 owns multi-NPC runtime vocabulary."
+    },
+    {
+      "id": "gap:chase-integration",
+      "status": "GAP",
+      "family": "locomotion",
+      "tags": [
+        "b0",
+        "chase",
+        "stairs"
+      ],
+      "reason": "Navigation speed, stairs, foot IK, transitions and root-turn synchronization are consumer/runtime tasks."
+    },
+    {
+      "id": "gap:special-gameplay",
+      "status": "GAP",
+      "family": "special_minigame_combat",
+      "tags": [
+        "combat",
+        "minigame"
+      ],
+      "reason": "Source clips indexed only; combat/fishing/minigame mechanics not admitted by this factory."
+    }
+  ]
+}
