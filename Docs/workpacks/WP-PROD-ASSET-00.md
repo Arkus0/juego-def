@@ -9,13 +9,13 @@ Blocks: `WP-PROD-ENV-01`, `WP-PROD-CHAR-01`, `WP-PROD-ANIM-01`
 
 juego-def has a shared, searchable and reproducible asset-production substrate so ENV/CHAR/ANIM workers can manufacture content from the real source corpus without rediscovering packages, paths, import rules, provenance or adaptation conventions for every asset.
 
-This WP is deliberately **not** a giant asset-management platform. It creates only the common machinery required to make the graphical lanes scalable.
+This WP is deliberately **not** a giant asset-management platform and does not decide city topology. It creates the common machinery required to make the graphical lanes scalable while `WP-CITY-URBAN-00` runs in parallel to define accepted environment demand.
 
 ## Binding product demand
 
-Consume [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
+Consume the current [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md) as provisional/current demand while `WP-CITY-URBAN-00` validates it.
 
-The catalogue and first indexed/admitted corpus must be useful for the actual B0 Mercado–Muelle demand, especially:
+The catalogue and first indexed/admitted corpus must be useful for B0 Mercado–Muelle, especially:
 
 - commercial facades, corners, openings, thresholds and ordinary closed frontage;
 - stairs/ramps/retaining/railings and waterfront/public-port pieces;
@@ -23,7 +23,7 @@ The catalogue and first indexed/admitted corpus must be useful for the actual B0
 - civilian body/wardrobe families covering market/shop, dock/port, residents and ordinary service roles;
 - locomotion, conversation, ambient and market/port work animations.
 
-A technically elegant catalogue that does not expose candidates for the first keeper block is not sufficient.
+A technically elegant catalogue that does not expose candidates for near-term city demand is not sufficient. If `CITY-URBAN-00` materially amends B0, reconcile the coverage view rather than rebuilding the substrate.
 
 ## Binding research input — reuse before invention
 
@@ -50,7 +50,8 @@ By PASS, the repo/project must contain:
 5. repeatable import/adaptation entry points for the asset families actually used;
 6. cheap preview/inspection capability so a worker can search candidates without manually opening hundreds of files;
 7. lightweight validators for common broken states;
-8. a defined place for generated/derived assets that does not mutate vendor/source packages in place.
+8. a defined place for generated/derived assets that does not mutate vendor/source packages in place;
+9. a provisional/current coverage view against B0/CITY demand.
 
 ## Minimum catalogue fields
 
@@ -98,7 +99,7 @@ Do not build a universal validator for hypothetical future asset types.
 
 ## Batch proof
 
-Run the substrate over at least the source families immediately needed by B0 and the next lanes and show that it can discover/index a **non-trivial batch**, not just 5 hand-entered examples.
+Run the substrate over at least the source families immediately needed by current B0/CITY demand and the next lanes and show that it can discover/index a **non-trivial batch**, not just 5 hand-entered examples.
 
 Minimum evidence should cover environment/building/prop material, character/wardrobe material and animation material with explicit B0-demand search examples.
 
@@ -109,7 +110,7 @@ Retain under `Docs/evidence/WP-PROD-ASSET-00/`:
 - `REUSE_DECISIONS.md`;
 - catalogue/index format and generated snapshot;
 - source families covered;
-- B0 demand coverage/gap list;
+- current B0/CITY demand coverage/gap list;
 - import/derived folder conventions;
 - example semantic searches used by the operator;
 - validator output;
@@ -124,13 +125,18 @@ PASS when:
 - operator can discover useful B0-relevant candidates semantically from a non-trivial batch;
 - derived assets have a reproducible owned destination + lineage;
 - common bad-import/broken-reference conditions have a cheap detection path;
-- B0 demand has an explicit coverage/gap view;
+- current B0/CITY demand has an explicit coverage/gap view;
 - adding another asset from an already-covered source family is routine production work.
+
+ASSET-00 PASS does **not** authorize ENV-01 by itself: ENV also requires `WP-CITY-URBAN-00` PASS so the environment factory is driven by accepted city demand.
 
 ## FAIL
 
-FAIL if the result is only a prose list, every later WP still needs exact owner-provided paths, B0 demand remains invisible to the catalogue, vendor assets must be destructively edited, existing relevant pipelines were ignored and reimplemented without a bounded evaluation, or the WP expands into building a generic DAM system unrelated to near-term production.
+FAIL if the result is only a prose list, every later WP still needs exact owner-provided paths, B0/CITY demand remains invisible to the catalogue, vendor assets must be destructively edited, existing relevant pipelines were ignored and reimplemented without a bounded evaluation, or the WP expands into building a generic DAM system unrelated to near-term production.
 
 ## Handoff
 
-On PASS, start `PROD-ENV-01`, `PROD-CHAR-01` and `PROD-ANIM-01` in parallel. Their job is to turn this substrate into lane-specific **factories capable of producing the B0 vocabulary first and later content at batch scale**.
+On PASS:
+
+- `PROD-CHAR-01` and `PROD-ANIM-01` may start, consuming B0 role priorities;
+- `PROD-ENV-01` starts only when both `PROD-ASSET-00` and `WP-CITY-URBAN-00` are PASS.
