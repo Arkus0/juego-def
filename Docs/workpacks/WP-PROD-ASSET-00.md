@@ -1,8 +1,8 @@
 # WP-PROD-ASSET-00 — Shared Graphical Asset Factory Substrate
 
-Status: **READY AFTER M0**  
+Status: **READY / START NOW**  
 Class: PRODUCTION FACTORY / SHARED ASSET SUBSTRATE  
-Depends on: `WP-M0-00` PASS  
+Depends on: Bootstrap Unity + GC2 Core PASS  
 Blocks: `WP-PROD-ENV-01`, `WP-PROD-CHAR-01`, `WP-PROD-ANIM-01`
 
 ## Claim
@@ -10,6 +10,20 @@ Blocks: `WP-PROD-ENV-01`, `WP-PROD-CHAR-01`, `WP-PROD-ANIM-01`
 juego-def has a shared, searchable and reproducible asset-production substrate so ENV/CHAR/ANIM workers can manufacture content from the real source corpus without rediscovering packages, paths, import rules, provenance or adaptation conventions for every asset.
 
 This WP is deliberately **not** a giant asset-management platform. It creates only the common machinery required to make the graphical lanes scalable.
+
+## Binding research input — reuse before invention
+
+Consume [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md) before implementing equivalent custom tooling.
+
+Mandatory first actions:
+
+1. inspect the actual owned/admitted Quaternius source corpus and source projects;
+2. identify which native/source metadata can be indexed rather than manually re-authored;
+3. bounded-spike `QuaterniusUnityUtils` against current Unity 6000.3.24f1 for the import/collision jobs relevant to our corpus;
+4. record `USE / ADAPT / REFERENCE_ONLY / REJECT / NOT_MATERIAL / DEFER` decisions;
+5. implement only common glue still missing after those checks.
+
+Retain `Docs/evidence/WP-PROD-ASSET-00/REUSE_DECISIONS.md`.
 
 ## Factory outputs
 
@@ -88,6 +102,7 @@ Minimum evidence should cover:
 
 Retain under `Docs/evidence/WP-PROD-ASSET-00/`:
 
+- `REUSE_DECISIONS.md`;
 - catalogue/index format and generated snapshot;
 - source families covered;
 - import/derived folder conventions;
@@ -99,6 +114,7 @@ Retain under `Docs/evidence/WP-PROD-ASSET-00/`:
 
 PASS when:
 
+- existing/native pipeline candidates were actually evaluated before equivalent custom code was written;
 - ENV/CHAR/ANIM can consume the same asset substrate without independent rediscovery of source/provenance/path conventions;
 - operator can discover useful candidates semantically from a non-trivial batch;
 - derived assets have a reproducible owned destination + lineage;
@@ -107,7 +123,7 @@ PASS when:
 
 ## FAIL
 
-FAIL if the result is only a prose list, every later WP still needs exact owner-provided paths, vendor assets must be destructively edited, or the WP expands into building a generic DAM system unrelated to near-term production.
+FAIL if the result is only a prose list, every later WP still needs exact owner-provided paths, vendor assets must be destructively edited, existing relevant pipelines were ignored and reimplemented without a bounded evaluation, or the WP expands into building a generic DAM system unrelated to near-term production.
 
 ## Handoff
 
