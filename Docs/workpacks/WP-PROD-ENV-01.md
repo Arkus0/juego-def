@@ -1,160 +1,134 @@
-# WP-PROD-ENV-01 — Environment Recipe + Repeated-Build Proof
+# WP-PROD-ENV-01 — Environment Asset + Assembly Factory
 
-Status: **READY AFTER M0**  
+Status: **READY AFTER ASSET-00**  
 Class: PRODUCTION FACTORY / ENVIRONMENT  
-Depends on: `WP-M0-00` PASS  
-Blocks: `WP-CITY-URBAN-01`; authoring-path revisit
+Depends on: `WP-PROD-ASSET-00` PASS  
+Blocks: `WP-PROD-ENV-02`
 
 ## Claim
 
-juego-def can repeatedly produce keeper-quality bounded streets/interiors in its intended northern port-town visual language using the simplest effective combination of Quaternius reuse, derived components, Unity, Blender where needed and the bounded MCP operator.
+juego-def has a repeatable environment production factory that can turn the admitted source corpus into reusable, game-coherent architectural/urban assets and assemble them into streets/interiors without bespoke low-level work for every scene.
 
-This WP is not complete after one attractive scene. It must prove a reusable recipe on **two materially different compositions**.
+This WP does **not** pass because one street looks good. It passes when the machinery to make many streets/buildings/thresholds exists and a meaningful reusable asset batch has been produced through it.
 
 ## Binding inputs
 
 - Visual Bible
 - Port Town World Model
 - Quaternius Production Knowledge
+- `PROD-ASSET-00` catalogue/lineage conventions
 - Production Authoring Decision (`BOUNDED_OPERATOR`)
-- retained M0 scene as scale/gameplay reference
+- retained M0 scene as gameplay-scale reference
 
-## Required outputs
+## Factory scope
 
-1. `ENV_RECIPE.md` — concise production recipe that another worker/agent can follow;
-2. first keeper-quality bounded environment composition;
-3. second materially different composition produced with the same recipe;
-4. admitted/rejected/proxy asset/component notes sufficient to explain what was reused and why;
-5. runtime collision/walkability proof;
-6. evidence sufficient to revisit `BOUNDED_OPERATOR` vs `PRIMARY_AUTHORING_PATH`.
+The factory must cover the environment families needed for near-term city production:
 
-The two outputs may be, for example:
+- building shells/facades;
+- doors/windows/thresholds;
+- roof/trim/corner/join pieces;
+- street/ground/curb/steps;
+- shop/bar/service frontage/signage mounting;
+- port/market/street props and furniture;
+- materials/palette variants;
+- small interior/threshold kit sufficient for enterable edges.
 
-- dense Casco/Mercado street + Muelle/working-port street;
-- exterior street + small shop/bar threshold/interior;
-- two different facade/street compositions with distinct topology and asset combinations.
+Not every family needs a custom generator. The factory is the **combined production path**: searchable source components + adaptation/derivation + templates/prefabs + assembly rules + validators + operator recipe.
 
-They may **not** be trivial recolours/rearrangements of the same prefab row.
+## Required factory outputs
 
-## Environment recipe must cover
+By PASS, retain:
 
-- target pedestrian dimensions/ranges where useful;
-- street width and building-height logic;
-- facade rhythm and variation;
-- corners/termination vistas/landmarks;
-- entrances, thresholds and ground contact;
-- wall/roof/facade joins;
-- signage/props and clutter density;
-- material/palette adaptation;
-- lighting/atmosphere baseline;
-- collision and traversal expectations;
-- allowed proxy use;
-- `DIRECT / ADAPTABLE / DONOR / CREATE_DERIVED` decision flow;
-- when Blender derivation is cheaper/cleaner than forcing an unsuitable prefab;
-- how the MCP operator discovers/selects assets without exact-path spoon-feeding where possible.
+1. `ENV_FACTORY.md` — authoritative short workflow;
+2. lane-specific semantic catalogue/tags built on `PROD-ASSET-00`;
+3. reusable juego-def-owned prefab/module library;
+4. material/palette adaptation system or repeatable batch recipe;
+5. donor-component extraction / derived-asset path using Blender/source editing where needed;
+6. assembly templates/rules for facades, corners, thresholds, ground contact and repeated frontage;
+7. cheap validation for scale, missing refs/materials, obvious collision/threshold faults and illegal proxy-as-keeper states;
+8. a non-trivial **factory output batch**.
 
-## Quaternius rule
+## Minimum batch proof
 
-Pack/theme labels are not visual vetoes. Medieval/fantasy/timber-origin assets may be adapted or mined as donor components if the composed result fits juego-def.
+Produce at least **15 reusable environment production units** across multiple roles, with enough diversity that they can make genuinely different streets. A production unit may be a complete prefab or a reusable derived/module set, for example:
 
-Before creating new geometry, inspect the lawful available corpus for:
+- facade/building variants;
+- corner/termination pieces;
+- shopfront/door/window sets;
+- roof/trim kits;
+- port/market props;
+- street/ground modules;
+- small interior/threshold sets.
 
-- reusable full assets;
-- separable facade/roof/window/door/trim pieces;
-- props/vegetation/urban furniture;
-- materials/textures/palettes;
-- components worth deriving in Blender.
+Do not satisfy the count with 15 trivial recolours or microscopic pieces that cannot materially vary scenes.
 
-Do not force visibly wrong assets merely to maximize reuse.
+## Architecture adaptation requirement
 
-## Operator loop
+The factory must demonstrate all relevant reuse classes on real candidates where available:
 
-For each of the two compositions:
+- `DIRECT` — already fits;
+- `ADAPTABLE` — material/detail/scale changes;
+- `DONOR` — useful subcomponents extracted from unsuitable whole assets;
+- `CREATE_DERIVED` — new juego-def-owned derivative where the source corpus cannot directly deliver the needed piece.
 
-`brief -> autonomous asset/project inspection -> candidate assembly -> third-person capture -> Play Mode route -> diagnose -> correction pass(es) -> owner look review`
+Pack names like medieval/fantasy/timber are not automatic rejection. Final composed fit governs acceptance.
 
-The operator should perform real Editor work, not only generate a one-shot scene-builder script. Procedural/batch code is allowed where it is the cheapest mechanism for repeated geometry, placement or validation.
+## Assembly grammar
 
-## Mandatory automated route probe
+Define enough semantic rules that a worker/operator can request outcomes rather than exact object paths, including:
 
-Adapt the useful lesson from the prior prototype: run an automated character/controller traversal or equivalent route probe in Play Mode across the critical route.
+- frontage type/width bands;
+- floor/height/silhouette guidance;
+- corner/termination treatment;
+- door/window rhythm;
+- shop/service frontage roles;
+- threshold/ground contact rules;
+- material/palette families;
+- clutter/signage density;
+- landmark vs ordinary facade roles.
 
-It must detect/report obvious cases such as:
+This is not a procedural city generator. It is a vocabulary for repeatable assisted assembly.
 
-- blocked path/collision snag;
-- impossible step/threshold;
-- falling through/escaping geometry;
-- route obstruction created by props;
-- obviously invalid spawn/door approach.
+## Operator/tooling loop
 
-This complements, not replaces, a human walk-through.
+`semantic brief -> catalogue search -> choose/reuse/adapt/derive -> prefab/module output -> validate -> gameplay-scale preview -> correct -> admit to factory library`
 
-## Visual acceptance
-
-Keeper environment output must be judged from third-person gameplay views, not isolated asset screenshots.
-
-PASS requires the owner to accept that each composition:
-
-- looks plausibly like the same game;
-- is materially beyond dressed greybox;
-- has coherent silhouette/rhythm/material use;
-- feels intentionally composed rather than asset-store dumped;
-- is pleasant/interesting to walk through at gameplay scale.
-
-## Repeatability measurement
-
-Record for build 1 and build 2:
-
-- amount of owner manual rescue/clicking;
-- exact-path hints needed;
-- one-off scripts/utilities introduced;
-- major failures/recovery;
-- whether second build reused the recipe rather than rediscovering the process;
-- qualitative reduction in setup/manipulation friction.
-
-No need for false precision. The purpose is to decide whether production economics improved.
+Use MCP in Unity for inspection/assembly/validation and Blender MCP/source tools for mesh derivation when materially useful. Small batch scripts/editor utilities are expected where they turn repeated manual work into routine production.
 
 ## Evidence
 
 Retain under `Docs/evidence/WP-PROD-ENV-01/`:
 
-- recipe;
-- source/provenance/adaptation notes;
-- captures from both scenes, including gameplay views;
-- automated route-probe results;
-- owner visual verdict;
-- operator intervention/failure summary;
-- list of remaining kit/look gaps;
-- recommendation: keep `BOUNDED_OPERATOR`, upgrade to `PRIMARY_AUTHORING_PATH`, or downgrade.
+- factory workflow;
+- output inventory with lineage/reuse class;
+- captures/previews of the batch;
+- at least one donor/derived example from source to final output;
+- validator results;
+- tooling/scripts/templates retained because they materially reduce repeated work;
+- known kit gaps still requiring future asset creation.
 
 ## PASS
 
 PASS when:
 
-- two materially different keeper compositions exist;
-- both survive Play Mode traversal and route probe;
-- owner accepts both as representative of intended game quality/direction;
-- recipe explains how to build a third without inventing a new framework;
-- asset adaptation/derivation is lawful and documented enough to repeat;
-- second build demonstrates meaningful reuse of the process;
-- no major unresolved environment-production architecture problem remains for a bounded block.
+- 15+ meaningful reusable production units exist across several environment roles;
+- operator can discover and manufacture/adapt units without owner-provided exact paths for routine cases;
+- derived assets have clean lineage and live outside vendor packages;
+- common materials/scale/join/collision failure modes have a cheap validation path;
+- assembly grammar/templates are sufficient to make materially different streets;
+- adding another normal facade/shopfront/prop/module is now mainly production work rather than pipeline invention.
 
 ## FAIL
 
 FAIL if:
 
-- only one good scene exists;
-- second scene needs an unrelated bespoke workflow;
-- compositions remain greybox + pasted assets;
-- the operator requires persistent high manual rescue without an accepted mitigation;
-- collision/playability is not validated;
-- owner repeatedly rejects the composed look;
-- work drifts into building a giant procedural city generator instead of proving a small production recipe.
+- result is one beautiful hand-built scene instead of a factory;
+- batch is mostly trivial variants;
+- every asset still needs bespoke import/material/mesh surgery;
+- operator discovery depends on exact path spoon-feeding;
+- source packages are destructively modified;
+- a huge city generator is built instead of modular production tooling.
 
 ## Handoff
 
-On PASS:
-
-- record the authoring-path revisit decision;
-- feed the accepted recipe/assets into `WP-CITY-URBAN-01`;
-- remaining environment work should primarily be breadth, art-direction refinement and new local needs rather than foundational pipeline invention.
+`WP-PROD-ENV-02` consumes this factory and must prove **scene production at batch scale** with multiple distinct compositions. Only ENV-02 decides whether the current authoring operator should be upgraded to `PRIMARY_AUTHORING_PATH`.
