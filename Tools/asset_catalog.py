@@ -40,6 +40,23 @@ PREVIEWS = {
     "nature": "Nature/Preview_1.jpg", "base": "Base Characters/Preview.png",
     "outfits": "Modular Character Outfits - Fantasy[Standard]/Preview.jpg",
 }
+TARGETS = {
+    "medieval": "MedievalVillage", "props": "Props", "nature": "Nature",
+    "base": "BaseCharacters", "outfits": "Outfits", "ual1": "UAL1", "ual2": "UAL2",
+}
+INSTALL_GLOBS = {
+    "props": ["Exports/FBX/*.fbx", "**/Textures/**/*"],
+    "nature": ["FBX/*.fbx", "**/Textures/**/*"],
+    "base": [
+        "Base Characters/Exports/Unity/*.fbx",
+        "Base Characters/Textures/**/*",
+        "Hairstyles/Origin at 0/FBX (Unity)/*.fbx",
+        "Hairstyles/**/Textures/**/*",
+    ],
+    "outfits": ["Exports/FBX (Unity)/**/*.fbx", "Textures/**/*"],
+    "ual1": ["Unity/UAL1.fbx"],
+    "ual2": ["Unity/UAL2.fbx"],
+}
 
 MEDIEVAL_ZIP = "Medieval Village/Engine Projects/Medieval Village MegaKit[Unity URP].zip"
 MEDIEVAL_SHA256 = "b9d757dd2608a5cee4d9ee1e8183f6cb4cad9d27480841a905180def9c7d8b10"
@@ -67,6 +84,83 @@ def guid_for(path: str) -> str:
 def meta_guid(data: bytes) -> str | None:
     match = GUID_RE.search(data)
     return match.group(1).decode("ascii") if match else None
+
+
+def source_files_for_pack(vault: Path, pack: str) -> list[Path]:
+    """Return exactly the non-Medieval source files copied by install, deterministically."""
+    if pack == "medieval":
+        raise ValueError("medieval intake identity is the pinned source archive")
+    root = vault / PACKS[pack]["root"]
+    seen: set[Path] = set()
+    files: list[Path] = []
+    for pattern in INSTALL_GLOBS[pack]:
+        for source in sorted(root.glob(pattern)):
+            if not source.is_file() or source in seen:
+                continue
+            seen.add(source)
+            files.append(source)
+    files.sort(key=lambda path: rel(path, root))
+    return files
+
+
+def manifest_from_rows(rows: list[tuple[str, str]]) -> str:
+    """Hash path+content-hash rows so path, additions, removals and byte changes alter identity."""
+    h = hashlib.sha256()
+    for path, sha in sorted(rows):
+        h.update(path.encode("utf-8"))
+        h.update(b"\0")
+        h.update(sha.encode("ascii"))
+        h.update(b"\n")
+    return h.hexdigest()
+
+
+def intake_identity(vault: Path, pack: str) -> dict:
+    """Identity of every source byte install may copy for one pack."""
+    if pack == "medieval":
+        archive = vault / MEDIEVAL_ZIP
+        if not archive.is_file():
+            raise ValueError(f"Missing Medieval Village source archive: {archive}")
+        archive_sha = digest(archive)
+        if archive_sha != MEDIEVAL_SHA256:
+            raise ValueError("Medieval Village source archive absent or hash mismatch")
+        return {"kind": "archive-sha256", "sha256": archive_sha, "files": 1}
+
+    root = vault / PACKS[pack]["root"]
+    rows = [(rel(path, root), digest(path)) for path in source_files_for_pack(vault, pack)]
+    if not rows:
+        raise ValueError(f"No intake source files found for pack: {pack}")
+    return {
+        "kind": "path+content-sha256-v1",
+        "sha256": manifest_from_rows(rows),
+        "files": len(rows),
+    }
+
+
+def import_relative(pack: str, source: Path, root: Path) -> Path:
+    if pack.startswith("ual"):
+        return Path(source.name)
+    return source.relative_to(root)
+
+
+def expected_identity(catalog: dict, pack: str) -> dict:
+    info = catalog.get("sourcePacks", {}).get(pack, {})
+    identity = info.get("intakeIdentity")
+    if not isinstance(identity, dict) or not identity.get("sha256") or not identity.get("files"):
+        raise ValueError(
+            f"Catalog has no complete intake identity for {pack}; run build against the admitted vault before install"
+        )
+    return identity
+
+
+def assert_catalog_identity(vault: Path, pack: str, catalog: dict) -> dict:
+    expected = expected_identity(catalog, pack)
+    actual = intake_identity(vault, pack)
+    if actual != expected:
+        raise ValueError(
+            f"Source intake identity changed for {pack}; run build, review the new snapshot, then retry install "
+            f"(catalog={expected.get('sha256')} current={actual.get('sha256')})"
+        )
+    return actual
 
 
 def classify(name: str, pack: str) -> tuple[str, list[str], list[str], list[str]]:
@@ -199,6 +293,16 @@ def build(vault: Path) -> dict:
     archive = vault / MEDIEVAL_ZIP
     if not archive.is_file() or digest(archive) != MEDIEVAL_SHA256:
         raise ValueError("Medieval Village source archive absent or hash mismatch")
+
+    source_packs = {}
+    for pack, info in PACKS.items():
+        source_packs[pack] = {
+            **info,
+            "provider": "Quaternius",
+            "version": "content-addressed source snapshot",
+            "intakeIdentity": intake_identity(vault, pack),
+        }
+
     items: list[dict] = []
     with zipfile.ZipFile(archive) as z:
         names = set(z.namelist())
@@ -252,15 +356,18 @@ def build(vault: Path) -> dict:
                 if source_id in by_id:
                     by_id[source_id]["derivedIds"].append(derived["id"])
     items.sort(key=lambda x: x["id"])
-    return {"schemaVersion": 1, "vault": "C:/Juego2-Assets (override with --vault)",
-            "sourcePacks": {k: {**v, "provider": "Quaternius", "version": "unversioned source snapshot"} for k, v in PACKS.items()},
-            "sourceArchiveSha256": MEDIEVAL_SHA256, "items": items}
+    return {
+        "schemaVersion": 2,
+        "vault": "C:/Juego2-Assets (override with --vault)",
+        "sourcePacks": source_packs,
+        "sourceArchiveSha256": MEDIEVAL_SHA256,
+        "items": items,
+    }
 
 
 def write_catalog(vault: Path, output: Path) -> dict:
     catalog = build(vault)
     output.parent.mkdir(parents=True, exist_ok=True)
-    # One candidate per line keeps a large generated snapshot reviewable in Git.
     lines = [
         "{",
         f'  "schemaVersion": {catalog["schemaVersion"]},',
@@ -303,12 +410,15 @@ def write_meta(path: Path, unity_path: str) -> None:
 
 
 def install(vault: Path, pack: str) -> int:
-    target = PROJECT / VENDOR / {"medieval": "MedievalVillage", "props": "Props", "nature": "Nature", "base": "BaseCharacters", "outfits": "Outfits", "ual1": "UAL1", "ual2": "UAL2"}[pack]
+    target = PROJECT / VENDOR / TARGETS[pack]
     license_path = vault / PACKS[pack]["license"]
     if not license_path.is_file() or "CC0" not in license_path.read_text(encoding="utf-8", errors="replace"):
         raise ValueError(f"Missing or unverified CC0 license: {license_path}")
-    if pack == "medieval" and digest(vault / MEDIEVAL_ZIP) != MEDIEVAL_SHA256:
-        raise ValueError("Medieval Village archive absent or hash mismatch")
+    if not CATALOG.is_file():
+        raise ValueError(f"Missing committed catalog: {CATALOG}")
+    catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+    identity = assert_catalog_identity(vault, pack, catalog)
+
     receipt_path = target / ".juego-def-intake.json"
     if target.exists() and (not receipt_path.is_file() or json.loads(receipt_path.read_text(encoding="utf-8")).get("pack") != pack):
         raise ValueError(f"Existing folder has no matching intake receipt: {target}")
@@ -328,8 +438,6 @@ def install(vault: Path, pack: str) -> int:
                 if out.exists():
                     if out.read_bytes() != content:
                         if out.suffix.lower() == ".mat":
-                            # Unity 6 resaves all 14 vendor materials during first import.
-                            # Preserve the local upgrade; the pinned archive remains pristine.
                             local_upgrades += 1
                         else:
                             raise ValueError(f"Existing vendor file differs; refusing overwrite: {out}")
@@ -339,47 +447,56 @@ def install(vault: Path, pack: str) -> int:
                 count += 1
     else:
         root = vault / PACKS[pack]["root"]
-        globs = {
-            "props": ["Exports/FBX/*.fbx", "**/Textures/**/*"],
-            "nature": ["FBX/*.fbx", "**/Textures/**/*"],
-            "base": ["Base Characters/Exports/Unity/*.fbx", "Base Characters/Textures/**/*", "Hairstyles/Origin at 0/FBX (Unity)/*.fbx", "Hairstyles/**/Textures/**/*"],
-            "outfits": ["Exports/FBX (Unity)/**/*.fbx", "Textures/**/*"],
-            "ual1": ["Unity/UAL1.fbx"], "ual2": ["Unity/UAL2.fbx"],
-        }[pack]
-        seen: set[Path] = set()
-        for pattern in globs:
-            for source in sorted(root.glob(pattern)):
-                if not source.is_file() or source in seen:
-                    continue
-                seen.add(source)
-                relative = source.relative_to(root)
-                if pack.startswith("ual"):
-                    relative = Path(source.name)
-                out = target / relative
-                out.parent.mkdir(parents=True, exist_ok=True)
-                if out.exists():
-                    if digest(out) != digest(source):
-                        raise ValueError(f"Existing vendor file differs; refusing overwrite: {out}")
-                else:
-                    shutil.copy2(source, out)
-                    added += 1
-                if not out.with_name(out.name + ".meta").exists():
-                    write_meta(out, f"{VENDOR}/{target.name}/{relative.as_posix()}")
-                count += 1
-    receipt = {"pack": pack, "files": count, "vaultRoot": PACKS[pack]["root"], "license": PACKS[pack]["license"],
-               "localUnityMaterialUpgrades": local_upgrades}
+        for source in source_files_for_pack(vault, pack):
+            relative = import_relative(pack, source, root)
+            out = target / relative
+            out.parent.mkdir(parents=True, exist_ok=True)
+            if out.exists():
+                if digest(out) != digest(source):
+                    raise ValueError(f"Existing vendor file differs; refusing overwrite: {out}")
+            else:
+                shutil.copy2(source, out)
+                added += 1
+            if not out.with_name(out.name + ".meta").exists():
+                write_meta(out, f"{VENDOR}/{target.name}/{relative.as_posix()}")
+            count += 1
+    receipt = {
+        "pack": pack,
+        "files": count,
+        "vaultRoot": PACKS[pack]["root"],
+        "license": PACKS[pack]["license"],
+        "intakeIdentity": identity,
+        "localUnityMaterialUpgrades": local_upgrades,
+    }
     receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
-    print(f"INSTALLED {pack}: {count} source files ({added} new, {local_upgrades} local material upgrades preserved) -> {target}")
+    print(
+        f"INSTALLED {pack}: {count} source files ({added} new, {local_upgrades} local material upgrades preserved) "
+        f"identity={identity['sha256']} -> {target}"
+    )
     return count
 
 
 def validate(vault: Path, catalog: dict) -> list[str]:
     problems: list[str] = []
-    if build(vault) != catalog:
-        problems.append("catalog snapshot is stale; run build")
+    try:
+        rebuilt = build(vault)
+        if rebuilt != catalog:
+            problems.append("catalog snapshot is stale; run build")
+    except (OSError, ValueError, zipfile.BadZipFile) as exc:
+        problems.append(f"cannot reconstruct source snapshot: {exc}")
+
     ids: set[str] = set()
     source_hashes: dict[str, str] = {}
-    installed = {pack for pack in PACKS if (PROJECT / VENDOR / {"medieval": "MedievalVillage", "props": "Props", "nature": "Nature", "base": "BaseCharacters", "outfits": "Outfits", "ual1": "UAL1", "ual2": "UAL2"}[pack] / ".juego-def-intake.json").is_file()}
+    installed = {
+        pack for pack in PACKS
+        if (PROJECT / VENDOR / TARGETS[pack] / ".juego-def-intake.json").is_file()
+    }
+    for pack in PACKS:
+        try:
+            expected_identity(catalog, pack)
+        except ValueError as exc:
+            problems.append(str(exc))
+
     for item in catalog["items"]:
         if item["id"] in ids:
             problems.append(f"duplicate id: {item['id']}")
@@ -405,8 +522,35 @@ def validate(vault: Path, catalog: dict) -> list[str]:
                 meta = imported.with_name(imported.name + ".meta")
                 if not meta.is_file() or meta_guid(meta.read_bytes()) != item.get("unityGuid"):
                     problems.append(f"missing/changed Unity GUID: {item['id']}")
-    if digest(vault / MEDIEVAL_ZIP) != catalog.get("sourceArchiveSha256"):
+
+    if (vault / MEDIEVAL_ZIP).is_file() and digest(vault / MEDIEVAL_ZIP) != catalog.get("sourceArchiveSha256"):
         problems.append("Medieval Village archive identity changed")
+
+    for pack in installed:
+        target = PROJECT / VENDOR / TARGETS[pack]
+        receipt_path = target / ".juego-def-intake.json"
+        try:
+            receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+            expected = expected_identity(catalog, pack)
+            actual_source = intake_identity(vault, pack)
+            if receipt.get("intakeIdentity") != expected:
+                problems.append(f"stale intake receipt identity: {pack}")
+            if actual_source != expected:
+                problems.append(f"source intake identity changed: {pack}")
+            if receipt.get("files") != expected.get("files") and pack != "medieval":
+                problems.append(f"intake receipt file count differs from source manifest: {pack}")
+            if pack != "medieval":
+                root = vault / PACKS[pack]["root"]
+                for source in source_files_for_pack(vault, pack):
+                    relative = import_relative(pack, source, root)
+                    imported = target / relative
+                    if not imported.is_file():
+                        problems.append(f"missing installed source byte: {pack}:{relative.as_posix()}")
+                    elif digest(imported) != digest(source):
+                        problems.append(f"installed source byte differs: {pack}:{relative.as_posix()}")
+        except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
+            problems.append(f"invalid intake receipt for {pack}: {exc}")
+
     if LINEAGE.is_file():
         data = json.loads(LINEAGE.read_text(encoding="utf-8"))
         recorded: set[str] = set()
