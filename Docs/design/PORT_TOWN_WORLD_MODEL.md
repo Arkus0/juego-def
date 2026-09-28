@@ -9,6 +9,8 @@ The final setting is a **large fictional port town in northern Spain**, with a l
 
 The final proper name is **undecided**. Do not bake `Villa Bruma` or any other provisional name into keeper signage, assets or UI.
 
+This document owns neighbourhood **roles**. `Docs/workpacks/WP-CITY-URBAN-00.md` owns the executable topology/first-block planning handoff; reusable migrated spatial knowledge lives in `CITY_PRODUCTION_KNOWLEDGE.md`.
+
 ## Five production neighbourhoods
 
 These are production/world-organization zones, not necessarily formal municipal districts:
@@ -23,13 +25,15 @@ Nightlife is a **city layer**, not a sixth dedicated district. Casco is primary;
 
 ## First keeper block authority
 
-The concrete first-block demand is defined in [`FIRST_KEEPER_BLOCK_B0.md`](FIRST_KEEPER_BLOCK_B0.md).
+The concrete first-block demand baseline is [`FIRST_KEEPER_BLOCK_B0.md`](FIRST_KEEPER_BLOCK_B0.md), subject to validation/amendment by `WP-CITY-URBAN-00` before ENV production.
 
 B0 is the Mercado–Muelle seam: lodging/return anchor, market/activity, everyday shop + witness threshold, commercial run, public port approach, quay overlook, upper/alternate route and truthful expansion seams. Graphical/content factories should prioritize this demand before generic breadth.
 
 ## Cross-town routine principle
 
 People may live in Viviendas, work in Muelle or Talleres, shop/eat in Mercado, visit Casco at night and return home. Routine design should produce cross-town social reuse rather than five isolated populations.
+
+`CITY-URBAN-00` must preserve this premise without forcing every trip through one universal hub.
 
 ## NPC depth and routine axes
 
@@ -76,4 +80,7 @@ A short everyday activity such as a bar game, arcade interaction, training or jo
 - Streets and interiors should be learned through landmarks, storefronts, thresholds, stairs, alleys and activity.
 - The player should repeatedly revisit places at different times and for different reasons.
 - A district exists because it creates differentiated gameplay/social rhythm, not merely because the map needs more area.
+- Meaningful loops/alternate routes beat a universal central connector.
+- Quiet/ordinary fabric is necessary contrast, not wasted area.
+- Public/service/private and scenic/playable distinctions must remain truthful.
 - Keeper geometry should be deliberately composed for third-person route rhythm, threshold readability, orientation, sightlines and useful verticality; a planning diagram is not a level.
