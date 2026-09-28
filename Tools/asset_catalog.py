@@ -375,6 +375,8 @@ def install(vault: Path, pack: str) -> int:
 
 def validate(vault: Path, catalog: dict) -> list[str]:
     problems: list[str] = []
+    if build(vault) != catalog:
+        problems.append("catalog snapshot is stale; run build")
     ids: set[str] = set()
     source_hashes: dict[str, str] = {}
     installed = {pack for pack in PACKS if (PROJECT / VENDOR / {"medieval": "MedievalVillage", "props": "Props", "nature": "Nature", "base": "BaseCharacters", "outfits": "Outfits", "ual1": "UAL1", "ual2": "UAL2"}[pack] / ".juego-def-intake.json").is_file()}
