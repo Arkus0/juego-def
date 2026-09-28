@@ -1,7 +1,7 @@
 # juego-def executable workpacks
 
 Status: **ACTIVE / v1**  
-Authority: `Docs/roadmap/ROADMAP.md` + `Docs/architecture/PRODUCTION_AUTHORING_DECISION.md`
+Authority: `AGENTS.md` + `Docs/roadmap/ROADMAP.md` + `Docs/architecture/PRODUCTION_AUTHORING_DECISION.md`
 
 ## Purpose
 
@@ -32,16 +32,19 @@ The factory may be scripts, Editor tools, Blender recipes, templates, metadata, 
 
 ## Execution rules
 
+All workpack roles/hand-offs follow root [`../../AGENTS.md`](../../AGENTS.md) and the canonical skills under `.agents/skills/`.
+
 1. **Product first.** Factory work exists to unlock B0 and later city content, not tooling for its own sake.
 2. **CITY defines demand; factories define manufacture.** Do not let ENV invent the city or CITY invent asset tooling.
 3. **GC2-first.** Use GC2 where it materially reduces gameplay/presentation work; do not duplicate it.
-4. **Bounded operator by default.** Claude Code + MCP for Unity performs the physical Editor loop where adopted.
+4. **Bounded operator by default.** Unity/MCP/asset operator performs the physical Editor loop where it adds value; Worker retains WP ownership and Reviewer remains independent.
 5. **Human look authority.** Owner is final authority on keeper graphical output.
 6. **No H0/H1 compatibility tax.** Old materialize/reconcile/gate machinery is not inherited.
 7. **Reuse before invention is binding.** Consume [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md); existing/adapted solution before equivalent custom tooling.
 8. **CITY knowledge is selective.** Consume current port-town topology, B0 demand and reusable game-space principles; do not import the old inland pilot or historical CITY governance.
 9. **No fake keeper art.** Proxies are explicit; dressed greybox cannot count as keeper production output.
 10. **Source packages are inputs, not workspaces.** Derived output lives in juego-def-owned locations with lineage.
+11. **Independent acceptance.** Worker pre-review is required readiness evidence but never substitutes for a fresh Reviewer PASS on the frozen candidate.
 
 ## M0
 
