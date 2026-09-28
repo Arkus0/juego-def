@@ -21,6 +21,12 @@ These are production/world-organization zones, not necessarily formal municipal 
 
 Nightlife is a **city layer**, not a sixth dedicated district. Casco is primary; Talleres secondary; Mercado has ordinary evening life; Muelle has night work; Viviendas quiets down.
 
+## First keeper block authority
+
+The concrete first-block demand is defined in [`FIRST_KEEPER_BLOCK_B0.md`](FIRST_KEEPER_BLOCK_B0.md).
+
+B0 is the Mercado–Muelle seam: lodging/return anchor, market/activity, everyday shop + witness threshold, commercial run, public port approach, quay overlook, upper/alternate route and truthful expansion seams. Graphical/content factories should prioritize this demand before generic breadth.
+
 ## Cross-town routine principle
 
 People may live in Viviendas, work in Muelle or Talleres, shop/eat in Mercado, visit Casco at night and return home. Routine design should produce cross-town social reuse rather than five isolated populations.
@@ -70,3 +76,4 @@ A short everyday activity such as a bar game, arcade interaction, training or jo
 - Streets and interiors should be learned through landmarks, storefronts, thresholds, stairs, alleys and activity.
 - The player should repeatedly revisit places at different times and for different reasons.
 - A district exists because it creates differentiated gameplay/social rhythm, not merely because the map needs more area.
+- Keeper geometry should be deliberately composed for third-person route rhythm, threshold readability, orientation, sightlines and useful verticality; a planning diagram is not a level.
