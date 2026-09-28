@@ -1,31 +1,46 @@
 # juego-def
 
-Un juego de aventura en tercera persona ambientado en una ciudad portuaria ficticia del norte de España, entre finales de los noventa y los primeros años dos mil. Aspiramos a la experiencia de vivir unos días en una ciudad densa mientras investigamos un asesinato: **vida cotidiana → investigación → aventura**. Shenmue II inspira la estructura y el ritmo; personajes, historia, nombres, escenarios y arte serán propios.
+Un juego de aventura en tercera persona ambientado en una ciudad portuaria ficticia del norte de España, entre finales de los noventa y los primeros años dos mil. Aspiramos a la experiencia de vivir unos días en una ciudad densa mientras investigamos un asesinato: **vida cotidiana -> investigación -> aventura**. Shenmue II inspira la estructura y el ritmo; personajes, historia, nombres, escenarios y arte serán propios.
 
 ## Pilares
 
-1. **Una ciudad que se aprende andando.** Comercios, bares, mercado, puerto y vecinos sirven de pistas y de orientación; calles e interiores compactos antes que superficie vacía.
+1. **Una ciudad que se aprende andando.** Comercios, bares, mercado, puerto y vecinos sirven de pistas y orientación; calles e interiores compactos antes que superficie vacía.
 2. **Investigar haciendo.** Preguntar, enseñar una foto, inspeccionar objetos, volver a distintas horas, seguir a alguien y ganarse acceso mediante trabajos o confianza.
 3. **Vivir entre pistas.** Rutinas proporcionadas a cada NPC, pequeños trabajos, minijuegos y entrenamiento integrados en lugares y personas.
-4. **Aventura con consecuencias.** Persecuciones jugables, peleas breves y escenas dirigidas cuando mejoren el ritmo de la historia.
+4. **Aventura con consecuencias.** Persecuciones jugables, peleas breves y escenas dirigidas cuando mejoren el ritmo.
 
-La víctima tiene una relación personal con el protagonista. El primer tramo conduce desde una pensión y los comercios hacia el puerto. Los detalles del crimen y del reparto siguen abiertos.
+## Tecnología
 
-## Tecnología y alcance
+- **Unity** como runtime/editor.
+- **Game Creator 2 first** para gameplay: Core y módulos sólo cuando una feature real los justifique.
+- **Production authoring pendiente de decisión:** Unity directo/manual vs operador AI/MCP principal o bounded, según el benchmark `WP-AI-UNITY-AUTHORING-00` que se está ejecutando en Juego2.
+- **H0/H1 no se heredan** como foundation. Una pieza causal de Arkus sólo puede reaparecer frente a un problema concreto que GC2/local no resuelva económicamente.
 
-- **Unity**; evaluar URP como base de render en el bootstrap, según la escena y los materiales que realmente adoptemos.
-- **Game Creator 2 Core** como base de personaje, cámara, movimiento, interacción, variables e instrucciones. Añadir módulos por necesidad demostrada y por fases.
-- Arte PS2+ propio: atmósfera atlántica húmeda, piedra, hormigón, madera y puerto; Quaternius y recursos gratuitos sólo cuando su licencia, adecuación visual y compatibilidad estén comprobadas. Sin activos de pago nuevos por defecto.
-- **Arkus no forma parte de M0.** Sólo considerar una pequeña capa causal si un problema concreto de persistencia global supera razonablemente lo que GC2 ofrece. Juego2 es una fuente de lecciones, no una dependencia de ejecución.
+## Dirección visual y producción
 
-La meta de largo plazo, sujeta a pruebas de producción, es una ciudad de 4–5 distritos densos con 80–120 NPC visibles: alrededor de 10–15 protagonistas, 30–40 interactivos y el resto población ambiental. Estas cifras no son compromisos del vertical slice.
+Arte estilizado low-poly/PS2+: atmósfera atlántica húmeda, ciudad densa a escala peatonal, working port, composición fuerte y reutilización inteligente de assets. Quaternius se trata como ecosistema editable de prefabs/componentes/personajes/animaciones, no como una colección que deba usarse intacta.
 
-## Comenzar
+No se acepta como objetivo visual final el patrón **greybox + assets pegados**. El criterio es el resultado compuesto visto en tercera persona.
 
-El primer hito es **[M0 — GC2 Walking Street](Docs/roadmap/ROADMAP.md#m0--gc2-walking-street)**: abrir el proyecto, caminar por una calle portuaria mínima y usar GC2 para interactuar con un NPC y un objeto. Esta PR define el proyecto; **todavía no incluye un proyecto Unity jugable ni acredita M0**.
+## Estado actual
+
+`juego-def` está siendo preparado como **repo de producción limpio y landing zone del conocimiento útil de Juego2**.
+
+Ya se migra aquí el conocimiento de producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub y factories post-foundation. La inversión técnica pesada queda deliberadamente en pausa hasta consumir el resultado del benchmark de authoring AI.
+
+El siguiente hito jugable sigue siendo **M0 — GC2 Walking Street**, pero no vamos a congelar antes un gran framework de escenarios/personajes que el operador ganador pueda volver innecesario.
+
+## Documentos clave
 
 - [Visión del juego](Docs/design/GAME_VISION.md)
+- [Visual Bible](Docs/design/VISUAL_BIBLE.md)
+- [Modelo de ciudad portuaria](Docs/design/PORT_TOWN_WORLD_MODEL.md)
 - [Arquitectura GC2-first](Docs/architecture/GC2_FIRST_ARCHITECTURE.md)
-- [Roadmap y M0](Docs/roadmap/ROADMAP.md)
+- [Decisión pendiente de production authoring](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
+- [Roadmap](Docs/roadmap/ROADMAP.md)
+- [Factories post-foundation](Docs/roadmap/POST_FOUNDATION_PRODUCTION_WPS.md)
 - [Adquisición de módulos](Docs/roadmap/GC2_MODULE_ACQUISITION.md)
 - [Auditoría de reutilización de Juego2](Docs/migration/JUEGO2_REUSE_AUDIT.md)
+- [Baseline de conocimiento migrado](Docs/migration/JUEGO2_KNOWLEDGE_BASELINE.md)
+- [Quaternius production knowledge](Docs/production/QUATERNIUS_PRODUCTION_KNOWLEDGE.md)
+- [GC2 Hub reuse knowledge](Docs/production/GC2_HUB_REUSE_KNOWLEDGE.md)
