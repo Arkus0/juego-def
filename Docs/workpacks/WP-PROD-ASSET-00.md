@@ -11,6 +11,20 @@ juego-def has a shared, searchable and reproducible asset-production substrate s
 
 This WP is deliberately **not** a giant asset-management platform. It creates only the common machinery required to make the graphical lanes scalable.
 
+## Binding product demand
+
+Consume [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
+
+The catalogue and first indexed/admitted corpus must be useful for the actual B0 Mercado–Muelle demand, especially:
+
+- commercial facades, corners, openings, thresholds and ordinary closed frontage;
+- stairs/ramps/retaining/railings and waterfront/public-port pieces;
+- market/port/shop/street props and signage mounting;
+- civilian body/wardrobe families covering market/shop, dock/port, residents and ordinary service roles;
+- locomotion, conversation, ambient and market/port work animations.
+
+A technically elegant catalogue that does not expose candidates for the first keeper block is not sufficient.
+
 ## Binding research input — reuse before invention
 
 Consume [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md) before implementing equivalent custom tooling.
@@ -59,9 +73,10 @@ The catalogue does not need to enumerate every irrelevant vendor file manually i
 
 The MCP/operator must be able to ask questions such as:
 
-- "show me doors/windows suitable as donor components";
-- "find civilian-compatible clothing pieces";
-- "find humanoid talk/idle/work animations";
+- "show me doors/windows suitable for B0 commercial frontage";
+- "find stairs/railings/retaining pieces for the B0 upper/port loop";
+- "find civilian-compatible clothing for market/shop/dock roles";
+- "find humanoid talk/idle/work animations for B0";
 - "find port/market props";
 
 without receiving exact file paths from the owner for every candidate.
@@ -77,26 +92,15 @@ This can be achieved by generated inventories, metadata, thumbnails/previews, se
 
 ## Validation baseline
 
-Provide lightweight checks where relevant for:
-
-- missing materials/textures;
-- broken prefab references;
-- obvious scale/import anomalies;
-- humanoid/avatar invalidity;
-- duplicate/missing source identifiers;
-- derived asset with no lineage record.
+Provide lightweight checks where relevant for missing materials/textures, broken prefab references, obvious scale/import anomalies, humanoid/avatar invalidity, duplicate/missing source identifiers and derived assets with no lineage record.
 
 Do not build a universal validator for hypothetical future asset types.
 
 ## Batch proof
 
-Run the substrate over at least the source families immediately needed by the next lanes and show that it can discover/index a **non-trivial batch**, not just 5 hand-entered examples.
+Run the substrate over at least the source families immediately needed by B0 and the next lanes and show that it can discover/index a **non-trivial batch**, not just 5 hand-entered examples.
 
-Minimum evidence should cover:
-
-- environment/building/prop material;
-- character/wardrobe material;
-- animation material.
+Minimum evidence should cover environment/building/prop material, character/wardrobe material and animation material with explicit B0-demand search examples.
 
 ## Evidence
 
@@ -105,6 +109,7 @@ Retain under `Docs/evidence/WP-PROD-ASSET-00/`:
 - `REUSE_DECISIONS.md`;
 - catalogue/index format and generated snapshot;
 - source families covered;
+- B0 demand coverage/gap list;
 - import/derived folder conventions;
 - example semantic searches used by the operator;
 - validator output;
@@ -116,15 +121,16 @@ PASS when:
 
 - existing/native pipeline candidates were actually evaluated before equivalent custom code was written;
 - ENV/CHAR/ANIM can consume the same asset substrate without independent rediscovery of source/provenance/path conventions;
-- operator can discover useful candidates semantically from a non-trivial batch;
+- operator can discover useful B0-relevant candidates semantically from a non-trivial batch;
 - derived assets have a reproducible owned destination + lineage;
 - common bad-import/broken-reference conditions have a cheap detection path;
+- B0 demand has an explicit coverage/gap view;
 - adding another asset from an already-covered source family is routine production work.
 
 ## FAIL
 
-FAIL if the result is only a prose list, every later WP still needs exact owner-provided paths, vendor assets must be destructively edited, existing relevant pipelines were ignored and reimplemented without a bounded evaluation, or the WP expands into building a generic DAM system unrelated to near-term production.
+FAIL if the result is only a prose list, every later WP still needs exact owner-provided paths, B0 demand remains invisible to the catalogue, vendor assets must be destructively edited, existing relevant pipelines were ignored and reimplemented without a bounded evaluation, or the WP expands into building a generic DAM system unrelated to near-term production.
 
 ## Handoff
 
-On PASS, start `PROD-ENV-01`, `PROD-CHAR-01` and `PROD-ANIM-01` in parallel. Their job is to turn this substrate into lane-specific **factories capable of batch production**.
+On PASS, start `PROD-ENV-01`, `PROD-CHAR-01` and `PROD-ANIM-01` in parallel. Their job is to turn this substrate into lane-specific **factories capable of producing the B0 vocabulary first and later content at batch scale**.
