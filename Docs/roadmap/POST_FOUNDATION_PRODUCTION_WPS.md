@@ -1,126 +1,70 @@
-# Post-foundation production workpacks — migrated draft
+# Post-foundation production workpacks — factory phase
 
-Status: **DRAFT / READY TO START WITH `BOUNDED_OPERATOR` (MCP for Unity)** (see `PRODUCTION_AUTHORING_DECISION.md`)  
-Purpose: preserve the useful post-H2F production decomposition from Juego2 without importing H1/H2F dependencies.
+Status: **SUPERSEDED AS EXECUTION CONTRACT BY `Docs/workpacks/`**  
+Purpose: retain the high-level production decomposition while the executable requirements live in one place.
 
-These are **product-production lanes**, not accepted executable contracts yet. Their final execution form depends on `Docs/architecture/PRODUCTION_AUTHORING_DECISION.md`.
+## Current production strategy
 
-## Principle
+After M0, juego-def does **not** jump straight into hand-producing lots of scenes/NPCs. It first builds the smallest effective graphical/content factories so that later breadth is cheap and repeatable.
 
-Before deep gameplay breadth, juego-def should prove that it can repeatedly produce:
+The exit condition is not “we made one attractive example”. The exit condition is:
 
-- good streets/interiors;
-- ordinary inhabitants;
-- useful animation coverage;
-- readable dialogue/UI presentation;
-- an actual keeper urban block;
+> creating the next normal asset/content item is mostly production work, not new pipeline R&D.
 
-without returning to greybox-plus-assets improvisation or bespoke per-scene plumbing.
+The factories may consist of metadata/catalogues, MCP/Unity workflows, Blender derivation recipes, prefab/templates, small Editor/batch tools, validators and semantic briefs. They should not become giant frameworks for their own sake.
 
-The difference from Juego2 is important: these factories must use the **simplest effective authoring path**. If the AI Unity operator proves strong, the factory is primarily a recipe/brief/validation system, not a new code framework.
+## Executable sequence
 
-## `PROD-ENV-01` — Environment recipe + repeated-build proof
+Canonical contracts are under [`../workpacks/`](../workpacks/README.md):
 
-Goal: produce a keeper-quality bounded street/interior composition and then a materially different second composition using the same recipe.
+1. `WP-M0-00` — establish the first truthful playable street/scale/interactions.
+2. `WP-PROD-ASSET-00` — shared asset catalogue, semantic discovery, lineage, intake conventions and cheap validation.
+3. Parallel graphical factories:
+   - `WP-PROD-ENV-01` — environment asset + assembly factory;
+   - `WP-PROD-CHAR-01` — civilian/wardrobe factory;
+   - `WP-PROD-ANIM-01` — animation intake + retarget factory.
+4. Scale proofs:
+   - `WP-PROD-ENV-02` — three materially distinct keeper environment compositions;
+   - `WP-PROD-CHAR-02` — 12–20 civilian batch;
+   - `WP-PROD-ANIM-02` — shared runtime animation vocabulary + batch use.
+5. In parallel from M0:
+   - `WP-PROD-DIALOGUE-01` — repeatable investigation-dialogue authoring path;
+   - `WP-PROD-UI-01` — reusable no-voice presentation factory.
+6. `WP-CITY-URBAN-01` — first integrated keeper block made from factory outputs.
+7. `WP-PROD-LOOK-GATE` — fresh-production challenge proving the factories are ready for content at scale.
 
-Inputs:
+## Factory intent by lane
 
-- Visual Bible;
-- port-town world model;
-- Quaternius production knowledge;
-- real lawful source corpus;
-- production-authoring decision.
+### ENV
 
-Must prove:
+Produce a searchable/reusable architectural and urban kit from real source material, including adaptation/donor/derived workflows, material variants, assembly grammar and validators. Then prove that the same factory can produce several different keeper spaces without restarting the pipeline.
 
-- semantic component roles and dimensions where useful;
-- `DIRECT / ADAPTABLE / DONOR / CREATE_DERIVED` reuse;
-- credible joins, thresholds, ground contact and player scale;
-- lighting/presentation fit;
-- first-build vs repeated-build reduction in setup/manipulation;
-- no primitive host geometry masquerading as keeper architecture.
+### CHAR
 
-If AI authoring wins, require the operator to inspect, build, observe and correct in Unity rather than merely emit scripts.
+Encode rig/body/wardrobe compatibility, palette/accessory variation, prefab generation and clipping/scale/material validation. Then prove batch production without clones or bespoke repairs.
 
-## `PROD-CHAR-01` — Character/wardrobe recipe
+### ANIM
 
-Goal: define a repeatable ordinary-population recipe from shared base/rig and modular/adapted wardrobe.
+Index motion semantically, batch-import/retarget it, validate bad clips and expose a reusable runtime vocabulary so NPC production does not know raw clip plumbing.
 
-Must prove:
+### DIALOGUE/UI
 
-- lawful source/provenance;
-- body/rig/wardrobe compatibility;
-- civilian visual coherence;
-- clipping/weight/scale checks;
-- palette/accessory variation;
-- reusable prefab/variant output;
-- no requirement for bespoke tooling per NPC.
+Make contextual investigation conversations and their no-voice presentation repeatable content production rather than scene-specific Unity wiring.
 
-## `PROD-CHAR-02` — Representative population batch
+## Production lock
 
-Goal: produce a representative group of ordinary townspeople from `PROD-CHAR-01`, not unrelated one-offs.
+`PROD-LOOK-GATE` is lightweight but strict about scalability. It includes a fresh brief challenge that must create new environment/civilians/animation breadth/dialogue using the accepted factories **without foundational tooling changes**.
 
-Success is repeatable variation and useful town coverage, not a fixed raw character count. Important narrative characters may receive bespoke treatment later.
+After PASS, roadmap emphasis moves to content:
 
-## `PROD-ANIM-01` — Animation intake/coverage truth
-
-Goal: inventory and admit useful locomotion, conversation/acting, ambient/social, work/activity, object and reaction motions.
-
-Record retarget/import conventions, root/in-place/loop intent, source/provenance and known gaps. Raw clip count is not a quality metric.
-
-## `PROD-ANIM-02` — Runtime animation vocabulary
-
-Goal: prove reusable GC2/Unity presentation mapping on real characters.
-
-Must include real runtime validation and at least one bad import/retarget case that is repaired or rejected rather than silently accepted.
-
-## `PROD-DIALOGUE-01` — Dialogue runtime/presentation decision
-
-Goal: decide the actual dialogue authoring/presentation surface.
-
-Default candidates:
-
-- GC2 Dialogue if owned/justified;
-- Core/local presentation if sufficient;
-- audited Hub text-to-dialogue ideas as authoring accelerators where lawful/currently compatible.
-
-Do not adopt a commercial module merely because the roadmap names it. The chosen path must materially improve the actual investigation/dialogue workflow.
-
-## `PROD-UI-01` — No-voice dialogue/UI language
-
-Goal: establish coherent typography, speaker treatment, choices, prompts, subtitles/dialogue pacing, acting/gesture timing and camera coexistence. Normal production assumption: **no spoken voice acting required**.
-
-## `CITY-URBAN-01` — First real keeper block
-
-Goal: realize the first dense port-town keeper block using the accepted environment recipe, not a historical/inland pilot.
-
-Recommended first-block context: Mercado–Muelle seam or another similarly useful commercial-to-working-port transition. Exact geometry remains a fresh design decision in juego-def; do not copy Juego2's old node/edge contracts automatically.
-
-## `PROD-LOOK-GATE` — Visual/content production lock
-
-This is a lightweight product gate, not an infrastructure mega-gate.
-
-PASS when:
-
-- the actual port-town block looks like the intended game at third-person scale;
-- environment roles are keeper-quality rather than dressed proxies;
-- ordinary character variants are repeatable;
-- useful animation coverage exists and can be extended;
-- dialogue/UI presentation has a reusable pattern;
-- a fresh brief can produce another bounded street + small population without inventing a new framework;
-- remaining work is breadth/polish/content, not unresolved production architecture.
-
-## After the production lock
-
-Then accelerate gameplay/content:
-
-- investigation conversations;
-- persistent clues/objects only where needed;
-- routines and living block;
-- minigames/jobs;
+- routines/living block;
+- investigation content;
+- jobs/minigames;
 - chase;
 - melee/confrontation;
 - 20–30 minute slice;
-- additional neighbourhoods.
+- district/population expansion.
 
-The production lanes should overlap where practical. Do not recreate Juego2's long serial gate chain.
+## Anti-pattern
+
+Do not recreate Juego2's infrastructure-heavy gates, but also do not mistake one polished demo for a production pipeline. The goal is a small-team asset/content factory that can feed the game repeatedly.
