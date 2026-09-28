@@ -11,13 +11,17 @@ It is the demand brief consumed by the graphical/content factories. The factorie
 
 ## Source disposition
 
-Distilled from accepted Juego2 port-town product/roadmap decisions that assigned the new topology and first-block brief to the planned `CITY-URBAN-00`, plus reusable accepted CITY-00..07 planning/game-space knowledge. The old `CITY-URBAN-00` responsibility is **not** represented here as a completed historical WP; juego-def's executable `WP-CITY-URBAN-00` now owns validation of this brief.
+Distilled primarily from the **accepted Juego2 `WP-CITY-URBAN-00`** (`PR #265`, reviewed candidate `189f675a5bc16b99106a2848cd637761e46d2ef1`, independent reviewer PASS), plus reusable accepted CITY-00..07 planning/game-space knowledge and later product amendments.
+
+That accepted WP already established the port-town neighbourhood transition and the B0 Mercado–Muelle first-block brief as coherent planning evidence. juego-def therefore **inherits the solved product/design knowledge**, but not Juego2's old causal-owner bureaucracy, H0/H1/H2F architecture or the requirement to preserve provisional coordinates as shipping geometry.
+
+The executable `WP-CITY-URBAN-00` in juego-def is a **local reconciliation/production-handoff checkpoint**, not a greenfield attempt to invent the same town again. It may amend this brief only where current juego-def product truth, production evidence or factory demand requires it.
 
 ### Migrated as product truth / design input
 
 - final setting: large fictional northern-Spain working port town, late 1990s / early 2000s;
 - five production zones: MERCADO, MUELLE, CASCO, VIVIENDAS, TALLERES;
-- first keeper urban block hypothesis: **B0 Mercado–Muelle**;
+- first keeper urban block: **B0 Mercado–Muelle** unless new local evidence materially overturns it;
 - compact density, recurring social routes, ordinary places and working waterfront;
 - B0 functional programme and route/loop concept;
 - public/service/private access distinction;
@@ -30,9 +34,10 @@ Distilled from accepted Juego2 port-town product/roadmap decisions that assigned
 - H1/H2F prerequisites;
 - CITY-04 remeasurement bureaucracy tied to the historical greybox;
 - old node/edge owners as governance mechanism;
-- exact provisional B0 coordinates as immutable shipping coordinates.
+- exact provisional B0 coordinates as immutable shipping coordinates;
+- the provisional `Villa Bruma` name, which is superseded: the final town proper name remains undecided.
 
-The B0 layout below is therefore a **production brief with measurable starting hypotheses**. `WP-CITY-URBAN-00` may amend it before ENV production; later keeper realization may tune local geometry while preserving the accepted roles, loops and access truth.
+The B0 layout below is therefore a **production brief with measurable starting hypotheses**. `WP-CITY-URBAN-00` may reconcile it before ENV production; later keeper realization may tune local geometry while preserving the accepted roles, loops and access truth.
 
 ## B0 product role
 
