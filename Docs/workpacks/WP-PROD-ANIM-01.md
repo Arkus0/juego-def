@@ -9,6 +9,20 @@ Blocks: `WP-PROD-ANIM-02`
 
 juego-def has a repeatable animation asset factory that can discover, classify, import, retarget, validate and admit useful motion clips in batches. Adding another compatible animation should be routine intake, not a new manual experiment.
 
+## Binding research input — mandatory
+
+Consume [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md) before implementing custom import/retarget tooling.
+
+Retain `Docs/evidence/WP-PROD-ANIM-01/REUSE_DECISIONS.md` covering at minimum:
+
+1. actual Universal Animation Library/source corpus and shared-rig assumptions;
+2. `QuaterniusUnityUtils` import automation on current Unity 6000.3.24f1;
+3. Avelune shared animation-data/composition architecture as a reference;
+4. `Animate-Rigged-Humanoid-No-Blender` as packaging/automation evidence where useful;
+5. only missing metadata/preset/validation/runtime glue should be custom-built.
+
+A candidate may be rejected. Equivalent custom tooling may not be written merely because the prior research was not consulted.
+
 ## Factory scope
 
 Cover at least these semantic animation families:
@@ -26,13 +40,14 @@ Cover at least these semantic animation families:
 By PASS, retain:
 
 1. `ANIM_FACTORY.md` — authoritative intake/retarget workflow;
-2. machine-readable semantic animation catalogue built on `PROD-ASSET-00`;
-3. import/retarget presets or small batch tooling for covered source families;
-4. root-motion/in-place/loop conventions;
-5. avatar/rig compatibility rules;
-6. automated or cheap validation for common import/retarget failures;
-7. preview/runtime inspection path on a real humanoid;
-8. non-trivial admitted clip batch.
+2. `REUSE_DECISIONS.md`;
+3. machine-readable semantic animation catalogue built on `PROD-ASSET-00`;
+4. import/retarget presets or small batch tooling for covered source families;
+5. root-motion/in-place/loop conventions;
+6. avatar/rig compatibility rules;
+7. automated or cheap validation for common import/retarget failures;
+8. preview/runtime inspection path on a real humanoid;
+9. non-trivial admitted clip batch.
 
 ## Minimum batch proof
 
@@ -68,7 +83,7 @@ The operator should be able to request things such as:
 
 without hand-configuring every clip independently.
 
-Use import presets, Editor scripts, batch processors or metadata-driven tooling where they remove repeated setup.
+Prefer existing/adapted import rules, presets and batch mechanisms before custom processors. Add Editor scripts or metadata-driven tooling only where repeated setup remains.
 
 ## Validation baseline
 
@@ -88,6 +103,7 @@ At least one bad/incompatible clip must be diagnosed and repaired or rejected th
 
 Retain under `Docs/evidence/WP-PROD-ANIM-01/`:
 
+- `REUSE_DECISIONS.md`;
 - factory workflow;
 - processed/admitted batch inventory;
 - import/retarget presets/tooling retained;
@@ -99,6 +115,7 @@ Retain under `Docs/evidence/WP-PROD-ANIM-01/`:
 
 PASS when:
 
+- relevant existing animation/import pipeline candidates were tested or explicitly dispositioned before equivalent custom tooling was built;
 - a meaningful batch is processed through one repeatable intake/retarget path;
 - 12+ useful admitted clips exist across several families when corpus permits;
 - semantic catalogue and compatibility rules make discovery routine;
@@ -108,7 +125,7 @@ PASS when:
 
 ## FAIL
 
-FAIL if the output is only a prose/file list, every clip needs bespoke import setup, retargeting is assumed rather than proven, or the WP expands into building all future combat/cinematic animation systems.
+FAIL if the output is only a prose/file list, every clip needs bespoke import setup, existing relevant import/retarget solutions were ignored, retargeting is assumed rather than proven, or the WP expands into building all future combat/cinematic animation systems.
 
 ## Handoff
 
