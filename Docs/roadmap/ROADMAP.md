@@ -1,6 +1,6 @@
 # Roadmap jugable
 
-Status: **PRODUCTION FOUNDATIONS DONE / NEXT: ENV-01 + CHAR-01 + ANIM-01** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
+Status: **ANIM-01 DONE / NEXT: ENV-01 + CHAR-01** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
 
 ## Immediate sequence
 
@@ -11,8 +11,8 @@ Status: **PRODUCTION FOUNDATIONS DONE / NEXT: ENV-01 + CHAR-01 + ANIM-01** — a
    - ~~`PROD-ASSET-00`~~ — **done / accepted**: searchable catalogue, lineage, deterministic intake, validators and B0 coverage/gaps;
    - ~~`CITY-URBAN-00`~~ — **done / accepted**: five-zone topology + final B0 Mercado–Muelle route/programme/elevation + factory-demand matrix.
 5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks the graphical factories.
-6. **Factories — NEXT:** start `ENV-01`, `CHAR-01` and `ANIM-01`; ENV now has both required prerequisites (`ASSET-00 + CITY-URBAN-00`), while CHAR/ANIM consume ASSET-00 plus B0 role priorities.
-7. **Factory scale proofs** — multi-scene ENV, civilian batch and animation runtime/batch; UI follows Dialogue.
+6. **Factories — CURRENT:** continue `ENV-01` and `CHAR-01`. ~~`ANIM-01`~~ is **done / accepted**: 254 clips catalogued, 45 sampled on two Humanoid targets and 19 motions admitted across five families, with contact/navigation gaps kept explicit.
+7. **Factory scale proofs** — `ENV-02` and `CHAR-02` follow their factories; `ANIM-02` consumes accepted ANIM-01 but waits for CHAR-01 so runtime vocabulary is proved on accepted civilians. UI follows Dialogue.
 8. **B0 Keeper Block (`CITY-URBAN-01`)** — physical third-person realization of the accepted city brief using the factories.
 9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.
 10. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, 20–30 minute slice, then district/population breadth.
@@ -49,7 +49,7 @@ ENV now consumes that accepted demand together with the accepted ASSET substrate
 | M0 | validate camera/scale/reach/interaction | tiny gameplay fixture | walk + world/NPC interaction work. |
 | ENV Factory | manufacture city architecture/urban vocabulary repeatedly | reusable kit + assembly grammar + validation | normal new ENV unit is production, not R&D. |
 | CHAR Factory | manufacture ordinary civilians repeatedly | civilian/wardrobe factory | normal civilian is production, not bespoke repair. |
-| ANIM Factory | batch discover/import/retarget/use motions | animation catalogue + runtime vocabulary | normal compatible motion is routine to admit/use. |
+| ANIM Factory ✅ | batch discover/import/retarget/use motions | animation catalogue + admitted motion library | **PASS / accepted** — normal compatible motion is routine to classify, retarget and admit; runtime multi-NPC use moves to ANIM-02. |
 | Dialogue/UI Factory | author contextual investigation conversations repeatedly | authoring + no-voice presentation factory | new dialogue is content work, not scene plumbing. |
 | Scale proofs | demonstrate volume and variation | ENV/CHAR/ANIM batches | no pipeline restart on later examples. |
 | CITY-URBAN-01 | realize B0 as keeper game space | first retained city block | owner says keep and extend. |
