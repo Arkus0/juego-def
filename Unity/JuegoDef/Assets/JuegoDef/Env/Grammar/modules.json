@@ -1,29 +1,187 @@
 {
-  "comment": "Module step policy (JuegoDef > ENV > 2 Build Modules). Derived meshes get a MeshCollider unless listed here. Wrappers give Props/Nature models (which ship without collision) an owned module prefab with a box collider.",
-  "noCollider": ["ENV_Awning", "ENV_Downpipe", "ENV_Shop_Fascia", "ENV_Sign_Bracket", "ENV_Water_Plane_20m", "ENV_Quay_Ladder"],
-  "boxCollider": ["ENV_Bollard_Mooring", "ENV_Bollard_Street", "ENV_Bin_Street", "ENV_Crate_Fish", "ENV_Pallet", "ENV_Counter_Shop"],
+  "comment": "Module step policy (JuegoDef > ENV > 2 Build Modules). Derived meshes get a MeshCollider unless listed here. Wrappers give Props/Nature models (which ship without collision) an owned module prefab with a box collider. Collider 'trunk' = capsule on the stem only, so people walk under canopies.",
+  "noCollider": [
+    "ENV_Awning",
+    "ENV_Downpipe",
+    "ENV_Shop_Fascia",
+    "ENV_Sign_Bracket",
+    "ENV_Water_Plane_20m",
+    "ENV_Quay_Ladder",
+    "ENV_Puddle_A",
+    "ENV_Puddle_B",
+    "ENV_Drain_Grate",
+    "ENV_Manhole",
+    "ENV_Tree_Pit",
+    "ENV_Plinth_2m",
+    "ENV_Plinth_Pier",
+    "ENV_Cable_Run_2m",
+    "ENV_Clothesline",
+    "ENV_Sat_Dish",
+    "ENV_TV_Aerial",
+    "ENV_Street_Name_Plate",
+    "ENV_Window_Blind",
+    "ENV_Window_Boarded",
+    "ENV_Mooring_Line",
+    "ENV_Buoy",
+    "ENV_Parasol",
+    "ENV_Utility_Box"
+  ],
+  "boxCollider": [
+    "ENV_Bollard_Mooring",
+    "ENV_Bollard_Street",
+    "ENV_Bin_Street",
+    "ENV_Crate_Fish",
+    "ENV_Pallet",
+    "ENV_Counter_Shop",
+    "ENV_Cafe_Table",
+    "ENV_Cafe_Chair",
+    "ENV_Bicycle",
+    "ENV_Trash_Bags",
+    "ENV_Box_Cardboard",
+    "ENV_Bench_Street",
+    "ENV_Planter_Pot",
+    "ENV_Lamp_Post",
+    "ENV_Net_Pile",
+    "ENV_Lifebuoy_Post",
+    "ENV_Sign_NoEntry"
+  ],
   "wrappers": [
-    { "name": "ENV_Prop_Crate_Wooden", "source": "Crate_Wooden" },
-    { "name": "ENV_Prop_Barrel", "source": "Barrel" },
-    { "name": "ENV_Prop_Barrel_Apples", "source": "Barrel_Apples" },
-    { "name": "ENV_Prop_FarmCrate_Apple", "source": "FarmCrate_Apple" },
-    { "name": "ENV_Prop_FarmCrate_Carrot", "source": "FarmCrate_Carrot" },
-    { "name": "ENV_Prop_FarmCrate_Empty", "source": "FarmCrate_Empty" },
-    { "name": "ENV_Prop_Bag", "source": "Bag" },
-    { "name": "ENV_Prop_Bench", "source": "Bench" },
-    { "name": "ENV_Prop_Table_Large", "source": "Table_Large" },
-    { "name": "ENV_Prop_Stool", "source": "Stool" },
-    { "name": "ENV_Prop_Chair", "source": "Chair_1" },
-    { "name": "ENV_Prop_Stall", "source": "Stall_Empty" },
-    { "name": "ENV_Prop_Stall_Cart", "source": "Stall_Cart_Empty" },
-    { "name": "ENV_Prop_Shelf_Simple", "source": "Shelf_Simple" },
-    { "name": "ENV_Prop_Shelf_Bottles", "source": "Shelf_Small_Bottles" },
-    { "name": "ENV_Prop_Cabinet", "source": "Cabinet" },
-    { "name": "ENV_Prop_Bucket", "source": "Bucket_Metal" },
-    { "name": "ENV_Prop_Rope_Coil", "source": "Rope_1" },
-    { "name": "ENV_Prop_Chain_Coil", "source": "Chain_Coil" },
-    { "name": "ENV_Prop_Lantern_Wall", "source": "Lantern_Wall", "collider": "none", "remap": { "T_Trim_Metal_BaseColor": "ENV_Metal_Iron" } },
-    { "name": "ENV_Plant_Bush", "source": "Bush_Common", "collider": "none" },
-    { "name": "ENV_Plant_Small", "source": "Plant_1", "collider": "none" }
+    {
+      "name": "ENV_Prop_Crate_Wooden",
+      "source": "Crate_Wooden"
+    },
+    {
+      "name": "ENV_Prop_Barrel",
+      "source": "Barrel"
+    },
+    {
+      "name": "ENV_Prop_Barrel_Apples",
+      "source": "Barrel_Apples"
+    },
+    {
+      "name": "ENV_Prop_FarmCrate_Apple",
+      "source": "FarmCrate_Apple"
+    },
+    {
+      "name": "ENV_Prop_FarmCrate_Carrot",
+      "source": "FarmCrate_Carrot"
+    },
+    {
+      "name": "ENV_Prop_FarmCrate_Empty",
+      "source": "FarmCrate_Empty"
+    },
+    {
+      "name": "ENV_Prop_Bag",
+      "source": "Bag"
+    },
+    {
+      "name": "ENV_Prop_Bench",
+      "source": "Bench"
+    },
+    {
+      "name": "ENV_Prop_Table_Large",
+      "source": "Table_Large"
+    },
+    {
+      "name": "ENV_Prop_Stool",
+      "source": "Stool"
+    },
+    {
+      "name": "ENV_Prop_Chair",
+      "source": "Chair_1"
+    },
+    {
+      "name": "ENV_Prop_Stall",
+      "source": "Stall_Empty"
+    },
+    {
+      "name": "ENV_Prop_Stall_Cart",
+      "source": "Stall_Cart_Empty"
+    },
+    {
+      "name": "ENV_Prop_Shelf_Simple",
+      "source": "Shelf_Simple"
+    },
+    {
+      "name": "ENV_Prop_Shelf_Bottles",
+      "source": "Shelf_Small_Bottles"
+    },
+    {
+      "name": "ENV_Prop_Cabinet",
+      "source": "Cabinet"
+    },
+    {
+      "name": "ENV_Prop_Bucket",
+      "source": "Bucket_Metal"
+    },
+    {
+      "name": "ENV_Prop_Rope_Coil",
+      "source": "Rope_1"
+    },
+    {
+      "name": "ENV_Prop_Chain_Coil",
+      "source": "Chain_Coil"
+    },
+    {
+      "name": "ENV_Prop_Lantern_Wall",
+      "source": "Lantern_Wall",
+      "collider": "none",
+      "remap": {
+        "T_Trim_Metal_BaseColor": "ENV_Metal_Iron"
+      }
+    },
+    {
+      "name": "ENV_Plant_Bush",
+      "source": "Bush_Common",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Plant_Small",
+      "source": "Plant_1",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Tree_Common_A",
+      "source": "CommonTree_1",
+      "collider": "trunk"
+    },
+    {
+      "name": "ENV_Tree_Common_B",
+      "source": "CommonTree_3",
+      "collider": "trunk"
+    },
+    {
+      "name": "ENV_Tree_Common_C",
+      "source": "CommonTree_4",
+      "collider": "trunk"
+    },
+    {
+      "name": "ENV_Plant_Bush_Flowers",
+      "source": "Bush_Common_Flowers",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Plant_Fern",
+      "source": "Fern_1",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Weeds_Grass",
+      "source": "Grass_Common_Short",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Weeds_Tall",
+      "source": "Grass_Wispy_Tall",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Prop_Crate_Metal",
+      "source": "Crate_Metal"
+    },
+    {
+      "name": "ENV_Prop_Bucket_Wood",
+      "source": "Bucket_Wooden_1"
+    }
   ]
 }

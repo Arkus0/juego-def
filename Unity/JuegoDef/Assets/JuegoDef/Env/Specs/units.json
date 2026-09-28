@@ -123,6 +123,36 @@
       "demand": ["shopfront_service_threshold", "signage_utilities_furniture", "closed_ordinary_frontage"],
       "kind": "building",
       "building": { "type": "mixed_commercial", "bays": 7, "depth": 4, "floors": 1, "seed": 11, "palette": "cream_green", "rows": ["SEeRGVD"], "roof": "none", "awning": "ENV_Canvas_Cream", "sign": "bracket", "exposeLeft": true, "exposeRight": true, "chimney": false }
+    },
+    {
+      "id": "U20_Landmark_Tower_4x4", "title": "Singular stone tower closing a view: solid shaft, small round-head openings, pyramid roof (view terminator at a plaza node)",
+      "demand": ["corners_terminations", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "landmark", "bays": 2, "depth": 4, "floors": 5, "seed": 3, "palette": "core_sandstone_chestnut", "ground": "stone", "upper": "stone", "roof": "tower", "chimney": false, "exposeLeft": true, "exposeRight": true }
+    },
+    {
+      "id": "U21_Plaza_Node_16x12", "title": "Small plaza at a street node: flagstone floor, trees with pits, bar terrace, benches",
+      "demand": ["corners_terminations", "port_market_shop_street_props", "signage_utilities_furniture"],
+      "kind": "plaza",
+      "params": { "w": 16, "d": 12, "trees": 2, "terrace": true, "seed": 3 }
+    },
+    {
+      "id": "U22_Quay_Composed_24m", "title": "Composed working-water edge: overlook with rail and benches, open working quay with bollards, steps to the water, slipway, moored boats",
+      "demand": ["quay_public_edge_railings", "port_market_shop_street_props"],
+      "kind": "quay_edge",
+      "params": { "length": 24, "railing": false, "depth": 5, "overlookFrom": 0, "overlookTo": 10, "stepsAt": 11, "slipwayAt": 19, "boats": 2, "seed": 4 }
+    },
+    {
+      "id": "U23_Core_House_Narrow_Stone", "title": "Historic-core narrow house: stone ground floor, lime render, chestnut timber balcony, 4 m",
+      "demand": ["closed_ordinary_frontage", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 2, "depth": 8, "floors": 3, "seed": 61, "palette": "core_lime_chestnut", "ground": "stone", "era": "old" }
+    },
+    {
+      "id": "U24_Core_House_Stone_Solana", "title": "Historic-core house in exposed stone with timber balcony, 6 m",
+      "demand": ["closed_ordinary_frontage", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 3, "depth": 8, "floors": 3, "seed": 62, "palette": "core_sandstone_chestnut", "ground": "stone", "upper": "stone", "era": "old", "rows": ["", "PBP"] }
     }
   ]
 }

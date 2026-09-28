@@ -21,6 +21,29 @@
     "triangles": 356,
     "donorSource": null
   },
+  "ENV_Bench_Street": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Municipal street bench: cast-iron ends, timber slats (kit MI_WoodTrim dark band), faces +z.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "MI_WoodTrim"
+    ],
+    "triangles": 120,
+    "donorSource": null
+  },
+  "ENV_Bicycle": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Ordinary town bicycle, 1.7 m, wheels in the y-z plane (length along z); frame paint slot ENV_Paint_Red.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Paint_Red",
+      "ENV_Rubber"
+    ],
+    "triangles": 728,
+    "donorSource": null
+  },
   "ENV_Bin_Street": {
     "class": "ORIGINAL",
     "donors": [],
@@ -30,6 +53,20 @@
       "ENV_Metal_Iron"
     ],
     "triangles": 84,
+    "donorSource": null
+  },
+  "ENV_Boat_Small": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Small inshore fishing boat (lancha), 5.6 m, bow towards +z, waterline at y = 0. Hull paint slot\nENV_Paint_Blue with a white sheer strake and a small wheelhouse.",
+    "materials": [
+      "ENV_Glass_Street",
+      "ENV_Metal_Galvanised",
+      "ENV_Paint_Blue",
+      "ENV_Paint_White",
+      "MI_WoodTrim"
+    ],
+    "triangles": 194,
     "donorSource": null
   },
   "ENV_Bollard_Mooring": {
@@ -50,6 +87,84 @@
       "ENV_Metal_Iron"
     ],
     "triangles": 208,
+    "donorSource": null
+  },
+  "ENV_Box_Cardboard": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Cardboard delivery box (0.5 x 0.4 x 0.35 m).",
+    "materials": [
+      "ENV_Cardboard",
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Buoy": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Orange mooring/fishing buoy (floats on y = 0).",
+    "materials": [
+      "ENV_Buoy_Orange"
+    ],
+    "triangles": 120,
+    "donorSource": null
+  },
+  "ENV_Cable_Run_2m": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Surface-fixed service cable (2 m along the facade) with clips \u2014 added long after the building.",
+    "materials": [
+      "ENV_Plastic_Grey",
+      "ENV_Rubber"
+    ],
+    "triangles": 64,
+    "donorSource": null
+  },
+  "ENV_Cafe_Chair": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Aluminium terrace chair (faces +z).",
+    "materials": [
+      "ENV_Metal_Galvanised"
+    ],
+    "triangles": 204,
+    "donorSource": null
+  },
+  "ENV_Cafe_Table": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Round aluminium bar-terrace table (0.7 m).",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 132,
+    "donorSource": null
+  },
+  "ENV_Clothesline": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Window clothesline (tendedero): two iron brackets 0.55 m out from the wall, two lines, hanging clothes\nin several colours. Mounted under an upper-floor window (origin on the wall face at bracket height).",
+    "materials": [
+      "ENV_Cloth_Blue",
+      "ENV_Cloth_Red",
+      "ENV_Cloth_White",
+      "ENV_Cloth_Yellow",
+      "ENV_Metal_Iron",
+      "ENV_Rope"
+    ],
+    "triangles": 152,
+    "donorSource": null
+  },
+  "ENV_Corner_Column": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Cast-iron corner column (3 m) carrying the corner above a chamfered ground-floor entrance.",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 176,
     "donorSource": null
   },
   "ENV_Counter_Shop": {
@@ -85,6 +200,18 @@
     "triangles": 472,
     "donorSource": null
   },
+  "ENV_Door_Portal_Reformed": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "1980s replacement portal door for the kit Door_Flat opening: bronze-anodised aluminium frame, wired glass,\npush bar. Joinery slot is palette-remapped like painted timber.",
+    "materials": [
+      "ENV_Alu_Bronze",
+      "ENV_Glass_Street",
+      "ENV_Metal_Galvanised"
+    ],
+    "triangles": 84,
+    "donorSource": null
+  },
   "ENV_Door_Service": {
     "class": "ORIGINAL",
     "donors": [],
@@ -106,6 +233,16 @@
       "ENV_Metal_Iron"
     ],
     "triangles": 64,
+    "donorSource": null
+  },
+  "ENV_Drain_Grate": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Cast-iron gutter grate set in the carriageway beside the kerb.",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 96,
     "donorSource": null
   },
   "ENV_Fence_Yard_2m": {
@@ -171,6 +308,60 @@
     "triangles": 48,
     "donorSource": null
   },
+  "ENV_Lamp_Post": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Late-20th-century cast-iron street lamp (farola), 4 m, lantern on a short arm towards +z.",
+    "materials": [
+      "ENV_Lamp_Glass",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 116,
+    "donorSource": null
+  },
+  "ENV_Lifebuoy_Post": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Quay lifebuoy on a post with a small cabinet.",
+    "materials": [
+      "ENV_Buoy_Orange",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 280,
+    "donorSource": null
+  },
+  "ENV_Manhole": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Round cast-iron manhole cover flush with the paving.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "MI_RockTrim"
+    ],
+    "triangles": 152,
+    "donorSource": null
+  },
+  "ENV_Mooring_Line": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Unit mooring rope along +z (1 m); the assembler stretches it from bollard to boat.",
+    "materials": [
+      "ENV_Rope"
+    ],
+    "triangles": 28,
+    "donorSource": null
+  },
+  "ENV_Net_Pile": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Heap of fishing net with floats, about 1.4 m wide.",
+    "materials": [
+      "ENV_Buoy_Orange",
+      "ENV_Net_Green"
+    ],
+    "triangles": 480,
+    "donorSource": null
+  },
   "ENV_Pallet": {
     "class": "CREATE_DERIVED",
     "donors": [],
@@ -181,6 +372,104 @@
     "triangles": 156,
     "donorSource": null
   },
+  "ENV_Parapet_2m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Low stone parapet (0.75 m) with granite coping \u2014 designed edge for overlooks and terraces.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_Parapet_Rail_2m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Stone upstand (0.45 m) with a painted iron rail above it \u2014 the public waterfront edge treatment.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 196,
+    "donorSource": null
+  },
+  "ENV_Parasol": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Terrace parasol, 2.4 m canopy; canvas colour is a material slot (ENV_Canvas_Cream).",
+    "materials": [
+      "ENV_Canvas_Cream",
+      "ENV_Metal_Galvanised",
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 100,
+    "donorSource": null
+  },
+  "ENV_Phone_Booth": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Late-1990s public phone cabin (generic, no branding): grey frame, glass sides, open front.",
+    "materials": [
+      "ENV_Glass_Street",
+      "ENV_Metal_Galvanised",
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 152,
+    "donorSource": null
+  },
+  "ENV_Planter_Pot": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Terracotta planter pot (0.5 m) for doorsteps and balconies; plants are placed separately.",
+    "materials": [
+      "ENV_Soil",
+      "ENV_Terracotta"
+    ],
+    "triangles": 88,
+    "donorSource": null
+  },
+  "ENV_Plinth_2m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Ashlar plinth band (z\u00f3calo) 2 m x 0.42 m standing 6 cm proud of the wall face: hides the wall/pavement seam\nand ties ground floors of different buildings together. Kit MI_RockTrim ashlar band.",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 44,
+    "donorSource": null
+  },
+  "ENV_Plinth_Pier": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Plinth stub for the pier beside a door/shop opening (0.2 m, scaled in x by the assembler).",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 44,
+    "donorSource": null
+  },
+  "ENV_Puddle_A": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Irregular rain puddle (flat, glossy), about 1.6 x 1.1 m.",
+    "materials": [
+      "ENV_Water_Puddle"
+    ],
+    "triangles": 12,
+    "donorSource": null
+  },
+  "ENV_Puddle_B": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Irregular rain puddle, about 1.0 x 0.7 m.",
+    "materials": [
+      "ENV_Water_Puddle"
+    ],
+    "triangles": 12,
+    "donorSource": null
+  },
   "ENV_Quay_Ladder": {
     "class": "ORIGINAL",
     "donors": [],
@@ -189,6 +478,17 @@
       "ENV_Metal_Iron"
     ],
     "triangles": 168,
+    "donorSource": null
+  },
+  "ENV_Quay_Steps": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Stone steps running down the quay face to the water (1.6 m drop, 1.2 m wide), outer side wall.\nTop step at y = 0 against the coping line (z = 0), descending towards +x.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 472,
     "donorSource": null
   },
   "ENV_Quay_Wall_4m": {
@@ -281,6 +581,17 @@
     "triangles": 12,
     "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
   },
+  "ENV_Sat_Dish": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Satellite dish on a wall bracket (late-1990s addition), facing +z and up.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Sign_White"
+    ],
+    "triangles": 128,
+    "donorSource": null
+  },
   "ENV_Shop_Fascia": {
     "class": "ORIGINAL",
     "donors": [],
@@ -349,6 +660,122 @@
       "ENV_Sign_Board"
     ],
     "triangles": 104,
+    "donorSource": null
+  },
+  "ENV_Sign_Direction": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Pedestrian direction post with two blank arrow plates (typography stays out of ENV).",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Sign_Blue"
+    ],
+    "triangles": 140,
+    "donorSource": null
+  },
+  "ENV_Sign_NoEntry": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Generic no-entry traffic sign on a galvanised post (disc facing +z).",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Sign_Red",
+      "ENV_Sign_White"
+    ],
+    "triangles": 116,
+    "donorSource": null
+  },
+  "ENV_Slipway": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Concrete slipway ramp 4 m wide, 7 m long, dropping 1.8 m into the water (+z), stone kerbs.",
+    "materials": [
+      "ENV_Ground_Concrete",
+      "MI_RockTrim"
+    ],
+    "triangles": 36,
+    "donorSource": null
+  },
+  "ENV_Street_Name_Plate": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Wall-mounted ceramic street-name plate (blank; the street name is content, not ENV).",
+    "materials": [
+      "ENV_Sign_Blue",
+      "ENV_Sign_White"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
+  "ENV_TV_Aerial": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Rooftop TV aerial: 2.2 m mast with a Yagi boom and elements.",
+    "materials": [
+      "ENV_Metal_Galvanised"
+    ],
+    "triangles": 252,
+    "donorSource": null
+  },
+  "ENV_Trash_Bags": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Three tied rubbish bags left by a door or bin.",
+    "materials": [
+      "ENV_Plastic_Black",
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 240,
+    "donorSource": null
+  },
+  "ENV_Tree_Pit": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Square iron tree-pit grate (alcorque) 1.3 m with a trunk hole.",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 96,
+    "donorSource": null
+  },
+  "ENV_Utility_Box": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Electricity/gas meter cabinet fixed on a ground-floor facade (grey plastic).",
+    "materials": [
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 68,
+    "donorSource": null
+  },
+  "ENV_Vehicle_Car": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Small 1990s hatchback (generic), 3.7 m, front towards +z. Body paint slot ENV_Paint_Red.",
+    "materials": [
+      "ENV_Glass_Street",
+      "ENV_Lamp_Glass",
+      "ENV_Metal_Galvanised",
+      "ENV_Paint_Red",
+      "ENV_Plastic_Grey",
+      "ENV_Rubber"
+    ],
+    "triangles": 452,
+    "donorSource": null
+  },
+  "ENV_Vehicle_Van": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Small 1990s delivery van (generic, no branding), 4.1 m, front towards +z. Body paint slot ENV_Paint_White.",
+    "materials": [
+      "ENV_Glass_Street",
+      "ENV_Lamp_Glass",
+      "ENV_Metal_Galvanised",
+      "ENV_Paint_White",
+      "ENV_Plastic_Grey",
+      "ENV_Rubber"
+    ],
+    "triangles": 464,
     "donorSource": null
   },
   "ENV_Wall_Plaster_Clean": {
@@ -468,6 +895,26 @@
       "ENV_Water_Port"
     ],
     "triangles": 12,
+    "donorSource": null
+  },
+  "ENV_Window_Blind": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Retro-fitted PVC roller blind (persiana enrollable) for the kit wide window: box over the head, slats\nlowered two thirds \u2014 the typical 1970s\u201390s replacement over older joinery.",
+    "materials": [
+      "ENV_Blind_PVC"
+    ],
+    "triangles": 308,
+    "donorSource": null
+  },
+  "ENV_Window_Boarded": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Boarded-up window for neglected buildings: rough planks across the kit wide window (MI_WoodTrim dark).",
+    "materials": [
+      "MI_WoodTrim"
+    ],
+    "triangles": 48,
     "donorSource": null
   },
   "ENV_Window_Insert_Thin": {

@@ -14,6 +14,11 @@
     { "id": "bluegrey_white", "facade": "ENV_Plaster_BlueGrey", "trim": "ENV_Trim_White", "joinery": "ENV_Joinery_White", "roof": "ENV_Roof_Terracotta", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
     { "id": "rose_green", "facade": "ENV_Plaster_Rose", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_GreenBlue", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
     { "id": "weathered_timber", "facade": "ENV_Plaster_Weathered", "trim": "ENV_Trim_Dark", "joinery": "ENV_Joinery_Timber", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
-    { "id": "port_stone", "facade": "ENV_Plaster_Weathered", "trim": "ENV_Trim_Dark", "joinery": "ENV_Joinery_GreenBlue", "roof": "ENV_Roof_Slate", "tiles": "FlatTiles", "glass": "ENV_Glass_Street" }
+    { "id": "port_stone", "facade": "ENV_Plaster_Weathered", "trim": "ENV_Trim_Dark", "joinery": "ENV_Joinery_GreenBlue", "roof": "ENV_Roof_Slate", "tiles": "FlatTiles", "glass": "ENV_Glass_Street" },
+    { "id": "core_lime_chestnut", "facade": "ENV_Plaster_Lime", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Chestnut", "roof": "ENV_Roof_Terracotta", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "core_sandstone_chestnut", "facade": "ENV_Plaster_Sandstone", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Chestnut", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "core_ochre_chestnut", "facade": "ENV_Plaster_PaleOchre", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Chestnut", "roof": "ENV_Roof_Terracotta", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "core_lime_oxblood", "facade": "ENV_Plaster_Lime", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Oxblood", "roof": "ENV_Roof_WetBrown", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" },
+    { "id": "core_cream_oxblood", "facade": "ENV_Plaster_Cream", "trim": "ENV_Trim_Stone", "joinery": "ENV_Joinery_Oxblood", "roof": "ENV_Roof_Terracotta", "tiles": "RoundTiles", "glass": "ENV_Glass_Street" }
   ]
 }

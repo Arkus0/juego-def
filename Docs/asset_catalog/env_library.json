@@ -30,30 +30,32 @@
       },
       "modules": {
         "Corner_ExteriorWide_Brick": 12,
-        "Door_2_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Awning": 2,
         "ENV_Balcony_Iron": 1,
+        "ENV_Cable_Run_2m": 2,
         "ENV_Door_Balcony": 1,
+        "ENV_Door_Portal_Reformed": 1,
         "ENV_Door_Service": 1,
         "ENV_Downpipe": 2,
-        "ENV_Gallery_Bay": 2,
+        "ENV_Gallery_Bay": 1,
+        "ENV_Plinth_Pier": 8,
         "ENV_Roof_Gable_6": 2,
         "ENV_Shop_Fascia": 2,
         "ENV_Shopfront_Door": 1,
         "ENV_Shopfront_Frame": 1,
-        "ENV_Wall_Plaster_Clean": 20,
+        "ENV_Wall_Plaster_Clean": 21,
         "ENV_Wall_Plaster_Clean_Base": 10,
         "ENV_Wall_Plaster_Clean_Door": 3,
         "ENV_Wall_Plaster_Clean_Window": 5,
-        "ENV_Wall_Plaster_Shopfront": 4,
+        "ENV_Wall_Plaster_Shopfront": 3,
+        "ENV_Window_Blind": 1,
         "Prop_Chimney2": 1,
         "Roof_Modular_RoundTiles_6_L": 1,
         "Roof_Modular_RoundTiles_6_Mid": 2,
         "Roof_Modular_RoundTiles_6_R": 1,
-        "Window_Wide_Flat1": 5,
-        "WindowShutters_Wide_Flat_Open": 1
+        "Window_Wide_Flat1": 5
       },
       "notes": null
     },
@@ -93,9 +95,12 @@
         "DoorFrame_Flat_WoodDark": 1,
         "ENV_Balcony_Iron": 1,
         "ENV_Door_Balcony": 1,
-        "ENV_Downpipe": 2,
+        "ENV_Downpipe": 1,
         "ENV_Gallery_Bay": 2,
-        "ENV_Prop_Lantern_Wall": 1,
+        "ENV_Plant_Bush_Flowers": 2,
+        "ENV_Plant_Small": 1,
+        "ENV_Planter_Pot": 3,
+        "ENV_Plinth_Pier": 6,
         "ENV_Roof_Gable_6": 2,
         "ENV_Shop_Fascia": 2,
         "ENV_Shopfront_Door": 1,
@@ -109,8 +114,7 @@
         "Roof_Modular_FlatTiles_6_L": 1,
         "Roof_Modular_FlatTiles_6_Mid": 1,
         "Roof_Modular_FlatTiles_6_R": 1,
-        "Window_Wide_Flat1": 6,
-        "WindowShutters_Wide_Flat_Open": 1
+        "Window_Wide_Flat1": 6
       },
       "notes": null
     },
@@ -127,7 +131,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U03_Shop_Witness_Threshold.jpg",
       "size": [
         7.07,
-        12.2,
+        13.1,
         8.25
       ],
       "request": {
@@ -154,6 +158,7 @@
         "ENV_Door_Balcony": 1,
         "ENV_Door_Service": 1,
         "ENV_Downpipe": 2,
+        "ENV_Plinth_Pier": 6,
         "ENV_Prop_FarmCrate_Apple": 1,
         "ENV_Prop_FarmCrate_Carrot": 1,
         "ENV_Prop_Shelf_Bottles": 1,
@@ -162,6 +167,7 @@
         "ENV_Shop_Fascia": 3,
         "ENV_Shopfront_Door_Open": 1,
         "ENV_Shopfront_Frame": 2,
+        "ENV_TV_Aerial": 1,
         "ENV_Wall_Plaster_Clean": 20,
         "ENV_Wall_Plaster_Clean_Base": 9,
         "ENV_Wall_Plaster_Clean_Door": 2,
@@ -174,8 +180,7 @@
         "Roof_Modular_RoundTiles_6_Mid": 1,
         "Roof_Modular_RoundTiles_6_R": 1,
         "Window_Wide_Flat1": 5,
-        "WindowShutters_Wide_Flat_Closed": 1,
-        "WindowShutters_Wide_Flat_Open": 2
+        "WindowShutters_Wide_Flat_Closed": 1
       },
       "notes": "Public shop door is open/walkable; the service door is on the back partition inside and on the building's side, never a street shortcut."
     },
@@ -192,7 +197,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U04_Lodging_Frontage_10m.jpg",
       "size": [
         11.07,
-        15.04,
+        15.94,
         8.25
       ],
       "request": {
@@ -218,14 +223,17 @@
         "ENV_Door_Balcony": 1,
         "ENV_Downpipe": 2,
         "ENV_Plant_Small": 1,
-        "ENV_Prop_Lantern_Wall": 1,
+        "ENV_Plinth_2m": 4,
+        "ENV_Plinth_Pier": 2,
         "ENV_Roof_Gable_6": 2,
+        "ENV_Sat_Dish": 1,
         "ENV_Sign_Bracket": 1,
-        "ENV_Wall_Plaster_Clean": 39,
+        "ENV_TV_Aerial": 1,
+        "ENV_Wall_Plaster_Clean": 42,
         "ENV_Wall_Plaster_Clean_Base": 13,
         "ENV_Wall_Plaster_Clean_Door": 1,
         "ENV_Wall_Plaster_Clean_DoorRound": 1,
-        "ENV_Wall_Plaster_Clean_Window": 16,
+        "ENV_Wall_Plaster_Clean_Window": 13,
         "Floor_Brick": 6,
         "Floor_WoodDark": 1,
         "Prop_Chimney2": 1,
@@ -233,9 +241,8 @@
         "Roof_Modular_RoundTiles_6_Mid": 3,
         "Roof_Modular_RoundTiles_6_R": 1,
         "Stair_Interior_Solid": 1,
-        "Window_Wide_Flat1": 16,
-        "WindowShutters_Wide_Flat_Closed": 2,
-        "WindowShutters_Wide_Flat_Open": 3
+        "Window_Wide_Flat1": 13,
+        "WindowShutters_Wide_Flat_Closed": 2
       },
       "notes": null
     },
@@ -250,7 +257,7 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U05_Corner_Mixed_8x8.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U05_Corner_Mixed_8x8.jpg",
       "size": [
-        9.13,
+        9.07,
         15.06,
         10.13
       ],
@@ -283,8 +290,12 @@
         "ENV_Balcony_Iron": 1,
         "ENV_Door_Balcony": 1,
         "ENV_Downpipe": 2,
-        "ENV_Prop_Lantern_Wall": 1,
+        "ENV_Plant_Bush_Flowers": 2,
+        "ENV_Planter_Pot": 2,
+        "ENV_Plinth_2m": 2,
+        "ENV_Plinth_Pier": 12,
         "ENV_Roof_Gable_8": 2,
+        "ENV_Sat_Dish": 1,
         "ENV_Shop_Fascia": 3,
         "ENV_Shopfront_Door": 2,
         "ENV_Shopfront_Frame": 3,
@@ -294,12 +305,12 @@
         "ENV_Wall_Plaster_Clean_Window": 18,
         "ENV_Wall_Plaster_Shopfront": 5,
         "Prop_Chimney2": 1,
+        "Prop_Vine1": 1,
         "Roof_Modular_RoundTiles_8_L": 1,
         "Roof_Modular_RoundTiles_8_Mid": 2,
         "Roof_Modular_RoundTiles_8_R": 1,
         "Window_Wide_Flat1": 18,
-        "WindowShutters_Wide_Flat_Closed": 2,
-        "WindowShutters_Wide_Flat_Open": 5
+        "WindowShutters_Wide_Flat_Closed": 3
       },
       "notes": null
     },
@@ -330,17 +341,14 @@
         "Corner_ExteriorWide_Brick": 12,
         "Door_1_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
-        "DoorFrame_Flat_WoodDark": 1,
-        "ENV_Balcony_Iron": 1,
-        "ENV_Door_Balcony": 1,
         "ENV_Downpipe": 2,
         "ENV_Roof_Gable_6": 2,
         "ENV_Shop_Fascia": 1,
         "ENV_Shutter_Roller": 1,
         "ENV_Wall_Plaster_Clean": 20,
-        "ENV_Wall_Plaster_Clean_Door": 1,
-        "ENV_Wall_Plaster_Clean_Window": 3,
+        "ENV_Wall_Plaster_Clean_Window": 4,
         "ENV_Wall_UnevenBrick_Shopfront": 1,
+        "ENV_Window_Boarded": 1,
         "ENV_Window_Insert_Wide": 1,
         "Prop_Chimney2": 1,
         "Roof_Modular_FlatTiles_6_L": 1,
@@ -350,7 +358,7 @@
         "Wall_UnevenBrick_Straight": 9,
         "Wall_UnevenBrick_Window_Wide_Flat": 1,
         "Window_Wide_Flat_Rocks": 1,
-        "Window_Wide_Flat1": 3,
+        "Window_Wide_Flat1": 4,
         "WindowShutters_Wide_Flat_Open": 1
       },
       "notes": null
@@ -366,7 +374,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U07_Closed_Narrow_4m.jpg",
       "size": [
         5.07,
-        12.02,
+        12.92,
         8.25
       ],
       "request": {
@@ -380,22 +388,24 @@
       },
       "modules": {
         "Corner_ExteriorWide_Brick": 12,
-        "Door_6_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
-        "DoorFrame_Flat_WoodDark": 1,
-        "ENV_Balcony_Iron": 1,
-        "ENV_Door_Balcony": 1,
+        "ENV_Door_Portal_Reformed": 1,
         "ENV_Downpipe": 1,
+        "ENV_Plinth_2m": 1,
+        "ENV_Plinth_Pier": 2,
         "ENV_Roof_Gable_6": 2,
+        "ENV_TV_Aerial": 1,
         "ENV_Wall_Plaster_Clean": 16,
         "ENV_Wall_Plaster_Clean_Base": 9,
-        "ENV_Wall_Plaster_Clean_Door": 2,
+        "ENV_Wall_Plaster_Clean_Door": 1,
+        "ENV_Wall_Plaster_Clean_Thin": 1,
         "ENV_Wall_Plaster_Clean_Window": 3,
+        "ENV_Window_Blind": 1,
         "Prop_Chimney2": 1,
         "Roof_Modular_RoundTiles_6_L": 1,
         "Roof_Modular_RoundTiles_6_R": 1,
-        "Window_Wide_Flat1": 3,
-        "WindowShutters_Wide_Flat_Closed": 1
+        "Window_Thin_Round1": 1,
+        "Window_Wide_Flat1": 3
       },
       "notes": null
     },
@@ -434,20 +444,23 @@
         "ENV_Balcony_Iron": 1,
         "ENV_Door_Balcony": 1,
         "ENV_Downpipe": 2,
-        "ENV_Gallery_Bay": 2,
+        "ENV_Plinth_2m": 2,
+        "ENV_Plinth_Pier": 4,
         "ENV_Roof_Gable_6": 2,
+        "ENV_Sat_Dish": 1,
         "ENV_Shop_Fascia": 1,
         "ENV_Shutter_Roller": 1,
-        "ENV_Wall_Plaster_Clean": 30,
+        "ENV_Wall_Plaster_Clean": 31,
         "ENV_Wall_Plaster_Clean_Base": 11,
         "ENV_Wall_Plaster_Clean_Door": 2,
-        "ENV_Wall_Plaster_Clean_Window": 10,
-        "ENV_Wall_Plaster_Shopfront": 3,
+        "ENV_Wall_Plaster_Clean_Window": 11,
+        "ENV_Wall_Plaster_Shopfront": 1,
         "Prop_Chimney2": 1,
+        "Prop_Vine1": 1,
         "Roof_Modular_FlatTiles_6_L": 1,
         "Roof_Modular_FlatTiles_6_Mid": 2,
         "Roof_Modular_FlatTiles_6_R": 1,
-        "Window_Wide_Flat1": 10,
+        "Window_Wide_Flat1": 11,
         "WindowShutters_Wide_Flat_Open": 1
       },
       "notes": null
@@ -464,7 +477,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U09_Terrace_End_Termination.jpg",
       "size": [
         7.07,
-        12.02,
+        12.92,
         8.25
       ],
       "request": {
@@ -478,23 +491,32 @@
       },
       "modules": {
         "Corner_ExteriorWide_Brick": 12,
-        "Door_5_Flat": 1,
         "DoorFrame_Flat_Brick": 1,
+        "ENV_Door_Portal_Reformed": 1,
         "ENV_Downpipe": 2,
+        "ENV_Plant_Small": 1,
+        "ENV_Planter_Pot": 1,
         "ENV_Prop_Lantern_Wall": 1,
         "ENV_Roof_Gable_6": 2,
+        "ENV_Shop_Fascia": 1,
+        "ENV_Shutter_Roller": 1,
+        "ENV_TV_Aerial": 1,
         "ENV_Wall_Plaster_Clean": 18,
-        "ENV_Wall_Plaster_Clean_Thin": 2,
-        "ENV_Wall_Plaster_Clean_Window": 4,
+        "ENV_Wall_Plaster_Clean_Thin": 3,
+        "ENV_Wall_Plaster_Clean_Window": 3,
+        "ENV_Wall_UnevenBrick_Shopfront": 1,
+        "ENV_Window_Blind": 1,
+        "ENV_Window_Insert_Wide": 1,
         "Prop_Chimney2": 1,
         "Roof_Modular_RoundTiles_6_L": 1,
         "Roof_Modular_RoundTiles_6_Mid": 1,
         "Roof_Modular_RoundTiles_6_R": 1,
         "Wall_UnevenBrick_Door_Flat": 1,
-        "Wall_UnevenBrick_Straight": 11,
-        "Window_Thin_Round1": 2,
-        "Window_Wide_Flat1": 4,
-        "WindowShutters_Wide_Flat_Open": 2
+        "Wall_UnevenBrick_Straight": 9,
+        "Wall_UnevenBrick_Window_Wide_Flat": 1,
+        "Window_Thin_Round1": 3,
+        "Window_Wide_Flat_Rocks": 1,
+        "Window_Wide_Flat1": 3
       },
       "notes": null
     },
@@ -531,6 +553,7 @@
         "ENV_Downpipe": 2,
         "ENV_Gate_Timber": 2,
         "ENV_Roof_Gable_8": 2,
+        "ENV_Sat_Dish": 1,
         "ENV_Wall_Plaster_Clean": 12,
         "ENV_Wall_Plaster_Clean_Thin": 4,
         "ENV_Wall_Plaster_Clean_Window": 2,
@@ -563,7 +586,9 @@
         "pavement": 1.5
       },
       "modules": {
+        "ENV_Drain_Grate": 1,
         "ENV_Kerb_2m": 8,
+        "ENV_Puddle_B": 1,
         "Floor_RoundRocks": 12,
         "Floor_UnevenBrick": 8
       },
@@ -580,8 +605,8 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U12_Street_Pedestrian_8x6.jpg",
       "size": [
         8.0,
-        0.09,
-        6.0
+        0.98,
+        6.56
       ],
       "request": {
         "length": 8,
@@ -589,7 +614,11 @@
         "style": "pedestrian"
       },
       "modules": {
+        "ENV_Drain_Grate": 1,
         "ENV_Gutter_Channel_2m": 4,
+        "ENV_Puddle_A": 1,
+        "ENV_Weeds_Grass": 1,
+        "ENV_Weeds_Tall": 1,
         "Floor_RoundRocks": 12
       },
       "notes": null
@@ -631,8 +660,8 @@
       "prefab": "Assets/JuegoDef/Derived/ENV/Units/U14_Quay_Public_Overlook_12m.prefab",
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U14_Quay_Public_Overlook_12m.jpg",
       "size": [
-        20.0,
-        4.26,
+        52.0,
+        6.93,
         26.0
       ],
       "request": {
@@ -640,10 +669,16 @@
         "railing": true
       },
       "modules": {
-        "ENV_Bollard_Mooring": 2,
+        "ENV_Bench_Street": 2,
+        "ENV_Buoy": 3,
+        "ENV_Crate_Fish": 2,
+        "ENV_Lamp_Post": 1,
+        "ENV_Lifebuoy_Post": 1,
+        "ENV_Net_Pile": 1,
+        "ENV_Parapet_Rail_2m": 6,
+        "ENV_Prop_Rope_Coil": 1,
         "ENV_Quay_Ladder": 1,
         "ENV_Quay_Wall_4m": 3,
-        "ENV_Railing_Quay_2m": 6,
         "ENV_Water_Plane_20m": 1,
         "Floor_UnevenBrick": 18
       },
@@ -762,7 +797,7 @@
       "preview": "Docs/evidence/WP-PROD-ENV-01/units/U19_Ground_Frontage_Vocabulary.jpg",
       "size": [
         15.07,
-        4.42,
+        3.21,
         5.59
       ],
       "request": {
@@ -790,7 +825,8 @@
         "ENV_Door_Service": 1,
         "ENV_Downpipe": 2,
         "ENV_Gate_Timber": 1,
-        "ENV_Prop_Lantern_Wall": 1,
+        "ENV_Plinth_2m": 4,
+        "ENV_Plinth_Pier": 14,
         "ENV_Shop_Fascia": 4,
         "ENV_Shopfront_Door": 1,
         "ENV_Shopfront_Door_Open": 1,
@@ -800,6 +836,239 @@
         "ENV_Wall_Plaster_Clean_Base": 11,
         "ENV_Wall_Plaster_Clean_Door": 2,
         "ENV_Wall_Plaster_Shopfront": 5
+      },
+      "notes": null
+    },
+    {
+      "id": "U20_Landmark_Tower_4x4",
+      "title": "Singular stone tower closing a view: solid shaft, small round-head openings, pyramid roof (view terminator at a plaza node)",
+      "kind": "building",
+      "demand": [
+        "corners_terminations",
+        "damp_palette_families"
+      ],
+      "prefab": "Assets/JuegoDef/Derived/ENV/Units/U20_Landmark_Tower_4x4.prefab",
+      "preview": "Docs/evidence/WP-PROD-ENV-01/units/U20_Landmark_Tower_4x4.jpg",
+      "size": [
+        5.65,
+        21.81,
+        5.43
+      ],
+      "request": {
+        "type": "landmark",
+        "bays": 2,
+        "depth": 4,
+        "floors": 5,
+        "seed": 3,
+        "palette": "core_sandstone_chestnut",
+        "ground": "stone",
+        "upper": "stone",
+        "roof": "tower",
+        "chimney": false,
+        "exposeLeft": true,
+        "exposeRight": true
+      },
+      "modules": {
+        "Corner_ExteriorWide_Brick": 20,
+        "Door_5_Round": 1,
+        "DoorFrame_Round_Brick": 1,
+        "ENV_Window_Insert_Thin": 13,
+        "ENV_Window_Insert_Wide": 4,
+        "Roof_Tower_RoundTiles": 1,
+        "Wall_UnevenBrick_Door_Round": 1,
+        "Wall_UnevenBrick_Straight": 22,
+        "Wall_UnevenBrick_Window_Thin_Round": 13,
+        "Wall_UnevenBrick_Window_Wide_Flat": 4,
+        "Window_Thin_Round_Rocks": 13,
+        "Window_Wide_Flat_Rocks": 4
+      },
+      "notes": null
+    },
+    {
+      "id": "U21_Plaza_Node_16x12",
+      "title": "Small plaza at a street node: flagstone floor, trees with pits, bar terrace, benches",
+      "kind": "plaza",
+      "demand": [
+        "corners_terminations",
+        "port_market_shop_street_props",
+        "signage_utilities_furniture"
+      ],
+      "prefab": "Assets/JuegoDef/Derived/ENV/Units/U21_Plaza_Node_16x12.prefab",
+      "preview": "Docs/evidence/WP-PROD-ENV-01/units/U21_Plaza_Node_16x12.jpg",
+      "size": [
+        16.0,
+        7.74,
+        12.0
+      ],
+      "request": {
+        "w": 16,
+        "d": 12,
+        "trees": 2,
+        "terrace": true,
+        "seed": 3
+      },
+      "modules": {
+        "ENV_Bench_Street": 2,
+        "ENV_Bin_Street": 1,
+        "ENV_Cafe_Chair": 4,
+        "ENV_Cafe_Table": 2,
+        "ENV_Lamp_Post": 1,
+        "ENV_Parasol": 1,
+        "ENV_Plant_Bush_Flowers": 1,
+        "ENV_Planter_Pot": 1,
+        "ENV_Tree_Common_A": 1,
+        "ENV_Tree_Common_C": 1,
+        "ENV_Tree_Pit": 2,
+        "Floor_UnevenBrick": 48
+      },
+      "notes": null
+    },
+    {
+      "id": "U22_Quay_Composed_24m",
+      "title": "Composed working-water edge: overlook with rail and benches, open working quay with bollards, steps to the water, slipway, moored boats",
+      "kind": "quay_edge",
+      "demand": [
+        "quay_public_edge_railings",
+        "port_market_shop_street_props"
+      ],
+      "prefab": "Assets/JuegoDef/Derived/ENV/Units/U22_Quay_Composed_24m.prefab",
+      "preview": "Docs/evidence/WP-PROD-ENV-01/units/U22_Quay_Composed_24m.jpg",
+      "size": [
+        64.0,
+        6.93,
+        25.0
+      ],
+      "request": {
+        "length": 24,
+        "railing": false,
+        "depth": 5,
+        "overlookFrom": 0,
+        "overlookTo": 10,
+        "stepsAt": 11,
+        "slipwayAt": 19,
+        "boats": 2,
+        "seed": 4
+      },
+      "modules": {
+        "ENV_Bench_Street": 1,
+        "ENV_Boat_Small": 1,
+        "ENV_Bollard_Mooring": 1,
+        "ENV_Buoy": 3,
+        "ENV_Crate_Fish": 2,
+        "ENV_Lamp_Post": 2,
+        "ENV_Lifebuoy_Post": 1,
+        "ENV_Mooring_Line": 2,
+        "ENV_Net_Pile": 1,
+        "ENV_Parapet_Rail_2m": 5,
+        "ENV_Prop_Rope_Coil": 1,
+        "ENV_Quay_Ladder": 1,
+        "ENV_Quay_Steps": 1,
+        "ENV_Quay_Wall_4m": 5,
+        "ENV_Slipway": 1,
+        "ENV_Water_Plane_20m": 1,
+        "Floor_Brick": 21,
+        "Floor_UnevenBrick": 15
+      },
+      "notes": null
+    },
+    {
+      "id": "U23_Core_House_Narrow_Stone",
+      "title": "Historic-core narrow house: stone ground floor, lime render, chestnut timber balcony, 4 m",
+      "kind": "building",
+      "demand": [
+        "closed_ordinary_frontage",
+        "damp_palette_families"
+      ],
+      "prefab": "Assets/JuegoDef/Derived/ENV/Units/U23_Core_House_Narrow_Stone.prefab",
+      "preview": "Docs/evidence/WP-PROD-ENV-01/units/U23_Core_House_Narrow_Stone.jpg",
+      "size": [
+        5.07,
+        12.02,
+        10.13
+      ],
+      "request": {
+        "type": "closed_residential",
+        "bays": 2,
+        "depth": 8,
+        "floors": 3,
+        "seed": 61,
+        "palette": "core_lime_chestnut",
+        "ground": "stone",
+        "era": "old"
+      },
+      "modules": {
+        "Corner_ExteriorWide_Brick": 12,
+        "Door_6_Flat": 1,
+        "DoorFrame_Flat_Brick": 1,
+        "ENV_Downpipe": 1,
+        "ENV_Roof_Gable_8": 2,
+        "ENV_Utility_Box": 1,
+        "ENV_Wall_Plaster_Clean": 20,
+        "ENV_Wall_Plaster_Clean_Window": 4,
+        "Prop_Chimney2": 1,
+        "Roof_Modular_RoundTiles_8_L": 1,
+        "Roof_Modular_RoundTiles_8_R": 1,
+        "Wall_UnevenBrick_Door_Flat": 1,
+        "Wall_UnevenBrick_Straight": 11,
+        "Window_Wide_Flat1": 4,
+        "WindowShutters_Wide_Flat_Closed": 1
+      },
+      "notes": null
+    },
+    {
+      "id": "U24_Core_House_Stone_Solana",
+      "title": "Historic-core house in exposed stone with timber balcony, 6 m",
+      "kind": "building",
+      "demand": [
+        "closed_ordinary_frontage",
+        "damp_palette_families"
+      ],
+      "prefab": "Assets/JuegoDef/Derived/ENV/Units/U24_Core_House_Stone_Solana.prefab",
+      "preview": "Docs/evidence/WP-PROD-ENV-01/units/U24_Core_House_Stone_Solana.jpg",
+      "size": [
+        7.07,
+        12.02,
+        10.17
+      ],
+      "request": {
+        "type": "closed_residential",
+        "bays": 3,
+        "depth": 8,
+        "floors": 3,
+        "seed": 62,
+        "palette": "core_sandstone_chestnut",
+        "ground": "stone",
+        "upper": "stone",
+        "era": "old",
+        "rows": [
+          "",
+          "PBP"
+        ]
+      },
+      "modules": {
+        "Balcony_Simple_Straight": 1,
+        "Corner_ExteriorWide_Brick": 12,
+        "Door_2_Flat": 1,
+        "DoorFrame_Flat_Brick": 1,
+        "DoorFrame_Flat_WoodDark": 1,
+        "ENV_Door_Balcony": 1,
+        "ENV_Plant_Bush_Flowers": 2,
+        "ENV_Plant_Small": 1,
+        "ENV_Planter_Pot": 3,
+        "ENV_Roof_Gable_8": 2,
+        "ENV_Shop_Fascia": 1,
+        "ENV_Shutter_Roller": 1,
+        "ENV_Wall_UnevenBrick_Shopfront": 1,
+        "ENV_Window_Insert_Wide": 5,
+        "Floor_WoodDark_Half3": 1,
+        "Prop_Chimney2": 1,
+        "Roof_Modular_RoundTiles_8_L": 1,
+        "Roof_Modular_RoundTiles_8_Mid": 1,
+        "Roof_Modular_RoundTiles_8_R": 1,
+        "Wall_UnevenBrick_Door_Flat": 2,
+        "Wall_UnevenBrick_Straight": 34,
+        "Wall_UnevenBrick_Window_Wide_Flat": 5,
+        "Window_Wide_Flat_Rocks": 5
       },
       "notes": null
     }

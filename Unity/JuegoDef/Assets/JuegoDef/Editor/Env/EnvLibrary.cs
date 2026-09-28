@@ -97,13 +97,18 @@ namespace JuegoDef.Env
                     BuildingAssembler.Build(bs, root.transform);
                     break;
                 case "street_ground":
-                    EnvTemplates.StreetGround(root.transform, (float)p["length"], (float)p["width"], (string)p["style"] ?? "kerbed", (float?)p["pavement"] ?? 1.5f);
+                    EnvTemplates.StreetGround(root.transform, (float)p["length"], (float)p["width"], (string)p["style"] ?? "kerbed", (float?)p["pavement"] ?? -1f, (int?)p["seed"] ?? 1);
+                    break;
+                case "plaza":
+                    EnvTemplates.Plaza(root.transform, (float)p["w"], (float)p["d"], (int?)p["trees"] ?? 2, (bool?)p["terrace"] ?? true, (int?)p["seed"] ?? 1, (bool?)p["floor"] ?? true);
                     break;
                 case "stepped_connector":
-                    EnvTemplates.SteppedConnector(root.transform, (int)p["height"], (int?)p["terraceBays"] ?? 2);
+                    EnvTemplates.SteppedConnector(root.transform, (int)p["height"], (int?)p["terraceBays"] ?? 2, (bool?)p["landing"] ?? true);
                     break;
                 case "quay_edge":
-                    EnvTemplates.QuayEdge(root.transform, (float)p["length"], (bool?)p["railing"] ?? false);
+                    EnvTemplates.QuayEdge(root.transform, (float)p["length"], (bool?)p["railing"] ?? false, (float?)p["depth"] ?? 6f,
+                        (float?)p["overlookFrom"] ?? -1f, (float?)p["overlookTo"] ?? -1f, (float?)p["stepsAt"] ?? -1f, (float?)p["slipwayAt"] ?? -1f,
+                        (int?)p["boats"] ?? 0, (int?)p["seed"] ?? 1, (bool?)p["water"] ?? true, (bool?)p["lamps"] ?? true);
                     break;
                 case "yard_boundary":
                     EnvTemplates.YardBoundary(root.transform, (float)p["length"], (int?)p["gateAt"] ?? 1);

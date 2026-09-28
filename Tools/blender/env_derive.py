@@ -231,6 +231,8 @@ def cut(ob, cutter):
 
 def export(ob, name):
     OUT.mkdir(parents=True, exist_ok=True)
+    # tube() leaves QUATERNION mode on the joined object, where rotation_euler is ignored: force Euler first
+    ob.rotation_mode = "XYZ"
     ob.rotation_euler = (0, 0, math.pi)  # match the kit's Blender -> Unity orientation (see U())
     apply_transform(ob)
     bpy.ops.object.material_slot_remove_unused()  # no empty sub-meshes in Unity
@@ -868,6 +870,579 @@ def bollard_street():
         cylinder("ring", (0, 0.7, 0), 0.095, 0.04, "ENV_Metal_Iron", segments=12),
     ]
     return join("ENV_Bollard_Street", parts)
+
+
+# ---------------------------------------------------------------- helpers for street life / vehicles / port
+
+def tube(name, a, b, radius, mat, segments=8):
+    """Cylinder between two Unity-frame points."""
+    va, vb = U(*a), U(*b)
+    d = vb - va
+    length = max(d.length, 1e-4)
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=segments, radius1=radius, radius2=radius, depth=length)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    ob.rotation_mode = "QUATERNION"
+    ob.rotation_quaternion = Vector((0, 0, 1)).rotation_difference(d.normalized())
+    ob.location = (va + vb) / 2
+    apply_transform(ob)
+    uv_box(ob)
+    return ob
+
+
+def frustum(name, base, r0, r1, height, mat, segments=12):
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=segments, radius1=r0, radius2=r1, depth=height)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    ob.location = U(base[0], base[1] + height / 2, base[2])
+    apply_transform(ob)
+    uv_box(ob)
+    return ob
+
+
+def torus(name, center, major, minor, mat, axis="x", segments=20):
+    for o in bpy.context.selected_objects:
+        o.select_set(False)
+    rot = (0, math.radians(90), 0) if axis == "x" else ((math.radians(90), 0, 0) if axis == "z" else (0, 0, 0))
+    bpy.ops.mesh.primitive_torus_add(major_radius=major, minor_radius=minor, major_segments=segments, minor_segments=6,
+                                     location=U(*center), rotation=rot)
+    ob = bpy.context.active_object
+    ob.name = name
+    ob.data.materials.clear()
+    ob.data.materials.append(material(mat))
+    apply_transform(ob)
+    uv_box(ob)
+    return ob
+
+
+def lump(name, center, size, mat, seed=1, rough=0.18):
+    """Irregular soft blob (bags, nets, piles): displaced icosphere, deterministic by seed."""
+    import random
+    rnd = random.Random(seed)
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=2, radius=1.0)
+    for v in bm.verts:
+        k = 1.0 + rnd.uniform(-rough, rough)
+        v.co = Vector((v.co.x * size[0] * k, v.co.y * size[2] * k, v.co.z * size[1] * k))
+        if v.co.z < -size[1] * 0.55:
+            v.co.z = -size[1] * 0.55  # flat-ish bottom
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    ob.location = U(center[0], center[1] + size[1] * 0.55, center[2])
+    apply_transform(ob)
+    uv_box(ob)
+    return ob
+
+
+def flat_poly(name, pts_xz, y, mat):
+    bm = bmesh.new()
+    bm.faces.new([bm.verts.new(U(x, y, z)) for x, z in pts_xz])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    for p in ob.data.polygons:  # face up
+        if p.normal.z < 0:
+            p.flip()
+    uv_box(ob)
+    return ob
+
+
+def loft(name, sections, mat):
+    """Closed loft through cross-sections: list of (z, [(x, y), ...]) with equal point counts (Unity frame)."""
+    bm = bmesh.new()
+    rings = [[bm.verts.new(U(x, y, z)) for x, y in pts] for z, pts in sections]
+    n = len(rings[0])
+    for a, b in zip(rings, rings[1:]):
+        for i in range(n):
+            bm.faces.new([a[i], a[(i + 1) % n], b[(i + 1) % n], b[i]])
+    bm.faces.new(rings[0][::-1])
+    bm.faces.new(rings[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    uv_box(ob)
+    return ob
+
+
+# ---------------------------------------------------------------- recipes: ground details and junctions
+
+@recipe("ENV_Plinth_2m", "CREATE_DERIVED")
+def plinth():
+    """Ashlar plinth band (zócalo) 2 m x 0.42 m standing 6 cm proud of the wall face: hides the wall/pavement seam
+    and ties ground floors of different buildings together. Kit MI_RockTrim ashlar band."""
+    return join("ENV_Plinth_2m", [box("p", (-1.0, -0.02, 0.07), (1.0, 0.42, 0.16), "MI_RockTrim", uv="band", band=ROCK_ASHLAR, bevel=0.015)])
+
+
+@recipe("ENV_Plinth_Pier", "CREATE_DERIVED")
+def plinth_pier():
+    """Plinth stub for the pier beside a door/shop opening (0.2 m, scaled in x by the assembler)."""
+    return join("ENV_Plinth_Pier", [box("p", (-0.1, -0.02, 0.07), (0.1, 0.42, 0.16), "MI_RockTrim", uv="band", band=ROCK_ASHLAR, bevel=0.01)])
+
+
+@recipe("ENV_Drain_Grate", "ORIGINAL")
+def drain_grate():
+    """Cast-iron gutter grate set in the carriageway beside the kerb."""
+    parts = [box("frame", (-0.32, -0.02, -0.2), (0.32, 0.012, 0.2), "ENV_Metal_Iron")]
+    for i in range(7):
+        x = -0.27 + i * 0.09
+        parts.append(box(f"bar{i}", (x - 0.018, 0.012, -0.17), (x + 0.018, 0.02, 0.17), "ENV_Metal_Iron"))
+    return join("ENV_Drain_Grate", parts)
+
+
+@recipe("ENV_Manhole", "ORIGINAL")
+def manhole():
+    """Round cast-iron manhole cover flush with the paving."""
+    return join("ENV_Manhole", [cylinder("disc", (0, 0.004, 0), 0.36, 0.02, "ENV_Metal_Iron", segments=20),
+                                cylinder("ring", (0, 0.002, 0), 0.42, 0.018, "MI_RockTrim", segments=20, band=ROCK_SLAB)])
+
+
+def _puddle(name, seed, r):
+    import random
+    rnd = random.Random(seed)
+    pts = []
+    for i in range(14):
+        a = 2 * math.pi * i / 14
+        k = r * (1 + rnd.uniform(-0.35, 0.25))
+        pts.append((math.cos(a) * k * 1.4, math.sin(a) * k))
+    return flat_poly(name, pts, 0.006, "ENV_Water_Puddle")
+
+
+@recipe("ENV_Puddle_A", "ORIGINAL")
+def puddle_a():
+    """Irregular rain puddle (flat, glossy), about 1.6 x 1.1 m."""
+    return join("ENV_Puddle_A", [_puddle("p", 3, 0.55)])
+
+
+@recipe("ENV_Puddle_B", "ORIGINAL")
+def puddle_b():
+    """Irregular rain puddle, about 1.0 x 0.7 m."""
+    return join("ENV_Puddle_B", [_puddle("p", 11, 0.35)])
+
+
+@recipe("ENV_Tree_Pit", "ORIGINAL")
+def tree_pit():
+    """Square iron tree-pit grate (alcorque) 1.3 m with a trunk hole."""
+    parts = [box("frame", (-0.65, -0.01, -0.65), (0.65, 0.02, -0.57), "ENV_Metal_Iron"),
+             box("frame2", (-0.65, -0.01, 0.57), (0.65, 0.02, 0.65), "ENV_Metal_Iron"),
+             box("frame3", (-0.65, -0.01, -0.57), (-0.57, 0.02, 0.57), "ENV_Metal_Iron"),
+             box("frame4", (0.57, -0.01, -0.57), (0.65, 0.02, 0.57), "ENV_Metal_Iron")]
+    for i in range(6):
+        x = -0.5 + i * 0.2
+        if abs(x) < 0.2:
+            continue
+        parts.append(box(f"bar{i}", (x - 0.02, 0.0, -0.57), (x + 0.02, 0.018, 0.57), "ENV_Metal_Iron"))
+    return join("ENV_Tree_Pit", parts)
+
+
+@recipe("ENV_Corner_Column", "ORIGINAL")
+def corner_column():
+    """Cast-iron corner column (3 m) carrying the corner above a chamfered ground-floor entrance."""
+    parts = [cylinder("base", (0, 0.15, 0), 0.16, 0.3, "ENV_Metal_Iron", segments=12),
+             cylinder("shaft", (0, 1.6, 0), 0.1, 2.6, "ENV_Metal_Iron", segments=12),
+             cylinder("capital", (0, 2.95, 0), 0.2, 0.1, "ENV_Metal_Iron", segments=12),
+             cylinder("neck", (0, 2.82, 0), 0.13, 0.12, "ENV_Metal_Iron", segments=12)]
+    return join("ENV_Corner_Column", parts)
+
+
+# ---------------------------------------------------------------- recipes: street life
+
+@recipe("ENV_Lamp_Post", "ORIGINAL")
+def lamp_post():
+    """Late-20th-century cast-iron street lamp (farola), 4 m, lantern on a short arm towards +z."""
+    parts = [cylinder("base", (0, 0.2, 0), 0.13, 0.4, "ENV_Metal_Iron", segments=10),
+             cylinder("post", (0, 2.0, 0), 0.055, 3.3, "ENV_Metal_Iron", segments=8),
+             tube("arm", (0, 3.5, 0), (0, 3.62, 0.45), 0.025, "ENV_Metal_Iron"),
+             box("lantern", (-0.14, 3.2, 0.33), (0.14, 3.55, 0.61), "ENV_Lamp_Glass"),
+             frustum("cap", (0, 3.55, 0.47), 0.22, 0.03, 0.18, "ENV_Metal_Iron", segments=4)]
+    return join("ENV_Lamp_Post", parts)
+
+
+@recipe("ENV_Sign_NoEntry", "ORIGINAL")
+def sign_no_entry():
+    """Generic no-entry traffic sign on a galvanised post (disc facing +z)."""
+    parts = [cylinder("post", (0, 1.3, 0), 0.03, 2.6, "ENV_Metal_Galvanised", segments=8),
+             cylinder("disc", (0, 2.35, 0.05), 0.3, 0.02, "ENV_Sign_Red", segments=20, axis="z"),
+             box("bar", (-0.2, 2.3, 0.061), (0.2, 2.4, 0.066), "ENV_Sign_White")]
+    return join("ENV_Sign_NoEntry", parts)
+
+
+@recipe("ENV_Sign_Direction", "ORIGINAL")
+def sign_direction():
+    """Pedestrian direction post with two blank arrow plates (typography stays out of ENV)."""
+    parts = [cylinder("post", (0, 1.4, 0), 0.035, 2.8, "ENV_Metal_Iron", segments=8)]
+    for i, (y, sx) in enumerate(((2.45, 1), (2.15, -1))):
+        parts.append(box(f"plate{i}", (0 if sx > 0 else -0.75, y - 0.1, -0.015), (0.75 if sx > 0 else 0, y + 0.1, 0.015), "ENV_Sign_Blue", bevel=0.005))
+        parts.append(box(f"tip{i}", (0.75 if sx > 0 else -0.85, y - 0.06, -0.015), (0.85 if sx > 0 else -0.75, y + 0.06, 0.015), "ENV_Sign_Blue"))
+    return join("ENV_Sign_Direction", parts)
+
+
+@recipe("ENV_Street_Name_Plate", "ORIGINAL")
+def street_name_plate():
+    """Wall-mounted ceramic street-name plate (blank; the street name is content, not ENV)."""
+    return join("ENV_Street_Name_Plate", [box("b", (-0.3, -0.13, 0.09), (0.3, 0.13, 0.12), "ENV_Sign_Blue", bevel=0.005),
+                                          box("f", (-0.26, -0.09, 0.12), (0.26, 0.09, 0.125), "ENV_Sign_White")])
+
+
+@recipe("ENV_Cafe_Table", "ORIGINAL")
+def cafe_table():
+    """Round aluminium bar-terrace table (0.7 m)."""
+    return join("ENV_Cafe_Table", [cylinder("top", (0, 0.73, 0), 0.35, 0.03, "ENV_Metal_Galvanised", segments=16),
+                                   cylinder("stem", (0, 0.37, 0), 0.03, 0.7, "ENV_Metal_Iron", segments=8),
+                                   cylinder("foot", (0, 0.02, 0), 0.22, 0.04, "ENV_Metal_Iron", segments=12)])
+
+
+@recipe("ENV_Cafe_Chair", "ORIGINAL")
+def cafe_chair():
+    """Aluminium terrace chair (faces +z)."""
+    parts = [box("seat", (-0.21, 0.44, -0.2), (0.21, 0.47, 0.2), "ENV_Metal_Galvanised")]
+    for sx in (-0.19, 0.19):
+        for sz in (-0.18, 0.18):
+            parts.append(tube(f"leg{sx}{sz}", (sx, 0.0, sz), (sx, 0.44, sz), 0.012, "ENV_Metal_Galvanised"))
+        parts.append(tube(f"back{sx}", (sx, 0.47, -0.19), (sx, 0.85, -0.23), 0.012, "ENV_Metal_Galvanised"))
+    for y in (0.62, 0.8):
+        parts.append(box(f"slat{y}", (-0.2, y, -0.23 + (y - 0.47) * -0.1), (0.2, y + 0.05, -0.2 + (y - 0.47) * -0.1), "ENV_Metal_Galvanised"))
+    return join("ENV_Cafe_Chair", parts)
+
+
+@recipe("ENV_Parasol", "ORIGINAL")
+def parasol():
+    """Terrace parasol, 2.4 m canopy; canvas colour is a material slot (ENV_Canvas_Cream)."""
+    return join("ENV_Parasol", [cylinder("pole", (0, 1.15, 0), 0.025, 2.3, "ENV_Metal_Galvanised", segments=8),
+                                frustum("canopy", (0, 2.05, 0), 1.2, 0.05, 0.4, "ENV_Canvas_Cream", segments=8),
+                                cylinder("base", (0, 0.04, 0), 0.25, 0.08, "ENV_Metal_Iron", segments=12)])
+
+
+@recipe("ENV_Bicycle", "ORIGINAL")
+def bicycle():
+    """Ordinary town bicycle, 1.7 m, wheels in the y-z plane (length along z); frame paint slot ENV_Paint_Red."""
+    r, rear, front = 0.33, -0.52, 0.52
+    parts = [torus("wr", (0, r, rear), r, 0.022, "ENV_Rubber", axis="x"),
+             torus("wf", (0, r, front), r, 0.022, "ENV_Rubber", axis="x")]
+    bb, seat, head = (0, 0.3, -0.05), (0, 0.85, -0.2), (0, 0.9, 0.38)
+    for a, b in ((bb, seat), (bb, head), (seat, head), (bb, (0, r, rear)), (seat, (0, r, rear)), (head, (0, r, front))):
+        parts.append(tube("t", a, b, 0.018, "ENV_Paint_Red"))
+    parts.append(box("saddle", (-0.07, 0.88, -0.3), (0.07, 0.93, -0.1), "ENV_Rubber"))
+    parts.append(tube("stem", head, (0, 1.02, 0.34), 0.015, "ENV_Metal_Galvanised"))
+    parts.append(tube("bar", (-0.28, 1.02, 0.34), (0.28, 1.02, 0.34), 0.014, "ENV_Metal_Galvanised"))
+    parts.append(box("basket", (-0.17, 0.82, 0.48), (0.17, 1.0, 0.72), "ENV_Metal_Galvanised"))
+    return join("ENV_Bicycle", parts)
+
+
+@recipe("ENV_Clothesline", "ORIGINAL")
+def clothesline():
+    """Window clothesline (tendedero): two iron brackets 0.55 m out from the wall, two lines, hanging clothes
+    in several colours. Mounted under an upper-floor window (origin on the wall face at bracket height)."""
+    parts = []
+    for sx in (-0.8, 0.8):
+        parts.append(box(f"br{sx}", (sx - 0.02, -0.02, 0.09), (sx + 0.02, 0.02, 0.66), "ENV_Metal_Iron"))
+    for z in (0.35, 0.6):
+        parts.append(tube(f"line{z}", (-0.8, 0.0, z), (0.8, 0.0, z), 0.005, "ENV_Rope"))
+    cloth = [(-0.65, 0.35, 0.34, 0.5, "ENV_Cloth_White"), (-0.25, 0.35, 0.3, 0.42, "ENV_Cloth_Blue"), (0.2, 0.35, 0.38, 0.6, "ENV_Cloth_Red"),
+             (-0.45, 0.6, 0.4, 0.35, "ENV_Cloth_Yellow"), (0.1, 0.6, 0.28, 0.55, "ENV_Cloth_White"), (0.55, 0.6, 0.32, 0.4, "ENV_Cloth_Blue")]
+    for i, (x, z, w, h, m) in enumerate(cloth):
+        parts.append(box(f"c{i}", (x - w / 2, -h, z - 0.006), (x + w / 2, -0.01, z + 0.006), m))
+    return join("ENV_Clothesline", parts)
+
+
+@recipe("ENV_Planter_Pot", "ORIGINAL")
+def planter_pot():
+    """Terracotta planter pot (0.5 m) for doorsteps and balconies; plants are placed separately."""
+    return join("ENV_Planter_Pot", [frustum("pot", (0, 0, 0), 0.18, 0.25, 0.42, "ENV_Terracotta", segments=12),
+                                    cylinder("soil", (0, 0.4, 0), 0.22, 0.02, "ENV_Soil", segments=12)])
+
+
+@recipe("ENV_Trash_Bags", "ORIGINAL")
+def trash_bags():
+    """Three tied rubbish bags left by a door or bin."""
+    return join("ENV_Trash_Bags", [lump("a", (0, 0, 0), (0.28, 0.4, 0.25), "ENV_Plastic_Black", 1),
+                                   lump("b", (0.42, 0, 0.1), (0.24, 0.33, 0.22), "ENV_Plastic_Black", 2),
+                                   lump("c", (0.18, 0, 0.38), (0.22, 0.28, 0.2), "ENV_Plastic_Grey", 3)])
+
+
+@recipe("ENV_Box_Cardboard", "ORIGINAL")
+def box_cardboard():
+    """Cardboard delivery box (0.5 x 0.4 x 0.35 m)."""
+    return join("ENV_Box_Cardboard", [box("b", (-0.25, 0, -0.2), (0.25, 0.35, 0.2), "ENV_Cardboard", bevel=0.01),
+                                      box("tape", (-0.03, 0.35, -0.2), (0.03, 0.352, 0.2), "ENV_Plastic_Grey")])
+
+
+@recipe("ENV_Bench_Street", "CREATE_DERIVED")
+def bench_street():
+    """Municipal street bench: cast-iron ends, timber slats (kit MI_WoodTrim dark band), faces +z."""
+    parts = []
+    for sx in (-0.8, 0.8):
+        parts.append(box(f"end{sx}", (sx - 0.04, 0, -0.25), (sx + 0.04, 0.42, 0.2), "ENV_Metal_Iron"))
+        parts.append(box(f"back{sx}", (sx - 0.04, 0.42, -0.27), (sx + 0.04, 0.85, -0.2), "ENV_Metal_Iron"))
+    for i, z in enumerate((-0.18, -0.06, 0.06, 0.16)):
+        parts.append(box(f"s{i}", (-0.95, 0.42, z - 0.05), (0.95, 0.46, z + 0.05), "MI_WoodTrim", uv="band", band=WOOD_DARK))
+    for i, y in enumerate((0.55, 0.7)):
+        parts.append(box(f"b{i}", (-0.95, y, -0.26), (0.95, y + 0.1, -0.22), "MI_WoodTrim", uv="band", band=WOOD_DARK))
+    return join("ENV_Bench_Street", parts)
+
+
+@recipe("ENV_Phone_Booth", "ORIGINAL")
+def phone_booth():
+    """Late-1990s public phone cabin (generic, no branding): grey frame, glass sides, open front."""
+    parts = [box("roof", (-0.5, 2.2, -0.45), (0.5, 2.35, 0.45), "ENV_Plastic_Grey", bevel=0.02),
+             box("base", (-0.5, 0, -0.45), (0.5, 0.04, 0.45), "ENV_Plastic_Grey")]
+    for sx in (-0.47, 0.47):
+        for sz in (-0.42, 0.42):
+            parts.append(box(f"p{sx}{sz}", (sx - 0.03, 0.04, sz - 0.03), (sx + 0.03, 2.2, sz + 0.03), "ENV_Plastic_Grey"))
+    parts.append(box("gl", (-0.46, 0.5, -0.43), (-0.45, 2.1, 0.43), "ENV_Glass_Street"))
+    parts.append(box("gr", (0.45, 0.5, -0.43), (0.46, 2.1, 0.43), "ENV_Glass_Street"))
+    parts.append(box("gb", (-0.45, 0.5, -0.44), (0.45, 2.1, -0.43), "ENV_Glass_Street"))
+    parts.append(box("phone", (-0.15, 1.1, -0.43), (0.15, 1.55, -0.33), "ENV_Metal_Galvanised"))
+    return join("ENV_Phone_Booth", parts)
+
+
+# ---------------------------------------------------------------- recipes: accumulated history
+
+@recipe("ENV_Window_Blind", "ORIGINAL")
+def window_blind():
+    """Retro-fitted PVC roller blind (persiana enrollable) for the kit wide window: box over the head, slats
+    lowered two thirds — the typical 1970s–90s replacement over older joinery."""
+    parts = [box("box", (-0.82, 2.5, 0.09), (0.82, 2.74, 0.3), "ENV_Blind_PVC", bevel=0.01)]
+    y = 1.55
+    i = 0
+    while y < 2.5:
+        parts.append(box(f"s{i}", (-0.74, y, 0.2), (0.74, y + 0.045, 0.225), "ENV_Blind_PVC"))
+        y += 0.05
+        i += 1
+    parts.append(box("guideL", (-0.8, 1.0, 0.18), (-0.76, 2.5, 0.24), "ENV_Blind_PVC"))
+    parts.append(box("guideR", (0.76, 1.0, 0.18), (0.8, 2.5, 0.24), "ENV_Blind_PVC"))
+    return join("ENV_Window_Blind", parts)
+
+
+@recipe("ENV_Window_Boarded", "CREATE_DERIVED")
+def window_boarded():
+    """Boarded-up window for neglected buildings: rough planks across the kit wide window (MI_WoodTrim dark)."""
+    parts = []
+    for i, y in enumerate((1.05, 1.35, 1.7, 2.05)):
+        tilt = (i % 2) * 0.04
+        parts.append(box(f"p{i}", (-0.82, y + tilt, 0.12), (0.82, y + 0.22 - tilt, 0.16), "MI_WoodTrim", uv="band", band=WOOD_DARK))
+    return join("ENV_Window_Boarded", parts)
+
+
+@recipe("ENV_Sat_Dish", "ORIGINAL")
+def sat_dish():
+    """Satellite dish on a wall bracket (late-1990s addition), facing +z and up."""
+    dish = frustum("dish", (0, 0, 0), 0.06, 0.4, 0.14, "ENV_Sign_White", segments=16)
+    dish.rotation_euler = (math.radians(-60), 0, 0)
+    dish.location = U(0, 0.25, 0.35)
+    apply_transform(dish)
+    parts = [dish, tube("arm", (0, 0.1, 0.09), (0, 0.2, 0.35), 0.02, "ENV_Metal_Galvanised"),
+             tube("feed", (0, 0.25, 0.35), (0, 0.5, 0.65), 0.012, "ENV_Metal_Galvanised"),
+             box("plate", (-0.08, 0.02, 0.09), (0.08, 0.2, 0.11), "ENV_Metal_Galvanised")]
+    return join("ENV_Sat_Dish", parts)
+
+
+@recipe("ENV_TV_Aerial", "ORIGINAL")
+def tv_aerial():
+    """Rooftop TV aerial: 2.2 m mast with a Yagi boom and elements."""
+    parts = [tube("mast", (0, 0, 0), (0, 2.2, 0), 0.02, "ENV_Metal_Galvanised"),
+             tube("boom", (0, 2.1, -0.6), (0, 2.1, 0.6), 0.012, "ENV_Metal_Galvanised")]
+    for i in range(7):
+        z = -0.55 + i * 0.18
+        w = 0.4 - i * 0.03
+        parts.append(tube(f"e{i}", (-w, 2.1, z), (w, 2.1, z), 0.006, "ENV_Metal_Galvanised"))
+    return join("ENV_TV_Aerial", parts)
+
+
+@recipe("ENV_Utility_Box", "ORIGINAL")
+def utility_box():
+    """Electricity/gas meter cabinet fixed on a ground-floor facade (grey plastic)."""
+    return join("ENV_Utility_Box", [box("b", (-0.3, 0.6, 0.09), (0.3, 1.4, 0.3), "ENV_Plastic_Grey", bevel=0.015),
+                                    box("d", (-0.26, 0.64, 0.3), (0.26, 1.36, 0.305), "ENV_Plastic_Grey"),
+                                    box("pipe", (-0.02, 0.0, 0.12), (0.02, 0.6, 0.16), "ENV_Plastic_Grey")])
+
+
+@recipe("ENV_Cable_Run_2m", "ORIGINAL")
+def cable_run():
+    """Surface-fixed service cable (2 m along the facade) with clips — added long after the building."""
+    parts = [tube("c", (-1.0, 0, 0.11), (1.0, -0.03, 0.11), 0.009, "ENV_Rubber")]
+    for x in (-0.6, 0.2, 0.9):
+        parts.append(box(f"k{x}", (x - 0.015, -0.03, 0.09), (x + 0.015, 0.02, 0.125), "ENV_Plastic_Grey"))
+    return join("ENV_Cable_Run_2m", parts)
+
+
+@recipe("ENV_Door_Portal_Reformed", "ORIGINAL")
+def door_portal_reformed():
+    """1980s replacement portal door for the kit Door_Flat opening: bronze-anodised aluminium frame, wired glass,
+    push bar. Joinery slot is palette-remapped like painted timber."""
+    x0, x1, h = -0.64, 0.64, 2.14
+    parts = [box("fl", (x0, 0, -0.1), (x0 + 0.07, h, 0.0), "ENV_Alu_Bronze"),
+             box("fr", (x1 - 0.07, 0, -0.1), (x1, h, 0.0), "ENV_Alu_Bronze"),
+             box("ft", (x0, h - 0.07, -0.1), (x1, h, 0.0), "ENV_Alu_Bronze"),
+             box("mid", (-0.02, 0, -0.08), (0.02, h, -0.02), "ENV_Alu_Bronze"),
+             box("kick", (x0 + 0.07, 0.02, -0.07), (x1 - 0.07, 0.35, -0.04), "ENV_Alu_Bronze"),
+             box("glass", (x0 + 0.07, 0.35, -0.06), (x1 - 0.07, h - 0.07, -0.05), "ENV_Glass_Street"),
+             box("push", (-0.5, 1.0, -0.03), (-0.1, 1.04, 0.01), "ENV_Metal_Galvanised")]
+    return join("ENV_Door_Portal_Reformed", parts)
+
+
+# ---------------------------------------------------------------- recipes: vehicles
+
+def _wheels(xs, zs, r, w):
+    parts = []
+    for x in xs:
+        for z in zs:
+            parts.append(cylinder(f"w{x}{z}", (x, r, z), r, w, "ENV_Rubber", segments=14, axis="x"))
+            parts.append(cylinder(f"h{x}{z}", (x + (0.01 if x > 0 else -0.01), r, z), r * 0.55, w + 0.02, "ENV_Metal_Galvanised", segments=10, axis="x"))
+    return parts
+
+
+@recipe("ENV_Vehicle_Van", "ORIGINAL")
+def vehicle_van():
+    """Small 1990s delivery van (generic, no branding), 4.1 m, front towards +z. Body paint slot ENV_Paint_White."""
+    body = loft("body", [
+        (-2.0, [(-0.8, 0.35), (0.8, 0.35), (0.8, 1.85), (-0.8, 1.85)]),
+        (0.6, [(-0.8, 0.35), (0.8, 0.35), (0.8, 1.85), (-0.8, 1.85)]),
+        (1.35, [(-0.78, 0.35), (0.78, 0.35), (0.78, 1.25), (-0.78, 1.25)]),
+        (2.05, [(-0.75, 0.35), (0.75, 0.35), (0.75, 0.95), (-0.75, 0.95)]),
+    ], "ENV_Paint_White")
+    parts = [body,
+             box("ws", (-0.72, 1.2, 0.62), (0.72, 1.78, 0.66), "ENV_Glass_Street"),
+             box("sw", (-0.81, 1.15, 0.0), (0.81, 1.6, 0.58), "ENV_Glass_Street"),
+             box("bf", (-0.82, 0.3, 2.0), (0.82, 0.5, 2.12), "ENV_Plastic_Grey"),
+             box("br", (-0.82, 0.3, -2.1), (0.82, 0.5, -1.98), "ENV_Plastic_Grey"),
+             box("ll", (-0.7, 0.75, 2.04), (-0.4, 0.88, 2.07), "ENV_Lamp_Glass"),
+             box("lr", (0.4, 0.75, 2.04), (0.7, 0.88, 2.07), "ENV_Lamp_Glass"),
+             box("rd", (-0.02, 0.45, -2.02), (0.02, 1.8, -1.99), "ENV_Plastic_Grey")]
+    parts += _wheels((-0.72, 0.72), (-1.35, 1.35), 0.31, 0.2)
+    return join("ENV_Vehicle_Van", parts)
+
+
+@recipe("ENV_Vehicle_Car", "ORIGINAL")
+def vehicle_car():
+    """Small 1990s hatchback (generic), 3.7 m, front towards +z. Body paint slot ENV_Paint_Red."""
+    body = loft("body", [
+        (-1.85, [(-0.78, 0.3), (0.78, 0.3), (0.78, 0.95), (-0.78, 0.95)]),
+        (1.85, [(-0.78, 0.3), (0.78, 0.3), (0.78, 0.8), (-0.78, 0.8)]),
+    ], "ENV_Paint_Red")
+    cabin = loft("cabin", [
+        (-1.7, [(-0.74, 0.95), (0.74, 0.95), (0.68, 1.3), (-0.68, 1.3)]),
+        (-1.45, [(-0.74, 0.95), (0.74, 0.95), (0.66, 1.42), (-0.66, 1.42)]),
+        (0.35, [(-0.74, 0.9), (0.74, 0.9), (0.66, 1.42), (-0.66, 1.42)]),
+        (0.95, [(-0.76, 0.84), (0.76, 0.84), (0.7, 0.95), (-0.7, 0.95)]),
+    ], "ENV_Glass_Street")
+    parts = [body, cabin,
+             box("roof", (-0.64, 1.4, -1.4), (0.64, 1.45, 0.3), "ENV_Paint_Red"),
+             box("bf", (-0.8, 0.28, 1.8), (0.8, 0.45, 1.92), "ENV_Plastic_Grey"),
+             box("br", (-0.8, 0.28, -1.92), (0.8, 0.45, -1.8), "ENV_Plastic_Grey"),
+             box("ll", (-0.68, 0.62, 1.85), (-0.4, 0.74, 1.87), "ENV_Lamp_Glass"),
+             box("lr", (0.4, 0.62, 1.85), (0.68, 0.74, 1.87), "ENV_Lamp_Glass")]
+    parts += _wheels((-0.7, 0.7), (-1.2, 1.2), 0.29, 0.18)
+    return join("ENV_Vehicle_Car", parts)
+
+
+# ---------------------------------------------------------------- recipes: working port
+
+@recipe("ENV_Boat_Small", "ORIGINAL")
+def boat_small():
+    """Small inshore fishing boat (lancha), 5.6 m, bow towards +z, waterline at y = 0. Hull paint slot
+    ENV_Paint_Blue with a white sheer strake and a small wheelhouse."""
+    def sec(z, half, keel, sheer):
+        return (z, [(0, keel), (half * 0.55, keel + 0.12), (half, 0.25), (half, sheer), (-half, sheer), (-half, 0.25), (-half * 0.55, keel + 0.12)])
+    hull = loft("hull", [sec(-2.7, 0.8, -0.35, 0.75), sec(-1.5, 1.0, -0.5, 0.75), sec(0.6, 1.0, -0.55, 0.8),
+                         sec(1.9, 0.7, -0.45, 0.9), sec(2.8, 0.06, -0.1, 1.05)], "ENV_Paint_Blue")
+    strake = loft("strake", [(-2.7, [(-0.82, 0.62), (0.82, 0.62), (0.82, 0.8), (-0.82, 0.8)]),
+                             (0.6, [(-1.02, 0.66), (1.02, 0.66), (1.02, 0.84), (-1.02, 0.84)]),
+                             (1.9, [(-0.72, 0.76), (0.72, 0.76), (0.72, 0.94), (-0.72, 0.94)])], "ENV_Paint_White")
+    parts = [hull, strake,
+             box("deck", (-0.85, 0.55, -2.5), (0.85, 0.6, 2.0), "MI_WoodTrim", uv="band", band=WOOD_DARK),
+             box("house", (-0.55, 0.6, -0.9), (0.55, 1.75, 0.3), "ENV_Paint_White", bevel=0.03),
+             box("houseroof", (-0.62, 1.75, -1.0), (0.62, 1.82, 0.4), "ENV_Paint_Blue"),
+             box("hwin", (-0.5, 1.25, 0.3), (0.5, 1.6, 0.32), "ENV_Glass_Street"),
+             tube("mast", (0, 1.8, -0.3), (0, 3.6, -0.3), 0.04, "ENV_Metal_Galvanised")]
+    return join("ENV_Boat_Small", parts)
+
+
+@recipe("ENV_Buoy", "ORIGINAL")
+def buoy():
+    """Orange mooring/fishing buoy (floats on y = 0)."""
+    return join("ENV_Buoy", [sphere("b", (0, 0.1, 0), 0.25, "ENV_Buoy_Orange", segments=12)])
+
+
+@recipe("ENV_Lifebuoy_Post", "ORIGINAL")
+def lifebuoy_post():
+    """Quay lifebuoy on a post with a small cabinet."""
+    return join("ENV_Lifebuoy_Post", [cylinder("post", (0, 0.8, 0), 0.04, 1.6, "ENV_Metal_Iron", segments=8),
+                                      torus("ring", (0, 1.25, 0.08), 0.3, 0.06, "ENV_Buoy_Orange", axis="z"),
+                                      box("hook", (-0.03, 1.5, 0.0), (0.03, 1.56, 0.1), "ENV_Metal_Iron")])
+
+
+@recipe("ENV_Net_Pile", "ORIGINAL")
+def net_pile():
+    """Heap of fishing net with floats, about 1.4 m wide."""
+    parts = [lump("net", (0, 0, 0), (0.7, 0.35, 0.55), "ENV_Net_Green", seed=5, rough=0.25),
+             lump("net2", (0.5, 0, 0.35), (0.4, 0.25, 0.35), "ENV_Net_Green", seed=6, rough=0.25)]
+    for i, (x, z) in enumerate(((-0.3, 0.4), (0.2, -0.45), (0.6, 0.1), (-0.55, -0.2))):
+        parts.append(sphere(f"f{i}", (x, 0.45, z), 0.07, "ENV_Buoy_Orange", segments=8))
+    return join("ENV_Net_Pile", parts)
+
+
+@recipe("ENV_Quay_Steps", "CREATE_DERIVED")
+def quay_steps():
+    """Stone steps running down the quay face to the water (1.6 m drop, 1.2 m wide), outer side wall.
+    Top step at y = 0 against the coping line (z = 0), descending towards +x."""
+    parts = []
+    n = 8
+    for i in range(n):
+        y = -0.2 * (i + 1)
+        parts.append(box(f"st{i}", (i * 0.35, y, 0.1), (i * 0.35 + 0.37, y + 0.2, 1.3), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.01))
+        parts.append(box(f"fill{i}", (i * 0.35, -3.2, 0.1), (i * 0.35 + 0.37, y, 1.3), "MI_UnevenBrick"))
+    parts.append(box("cheek", (-0.05, -3.2, 1.3), (n * 0.35 + 0.1, 0.0, 1.55), "MI_UnevenBrick"))
+    parts.append(box("cap", (-0.05, 0.0, 1.25), (n * 0.35 + 0.1, 0.12, 1.6), "MI_RockTrim", uv="band", band=ROCK_ASHLAR))
+    return join("ENV_Quay_Steps", parts)
+
+
+@recipe("ENV_Slipway", "CREATE_DERIVED")
+def slipway():
+    """Concrete slipway ramp 4 m wide, 7 m long, dropping 1.8 m into the water (+z), stone kerbs."""
+    bm = bmesh.new()
+    pts = [U(-2, 0, 0), U(2, 0, 0), U(2, -1.8, 7), U(-2, -1.8, 7)]
+    bm.faces.new([bm.verts.new(p) for p in pts])
+    ramp = new_object("ramp", bm)
+    ramp.data.materials.append(material("ENV_Ground_Concrete"))
+    sol = ramp.modifiers.new("t", "SOLIDIFY")
+    sol.thickness = 0.3
+    bpy.context.view_layer.objects.active = ramp
+    bpy.ops.object.modifier_apply(modifier="t")
+    uv_box(ramp)
+    parts = [ramp]
+    for sx in (-2.1, 2.1):
+        k = loft(f"kerb{sx}", [(0, [(sx - 0.1, -0.3), (sx + 0.1, -0.3), (sx + 0.1, 0.1), (sx - 0.1, 0.1)]),
+                               (7, [(sx - 0.1, -2.1), (sx + 0.1, -2.1), (sx + 0.1, -1.7), (sx - 0.1, -1.7)])], "MI_RockTrim")
+        uv_band(k, ROCK_SLAB)
+        parts.append(k)
+    return join("ENV_Slipway", parts)
+
+
+@recipe("ENV_Parapet_2m", "CREATE_DERIVED")
+def parapet():
+    """Low stone parapet (0.75 m) with granite coping — designed edge for overlooks and terraces."""
+    return join("ENV_Parapet_2m", [box("body", (-1.0, 0, -0.2), (1.0, 0.62, 0.2), "MI_UnevenBrick"),
+                                   box("cope", (-1.02, 0.62, -0.26), (1.02, 0.76, 0.26), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.02)])
+
+
+@recipe("ENV_Parapet_Rail_2m", "CREATE_DERIVED")
+def parapet_rail():
+    """Stone upstand (0.45 m) with a painted iron rail above it — the public waterfront edge treatment."""
+    parts = [box("body", (-1.0, 0, -0.18), (1.0, 0.36, 0.18), "MI_UnevenBrick"),
+             box("cope", (-1.02, 0.36, -0.22), (1.02, 0.46, 0.22), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.015)]
+    for x in (-0.95, 0.0, 0.95):
+        parts.append(cylinder(f"post{x}", (x, 0.76, 0), 0.028, 0.6, "ENV_Metal_Iron", segments=8))
+    parts.append(tube("rail", (-1.0, 1.06, 0), (1.0, 1.06, 0), 0.03, "ENV_Metal_Iron"))
+    parts.append(tube("rail2", (-1.0, 0.78, 0), (1.0, 0.78, 0), 0.018, "ENV_Metal_Iron"))
+    return join("ENV_Parapet_Rail_2m", parts)
+
+
+@recipe("ENV_Mooring_Line", "ORIGINAL")
+def mooring_line():
+    """Unit mooring rope along +z (1 m); the assembler stretches it from bollard to boat."""
+    return join("ENV_Mooring_Line", [tube("r", (0, 0, 0), (0, 0, 1), 0.02, "ENV_Rope")])
 
 
 # ---------------------------------------------------------------- driver

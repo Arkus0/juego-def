@@ -75,16 +75,56 @@
     {
       "id": "U19_Ground_Frontage_Vocabulary",
       "issues": []
+    },
+    {
+      "id": "U20_Landmark_Tower_4x4",
+      "issues": []
+    },
+    {
+      "id": "U21_Plaza_Node_16x12",
+      "issues": []
+    },
+    {
+      "id": "U22_Quay_Composed_24m",
+      "issues": []
+    },
+    {
+      "id": "U23_Core_House_Narrow_Stone",
+      "issues": []
+    },
+    {
+      "id": "U24_Core_House_Stone_Solana",
+      "issues": []
     }
   ],
   "scenes": [
     {
+      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes.unity",
+      "stats": {
+        "thresholds": 37,
+        "openWalkable": 4,
+        "closedBlocked": 33,
+        "renderers": 2774
+      },
+      "issues": []
+    },
+    {
+      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes_KitPalette.unity",
+      "stats": {
+        "thresholds": 37,
+        "openWalkable": 4,
+        "closedBlocked": 33,
+        "renderers": 2774
+      },
+      "issues": []
+    },
+    {
       "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_DemoA_Commercial_To_Quay.unity",
       "stats": {
-        "thresholds": 21,
+        "thresholds": 20,
         "openWalkable": 2,
-        "closedBlocked": 19,
-        "renderers": 1070
+        "closedBlocked": 18,
+        "renderers": 1194
       },
       "issues": []
     },
@@ -94,7 +134,7 @@
         "thresholds": 10,
         "openWalkable": 0,
         "closedBlocked": 10,
-        "renderers": 622
+        "renderers": 660
       },
       "issues": []
     }
@@ -108,7 +148,8 @@
       "open service shortcut": "DETECTED",
       "machine-local material": "DETECTED",
       "duplicated tile": "DETECTED",
-      "open party wall": "DETECTED"
+      "open party wall": "DETECTED",
+      "service across an opening": "DETECTED"
     },
     "missed": 0,
     "issuesReported": [
@@ -122,6 +163,7 @@
       "building Deep threshold not on the street surface",
       "open party wall: Deep Side_L storey 0 at local z -7,2",
       "open party wall: Deep Side_L storey 1 at local z -7,2",
+      "ENV_SERVICE_CLASH ENV_Downpipe crosses DoorFrame_Flat_Brick at SelfTest/Piped/Dressing/ENV_Downpipe",
       "duplicated coplanar tile SelfTest/Floor_Brick"
     ]
   }

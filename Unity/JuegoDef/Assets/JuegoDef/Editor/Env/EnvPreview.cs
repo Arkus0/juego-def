@@ -7,8 +7,8 @@ using UnityEngine.Rendering;
 
 namespace JuegoDef.Env
 {
-    /// <summary>Preview stage + camera capture used by the operator loop (observe step) and for library evidence.
-    /// Uses the project URP volume and an overcast-leaning sun so previews match the game baseline.</summary>
+    /// <summary>Preview stage + camera capture used by the operator loop (observe step) and for library evidence,
+    /// lit with the ENV look-development preset so previews judge materials under the intended mood.</summary>
     public static class EnvPreview
     {
         public static Transform NewStage(string rootName = "Stage", bool ground = true)
@@ -25,23 +25,8 @@ namespace JuegoDef.Env
             return new GameObject(rootName).transform;
         }
 
-        public static void Lighting()
-        {
-            var sunGo = GameObject.Find("Directional Light") ?? new GameObject("Directional Light", typeof(Light));
-            sunGo.transform.rotation = Quaternion.Euler(38, 150, 0);
-            var sun = sunGo.GetComponent<Light>();
-            sun.type = LightType.Directional;
-            sun.intensity = 1.5f;
-            sun.useColorTemperature = true;
-            sun.colorTemperature = 6800;
-            sun.shadows = LightShadows.Soft;
-            if (!Object.FindFirstObjectByType<Volume>())
-            {
-                var vol = new GameObject("GlobalVolume").AddComponent<Volume>();
-                vol.isGlobal = true;
-                vol.sharedProfile = AssetDatabase.LoadAssetAtPath<VolumeProfile>("Assets/JuegoDef/Rendering/JD_DefaultVolumeProfile.asset");
-            }
-        }
+        /// <summary>Look-development lighting (see <see cref="EnvLighting"/>): damp Atlantic overcast by default.</summary>
+        public static void Lighting(string preset = "atlantic_overcast") => EnvLighting.Apply(preset);
 
         /// <summary>Renders <paramref name="camera"/> (or a temporary camera) to a PNG under the project folder.</summary>
         public static string Capture(string projectRelativePng, Vector3 position, Vector3 lookAt, float fov = 50, int width = 1600, int height = 900)
@@ -58,7 +43,11 @@ namespace JuegoDef.Env
             data.antialiasing = UnityEngine.Rendering.Universal.AntialiasingMode.SubpixelMorphologicalAntiAliasing;
             var rt = new RenderTexture(width, height, 24, RenderTextureFormat.ARGB32) { antiAliasing = 4 };
             cam.targetTexture = rt;
+            // freshly generated material variants would otherwise render invisible while shaders compile async
+            bool asyncWas = ShaderUtil.allowAsyncCompilation;
+            ShaderUtil.allowAsyncCompilation = false;
             cam.Render();
+            ShaderUtil.allowAsyncCompilation = asyncWas;
             RenderTexture.active = rt;
             var tex = new Texture2D(width, height, TextureFormat.RGB24, false);
             tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);

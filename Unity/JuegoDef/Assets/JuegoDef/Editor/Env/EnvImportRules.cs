@@ -29,8 +29,12 @@ namespace JuegoDef.Env
             bool normal = file.Contains("Normal");
             importer.textureType = normal ? TextureImporterType.NormalMap : TextureImporterType.Default;
             importer.sRGBTexture = !normal && !file.Contains("ORM") && !file.Contains("Roughness");
-            importer.alphaIsTransparency = file.Contains("Leaf") || file.Contains("Leaves") || file.Contains("Grass") || file.Contains("Flowers");
+            bool foliage = file.Contains("Leaf") || file.Contains("Leaves") || file.Contains("Grass") || file.Contains("Flowers");
+            importer.alphaIsTransparency = foliage;
             importer.mipmapEnabled = true;
+            // alpha-tested foliage vanishes at distance unless mips keep their alpha coverage
+            importer.mipMapsPreserveCoverage = foliage;
+            importer.alphaTestReferenceValue = 0.45f;
         }
 
         void OnPreprocessModel()

@@ -1,0 +1,262 @@
+{
+ "attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+ "osm_base": "2026-07-24T11:04:51Z",
+ "streets": {
+  "Doctor Encinas": {
+   "length_m": 155,
+   "width_facade_to_facade_p10_p50_p90": [
+    5.6,
+    6.5,
+    18.9
+   ],
+   "width_min_max": [
+    5.5,
+    23.8
+   ],
+   "frontage_p10_p50_p90": [
+    5.0,
+    9.0,
+    14.8
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    0.3,
+    0.8
+   ],
+   "jogs_over_0_5m_share": 0.29,
+   "open_side_share": 0.3,
+   "straight_runs_m": [
+    71.3,
+    49.8,
+    8.7,
+    9.1,
+    16.0
+   ],
+   "bend_angles_deg": [
+    -5.5,
+    -9.5,
+    -39.9,
+    -13.0
+   ]
+  },
+  "del Obispo": {
+   "length_m": 116,
+   "width_facade_to_facade_p10_p50_p90": [
+    4.1,
+    6.4,
+    23.6
+   ],
+   "width_min_max": [
+    2.8,
+    27.0
+   ],
+   "frontage_p10_p50_p90": [
+    5.0,
+    7.0,
+    21.0
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    1.1,
+    5.3
+   ],
+   "jogs_over_0_5m_share": 0.73,
+   "open_side_share": 0.14,
+   "straight_runs_m": [
+    20.2,
+    2.5,
+    13.8,
+    16.5,
+    20.1,
+    29.0,
+    5.4,
+    9.3
+   ],
+   "bend_angles_deg": [
+    22.1,
+    39.0,
+    20.5,
+    55.9,
+    -13.3,
+    17.2,
+    15.6
+   ]
+  },
+  "ntabra": {
+   "length_m": 61,
+   "width_facade_to_facade_p10_p50_p90": [
+    4.4,
+    4.5,
+    11.7
+   ],
+   "width_min_max": [
+    4.4,
+    16.2
+   ],
+   "frontage_p10_p50_p90": [
+    5.2,
+    8.0,
+    10.0
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    0.1,
+    2.8
+   ],
+   "jogs_over_0_5m_share": 0.18,
+   "open_side_share": 0.1,
+   "straight_runs_m": [
+    10.1,
+    6.1,
+    45.4
+   ],
+   "bend_angles_deg": [
+    51.2,
+    -73.8
+   ]
+  },
+  "Cimavilla": {
+   "length_m": 96,
+   "width_facade_to_facade_p10_p50_p90": [
+    2.8,
+    7.7,
+    15.3
+   ],
+   "width_min_max": [
+    1.4,
+    22.7
+   ],
+   "frontage_p10_p50_p90": [
+    4.0,
+    9.0,
+    14.5
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    1.3,
+    3.4
+   ],
+   "jogs_over_0_5m_share": 0.75,
+   "open_side_share": 0.09,
+   "straight_runs_m": [
+    27.4,
+    18.5,
+    31.7,
+    8.1,
+    10.3
+   ],
+   "bend_angles_deg": [
+    -7.3,
+    -10.7,
+    -40.8,
+    -19.1
+   ]
+  },
+  "de la Solana": {
+   "length_m": 89,
+   "width_facade_to_facade_p10_p50_p90": [
+    2.4,
+    4.8,
+    18.6
+   ],
+   "width_min_max": [
+    2.2,
+    21.4
+   ],
+   "frontage_p10_p50_p90": [
+    2.0,
+    6.0,
+    14.2
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    1.0,
+    5.9
+   ],
+   "jogs_over_0_5m_share": 0.69,
+   "open_side_share": 0.32,
+   "straight_runs_m": [
+    8.2,
+    18.9,
+    14.4,
+    28.0,
+    14.8,
+    5.3
+   ],
+   "bend_angles_deg": [
+    24.9,
+    -8.2,
+    -127.7,
+    7.2,
+    13.2
+   ]
+  },
+  "del Llano": {
+   "length_m": 78,
+   "width_facade_to_facade_p10_p50_p90": [
+    2.6,
+    6.9,
+    21.3
+   ],
+   "width_min_max": [
+    1.6,
+    24.8
+   ],
+   "frontage_p10_p50_p90": [
+    3.2,
+    9.5,
+    22.7
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    1.6,
+    8.1
+   ],
+   "jogs_over_0_5m_share": 0.7,
+   "open_side_share": 0.2,
+   "straight_runs_m": [
+    35.4,
+    36.3,
+    6.7
+   ],
+   "bend_angles_deg": [
+    47.0,
+    43.7
+   ]
+  },
+  "de San Pedro": {
+   "length_m": 61,
+   "width_facade_to_facade_p10_p50_p90": [
+    2.9,
+    4.8,
+    20.6
+   ],
+   "width_min_max": [
+    2.8,
+    22.1
+   ],
+   "frontage_p10_p50_p90": [
+    7.8,
+    10.0,
+    21.6
+   ],
+   "setback_jog_between_neighbours_p50_p90": [
+    2.3,
+    2.6
+   ],
+   "jogs_over_0_5m_share": 1.0,
+   "open_side_share": 0.44,
+   "straight_runs_m": [
+    61.6
+   ],
+   "bend_angles_deg": []
+  }
+ },
+ "footprints": {
+  "count": 176,
+  "short_side_p10_p50_p90": [
+   5.7,
+   9.4,
+   15.7
+  ],
+  "long_side_p10_p50_p90": [
+   8.9,
+   14.8,
+   24.1
+  ]
+ }
+}

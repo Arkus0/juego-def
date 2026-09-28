@@ -1,0 +1,94 @@
+{
+ "ENV01_DemoA_Commercial_To_Quay.json": {
+  "segments": 1,
+  "segment_lengths_m": [
+   42
+  ],
+  "facade_to_facade_widths_m": [
+   8
+  ],
+  "bends_deg": [],
+  "frontages_m_p10_p50_p90": [
+   4,
+   6.0,
+   8
+  ],
+  "buildings": 12,
+  "neighbour_jogs_over_0_25m": "0/9",
+  "height_to_width_min_med_max": [
+   1.12,
+   1.12,
+   1.5
+  ],
+  "floors": [
+   3,
+   4
+  ]
+ },
+ "ENV01_DemoB_Upper_Lane.json": {
+  "segments": 1,
+  "segment_lengths_m": [
+   28
+  ],
+  "facade_to_facade_widths_m": [
+   6
+  ],
+  "bends_deg": [],
+  "frontages_m_p10_p50_p90": [
+   4,
+   6.0,
+   8
+  ],
+  "buildings": 10,
+  "neighbour_jogs_over_0_25m": "0/7",
+  "height_to_width_min_med_max": [
+   1.0,
+   1.5,
+   2.0
+  ],
+  "floors": [
+   2,
+   3,
+   4
+  ]
+ },
+ "ENV01_CascoRef_Potes.json": {
+  "segments": 5,
+  "segment_lengths_m": [
+   20.0,
+   16.0,
+   22.0,
+   14.0,
+   12.0
+  ],
+  "facade_to_facade_widths_m": [
+   6.2,
+   6.2,
+   13,
+   4.4,
+   3.6
+  ],
+  "bends_deg": [
+   7.0,
+   -0.0,
+   -12.0,
+   -14.0
+  ],
+  "frontages_m_p10_p50_p90": [
+   4,
+   6.0,
+   8
+  ],
+  "buildings": 28,
+  "neighbour_jogs_over_0_25m": "12/14",
+  "height_to_width_min_med_max": [
+   0.69,
+   1.45,
+   2.5
+  ],
+  "floors": [
+   3,
+   4
+  ]
+ }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "ENV01_CascoRef_Potes",
+  "brief": "CASCO composition test traced from a real reference (owner request 2026-09-28): the Potes node where a gently bending main street reaches a small plaza, a singular tower closes the view and the street carries on narrower with its axis shifted (Doctor Encinas / Plaza Capitan Palacios / Torre / Calle Cantabra morphology, measured from OpenStreetMap). Our kit, our town: no Potes names, signs or landmarks. Casco only: the port is another district; the short lane north of the plaza ends at a parapet where the future transition down to the port will start. Composition test only - not B0 keeper geometry.",
+  "reference": "Docs/evidence/WP-PROD-ENV-01/CASCO_REFERENCE_STUDY.md",
+  "path": [[0, 0], [20, 0], [35.88, 1.95], [57.72, 4.63], [71.67, 3.41], [83.02, -0.50]],
+  "segments": [
+    {
+      "id": "M1_MainStreet", "width": 6.2, "ground": "core", "pavement": 0.9,
+      "rows": {
+        "south": [
+          { "unit": "U04_Lodging_Frontage_10m", "palette": "core_cream_oxblood", "seed": 3, "ground": "stone" },
+          { "unit": "U23_Core_House_Narrow_Stone", "seed": 71, "setback": 0.4 },
+          { "gap": 1.8 },
+          { "unit": "U03_Shop_Witness_Threshold", "palette": "core_ochre_chestnut", "ground": "stone", "awning": "" }
+        ],
+        "north": [
+          { "unit": "U08_Closed_Residential_8m_4F", "palette": "core_lime_chestnut", "seed": 81, "ground": "stone", "rows": null },
+          { "unit": "U01_Mixed_Commercial_8m", "palette": "core_ochre_chestnut", "seed": 82, "awning": "ENV_Canvas_Cream", "setback": -0.3 },
+          { "unit": "U07_Closed_Narrow_4m", "palette": "core_sandstone_chestnut", "seed": 83, "ground": "stone", "setback": 0.5, "era": "neglected" }
+        ]
+      }
+    },
+    {
+      "id": "M2_MainStreetBend", "width": 6.2, "ground": "core", "pavement": 0.9,
+      "rows": {
+        "south": [
+          { "unit": "U06_Closed_Residential_6m", "palette": "core_lime_oxblood", "seed": 91, "ground": "stone" },
+          { "unit": "U02_Mixed_Gallery_6m", "palette": "core_cream_oxblood", "seed": 92, "rows": null },
+          { "unit": "U23_Core_House_Narrow_Stone", "palette": "core_ochre_chestnut", "seed": 93, "setback": 0.6 }
+        ],
+        "north": [
+          { "unit": "U24_Core_House_Stone_Solana", "seed": 94 },
+          { "unit": "U07_Closed_Narrow_4m", "palette": "core_lime_oxblood", "seed": 95, "ground": "stone", "setback": 0.4, "era": "reformed" },
+          { "unit": "U05_Corner_Mixed_8x8", "name": "PlazaCornerBar", "bays": 3, "depth": 6, "floors": 4, "palette": "core_cream_oxblood", "seed": 96,
+            "rows": ["SSE", "", "", ""], "cornerEntrance": true, "cornerSide": "left", "exposeLeft": true, "exposeRight": false,
+            "left": ["SEP", "WPW", "cPW", "wPw"], "right": null }
+        ]
+      }
+    },
+    {
+      "id": "P_PlazaNode", "width": 13, "shift": 2.5, "ground": "plaza",
+      "rows": {
+        "south": [
+          { "unit": "U02_Mixed_Gallery_6m", "name": "PlazaShop", "palette": "core_lime_chestnut", "seed": 101, "type": "mixed_commercial", "floors": 3, "rows": ["SeS", "", ""], "interior": "shop", "ground": "stone" },
+          { "unit": "U06_Closed_Residential_6m", "palette": "core_sandstone_chestnut", "seed": 102, "upper": "stone", "ground": "stone", "setback": 0.5 },
+          { "unit": "U08_Closed_Residential_8m_4F", "palette": "core_lime_oxblood", "seed": 103, "rows": null, "ground": "stone" },
+          { "unit": "U07_Closed_Narrow_4m", "palette": "core_cream_oxblood", "seed": 104, "era": "neglected" }
+        ],
+        "north": [
+          { "unit": "U06_Closed_Residential_6m", "palette": "core_ochre_chestnut", "seed": 111, "ground": "stone" },
+          { "unit": "U08_Closed_Residential_8m_4F", "palette": "core_sandstone_chestnut", "seed": 112, "floors": 3, "depth": 8, "rows": null, "ground": "stone", "setback": 0.3 },
+          { "gap": 4 },
+          { "unit": "U23_Core_House_Narrow_Stone", "palette": "core_lime_chestnut", "seed": 113 }
+        ]
+      }
+    },
+    {
+      "id": "C1_NarrowStreet", "width": 4.4, "shift": -3.4, "ground": "lane",
+      "rows": {
+        "south": [
+          { "unit": "U24_Core_House_Stone_Solana", "seed": 121 },
+          { "gap": 1.5 },
+          { "unit": "U06_Closed_Residential_6m", "palette": "core_lime_oxblood", "seed": 122, "setback": 0.8, "ground": "stone" }
+        ],
+        "north": [
+          { "unit": "U23_Core_House_Narrow_Stone", "palette": "core_cream_oxblood", "seed": 123 },
+          { "unit": "U06_Closed_Residential_6m", "palette": "core_lime_chestnut", "seed": 124, "bays": 2, "setback": -0.4, "ground": "stone" },
+          { "unit": "U07_Closed_Narrow_4m", "palette": "core_ochre_chestnut", "seed": 125, "setback": 0.5, "ground": "stone", "era": "reformed" }
+        ]
+      }
+    },
+    {
+      "id": "C2_LaneBend", "width": 3.6, "shift": -3.4, "ground": "lane",
+      "rows": {
+        "south": [
+          { "unit": "U07_Closed_Narrow_4m", "palette": "core_lime_chestnut", "seed": 131, "ground": "stone" },
+          { "gap": 1.8 },
+          { "unit": "U06_Closed_Residential_6m", "palette": "core_cream_oxblood", "seed": 132, "bays": 2, "setback": -0.4, "ground": "stone", "era": "neglected" }
+        ],
+        "north": [
+          { "unit": "U08_Closed_Residential_8m_4F", "palette": "core_sandstone_chestnut", "seed": 133, "floors": 3, "upper": "stone", "rows": null, "ground": "stone" },
+          { "unit": "U07_Closed_Narrow_4m", "palette": "core_lime_oxblood", "seed": 134, "setback": 0.6, "ground": "stone" }
+        ]
+      }
+    }
+  ],
+  "templates": [
+    { "name": "NodeTower", "unit": "U20_Landmark_Tower_4x4", "segment": 2, "at": [18, 0, 3], "rotY": -90 },
+    { "name": "PlazaNEHouse", "unit": "U23_Core_House_Narrow_Stone", "segment": 2, "at": [22, 0, 9], "rotY": -90, "overrides": { "seed": 141, "palette": "core_ochre_chestnut", "exposeLeft": true, "exposeRight": true, "rows": ["DP", "", ""] } },
+    { "name": "PlazaLife", "kind": "plaza", "segment": 2, "at": [2.5, 0, 5], "params": { "w": 12, "d": 7, "trees": 2, "terrace": true, "seed": 5, "floor": false } },
+    { "name": "ToPortLaneFloor", "kind": "street_ground", "segment": 2, "at": [18, 0, 13], "rotY": -90, "params": { "length": 8, "width": 4, "style": "lane", "seed": 7 } },
+    { "name": "ToPortParapet", "kind": "cluster", "segment": 2, "at": [14, 0, 20.6], "parts": [["ENV_Parapet_Rail_2m", 1, 0, 0, 0], ["ENV_Parapet_Rail_2m", 3, 0, 0, 0], ["ENV_Sign_Direction", 3.4, 0, -7.4, 0]] },
+    { "name": "LaneEndHouse", "unit": "U09_Terrace_End_Termination", "segment": 4, "at": [12, 0, -1.4], "rotY": -90, "overrides": { "bays": 3, "seed": 142, "palette": "core_lime_chestnut", "exposeLeft": true, "exposeRight": true, "ground": "stone" } }
+  ],
+  "spawn": { "segment": 0, "at": [1.5, 0.2, 3.2] },
+  "route": [
+    { "segment": 0, "at": [4.41, 0, 1.2] }, { "segment": 0, "at": [4.41, 0, -2.6] }, { "segment": 0, "at": [4.41, 0, 1.2] },
+    { "segment": 0, "at": [17.25, 0, 1.0] }, { "segment": 0, "at": [17.25, 0, -1.3] }, { "segment": 0, "at": [17.25, 0, 1.0] },
+    { "segment": 0, "at": [18, 0, 3.2] }, { "segment": 1, "at": [8, 0, 3.0] },
+    { "segment": 2, "at": [2.57, 0, 1.2] }, { "segment": 2, "at": [2.57, 0, -1.3] }, { "segment": 2, "at": [2.57, 0, 1.2] },
+    { "segment": 2, "at": [4, 0, 4] }, { "segment": 2, "at": [13, 0, 3] }, { "segment": 2, "at": [16, 0, 10] },
+    { "segment": 2, "at": [16, 0, 18] }, { "segment": 2, "at": [16, 0, 10] }, { "segment": 2, "at": [17, 0, 1.5] },
+    { "segment": 3, "at": [3, 0, 2.2] }, { "segment": 3, "at": [12, 0, 2.2] }, { "segment": 4, "at": [5, 0, 1.8] },
+    { "segment": 4, "at": [10.5, 0, 1.8] }, { "segment": 3, "at": [6, 0, 2.2] }, { "segment": 2, "at": [10, 0, 2.5] },
+    { "segment": 1, "at": [8, 0, 3.0] }, { "segment": 0, "at": [3, 0, 3.2] }
+  ]
+}

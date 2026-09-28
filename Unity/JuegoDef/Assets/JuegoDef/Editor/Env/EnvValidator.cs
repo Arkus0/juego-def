@@ -13,8 +13,8 @@ namespace JuegoDef.Env
     /// Step 5 of the ENV factory: cheap validation of library units and street scenes. Catches the failure classes
     /// met while building this factory: blocked/short thresholds, service doors that open a shortcut, missing or
     /// machine-local vendor materials (white props), Unity primitives presented as architecture, banned kit pieces
-    /// that carry medieval/alpine cues, floating/sunk units, facade bays without collision and duplicated
-    /// coplanar tiles. Menu: JuegoDef > ENV > 5 Validate; batch: -executeMethod JuegoDef.Env.EnvValidator.RunBatch
+    /// that carry medieval/alpine cues, floating/sunk units, facade bays without collision, open party walls, downpipes/cables
+    /// crossing openings and duplicated coplanar tiles. Menu: JuegoDef > ENV > 5 Validate; batch: -executeMethod JuegoDef.Env.EnvValidator.RunBatch
     /// </summary>
     public static class EnvValidator
     {
@@ -32,6 +32,7 @@ namespace JuegoDef.Env
         public static int Validate(bool log)
         {
             var policy = JObject.Parse(EnvKit.ReadText(EnvKit.Grammar + "/validation.json"));
+            EnvClearance.ClearCache();
             var report = new JObject { ["units"] = new JArray(), ["scenes"] = new JArray() };
             int total = 0;
             var units = JObject.Parse(EnvKit.ReadText(EnvKit.Specs + "/units.json"))["units"];
@@ -139,8 +140,10 @@ namespace JuegoDef.Env
             if (kind == "scene")
                 foreach (var bld in root.GetComponentsInChildren<Transform>(true).Where(t => t.parent && t.parent.name.StartsWith("Row_")))
                 {
+                    // lowest surface under the frontage: props standing on the street (crates, pots, bins) are not the street
                     var origin = bld.position + bld.forward * 0.6f + bld.right * 0.5f + Vector3.up * 0.5f;
-                    if (!Physics.Raycast(origin, Vector3.down, out var hit, 2f) || Mathf.Abs(hit.point.y - bld.position.y) > 0.06f)
+                    var hits = Physics.RaycastAll(origin, Vector3.down, 2f, ~0, QueryTriggerInteraction.Ignore);
+                    if (hits.Length == 0 || Mathf.Abs(hits.Min(h => h.point.y) - bld.position.y) > 0.06f)
                         issues.Add($"building {bld.name} threshold not on the street surface");
                 }
 
@@ -176,6 +179,32 @@ namespace JuegoDef.Env
                 }
             }
 
+            // 6c. services (downpipes, service cables) never cross openings, joinery, shutters, balconies, fascias, signs
+            //     or quoins — exact triangle test in their building frame against the building and its row neighbours
+            //     (owner review 2026-09-28: "tuberías que atraviesan ventanas, fachadas y puertas")
+            var fields = new Dictionary<Transform, EnvClearance.Field>();
+            foreach (var svc in root.GetComponentsInChildren<Transform>(true))
+            {
+                var module = EnvClearance.ModuleName(svc.gameObject);
+                if (!EnvClearance.IsService(module) || (svc.parent && EnvClearance.ModuleName(svc.parent.gameObject) == module)) continue;
+                var bld = svc.parent;
+                while (bld && !bld.Find("Front")) bld = bld.parent;
+                if (!bld) continue;
+                if (!fields.TryGetValue(bld, out var field))
+                {
+                    var row = bld.parent && bld.parent.name.StartsWith("Row_")
+                        ? bld.parent.Cast<Transform>().Where(t => t.Find("Front")).ToList()
+                        : new List<Transform> { bld };
+                    fields[bld] = field = EnvClearance.Field.Of(bld, row);
+                }
+                bool pipe = module == EnvClearance.Pipe;
+                var (core, sweep) = EnvClearance.ServiceBoxes(bld, svc.gameObject, 0.01f);
+                var hitItem = field.Hit(core, it => it.go != svc.gameObject && !it.module.StartsWith("ENV_Plinth") && it.module != (pipe ? EnvClearance.Cable : EnvClearance.Pipe));
+                if (hitItem == null && sweep.HasValue)
+                    hitItem = field.Hit(sweep.Value, it => it.go != svc.gameObject && !EnvClearance.IsStandOff(it.module) && !EnvClearance.IsService(it.module));
+                if (hitItem != null) issues.Add($"ENV_SERVICE_CLASH {module} crosses {hitItem.module} at {Path(svc)}");
+            }
+
             // 7. duplicated coplanar tiles (z-fighting)
             var seen = new HashSet<string>();
             foreach (var mf in root.GetComponentsInChildren<MeshFilter>(true).Where(m => m.sharedMesh && m.sharedMesh.name.StartsWith("Floor_")))
@@ -201,6 +230,7 @@ namespace JuegoDef.Env
         {
             var policy = JObject.Parse(EnvKit.ReadText(EnvKit.Grammar + "/validation.json"));
             EnvPreview.NewStage("SelfTest", ground: false);
+            EnvClearance.ClearCache();
             var root = new GameObject("SelfTest");
             // floor under everything so thresholds are cast over a real surface
             EnvTemplates.Tiles(root.transform, "Floor_Brick", -4, 12, -4, 4, 0, null);
@@ -236,6 +266,10 @@ namespace JuegoDef.Env
             BuildingAssembler.Build(new BuildingSpec { id = "Shallow", type = "closed_residential", bays = 2, depth = 6, floors = 2, seed = 1, palette = "cream_green", dress = false, partyRight = 2 }, row);
             var deep = BuildingAssembler.Build(new BuildingSpec { id = "Deep", type = "closed_residential", bays = 2, depth = 8, floors = 2, seed = 2, palette = "cream_green", dress = false, partyLeft = 2 }, row);
             deep.transform.localPosition = new Vector3(4, 0, 0);
+            // (h) a rain-water pipe run down the middle of a door and a window
+            var piped = BuildingAssembler.Build(new BuildingSpec { id = "Piped", type = "closed_residential", bays = 2, depth = 6, floors = 2, seed = 3, palette = "cream_green", dress = false, rows = new[] { "DP", "wP" } }, root.transform);
+            piped.transform.localPosition = new Vector3(40, 0, 0);
+            EnvKit.Place(EnvClearance.Pipe, EnvKit.Group(piped.transform, "Dressing"), new Vector3(1, 0, 0.16f), 0, new Vector3(1, 2, 1));
             Physics.SyncTransforms();
 
             var issues = new List<string>();
@@ -249,6 +283,7 @@ namespace JuegoDef.Env
                 { "machine-local material", "machine-local vendor material" },
                 { "duplicated tile", "duplicated coplanar tile" },
                 { "open party wall", "open party wall: Deep" },
+                { "service across an opening", "ENV_SERVICE_CLASH ENV_Downpipe" },
             };
             var result = new JObject();
             int missed = 0;

@@ -84,6 +84,13 @@ namespace JuegoDef.Env
                     foreach (var mf in inst.GetComponentsInChildren<MeshFilter>())
                         if (!mf.GetComponent<Collider>()) mf.gameObject.AddComponent<MeshCollider>().sharedMesh = mf.sharedMesh;
                     break;
+                case "trunk":
+                    var tb = EnvPreview.BoundsOf(inst);
+                    var cap = root.AddComponent<CapsuleCollider>();
+                    cap.radius = 0.25f;
+                    cap.height = 3f;
+                    cap.center = new Vector3(tb.center.x - root.transform.position.x, 1.5f, tb.center.z - root.transform.position.z);
+                    break;
                 case "box":
                     var b = EnvPreview.BoundsOf(inst);
                     var bc = root.AddComponent<BoxCollider>();

@@ -1,0 +1,12 @@
+{
+  "extends": "ENV01_CascoRef_Potes",
+  "id": "ENV01_CascoRef_Potes_KitPalette",
+  "brief": "A/B control for the CASCO reference test: identical traced layout, buildings, eras and seeds, but the round-2 kit palette families instead of the Liebana-type core palettes. Isolates the effect of the layout from the effect of the palette.",
+  "paletteMap": {
+    "core_lime_chestnut": "white_blue",
+    "core_sandstone_chestnut": "port_stone",
+    "core_ochre_chestnut": "ochre_white",
+    "core_lime_oxblood": "sage_oxblood",
+    "core_cream_oxblood": "cream_green"
+  }
+}
