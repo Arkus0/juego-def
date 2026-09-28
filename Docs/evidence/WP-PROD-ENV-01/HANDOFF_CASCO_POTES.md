@@ -3,6 +3,12 @@
 Fecha: 2026-09-28. Sesión saliente: Worker WP-PROD-ENV-01 (Claude Code). Destino: nueva sesión.
 Este documento sustituye al contexto del chat; léelo entero antes de tocar nada.
 
+> **Estado 2026-09-29 (sesión siguiente):** encargo ejecutado hasta el hito 4. Las decisiones del owner (ENV-01 sigue
+> abierto, caja A, río pequeño encajonado en el borde, 70/20/10, referencia como alma y no como calco, pasada de
+> calidad de assets) y el resultado están en [CASCO_REFERENCE_STUDY.md](CASCO_REFERENCE_STUDY.md); las reglas en
+> [`ENV_COMPOSITION_RULES.md`](../../production/ENV_COMPOSITION_RULES.md). Distrito: `Env/Specs/districts/ENV01_Casco_District*.json`,
+> `JuegoDef > ENV > 7 Build District (CASCO)`; sonda 139/139; validación 0 problemas. Este documento queda como historia.
+
 ## 1. Encargo del owner para la nueva sesión
 
 > "La demo C está genial pero hay que ahondar más en estilo visual Potes, aumentar el distrito hasta tamaño real
