@@ -15,11 +15,29 @@ This WP does **not** pass because one street looks good. It passes when the mach
 
 - Visual Bible
 - Port Town World Model
+- [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md)
 - Quaternius Production Knowledge
 - [`../research/EXISTING_ASSET_PIPELINE_RESEARCH.md`](../research/EXISTING_ASSET_PIPELINE_RESEARCH.md)
 - `PROD-ASSET-00` catalogue/lineage conventions
 - Production Authoring Decision (`BOUNDED_OPERATOR`)
 - bootstrap/M0 gameplay-scale evidence where available
+
+## B0 demand — factory must serve the product
+
+The first factory batch must deliberately cover the vocabulary needed by B0 Mercado–Muelle, including meaningful coverage of:
+
+- ordinary mixed commercial frontage;
+- corners/terminations;
+- everyday shop public threshold + separate service logic;
+- lodging frontage/entrance language;
+- closed ordinary frontage fabric;
+- stairs/ramps/retaining/railings for upper/port loops;
+- public quay/working-water edge distinct from controlled work yard;
+- port/market/street props;
+- signage mounting and material/palette variants;
+- shallow interior/threshold kit.
+
+Factory work may discover better ways to realize those roles, but it may not drift into making an unrelated generic medieval/urban kit while B0 remains unsupported.
 
 ## Mandatory reuse-first spike
 
@@ -64,52 +82,34 @@ By PASS, retain:
 6. donor-component extraction / derived-asset path using Blender/source editing where needed;
 7. assembly templates/rules for facades, corners, thresholds, ground contact and repeated frontage;
 8. cheap validation for scale, missing refs/materials, obvious collision/threshold faults and illegal proxy-as-keeper states;
-9. a non-trivial **factory output batch**.
+9. a non-trivial **factory output batch**;
+10. a `B0_COVERAGE.md` mapping each required B0 role to ready units or explicit gaps.
 
 ## Minimum batch proof
 
-Produce at least **15 reusable environment production units** across multiple roles, with enough diversity that they can make genuinely different streets. A production unit may be a complete prefab or a reusable derived/module set, for example:
+Produce at least **15 reusable environment production units** across multiple roles, with enough diversity that they can make genuinely different streets and with material coverage of B0 demand.
 
-- facade/building variants;
-- corner/termination pieces;
-- shopfront/door/window sets;
-- roof/trim kits;
-- port/market props;
-- street/ground modules;
-- small interior/threshold sets.
+A production unit may be a complete prefab or a reusable derived/module set, for example facade/building variants, corner/termination pieces, shopfront/door/window sets, roof/trim kits, port/market props, street/ground modules or small interior/threshold sets.
 
 Do not satisfy the count with 15 trivial recolours or microscopic pieces that cannot materially vary scenes.
 
 ## Architecture adaptation requirement
 
-The factory must demonstrate all relevant reuse classes on real candidates where available:
-
-- `DIRECT` — already fits;
-- `ADAPTABLE` — material/detail/scale changes;
-- `DONOR` — useful subcomponents extracted from unsuitable whole assets;
-- `CREATE_DERIVED` — new juego-def-owned derivative where the source corpus cannot directly deliver the needed piece.
+The factory must demonstrate all relevant reuse classes on real candidates where available: `DIRECT`, `ADAPTABLE`, `DONOR`, `CREATE_DERIVED`.
 
 Pack names like medieval/fantasy/timber are not automatic rejection. Final composed fit governs acceptance.
 
 ## Assembly grammar
 
-Define enough semantic rules that a worker/operator can request outcomes rather than exact object paths, including:
+Define enough semantic rules that a worker/operator can request outcomes rather than exact object paths, including frontage type/width bands, floor/height/silhouette guidance, corner/termination treatment, door/window rhythm, shop/service frontage roles, threshold/ground contact rules, material/palette families, clutter/signage density and landmark vs ordinary facade roles.
 
-- frontage type/width bands;
-- floor/height/silhouette guidance;
-- corner/termination treatment;
-- door/window rhythm;
-- shop/service frontage roles;
-- threshold/ground contact rules;
-- material/palette families;
-- clutter/signage density;
-- landmark vs ordinary facade roles.
+The grammar must also support the B0 game-space needs from the migrated CITY knowledge: compression/expansion/reveal, readable corners, coherent local elevation, public-vs-controlled waterfront edges and ordinary closed fabric between authored moments.
 
 This is not a procedural city generator. It is a vocabulary for repeatable assisted assembly.
 
 ## Operator/tooling loop
 
-`semantic brief -> catalogue search -> reuse/spike known tooling -> choose/reuse/adapt/derive -> prefab/module output -> validate -> gameplay-scale preview -> correct -> admit to factory library`
+`semantic brief -> B0/product role -> catalogue search -> reuse/spike known tooling -> choose/reuse/adapt/derive -> prefab/module output -> validate -> gameplay-scale preview -> correct -> admit to factory library`
 
 Use MCP in Unity for inspection/assembly/validation and Blender MCP/source tools for mesh derivation when materially useful. Small batch scripts/editor utilities are expected where they turn repeated manual work into routine production.
 
@@ -118,6 +118,7 @@ Use MCP in Unity for inspection/assembly/validation and Blender MCP/source tools
 Retain under `Docs/evidence/WP-PROD-ENV-01/`:
 
 - `REUSE_DECISIONS.md`;
+- `B0_COVERAGE.md`;
 - factory workflow;
 - output inventory with lineage/reuse class;
 - captures/previews of the batch;
@@ -132,6 +133,7 @@ PASS when:
 
 - relevant existing environment pipeline/tool candidates were bounded-tested or explicitly dispositioned before equivalent custom tooling was built;
 - 15+ meaningful reusable production units exist across several environment roles;
+- B0 required environment roles have usable coverage or explicit bounded gaps;
 - operator can discover and manufacture/adapt units without owner-provided exact paths for routine cases;
 - derived assets have clean lineage and live outside vendor packages;
 - common materials/scale/join/collision failure modes have a cheap validation path;
@@ -140,16 +142,8 @@ PASS when:
 
 ## FAIL
 
-FAIL if:
-
-- result is one beautiful hand-built scene instead of a factory;
-- batch is mostly trivial variants;
-- every asset still needs bespoke import/material/mesh surgery;
-- operator discovery depends on exact path spoon-feeding;
-- source packages are destructively modified;
-- audited existing solutions were ignored and equivalent functionality rebuilt without evidence;
-- a huge city generator is built instead of modular production tooling.
+FAIL if the result is one beautiful hand-built scene instead of a factory, batch is mostly trivial variants, B0 demand is ignored, every asset still needs bespoke import/material/mesh surgery, operator discovery depends on exact-path spoon-feeding, source packages are destructively modified, audited existing solutions were ignored and equivalent functionality rebuilt without evidence, or a huge city generator is built instead of modular production tooling.
 
 ## Handoff
 
-`WP-PROD-ENV-02` consumes this factory and must prove **scene production at batch scale** with multiple distinct compositions. Only ENV-02 decides whether the current authoring operator should be upgraded to `PRIMARY_AUTHORING_PATH`.
+`WP-PROD-ENV-02` consumes this factory and must prove **scene production at batch scale** with multiple distinct compositions, including at least one composition materially useful to B0. Only ENV-02 decides whether the current authoring operator should be upgraded to `PRIMARY_AUTHORING_PATH`.
