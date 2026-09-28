@@ -11,10 +11,18 @@ Un juego de aventura en tercera persona ambientado en una ciudad portuaria ficti
 
 ## Tecnología
 
-- **Unity** como runtime/editor.
-- **Game Creator 2 first** para gameplay: Core y módulos sólo cuando una feature real los justifique.
-- **Production authoring pendiente de decisión:** Unity directo/manual vs operador AI/MCP principal o bounded, según el benchmark `WP-AI-UNITY-AUTHORING-00` que se está ejecutando en Juego2.
+- **Unity 6000.3.24f1 + URP 17.3** como runtime/editor (proyecto en `Unity/JuegoDef`).
+- **Game Creator 2 first** para gameplay: Core 2.19.61 y módulos sólo cuando una feature real los justifique.
+- **Production authoring: Claude Code + MCP for Unity** como operador de editor en modo `BOUNDED_OPERATOR` provisional; el juicio visual final es humano. El benchmark `WP-AI-UNITY-AUTHORING-00` de Juego2 confirmará o corregirá la decisión.
 - **H0/H1 no se heredan** como foundation. Una pieza causal de Arkus sólo puede reaparecer frente a un problema concreto que GC2/local no resuelva económicamente.
+
+### Abrir el proyecto
+
+1. Instalar Unity **6000.3.24f1**.
+2. Restaurar GC2 Core (licencia por puesto; **nunca se commitea**, el repo es público): `python Tools/gc2-provision.py install`.
+3. Abrir `Unity/JuegoDef` y la escena `Assets/JuegoDef/Scenes/Bootstrap_GC2Core.unity`.
+
+Detalles en [Unity project setup](Docs/production/UNITY_PROJECT_SETUP.md).
 
 ## Dirección visual y producción
 
@@ -24,11 +32,11 @@ No se acepta como objetivo visual final el patrón **greybox + assets pegados**.
 
 ## Estado actual
 
-`juego-def` está siendo preparado como **repo de producción limpio y landing zone del conocimiento útil de Juego2**.
+`juego-def` es el **repo de producción limpio** y la landing zone del conocimiento útil de Juego2 (producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub, dialogue authoring y factories post-foundation).
 
-Ya se migra aquí el conocimiento de producto, Visual Bible, modelo urbano, Quaternius/tooling, GC2 Hub, dialogue authoring y factories post-foundation. La inversión técnica pesada queda deliberadamente en pausa hasta consumir el resultado del benchmark de authoring AI.
+**Bootstrap hecho:** proyecto Unity + URP + GC2 Core con player y cámara en tercera persona caminando en Play Mode, construido por el operador MCP ([evidencia](Docs/evidence/BOOTSTRAP-UNITY-GC2/README.md)).
 
-El siguiente hito jugable sigue siendo **M0 — GC2 Walking Street**, pero no vamos a congelar antes un gran framework de escenarios/personajes que el operador ganador pueda volver innecesario.
+El siguiente hito jugable es **M0 — GC2 Walking Street**. Seguimos sin congelar un gran framework de escenarios/personajes: primero se prueba hasta dónde llega el operador.
 
 ## Documentos clave
 
@@ -36,7 +44,8 @@ El siguiente hito jugable sigue siendo **M0 — GC2 Walking Street**, pero no va
 - [Visual Bible](Docs/design/VISUAL_BIBLE.md)
 - [Modelo de ciudad portuaria](Docs/design/PORT_TOWN_WORLD_MODEL.md)
 - [Arquitectura GC2-first](Docs/architecture/GC2_FIRST_ARCHITECTURE.md)
-- [Decisión pendiente de production authoring](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
+- [Decisión de production authoring (provisional)](Docs/architecture/PRODUCTION_AUTHORING_DECISION.md)
+- [Unity project setup](Docs/production/UNITY_PROJECT_SETUP.md)
 - [Roadmap](Docs/roadmap/ROADMAP.md)
 - [Factories post-foundation](Docs/roadmap/POST_FOUNDATION_PRODUCTION_WPS.md)
 - [Adquisición de módulos](Docs/roadmap/GC2_MODULE_ACQUISITION.md)

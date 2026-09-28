@@ -1,0 +1,38 @@
+# Unity: generated / editor-local state (regenerated on open).
+Unity/JuegoDef/[Ll]ibrary/
+Unity/JuegoDef/[Tt]emp/
+Unity/JuegoDef/[Oo]bj/
+Unity/JuegoDef/[Bb]uild/
+Unity/JuegoDef/[Bb]uilds/
+Unity/JuegoDef/[Ll]ogs/
+Unity/JuegoDef/[Uu]ser[Ss]ettings/
+Unity/JuegoDef/MemoryCaptures/
+Unity/JuegoDef/Recordings/
+Unity/JuegoDef/*.csproj
+Unity/JuegoDef/*.sln
+Unity/JuegoDef/*.slnx
+Unity/JuegoDef/*.user
+Unity/JuegoDef/*.pidb
+Unity/JuegoDef/*.booproj
+Unity/JuegoDef/.vs/
+Unity/JuegoDef/.vscode/
+Unity/JuegoDef/.idea/
+Unity/JuegoDef/sysinfo.txt
+Unity/JuegoDef/crashlytics-build.properties
+# MCP operator screenshots (curated evidence is copied to Docs/evidence/).
+Unity/JuegoDef/Captures/
+Unity/JuegoDef/Assets/Screenshots/
+Unity/JuegoDef/Assets/Screenshots.meta
+
+# Game Creator 2 Core: owner-licensed Asset Store package (per-seat EULA, not redistributable).
+# This repository is public: GC2 bytes are never committed. Restore with `python Tools/gc2-provision.py install`.
+Unity/JuegoDef/Assets/Plugins/GameCreator/
+Unity/JuegoDef/Assets/Plugins/GameCreator.meta
+Unity/JuegoDef/Assets/Plugins.meta
+# GC2 writes its generated settings/installs under Assets/Plugins/GameCreator (ignored above).
+
+# OS / tooling noise.
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]

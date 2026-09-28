@@ -24,7 +24,7 @@ See the detailed snapshot in [`JUEGO2_KNOWLEDGE_BASELINE.md`](JUEGO2_KNOWLEDGE_B
 | `REUSE_AS_PRODUCTION` | Existing Quaternius tooling/pipeline research before inventing new tools | Mandatory precheck for future ENV/CHAR/ANIM work. |
 | `REUSE_AS_PRODUCTION` | GC2 Hub audit and `native -> Hub -> adapt -> custom` sequence | Migrated into `Docs/production/GC2_HUB_REUSE_KNOWLEDGE.md`. |
 | `REUSE_AS_PRODUCTION` | ENV / CHAR / ANIM / UI production-lane decomposition and repeated-build proof | Migrated as drafts in `Docs/roadmap/POST_FOUNDATION_PRODUCTION_WPS.md`. |
-| `PENDING_DECISION` | AI Unity/MCP production operator | Consume Juego2 `WP-AI-UNITY-AUTHORING-00` evidence through `PRODUCTION_AUTHORING_DECISION.md`; could become primary or bounded authoring path. |
+| `PROVISIONAL_DECISION` | AI Unity/MCP production operator | Owner-delegated `BOUNDED_OPERATOR` (MCP for Unity) on 2026-09-28; Juego2 `WP-AI-UNITY-AUTHORING-00` evidence confirms or overturns it via `PRODUCTION_AUTHORING_DECISION.md`. |
 | `REEVALUATE_LATER` | Small Arkus/H0 component for durable cross-system facts | Only after a concrete GC2/local failure with a minimal proposed seam. |
 | `REEVALUATE_LATER` | Useful scripts/shaders/helpers produced in Juego2 | Port only after current need, license/ownership, compatibility and simplicity review. |
 | `DO_NOT_PORT` | H1 bridge, canonical->Unity materialize/observe/reconcile/rematerialize lifecycle | Another architecture; no default role here. |

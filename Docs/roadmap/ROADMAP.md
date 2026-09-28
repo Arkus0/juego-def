@@ -1,13 +1,13 @@
 # Roadmap jugable
 
-Status: **FOUNDATION KNOWLEDGE MIGRATION IN PROGRESS / HEAVY PRODUCTION PAUSED PENDING AUTHORING DECISION**
+Status: **BOOTSTRAP DONE / NEXT: M0 FIRST STREET** — authoring path provisionally `BOUNDED_OPERATOR` (MCP for Unity)
 
 ## Immediate sequence
 
-1. **Knowledge migration** — capture current product, visual, Quaternius, GC2 Hub and production-factory knowledge from Juego2 without importing H0/H1 architecture.
-2. **Production authoring decision** — consume the result of Juego2 `WP-AI-UNITY-AUTHORING-00` and choose `PRIMARY_AUTHORING_PATH`, `BOUNDED_OPERATOR`, `TOOL_SOURCE_ONLY` or `REJECT`.
-3. **Bootstrap Unity + GC2 Core** — create/open the real project with the chosen authoring assumptions.
-4. **M0 — GC2 Walking Street** — player, camera, first street, one object/hotspot and one NPC interaction.
+1. ~~**Knowledge migration**~~ — done (PR #1).
+2. ~~**Production authoring decision**~~ — provisional `BOUNDED_OPERATOR` taken by the owner on 2026-09-28 without waiting for Juego2 `WP-AI-UNITY-AUTHORING-00`; that benchmark now confirms or overturns it. See [`PRODUCTION_AUTHORING_DECISION.md`](../architecture/PRODUCTION_AUTHORING_DECISION.md).
+3. ~~**Bootstrap Unity + GC2 Core**~~ — done: Unity 6000.3.24f1 + URP 17.3 + GC2 Core 2.19.61, player/camera walking in Play Mode. See [`UNITY_PROJECT_SETUP.md`](../production/UNITY_PROJECT_SETUP.md) and [evidence](../evidence/BOOTSTRAP-UNITY-GC2/README.md).
+4. **M0 — GC2 Walking Street** — player, camera, first street, one object/hotspot and one NPC interaction. **← next**
 5. **Production lanes** — prove ENV / CHAR / ANIM / Dialogue-UI repeatability on the real port-town look.
 6. **First Living Block** — routine-bearing small block with investigation value.
 7. **Action/content** — chase, melee/confrontation, activities/jobs and 20–30 minute slice.
@@ -21,8 +21,8 @@ Each gameplay step produces a visible retained feature. Paid modules are acquire
 
 | Step | Visible objective | Default tech | Keeper output | Observable PASS |
 |---|---|---|---|---|
-| Bootstrap Unity | Project opens, scene plays, real versions/pipeline recorded | Unity | minimal project | Open/Play without blocking errors. |
-| GC2 Core | third-person player + camera | Core | player/camera | Walk, turn and follow in Play Mode. |
+| Bootstrap Unity ✅ | Project opens, scene plays, real versions/pipeline recorded | Unity | minimal project | Open/Play without blocking errors. |
+| GC2 Core ✅ | third-person player + camera | Core | player/camera | Walk, turn and follow in Play Mode. |
 | First Street | short dense port-town street at human scale | chosen authoring path + Unity | retained street seed | Walkable/readable route with credible composition. |
 | First Interaction | door/hotspot + examinable object | Core | interactions | Approach/activate with different visible results. |
 | First NPC | recognizable person with brief response/gesture | Core | NPC interaction | Activate interaction in the same street. **Closes M0.** |
@@ -50,10 +50,9 @@ This gate asks whether we can repeatedly produce the game, not whether we reprod
 
 The street should already respect the migrated Visual Bible enough to avoid proving gameplay inside an obviously misleading cube test, but M0 does not require final art breadth.
 
-## Current pause boundary
+## Tooling boundary
 
-Until `PRODUCTION_AUTHORING_DECISION` is resolved:
+The pause on production is lifted by the provisional authoring decision: M0 and the production lanes proceed with the MCP operator.
 
-- **allowed:** documentation, product decisions, asset knowledge, source/license inventory, low-risk repository setup;
-- **allowed if convenient:** minimal Unity/GC2 bootstrap that does not freeze a production architecture;
-- **defer:** bespoke scenario generators, large character factories, H1-style lifecycle infrastructure, or other heavy tooling that the winning operator may make unnecessary.
+- **default:** operator + GC2 native + briefs/recipes + small validations;
+- **still defer:** bespoke scenario generators, large character factories, H1-style lifecycle infrastructure, or other heavy tooling, until the operator's revisit trigger (after `PROD-ENV-01`) shows a concrete gap it cannot close.
