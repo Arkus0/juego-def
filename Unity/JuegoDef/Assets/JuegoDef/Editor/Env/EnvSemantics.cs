@@ -1190,8 +1190,9 @@ namespace JuegoDef.Env
                         var probe = new Vector3(q.x + nrm.x * 4f, 1.5f, q.y + nrm.y * 4f);
                         if (Inside(channel, new Vector2(probe.x, probe.z))) continue;          // opens onto the river by design
                         if (PublicGap(new Vector2(probe.x, probe.z), out _) < 2.5f) continue;  // a street continues there
-                        bool hit = Physics.RaycastAll(new Vector3(q.x + nrm.x * 1.2f, 1.5f, q.y + nrm.y * 1.2f), new Vector3(nrm.x, 0, nrm.y), 5f)
-                            .Any(h => !h.collider.isTrigger && h.collider.transform.IsChildOf(rows));
+                        float baseY = EnvWalk.Ground(q.x - nrm.x * 0.5f, q.y - nrm.y * 0.5f, 0f);   // plaza pavement level (a mirador sits 10 m up)
+                        bool hit = Physics.RaycastAll(new Vector3(q.x + nrm.x * 1.2f, baseY + 0.5f, q.y + nrm.y * 1.2f), new Vector3(nrm.x, 0, nrm.y), 5f)
+                            .Any(h => !h.collider.isTrigger && !h.collider.name.StartsWith("Ground_"));   // any built thing closes, at parapet height: walls count too
                         if (!hit)
                         {
                             open += 3f;

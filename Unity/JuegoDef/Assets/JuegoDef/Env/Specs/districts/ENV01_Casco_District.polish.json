@@ -1,103 +1,478 @@
 {
-  "comment": "Hand-authored micro-polish of the CASCO (EnvPolish). The district scene is generated, so every local correction lives here and survives a rebuild. 'plots': BuildingSpec field overrides by building id ('K4_0_2'). 'ops': object corrections on the built district, found by exact module name within r metres of a world point (near = x,y,z as built): remove | move (to = [x,z] on the ground or [x,y,z], or by = [dx,dy,dz]; optional yaw, scale) | place (module, at = [x,z] or [x,y,z], yaw, scale). Every entry says its inspection unit (Docs/evidence/WP-PROD-ENV-01/micro-polish/UNITS.md) and why, and marks its class: TECH (technical), SEM (makes no sense to a person).",
-  "plots": {
-    "K11_0_1": {
-      "unit": "ALLEY_J",
-      "class": "SEM",
-      "why": "The portal sill sat 0.59 m below the paving in front of it: the building stands on the lowest ground of its plot on an 8 % lane and the door is at the uphill end. Lifted to the door's level; its stone base grows by the same amount.",
-      "raise": 0.6
-    },
-    "K14_3_6": {
-      "unit": "STREET_I",
-      "class": "SEM",
-      "why": "Same case on San Pedro: the portal sill sat 0.53 m below the paving in front of it.",
-      "raise": 0.55
-    },
-    "K15_5_1": {
-      "unit": "ALLEY_G",
-      "class": "SEM",
-      "why": "K15_5_1 and K14_0_0 (both Solana lanes) were built with the identical ground floor D,P,R: two cloned frontages a street apart. K15_5_1's stone ground floor already reads as a work yard; pinned to a taller (timber gate) so the two differ at a glance.",
-      "business": "taller"
-    }
+ "comment": "Hand-authored micro-polish of the CASCO (EnvPolish). The district scene is generated, so every local correction lives here and survives a rebuild. 'plots': BuildingSpec field overrides by building id ('K4_0_2'). 'ops': object corrections on the built district, found by exact module name within r metres of a world point (near = x,y,z as built): remove | move (to = [x,z] on the ground or [x,y,z], or by = [dx,dy,dz]; optional yaw, scale) | place (module, at = [x,z] or [x,y,z], yaw, scale). Every entry says its inspection unit (Docs/evidence/WP-PROD-ENV-01/micro-polish/UNITS.md) and why, and marks its class: TECH (technical), SEM (makes no sense to a person).",
+ "plots": {
+  "K11_0_1": {
+   "unit": "ALLEY_J",
+   "class": "SEM",
+   "why": "The portal sill sat 0.59 m below the paving in front of it: the building stands on the lowest ground of its plot on an 8 % lane and the door is at the uphill end. Lifted to the door's level; its stone base grows by the same amount.",
+   "raise": 0.6
   },
-  "ops": [
-    {
-      "op": "move",
-      "unit": "ALLEY_B",
-      "class": "SEM",
-      "why": "Cimavilla_Baja: a chair stood 0.3 m from the centreline of a 3.8 m lane, at the bend where everyone cuts the corner, one metre from a bench against the wall. Neighbours sit together by the wall: the chair now stands beside the bench (same facing) and the way through is clear.",
-      "name": "ENV_Prop_Chair",
-      "near": [40.86, 1.99, 122.59],
-      "r": 0.5,
-      "to": [41.55, 123.45],
-      "yaw": 210
-    },
-    {
-      "op": "move",
-      "unit": "STREET_B",
-      "class": "SEM",
-      "why": "K9_0_2: the shop's chalkboard stood wedged and edge-on in the corner between the stone quoin pier of the next door and the brick pillar, half hidden and unreadable. A board advertises the shop it stands in front of, facing pedestrians: it now stands on the pavement in front of the display window.",
-      "name": "ENV_AFrame_Board",
-      "near": [138.97, 1.19, 174.69],
-      "r": 0.6,
-      "to": [136.4, 173.7]
-    },
-    {
-      "op": "place",
-      "unit": "RIVER_A",
-      "class": "SEM",
-      "why": "K6_10_1 (river house): the audit flagged the facade as FLAT_FACADE — nothing stands out more than 12 cm. An iron balconera under the west upper-floor window, like its neighbour houses on the quay.",
-      "module": "ENV_Balcony_Iron",
-      "at": [40.2, 3.1, 172.4],
-      "yaw": 155
-    },
-    {
-      "op": "remove",
-      "unit": "STREET_B",
-      "class": "TECH",
-      "why": "Espina_Nodo corner: the audit found a barrel standing inside the crate stack by the honey shop (share 0.35). It is invisible in the cluster and can only poke through at another angle; the crates alone read as the shop's goods.",
-      "name": "ENV_Prop_Barrel",
-      "near": [92.9, 0.4, 158.8],
-      "r": 0.6
-    },
-    {
-      "op": "move",
-      "unit": "STREET_C",
-      "class": "TECH",
-      "why": "Bridgehead bar: the chalkboard stood inside the corner barrel (share 0.77), half buried in it. It now stands along the facade one bay off the shop door, clear of the barrel and of the doorway.",
-      "name": "ENV_AFrame_Board",
-      "near": [68.8, 0.7, 170.8],
-      "r": 0.8,
-      "by": [-0.45, 0, -0.61]
-    },
-    {
-      "op": "move",
-      "unit": "STREET_D",
-      "class": "TECH",
-      "why": "Cantabra café: the chalkboard shared the footprint of a terrace table (share 0.70). Slid along the wall out of the table group; the way through and the table group stay clear.",
-      "name": "ENV_AFrame_Board",
-      "near": [63.3, 0.7, 139.8],
-      "r": 0.5,
-      "by": [-1.0, 0, 0.1]
-    },
-    {
-      "op": "remove",
-      "unit": "STREET_E",
-      "class": "SEM",
-      "why": "Calle_Alta_O: a stone bench (poyo) stood inside the reformed portal's doorway, 0.5 m from its threshold — no one builds a bench across their own front door. The corner keeps its pot, fern and chair; the entrance is clear.",
-      "name": "ENV_Bench_Stone",
-      "near": [48.1, 3.79, 106.53],
-      "r": 0.6
-    },
-    {
-      "op": "move",
-      "unit": "BRIDGE_B",
-      "class": "TECH",
-      "why": "Pasarela south landing: a barrel stood 0.30 m sunk into the paving beside the steps (its ground sample caught the slope down to the water). Lifted back onto the paving.",
-      "name": "ENV_Prop_Barrel",
-      "near": [97.5, 0.0, 201.8],
-      "r": 0.6,
-      "by": [0, 0.32, 0]
-    }
-  ]
+  "K14_3_6": {
+   "unit": "STREET_I",
+   "class": "SEM",
+   "why": "Same case on San Pedro: the portal sill sat 0.53 m below the paving in front of it.",
+   "raise": 0.55
+  },
+  "K15_5_1": {
+   "unit": "ALLEY_G",
+   "class": "SEM",
+   "why": "K15_5_1 and K14_0_0 (both Solana lanes) were built with the identical ground floor D,P,R: two cloned frontages a street apart. K15_5_1's stone ground floor already reads as a work yard; pinned to a taller (timber gate) so the two differ at a glance.",
+   "business": "taller"
+  }
+ },
+ "ops": [
+  {
+   "op": "move",
+   "unit": "ALLEY_B",
+   "class": "SEM",
+   "why": "Cimavilla_Baja: a chair stood 0.3 m from the centreline of a 3.8 m lane, at the bend where everyone cuts the corner, one metre from a bench against the wall. Neighbours sit together by the wall: the chair now stands beside the bench (same facing) and the way through is clear.",
+   "name": "ENV_Prop_Chair",
+   "near": [
+    40.86,
+    1.99,
+    122.59
+   ],
+   "r": 0.5,
+   "to": [
+    41.55,
+    123.45
+   ],
+   "yaw": 210
+  },
+  {
+   "op": "move",
+   "unit": "STREET_B",
+   "class": "SEM",
+   "why": "K9_0_2: the shop's chalkboard stood wedged and edge-on in the corner between the stone quoin pier of the next door and the brick pillar, half hidden and unreadable. A board advertises the shop it stands in front of, facing pedestrians: it now stands on the pavement in front of the display window.",
+   "name": "ENV_AFrame_Board",
+   "near": [
+    138.97,
+    1.19,
+    174.69
+   ],
+   "r": 0.6,
+   "to": [
+    136.4,
+    173.7
+   ]
+  },
+  {
+   "op": "place",
+   "unit": "RIVER_A",
+   "class": "SEM",
+   "why": "K6_10_1 (river house): the audit flagged the facade as FLAT_FACADE — nothing stands out more than 12 cm. An iron balconera under the west upper-floor window, like its neighbour houses on the quay.",
+   "module": "ENV_Balcony_Iron",
+   "at": [
+    40.2,
+    3.1,
+    172.4
+   ],
+   "yaw": 155
+  },
+  {
+   "op": "remove",
+   "unit": "STREET_B",
+   "class": "TECH",
+   "why": "Espina_Nodo corner: the audit found a barrel standing inside the crate stack by the honey shop (share 0.35). It is invisible in the cluster and can only poke through at another angle; the crates alone read as the shop's goods.",
+   "name": "ENV_Prop_Barrel",
+   "near": [
+    92.9,
+    0.4,
+    158.8
+   ],
+   "r": 0.6
+  },
+  {
+   "op": "move",
+   "unit": "STREET_C",
+   "class": "TECH",
+   "why": "Bridgehead bar: the chalkboard stood inside the corner barrel (share 0.77), half buried in it. It now stands along the facade one bay off the shop door, clear of the barrel and of the doorway.",
+   "name": "ENV_AFrame_Board",
+   "near": [
+    68.8,
+    0.7,
+    170.8
+   ],
+   "r": 0.8,
+   "by": [
+    -0.45,
+    0,
+    -0.61
+   ]
+  },
+  {
+   "op": "move",
+   "unit": "STREET_D",
+   "class": "TECH",
+   "why": "Cantabra café: the chalkboard shared the footprint of a terrace table (share 0.70). Slid along the wall out of the table group; the way through and the table group stay clear.",
+   "name": "ENV_AFrame_Board",
+   "near": [
+    63.3,
+    0.7,
+    139.8
+   ],
+   "r": 0.5,
+   "by": [
+    -1.0,
+    0,
+    0.1
+   ]
+  },
+  {
+   "op": "remove",
+   "unit": "STREET_E",
+   "class": "SEM",
+   "why": "Calle_Alta_O: a stone bench (poyo) stood inside the reformed portal's doorway, 0.5 m from its threshold — no one builds a bench across their own front door. The corner keeps its pot, fern and chair; the entrance is clear.",
+   "name": "ENV_Bench_Stone",
+   "near": [
+    48.1,
+    3.79,
+    106.53
+   ],
+   "r": 0.6
+  },
+  {
+   "op": "move",
+   "unit": "BRIDGE_B",
+   "class": "TECH",
+   "why": "Pasarela south landing: a barrel stood 0.30 m sunk into the paving beside the steps (its ground sample caught the slope down to the water). Lifted back onto the paving.",
+   "name": "ENV_Prop_Barrel",
+   "near": [
+    97.5,
+    0.0,
+    201.8
+   ],
+   "r": 0.6,
+   "by": [
+    0,
+    0.32,
+    0
+   ]
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    103.14,
+    0.21,
+    199.76
+   ],
+   "yaw": 74.7
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    103.67,
+    0.21,
+    197.83
+   ],
+   "yaw": 74.7
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    104.19,
+    0.21,
+    195.9
+   ],
+   "yaw": 74.7
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    104.72,
+    0.21,
+    193.97
+   ],
+   "yaw": 74.7
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    105.25,
+    0.21,
+    192.04
+   ],
+   "yaw": 74.7
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    105.72,
+    0.21,
+    190.3
+   ],
+   "yaw": 31.0
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    107.43,
+    0.21,
+    189.27
+   ],
+   "yaw": 31.0
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    122.49,
+    0.21,
+    183.8
+   ],
+   "yaw": 8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    124.47,
+    0.21,
+    183.52
+   ],
+   "yaw": 8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Plaza edge closed: the pavement ended and the space drained onto the hillside (audit PLAZA_NOT_CLOSED, 18 m). A stone parapet piece bounds the edge, the same piece the river side of this plaza reads by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    126.45,
+    0.21,
+    183.24
+   ],
+   "yaw": 8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    120.51,
+    10.4,
+    47.09
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    122.49,
+    10.4,
+    47.37
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    124.47,
+    10.4,
+    47.65
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    126.45,
+    10.4,
+    47.94
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    128.43,
+    10.4,
+    48.22
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    130.41,
+    10.4,
+    48.5
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    132.39,
+    10.4,
+    48.79
+   ],
+   "yaw": -8.1
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    138.71,
+    10.4,
+    39.89
+   ],
+   "yaw": 70.0
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    139.4,
+    10.4,
+    38.01
+   ],
+   "yaw": 70.0
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    138.03,
+    10.4,
+    33.85
+   ],
+   "yaw": 157.4
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    136.18,
+    10.4,
+    33.08
+   ],
+   "yaw": 157.4
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    134.34,
+    10.4,
+    32.31
+   ],
+   "yaw": 157.4
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    132.49,
+    10.4,
+    31.54
+   ],
+   "yaw": 157.4
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    130.65,
+    10.4,
+    30.77
+   ],
+   "yaw": 157.4
+  },
+  {
+   "op": "place",
+   "unit": "PLAZAS",
+   "class": "SEM",
+   "why": "Mirador edge closed: the terrace pavement ended with no rail above the drop (audit PLAZA_NOT_CLOSED, 30 m). A stone parapet piece, the piece a mirador viewpoint is read by.",
+   "module": "ENV_Parapet_Stone_2m",
+   "at": [
+    128.8,
+    10.4,
+    30.0
+   ],
+   "yaw": 157.4
+  }
+ ]
 }
