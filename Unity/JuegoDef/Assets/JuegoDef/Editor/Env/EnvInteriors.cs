@@ -66,17 +66,81 @@ namespace JuegoDef.Env
                 .Add("Shelf_Simple", 0.0f, -6.0f, 0, 1.2f, "back", 1.0f).Add("FarmCrate_Apple", -1.9f, -2.0f, 90).Add("FarmCrate_Carrot", -1.9f, -3.0f, 90)
                 .Add("FarmCrate_Apple", -1.9f, -4.0f, 90).Add("Barrel_Apples", -0.8f, -5.6f).Add("Crate_Wooden", 1.2f, -5.5f, 15)
                 .Add("Workbench", 1.6f, -2.6f, -90, 1, "right").Add("Bag", 0.6f, -5.4f),
+            // shop programmes (owner audit: "los locales comerciales son demasiado genéricos")
+            new Room { id = "Farmacia", size = new Vector3(5.0f, 3.0f, 5.5f), walls = "ENV_Plaster_OffWhite", floor = "Floor_WoodLight", light = new Color(0.92f, 0.97f, 1f), lightIntensity = 3.0f, shop = true, litBias = 1f }
+                .Add("Shelf_Small_Bottles", -2.5f, -1.8f, 90, 1.3f, "left", 1.2f).Add("Shelf_Small_Bottles", -2.5f, -3.4f, 90, 1.3f, "left", 1.2f)
+                .Add("Shelf_Small_Bottles", 2.5f, -2.4f, -90, 1.3f, "right", 1.2f).Add("Shelf_Small_Bottles", -0.8f, -5.5f, 0, 1.3f, "back", 1.3f)
+                .Add("Shelf_Small_Bottles", 0.9f, -5.5f, 0, 1.3f, "back", 1.3f).Add("Table_Large", 0.3f, -3.6f, 90, 0.7f).Add("SmallBottles_1", 0.3f, -3.6f, 0, 1, "on"),
+            new Room { id = "Panaderia", size = new Vector3(5.0f, 3.0f, 5.0f), walls = "ENV_Plaster_Ochre", floor = "Floor_Brick", dado = "ENV_Stone_Sandstone", light = new Color(1f, 0.84f, 0.6f), lightIntensity = 2.8f, shop = true, litBias = 1f }
+                .Add("Shelf_Simple", 0.0f, -5.0f, 0, 1.3f, "back", 1.0f).Add("Bag", -1.2f, -4.6f).Add("Bag", -0.7f, -4.7f, 30).Add("Barrel", 1.8f, -4.4f)
+                .Add("Table_Large", 0.0f, -2.8f, 0, 0.8f).Add("Pot_1", -0.4f, -2.8f, 0, 1, "on").Add("Crate_Wooden", -1.9f, -2.2f, 20).Add("Mug", 0.5f, -2.8f, 0, 1, "on"),
+            new Room { id = "Oficina", size = new Vector3(5.0f, 3.0f, 5.5f), walls = "ENV_Plaster_Cream", floor = "Floor_WoodLight", light = new Color(0.95f, 0.97f, 1f), lightIntensity = 2.7f, shop = true, litBias = 1f }
+                .Add("Table_Large", -0.6f, -3.2f, 0, 0.7f).Add("Chair_1", -0.6f, -3.9f, 0).Add("Chair_1", -0.6f, -2.4f, 180).Add("BookGroup_Medium_2", -0.6f, -3.2f, 0, 1, "on")
+                .Add("Cabinet", 2.2f, -4.4f, -90, 1, "right").Add("Bookcase_2", -1.4f, -5.5f, 0, 1, "back").Add("Bookcase_2", 0.4f, -5.5f, 0, 1, "back"),
+            new Room { id = "Taller", size = new Vector3(5.0f, 3.2f, 7.0f), walls = "ENV_Plaster_Stained", floor = "Floor_UnevenBrick", light = new Color(1f, 0.86f, 0.66f), lightIntensity = 1.7f, shop = true }
+                .Add("Workbench", -1.6f, -7.0f, 0, 1, "back").Add("Workbench_Drawers", 0.6f, -7.0f, 0, 1, "back").Add("Crate_Wooden", 2.0f, -5.8f, 10)
+                .Add("Crate_Wooden", 2.0f, -5.8f, 35, 1, "on").Add("Barrel", -2.0f, -3.6f).Add("Chain_Coil", 1.2f, -3.2f).Add("Rope_2", -0.4f, -3.0f)
+                .Add("Bucket_Metal", 1.8f, -2.4f).Add("Shelf_Simple", -2.5f, -5.0f, 90, 1.2f, "left", 1.1f),
+            new Room { id = "Vacio", size = new Vector3(5.0f, 3.0f, 6.0f), walls = "ENV_Plaster_Stained", floor = "Floor_UnevenBrick", light = new Color(1f, 0.95f, 0.85f), lightIntensity = 0.8f, shop = true }
+                .Add("Crate_Wooden", -1.6f, -5.2f, 12).Add("Crate_Wooden", 1.4f, -4.4f, -20).Add("FarmCrate_Empty", 0.2f, -5.6f, 5).Add("Bucket_Wooden_1", -0.4f, -3.0f),
         };
 
-        [MenuItem("JuegoDef/ENV/8 Build Interior Rooms")]
-        public static void BuildAll()
+        /// <summary>Opening kinds: the glazing's extent in the module frame (y0, y1, half width) so blinds and
+        /// curtains sit inside it. Homes get W (wide window), T (small round-head), D (balcony/gallery door);
+        /// shops S (display) and E (door).</summary>
+        public static readonly Dictionary<string, Vector4> Openings = new Dictionary<string, Vector4>
         {
+            { "W", new Vector4(0.98f, 2.46f, 0.6f, 0) },
+            { "D", new Vector4(0.05f, 2.28f, 0.5f, 0) },
+            { "T", new Vector4(1.1f, 2.45f, 0.3f, 0) },
+            { "S", new Vector4(0.66f, 2.28f, 0.7f, 0) },
+            { "E", new Vector4(0.02f, 2.2f, 0.7f, 0) },
+        };
+
+        /// <summary>Per-kind material variants of every room (same cubemap): ENV_Interior_{room}_{kind}. Cheap: no
+        /// capture, just material copies with their opening and their share of blinds and net curtains.</summary>
+        [MenuItem("JuegoDef/ENV/8b Interior Variants")]
+        public static void Variants()
+        {
+            foreach (var room in Rooms)
+            {
+                var basePath = $"{Folder}/ENV_Interior_{room.id}.mat";
+                var baseMat = AssetDatabase.LoadAssetAtPath<Material>(basePath);
+                if (!baseMat) throw new System.InvalidOperationException("ENV_INTERIOR_ROOM_NOT_BUILT " + room.id + " (run 8 Build Interior Rooms)");
+                foreach (var kind in room.shop ? new[] { "S", "E" } : new[] { "W", "T", "D" })
+                {
+                    var path = $"{Folder}/ENV_Interior_{room.id}_{kind}.mat";
+                    var m = AssetDatabase.LoadAssetAtPath<Material>(path);
+                    if (!m) { m = new Material(baseMat); AssetDatabase.CreateAsset(m, path); }
+                    else m.CopyPropertiesFromMaterial(baseMat);
+                    m.SetVector("_Opening", Openings[kind]);
+                    m.SetFloat("_Blinds", room.shop ? 0f : kind == "D" ? 0.25f : 0.45f);
+                    m.SetFloat("_Curtains", room.shop ? 0f : kind == "T" ? 0.3f : 0.45f);
+                    m.SetFloat("_Reflect", room.shop ? 0.08f : 0.12f);
+                    m.enableInstancing = true;
+                    EditorUtility.SetDirty(m);
+                }
+            }
+            AssetDatabase.SaveAssets();
+        }
+
+        public static bool IsShopRoom(string id) => Rooms.Any(r => r.id == id && r.shop);
+
+        [MenuItem("JuegoDef/ENV/8 Build Interior Rooms")]
+        public static void BuildMenu() => BuildAll();
+
+        /// <summary>Captures every room (or only the listed ids) and makes its material, then the per-opening variants.
+        /// Opens temporary scenes: run it before building a district.</summary>
+        public static void BuildAll(string only = null)
+        {
+            var want = string.IsNullOrEmpty(only) ? null : new HashSet<string>(only.Split(','));
             EnvKit.ClearCache();
             EnvKit.EnsureFolder(Folder);
             var shader = Shader.Find("JuegoDef/ENV/Interior Room");
             if (!shader) throw new System.InvalidOperationException("ENV_INTERIOR_SHADER_MISSING");
             foreach (var room in Rooms)
             {
+                if (want != null && !want.Contains(room.id)) continue;
                 EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
                 RenderSettings.ambientMode = AmbientMode.Flat;
                 RenderSettings.ambientLight = new Color(0.32f, 0.3f, 0.28f);
@@ -115,6 +179,7 @@ namespace JuegoDef.Env
                 Debug.Log($"JD_ENV_INTERIOR {room.id} items={root.childCount} -> {cubePath}");
             }
             AssetDatabase.SaveAssets();
+            Variants();
         }
 
         /// <summary>The furnished room in the open scene; returns its root.</summary>

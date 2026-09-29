@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_Sign_Face
+    second: {fileID: 2100000, guid: 259eb51ccfd12f54299bac3a36ce0361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MI_WoodTrim
     second: {fileID: 2100000, guid: d78eee3c6fcf3af4c93d4b7f11969b30, type: 2}
   materials:

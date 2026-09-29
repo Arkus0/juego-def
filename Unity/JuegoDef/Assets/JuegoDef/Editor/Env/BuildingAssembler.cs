@@ -46,6 +46,19 @@ namespace JuegoDef.Env
         public bool solana;                      // lebaniego solana across the top floor (door onto it, wing walls)
         public bool surrounds;                   // sandstone ashlar surrounds on rendered windows (casco)
         public bool escudo;                      // casona shield above the portal
+        // Facade family (owner audit 2026-09-29: "la arquitectura canta a kit modular"). Empty fields keep the palette
+        // behaviour; the district's character pass (EnvCharacter) fills them per building.
+        public string family = "";               // "" | render | zocalo | stone_ground | stone | rehab | modern
+        public string render, renderGround;      // facade render materials, upper floors / ground floor
+        public string stone, stoneGround;        // masonry replacing the kit rubble (MI_UnevenBrick)
+        public string dressed;                   // quoins, stone surrounds, plinths (ENV_Stone_Sandstone / MI_RockTrim)
+        public string quoins = "";               // "" (ashlar) | ashlar | slim | none | painted
+        public string plinthMat;                 // low base band material ("" = none; stone or paint)
+        public float plinthHeight;               // m (0.4-1.3)
+        public string joinery, roofMat;          // joinery and roof tile overrides
+        public string band;                      // floor-line band material ("" = palette trim; the render = no band)
+        public string business = "";             // ground-floor business (EnvBusiness programme id)
+        public float plantShare = 0.15f;         // share of portals/balconies with plants (street personality)
     }
 
     public static class BuildingAssembler
@@ -103,6 +116,7 @@ namespace JuegoDef.Env
             if (s.solana && s.floors < 2) s.solana = false;
             var rows = FacadeGrammar.Rows(s, rng);
             s.era = FacadeGrammar.ResolveEra(s, rng);
+            rows = EnvBusiness.RewriteGround(s, rows);
             rows = FacadeGrammar.ApplyEra(s, rows, rng);
             rows = FacadeGrammar.ResolveShutters(s, rows, rng);
             var history = s.dress && s.history ? FacadeGrammar.History.Draw(s, rows, rng) : FacadeGrammar.History.None;
@@ -118,6 +132,20 @@ namespace JuegoDef.Env
             var roofMap = RoleMap(s.palette, "roof");
             FacadeGrammar.EraMaterials(s, wallMap, joinMap, rng);
             var groundWallMap = history.groundRepaint != null ? With(wallMap, "MI_Plaster", history.groundRepaint) : wallMap;
+            var stoneMap = new Dictionary<string, string>();
+            if (!string.IsNullOrEmpty(s.family))
+            {
+                // family materials win over palette/era defaults: render and masonry per building, the ground floor
+                // with its own damp variant; the kit brick base band becomes the plinth (or disappears into the render)
+                wallMap = With(wallMap, "MI_Plaster", s.render, "MI_UnevenBrick", s.stone, "MI_Brick", s.render,
+                               "ENV_Stone_Sandstone", s.dressed, "MI_RockTrim", s.dressed, "MI_WoodTrim", s.band, "MI_WoodTrim_Wear", s.band);
+                groundWallMap = With(wallMap, "MI_Plaster", s.renderGround ?? s.render, "MI_UnevenBrick", s.stoneGround ?? s.stone,
+                                     "MI_Brick", !string.IsNullOrEmpty(s.plinthMat) ? s.plinthMat : s.renderGround ?? s.render);
+                if (history.groundRepaint != null && string.IsNullOrEmpty(s.renderGround)) groundWallMap["MI_Plaster"] = history.groundRepaint;
+                stoneMap = With(stoneMap, "ENV_Stone_Sandstone", s.dressed, "MI_RockTrim", s.dressed, "MI_Brick", s.dressed);
+                joinMap = With(joinMap, "MI_WoodTrim", s.joinery, "MI_WoodTrim_Wear", s.joinery);
+                roofMap = With(roofMap, "MI_RoundTiles", s.roofMat, "MI_FlatTiles", s.roofMat, "MI_Plaster", s.render);
+            }
             string groundFam = string.IsNullOrEmpty(s.ground) ? FacadeGrammar.DefaultGround(s.type) : s.ground;
 
             for (int f = 0; f < s.floors; f++)
@@ -130,31 +158,34 @@ namespace JuegoDef.Env
                 {
                     if (f == 0 && s.cornerEntrance && i == (cl ? 0 : s.bays - 1)) continue;
                     var jm = history.oddWindow == (f, i) ? With(joinMap, "MI_WoodTrim", "ENV_Joinery_Silver", "MI_WoodTrim_Wear", "ENV_Joinery_Silver") : joinMap;
-                    Slot(s, front, fam, rows[f][i], f, new Vector3(1 + 2 * i, y, 0), 0, rng, wm, jm, plinth: true);
+                    Slot(s, front, fam, rows[f][i], f, new Vector3(1 + 2 * i, y, 0), 0, rng, wm, jm, plinth: true, stoneMap);
                 }
                 var back = EnvKit.Group(EnvKit.Group(root, "Back"), "F" + f);
                 for (int i = 0; i < s.bays; i++)
-                    Slot(s, back, fam, FacadeGrammar.BackCode(f, i, rng), f, new Vector3(width - 1 - 2 * i, y, -s.depth), 180, rng, wm, joinMap, plinth: false);
+                    Slot(s, back, fam, FacadeGrammar.BackCode(f, i, rng), f, new Vector3(width - 1 - 2 * i, y, -s.depth), 180, rng, wm, joinMap, plinth: false, stoneMap);
                 var left = EnvKit.Group(EnvKit.Group(root, "Side_L"), "F" + f);
                 var right = EnvKit.Group(EnvKit.Group(root, "Side_R"), "F" + f);
                 // Party walls: storeys covered by a neighbour get no side wall (no hidden double walls, no z-fighting).
                 for (int j = 0; j < nz; j++)
                 {
                     if (f >= s.partyLeft && !(f == 0 && s.cornerEntrance && cl && j == nz - 1))
-                        Slot(s, left, fam, leftRows[f][j], f, new Vector3(0, y, -s.depth + 1 + 2 * j), 270, rng, wm, joinMap, plinth: s.exposeLeft);
+                        Slot(s, left, fam, leftRows[f][j], f, new Vector3(0, y, -s.depth + 1 + 2 * j), 270, rng, wm, joinMap, plinth: s.exposeLeft, stoneMap);
                     if (f >= s.partyRight && !(f == 0 && s.cornerEntrance && !cl && j == 0))
-                        Slot(s, right, fam, rightRows[f][j], f, new Vector3(width, y, -1 - 2 * j), 90, rng, wm, joinMap, plinth: s.exposeRight);
+                        Slot(s, right, fam, rightRows[f][j], f, new Vector3(width, y, -1 - 2 * j), 90, rng, wm, joinMap, plinth: s.exposeRight, stoneMap);
                 }
                 var corners = EnvKit.Group(EnvKit.Group(root, "Corners"), "F" + f);
                 // Ashlar quoins only where a corner is seen: an exposed side at this storey, or a mitred block tip.
                 // Shared party lines get none (owner review: the kit pilaster on every party wall was too heavy).
-                string corner = "ENV_Quoin_Ashlar";
+                // Families choose the corner: dressed ashlar (stone and old houses), slim flush quoins, painted corner
+                // bands, or none at all (render wraps the corner) — never the same heavy quoin on every house.
+                string corner = s.quoins == "slim" || s.quoins == "painted" ? "ENV_Quoin_Slim" : "ENV_Quoin_Ashlar";
                 bool qL = f >= s.partyLeft || s.tipLeft, qR = f >= s.partyRight || s.tipRight;
+                if (s.quoins == "none") qL = qR = false;
                 foreach (var c in new[] { new Vector3(0, y, 0), new Vector3(width, y, 0), new Vector3(width, y, -s.depth), new Vector3(0, y, -s.depth) })
                 {
                     if (f == 0 && s.cornerEntrance && (cl ? c.x < 0.5f : c.x > 0.5f) && c.z > -0.5f) continue;  // the column replaces it
                     if (c.x < 0.5f ? qL : qR)
-                        EnvKit.Place(corner, corners, c, CornerRot(c, width, s.depth));
+                        EnvKit.Remap(EnvKit.Place(corner, corners, c, CornerRot(c, width, s.depth)), stoneMap);
                 }
             }
             if (s.cornerEntrance) CornerEntrance(s, root, groundWallMap, joinMap);
@@ -176,7 +207,7 @@ namespace JuegoDef.Env
             if (s.escudo)
             {
                 int portal = rows[0].IndexOfAny(new[] { 'A', 'O', 'D', 'o' });
-                if (portal >= 0 && s.floors > 1) EnvKit.Place("ENV_Escudo", EnvKit.Group(root, "Dressing"), new Vector3(1 + 2 * portal, Storey + 0.55f, 0), 0, Vector3.one * 1.3f);
+                if (portal >= 0 && s.floors > 1) EnvKit.Remap(EnvKit.Place("ENV_Escudo", EnvKit.Group(root, "Dressing"), new Vector3(1 + 2 * portal, Storey + 0.55f, 0), 0, Vector3.one * 1.3f), stoneMap);
             }
             BuildRoof(s, root, roofMap, wallMap);
             if (s.eave == "canecillos" && s.roof == "eaves")
@@ -257,6 +288,20 @@ namespace JuegoDef.Env
             EnvKit.Remap(EnvKit.Place("ENV_Solana_Wing", g, new Vector3(width - 0.15f, y, 0), 0), wallMap);
         }
 
+        /// <summary>The tower's own identity (owner point 41): clock faces on the two faces seen from the spine and the
+        /// plaza, bells in the belfry openings, an iron weathervane on the finial.</summary>
+        static void TowerIdentity(BuildingSpec s, Transform root, Dictionary<string, string> wallMap, int width, float top)
+        {
+            var id = EnvKit.Group(root, "Landmark");
+            float clockY = (s.floors - 2) * Storey + 1.55f;
+            EnvKit.Remap(EnvKit.Place("ENV_Clock_Face", id, new Vector3(width / 2f, clockY, 0.1f), 0, Vector3.one * 0.95f), wallMap);
+            EnvKit.Remap(EnvKit.Place("ENV_Clock_Face", id, new Vector3(width + 0.1f, clockY, -s.depth / 2f), 90, Vector3.one * 0.95f), wallMap);
+            float belfry = (s.floors - 1) * Storey + 1.1f;
+            EnvKit.Place("ENV_Bell", id, new Vector3(width / 2f, belfry, -0.5f), 0, Vector3.one * 0.9f);
+            EnvKit.Place("ENV_Bell", id, new Vector3(width - 0.6f, belfry, -s.depth / 2f), 90, Vector3.one * 0.8f);
+            EnvKit.Place("ENV_Weathervane", id, new Vector3(width / 2f, top + 3.35f, -s.depth / 2f), 0);
+        }
+
         static float CornerRot(Vector3 c, int width, int depth)
         {
             bool l = c.x < 0.5f, front = c.z > -0.5f;
@@ -278,7 +323,8 @@ namespace JuegoDef.Env
         }
 
         static void Slot(BuildingSpec s, Transform parent, string fam, char code, int floor, Vector3 pos, float rot,
-                         System.Random rng, Dictionary<string, string> wallMap, Dictionary<string, string> joinMap, bool plinth)
+                         System.Random rng, Dictionary<string, string> wallMap, Dictionary<string, string> joinMap, bool plinth,
+                         Dictionary<string, string> stoneMap = null)
         {
             var side = Quaternion.Euler(0, rot, 0);
             var slot = new GameObject($"{code}_{parent.childCount}").transform;
@@ -291,13 +337,31 @@ namespace JuegoDef.Env
                 if (p.role == "wall") EnvKit.Remap(go, floor > 0 ? With(wallMap, "MI_Brick", wallMap.TryGetValue("MI_Plaster", out var fac) ? fac : null) : wallMap);
                 else if (p.role == "joinery") EnvKit.Remap(go, joinMap);
                 else if (p.role == "shop") EnvKit.Remap(go, With(joinMap, "MI_WindowGlass", "ENV_Glass_Shop"));
+                else if (p.role == "stone" && stoneMap != null) EnvKit.Remap(go, stoneMap);
                 else if (p.role.StartsWith("mat:")) EnvKit.Remap(go, AllTo(go, p.role.Substring(4)));
+                if (p.role == "joinery" && stoneMap != null) EnvKit.Remap(go, stoneMap);   // stone sills inside joinery pieces
+                // glazing shows a room behind it (fake interior + blinds/curtains + controlled reflection) instead of
+                // an opaque dark pane (owner audit: "muchos cristales parecen superficies negras/azules opacas")
+                if (p.role == "joinery" || p.role == "shop" || p.role == "stone")
+                {
+                    var room = GlassRoom(s, code, floor, pos, rot);
+                    if (room != null) EnvKit.Remap(go, new Dictionary<string, string> { { "MI_WindowGlass", room }, { "ENV_Glass_Street", room }, { "ENV_Glass_Shop", room } });
+                }
             }
-            // Building-ground junction: a continuous ashlar plinth on rendered ground floors (stubs beside openings).
-            if (floor == 0 && plinth && fam != "stone")
+            // Building-ground junction. Legacy: a continuous ashlar plinth on every rendered ground floor. Families: only
+            // where the family asks for a base band, at its own height and in its own stone or paint (owner: "el zócalo
+            // produce una banda horizontal prácticamente continua por toda la ciudad").
+            bool familyPlinth = !string.IsNullOrEmpty(s.family);
+            if (floor == 0 && plinth && fam != "stone" && (!familyPlinth || !string.IsNullOrEmpty(s.plinthMat)))
+            {
+                var k = familyPlinth ? new Vector3(1, Mathf.Max(0.3f, s.plinthHeight) / 0.44f, s.plinthMat.StartsWith("ENV_Paint") ? 0.65f : 1f) : Vector3.one;
                 foreach (var (x, wdt) in FacadeGrammar.PlinthRuns(code))
-                    EnvKit.Place(wdt >= 1.9f ? "ENV_Plinth_2m" : "ENV_Plinth_Pier", slot, new Vector3(x, 0, 0), 0,
-                                 wdt >= 1.9f ? (Vector3?)null : new Vector3(wdt / 0.2f, 1, 1));
+                {
+                    var pl = EnvKit.Place(wdt >= 1.9f ? "ENV_Plinth_2m" : "ENV_Plinth_Pier", slot, new Vector3(x, 0, 0), 0,
+                                          wdt >= 1.9f ? k : new Vector3(wdt / 0.2f * k.x, k.y, k.z));
+                    if (familyPlinth) EnvKit.Remap(pl, new Dictionary<string, string> { { "MI_RockTrim", s.plinthMat } });
+                }
+            }
             if (floor == 0 && Thresholds.TryGetValue(code, out var thr))
             {
                 // Threshold interface for routes, validators and later interaction/NPC work: an empty marker on the
@@ -306,6 +370,30 @@ namespace JuegoDef.Env
                 m.SetParent(slot, false);
                 m.localPosition = new Vector3(thr.x, 0, 0);
             }
+        }
+
+        /// <summary>Interior material for the glazing of a bay: shops by their business programme (display / door),
+        /// homes by a stable draw per window (living room, kitchen, bedroom; bedrooms likelier upstairs) and opening
+        /// kind (wide window, small round-head, balcony/gallery door). Null keeps the plain glass.</summary>
+        public static string GlassRoom(BuildingSpec s, char code, int floor, Vector3 pos, float rot)
+        {
+            if (s.type == "landmark") return EnvKit.HasMat("ENV_Interior_Vacio_S") ? "ENV_Interior_Vacio_S" : null;
+            string name;
+            if (floor == 0 && "SEeRL".IndexOf(code) >= 0 && code != 'L')
+            {
+                var room = EnvBusiness.RoomFor(s);
+                if (string.IsNullOrEmpty(room)) room = "Tienda";
+                name = $"ENV_Interior_{room}_{(code == 'S' || code == 'R' ? "S" : "E")}";
+            }
+            else
+            {
+                string kind = code == 'T' ? "T" : "BINL".IndexOf(code) >= 0 ? "D" : "W";
+                uint h = (uint)(s.seed * 73856093) ^ (uint)(floor * 19349663) ^ (uint)(Mathf.RoundToInt(pos.x * 10 + pos.z * 7 + rot) * 83492791);
+                float r = (h % 1000) / 1000f;
+                string home = floor >= 2 ? (r < 0.3f ? "Sala" : r < 0.45f ? "Cocina" : "Dormitorio") : (r < 0.45f ? "Sala" : r < 0.75f ? "Cocina" : "Dormitorio");
+                name = $"ENV_Interior_{home}_{kind}";
+            }
+            return EnvKit.HasMat(name) ? name : null;
         }
 
         /// <summary>Returns a copy of <paramref name="map"/> with extra slot bindings (key, value, key, value...).</summary>
@@ -337,6 +425,7 @@ namespace JuegoDef.Env
             {
                 // landmark tower: the kit pyramid roof with finial, not flattened
                 EnvKit.Remap(EnvKit.Place($"Roof_Tower_{tiles}", roof, new Vector3(width / 2f, top, -s.depth / 2f), 0), roofMap);
+                if (s.type == "landmark") TowerIdentity(s, root, wallMap, width, top);
                 return;
             }
             if (s.roof == "gable")
@@ -368,7 +457,25 @@ namespace JuegoDef.Env
                     EnvKit.Remap(EnvKit.Place("ENV_Roof_Gable_" + s.depth, EnvKit.Group(roof, "Gable_R"), new Vector3(width, top, -s.depth / 2f), 90, k), wallMap);
             }
             if (s.chimney)
-                EnvKit.Remap(EnvKit.Place("Prop_Chimney2", roof, new Vector3(width * 0.7f, top, -s.depth * 0.62f), 0), wallMap);
+            {
+                // roofs differ by what grew on them: the kit stack, a rendered chimney with a tile cap, a later steel flue,
+                // sometimes two (owner point 36: "la misma solución superior")
+                var crng = new System.Random(s.seed * 97 + 13);
+                string[] kinds = string.IsNullOrEmpty(s.family) ? new[] { "Prop_Chimney2" } : new[] { "Prop_Chimney2", "ENV_Chimney_Stone", "ENV_Chimney_Stone", "ENV_Chimney_Flue" };
+                int count = s.bays >= 4 && crng.NextDouble() < 0.35 ? 2 : 1;
+                for (int ci = 0; ci < count; ci++)
+                {
+                    string kind = kinds[crng.Next(kinds.Length)];
+                    float cx = width * (count == 1 ? 0.25f + 0.5f * (float)crng.NextDouble() : ci == 0 ? 0.2f : 0.8f);
+                    float u = 0.3f + 0.4f * (float)crng.NextDouble();
+                    float cz = -s.depth * u;
+                    // our stacks stand on the roof surface (kit roof ~50 deg, flattened by the pitch scale); the kit
+                    // stack is tall enough to start at the wall head as before
+                    float ridge = s.roof == "gable" ? 0f : s.depth * 0.5f * 1.19f * s.pitch;
+                    float baseY = kind == "Prop_Chimney2" ? top : top + ridge * (1f - Mathf.Abs(2f * u - 1f)) - 0.25f;
+                    EnvKit.Remap(EnvKit.Place(kind, roof, new Vector3(cx, baseY, cz), crng.Next(0, 4) * 90), With(wallMap, "MI_RoundTiles", roofMap.TryGetValue("MI_RoundTiles", out var rt) ? rt : null));
+                }
+            }
         }
     }
 }

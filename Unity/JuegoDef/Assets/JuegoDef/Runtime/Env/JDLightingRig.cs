@@ -28,7 +28,8 @@ namespace JuegoDef.Env
             public float shadowStrength = 0.8f;
             public Color ambientSky, ambientEquator, ambientGround;
             public Color fogColor;
-            public float fogDensity = 0.01f;
+            [Tooltip("Linear fog: near streets stay clear, the valley and hills fade (owner: no fog hiding the set).")]
+            public float fogStart = 45f, fogEnd = 750f;
             public Material skybox;
             public VolumeProfile profile;
             public float reflectionIntensity = 1f;
@@ -48,17 +49,23 @@ namespace JuegoDef.Env
         public Renderer[] lampGlass = new Renderer[0];
         public Material lampOff, lampOn;
         public ReflectionProbe[] probes = new ReflectionProbe[0];
+        [Tooltip("River water level (world y) for the weathering shader's water line on the channel walls.")]
+        public float waterLevel;
 
         static readonly int DimId = Shader.PropertyToID("_JD_InteriorDim");
         static readonly int LitId = Shader.PropertyToID("_JD_InteriorLit");
         static readonly int ShareId = Shader.PropertyToID("_JD_InteriorLitShare");
         static readonly int TintId = Shader.PropertyToID("_JD_InteriorTint");
+        static readonly int WaterId = Shader.PropertyToID("_JD_WaterLevel");
+        static readonly int SunDirId = Shader.PropertyToID("_JD_SunDir");
 
         void OnEnable()
         {
             // shader globals are not saved with the scene: restore them on load (edit mode touches nothing else)
             if (Application.isPlaying) Apply(current);
             else if (presets != null && current < presets.Length) SetInteriorGlobals(presets[current]);
+            Shader.SetGlobalFloat(WaterId, waterLevel);
+            if (sun) Shader.SetGlobalVector(SunDirId, -sun.transform.forward);
         }
 
         void Update()
@@ -90,9 +97,10 @@ namespace JuegoDef.Env
             RenderSettings.ambientEquatorColor = p.ambientEquator;
             RenderSettings.ambientGroundColor = p.ambientGround;
             RenderSettings.fog = true;
-            RenderSettings.fogMode = FogMode.Exponential;
+            RenderSettings.fogMode = FogMode.Linear;
             RenderSettings.fogColor = p.fogColor;
-            RenderSettings.fogDensity = p.fogDensity;
+            RenderSettings.fogStartDistance = p.fogStart;
+            RenderSettings.fogEndDistance = p.fogEnd;
             if (p.skybox) RenderSettings.skybox = p.skybox;
             RenderSettings.reflectionIntensity = p.reflectionIntensity;
             if (volume && p.profile) volume.sharedProfile = p.profile;
@@ -111,6 +119,8 @@ namespace JuegoDef.Env
                 if (probes[k] && p.probeTextures != null && k < p.probeTextures.Length && p.probeTextures[k])
                     probes[k].customBakedTexture = p.probeTextures[k];
             SetInteriorGlobals(p);
+            Shader.SetGlobalFloat(WaterId, waterLevel);
+            if (sun) Shader.SetGlobalVector(SunDirId, -sun.transform.forward);
             DynamicGI.UpdateEnvironment();
         }
 

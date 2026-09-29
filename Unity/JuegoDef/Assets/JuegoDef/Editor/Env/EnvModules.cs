@@ -19,8 +19,13 @@ namespace JuegoDef.Env
         const string MeshFolder = EnvKit.Derived + "/Meshes";
 
         [MenuItem("JuegoDef/ENV/2 Build Modules")]
-        public static void Build()
+        public static void BuildMenu() => Build();
+
+        /// <summary>Builds every module, or only the named ones (comma list; no orphan sweep then) after a recipe
+        /// change, so one new piece does not re-import the whole library.</summary>
+        public static void Build(string only = null)
         {
+            var want = string.IsNullOrEmpty(only) ? null : new HashSet<string>(only.Split(','));
             EnvKit.EnsureFolder(ModuleFolder);
             var policy = JObject.Parse(EnvKit.ReadText(EnvKit.Grammar + "/modules.json"));
             var none = new HashSet<string>(policy["noCollider"].Select(t => (string)t));
@@ -34,6 +39,7 @@ namespace JuegoDef.Env
             {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
                 var name = Path.GetFileNameWithoutExtension(path);
+                if (want != null && !want.Contains(name)) { produced.Add(name); continue; }
                 var importer = (ModelImporter)AssetImporter.GetAtPath(path);
                 importer.SearchAndRemapMaterials(ModelImporterMaterialName.BasedOnMaterialName, ModelImporterMaterialSearch.Everywhere);
                 importer.SaveAndReimport();
@@ -49,6 +55,7 @@ namespace JuegoDef.Env
 
             foreach (JObject w in policy["wrappers"])
             {
+                if (want != null && !want.Contains((string)w["name"])) { produced.Add((string)w["name"]); continue; }
                 var source = EnvKit.Module((string)w["source"]);
                 var remap = (w["remap"] as JObject)?.Properties().ToDictionary(pr => pr.Name, pr => (string)pr.Value);
                 SaveModule((string)w["name"], source, (string)w["collider"] ?? "box", remap);

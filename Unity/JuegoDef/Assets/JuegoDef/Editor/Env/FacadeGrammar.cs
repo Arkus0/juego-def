@@ -64,7 +64,7 @@ namespace JuegoDef.Env
                     if (s.era == "neglected")
                     {
                         if (f > 0 && c == 'W') o[f][i] = rng.NextDouble() < 0.2 ? 'X' : (rng.NextDouble() < 0.65 ? 'c' : 'W');
-                        if (f == 0 && string.IsNullOrEmpty(s.interior) && (c == 'S' || c == 'E') && rng.NextDouble() < 0.5) o[f][i] = 'R';
+                        if (f == 0 && string.IsNullOrEmpty(s.interior) && string.IsNullOrEmpty(s.business) && (c == 'S' || c == 'E') && rng.NextDouble() < 0.5) o[f][i] = 'R';
                     }
                 }
             return o.Select(r => new string(r)).ToArray();
@@ -163,12 +163,14 @@ namespace JuegoDef.Env
         /// "dejar respirar un poco").</summary>
         static readonly Dictionary<int, (string axes, int weight)[]> Rhythms = new Dictionary<int, (string, int)[]>
         {
+            // owner audit 2026-09-29 ("otra vez locos con tantas puertas y ventanas"): sparser again — about one
+            // opening axis per 4-6 m of front, walls read as walls
             { 1, new[] { ("W", 1) } },
-            { 2, new[] { ("WP", 4), ("PW", 4), ("WW", 1) } },
-            { 3, new[] { ("WPW", 3), ("PWP", 3), ("WPP", 1), ("PPW", 1) } },
-            { 4, new[] { ("WPPW", 4), ("PWPW", 2), ("WPWP", 2), ("PWWP", 1) } },
-            { 5, new[] { ("WPWPW", 2), ("PWPWP", 3), ("WPPPW", 2) } },
-            { 6, new[] { ("PWPPWP", 3), ("WPPWPP", 2), ("PPWPWP", 2) } },
+            { 2, new[] { ("WP", 4), ("PW", 4) } },
+            { 3, new[] { ("PWP", 5), ("WPW", 1), ("WPP", 2), ("PPW", 2) } },
+            { 4, new[] { ("WPPW", 3), ("PWPP", 2), ("PPWP", 2), ("PWPW", 1) } },
+            { 5, new[] { ("PWPWP", 3), ("PPWPP", 2), ("WPPPW", 2) } },
+            { 6, new[] { ("PWPPWP", 3), ("PPWPPP", 1), ("PPPWPP", 1), ("WPPPPW", 1) } },
         };
 
         static string Rhythm(int n, System.Random rng)
@@ -198,19 +200,25 @@ namespace JuegoDef.Env
             {
                 case "mixed_commercial":
                 {
-                    for (int i = 0; i < n; i++) rows[0][i] = 'S';
+                    // the house portal, one shop (door + at most two display windows beside it), maybe a service door;
+                    // the rest of the ground floor is wall (owner: "otra vez locos con tantas puertas y ventanas")
                     rows[0][portal] = 'D';
                     var shop = Enumerable.Range(0, n).Where(i => i != portal).ToList();
-                    if (n >= 4 && rng.NextDouble() < 0.6) { rows[0][n - 1 - portal] = 'V'; shop.Remove(n - 1 - portal); }
-                    if (shop.Count > 0) rows[0][shop[shop.Count / 2]] = 'E';
-                    if (shop.Count >= 3 && rng.NextDouble() < 0.4) rows[0][shop[0] == shop[shop.Count / 2] ? shop[1] : shop[0]] = 'R';
-                    balconyChance = 0.7; galleryChance = 0.35;
+                    if (n >= 5 && rng.NextDouble() < 0.4) { rows[0][n - 1 - portal] = 'V'; shop.Remove(n - 1 - portal); }
+                    if (shop.Count > 0)
+                    {
+                        int door = shop[shop.Count / 2];
+                        rows[0][door] = 'E';
+                        foreach (var i in shop.Where(i => i != door).OrderBy(i => Math.Abs(i - door)).Take(rng.NextDouble() < 0.5 ? 1 : 2))
+                            rows[0][i] = 'S';
+                    }
+                    balconyChance = 0.45; galleryChance = 0.18;
                     break;
                 }
                 case "lodging":
                 {
                     rows[0][n / 2] = 'A';
-                    if (n >= 4) { rows[0][0] = 'W'; rows[0][n - 1] = 'W'; }
+                    if (n >= 4) rows[0][rng.NextDouble() < 0.5 ? 0 : n - 1] = 'W';
                     balconyChance = 1.0;
                     break;
                 }
@@ -218,14 +226,16 @@ namespace JuegoDef.Env
                 case "termination":
                 {
                     rows[0][portal] = 'D';
+                    // near-solid ground floors: the portal and at most ONE more opening — a small window or a garage
                     var others = Enumerable.Range(0, n).Where(i => i != portal).ToList();
-                    if (others.Count >= 2 && rng.NextDouble() < 0.6) rows[0][others[rng.Next(others.Count)]] = 'W';
-                    if (n >= 3 && rng.NextDouble() < 0.4)
+                    double extra = rng.NextDouble();
+                    if (others.Count >= 2 && extra < 0.35) rows[0][others[rng.Next(others.Count)]] = 'W';
+                    else if (n >= 3 && extra < 0.55)
                     {
-                        var far = others.Where(i => rows[0][i] == 'P').OrderByDescending(i => Math.Abs(i - portal)).ToList();
-                        if (far.Count > 0) rows[0][far[0]] = 'R';
+                        var far = others.OrderByDescending(i => Math.Abs(i - portal)).ToList();
+                        rows[0][far[0]] = 'R';
                     }
-                    balconyChance = s.type == "termination" ? 0.3 : 0.5; galleryChance = 0.3;
+                    balconyChance = s.type == "termination" ? 0.2 : 0.32; galleryChance = 0.15;
                     break;
                 }
                 case "landmark":
@@ -233,7 +243,7 @@ namespace JuegoDef.Env
                     // stone tower (belfry / singular building) closing a view: solid shaft, small openings, open belfry
                     rows[0][0] = 'A';
                     for (int f = 1; f < s.floors; f++)
-                        for (int i = 0; i < n; i++) rows[f][i] = f == s.floors - 1 ? 'T' : ((f + i) % 2 == 0 ? 'T' : 'P');
+                        for (int i = 0; i < n; i++) rows[f][i] = f == s.floors - 1 ? 'T' : f == s.floors - 2 ? 'P' : ((f + i) % 2 == 0 ? 'T' : 'P');  // clock storey plain
                     return rows.Select(r => new string(r)).ToArray();
                 }
                 case "warehouse":
@@ -500,11 +510,15 @@ namespace JuegoDef.Env
             float top = s.floors * BuildingAssembler.Storey;
             int width = s.bays * 2;
             var doors = new List<float>();
+            bool district = !string.IsNullOrEmpty(s.family);
+            bool programme = !string.IsNullOrEmpty(s.business);
             for (int i = 0; i < s.bays; i++)
             {
                 if (s.cornerEntrance && i == (s.cornerSide == "left" ? 0 : s.bays - 1)) continue;  // the chamfer carries its own fascia
                 char g = rows[0][i];
                 var x = 1 + 2 * i;
+                if (g == 'A' || g == 'D' || g == 'O' || g == 'o') doors.Add(x);
+                if (programme) continue;   // the business dresses its own front (EnvBusiness)
                 if (g == 'S' || g == 'R' || g == 'E' || g == 'e')
                 {
                     // edge bays stop the fascia/awning 0.36 m short of the party line: the quoin pilaster (0.22 m on
@@ -516,15 +530,17 @@ namespace JuegoDef.Env
                     if (!string.IsNullOrEmpty(s.awning) && (g == 'S' || g == 'E' || g == 'e'))
                         EnvKit.Remap(EnvKit.Place("ENV_Awning", dress, new Vector3(x + inset, 0, 0), 0, k), new Dictionary<string, string> { { "ENV_Canvas_Green", s.awning } });
                 }
-                if ((g == 'A' || g == 'D' || g == 'O' || g == 'o') && (s.type == "lodging" || s.sign == "bracket"))
+                if ((g == 'A' || g == 'D' || g == 'O' || g == 'o') && !district && (s.type == "lodging" || s.sign == "bracket"))
                     EnvKit.Remap(EnvKit.Place("ENV_Sign_Bracket", dress, new Vector3(x - 1f, 0, 0), 0), joinMap);
-                if (g == 'A' || g == 'D' || g == 'O' || g == 'o') doors.Add(x);
             }
 
             var field = EnvClearance.Field.Of(root, new[] { root });
             var ghosts = GhostQuoins(s, root, field);
             var hist = EnvKit.Group(root, "History");
+            var weather = EnvKit.Group(root, "Weathering");
             var pipes = new List<float>();
+            string cond = Condition(s);
+            bool old = cond == "Viejo" || cond == "Gastado";
 
             GameObject Pipe(Transform parent, IEnumerable<float> xs, float height)
             {
@@ -541,6 +557,9 @@ namespace JuegoDef.Env
                         EnvKit.Place("ENV_Downpipe_Head", parent, new Vector3(x, height, zc), 0);
                         EnvKit.Place("ENV_Downpipe_Shoe", parent, new Vector3(x, 0, zc), 0);
                         pipes.Add(x);
+                        // the splash at the foot and the damp run along the pipe (owner: "humedad bajo bajantes")
+                        if (district && (old || rng.NextDouble() < 0.5))
+                            Stain("Downpipe", weather, new Vector3(x, 0, 0), new Vector3(0.8f + 0.5f * (float)rng.NextDouble(), 1.2f + 1.4f * (float)rng.NextDouble(), 1));
                         return go;
                     }
                 }
@@ -561,6 +580,10 @@ namespace JuegoDef.Env
                 return go;
             }
 
+            if (programme)
+                EnvBusiness.Dress(s, root, rows, rng, joinMap,
+                    (m, par, pos, rot, sc) => TryPlace(m, par, pos, rot, sc),
+                    (m, par, pos, rot, sc) => { var go = EnvKit.Place(m, par, pos, rot, sc); field.Add(go); return go; });
             // rain-water downpipes: one per party line (the right one only where no neighbour brings its own), beside
             // the quoin pilaster if free, else at the nearest free bay joint
             // Lebaniego deep eaves drip onto the street, so most casco houses have none (owner: "demasiadas bajantes,
@@ -580,8 +603,10 @@ namespace JuegoDef.Env
                 foreach (var x in xs.Concat(Enumerable.Range(2, Math.Max(0, s.bays - 3)).Select(k => 2f * k)))
                     if (TryPlace("ENV_Prop_Lantern_Wall", dress, new Vector3(x, 3.3f, 0.1f), 0, new Vector3(0.75f, 0.75f, 0.75f))) break;
             }
+            if (district)
+                Plants(s, root, rows, rng, doors, field, hist, TryPlace);
             // doorstep pots: kept clear of pipes and meters, may stand in front of the door jambs
-            if (h.pots)
+            else if (h.pots)
                 foreach (var x in doors)
                     foreach (var sx in new[] { -0.95f, 0.95f })
                         if (TryPlace("ENV_Planter_Pot", dress, new Vector3(x + sx, 0, 0.38f), 0, new Vector3(0.8f, 0.8f, 0.8f), it => EnvClearance.IsService(it.module) || it.module == "ENV_Utility_Box" || it.module.StartsWith("Corner_")))
@@ -626,14 +651,269 @@ namespace JuegoDef.Env
                     if (TryPlace("Prop_Vine" + (1 + rng.Next(3)), hist, new Vector3(1 + 2 * b, 2.9f + (rows.Length > 1 && rows[1][b] == 'P' ? 3f : 0f), 0.12f), 0,
                                  consider: it => EnvClearance.IsService(it.module) || it.go.transform.parent == dress || it.go.transform.parent == hist)) break;
             }
-            for (int i = 0; i < s.bays && s.floors > 1; i++)
+            for (int i = 0; i < s.bays && s.floors > 1 && !district; i++)
                 if ((rows[1][i] == 'I' || rows[1][i] == 'B') && h.pots)
                     foreach (var sx in new[] { -0.55f, 0.55f })
                     {
                         EnvKit.Place("ENV_Planter_Pot", hist, new Vector3(1 + 2 * i + sx, BuildingAssembler.Storey, 0.42f), 0, new Vector3(0.6f, 0.6f, 0.6f));
                         EnvKit.Place("ENV_Plant_Bush_Flowers", hist, new Vector3(1 + 2 * i + sx, BuildingAssembler.Storey + 0.26f, 0.42f), rng.Next(360), new Vector3(0.3f, 0.3f, 0.3f));
                     }
+            if (district)
+            {
+                // wall-mounted additions keep clear of every downpipe line and its brackets (the validator's pipe box)
+                GameObject WallPlace(string m, Transform par, Vector3 pos, float rot, Vector3? sc, Func<EnvClearance.Item, bool> consider)
+                {
+                    float half = m == "ENV_AC_Unit" ? 0.42f : m == "ENV_Telecom_Box" || m == "ENV_Gas_Pipe" ? 0.22f : m == "ENV_Alarm_Box" || m == "ENV_Extractor_Vent" ? 0.15f : 0.1f;
+                    if (pipes.Any(px => Mathf.Abs(px - pos.x) < half + 0.12f)) return null;
+                    return TryPlace(m, par, pos, rot, sc, consider);
+                }
+                Contemporary(s, root, rows, rng, doors, hist, weather, WallPlace, old);
+                Weathering(s, root, rows, rng, cond, weather, field);
+                Thresholds(s, root, rows, rng, dress);
+                GhostAdvert(s, root, rows, rng, weather);
+            }
             foreach (var g in ghosts) UnityEngine.Object.DestroyImmediate(g);
+        }
+
+        /// <summary>Building-ground contact (owner point 15): a worn granite step under every portal (flush with the
+        /// floor, so it shows as a step wherever the street falls away), a flush stone slab at shop doors, and on
+        /// the damp residential lanes an old stone bench (poyo) by some doors — where the old neighbours sit.</summary>
+        static void Thresholds(BuildingSpec s, Transform root, string[] rows, System.Random rng, Transform dress)
+        {
+            for (int i = 0; i < s.bays; i++)
+            {
+                char c = rows[0][i];
+                float x = 1 + 2 * i;
+                if ("DAoO".IndexOf(c) >= 0)
+                    EnvKit.Remap(EnvKit.Place("ENV_Door_Step", dress, new Vector3(x, -0.14f, WallFaceZ), 0, new Vector3(1.0f, 1f, 0.9f)),
+                                 new Dictionary<string, string> { { "MI_RockTrim", string.IsNullOrEmpty(s.dressed) ? "ENV_Dressed_Gris" : s.dressed } });
+                else if (c == 'E' || c == 'e')
+                    EnvKit.Remap(EnvKit.Place("ENV_Threshold_Slab", dress, new Vector3(x - 0.1f, -0.012f, WallFaceZ), 0),
+                                 new Dictionary<string, string> { { "MI_RockTrim", "ENV_Dressed_Gris" } });
+            }
+        }
+
+        const float WallFaceZ = 0.092f;
+
+        /// <summary>A faded painted advertisement on the blind upper side wall of a taller corner house (owner points
+        /// 21 and 44: blank walls, "carteles viejos", stories on the walls). Only on the rear bay of a deep side wall,
+        /// clear of its small windows.</summary>
+        static void GhostAdvert(BuildingSpec s, Transform root, string[] rows, System.Random rng, Transform weather)
+        {
+            if (s.floors < 3 || s.depth < 6 || rng.NextDouble() > 0.22) return;
+            bool left = s.exposeLeft && (!s.exposeRight || rng.NextDouble() < 0.5);
+            if (!left && !s.exposeRight) return;
+            var ghosts = new[] { "ghost_anis", "ghost_chocolates", "ghost_abonos", "ghost_hotel" };
+            var id = ghosts[rng.Next(ghosts.Length)];
+            float z = -s.depth + 1.3f, y = 1 * BuildingAssembler.Storey + 0.5f;
+            float x = left ? -0.1f : s.bays * 2 + 0.1f;
+            var p = EnvKit.Place("ENV_Sign_Panel", weather, new Vector3(x, y + 1.0f, z), left ? 270 : 90, new Vector3(1.9f, 1.2f, 0.1f));
+            EnvKit.Remap(p, new Dictionary<string, string> { { "ENV_Sign_Board", EnvBusiness.TextureMat("ENV_Ghost_" + id, "T_ENV_Ghost_" + id, 0.02f) }, { "MI_WoodTrim", s.render ?? "ENV_Plaster_Lime" } });
+        }
+
+        /// <summary>Render condition of a family building (Nuevo / Pintado / Viejo / Gastado), "" otherwise.</summary>
+        public static string Condition(BuildingSpec s)
+        {
+            if (string.IsNullOrEmpty(s.render)) return "";
+            var parts = s.render.Split('_');
+            return parts.Length >= 4 ? parts[3] : "";
+        }
+
+        static GameObject Stain(string cell, Transform parent, Vector3 pos, Vector3 scale)
+        {
+            var go = EnvKit.Place("ENV_Stain_Quad", parent, pos, 0, scale);
+            EnvKit.Remap(go, new Dictionary<string, string> { { "ENV_Stain_Downpipe", "ENV_Stain_" + cell } });
+            return go;
+        }
+
+        /// <summary>Where water, iron and time mark a facade (owner audit 2026-09-29: "humedad bajo bajantes,
+        /// reparaciones, desgaste de zócalos, manchas en esquinas"): streaks under sills, rust under iron balconies,
+        /// run-off at exposed corners, a damp band on ground floors of damp streets, algae on river stone, repair
+        /// patches on old render. Density follows the render's condition; nothing on a freshly painted front.</summary>
+        static void Weathering(BuildingSpec s, Transform root, string[] rows, System.Random rng, string cond, Transform weather, EnvClearance.Field field)
+        {
+            if (cond == "Nuevo") return;
+            float age = cond == "Gastado" ? 1f : cond == "Viejo" ? 0.6f : 0.25f;
+            int width = s.bays * 2;
+            for (int f = 1; f < rows.Length; f++)
+                for (int i = 0; i < s.bays; i++)
+                {
+                    char c = rows[f][i];
+                    float x = 1 + 2 * i, y = f * BuildingAssembler.Storey;
+                    if ("Wwc".IndexOf(c) >= 0 && rng.NextDouble() < 0.4f * age)
+                        Stain("Sill", weather, new Vector3(x + (float)(rng.NextDouble() - 0.5) * 0.2f, y + 0.95f - 1.3f, 0), new Vector3(1.1f, 1.3f, 1));
+                    if ((c == 'I' || c == 'B') && rng.NextDouble() < 0.7f * age + 0.2f)
+                        Stain(c == 'I' ? "Rust" : "Sill", weather, new Vector3(x, y - 1.2f, 0), new Vector3(1.5f, 1.25f, 1));
+                }
+            // corner run-off where the front corner is seen
+            if (s.exposeLeft && rng.NextDouble() < 0.4f + 0.4f * age)
+                Stain("Corner", weather, new Vector3(0.3f, 0.2f, 0), new Vector3(0.6f, s.floors * BuildingAssembler.Storey * (0.5f + 0.4f * (float)rng.NextDouble()), 1));
+            if (s.exposeRight && rng.NextDouble() < 0.4f + 0.4f * age)
+                Stain("Corner", weather, new Vector3(width - 0.3f, 0.2f, 0), new Vector3(-0.6f, s.floors * BuildingAssembler.Storey * (0.5f + 0.4f * (float)rng.NextDouble()), 1));
+            // damp band / algae along the foot of solid ground-floor bays
+            for (int i = 0; i < s.bays; i++)
+            {
+                char c = rows[0][i];
+                if ("PWwT".IndexOf(c) < 0) continue;
+                if (rng.NextDouble() < 0.35f * age + (s.basement > 0.5f ? 0.2f : 0f))
+                    Stain(s.ground == "stone" && rng.NextDouble() < 0.5 ? "Algae" : "Damp", weather, new Vector3(1 + 2 * i, 0.02f, 0), new Vector3(2.05f, 0.8f + 0.7f * (float)rng.NextDouble(), 1));
+            }
+            // repair patches on old render, only where the wall is plain
+            if (s.upper != "stone")
+            {
+                int n = rng.NextDouble() < 0.6f * age ? 1 + rng.Next(3) : 0;
+                for (int k = 0; k < n; k++)
+                {
+                    int f = rng.Next(rows.Length), i = rng.Next(s.bays);
+                    if (rows[f][i] != 'P') continue;
+                    float w = 0.5f + 0.9f * (float)rng.NextDouble(), h = 0.4f + 0.7f * (float)rng.NextDouble();
+                    var pos = new Vector3(1 + 2 * i + (float)(rng.NextDouble() - 0.5) * 0.6f, f * BuildingAssembler.Storey + 0.3f + 1.8f * (float)rng.NextDouble(), 0);
+                    if (field.Hit(EnvClearance.Box(pos.x - w / 2, pos.x + w / 2, pos.y, pos.y + h, 0.05f, 0.2f), it => !it.module.StartsWith("ENV_Plinth")) == null)
+                        Stain("Repair", weather, pos, new Vector3(w, h, 1));
+                }
+            }
+        }
+
+        /// <summary>The 21st century on an old front (owner: "falta arquitectura contemporánea"): split air-conditioning
+        /// units, an alarm box over a shop, intercom and house number at the portal, extractor vents, a telecom box, a
+        /// gas riser. All placed only where the facade has room; rarer on old untouched houses.</summary>
+        static void Contemporary(BuildingSpec s, Transform root, string[] rows, System.Random rng, List<float> doors, Transform hist, Transform weather,
+                                 System.Func<string, Transform, Vector3, float, Vector3?, System.Func<EnvClearance.Item, bool>, GameObject> tryPlace, bool old)
+        {
+            if (s.type == "landmark") return;
+            bool recent = s.era == "reformed";
+            // house number and intercom by every portal
+            foreach (var x in doors)
+            {
+                int num = 1 + (int)(((uint)(s.seed * 2654435761u) >> 8) % 40);
+                var plate = tryPlace("ENV_Sign_Panel", hist, new Vector3(x + 0.78f, 2.2f, 0.108f), 0, new Vector3(0.17f, 0.13f, 0.4f), null);
+                if (plate) EnvKit.Remap(plate, new Dictionary<string, string> { { "ENV_Sign_Board", NumberMat(num, s.seed) }, { "MI_WoodTrim", "ENV_Paint_White" } });
+                if (recent || rng.NextDouble() < 0.55)
+                    foreach (var dx in rng.NextDouble() < 0.5 ? new[] { -0.95f, 0.95f } : new[] { 0.95f, -0.95f })
+                        if (tryPlace("ENV_Intercom", hist, new Vector3(x + dx, 0, 0), 0, null, null)) break;
+            }
+            // air conditioning: on plain bays of upper floors, likelier on reformed houses and shops
+            int ac = recent ? rng.Next(0, 3) : rng.NextDouble() < 0.18 ? 1 : 0;
+            for (int k = 0; k < ac; k++)
+            {
+                int f = 1 + rng.Next(Mathf.Max(1, rows.Length - 1));
+                if (f >= rows.Length) continue;
+                var plain = Enumerable.Range(0, s.bays).Where(i => rows[f][i] == 'P').ToList();
+                if (plain.Count == 0) continue;
+                int b = plain[rng.Next(plain.Count)];
+                tryPlace("ENV_AC_Unit", hist, new Vector3(1 + 2 * b, f * BuildingAssembler.Storey + 0.35f, 0), 0, null, null);
+            }
+            if (s.type == "mixed_commercial" && EnvBusiness.TypeOf(s) != "cerrado" && EnvBusiness.TypeOf(s) != "vivienda" && rng.NextDouble() < 0.55)
+                foreach (var x in new[] { 1f, s.bays * 2 - 1f })
+                    if (tryPlace("ENV_Alarm_Box", hist, new Vector3(x, 3.25f, 0), 0, null, null)) break;
+            if (rng.NextDouble() < (recent ? 0.35 : 0.18))
+            {
+                var plain = Enumerable.Range(0, s.bays).Where(i => rows[0][i] == 'P' || (rows.Length > 1 && rows[1][i] == 'P')).ToList();
+                if (plain.Count > 0)
+                {
+                    int b = plain[rng.Next(plain.Count)];
+                    int f = rows[0][b] == 'P' ? 0 : 1;
+                    var v = tryPlace("ENV_Extractor_Vent", hist, new Vector3(1 + 2 * b + 0.5f, f * BuildingAssembler.Storey + 2.2f, 0), 0, null, null);
+                    if (v && (old || rng.NextDouble() < 0.4)) Stain("Soot", weather, new Vector3(1 + 2 * b + 0.5f, f * BuildingAssembler.Storey + 2.3f, 0), new Vector3(0.6f, 0.9f, 1));
+                }
+            }
+            if (rng.NextDouble() < 0.2)
+            {
+                var plain = Enumerable.Range(0, s.bays).Where(i => rows[0][i] == 'P').ToList();
+                if (plain.Count > 0) tryPlace("ENV_Telecom_Box", hist, new Vector3(1 + 2 * plain[rng.Next(plain.Count)] - 0.4f, 1.1f, 0), 0, null, null);
+            }
+            if (s.floors >= 2 && rng.NextDouble() < 0.12)
+            {
+                var cols = Enumerable.Range(0, s.bays).Where(i => rows.All(r => r[i] == 'P')).ToList();
+                if (cols.Count > 0) tryPlace("ENV_Gas_Pipe", hist, new Vector3(1 + 2 * cols[rng.Next(cols.Count)] + 0.3f, 0, 0), 0, null, null);
+            }
+        }
+
+        static string NumberMat(int n, int seed)
+        {
+            // 12 enamel number plates (Tools/env_signs.py); the house gets the nearest one
+            var have = new[] { 2, 3, 5, 7, 8, 11, 12, 14, 17, 19, 21, 26 };
+            int k = have.OrderBy(v => Mathf.Abs(v - n)).First();
+            return EnvBusiness.TextureMat($"ENV_Num_{k}", $"T_ENV_Num_{k}", 0.5f);
+        }
+
+        /// <summary>Doorstep and balcony plants (owner audit: "las macetas delatan el procedural dressing"): far
+        /// rarer, chosen by street (damp lanes and huerta edges keep more), mixed species of the humid north —
+        /// hydrangeas, ferns, geraniums, box balls, a bay laurel — in different containers (terracotta, glazed, an
+        /// old tin, a stone trough, a timber box), and never the same pair beside every door.</summary>
+        static void Plants(BuildingSpec s, Transform root, string[] rows, System.Random rng, List<float> doors, EnvClearance.Field field, Transform hist,
+                           System.Func<string, Transform, Vector3, float, Vector3?, System.Func<EnvClearance.Item, bool>, GameObject> tryPlace)
+        {
+            var dress = EnvKit.Group(root, "Dressing");
+            float share = s.plantShare;
+            System.Func<EnvClearance.Item, bool> soft = it => EnvClearance.IsService(it.module) || it.module == "ENV_Utility_Box" || it.module.StartsWith("Corner_") || it.module == "ENV_Intercom";
+            (string pot, string plant, float py, float ps)[] doorsets =
+            {
+                ("ENV_Planter_Pot", "ENV_Plant_Hydrangea", 0.36f, 0.7f),
+                ("ENV_Pot_Glazed", "ENV_Plant_Boxwood", 0.34f, 1.0f),
+                ("ENV_Trough_Stone", "ENV_Plant_Hydrangea", 0.36f, 0.75f),
+                ("ENV_Planter_Pot", "ENV_Plant_Fern", 0.36f, 0.075f),   // the kit fern is ~9 m wide
+                ("ENV_Pot_Tin", "ENV_Plant_Geranium", 0.29f, 1.0f),
+                ("ENV_Pot_Glazed", "ENV_Plant_Laurel", 0.33f, 1.0f),
+                ("ENV_Planter_Box", "ENV_Plant_Geranium", 0.2f, 0.9f),
+            };
+            string[] flowers = { "ENV_Flower_Blue", "ENV_Flower_Pink", "ENV_Flower_White" };
+            string[] glazes = { "ENV_Ceramic_Blue", "ENV_Ceramic_Green", "ENV_Ceramic_Ochre" };
+            foreach (var x in doors)
+            {
+                if (rng.NextDouble() > share) continue;
+                var set = doorsets[rng.Next(doorsets.Length)];
+                int count = set.pot == "ENV_Trough_Stone" || set.pot == "ENV_Planter_Box" || rng.NextDouble() < 0.6 ? 1 : 2;
+                var sides = rng.NextDouble() < 0.5 ? new[] { -1.0f, 1.0f } : new[] { 1.0f, -1.0f };
+                for (int k = 0; k < count; k++)
+                {
+                    float sx = sides[k] * (set.pot == "ENV_Trough_Stone" ? 1.3f : 0.98f);
+                    var pos = new Vector3(x + sx, 0, set.pot == "ENV_Trough_Stone" ? 0.42f : 0.36f);
+                    var pot = tryPlace(set.pot, dress, pos, rng.Next(-15, 15), null, soft);
+                    if (!pot) continue;
+                    if (set.pot == "ENV_Pot_Glazed") EnvKit.Remap(pot, new Dictionary<string, string> { { "ENV_Ceramic_Blue", glazes[rng.Next(glazes.Length)] } });
+                    var pl = EnvKit.Place(set.plant, dress, pos + new Vector3(0, set.py, 0), rng.Next(360), Vector3.one * set.ps * (0.85f + 0.3f * (float)rng.NextDouble()));
+                    EnvKit.Remap(pl, new Dictionary<string, string> { { "ENV_Flower_Blue", flowers[rng.Next(flowers.Length)] } });
+                    // the leaves must not grow through a downpipe or a meter box either
+                    var pb = EnvClearance.BoundsIn(root, pl);
+                    pb.Expand(-0.02f);
+                    if (field.Hit(pb, it => EnvClearance.IsService(it.module) || it.module == "ENV_Utility_Box") != null)
+                    {
+                        field.Remove(pot);
+                        UnityEngine.Object.DestroyImmediate(pl);
+                        UnityEngine.Object.DestroyImmediate(pot);
+                        continue;
+                    }
+                    field.Add(pl);
+                }
+            }
+            // an old stone bench by the door, a chair brought out (residential lanes: the plant share is high there)
+            if (share >= 0.3f && doors.Count > 0 && rng.NextDouble() < 0.18)
+            {
+                float x = doors[rng.Next(doors.Count)] + (rng.NextDouble() < 0.5 ? -1.6f : 1.6f);
+                if (tryPlace("ENV_Bench_Stone", dress, new Vector3(x, 0, 0.35f), 0, new Vector3(0.7f, 1, 0.8f), soft) && rng.NextDouble() < 0.5)
+                    tryPlace("ENV_Prop_Chair", dress, new Vector3(x + (rng.NextDouble() < 0.5 ? 1.1f : -1.1f), 0, 0.6f), rng.Next(150, 210), null, soft);
+            }
+            // balconies: geraniums in a box or a couple of pots on some iron/timber balconies
+            for (int f = 1; f < rows.Length; f++)
+                for (int i = 0; i < s.bays; i++)
+                {
+                    if ((rows[f][i] != 'I' && rows[f][i] != 'B') || rng.NextDouble() > share * 1.2f) continue;
+                    float y = f * BuildingAssembler.Storey;
+                    if (rng.NextDouble() < 0.5)
+                    {
+                        EnvKit.Place("ENV_Planter_Box", hist, new Vector3(1 + 2 * i, y, 0.5f), 0, new Vector3(0.9f, 1, 0.8f));
+                        EnvKit.Place("ENV_Plant_Geranium", hist, new Vector3(1 + 2 * i - 0.2f, y + 0.18f, 0.5f), rng.Next(360), Vector3.one * 0.8f);
+                        EnvKit.Place("ENV_Plant_Geranium", hist, new Vector3(1 + 2 * i + 0.22f, y + 0.18f, 0.5f), rng.Next(360), Vector3.one * 0.75f);
+                    }
+                    else
+                    {
+                        float sx = rng.NextDouble() < 0.5 ? -0.55f : 0.55f;
+                        EnvKit.Place("ENV_Planter_Pot", hist, new Vector3(1 + 2 * i + sx, y, 0.42f), 0, Vector3.one * 0.6f);
+                        EnvKit.Remap(EnvKit.Place(rng.NextDouble() < 0.5 ? "ENV_Plant_Geranium" : "ENV_Plant_Hydrangea", hist, new Vector3(1 + 2 * i + sx, y + 0.23f, 0.42f), rng.Next(360), Vector3.one * 0.45f),
+                                     new Dictionary<string, string> { { "ENV_Flower_Blue", flowers[rng.Next(flowers.Length)] } });
+                    }
+                }
         }
 
         /// <summary>Temporary copies of the neighbour's quoin column on a shared edge the neighbour owns (the street

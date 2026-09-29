@@ -101,10 +101,10 @@
     {
       "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity",
       "stats": {
-        "thresholds": 406,
+        "thresholds": 398,
         "openWalkable": 0,
-        "closedBlocked": 406,
-        "renderers": 27220
+        "closedBlocked": 398,
+        "renderers": 27451
       },
       "issues": []
     }

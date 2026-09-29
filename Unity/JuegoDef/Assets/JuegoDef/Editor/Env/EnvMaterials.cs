@@ -37,6 +37,11 @@ namespace JuegoDef.Env
                 BuildMaterial(m);
                 materials++;
             }
+            foreach (var m in ExpandFamilies(recipe))
+            {
+                BuildMaterial(m);
+                materials++;
+            }
             AssetDatabase.SaveAssets();
             EnvKit.ClearCache();
             Debug.Log($"JD_ENV_MATERIALS textures={textures} materials={materials}");
@@ -85,6 +90,58 @@ namespace JuegoDef.Env
 
         static double Lum(Color32 c) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
 
+        /// <summary>Stable 0..1 hash of a string (FNV-1a): the same material gets the same seed on every machine.</summary>
+        static float Hash01(string s)
+        {
+            uint h = 2166136261;
+            foreach (char c in s) { h ^= c; h *= 16777619; }
+            return (h % 100000) / 100000f;
+        }
+
+        /// <summary>Material families (materials.json "families"): the cartesian product of the axes over a base recipe,
+        /// named prefix_axisKey_axisKey... (empty keys add nothing). Each axis entry merges its textures/colours/floats/
+        /// vectors/tiling over the base. One family line replaces dozens of near-identical recipes.</summary>
+        public static IEnumerable<JObject> ExpandFamilies(JObject recipe)
+        {
+            if (!(recipe["families"] is JArray families)) yield break;
+            foreach (JObject f in families)
+            {
+                var root = (JObject)f["base"].DeepClone();
+                if (f["tiling"] != null && root["tiling"] == null) root["tiling"] = new JObject { ["_BaseMap"] = (float)f["tiling"] };
+                var combos = new List<(string name, JObject r)> { ((string)f["prefix"], root) };
+                foreach (JObject axis in (JArray)f["axes"])
+                {
+                    var next = new List<(string, JObject)>();
+                    foreach (var (name, r) in combos)
+                        foreach (var kv in axis)
+                        {
+                            var merged = (JObject)r.DeepClone();
+                            foreach (var part in (JObject)kv.Value)
+                            {
+                                if (part.Value is JObject obj && merged[part.Key] is JObject into)
+                                    into.Merge(obj, new JsonMergeSettings { MergeArrayHandling = MergeArrayHandling.Replace });
+                                else merged[part.Key] = part.Value.DeepClone();
+                            }
+                            next.Add((kv.Key.Length > 0 ? name + "_" + kv.Key : name, merged));
+                        }
+                    combos = next;
+                }
+                foreach (var (name, r) in combos)
+                {
+                    r["name"] = name;
+                    // every member gets its own seed and a deterministic spread of its weathering amounts, so two
+                    // buildings with "the same" render still age differently (owner: "mucho revoco envejece igual")
+                    var floats = (JObject)(r["floats"] ?? (r["floats"] = new JObject()));
+                    floats["_Seed"] = Hash01(name) * 100f;
+                    if (f["jitter"] is JObject jitter)
+                        foreach (var kv in jitter)
+                            if (floats[kv.Key] != null)
+                                floats[kv.Key] = (float)floats[kv.Key] * (1f + (float)kv.Value * (Hash01(name + kv.Key) * 2f - 1f));
+                    yield return r;
+                }
+            }
+        }
+
         static void BuildMaterial(JObject r)
         {
             var name = (string)r["name"];
@@ -113,6 +170,24 @@ namespace JuegoDef.Env
                 }
             if (r["floats"] is JObject floats)
                 foreach (var kv in floats) mat.SetFloat(kv.Key, (float)kv.Value);
+            if (r["vectors"] is JObject vecs)
+                foreach (var kv in vecs)
+                {
+                    var a = (JArray)kv.Value;
+                    mat.SetVector(kv.Key, new Vector4((float)a[0], (float)a[1], a.Count > 2 ? (float)a[2] : 0, a.Count > 3 ? (float)a[3] : 0));
+                }
+            // texture tiling (e.g. stone courses: a larger scale = smaller stones)
+            if (r["tiling"] is JObject tiling)
+                foreach (var kv in tiling) mat.SetTextureScale(kv.Key, Vector2.one * (float)kv.Value);
+            // atlas cells: scale x, scale y, offset x, offset y
+            if (r["st"] is JObject st)
+                foreach (var kv in st)
+                {
+                    var a = (JArray)kv.Value;
+                    mat.SetTextureScale(kv.Key, new Vector2((float)a[0], (float)a[1]));
+                    mat.SetTextureOffset(kv.Key, new Vector2((float)a[2], (float)a[3]));
+                }
+            if ((string)r["surface"] == "transparent") Transparent(mat);
             if (r["emission"] is JArray em)
             {
                 // HDR emission: hex colour times intensity (night lamps and lit windows drive the bloom)
@@ -136,6 +211,23 @@ namespace JuegoDef.Env
                 EditorUtility.SetDirty(existing);
                 Object.DestroyImmediate(mat);
             }
+        }
+
+        /// <summary>URP Lit alpha-blended surface (glass, water film): the state the Lit inspector would set.</summary>
+        static void Transparent(Material m)
+        {
+            m.SetFloat("_Surface", 1);
+            m.SetFloat("_Blend", 0);
+            m.SetFloat("_SrcBlend", (float)BlendMode.SrcAlpha);
+            m.SetFloat("_DstBlend", (float)BlendMode.OneMinusSrcAlpha);
+            m.SetFloat("_SrcBlendAlpha", (float)BlendMode.One);
+            m.SetFloat("_DstBlendAlpha", (float)BlendMode.OneMinusSrcAlpha);
+            m.SetFloat("_ZWrite", 0);
+            m.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            m.SetOverrideTag("RenderType", "Transparent");
+            m.renderQueue = (int)RenderQueue.Transparent;
+            m.SetShaderPassEnabled("DepthOnly", false);
+            m.SetShaderPassEnabled("ShadowCaster", false);
         }
 
         static void CopyDeclared(Material src, Material dst)

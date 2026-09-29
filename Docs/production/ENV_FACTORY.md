@@ -53,7 +53,15 @@ python Tools/asset_catalog.py install --pack medieval   # plus props, nature (va
 blender -b --factory-startup --python Tools/blender/env_derive.py      # only if a recipe changed; add -- --only NAME
 ```
 
-Unity menu `JuegoDef > ENV`: **1 Generate Materials → 2 Build Modules → 3 Build Library → 7 Build District → 5 Validate** (and **6 Validator Self-Test** after touching the validator). Then:
+Generated textures (only when a generator changed; deterministic, one random stream per output):
+
+```powershell
+python Tools/env_textures.py --out Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/Textures   # ground, canvas, weathering noise, stain atlas, water ripples
+python Tools/env_masonry.py --out Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/Textures   # 8 masonry/paving bonds, 4 m tiles (~5 min)
+python Tools/env_signs.py                                                              # shop lettering, blade icons, notices, house numbers, painted adverts
+```
+
+Unity menu `JuegoDef > ENV`: **1 Generate Materials → 2 Build Modules → 8 Build Interior Rooms → 3 Build Library → 7 Build District → 5 Validate** (and **6 Validator Self-Test** after touching the validator). Then:
 
 ```powershell
 python Tools/env_catalog.py lineage ; python Tools/env_catalog.py check ; python Tools/env_catalog.py inventory
@@ -72,7 +80,9 @@ python Tools/env_district_skeleton.py --trace Unity/JuegoDef/Assets/JuegoDef/Env
 ```
 
 Then `JuegoDef > ENV > 7 Build District (CASCO)` (or `EnvDistrict.Begin(id)`, `BuildRows(from, count)`…, `Finish()`
-from the operator). The generated scene (~95 MB) and its ground meshes are not committed; rebuild them from the spec.
+from the operator). The generated scene (~95 MB), its ground meshes and baked probes are not committed; rebuild them
+from the spec. Review from the fixed viewpoints: `EnvShots.Capture(id, folder)` (`<id>.shots.json`) and
+`python Tools/env_sheet.py grid|pairs` for contact sheets and before/after pairs.
 
 ## Vocabulary
 
@@ -115,6 +125,46 @@ A palette names `facade`, `trim`, `joinery`, `roof`, `tiles`, `glass`. Vendor ma
   hanging sign, fascia, striped scalloped awning, terracotta pot, solid-crown `ENV_Tree_Plaza`, `ENV_Hill_Tree`,
   `ENV_Bridge_Arch`, `ENV_River_Stairs`, `ENV_Fountain_Trough`. Flat-colour ENV materials now carry painted textures
   (`Tools/env_textures.py`).
+
+### Look pass after the owner audit of 2026-09-29 (45 points)
+
+The district keeps its morphology; what each plot *is* is decided in the builder, not in the spec:
+
+- **Character pass** (`EnvCharacter`): street personality by street id (commercial spine, bar streets, river edge,
+  damp residential lanes, calle alta, huerta edge, plaza) → per building a **facade family** — `render` (all render,
+  often no quoins, painted or low stone plinth), `zocalo` (render over a stone base 0.6–1.3 m), `stone_ground`,
+  `stone`, `rehab` (fresh render, modern joinery), `modern` (clad ground floor, aluminium shopfront) — with render hue
+  × condition (Nuevo / Pintado / Viejo / Gastado), masonry bond × tone, dressed stone, quoin style (ashlar / slim /
+  painted / none), joinery and roof tiles, pitch, solana share and plant share. Weights are one table per street kind.
+- **Weathered materials** (`JuegoDef/ENV/Weathered Lit`, material families in `materials.json`): macro tone and hue
+  drift in world space, stone-scale tone, rising damp (object storey or river water line), rain streaks, moss,
+  repair patches, flaking render; every family member has its own seed and jittered amounts. Masonry/paving
+  textures from `env_masonry.py` repeat every 4 m.
+- **Weathering by cause** (`FacadeGrammar.Weathering`, `ENV_Stain_Quad` + `JuegoDef/ENV/Stain`): splash and damp under
+  each downpipe, streaks under sills, rust under iron balconies, run-off at seen corners, damp/algae bands at the
+  foot, repair patches, soot over extractors; density follows the render's condition, none on a fresh front.
+- **Contemporary layer** (`FacadeGrammar.Contemporary`): air conditioning, alarm boxes, intercoms, enamel house
+  numbers, extractor vents, telecom boxes, gas risers — placed only where the wall has room and never on a
+  downpipe line.
+- **Ground-floor programme** (`EnvBusiness`, `Env/Grammar/businesses.json`): each commercial plot becomes a named
+  fictional business (used once) or a garage / workshop / closed shop / ground-floor home, by street kind. It rewrites
+  the ground bays (roller, gate, windows), picks the interior behind the glass, one fascia per shop run with its
+  lettering, blade signs with trade icons, pharmacy cross, ATM, chalkboards, goods and barrels at the door, "SE
+  ALQUILA" / "VADO PERMANENTE" notices, faded fascias of vanished shops. Lodging gets hostal plaques.
+- **Glass**: every pane shows a fake interior (`JuegoDef/ENV/Interior Room`, rooms from menu 8, per-opening variants
+  8b) with net curtains and roller blinds at different heights and a Fresnel reflection of the baked probe.
+- **Plants**: rare, reasoned and varied (hydrangeas, ferns, geraniums, box balls, bay laurel in terracotta, glazed
+  pots, old tins, stone troughs, timber boxes); stone benches by old doors on the damp lanes.
+- **Ground**: paving by reason (`EnvDistrict.PaveOf`): flag strip only on the main spine, canto variants by street,
+  setts on bridges, big flags on the plaza with a cobbled rim, repair patches; overlays for lane drainage channels and
+  flag bands along facades; door steps and shop thresholds.
+- **Plaza, river, edge**: fountain monument with candelabra, the singular tree, riverside walk, terraces; river water
+  with depth, ripples, foam and reflection over a cobble bed with rocks, channel walls with water line, drains, ferns
+  and ivy, stone bridge parapets and lamps; field walls, hedgerows and barns round the town.
+- **Lighting** (`EnvLighting.BuildRig` → `JDLightingRig`, F9 in Play Mode): day / dusk / night presets drive sun,
+  trilight ambient, linear fog that starts beyond the street, the Atlantic sky shader (horizon = fog colour, clouds),
+  post-processing, lamp and lantern lights, interior brightness and a baked reflection probe per preset; SSAO sized
+  for buildings.
 
 ### Templates (`EnvTemplates`)
 
@@ -162,10 +212,14 @@ Units and district scenes are checked for: banned kit modules (medieval/alpine c
   route probe fell through it.
 - Several editors named `JuegoDef` may be connected to the MCP (Codex worktrees): pin by hash and check
   `Application.dataPath` before mutating.
+- Unity null: never `GetComponent<T>() ?? AddComponent<T>()` (the fake-null component is returned); test with `if (!c)`.
+- The MCP `refresh_unity` compile request can return before the editor recompiles; check a new method by reflection
+  (or `error CS` in `Editor.log`) before trusting a rebuild.
+- The kit fern (`ENV_Plant_Fern`) is ~9 m wide: scale ≈ 0.07. The kit rock is 3 m: river rocks 0.2–0.5.
+- Physics clearance spheres above the paving must start above the ground collider, or every candidate reads as blocked.
 
 ## Current limits (see `Docs/evidence/WP-PROD-ENV-01/B0_COVERAGE.md`)
 
-Two wall families only (render, rubble stone) — no post-1960 infill block; no hipped roofs or trapezoid corner
-buildings (corners are rectangles with ashlar quoins or chamfers); lighting/sky/water are placeholders. Slopes,
-stairs, terraces, river walls, bridges and districts are now covered (district builder). Remaining items are content
-breadth, not missing pipeline.
+Six facade families over two wall geometries (render, masonry) — no post-1960 infill block building type; no hipped
+roofs, dormers or roof terraces; no trapezoid corner buildings (corners are rectangles or chamfers). Lighting is
+look-development, not the final day cycle. Remaining items are content breadth, not missing pipeline.

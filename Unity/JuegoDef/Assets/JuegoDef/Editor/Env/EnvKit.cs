@@ -31,6 +31,8 @@ namespace JuegoDef.Env
         public static readonly string[] MaterialRoots =
         {
             Derived + "/Materials",
+            Derived + "/Interiors",
+            Derived + "/Signs",
             "Assets/ThirdParty/Quaternius/MedievalVillage/Materials",
             "Assets/ThirdParty/Quaternius/Props",
             "Assets/ThirdParty/Quaternius/Nature",
@@ -65,6 +67,12 @@ namespace JuegoDef.Env
             throw new ArgumentException("ENV_MODULE_MISSING " + name + " (install the pack or run the derive/module step)");
         }
 
+        public static bool HasMat(string name)
+        {
+            try { return Mat(name) != null; }
+            catch (ArgumentException) { return false; }
+        }
+
         public static bool HasModule(string name)
         {
             try { return Module(name) != null; }
@@ -90,7 +98,7 @@ namespace JuegoDef.Env
         public static Texture2D Tex(string name)
         {
             if (Textures.TryGetValue(name, out var cached) && cached) return cached;
-            foreach (var root in new[] { Derived + "/Textures", "Assets/ThirdParty/Quaternius" })
+            foreach (var root in new[] { Derived + "/Textures", Derived + "/Signs", "Assets/ThirdParty/Quaternius" })
             {
                 if (!AssetDatabase.IsValidFolder(root)) continue;
                 foreach (var guid in AssetDatabase.FindAssets(name + " t:Texture2D", new[] { root }))

@@ -29,11 +29,34 @@
     "ENV_Downpipe_Shoe",
     "ENV_Eave_Canecillos",
     "ENV_Quoin_Ashlar",
+    "ENV_Quoin_Slim",
     "ENV_Escudo",
     "ENV_Window_Wide_Ashlar",
     "ENV_Solana_Bay",
     "ENV_Solana_Wing",
-    "ENV_Hill_Tree"
+    "ENV_Hill_Tree",
+    "ENV_Sign_Panel",
+    "ENV_Blade_Sign",
+    "ENV_AC_Unit",
+    "ENV_Alarm_Box",
+    "ENV_Intercom",
+    "ENV_Extractor_Vent",
+    "ENV_Telecom_Box",
+    "ENV_Gas_Pipe",
+    "ENV_Solar_Panel",
+    "ENV_Chimney_Stone",
+    "ENV_Chimney_Flue",
+    "ENV_Plant_Hydrangea",
+    "ENV_Plant_Geranium",
+    "ENV_Plant_Boxwood",
+    "ENV_Plant_Laurel",
+    "ENV_Threshold_Slab",
+    "ENV_Drain_Outlet",
+    "ENV_Clock_Face",
+    "ENV_Bell",
+    "ENV_Weathervane",
+    "ENV_Stain_Quad",
+    "ENV_ATM"
   ],
   "boxCollider": [
     "ENV_Bollard_Mooring",
@@ -55,13 +78,23 @@
     "ENV_Sign_NoEntry",
     "ENV_Window_Insert_Wide",
     "ENV_Wall_Plaster_Clean",
-    "ENV_Retaining_Wall_2x2"
+    "ENV_Retaining_Wall_2x2",
+    "ENV_AFrame_Board",
+    "ENV_Recycling_Bins",
+    "ENV_Bike_Rack",
+    "ENV_Pot_Glazed",
+    "ENV_Pot_Tin",
+    "ENV_Planter_Box",
+    "ENV_Trough_Stone",
+    "ENV_Bench_Stone",
+    "ENV_Parapet_Stone_2m"
   ],
   "trunkCollider": [
     "ENV_Tree_Plaza"
   ],
   "noShadow": [
     "ENV_Quoin_Ashlar",
+    "ENV_Quoin_Slim",
     "ENV_Window_Wide_Ashlar",
     "ENV_Window_Insert_Wide",
     "ENV_Door_Balcony",
@@ -84,7 +117,17 @@
     "ENV_Manhole",
     "ENV_Tree_Pit",
     "ENV_Window_Blind",
-    "ENV_Window_Boarded"
+    "ENV_Window_Boarded",
+    "ENV_Sign_Panel",
+    "ENV_Alarm_Box",
+    "ENV_Intercom",
+    "ENV_Extractor_Vent",
+    "ENV_Telecom_Box",
+    "ENV_Gas_Pipe",
+    "ENV_Stain_Quad",
+    "ENV_Threshold_Slab",
+    "ENV_Drain_Outlet",
+    "ENV_Clock_Face"
   ],
   "wrappers": [
     {
@@ -223,6 +266,21 @@
     {
       "name": "ENV_Prop_Bucket_Wood",
       "source": "Bucket_Wooden_1"
+    },
+    {
+      "name": "ENV_Rock_A",
+      "source": "Rock_Medium_1",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Rock_B",
+      "source": "Rock_Medium_2",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Rock_C",
+      "source": "Rock_Medium_3",
+      "collider": "none"
     }
   ]
 }

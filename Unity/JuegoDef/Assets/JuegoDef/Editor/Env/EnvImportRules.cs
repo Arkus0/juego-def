@@ -22,6 +22,21 @@ namespace JuegoDef.Env
         /// resolved to Cubemap shape — every prop rendered white. Force 2D textures with the right colour space.</summary>
         void OnPreprocessTexture()
         {
+            if (assetPath.StartsWith(EnvKit.Derived + "/Signs/"))
+            {
+                // lettering must not bleed across the panel edges
+                ((TextureImporter)assetImporter).wrapMode = UnityEngine.TextureWrapMode.Clamp;
+                return;
+            }
+            if (assetPath.StartsWith(EnvKit.Derived + "/Textures/"))
+            {
+                // generated data textures (weathering noise, water normals) are linear; generated normal maps are normals
+                var name = System.IO.Path.GetFileNameWithoutExtension(assetPath);
+                var ti = (TextureImporter)assetImporter;
+                if (name.Contains("_Noise") || name.EndsWith("_Roughness")) ti.sRGBTexture = false;
+                if (name.EndsWith("_Normal")) ti.textureType = TextureImporterType.NormalMap;
+                return;
+            }
             if (!assetPath.StartsWith(Props) && !assetPath.StartsWith(Nature)) return;
             var importer = (TextureImporter)assetImporter;
             var file = System.IO.Path.GetFileNameWithoutExtension(assetPath);

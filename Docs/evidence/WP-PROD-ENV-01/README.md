@@ -84,3 +84,67 @@ ENV-01 stays open until this district is built and judged (owner decision). Stud
 | H2 first build | `EnvDistrict` builds the whole district from the spec in ~4 s: heightfield ground, rows on the terrain with stone bases, garden walls, channelled river, bridges, stairs, plazas, player | [sheet](captures/district/H2_first_build_sheet.jpg), [top view](captures/district/H2_top_view.jpg) |
 | H3 asset quality + lebaniego vocabulary | painted textures instead of flat colours; street pieces rebuilt to kit level; canecillo eaves, solanas, ashlar quoins on seen corners only, sandstone surrounds, casona shield; canto rodado with a central flag strip; far fewer downpipes | [asset lab](captures/district/H3_asset_lab_sheet.jpg), [district](captures/district/H3_district_potizado_sheet.jpg) |
 | H4 composition | tower closing the spine, stone arch bridges, stair down to the river, plazuela fountain, huerta trees, valley backdrop with the sea to the north, route probe over the whole tour | [sheet](captures/district/H4_composition_sheet.jpg), [route](ROUTE_PROBES.md#casco-district) |
+
+## Owner visual audit of the CASCO (2026-09-29, 45 points) — look pass
+
+Brief: turn the casco from "a well-dressed blockout" into a believable, memorable place without redoing the layout;
+PS2+/Quaternius, not photoreal. **The morphology is unchanged**: same spec, same plots, heights and levels; every change
+is in the factory (materials, grammar, character pass, dressing, lighting). No street or block was moved, so no
+morphology justification was needed. Mid-session owner notes folded in: Blender pieces must reach Quaternius level;
+materials still too homogeneous inside a family, missing localized weathering, fog hiding the work; "otra vez locos
+con tantas puertas y ventanas".
+
+Fixed review viewpoints: `Env/Specs/districts/ENV01_Casco_District.shots.json` (`EnvShots.Capture`); sheets with
+`Tools/env_sheet.py`. Before = the scene as rebuilt at the start of the session (commit `af22bd3`).
+
+| Before → after (1) | Before → after (2) | After: close-ups |
+| --- | --- | --- |
+| ![pairs 1](captures/audit/audit_pairs_1.jpg) | ![pairs 2](captures/audit/audit_pairs_2.jpg) | ![close-ups](captures/audit/audit_after_closeups.jpg) |
+
+### What changed in the factory
+
+| Area | Change | Where |
+| --- | --- | --- |
+| Materials | `JuegoDef/ENV/Weathered Lit`: world-space macro tone/hue, stone-scale tone, rising damp (storey or river water line), rain streaks, moss, repair patches, flaking render; per-material seed and jittered amounts. Families: render 10 hues × 4 conditions × storey, masonry 5 bonds × 4 tones × storey, dressed stone, river walls, paving | `Env/Shaders/ENV_WeatheredLit.shader`, `materials.json` families, `EnvMaterials.ExpandFamilies` |
+| Textures | 8 generated masonry/paving bonds on 4 m tiles (rubble, river stone, ashlar, slabs; canto, flags, setts, plaza slabs); weathering noise; stain atlas; water ripples | `Tools/env_masonry.py`, `Tools/env_textures.py` |
+| Facade families | render / zocalo / stone_ground / stone / rehab / modern by street kind; quoins ashlar, slim (new module), painted or none; plinths at 0.4–1.3 m in stone or paint; joinery (14 colours), roof tiles (6 ages), pitch, fewer solanas | `EnvCharacter`, `BuildingAssembler` family fields, `ENV_Quoin_Slim` |
+| Openings | shops = door + ≤ 2 display windows; homes = portal + one window or garage; sparser upper rhythms; fewer balconies/galleries. Measured on the district: ground bays open 64 % → 51 % (most of the rest is each narrow house's portal), upper 45 % → 36 %, balcony/gallery doors 282 → 163 | `FacadeGrammar.Rhythms/Generate`, `EnvBusiness.RewriteGround` |
+| Weathering by cause | downpipe splash, sill streaks, rust under iron balconies, corner run-off, damp/algae bands, repairs, soot; density by condition | `FacadeGrammar.Weathering`, `ENV_Stain_Quad`, `Env/Shaders/ENV_Stain.shader` |
+| Contemporary layer | air conditioning, alarms, intercoms, enamel house numbers, extractors, telecom boxes, gas risers, recycling bins, bike racks, manholes and gully grates, bollards, pedestrian-zone sign — clear of openings and downpipe lines | `FacadeGrammar.Contemporary`, `EnvDistrict.StreetFurniture`, new modules |
+| Ground-floor programme | 56 fictional businesses + garages, workshops, closed shops, homes, hostals by street kind; one fascia per shop run with lettering; blade signs with trade icons; pharmacy cross; ATM; chalkboards; goods and barrels at the door; "SE ALQUILA", "VADO PERMANENTE", opening hours; faded fascias; painted adverts on blind side walls | `EnvBusiness`, `Env/Grammar/businesses.json`, `Tools/env_signs.py`, `Derived/ENV/Signs` |
+| Glass | fake interiors on every pane (homes: living room, kitchen, bedroom; shops: bar, shop, pharmacy, bakery, office, workshop, empty) with net curtains, blinds at different heights, controlled Fresnel reflection | `EnvInteriors` (+5 rooms, per-opening variants), `ENV_InteriorRoom.shader`, `BuildingAssembler.GlassRoom` |
+| Plants | rarer, by street; hydrangeas, ferns, geraniums, box, bay laurel in terracotta, glazed pots, tins, troughs, timber boxes; stone benches by old doors | `FacadeGrammar.Plants`, new plant/pot modules |
+| Paving and contact | paving by reason (flag strip only on the main spine, canto variants, setts on bridges, flags + cobbled rim on the plaza, repair patches); lane drainage channels and flag bands along facades; door steps and shop thresholds | `EnvDistrict.PaveOf/PavingOverlays`, `FacadeGrammar.Thresholds` |
+| Plaza | fountain monument with a five-lantern candelabra (landmark), the old plane tree with ring bench, riverside walk (trees in a line, benches facing the water), bar terraces, planters with hydrangeas | `EnvDistrict.DressPlaza`, `ENV_Fountain_Monument`, `ENV_Tree_Singular` |
+| River | stylised water with depth, ripples along the flow, foam at edges and rocks, Fresnel reflection; cobble bed; rocks; channel masonry by stretch with water line, algae band, moss; drains, ferns, ivy, weeds; stone parapets, lamps and ivy on the bridge | `Env/Shaders/ENV_RiverWater.shader`, `EnvDistrict.Finish/RiverRocks/RiverWallLife/Bridge` |
+| Tower | ashlar and rubble, aged tiles, two clock faces, bells, weathervane | `BuildingAssembler.TowerIdentity`, `ENV_Clock_Face`, `ENV_Bell`, `ENV_Weathervane` |
+| Edge | patchwork huertas/yards; dry-stone field walls with hedgerow trees and stone barns round the town | `EnvDistrict.PaveOf`, `Backdrop` |
+| Lighting | `JDLightingRig` wired: day / dusk / night (F9), linear fog from 45 m, Atlantic sky shader (horizon = fog colour, clouds), lower warmer sun, darker ambient, SSAO at building scale (was 3.5 cm), 3 shadow cascades / 90 m, lamp and lantern lights, a baked probe per preset | `EnvLighting.BuildRig`, `Env/Shaders/ENV_SkyAtlantic.shader`, `JDLightingRig` |
+
+### Status by audit point (Worker's reading; the owner judges)
+
+| Status | Points |
+| --- | --- |
+| Addressed | 2 stone band · 3 stone uniform · 4 flat render · 6 contemporary · 8 generic shops · 9 black glass · 10 blank signs · 12 pots · 13 repetitive paving · 14 light strip · 18 plaza trees · 19 plaza landmark · 22 water · 23 sterile channel · 27 flat light · 28 fog · 29 sky/fog · 31 humidity · 35 function · 41 tower · 43 prop rhythm |
+| Partly (new-piece surface quality below Quaternius, see below) | 1 kit formula (families; door/window models are still the kit set) · 5 roofs (tile ages, chimney kinds; no gutters, dormers or roof repairs) · 7 fantasy timber (fewer solanas, slimmer corners) · 11 doors/windows (joinery colours only) · 15 contact (steps, thresholds, bands, covers) · 16 micro-detail (recycling points: none fits off the walking lines of the small plazas yet) · 17 plaza (sub-spaces; no level change) · 20 street identity (by kind; no bespoke sequences) · 21 long walls · 24 bridge (parapets, lamps, ivy; no cutwaters or new street junctions) · 25 river experience (riverside walk only) · 30 local contrast · 32 too clean · 33 window depth (interiors; no deeper reveals) · 34 domestic life · 36 roofs from above · 37 green voids · 38/39 edge and exterior · 40 hero vs filler · 42 palette · 44 storytelling |
+| Open | 26 levels and terraces — needs small geometric work (raised pavements, stepped forecourts, plaza platform); proposed for the next pass |
+
+### Validation
+
+- `JuegoDef > ENV > 5 Validate`: **0 problems** (19 units + district; 418 thresholds checked); self-test **8/8**. One
+  real defect class found and fixed on the way: downpipes crossing new wall additions (intercoms, a geranium) —
+  additions now keep clear of every downpipe line.
+- Route probe (Play Mode, GC2 player): **139/139, 0 stalls, 917.5 m** on the final build. The run before it caught a
+  real defect (recycling bins placed on the lane through the Plazuela Oeste, 138/139) — fixed at the source (street
+  furniture keeps off every walking line); see [ROUTE_PROBES.md](ROUTE_PROBES.md#casco-district).
+- Frame at street level in Play Mode (editor, this machine): ~4.9 ms, 3.2k batches.
+
+### Asset quality (owner: "los assets de Blender tienen que estar al nivel de los Quaternius")
+
+Honest reading of the lab row ([asset_lab_new_pieces.jpg](captures/audit/asset_lab_new_pieces.jpg): Quaternius barrel,
+crate and bench on the left, then the new pieces): silhouettes and scale are right and they hold up in the district
+views, but **they are below Quaternius level in surface detail** — flat owned colours instead of painted trim-sheet
+detail; the hydrangea and the stone trough/bench are the weakest. A quality pass (kit trim-sheet UVs, painted
+detail, more bevel/shape breakup) is open before these count as keeper assets.
+
+![asset lab](captures/audit/asset_lab_new_pieces.jpg)

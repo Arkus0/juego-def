@@ -76,3 +76,17 @@ JD_ROUTE END reached=139/139 stalls=0 walked=916,8m time=261,7s
 | --- | --- | --- |
 | `TIMEOUT`, player at y ≈ −1846 (wp 10, 70, 107, 108 and the Arco stairs) | the stair footprint cut out of the heightfield ground used a **square cap**, punching a hole into the junction at each end of every stair | `env_district_skeleton.py`: stair footprints use flat caps (exactly between the end nodes) |
 | `STUCK` at the north bridgehead, `blockers=Cabeza_Puente/ENV_Bench_Street` | plaza dressing placed a bench on the walking line crossing a junction plaza | `EnvDistrict.DressPlaza` keeps trees, benches and the kiosk clear of every street lane crossing a plaza |
+
+### Audit look pass (2026-09-29) — 139/139, 0 stalls, 917.5 m
+
+Rebuilt with the look pass (facade families, businesses and their dressing, plants, door steps, plaza composition,
+river life, street furniture). One stall on the run before the final one:
+
+| Symptom | Cause | Fix (at the source) |
+| --- | --- | --- |
+| `STUCK wp=59 blockers=StreetFurniture/ENV_Recycling_Bins` (Plazuela Oeste) | recycling bins placed inside a small plaza on the lane that crosses it | `EnvDistrict.StreetFurniture` keeps bins off every street lane (width/2 + 1.6 m); no small plaza has room now, so none are placed |
+
+```text
+JD_ROUTE START waypoints=139 at=(196,00,3,08,206,20)
+JD_ROUTE END reached=139/139 stalls=0 walked=917,5m time=263,0s
+```

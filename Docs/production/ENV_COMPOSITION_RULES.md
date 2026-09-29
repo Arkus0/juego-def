@@ -57,14 +57,44 @@ narrow street → stone bridge → houses over the channel → the sea hinted be
 ## Casco look (lebaniego, owner photos)
 
 - Ground: **canto rodado** with a **central strip of big flags**; flags in plazas; lanes darker and older.
-- Walls: rubble ground floors in ~70 %; render (lime, sandstone, ochre) above; **ashlar quoins only on seen corners**
-  (never a pilaster on every party wall); sandstone window surrounds on ~40 % of rendered fronts.
+- Walls: see the look rules below — families by street replace the old "rubble ground floor on ~70 %" rule; ashlar
+  quoins only on seen corners of stone and old houses (never a pilaster on every party wall), slim or painted corners
+  or none on rendered fronts; stone window surrounds on a share of fronts.
 - Roofs: red Arab tile with little moss; **deep eaves on carved rafter tails (canecillos)**.
-- **Solanas**: a timber gallery across the top floor of ~30 % of ordinary houses (one door onto it, wing walls);
+- **Solanas**: a timber gallery across the top floor of ~15 % of old houses (one door onto it, wing walls);
   casonas with arched portal, shield and solana.
 - Life: striped awnings, wrought-iron hanging signs, terracotta pots, barrels at bars, benches and trees in plazas,
   fountain-trough in the plazuela, huertas behind stone walls with fruit trees. Few downpipes: deep eaves drip.
 - 10–20 % anomalies: reformed aluminium, neglected fronts, a closed shop, a meter box, a clothesline.
+
+## Look rules after the owner audit (2026-09-29, 45 points)
+
+- **No kit formula on every house.** Facade families by street: all-render (most without quoins), render over a
+  low stone base at varying heights, stone ground floor, all stone (old houses, casonas), rehabilitated, modern
+  commercial ground floor. The stone base is never a continuous band down a street.
+- **Materials age by building, not by kit tile**: each render/masonry material weathers with its own seed; masonry
+  and paving repeat every 4 m; stone bonds (rubble, river stone, ashlar, slabs) and tones vary by building and wall.
+- **Weathering has a cause**: damp and splash under downpipes, streaks under sills, rust under iron, run-off at
+  seen corners, damp bands on the foot of walls in damp streets, repairs on old render; fresh fronts stay clean.
+- **The present is visible**: aluminium/PVC joinery on reformed fronts, air conditioning, alarms, intercoms, house
+  numbers, extractors, telecom boxes, gas risers, recycling bins, bike racks — sparse and placed where they fit.
+- **Every commercial ground floor has a use** readable without its sign: named business (bar, café, sidrería,
+  bakery, pharmacy, tobacconist, hardware, greengrocer, bank, hairdresser…), workshop, garage with its "vado",
+  closed shop to let, or a ground floor turned home. One fascia per shop run; lettering, trade icons, notices are
+  specific and few.
+- **Glass is never a black plane**: a room behind, curtains and blinds at different heights, a restrained reflection.
+- **Plants are rare and reasoned**: damp lanes and old doors keep more; species of the humid north in varied
+  containers; stone benches where old neighbours sit.
+- **Paving by reason**: the flag strip only on the main spine (the old cart track); finer canto on secondary streets,
+  older canto and a setts drainage channel in lanes, setts on bridges, big flags on the plaza with a cobbled rim, flag
+  bands along facades of the main streets, repair patches; door steps and thresholds meet the houses.
+- **The plaza has a landmark and sub-spaces**: fountain with candelabra near the middle, the old plane tree with its
+  ring bench, a riverside walk of trees and benches facing the water, terraces in front of the bars, planters at the
+  edges — never trees on a grid.
+- **The river is old infrastructure in constant rain**: water with depth over a cobble bed and rocks, foam at the
+  walls, channel walls with water line, algae, drains, ferns and ivy; stone parapets and lamps on the bridge.
+- **Light shows the work**: linear fog beyond the street, sky and fog from one preset, a lower warmer sun, darker
+  ambient and building-scale ambient occlusion for contact shadow.
 
 ## Gameplay
 

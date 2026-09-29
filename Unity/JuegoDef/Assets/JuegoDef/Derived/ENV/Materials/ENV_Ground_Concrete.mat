@@ -63,7 +63,7 @@ Material:
     - _QueueOffset: 0
     - _Wear: 0
     m_Colors:
-    - _Color: {r: 0.6627451, g: 0.65882355, b: 0.6313726, a: 1}
+    - _Color: {r: 0.49411765, g: 0.4862745, b: 0.4627451, a: 1}
     - _WearA: {r: 0.40392157, g: 0.3098039, b: 0, a: 1}
     - _WearB: {r: 0.43137255, g: 0.28235292, b: 0, a: 1}
   m_BuildTextureStacks: []

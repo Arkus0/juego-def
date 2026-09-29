@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ENV_Render_Anil_Viejo_G
+  m_Shader: {fileID: 4800000, guid: dc4ec74b0b9a25446ba4f969cb1b6f25, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 89c164443764bac479ce4a288be46cb6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: d2780681d4e39c442a11b4de22b8ec35, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlakeMap:
+        m_Texture: {fileID: 2800000, guid: e39816b8c8121bd4395d113bfe8064cf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseMap:
+        m_Texture: {fileID: 2800000, guid: c612de82b4b0fa841a03f7a1396839fa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughMap:
+        m_Texture: {fileID: 2800000, guid: 6db11eba25259fc42bdeb554cb0b5bd3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 0.8
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DampAmount: 0.5
+    - _DampHeight: 0.86924744
+    - _DampWorld: 0
+    - _DetailTone: 0.08
+    - _FlakeAmount: 0.03715
+    - _MacroAmount: 0.16078116
+    - _MacroScale: 0.06560386
+    - _Metallic: 0
+    - _MossAmount: 0.04
+    - _PatchAmount: 0.0537234
+    - _Roughness: 1
+    - _Seed: 84.558
+    - _StreakAmount: 0.46380633
+    m_Colors:
+    - _BaseColor: {r: 0.7647059, g: 0.8, b: 0.8117647, a: 1}
+    - _FlakeColor: {r: 0.84705883, g: 0.8117647, b: 0.7490196, a: 1}
+    - _MacroHue: {r: 0.9490196, g: 0.89411765, b: 0.8, a: 1}
+    - _MossColor: {r: 0.31999996, g: 0.36999997, b: 0.19999996, a: 1}
+    - _PatchTint: {r: 1.07, g: 1.05, b: 1.01, a: 1}
+    - _RoughChannel: {r: 0, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

@@ -1,4 +1,53 @@
 {
+  "ENV_AC_Unit": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Split air-conditioning outdoor unit on wall brackets, fan grille, refrigerant pipes in a white trunking:\nthe 21st-century addition every Spanish facade has somewhere (owner: \"falta arquitectura contempor\u00e1nea\").",
+    "materials": [
+      "ENV_Blind_PVC",
+      "ENV_Metal_Galvanised",
+      "ENV_Plastic_Black",
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 192,
+    "donorSource": null
+  },
+  "ENV_AFrame_Board": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Bar A-frame chalkboard (pizarra): two timber-framed boards leaning together, the chalk face maps a notice.",
+    "materials": [
+      "ENV_Sign_Board",
+      "MI_WoodTrim"
+    ],
+    "triangles": 76,
+    "donorSource": null
+  },
+  "ENV_ATM": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Cash machine set in a bank's ground floor: stainless surround, hood, screen, keypad, card and cash slots.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Plastic_Black",
+      "ENV_Plastic_Grey",
+      "ENV_Screen"
+    ],
+    "triangles": 212,
+    "donorSource": null
+  },
+  "ENV_Alarm_Box": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Burglar-alarm siren box over a shop: white case, coloured flash lens.",
+    "materials": [
+      "ENV_Paint_White",
+      "ENV_Plastic_Blue",
+      "ENV_Plastic_Red"
+    ],
+    "triangles": 100,
+    "donorSource": null
+  },
   "ENV_Awning": {
     "class": "ORIGINAL",
     "donors": [],
@@ -20,6 +69,27 @@
       "MI_RockTrim"
     ],
     "triangles": 356,
+    "donorSource": null
+  },
+  "ENV_Bell": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Bronze bell with yoke for the belfry openings.",
+    "materials": [
+      "ENV_Bronze",
+      "MI_WoodTrim"
+    ],
+    "triangles": 234,
+    "donorSource": null
+  },
+  "ENV_Bench_Stone": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Stone bench (poyo) against a wall or around a tree: two blocks and a thick slab.",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 132,
     "donorSource": null
   },
   "ENV_Bench_Street": {
@@ -45,6 +115,16 @@
     "triangles": 728,
     "donorSource": null
   },
+  "ENV_Bike_Rack": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Three galvanised hoops set in the paving.",
+    "materials": [
+      "ENV_Metal_Galvanised"
+    ],
+    "triangles": 600,
+    "donorSource": null
+  },
   "ENV_Bin_Street": {
     "class": "CREATE_DERIVED",
     "donors": [],
@@ -54,6 +134,17 @@
       "MI_WoodTrim"
     ],
     "triangles": 1034,
+    "donorSource": null
+  },
+  "ENV_Blade_Sign": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Projecting light-box sign (modern shops, pharmacy cross): steel arm and a 0.6 m square box, both faces carry\nthe sign texture (ENV_Sign_Board remapped per business).",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Sign_Board"
+    ],
+    "triangles": 104,
     "donorSource": null
   },
   "ENV_Boat_Small": {
@@ -154,6 +245,40 @@
     "triangles": 132,
     "donorSource": null
   },
+  "ENV_Chimney_Flue": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Galvanised stove flue with a conical rain cap and a guy wire stub (a later addition on many roofs).",
+    "materials": [
+      "ENV_Metal_Galvanised"
+    ],
+    "triangles": 84,
+    "donorSource": null
+  },
+  "ENV_Chimney_Stone": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Rendered/stone chimney stack with a projecting cap and two tiles laid as a little roof (casco chimney).",
+    "materials": [
+      "MI_Plaster",
+      "MI_RockTrim",
+      "MI_RoundTiles"
+    ],
+    "triangles": 136,
+    "donorSource": null
+  },
+  "ENV_Clock_Face": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Tower clock: 1.3 m white enamel dial in a stone ring, twelve iron hour marks and two hands (at 10 past 4).",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Paint_White",
+      "MI_RockTrim"
+    ],
+    "triangles": 388,
+    "donorSource": null
+  },
   "ENV_Clothesline": {
     "class": "ORIGINAL",
     "donors": [],
@@ -236,6 +361,16 @@
     "triangles": 104,
     "donorSource": null
   },
+  "ENV_Door_Step": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Worn granite door step (umbral) 1.3 m, 15 cm: the portal meets the street on a stone, not on the paving.",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 44,
+    "donorSource": null
+  },
   "ENV_Downpipe": {
     "class": "ORIGINAL",
     "donors": [],
@@ -279,6 +414,17 @@
     "triangles": 96,
     "donorSource": null
   },
+  "ENV_Drain_Outlet": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Drain outlet through the river wall: iron pipe mouth with a lip, a little stone apron under it.",
+    "materials": [
+      "ENV_Metal_Iron",
+      "ENV_Plastic_Black"
+    ],
+    "triangles": 232,
+    "donorSource": null
+  },
   "ENV_Eave_Canecillos": {
     "class": "CREATE_DERIVED",
     "donors": [],
@@ -299,6 +445,16 @@
     "triangles": 1464,
     "donorSource": null
   },
+  "ENV_Extractor_Vent": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Kitchen/bathroom extractor outlet: louvred plastic grille with a sooty drip below.",
+    "materials": [
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 104,
+    "donorSource": null
+  },
   "ENV_Fence_Yard_2m": {
     "class": "ORIGINAL",
     "donors": [],
@@ -308,6 +464,21 @@
       "MI_RockTrim"
     ],
     "triangles": 284,
+    "donorSource": null
+  },
+  "ENV_Fountain_Monument": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "The plaza's landmark (owner: \"algo que haga que el jugador diga: estoy aqu\u00ed\"): a granite octagonal basin on\ntwo steps, a fluted central pier with four bronze spouts and, on top, a cast-iron five-lantern candelabra that\nlights the plaza at night. ~9 m across the steps, 7.5 m high. Invented; no real monument copied.",
+    "materials": [
+      "ENV_Bronze",
+      "ENV_Lamp_Glass",
+      "ENV_Metal_Iron",
+      "ENV_Stone_Granite",
+      "ENV_Stone_Sandstone",
+      "ENV_Water_Port"
+    ],
+    "triangles": 2180,
     "donorSource": null
   },
   "ENV_Fountain_Trough": {
@@ -331,6 +502,18 @@
       "MI_WoodTrim"
     ],
     "triangles": 252,
+    "donorSource": null
+  },
+  "ENV_Gas_Pipe": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Natural-gas riser: yellow painted pipe up the facade from a meter box, with clamps.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Plastic_Grey",
+      "ENV_Plastic_Yellow"
+    ],
+    "triangles": 108,
     "donorSource": null
   },
   "ENV_Gate_Timber": {
@@ -363,6 +546,18 @@
       "ENV_Src_Bark_NormalTree"
     ],
     "triangles": 272,
+    "donorSource": null
+  },
+  "ENV_Intercom": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Door-entry panel beside a portal (portero autom\u00e1tico): aluminium plate, speaker grille, a column of buttons.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Plastic_Black",
+      "ENV_Plastic_Grey"
+    ],
+    "triangles": 104,
     "donorSource": null
   },
   "ENV_Kerb_2m": {
@@ -486,6 +681,17 @@
     "triangles": 196,
     "donorSource": null
   },
+  "ENV_Parapet_Stone_2m": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Bridge/river parapet 2 m: masonry body (kit rubble slot, remapped per bridge) under a rounded dressed coping\nwith drip; 1.0 m high, 0.45 m thick. Local frame: runs along x, centred on z = 0, sits on y = 0.",
+    "materials": [
+      "MI_RockTrim",
+      "MI_UnevenBrick"
+    ],
+    "triangles": 56,
+    "donorSource": null
+  },
   "ENV_Parasol": {
     "class": "ORIGINAL",
     "donors": [],
@@ -508,6 +714,60 @@
       "ENV_Plastic_Grey"
     ],
     "triangles": 152,
+    "donorSource": null
+  },
+  "ENV_Plant_Boxwood": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Clipped box ball (boj) for a shop door or a formal pot.",
+    "materials": [
+      "ENV_Foliage"
+    ],
+    "triangles": 80,
+    "donorSource": null
+  },
+  "ENV_Plant_Geranium": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Geranio for balcony and window boxes: small round leaves and scattered red flower heads.",
+    "materials": [
+      "ENV_Flower_Red",
+      "ENV_Foliage"
+    ],
+    "triangles": 1120,
+    "donorSource": null
+  },
+  "ENV_Plant_Hydrangea": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Hortensia: the damp-north doorstep and garden shrub \u2014 dark leaf mass with big flower balls (blue by default;\nthe dresser remaps ENV_Flower_Blue to pink or white).",
+    "materials": [
+      "ENV_Flower_Blue",
+      "ENV_Foliage"
+    ],
+    "triangles": 1120,
+    "donorSource": null
+  },
+  "ENV_Plant_Laurel": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Bay laurel standard in a pot (laurel a la puerta): straight stem and a round clipped head.",
+    "materials": [
+      "ENV_Foliage",
+      "ENV_Src_Bark_NormalTree"
+    ],
+    "triangles": 100,
+    "donorSource": null
+  },
+  "ENV_Planter_Box": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Timber window/doorstep box 0.8 m with soil (flowers placed by the dresser).",
+    "materials": [
+      "ENV_Soil",
+      "MI_WoodTrim"
+    ],
+    "triangles": 56,
     "donorSource": null
   },
   "ENV_Planter_Pot": {
@@ -539,6 +799,28 @@
       "MI_RockTrim"
     ],
     "triangles": 44,
+    "donorSource": null
+  },
+  "ENV_Pot_Glazed": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Glazed ceramic pot (blue by default; remapped to green/ochre): rounded belly, narrow foot, soil.",
+    "materials": [
+      "ENV_Ceramic_Blue",
+      "ENV_Soil"
+    ],
+    "triangles": 220,
+    "donorSource": null
+  },
+  "ENV_Pot_Tin": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Old olive-oil tin reused as a planter (lata), painted and dented \u2014 the modest household touch.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Soil"
+    ],
+    "triangles": 56,
     "donorSource": null
   },
   "ENV_Puddle_A": {
@@ -603,6 +885,16 @@
     "triangles": 240,
     "donorSource": null
   },
+  "ENV_Quoin_Slim": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Slim quoins for one storey of a seen corner (owner audit 2026-09-29: the ashlar quoins were \"repetitivos y\ngruesos\"): twelve 0.25 m courses of short/long blocks (0.34 / 0.2 m), only 1.2 cm proud, fine arris. Families use\nit for dressed-stone corners on rendered houses and, painted, for rendered corner bands.",
+    "materials": [
+      "ENV_Stone_Sandstone"
+    ],
+    "triangles": 288,
+    "donorSource": null
+  },
   "ENV_Railing_Quay_2m": {
     "class": "ORIGINAL",
     "donors": [],
@@ -611,6 +903,20 @@
       "ENV_Metal_Iron"
     ],
     "triangles": 140,
+    "donorSource": null
+  },
+  "ENV_Recycling_Bins": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Street recycling set (contenedores): glass (green), packaging (yellow), paper (blue), rounded plastic bodies.",
+    "materials": [
+      "ENV_Paint_Green",
+      "ENV_Plastic_Black",
+      "ENV_Plastic_Blue",
+      "ENV_Plastic_Yellow",
+      "ENV_Rubber"
+    ],
+    "triangles": 732,
     "donorSource": null
   },
   "ENV_Retaining_Wall_2x1": {
@@ -771,9 +1077,10 @@
     "materials": [
       "ENV_Metal_Iron",
       "ENV_Sign_Board",
+      "ENV_Sign_Face",
       "MI_WoodTrim"
     ],
-    "triangles": 1132,
+    "triangles": 1136,
     "donorSource": null
   },
   "ENV_Sign_Direction": {
@@ -797,6 +1104,17 @@
       "ENV_Sign_White"
     ],
     "triangles": 116,
+    "donorSource": null
+  },
+  "ENV_Sign_Panel": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Lettering panel 1 x 1 m (scaled per sign): a 15 mm board whose front face maps one sign texture 0..1. The\ndistrict remaps ENV_Sign_Board to the business sign material and scales it to the fascia or wall.",
+    "materials": [
+      "ENV_Sign_Board",
+      "MI_WoodTrim"
+    ],
+    "triangles": 14,
     "donorSource": null
   },
   "ENV_Slipway": {
@@ -831,6 +1149,28 @@
     "triangles": 88,
     "donorSource": null
   },
+  "ENV_Solar_Panel": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Thermal solar panel with tank on a small frame, for a flat bit of roof or a south slope.",
+    "materials": [
+      "ENV_Metal_Galvanised",
+      "ENV_Paint_White",
+      "ENV_Screen"
+    ],
+    "triangles": 100,
+    "donorSource": null
+  },
+  "ENV_Stain_Quad": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Weathering decal quad 1 x 1 m (x centred, y 0..1) lying 4 mm off the wall face; the dresser picks the stain\ncell by material (ENV_Stain_*) and scales it to the cause (a downpipe foot, a sill, a corner, a repair).",
+    "materials": [
+      "ENV_Stain_Downpipe"
+    ],
+    "triangles": 2,
+    "donorSource": null
+  },
   "ENV_Street_Name_Plate": {
     "class": "ORIGINAL",
     "donors": [],
@@ -850,6 +1190,27 @@
       "ENV_Metal_Galvanised"
     ],
     "triangles": 252,
+    "donorSource": null
+  },
+  "ENV_Telecom_Box": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Telecom/electric junction box with the cable dropping into it.",
+    "materials": [
+      "ENV_Plastic_Grey",
+      "ENV_Rubber"
+    ],
+    "triangles": 76,
+    "donorSource": null
+  },
+  "ENV_Threshold_Slab": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Flush stone slab in front of a shop or portal (walkable, 2 cm proud with a chamfer).",
+    "materials": [
+      "MI_RockTrim"
+    ],
+    "triangles": 44,
     "donorSource": null
   },
   "ENV_Trash_Bags": {
@@ -882,6 +1243,29 @@
       "ENV_Src_Bark_NormalTree"
     ],
     "triangles": 808,
+    "donorSource": null
+  },
+  "ENV_Tree_Singular": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "The old plane tree of the plaza (\u00e1rbol singular): thick buttressed trunk, big limbs, a wide high crown, and\na round stone bench around it \u2014 the second 'I am here' of the plaza, the shade where the old men sit.",
+    "materials": [
+      "ENV_Foliage",
+      "ENV_Src_Bark_NormalTree",
+      "MI_RockTrim"
+    ],
+    "triangles": 1592,
+    "donorSource": null
+  },
+  "ENV_Trough_Stone": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Old stone trough (pila) reused as a planter by a house door.",
+    "materials": [
+      "ENV_Soil",
+      "MI_RockTrim"
+    ],
+    "triangles": 232,
     "donorSource": null
   },
   "ENV_Utility_Box": {
@@ -1044,6 +1428,16 @@
       "ENV_Water_Port"
     ],
     "triangles": 12,
+    "donorSource": null
+  },
+  "ENV_Weathervane": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Iron weathervane: rod, cardinal cross and an arrow with a cockerel-less swallowtail vane.",
+    "materials": [
+      "ENV_Metal_Iron"
+    ],
+    "triangles": 148,
     "donorSource": null
   },
   "ENV_Window_Blind": {
