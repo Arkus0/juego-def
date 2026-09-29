@@ -39,6 +39,8 @@ Shader "JuegoDef/ENV/Weathered Lit"
         _FlakeAmount ("Flaking render (share)", Range(0, 1)) = 0
         [NoScaleOffset] _FlakeMap ("Material behind the render", 2D) = "grey" {}
         _FlakeColor ("Revealed tint", Color) = (1, 1, 1, 1)
+        _WorldUV ("World-space UVs (0 mesh UVs, 1 metres on the surface at kit density)", Float) = 0
+        _GroundWet ("Damp patches on up-facing faces (darker, a little sheen)", Range(0, 1)) = 0
         _Cutoff ("Alpha cutoff (unused)", Float) = 0.5
         [Enum(UnityEngine.Rendering.CullMode)] _Cull ("Cull", Float) = 2
     }
@@ -72,6 +74,8 @@ Shader "JuegoDef/ENV/Weathered Lit"
             half4 _PatchTint;
             half _FlakeAmount;
             half4 _FlakeColor;
+            half _WorldUV;
+            half _GroundWet;
             half _Cutoff;
         CBUFFER_END
 
@@ -171,14 +175,25 @@ Shader "JuegoDef/ENV/Weathered Lit"
 
             half4 N(float2 c) { return SAMPLE_TEXTURE2D(_NoiseMap, sampler_NoiseMap, c); }
 
+            // metres on the surface, oriented like the kit's own UVs (U along the wall to the right of its normal, V
+            // up): ground-storey masonry and plinths keep the stone size whatever the module scale, and courses run
+            // on across module joints
+            float2 WorldUV(float3 pw, float3 nw)
+            {
+                if (abs(nw.y) > 0.7) return pw.xz;
+                float2 u = normalize(float2(nw.z, -nw.x) + 1e-5);
+                return float2(dot(pw.xz, u), pw.y);
+            }
+
             half4 frag(Varyings i) : SV_Target
             {
                 UNITY_SETUP_INSTANCE_ID(i);
-                half4 albedo = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, i.uv) * _BaseColor;
-                half3 nTS = UnpackNormalScale(SAMPLE_TEXTURE2D(_BumpMap, sampler_BumpMap, i.uv), _BumpScale);
-                half rough = saturate(dot(SAMPLE_TEXTURE2D(_RoughMap, sampler_RoughMap, i.uv), _RoughChannel) * _Roughness);
-
                 float3 nGeo = normalize(i.normalWS);
+                float2 uv = _WorldUV > 0.5 ? WorldUV(i.positionWS, nGeo) * 0.5 * _BaseMap_ST.xy + _BaseMap_ST.zw : i.uv;
+                half4 albedo = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, uv) * _BaseColor;
+                half3 nTS = UnpackNormalScale(SAMPLE_TEXTURE2D(_BumpMap, sampler_BumpMap, uv), _BumpScale);
+                half rough = saturate(dot(SAMPLE_TEXTURE2D(_RoughMap, sampler_RoughMap, uv), _RoughChannel) * _Roughness);
+
                 // every material of a family has its own seed: the same weathering never lines up on two buildings
                 float2 sc = SurfaceCoords(i.positionWS, nGeo) + _Seed * float2(17.31, 7.97);
                 float seed = Hash21(i.seedFog.xz * 0.37 + i.seedFog.y + _Seed);
@@ -210,7 +225,11 @@ Shader "JuegoDef/ENV/Weathered Lit"
                     half thr = 1.0 - _FlakeAmount * 1.4 - bias;
                     flake = smoothstep(thr, thr + 0.015, b) * vertical;
                     half rim = smoothstep(thr - 0.02, thr, b) * (1 - flake) * vertical;
-                    half3 behind = SAMPLE_TEXTURE2D(_FlakeMap, sampler_FlakeMap, i.uv * 1.3).rgb * _FlakeColor.rgb;
+                    // the stone behind at its real size (the masonry textures tile every 4 m): world metres on the
+                    // wall — kit plaster UVs are dense and kit object space is not in metres; both shrank the stones
+                    // to a dotted checkerboard
+                    float2 fuv = SurfaceCoords(i.positionWS, nGeo) * 0.25 + seed * 0.37;
+                    half3 behind = SAMPLE_TEXTURE2D(_FlakeMap, sampler_FlakeMap, fuv).rgb * _FlakeColor.rgb;
                     albedo.rgb = lerp(albedo.rgb * (1.0 - 0.35 * rim), behind, flake);
                     rough = lerp(rough, 0.95, flake);
                 }
@@ -243,14 +262,33 @@ Shader "JuegoDef/ENV/Weathered Lit"
                     albedo.rgb *= 1.0 - 0.38 * streak;
                 }
 
-                // moss: up-facing faces and the damp band, patchy
+                // moss: up-facing faces and the damp band, patchy, and mostly in the dark joints and crevices of the
+                // texture (cohesion pass: moss read as flat green paint splashes on the slabs)
                 if (_MossAmount > 0)
                 {
                     half up = saturate((nGeo.y - 0.3) / 0.45);
                     half m = N(sc * 0.6 + seed * 5.0).a;
-                    half k = saturate((m * 0.9 + up * 0.55 + damp * 0.45 - 1.25 + _MossAmount) * 5.0) * (1 - flake);
+                    half lum = dot(albedo.rgb, half3(0.3, 0.59, 0.11));
+                    half crevice = saturate((0.5 - lum) * 3.0 + 0.25);
+                    // on the ground the moss lives only in the joints, with a soft edge (it read as flat green stickers
+                    // on the lanes); walls keep the patchier growth
+                    half cz = lerp(crevice * crevice, lerp(0.2, 1.0, crevice), vertical);
+                    half k = saturate((m * 0.9 + up * 0.55 + damp * 0.45 - 1.25 + _MossAmount) * lerp(2.2, 3.5, vertical)) * cz * (1 - flake);
                     albedo.rgb = lerp(albedo.rgb, _MossColor.rgb * (0.75 + 0.5 * nm.g), k);
                     rough = lerp(rough, 1.0, k);
+                }
+
+                // localized damp on the paving: low patches that stay wet (Atlantic town), darker with a little sheen,
+                // strongest in the joints; soft edges, metres across, never a regular pattern
+                if (_GroundWet > 0)
+                {
+                    half upw = saturate((nGeo.y - 0.6) / 0.3);
+                    half wn = N(sc * 0.09 + 0.53).r * 0.75 + N(sc * 0.37 + 0.17).g * 0.25;
+                    half wet = saturate((wn - 0.6) * 5.0) * upw * _GroundWet;
+                    half lumw = dot(albedo.rgb, half3(0.3, 0.59, 0.11));
+                    wet *= lerp(0.65, 1.0, saturate((0.55 - lumw) * 2.5));
+                    albedo.rgb *= 1.0 - 0.28 * wet;
+                    rough = lerp(rough, rough * 0.45, wet);
                 }
 
                 // lighting

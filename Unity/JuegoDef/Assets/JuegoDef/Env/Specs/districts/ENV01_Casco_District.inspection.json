@@ -1,0 +1,201 @@
+{
+  "comment": "Inspection units of the CASCO micro-polish pass: street segments of the district spec grouped into the streets a player walks. Used by EnvSemantics and Tools notes (UNITS.md). Rows without a street belong to PLAZAS (role plaza) or RIVER_A (role river).",
+  "units": [
+    {
+      "id": "STREET_A",
+      "name": "Espina (east)",
+      "role": "main",
+      "segments": [
+        "Espina_E"
+      ]
+    },
+    {
+      "id": "STREET_B",
+      "name": "Espina (plaza and node)",
+      "role": "main",
+      "segments": [
+        "Espina_Plaza",
+        "Espina_Nodo"
+      ]
+    },
+    {
+      "id": "STREET_C",
+      "name": "Subida al puente",
+      "role": "main",
+      "segments": [
+        "Subida_Puente"
+      ]
+    },
+    {
+      "id": "STREET_D",
+      "name": "Cantabra",
+      "role": "secondary",
+      "segments": [
+        "Cantabra"
+      ]
+    },
+    {
+      "id": "STREET_E",
+      "name": "Calle Alta",
+      "role": "secondary",
+      "segments": [
+        "Calle_Alta_O",
+        "Calle_Alta_C",
+        "Calle_Alta_C2",
+        "Calle_Alta_E",
+        "Calle_Alta_Salida"
+      ]
+    },
+    {
+      "id": "STREET_F",
+      "name": "Obispo",
+      "role": "secondary",
+      "segments": [
+        "Obispo_Bajo",
+        "Obispo_Escalera"
+      ]
+    },
+    {
+      "id": "STREET_G",
+      "name": "Ribera",
+      "role": "secondary",
+      "segments": [
+        "Ribera"
+      ]
+    },
+    {
+      "id": "STREET_H",
+      "name": "Capitan",
+      "role": "secondary",
+      "segments": [
+        "Capitan",
+        "Capitan_Salida"
+      ]
+    },
+    {
+      "id": "STREET_I",
+      "name": "San Pedro",
+      "role": "secondary",
+      "segments": [
+        "San_Pedro",
+        "San_Pedro_Salida"
+      ]
+    },
+    {
+      "id": "ALLEY_A",
+      "name": "Callejon Oeste",
+      "role": "lane",
+      "segments": [
+        "Callejon_Oeste",
+        "Callejon_Oeste_Salida"
+      ]
+    },
+    {
+      "id": "ALLEY_B",
+      "name": "Cimavilla Baja",
+      "role": "lane",
+      "segments": [
+        "Cimavilla_Baja"
+      ]
+    },
+    {
+      "id": "ALLEY_C",
+      "name": "Callejon del Arco",
+      "role": "lane",
+      "segments": [
+        "Callejon_Arco",
+        "Arco_Escalera"
+      ]
+    },
+    {
+      "id": "ALLEY_D",
+      "name": "El Sol",
+      "role": "lane",
+      "segments": [
+        "El_Sol"
+      ]
+    },
+    {
+      "id": "ALLEY_E",
+      "name": "Cervantes",
+      "role": "lane",
+      "segments": [
+        "Cervantes"
+      ]
+    },
+    {
+      "id": "ALLEY_F",
+      "name": "Independencia",
+      "role": "lane",
+      "segments": [
+        "Independencia"
+      ]
+    },
+    {
+      "id": "ALLEY_G",
+      "name": "La Solana",
+      "role": "lane",
+      "segments": [
+        "Solana_Acceso",
+        "Solana_Escalera",
+        "Solana_Terraza",
+        "Solana_Bajada",
+        "Solana_Baja"
+      ]
+    },
+    {
+      "id": "ALLEY_H",
+      "name": "Mirador",
+      "role": "lane",
+      "segments": [
+        "Subida_Mirador",
+        "Ronda_Mirador"
+      ]
+    },
+    {
+      "id": "ALLEY_I",
+      "name": "Ronda de Huertas",
+      "role": "lane",
+      "segments": [
+        "Ronda_Huertas"
+      ]
+    },
+    {
+      "id": "ALLEY_J",
+      "name": "Llano",
+      "role": "lane",
+      "segments": [
+        "Llano"
+      ]
+    },
+    {
+      "id": "ALLEY_K",
+      "name": "Fuente",
+      "role": "lane",
+      "segments": [
+        "Fuente",
+        "Fuente_Baja"
+      ]
+    },
+    {
+      "id": "BRIDGE_A",
+      "name": "Stone bridge",
+      "role": "bridge",
+      "segments": [
+        "Puente_Piedra"
+      ]
+    },
+    {
+      "id": "BRIDGE_B",
+      "name": "Footbridge",
+      "role": "footbridge",
+      "segments": [
+        "Pasarela"
+      ]
+    }
+  ],
+  "rowRoleUnits": {
+    "plaza": "PLAZAS",
+    "river": "RIVER_A"
+  }
+}

@@ -34,6 +34,10 @@ namespace JuegoDef.Env
                 var name = System.IO.Path.GetFileNameWithoutExtension(assetPath);
                 var ti = (TextureImporter)assetImporter;
                 if (name.Contains("_Noise") || name.EndsWith("_Roughness")) ti.sRGBTexture = false;
+                // the weathering shader thresholds the noise (flaking edges, moss, streaks): block compression turned
+                // those edges into scattered 4x4 dots on the renders; the stain atlas alpha likewise (cohesion pass)
+                if (name.Contains("_Noise")) ti.textureCompression = TextureImporterCompression.Uncompressed;
+                if (name == "T_ENV_Stains") ti.textureCompression = TextureImporterCompression.CompressedHQ;
                 if (name.EndsWith("_Normal")) ti.textureType = TextureImporterType.NormalMap;
                 return;
             }
@@ -41,7 +45,9 @@ namespace JuegoDef.Env
             var importer = (TextureImporter)assetImporter;
             var file = System.IO.Path.GetFileNameWithoutExtension(assetPath);
             importer.textureShape = TextureImporterShape.Texture2D;
-            bool normal = file.Contains("Normal");
+            // a normal map ends in "_Normal"; "Bark_NormalTree" / "Leaves_NormalTree_C" are colour maps of the "normal
+            // tree" (they imported as normal maps before: purple-red trunks, red crowns)
+            bool normal = file.EndsWith("_Normal");
             importer.textureType = normal ? TextureImporterType.NormalMap : TextureImporterType.Default;
             importer.sRGBTexture = !normal && !file.Contains("ORM") && !file.Contains("Roughness");
             bool foliage = file.Contains("Leaf") || file.Contains("Leaves") || file.Contains("Grass") || file.Contains("Flowers");

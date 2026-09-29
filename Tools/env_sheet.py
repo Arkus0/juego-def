@@ -1,6 +1,6 @@
 """Contact sheets for ENV review shots (EnvShots.Capture output).
 
-    python Tools/env_sheet.py grid  <folder> <out.jpg> [--cols 3] [--only S01,S02]
+    python Tools/env_sheet.py grid  <folder> <out.jpg> [--cols 3] [--only S01,S02] [--match _game_fwd_]
     python Tools/env_sheet.py pairs <before_folder> <after_folder> <out.jpg> [--only S01,S02]
 
 `pairs` puts the same shot name side by side (before | after), one row per shot.
@@ -29,13 +29,14 @@ def label(img, text):
     return img
 
 
-def shots(folder, only):
+def shots(folder, only, match=None):
     files = sorted(Path(folder).glob("*.jpg"))
+    files = [f for f in files if not match or match in f.stem]
     return [f for f in files if not only or f.stem.split("_")[0] in only or f.stem in only]
 
 
 def grid(args):
-    files = shots(args.folder, args.only)
+    files = shots(args.folder, args.only, args.match)
     tw = args.width
     ims = [label(Image.open(f).convert("RGB").resize((tw, tw * 9 // 16)), f.stem) for f in files]
     cols = args.cols
@@ -71,6 +72,7 @@ def main():
     g.add_argument("--cols", type=int, default=3)
     g.add_argument("--width", type=int, default=640)
     g.add_argument("--only", type=lambda s: set(s.split(",")), default=None)
+    g.add_argument("--match", default=None, help="keep only shots whose name contains this text (e.g. _game_fwd_)")
     p = sub.add_parser("pairs")
     p.add_argument("before")
     p.add_argument("after")

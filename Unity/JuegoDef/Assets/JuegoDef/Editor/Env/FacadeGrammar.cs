@@ -130,14 +130,14 @@ namespace JuegoDef.Env
                 h.aerial = s.roof == "eaves" && rng.NextDouble() < 0.35;
                 var solid = Enumerable.Range(0, s.bays).Where(i => rows[0][i] == 'P').ToList();
                 if (solid.Count > 0 && rng.NextDouble() < 0.15) h.meterBay = solid[rng.Next(solid.Count)];  // meters: occasional, not on every house
-                h.cable = s.type != "warehouse" && rng.NextDouble() < 0.3;
-                if (windows.Count > 0 && rng.NextDouble() < (home ? 0.4 : s.type == "mixed_commercial" ? 0.15 : 0.0))
+                h.cable = s.type != "warehouse" && rng.NextDouble() < 0.3 + 0.35 * s.hero;
+                if (windows.Count > 0 && rng.NextDouble() < (home ? 0.4 + 0.35 * s.hero : s.type == "mixed_commercial" ? 0.15 + 0.2 * s.hero : 0.0))
                 {
                     var w = windows[rng.Next(windows.Count)];
                     h.clothesFloor = w.Item1; h.clothesBay = w.Item2;
                 }
-                h.pots = rng.NextDouble() < 0.45;
-                h.vines = rng.NextDouble() < (s.era == "neglected" ? 0.6 : s.era == "old" ? 0.15 : 0.0);
+                h.pots = rng.NextDouble() < 0.45 + 0.4 * s.hero;
+                h.vines = rng.NextDouble() < (s.era == "neglected" ? 0.6 : s.era == "old" ? 0.15 + 0.35 * s.hero : 0.1 * s.hero);
                 if (s.bays >= 3 && rng.NextDouble() < 0.2) h.extraPipeX = 2 * (1 + rng.Next(s.bays - 1));
                 return h;
             }
@@ -378,6 +378,15 @@ namespace JuegoDef.Env
         }
 
         /// <summary>Modules for one bay slot.</summary>
+        /// <summary>Iron box grilles on the ground-floor windows of some houses (all of that house's ground windows or
+        /// none): the cheapest strong variation of ground floors, and what a street-level window looks like here.</summary>
+        static bool Reja(BuildingSpec s)
+        {
+            if (s.type == "landmark" || s.family == "modern" || s.family == "rehab" || !EnvKit.HasModule("ENV_Window_Reja")) return false;
+            uint h = (uint)(s.seed * 2654435761u) >> 7;
+            return h % 100 < (s.family == "stone" || s.family == "stone_ground" ? 45 : 32);
+        }
+
         public static List<EnvPart> Recipe(BuildingSpec s, string fam, char code, int floor, System.Random rng)
         {
             bool stone = fam == "stone";
@@ -405,6 +414,7 @@ namespace JuegoDef.Env
                     Wall("Window_Wide_Flat");
                     WideWindow();
                     if (floor > 0) { if (s.era == "reformed") Stone("ENV_Window_Blind"); else Join("WindowShutters_Wide_Flat_Open"); }
+                    else if (Reja(s)) parts.Add(new EnvPart("ENV_Window_Reja", "prop"));
                     break;
                 case 'X':
                     Wall("Window_Wide_Flat");
@@ -414,6 +424,7 @@ namespace JuegoDef.Env
                 case 'w':
                     Wall("Window_Wide_Flat");
                     WideWindow();
+                    if (floor == 0 && Reja(s)) parts.Add(new EnvPart("ENV_Window_Reja", "prop"));
                     break;
                 case 'c':
                     Wall("Window_Wide_Flat");
@@ -596,7 +607,7 @@ namespace JuegoDef.Env
                     Pipe(dress, new[] { width - 0.29f, width - 0.56f }.Concat(inner.Where(x => x > width / 2f).OrderByDescending(x => x)), top);
             }
             // street lighting: wall lanterns on roughly one building in three, not on every facade
-            if (s.type != "warehouse" && s.type != "landmark" && s.bays >= 3 && s.era != "neglected" && (s.type == "lodging" || rng.NextDouble() < 0.35))
+            if (s.type != "warehouse" && s.type != "landmark" && s.bays >= (s.hero > 0 ? 2 : 3) && s.era != "neglected" && (s.type == "lodging" || rng.NextDouble() < 0.35 + 0.35 * s.hero))
             {
                 var xs = new List<float> { 2f, width - 2f };
                 if (rng.NextDouble() < 0.5) xs.Reverse();
@@ -604,7 +615,10 @@ namespace JuegoDef.Env
                     if (TryPlace("ENV_Prop_Lantern_Wall", dress, new Vector3(x, 3.3f, 0.1f), 0, new Vector3(0.75f, 0.75f, 0.75f))) break;
             }
             if (district)
+            {
                 Plants(s, root, rows, rng, doors, field, hist, TryPlace);
+                DoorCanopies(s, rows, rng, doors, dress, TryPlace);
+            }
             // doorstep pots: kept clear of pipes and meters, may stand in front of the door jambs
             else if (h.pots)
                 foreach (var x in doors)
@@ -857,7 +871,7 @@ namespace JuegoDef.Env
                 ("ENV_Pot_Glazed", "ENV_Plant_Laurel", 0.33f, 1.0f),
                 ("ENV_Planter_Box", "ENV_Plant_Geranium", 0.2f, 0.9f),
             };
-            string[] flowers = { "ENV_Flower_Blue", "ENV_Flower_Pink", "ENV_Flower_White" };
+            string[] flowers = { "ENV_Src_Flowers_Blue", "ENV_Src_Flowers", "ENV_Src_Flowers_White" };   // hydrangea heads (Quaternius flower atlas, tinted)
             string[] glazes = { "ENV_Ceramic_Blue", "ENV_Ceramic_Green", "ENV_Ceramic_Ochre" };
             foreach (var x in doors)
             {
@@ -873,7 +887,7 @@ namespace JuegoDef.Env
                     if (!pot) continue;
                     if (set.pot == "ENV_Pot_Glazed") EnvKit.Remap(pot, new Dictionary<string, string> { { "ENV_Ceramic_Blue", glazes[rng.Next(glazes.Length)] } });
                     var pl = EnvKit.Place(set.plant, dress, pos + new Vector3(0, set.py, 0), rng.Next(360), Vector3.one * set.ps * (0.85f + 0.3f * (float)rng.NextDouble()));
-                    EnvKit.Remap(pl, new Dictionary<string, string> { { "ENV_Flower_Blue", flowers[rng.Next(flowers.Length)] } });
+                    EnvKit.Remap(pl, new Dictionary<string, string> { { "ENV_Src_Flowers_Blue", flowers[rng.Next(flowers.Length)] } });
                     // the leaves must not grow through a downpipe or a meter box either
                     var pb = EnvClearance.BoundsIn(root, pl);
                     pb.Expand(-0.02f);
@@ -888,11 +902,18 @@ namespace JuegoDef.Env
                 }
             }
             // an old stone bench by the door, a chair brought out (residential lanes: the plant share is high there)
-            if (share >= 0.3f && doors.Count > 0 && rng.NextDouble() < 0.18)
+            if (share >= 0.3f && doors.Count > 0 && rng.NextDouble() < 0.18 + 0.3 * s.hero)
             {
                 float x = doors[rng.Next(doors.Count)] + (rng.NextDouble() < 0.5 ? -1.6f : 1.6f);
                 if (tryPlace("ENV_Bench_Stone", dress, new Vector3(x, 0, 0.35f), 0, new Vector3(0.7f, 1, 0.8f), soft) && rng.NextDouble() < 0.5)
                     tryPlace("ENV_Prop_Chair", dress, new Vector3(x + (rng.NextDouble() < 0.5 ? 1.1f : -1.1f), 0, 0.6f), rng.Next(150, 210), null, soft);
+            }
+            // a bicycle left against the wall beside a door (residential lanes), parallel to the facade
+            if (share >= 0.3f && doors.Count > 0 && rng.NextDouble() < 0.08 + 0.12 * s.hero)
+            {
+                float x = doors[rng.Next(doors.Count)] + (rng.NextDouble() < 0.5 ? -1.55f : 1.55f);
+                var bike = tryPlace("ENV_Bicycle", dress, new Vector3(x, 0, 0.36f), rng.NextDouble() < 0.5 ? 90 : 270, null, soft);
+                if (bike) EnvKit.Remap(bike, new Dictionary<string, string> { { "ENV_Paint_Red", new[] { "ENV_Paint_Red", "ENV_PropMat_Azul", "ENV_PropMat_Verde", "ENV_PropMat_Negro" }[rng.Next(4)] } });
             }
             // balconies: geraniums in a box or a couple of pots on some iron/timber balconies
             for (int f = 1; f < rows.Length; f++)
@@ -911,9 +932,25 @@ namespace JuegoDef.Env
                         float sx = rng.NextDouble() < 0.5 ? -0.55f : 0.55f;
                         EnvKit.Place("ENV_Planter_Pot", hist, new Vector3(1 + 2 * i + sx, y, 0.42f), 0, Vector3.one * 0.6f);
                         EnvKit.Remap(EnvKit.Place(rng.NextDouble() < 0.5 ? "ENV_Plant_Geranium" : "ENV_Plant_Hydrangea", hist, new Vector3(1 + 2 * i + sx, y + 0.23f, 0.42f), rng.Next(360), Vector3.one * 0.45f),
-                                     new Dictionary<string, string> { { "ENV_Flower_Blue", flowers[rng.Next(flowers.Length)] } });
+                                     new Dictionary<string, string> { { "ENV_Src_Flowers_Blue", flowers[rng.Next(flowers.Length)] } });
                     }
                 }
+        }
+
+        /// <summary>Tejaroz over some old house doors (owner: doors and windows "les falta personalidad", not more of
+        /// them): only plain portals of old houses, never shops, reformed fronts or stone-surround doors; refused where
+        /// a balcony, sign, lantern or anything else of the facade is in the way. More often on the hero lanes.</summary>
+        static void DoorCanopies(BuildingSpec s, string[] rows, System.Random rng, List<float> doors, Transform dress,
+                                 System.Func<string, Transform, Vector3, float, Vector3?, System.Func<EnvClearance.Item, bool>, GameObject> tryPlace)
+        {
+            if (s.type == "mixed_commercial" || s.type == "landmark" || s.type == "warehouse" || s.era == "reformed" || s.family == "modern" || s.family == "rehab") return;
+            foreach (var x in doors)
+            {
+                int bay = Mathf.RoundToInt((x - 1) / 2f);
+                if (bay < 0 || bay >= rows[0].Length || "ADO".IndexOf(rows[0][bay]) < 0) continue;
+                if (rng.NextDouble() > 0.1 + 0.35 * s.hero) continue;
+                tryPlace("ENV_Door_Canopy", dress, new Vector3(x, 0, 0), 0, null, it => !it.module.Contains("Door"));
+            }
         }
 
         /// <summary>Temporary copies of the neighbour's quoin column on a shared edge the neighbour owns (the street

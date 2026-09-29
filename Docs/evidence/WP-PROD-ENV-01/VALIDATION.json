@@ -101,10 +101,10 @@
     {
       "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity",
       "stats": {
-        "thresholds": 398,
+        "thresholds": 372,
         "openWalkable": 0,
-        "closedBlocked": 398,
-        "renderers": 27451
+        "closedBlocked": 372,
+        "renderers": 29142
       },
       "issues": []
     }
@@ -134,7 +134,7 @@
       "open party wall: Deep Side_L storey 0 at local z -7,2",
       "open party wall: Deep Side_L storey 1 at local z -7,2",
       "ENV_SERVICE_CLASH ENV_Downpipe crosses DoorFrame_Flat_Brick at SelfTest/Piped/Dressing/ENV_Downpipe",
-      "duplicated coplanar tile SelfTest/Floor_Brick"
+      "duplicated coplanar tile SelfTest/Floor_Bridge"
     ]
   }
 }

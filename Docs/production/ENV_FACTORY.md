@@ -156,8 +156,10 @@ The district keeps its morphology; what each plot *is* is decided in the builder
 - **Plants**: rare, reasoned and varied (hydrangeas, ferns, geraniums, box balls, bay laurel in terracotta, glazed
   pots, old tins, stone troughs, timber boxes); stone benches by old doors on the damp lanes.
 - **Ground**: paving by reason (`EnvDistrict.PaveOf`): flag strip only on the main spine, canto variants by street,
-  setts on bridges, big flags on the plaza with a cobbled rim, repair patches; overlays for lane drainage channels and
-  flag bands along facades; door steps and shop thresholds.
+  setts on bridges, big flags on the plaza with a cobbled rim; overlays (`PavingOverlays`, laid 8 mm over the ground)
+  for lane drainage channels, flag bands along facades and **repair strips** (`RepairStrips`: straight utility-trench
+  strips in old setts or concrete, texture aligned to the strip); door steps and shop thresholds. The ground is welded
+  (`GroundWeld`, 7.5 cm) so zone borders leave no hairline holes.
 - **Plaza, river, edge**: fountain monument with candelabra, the singular tree, riverside walk, terraces; river water
   with depth, ripples, foam and reflection over a cobble bed with rocks, channel walls with water line, drains, ferns
   and ivy, stone bridge parapets and lamps; field walls, hedgerows and barns round the town.
@@ -165,6 +167,34 @@ The district keeps its morphology; what each plot *is* is decided in the builder
   trilight ambient, linear fog that starts beyond the street, the Atlantic sky shader (horizon = fog colour, clouds),
   post-processing, lamp and lantern lights, interior brightness and a baked reflection probe per preset; SSAO sized
   for buildings.
+
+### Micro-polish pass (walking the district, owner brief 2026-09-29)
+
+After the look passes the district is inspected **by walking it**, unit by unit (`Docs/evidence/WP-PROD-ENV-01/micro-polish/UNITS.md`),
+with a technical pass (P0 holes/clipping/floating, P1 camera and route, P2 architecture, P3 ground, P4 local composition,
+P5 detail) and a **semantic** pass (does it make sense to a person: a board advertises what the shop behind it sells and
+stands in front of it, furniture leaves the centreline clear, a strip does not end in a door).
+
+- **Tools** (`Editor/Env/EnvWalk.cs`): `Street(id, folder, spacing, modes, w, h, holes)` walks a street both ways with the
+  real GC2 third-person camera (`game`), `eye`, `diag`, `up` and the ground-facing `gnd` scan; `Building(path, folder)`
+  views one building from the street; `Audit(street)` lists floating, sunk, overlapping and in-wall floor props;
+  `GroundSeams()` and `WallGaps(row)` measure ground integrity; `holes: true` renders on a magenta background and
+  `Tools/env_holes.py` counts hole pixels. Paths are relative to the Unity project folder (`Captures/` is git-ignored;
+  curated shots are copied to `Docs/evidence/`).
+- **Corrections survive a rebuild** (`EnvPolish`, `Env/Specs/districts/<id>.polish.json`): `plots` overrides any
+  `BuildingSpec` field per building id, applied after the character pass; `ops` (`remove`, `move`, `place`, found by module
+  name near a world point) run at the end of `EnvDistrict.Finish()`. Every entry names its unit, class (TECH/SEM) and why.
+  `EnvPolish.RebuildRow(id)` rebuilds one row live in ~0.3 s exactly as a full build would (a dry run replays the stateful
+  business pass first); a full rebuild takes ~30 s and is deterministic.
+- **Generic fixes made by the first pass**: ground vertex weld and an earth underlay 10 cm below the ground, 10 cm footing
+  under every facade, overlay winding (the overlays had never rendered), repair strips instead of relabelled triangles,
+  chalkboard text by business type (`boardNotice`), and a route probe that follows the street vertices (`DensifyRoute`).
+- **Semantic audit** (`Editor/Env/EnvSemantics.cs`, `Docs/evidence/WP-PROD-ENV-01/micro-polish/SEMANTICS.md`): doors onto the
+  river / a drop / a parapet, windows onto walls, bare side walls, walls that are too long, twin fronts and props with no
+  function, per inspection unit (`<id>.inspection.json`). Its fixes: `BuildingSpec.noEntrance` (river rows have no door),
+  `BuildingSpec.raise` (a door buried by rising ground), bridge parapets kept off doors, side-wall windows, panelled garden walls,
+  and `EnvPolish.FixBlockedOpenings`, a physical pass at the start of `Finish()` that rebuilds rows through `EnvPolish.Auto`
+  (in-memory overrides on top of the polish file).
 
 ### Templates (`EnvTemplates`)
 
@@ -217,6 +247,16 @@ Units and district scenes are checked for: banned kit modules (medieval/alpine c
   (or `error CS` in `Editor.log`) before trusting a rebuild.
 - The kit fern (`ENV_Plant_Fern`) is ~9 m wide: scale ≈ 0.07. The kit rock is 3 m: river rocks 0.2–0.5.
 - Physics clearance spheres above the paving must start above the ground collider, or every candidate reads as blocked.
+- Unity front faces are clockwise from the viewer: `Cross(b - a, c - a)` points **up** for a face seen from above. A swapped
+  winding made every paving overlay invisible for a whole pass; check `up` vs `down` normals of any generated mesh.
+- Judge ground and joints with a **magenta background** (`EnvWalk` `holes`): a hairline crack or a slit under a wall is
+  invisible in a normal frame and shows as a bright line on foot. Ground zones must be welded.
+- The spec's `basement` below 5 cm builds no base at all; every facade gets a 10 cm footing so a small dip never opens a slit.
+- The route probe walks straight lines between waypoints: waypoints must include the street vertices or a bend is cut
+  through the props on its inside.
+- Unity CLI (`unity command eval_file --file x.cs`) picks the Editor by the **working directory**: run it from the project
+  folder (another `JuegoDef` editor may be connected). Its reply is cut at 5 s of main-thread time but the work continues:
+  write long results to a file and poll it. `eval` takes no `using` lines (fully qualify names).
 
 ## Current limits (see `Docs/evidence/WP-PROD-ENV-01/B0_COVERAGE.md`)
 

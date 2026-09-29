@@ -7,13 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_Bronze
+    second: {fileID: 2100000, guid: cfc2a895dc3b9b840bfd2b1693106a33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_Dressed_Arenisca
+    second: {fileID: 2100000, guid: c52fd5a9663d33a4ab1f529e73d69fdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_Mason_Silleria_Arenisca
+    second: {fileID: 2100000, guid: 734c39e8c1ccc284da6ed198c0eb8e4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Metal_Iron
     second: {fileID: 2100000, guid: 36e138e812f88604d859c298a98660f4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Granito
+    second: {fileID: 2100000, guid: 1405dc5a41f3da5469c495e99d58216b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Stone_Sandstone
     second: {fileID: 2100000, guid: 0c1dc32248f53b646a44c669ce641a16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_Water_Jet
+    second: {fileID: 2100000, guid: 5e3f9e165ee39d945adb1f2cbaef6747, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

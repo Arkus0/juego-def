@@ -138,7 +138,9 @@ Shader "JuegoDef/ENV/Interior Room"
                     float ax = abs(q.x);
                     half cover = full ? 1.0 : smoothstep(hw - side - 0.02, hw - side, ax);
                     half folds = 0.8 + 0.2 * sin(q.x * 38.0 + i.hash * 20.0);
-                    half lace = 0.75 + 0.25 * step(0.5, frac(q.x * 22.0) + frac(q.y * 22.0) * 0.5);
+                    // a soft lace figure, low contrast and low frequency (the stepped pattern read as a triangle
+                    // grid close up)
+                    half lace = 0.92 + 0.08 * sin(q.y * 11.0 + 2.0 * sin(q.x * 7.0 + i.hash * 9.0));
                     half3 net = half3(0.86, 0.85, 0.8) * folds * lace * (0.45 + 0.55 * k);
                     col = lerp(col, net, cover * (full ? 0.55 : 0.8) * step(y0, q.y));
                 }

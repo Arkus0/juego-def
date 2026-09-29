@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Negro
+    second: {fileID: 2100000, guid: a9b5ba3673c36ad49871926fddec12ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Oscuro
+    second: {fileID: 2100000, guid: 36be579751659fe4aa38c08e951932ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Sign_Board
     second: {fileID: 2100000, guid: 2cff450530c371c4c835f509d89a1eb9, type: 2}
   - first:

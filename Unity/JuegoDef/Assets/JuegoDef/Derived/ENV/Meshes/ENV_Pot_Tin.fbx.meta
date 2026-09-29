@@ -12,6 +12,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Amarillo
+    second: {fileID: 2100000, guid: 87fc48cd17ea28d44a3daca3360f8dda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Galv
+    second: {fileID: 2100000, guid: c8f04e26e0fe07843a0e0384da4d91f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Soil
     second: {fileID: 2100000, guid: de03a24476efc2448bfd1b4a5975352d, type: 2}
   materials:

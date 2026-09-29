@@ -19,6 +19,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: ENV_Metal_Iron
     second: {fileID: 2100000, guid: 36e138e812f88604d859c298a98660f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Alu
+    second: {fileID: 2100000, guid: a6ceec06741c50740a06f18774892490, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Negro
+    second: {fileID: 2100000, guid: a9b5ba3673c36ad49871926fddec12ef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

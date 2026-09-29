@@ -51,16 +51,18 @@ Material:
     - _DampAmount: 0
     - _DampHeight: 0
     - _DampWorld: 0
-    - _DetailTone: 0.1
+    - _DetailTone: 0.15
     - _FlakeAmount: 0
-    - _MacroAmount: 0.17533024
+    - _GroundWet: 0.4937856
+    - _MacroAmount: 0.2191628
     - _MacroScale: 0.043503392
     - _Metallic: 0
-    - _MossAmount: 0
+    - _MossAmount: 0.05
     - _PatchAmount: 0
     - _Roughness: 1
     - _Seed: 17.226
     - _StreakAmount: 0
+    - _WorldUV: 0
     m_Colors:
     - _BaseColor: {r: 0.9019608, g: 0.8745098, b: 0.8235294, a: 1}
     - _FlakeColor: {r: 1, g: 1, b: 1, a: 1}

@@ -25,6 +25,7 @@
     { "name": "C02_fachadas_callejon", "street": "Cimavilla_Baja", "from": 0.2, "to": 0.55, "side": 0.8, "fov": 55, "lookUp": 4.0 },
     { "name": "C03_terraza_plaza", "eye": [112, 1.9, 172], "at": [124, 2.2, 181], "fov": 55 },
     { "name": "C04_puente_desde_plaza", "eye": [80, 1.9, 186], "at": [60, 0.5, 182], "fov": 55 },
-    { "name": "C05_torre", "eye": [96, 1.8, 170], "at": [81, 12, 158], "fov": 55 }
+    { "name": "C05_torre", "eye": [96, 1.8, 170], "at": [81, 12, 158], "fov": 55 },
+    { "name": "C06_rincon_fuente", "eye": [119.9, 5.9, 111.5], "at": [117.3, 5.0, 117.6], "fov": 55 }
   ]
 }

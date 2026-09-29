@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Granito
+    second: {fileID: 2100000, guid: 1405dc5a41f3da5469c495e99d58216b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MI_RockTrim
     second: {fileID: 2100000, guid: 831e091cb8af6b24989c36dde45d6d47, type: 2}
   materials:

@@ -19,6 +19,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: ENV_Plastic_Red
     second: {fileID: 2100000, guid: fd83c3269d5029240be141aacaffe51c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Blanco
+    second: {fileID: 2100000, guid: 638e3876497b05449932fb4b3e21a12d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

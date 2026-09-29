@@ -27,6 +27,10 @@ namespace JuegoDef.Env
             { "Ronda_Huertas", "huertas" }, { "Subida_Mirador", "huertas" }, { "Ronda_Mirador", "huertas" },
         };
 
+        // hero lanes (owner reference pass, 2026-09-29): a few lanes carry the everyday life — laundry, pots, chairs,
+        // door canopies, slung cables — so they read as lived corners; the rest stay sober by contrast
+        public static readonly HashSet<string> HeroStreets = new HashSet<string> { "Cimavilla_Baja", "Fuente", "Fuente_Baja", "Callejon_Arco", "Solana_Bajada" };
+
         public static string KindOf(JObject row)
         {
             var street = (string)row["street"];
@@ -176,6 +180,8 @@ namespace JuegoDef.Env
             if (bs.solana && (family == "rehab" || family == "modern" || rng.NextDouble() < 0.5)) bs.solana = false;
             // plants belong to damp lanes, old people's doors and the huerta edge, not to every portal
             bs.plantShare = kind == "residencial" ? 0.32f : kind == "huertas" ? 0.3f : kind == "ribera" ? 0.2f : kind == "alta" ? 0.16f : 0.1f;
+            bs.hero = HeroStreets.Contains((string)row["street"] ?? "") ? 1f : 0f;
+            if (bs.hero > 0) bs.plantShare = Math.Max(bs.plantShare, 0.6f);
             // the ground floor's programme: the business replaces the old random awning / blank bracket sign
             bs.awning = "";
             bs.sign = "";

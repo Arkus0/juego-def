@@ -87,7 +87,15 @@ narrow street → stone bridge → houses over the channel → the sea hinted be
   containers; stone benches where old neighbours sit.
 - **Paving by reason**: the flag strip only on the main spine (the old cart track); finer canto on secondary streets,
   older canto and a setts drainage channel in lanes, setts on bridges, big flags on the plaza with a cobbled rim, flag
-  bands along facades of the main streets, repair patches; door steps and thresholds meet the houses.
+  bands along facades of the main streets, repair strips (straight utility trenches in old setts or concrete, never
+  irregular blobs); door steps and thresholds meet the houses.
+- **Everything makes sense to a person** (micro-polish, owner 2026-09-29): what a chalkboard says follows what the shop
+  sells and it stands in front of that shop, facing the street; furniture never sits on a street's centreline nor in a
+  corner where it cannot be read or used; repairs, signs and props have a reason to be where they are. **A door always
+  opens onto ground a person can step on** (never the river, a drop, the paving above its sill or a parapet: houses over the
+  water have windows, the way in is on the street behind); **a window has air in front of it** (no window looks at a wall
+  within 1.3 m); an exposed side wall is not a plane (small windows on the upper floors); **a garden wall has a break every
+  6-9 m** (gate, pier, a lower or repaired stretch), never 30 m of one height and one masonry. `EnvSemantics` checks all of it.
 - **The plaza has a landmark and sub-spaces**: fountain with candelabra near the middle, the old plane tree with its
   ring bench, a riverside walk of trees and benches facing the water, terraces in front of the bars, planters at the
   edges — never trees on a grid.

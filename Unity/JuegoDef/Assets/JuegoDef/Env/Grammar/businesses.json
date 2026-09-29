@@ -8,6 +8,7 @@
       "terrace": "bar",
       "bracket": 0.6,
       "board": 0.5,
+      "boardNotice": "pinchos",
       "lit": true
     },
     "cafe": {
@@ -17,6 +18,7 @@
       "terrace": "cafe",
       "bracket": 0.3,
       "board": 0.4,
+      "boardNotice": "menu",
       "lit": true
     },
     "sidreria": {
@@ -26,6 +28,7 @@
       "terrace": "barrels",
       "bracket": 0.8,
       "board": 0.5,
+      "boardNotice": "pinchos",
       "lit": true
     },
     "panaderia": {
@@ -34,6 +37,7 @@
       "awning": 0.5,
       "bracket": 0.6,
       "board": 0.6,
+      "boardNotice": "pan",
       "lit": true
     },
     "farmacia": {
@@ -91,6 +95,7 @@
       "goods": "recuerdos",
       "bracket": 0.5,
       "board": 0.5,
+      "boardNotice": "regional",
       "lit": true
     },
     "oficina": {
@@ -835,6 +840,24 @@
       "id": "pinchos",
       "text": "PINCHOS",
       "sub": "raciones y vermú",
+      "bg": "#1E2420",
+      "fg": "#F0F0E8",
+      "font": "BRUSHSCI.TTF",
+      "board": true
+    },
+    {
+      "id": "pan",
+      "text": "PAN DEL DÍA",
+      "sub": "hogaza, bollería y empanadas",
+      "bg": "#1E2420",
+      "fg": "#F0F0E8",
+      "font": "BRUSHSCI.TTF",
+      "board": true
+    },
+    {
+      "id": "regional",
+      "text": "DE LA TIERRA",
+      "sub": "queso, miel y orujo",
       "bg": "#1E2420",
       "fg": "#F0F0E8",
       "font": "BRUSHSCI.TTF",

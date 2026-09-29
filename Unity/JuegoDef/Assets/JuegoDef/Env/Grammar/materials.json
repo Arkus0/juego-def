@@ -45,6 +45,9 @@
     { "name": "ENV_Sign_Face", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Sign_Board" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.2, "_Metallic": 0 } },
     { "name": "ENV_Sign_Board", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Sign_Board" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.2, "_Metallic": 0 } },
     { "name": "ENV_Water_Port", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#3B5558" }, "floats": { "_Smoothness": 0.88, "_Metallic": 0.1 } },
+    { "name": "ENV_Tile_Aged", "shader": "JuegoDef/ENV/Weathered Lit", "textures": { "_NoiseMap": "T_ENV_Weather_Noise" }, "vectors": { "_RoughChannel": [1, 0, 0, 0] }, "colors": { "_BaseColor": "#A2604A", "_MossColor": "#4F5A34", "_MacroHue": "#D6B49A" }, "floats": { "_Roughness": 0.82, "_MacroAmount": 0.32, "_MacroScale": 0.9, "_DetailTone": 0.18, "_MossAmount": 0.22, "_StreakAmount": 0.25 } },
+    { "name": "ENV_Backdrop_Range", "shader": "JuegoDef/ENV/Backdrop Range", "colors": { "_LowColor": "#5B6B5C", "_HighColor": "#8A9398", "_RockColor": "#B7B8B4" }, "floats": { "_Haze": 0.4, "_FarHaze": 0.2, "_Shade": 0.55 } },
+    { "name": "ENV_Water_Jet", "shader": "Universal Render Pipeline/Lit", "surface": "transparent", "colors": { "_BaseColor": "#DCEBEF99" }, "floats": { "_Smoothness": 0.95, "_Metallic": 0 } },
     { "name": "ENV_Src_T_Trim_Cloth_BaseColor", "sources": ["props:stall_empty", "props:stall_cart_empty", "props:bag"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Cloth_BaseColor", "_BumpMap": "T_Trim_Cloth_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.1 }, "keywords": ["_NORMALMAP"] },
     { "name": "ENV_Src_T_Trim_Furniture_BaseColor", "sources": ["props:barrel", "props:crate_wooden", "props:bench", "props:table_large"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Furniture_BaseColor", "_BumpMap": "T_Trim_Furniture_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.15 }, "keywords": ["_NORMALMAP"] },
     { "name": "ENV_Src_T_Trim_Metal_BaseColor", "sources": ["props:lantern_wall", "props:bucket_metal", "props:chain_coil"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_Trim_Metal_BaseColor", "_BumpMap": "T_Trim_Metal_Normal" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.35, "_Metallic": 0.4 }, "keywords": ["_NORMALMAP"] },
@@ -93,17 +96,22 @@
     { "name": "ENV_Water_Puddle", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#2A3134" }, "floats": { "_Smoothness": 0.97, "_Metallic": 0 } },
     { "name": "ENV_Buoy_Orange", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#D9642A" }, "floats": { "_Smoothness": 0.45, "_Metallic": 0 } },
     { "name": "ENV_Net_Green", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#3E5E4A" }, "floats": { "_Smoothness": 0.1, "_Metallic": 0 } },
-    { "name": "ENV_Src_Bark_NormalTree", "sources": ["nature:commontree_1"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Bark_NormalTree", "_BumpMap": "Bark_NormalTree_Normal" }, "colors": { "_BaseColor": "#5E5E58" }, "floats": { "_Smoothness": 0.1 }, "keywords": ["_NORMALMAP"] },
-    { "name": "ENV_Src_Leaves_NormalTree_C", "sources": ["nature:commontree_1"], "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#5E7A48" }, "floats": { "_Smoothness": 0.05, "_Cull": 0 } },
+    { "name": "ENV_Src_Bark_NormalTree", "sources": ["nature:commontree_1"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Bark_NormalTree", "_BumpMap": "Bark_NormalTree_Normal" }, "colors": { "_BaseColor": "#8CBFE6" }, "floats": { "_Smoothness": 0.1 }, "keywords": ["_NORMALMAP"] },
+    { "name": "ENV_Src_Leaves_NormalTree_C", "sources": ["nature:commontree_1"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Leaves_NormalTree_C" }, "colors": { "_BaseColor": "#AABAA2" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.4, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
     { "name": "ENV_Src_Flowers", "sources": ["nature:bush_common_flowers"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Flowers" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Src_Leaves_Box", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Leaves_Box" }, "colors": { "_BaseColor": "#D2D8C4" }, "floats": { "_Smoothness": 0.08, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Src_Leaf_Pine_C", "sources": ["nature:pine_1"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Leaf_Pine_C" }, "colors": { "_BaseColor": "#9AA888" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Src_Flowers_Blue", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Flowers" }, "colors": { "_BaseColor": "#9DB4FF" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Src_Flowers_White", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Flowers" }, "colors": { "_BaseColor": "#FFF4F4" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
+    { "name": "ENV_Src_Flowers_Red", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Flowers" }, "colors": { "_BaseColor": "#FF6A5E" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
     { "name": "ENV_Src_Grass", "sources": ["nature:grass_common_short"], "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "Grass" }, "colors": { "_BaseColor": "#A9B98E" }, "floats": { "_Smoothness": 0.05, "_AlphaClip": 1, "_Cutoff": 0.45, "_Cull": 0 }, "keywords": ["_ALPHATEST_ON"], "queue": 2450 },
     { "name": "ENV_Interior_Dark", "shader": "Universal Render Pipeline/Lit", "colors": { "_BaseColor": "#2A2622" }, "floats": { "_Smoothness": 0.05 } },
     { "name": "ENV_Joinery_Chestnut", "copy": ["MI_WoodTrim_Wear"], "colors": { "_Color": "#8A6A52" }, "floats": { "_Wear": 0 } },
     { "name": "ENV_Plaster_Lime", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#E4DED0" }, "floats": { "_Wear": 0 } },
     { "name": "ENV_Plaster_Sandstone", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#C8B596" }, "floats": { "_Wear": 0 } },
     { "name": "ENV_Plaster_PaleOchre", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_ENV_Plaster_Neutral", "_Normal_Texture": "T_Plaster_Normal", "_Roughness_Texture": "T_Plaster_ORM" }, "colors": { "_Color": "#DCC49A" }, "floats": { "_Wear": 0 } },
-    { "name": "ENV_Ground_Grass", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Ground_Grass" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.05 } },
-    { "name": "ENV_Ground_Earth", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Ground_Earth" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.08 } },
+    { "name": "ENV_Ground_Grass", "shader": "JuegoDef/ENV/Weathered Lit", "textures": { "_BaseMap": "T_ENV_Ground_Grass", "_NoiseMap": "T_ENV_Weather_Noise" }, "vectors": { "_RoughChannel": [1, 0, 0, 0] }, "colors": { "_BaseColor": "#D2D6C2", "_MacroHue": "#E8DCB4" }, "floats": { "_Roughness": 0.95, "_MacroScale": 0.05, "_MacroAmount": 0.2, "_DetailTone": 0.1 } },
+    { "name": "ENV_Ground_Earth", "shader": "JuegoDef/ENV/Weathered Lit", "textures": { "_BaseMap": "T_ENV_Ground_Earth", "_NoiseMap": "T_ENV_Weather_Noise" }, "vectors": { "_RoughChannel": [1, 0, 0, 0] }, "colors": { "_BaseColor": "#F2F0EA", "_MacroHue": "#E6DAC4" }, "floats": { "_Roughness": 0.92, "_MacroScale": 0.06, "_MacroAmount": 0.16, "_DetailTone": 0.08 } },
     { "name": "ENV_Foliage", "shader": "Universal Render Pipeline/Lit", "textures": { "_BaseMap": "T_ENV_Foliage" }, "colors": { "_BaseColor": "#FFFFFF" }, "floats": { "_Smoothness": 0.05, "_Metallic": 0 } },
     { "name": "ENV_Stone_Sandstone", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_RockTrim_BaseColor", "_Normal_Texture": "T_RockTrim_Normal", "_Roughness_Texture": "T_RockTrim_ORM" }, "colors": { "_Color": "#E2CBAE" }, "floats": { "_Wear": 0 } },
     { "name": "ENV_Stone_Granite", "copy": ["MI_WoodTrim_Wear"], "textures": { "_Base_Color_Texture": "T_RockTrim_BaseColor", "_Normal_Texture": "T_RockTrim_Normal", "_Roughness_Texture": "T_RockTrim_ORM" }, "colors": { "_Color": "#CFCBC2" }, "floats": { "_Wear": 0 } },
@@ -146,6 +154,25 @@
   ],
   "families": [
     {
+      "prefix": "ENV_PropMat",
+      "comment": "Own street props (cohesion pass; owner: own props at the Quaternius bar): worn paint, moulded plastic and plain granite on Weathered Lit. T_ENV_PaintWear / T_ENV_Granite are tintable multipliers (_BaseColor = the colour); the world macro tone makes every instance a little different; the damp band at object y 0..0.22 is the grime where a free-standing prop meets the paving.",
+      "base": { "shader": "JuegoDef/ENV/Weathered Lit", "textures": { "_BaseMap": "T_ENV_PaintWear", "_NoiseMap": "T_ENV_Weather_Noise" }, "vectors": { "_RoughChannel": [1, 0, 0, 0] }, "floats": { "_Roughness": 0.55, "_Metallic": 0.0, "_MacroScale": 0.45, "_MacroAmount": 0.08, "_DetailTone": 0.04, "_DampHeight": 0.22, "_DampAmount": 0.3, "_StreakAmount": 0.12, "_MossAmount": 0.0 }, "colors": { "_MacroHue": "#F2EADC" } },
+      "jitter": { "_MacroAmount": 0.4, "_StreakAmount": 0.4 },
+      "tiling": 2,
+      "axes": [
+        { "Verde": { "colors": { "_BaseColor": "#3E5847" }, "floats": { "_Roughness": 0.5, "_Metallic": 0.15 } },
+          "Negro": { "colors": { "_BaseColor": "#34383A" }, "floats": { "_Roughness": 0.5, "_Metallic": 0.2 } },
+          "Galv": { "colors": { "_BaseColor": "#BFC3BE" }, "floats": { "_Roughness": 0.42, "_Metallic": 0.55 } },
+          "Alu": { "colors": { "_BaseColor": "#CDCFCB" }, "floats": { "_Roughness": 0.38, "_Metallic": 0.5, "_DampAmount": 0.15 } },
+          "Amarillo": { "colors": { "_BaseColor": "#E3B232" } },
+          "Azul": { "colors": { "_BaseColor": "#34669E" } },
+          "Gris": { "colors": { "_BaseColor": "#6B706B" } },
+          "Blanco": { "colors": { "_BaseColor": "#E4E2DA" }, "floats": { "_DampAmount": 0.0, "_StreakAmount": 0.18 } },
+          "Oscuro": { "colors": { "_BaseColor": "#2E3030" }, "floats": { "_DampAmount": 0.0, "_Roughness": 0.65 } },
+          "Granito": { "textures": { "_BaseMap": "T_ENV_Granite" }, "colors": { "_BaseColor": "#CFCCC4", "_MossColor": "#4F5A34" }, "floats": { "_Roughness": 0.85, "_MacroAmount": 0.12, "_DetailTone": 0.06, "_DampHeight": 0.28, "_DampAmount": 0.4, "_StreakAmount": 0.25, "_MossAmount": 0.14 } } }
+      ]
+    },
+    {
       "prefix": "ENV_Render",
       "comment": "Facade render (revoco): hue x condition x storey. _G = ground floor (rising damp at the foot).",
       "base": { "shader": "JuegoDef/ENV/Weathered Lit", "textures": { "_BaseMap": "T_ENV_Plaster_Neutral", "_BumpMap": "T_Plaster_Normal", "_RoughMap": "T_Plaster_ORM", "_NoiseMap": "T_ENV_Weather_Noise", "_FlakeMap": "T_ENV_Stone_Rubble_BaseColor" }, "vectors": { "_RoughChannel": [0, 1, 0, 0] }, "floats": { "_Roughness": 1.0, "_MacroScale": 0.07, "_BumpScale": 0.8 }, "colors": { "_MacroHue": "#F2E4CC", "_FlakeColor": "#D8CFBF" } },
@@ -165,7 +192,7 @@
       "axes": [
         { "Mamposteria": { "textures": { "_BaseMap": "T_ENV_Stone_Rubble_BaseColor", "_BumpMap": "T_ENV_Stone_Rubble_Normal", "_RoughMap": "T_ENV_Stone_Rubble_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" } }, "Canto": { "textures": { "_BaseMap": "T_ENV_Stone_Canto_BaseColor", "_BumpMap": "T_ENV_Stone_Canto_Normal", "_RoughMap": "T_ENV_Stone_Canto_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" } }, "Silleria": { "textures": { "_BaseMap": "T_ENV_Stone_Ashlar_BaseColor", "_BumpMap": "T_ENV_Stone_Ashlar_Normal", "_RoughMap": "T_ENV_Stone_Ashlar_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" } }, "Laja": { "textures": { "_BaseMap": "T_ENV_Stone_Laja_BaseColor", "_BumpMap": "T_ENV_Stone_Laja_Normal", "_RoughMap": "T_ENV_Stone_Laja_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" } }, "Kit": { "textures": { "_BaseMap": "T_UnevenBrick_BaseColor", "_BumpMap": "T_UnevenBrick_Normal", "_RoughMap": "T_UnevenBrick_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" }, "tiling": { "_BaseMap": 1.35 } } },
         { "Caliza": { "colors": { "_BaseColor": "#E6DED0" } }, "Arenisca": { "colors": { "_BaseColor": "#EAD2AE" } }, "Gris": { "colors": { "_BaseColor": "#C9C7C0" } }, "Oscura": { "colors": { "_BaseColor": "#ABA398" } } },
-        { "": {}, "G": { "floats": { "_DampHeight": 1.0, "_DampAmount": 0.45, "_MossAmount": 0.22 } } }
+        { "": {}, "G": { "floats": { "_DampHeight": 1.0, "_DampAmount": 0.45, "_MossAmount": 0.22, "_WorldUV": 1 } } }
       ]
     },
     {
@@ -190,11 +217,11 @@
     {
       "prefix": "ENV_Pave",
       "comment": "Street paving: bond x wear. World-UV ground meshes and module decks.",
-      "base": { "shader": "JuegoDef/ENV/Weathered Lit", "vectors": { "_RoughChannel": [1, 0, 0, 0] }, "floats": { "_MacroScale": 0.045, "_MacroAmount": 0.16, "_MossAmount": 0.0, "_BumpScale": 1.0, "_DetailTone": 0.1 }, "colors": { "_MacroHue": "#E2D8C6", "_MossColor": "#4A5632" } },
-      "jitter": { "_MacroAmount": 0.3, "_MacroScale": 0.3 },
+      "base": { "shader": "JuegoDef/ENV/Weathered Lit", "vectors": { "_RoughChannel": [1, 0, 0, 0] }, "floats": { "_MacroScale": 0.045, "_MacroAmount": 0.2, "_MossAmount": 0.05, "_BumpScale": 1.0, "_DetailTone": 0.15, "_GroundWet": 0.4 }, "colors": { "_MacroHue": "#E2D8C6", "_MossColor": "#4A5632" } },
+      "jitter": { "_MacroAmount": 0.3, "_MacroScale": 0.3, "_GroundWet": 0.4 },
       "axes": [
         { "Canto": { "textures": { "_BaseMap": "T_ENV_Pave_Canto_BaseColor", "_BumpMap": "T_ENV_Pave_Canto_Normal", "_RoughMap": "T_ENV_Pave_Canto_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" }, "colors": { "_BaseColor": "#E4DED4" } }, "CantoKit": { "textures": { "_BaseMap": "T_ENV_RoundRocks_Neutral", "_BumpMap": "T_RoundRocks_Normal", "_RoughMap": "T_RoundRocks_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" }, "colors": { "_BaseColor": "#A39B8F" } }, "Losa": { "textures": { "_BaseMap": "T_ENV_Pave_Flags_BaseColor", "_BumpMap": "T_ENV_Pave_Flags_Normal", "_RoughMap": "T_ENV_Pave_Flags_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" }, "colors": { "_BaseColor": "#D4CEC3" } }, "Adoquin": { "textures": { "_BaseMap": "T_ENV_Pave_Setts_BaseColor", "_BumpMap": "T_ENV_Pave_Setts_Normal", "_RoughMap": "T_ENV_Pave_Setts_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" }, "colors": { "_BaseColor": "#DAD6CF" } }, "Plaza": { "textures": { "_BaseMap": "T_ENV_Pave_Plaza_BaseColor", "_BumpMap": "T_ENV_Pave_Plaza_Normal", "_RoughMap": "T_ENV_Pave_Plaza_Roughness", "_NoiseMap": "T_ENV_Weather_Noise" }, "colors": { "_BaseColor": "#E6DFD2" } } },
-        { "": {}, "Viejo": { "floats": { "_MacroAmount": 0.22, "_MossAmount": 0.06 }, "colors": { "_BaseColor": "#C9C2B6" } } }
+        { "": {}, "Viejo": { "floats": { "_MacroAmount": 0.26, "_MossAmount": 0.14, "_GroundWet": 0.65 }, "colors": { "_BaseColor": "#C9C2B6" } } }
       ]
     }
   ]

@@ -12,6 +12,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Oscuro
+    second: {fileID: 2100000, guid: 36be579751659fe4aa38c08e951932ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Verde
+    second: {fileID: 2100000, guid: bb759497d1b7f2443a2a16bd4f624b42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MI_WoodTrim
     second: {fileID: 2100000, guid: d78eee3c6fcf3af4c93d4b7f11969b30, type: 2}
   materials:

@@ -27,6 +27,31 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Amarillo
+    second: {fileID: 2100000, guid: 87fc48cd17ea28d44a3daca3360f8dda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Azul
+    second: {fileID: 2100000, guid: b43746680590a8146a64628f1b06d0a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Blanco
+    second: {fileID: 2100000, guid: 638e3876497b05449932fb4b3e21a12d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Gris
+    second: {fileID: 2100000, guid: f06cd000eed64724a80e53bba0a27a8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Oscuro
+    second: {fileID: 2100000, guid: 36be579751659fe4aa38c08e951932ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ENV_Rubber
     second: {fileID: 2100000, guid: 56d5dfbafbcbae649a583827ebb44c28, type: 2}
   materials:

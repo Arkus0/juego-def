@@ -64,6 +64,7 @@ namespace JuegoDef.Env
             EnvClearance.ClearCache();
             BuildingAssembler.ReloadGrammar();
             EnvBusiness.Reset();
+            EnvPolish.Auto.Clear();
             units = JObject.Parse(EnvKit.ReadText(EnvKit.Specs + "/units.json"))["units"].ToDictionary(u => (string)u["id"], u => (JObject)u);
             var stage = EnvPreview.NewStage(id, ground: false);
             Object.DestroyImmediate(stage.gameObject);
@@ -79,6 +80,15 @@ namespace JuegoDef.Env
         static List<(string id, string role, float w, List<Vector2> pts)> StreetLines() =>
             ((JArray)spec["streets"]).Cast<JObject>().Select(st => ((string)st["id"], (string)st["role"], (float)st["width"],
                 ((JArray)st["pts"]).Select(q => new Vector2((float)q[0], (float)q[1])).ToList())).ToList();
+
+        /// <summary>A stable variant of a module by position: base, base_B or base_C (Quaternius tree variants), so
+        /// rows and groves of trees never repeat one model.</summary>
+        static string Variant(string baseName, float x, float z)
+        {
+            float h = Hash01(x, z, 5.3f);
+            string v = h < 0.4f ? baseName : h < 0.72f ? baseName + "_B" : baseName + "_C";
+            return EnvKit.HasModule(v) ? v : baseName;
+        }
 
         static float Hash01(float x, float y, float salt)
         {
@@ -102,11 +112,8 @@ namespace JuegoDef.Env
             if (zone == "outer") return "ENV_Ground_Grass";
             var near = streets.OrderBy(st => (Nearest(st.pts, c) - c).sqrMagnitude).First();
             string role = zone == "plaza" ? "plaza" : near.role;
-            // repairs: patches on a jittered 3 m grid, likelier on the busy streets
-            float gx = Mathf.Floor(c.x / 3.1f), gz = Mathf.Floor(c.y / 2.7f);
-            float rep = Hash01(gx, gz, 1);
-            if (zone != "strip" && role != "plaza" && rep < (role == "main" ? 0.05f : 0.035f))
-                return Hash01(gx, gz, 2) < 0.6f ? "ENV_Pave_Adoquin_Viejo" : "ENV_Ground_Concrete";
+            // (repairs are no longer relabelled triangles: they were grey wedges with no cobble detail and crooked edges.
+            // They are straight utility-trench strips laid over the paving, see RepairStrips)
             switch (role)
             {
                 case "main":
@@ -140,14 +147,18 @@ namespace JuegoDef.Env
             var streets = StreetLines();
             // gather every zone triangle under its paving material
             var byMat = new Dictionary<string, (List<Vector3> v, List<int> t)>();
+            var weld = new Dictionary<Vector3Int, List<Vector3>>();
             foreach (var kv in (JObject)spec["ground"])
             {
                 var v = (JArray)kv.Value["v"];
                 var t = ((JArray)kv.Value["t"]).Select(x => (int)x).ToArray();
-                var verts = v.Select(q => new Vector3((float)q[0], (float)q[1], (float)q[2])).ToArray();
+                // zones are triangulated separately, so neighbouring zones met with vertices 2-6 cm apart: hairline holes
+                // through which the sky showed (micro-polish STREET_A). Weld every vertex to the first one within 7.5 cm.
+                var verts = v.Select(q => GroundWeldOn ? WeldGround(weld, new Vector3((float)q[0], (float)q[1], (float)q[2])) : new Vector3((float)q[0], (float)q[1], (float)q[2])).ToArray();
                 for (int k = 0; k < t.Length; k += 3)
                 {
                     var a = verts[t[k]]; var b = verts[t[k + 1]]; var c = verts[t[k + 2]];
+                    if (a == b || b == c || a == c) continue;   // collapsed by the weld
                     var cen = new Vector2((a.x + b.x + c.x) / 3f, (a.z + b.z + c.z) / 3f);
                     var mat = PaveOf(kv.Key, cen, streets);
                     if (!byMat.TryGetValue(mat, out var acc)) byMat[mat] = acc = (new List<Vector3>(), new List<int>());
@@ -158,6 +169,7 @@ namespace JuegoDef.Env
                 }
             }
             int total = 0;
+            var underV = new List<Vector3>(); var underT = new List<int>();
             foreach (var kv in byMat)
             {
                 float tile = PaveTile.TryGetValue(kv.Key, out var tl) ? tl : 2f;
@@ -165,8 +177,117 @@ namespace JuegoDef.Env
                 var uvs = verts.Select(p => new Vector2(p.x / tile, p.z / tile)).ToArray();
                 MeshObject("Ground_" + kv.Key.Replace("ENV_", ""), g, verts, uvs, kv.Value.t.ToArray(), EnvKit.Mat(kv.Key), collider: true);
                 total += kv.Value.t.Count / 3;
+                int b0 = underV.Count;
+                underV.AddRange(verts.Select(p => p - Vector3.up * UnderlayDrop));
+                underT.AddRange(kv.Value.t.Select(i => b0 + i));
             }
+            // Zone borders leave wedge cracks a few centimetres wide (a 1.2 m one beside the spawn door) that the weld cannot close
+            // and the sky showed through. A layer of earth just under the whole ground makes any crack read as soil between stones.
+            MeshObject("Underlay_Earth", g, underV.ToArray(), underV.Select(p => new Vector2(p.x / 6f, p.z / 6f)).ToArray(), underT.ToArray(), EnvKit.Mat("ENV_Ground_Earth"), collider: false)
+                .GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
+            GroundGapFill(g);
             return total;
+        }
+
+        /// <summary>The spec has no ground between the rows of a block: the passages between buildings (0.6-3 m wide, open at the
+        /// street end) had no floor and showed the sky from a street (found with a magenta background in the semantic pass).
+        /// A visual-only earth surface fills every gap of a 1 m grid, its height relaxed from the ground beside it; the river
+        /// channel, stairs and bridges are left alone.</summary>
+        static void GroundGapFill(Transform g)
+        {
+            Physics.SyncTransforms();
+            var dd = (JArray)spec["district"];
+            float gx0 = -4f, gz0 = -4f, gx1 = (float)dd[1][0] + 4f, gz1 = (float)dd[1][1] + 4f;
+            const float cell = 1f;
+            int nx = Mathf.CeilToInt((gx1 - gx0) / cell), nz = Mathf.CeilToInt((gz1 - gz0) / cell);
+            int W = nx + 1;
+            var h = new float[(nx + 1) * (nz + 1)];
+            var valid = new bool[h.Length]; var skip = new bool[h.Length];
+            var ch = ((JArray)spec["river"]["channel"]).Select(c => new Vector2((float)c[0], (float)c[1])).ToList();
+            var lines = new List<(List<Vector2> pts, float half)>();
+            foreach (var key in new[] { "stairs", "bridges" })
+                foreach (JObject o in (JArray)spec[key])
+                    lines.Add((((JArray)o["pts"]).Select(c => new Vector2((float)c[0], (float)c[1])).ToList(), (float)o["width"] / 2f + 1.5f));
+            var riverStairs = ((JArray)spec["riverStairs"] ?? new JArray()).Cast<JObject>().Select(r => new Vector2((float)r["at"][0], (float)r["at"][1])).ToList();
+            for (int j = 0; j <= nz; j++)
+                for (int i = 0; i <= nx; i++)
+                {
+                    float x = gx0 + i * cell, z = gz0 + j * cell; int k = j * W + i;
+                    if (Physics.Raycast(new Vector3(x, 80, z), Vector3.down, out var hit, 200f)) { h[k] = hit.point.y; valid[k] = true; }
+                    var p = new Vector2(x, z);
+                    if (Inside(ch, p) || EdgeDistance(ch, p) < 1.2f || lines.Any(l => Nearest(l.pts, p).Equals(p) || (Nearest(l.pts, p) - p).magnitude < l.half) || riverStairs.Any(r => (r - p).magnitude < 4f)) skip[k] = true;
+                }
+            // relax the height of the empty vertices from their neighbours (gaps are narrow: a few passes)
+            var set = (bool[])valid.Clone();
+            for (int pass = 0; pass < 24; pass++)
+                for (int j = 0; j <= nz; j++)
+                    for (int i = 0; i <= nx; i++)
+                    {
+                        int k = j * W + i; if (valid[k] || skip[k]) continue;
+                        float sum = 0; int n = 0;
+                        foreach (var (di, dj) in new[] { (1, 0), (-1, 0), (0, 1), (0, -1) })
+                        {
+                            int ii = i + di, jj = j + dj; if (ii < 0 || jj < 0 || ii > nx || jj > nz) continue;
+                            int kk = jj * W + ii; if (set[kk] && !skip[kk]) { sum += h[kk]; n++; }
+                        }
+                        if (n > 0) { h[k] = sum / n; set[k] = true; }
+                    }
+            var verts = new List<Vector3>(); var tris = new List<int>(); var index = new Dictionary<int, int>();
+            int V(int i, int j)
+            {
+                int k = j * W + i;
+                if (!index.TryGetValue(k, out var v)) { v = verts.Count; verts.Add(new Vector3(gx0 + i * cell, h[k] - 0.02f, gz0 + j * cell)); index[k] = v; }
+                return v;
+            }
+            int cells = 0;
+            for (int j = 0; j < nz; j++)
+                for (int i = 0; i < nx; i++)
+                {
+                    int a = j * W + i, b = a + 1, c = a + W, d = c + 1;
+                    if (!(!valid[a] || !valid[b] || !valid[c] || !valid[d])) continue;               // all corners have real ground
+                    if (!(set[a] && set[b] && set[c] && set[d]) || skip[a] || skip[b] || skip[c] || skip[d]) continue;
+                    int va = V(i, j), vb = V(i + 1, j), vc = V(i, j + 1), vd = V(i + 1, j + 1);
+                    tris.AddRange(new[] { va, vc, vb, vb, vc, vd });                                  // clockwise from above
+                    cells++;
+                }
+            if (verts.Count == 0 || verts.Count > 65000) return;
+            MeshObject("Underlay_GapFill", g, verts.ToArray(), verts.Select(p => new Vector2(p.x / 6f, p.z / 6f)).ToArray(), tris.ToArray(), EnvKit.Mat("ENV_Ground_Earth"), collider: false)
+                .GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
+            Debug.Log($"JD_GAPFILL cells={cells}");
+        }
+
+        static List<Vector3> BridgeDoors = new List<Vector3>();   // every door threshold, so the bridges keep their parapets off them
+        const float GroundWeld = 0.075f, UnderlayDrop = 0.1f;
+        /// <summary>Extra base under every facade (see SpecOf); a field only so a measured before/after can switch it off.</summary>
+        public static float FootingMargin = 0.10f;
+        /// <summary>Off only to rebuild the pre-weld ground for a measured before/after (EnvWalk holes runs).</summary>
+        public static bool GroundWeldOn = true;
+
+        static Vector3 WeldGround(Dictionary<Vector3Int, List<Vector3>> cells, Vector3 p)
+        {
+            var c = new Vector3Int(Mathf.FloorToInt(p.x / GroundWeld), Mathf.FloorToInt(p.y / GroundWeld), Mathf.FloorToInt(p.z / GroundWeld));
+            for (int dx = -1; dx <= 1; dx++)
+                for (int dy = -1; dy <= 1; dy++)
+                    for (int dz = -1; dz <= 1; dz++)
+                        if (cells.TryGetValue(new Vector3Int(c.x + dx, c.y + dy, c.z + dz), out var list))
+                            foreach (var q in list)
+                                if ((q - p).sqrMagnitude < GroundWeld * GroundWeld) return q;
+            if (!cells.TryGetValue(c, out var own)) cells[c] = own = new List<Vector3>();
+            own.Add(p);
+            return p;
+        }
+
+        /// <summary>Live-scene helper for the polish loop: rebuilds the ground and its paving overlays in place.</summary>
+        public static string RebuildGround()
+        {
+            EnsureSpec();
+            var root = Root;
+            foreach (var n in new[] { "Ground", "PavingOverlays" })
+                if (root.Find(n) != null) Object.DestroyImmediate(root.Find(n).gameObject);
+            int tris = BuildGround(root);
+            PavingOverlays(root);
+            Physics.SyncTransforms();
+            return $"JD_GROUND_REBUILT tris={tris}";
         }
 
         /// <summary>Paving overlays laid 8 mm over the walkable ground (visual only, no collider): the drainage
@@ -206,6 +327,117 @@ namespace JuegoDef.Env
                 }
             }
             OverlayMesh(g, "Overlay_Losas_Fachada", bands, "ENV_Pave_Losa", 2.2f);
+            var setts = new List<(List<Vector3> l, List<Vector3> r)>();
+            var slabs = new List<(List<Vector3> l, List<Vector3> r)>();
+            RepairStrips(setts, slabs);
+            OverlayMesh(g, "Overlay_Calas_Adoquin", setts, "ENV_Pave_Adoquin_Viejo", 0.9f, aligned: true);
+            OverlayMesh(g, "Overlay_Calas_Hormigon", slabs, "ENV_Ground_Concrete", 2.4f, aligned: true);
+        }
+
+        /// <summary>The spec's route is sampled every ~6 m along each street's centreline and skips the polyline's own vertices,
+        /// so the probe walked a straight chord across every bend (a bench and a chair on the inside of the Cimavilla_Baja bend
+        /// stalled it although the centreline is clear). Between two consecutive waypoints on the same street, the street's
+        /// vertices that lie between them are inserted, so the probe follows the centreline through the bends.</summary>
+        static List<Vector3> DensifyRoute(List<Vector3> wps)
+        {
+            var streets = ((JArray)spec["streets"]).Cast<JObject>()
+                .Select(st => ((JArray)st["pts"]).Select(q => new Vector3((float)q[0], (float)q[2], (float)q[1])).ToList()).ToList();
+            // arc length of a plan point along a polyline, or NaN when it is more than 0.25 m off it
+            float Arc(List<Vector3> line, Vector3 p)
+            {
+                float acc = 0, best = float.NaN, bestD = 0.25f;
+                for (int i = 0; i + 1 < line.Count; i++)
+                {
+                    var a = new Vector2(line[i].x, line[i].z); var b = new Vector2(line[i + 1].x, line[i + 1].z);
+                    var ab = b - a; float len = ab.magnitude;
+                    float t = len > 0 ? Mathf.Clamp01(Vector2.Dot(new Vector2(p.x, p.z) - a, ab) / (len * len)) : 0;
+                    float d = (a + ab * t - new Vector2(p.x, p.z)).magnitude;
+                    if (d < bestD) { bestD = d; best = acc + t * len; }
+                    acc += len;
+                }
+                return best;
+            }
+            var result = new List<Vector3>();
+            for (int i = 0; i < wps.Count; i++)
+            {
+                if (i > 0)
+                    foreach (var line in streets)
+                    {
+                        float sa = Arc(line, wps[i - 1]), sb = Arc(line, wps[i]);
+                        if (float.IsNaN(sa) || float.IsNaN(sb) || Mathf.Abs(sa - sb) < 1f) continue;
+                        var inside = new List<(float s, Vector3 v)>();
+                        float acc = 0;
+                        for (int k = 0; k < line.Count; k++)
+                        {
+                            if (k > 0) acc += Vector2.Distance(new Vector2(line[k - 1].x, line[k - 1].z), new Vector2(line[k].x, line[k].z));
+                            if (k == 0 || k == line.Count - 1) continue;   // the ends are already street nodes
+                            if (acc > Mathf.Min(sa, sb) + 0.4f && acc < Mathf.Max(sa, sb) - 0.4f) inside.Add((acc, line[k]));
+                        }
+                        foreach (var e in (sa < sb ? inside.OrderBy(x => x.s) : inside.OrderByDescending(x => x.s))) result.Add(e.v);
+                        break;   // one street explains the pair
+                    }
+                result.Add(wps[i]);
+            }
+            return result;
+        }
+
+        /// <summary>Point and direction at arc length <paramref name="s"/> along a plan polyline.</summary>
+        static Vector2 AlongPolyline(List<Vector2> pts, float s, out Vector2 dir)
+        {
+            dir = (pts[pts.Count - 1] - pts[0]).normalized;
+            for (int i = 0; i + 1 < pts.Count; i++)
+            {
+                float l = Vector2.Distance(pts[i], pts[i + 1]);
+                if (s <= l || i == pts.Count - 2)
+                {
+                    dir = (pts[i + 1] - pts[i]).normalized;
+                    return Vector2.Lerp(pts[i], pts[i + 1], Mathf.Clamp01(l > 0 ? s / l : 0));
+                }
+                s -= l;
+            }
+            return pts[0];
+        }
+
+        /// <summary>Utility-trench repairs ("calas"): a few straight strips 0.75-1.1 m wide, most across the street and stopping
+        /// short of one facade, some along a facade, in old setts or a patch of concrete. Straight edges and texture aligned to
+        /// the strip read as a repair someone made; the triangles relabelled as concrete they replace read as a rendering bug.
+        /// Slots every 11-17 m per street, likelier on the busy ones; deterministic.</summary>
+        static void RepairStrips(List<(List<Vector3> l, List<Vector3> r)> setts, List<(List<Vector3> l, List<Vector3> r)> slabs)
+        {
+            foreach (JObject st in (JArray)spec["streets"])
+            {
+                string role = (string)st["role"];
+                if (role != "main" && role != "secondary" && role != "lane") continue;
+                var pts = ((JArray)st["pts"]).Select(q => new Vector2((float)q[0], (float)q[1])).ToList();
+                float w = (float)st["width"], total = 0;
+                for (int i = 0; i + 1 < pts.Count; i++) total += Vector2.Distance(pts[i], pts[i + 1]);
+                float chance = role == "main" ? 0.5f : role == "secondary" ? 0.4f : 0.3f;
+                for (float s = 5f + 5f * Hash01(pts[0].x, pts[0].y, 17); s < total - 3f; s += 11f + 6f * Hash01(s, pts[0].x, 18))
+                {
+                    if (Hash01(s, pts[0].y, 19) > chance) continue;
+                    var c = AlongPolyline(pts, s, out var d);
+                    var n = new Vector2(-d.y, d.x);
+                    float width = 0.75f + 0.35f * Hash01(s, 1, 21);
+                    bool concrete = Hash01(s, 2, 22) < 0.35f;
+                    float side = Hash01(s, 3, 23) < 0.5f ? -1f : 1f;
+                    Vector2 a, b;
+                    if (Hash01(s, w, 20) < 0.7f)   // across, stopping 0.3-1.4 m short of one facade
+                    {
+                        float half = w / 2f - 0.15f, stop = half * (0.55f + 0.4f * Hash01(s, 4, 24));
+                        a = c - n * side * half; b = c + n * side * stop;
+                    }
+                    else                           // along one facade, 3-6 m
+                    {
+                        float len = 3f + 3f * Hash01(s, 5, 25);
+                        a = c + n * side * (w / 2f - width / 2f - 0.35f) - d * (len / 2f);
+                        b = a + d * len;
+                        // ribbon offsets run to the left of travel (a to b = +d, left = n): centre the strip on the line
+                        a -= n * (width / 2f);
+                        b -= n * (width / 2f);
+                    }
+                    (concrete ? slabs : setts).Add(Ribbon(new List<Vector2> { a, b }, 0f, width));
+                }
+            }
         }
 
         /// <summary>Ribbon along a plan polyline between two lateral offsets (left of travel positive), heights from
@@ -233,22 +465,35 @@ namespace JuegoDef.Env
             return (L, R);
         }
 
-        static void OverlayMesh(Transform g, string name, List<(List<Vector3> l, List<Vector3> r)> ribbons, string mat, float tile)
+        /// <param name="aligned">UVs run along and across each ribbon (repair strips) instead of in world x/z.</param>
+        static void OverlayMesh(Transform g, string name, List<(List<Vector3> l, List<Vector3> r)> ribbons, string mat, float tile, bool aligned = false)
         {
             var v = new List<Vector3>(); var t = new List<int>(); var uv = new List<Vector2>();
             foreach (var (L, R) in ribbons)
+            {
+                float run = 0;
                 for (int k = 0; k + 1 < L.Count; k++)
                 {
+                    float u0 = run, u1 = run + Vector3.Distance(L[k], L[k + 1]);
+                    run = u1;
                     // skip samples that found no ground (off the district colliders) or that jump (walls, stairs)
                     var q = new[] { L[k], L[k + 1], R[k + 1], R[k] };
                     if (q.Any(p => float.IsNaN(p.y))) continue;
                     if (Mathf.Max(q.Max(p => p.y) - q.Min(p => p.y), 0) > 0.45f) continue;
                     int i0 = v.Count;
                     v.AddRange(q);
-                    uv.AddRange(q.Select(p => new Vector2(p.x / tile, p.z / tile)));
+                    if (aligned)
+                    {
+                        float wv = Vector3.Distance(L[k], R[k]);
+                        uv.AddRange(new[] { new Vector2(u0 / tile, 0), new Vector2(u1 / tile, 0), new Vector2(u1 / tile, wv / tile), new Vector2(u0 / tile, wv / tile) });
+                    }
+                    else uv.AddRange(q.Select(p => new Vector2(p.x / tile, p.z / tile)));
+                    // Unity front faces are clockwise from the viewer, i.e. Cross(b - a, c - a) points up for a face seen from above.
+                    // (The branches were swapped: every overlay faced down and was culled, never rendered. Found in the STREET_A walk.)
                     var nrm = Vector3.Cross(q[1] - q[0], q[2] - q[0]);
-                    t.AddRange(nrm.y >= 0 ? new[] { i0, i0 + 2, i0 + 1, i0, i0 + 3, i0 + 2 } : new[] { i0, i0 + 1, i0 + 2, i0, i0 + 2, i0 + 3 });
+                    t.AddRange(nrm.y >= 0 ? new[] { i0, i0 + 1, i0 + 2, i0, i0 + 2, i0 + 3 } : new[] { i0, i0 + 2, i0 + 1, i0, i0 + 3, i0 + 2 });
                 }
+            }
             if (v.Count == 0) return;
             var go = MeshObject(name, g, v.ToArray(), uv.ToArray(), t.ToArray(), EnvKit.Mat(mat), collider: false);
             go.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
@@ -277,23 +522,31 @@ namespace JuegoDef.Env
 
         // ------------------------------------------------------------------ rows
 
-        public static string BuildRows(int from, int count)
+        /// <param name="dry">Runs the spec/character/business pass of the rows without building them, to bring the
+        /// stateful passes (business uniqueness) to the state a full build has before <paramref name="from"/>
+        /// (<see cref="EnvPolish.RebuildRow"/>).</param>
+        public static string BuildRows(int from, int count, bool dry = false)
         {
             EnsureSpec();
             var root = Root;
             var rows = (JArray)spec["rows"];
-            var rg = EnvKit.Group(root, "Rows");
+            var rg = dry ? null : EnvKit.Group(root, "Rows");
             int buildings = 0, walls = 0, end = (int)Mathf.Min(rows.Count, (long)from + count);
             var sw = System.Diagnostics.Stopwatch.StartNew();
             for (int r = from; r < end; r++)
             {
                 var row = (JObject)rows[r];
-                var frame = new GameObject((string)row["id"]).transform;
-                frame.SetParent(rg, false);
-                frame.localPosition = new Vector3((float)row["origin"][0], 0, (float)row["origin"][1]);
-                frame.localRotation = Quaternion.Euler(0, Mathf.Atan2(-(float)row["dir"][1], (float)row["dir"][0]) * Mathf.Rad2Deg, 0);
+                Transform frame = null;
+                if (!dry)
+                {
+                    frame = new GameObject((string)row["id"]).transform;
+                    frame.SetParent(rg, false);
+                    frame.localPosition = new Vector3((float)row["origin"][0], 0, (float)row["origin"][1]);
+                    frame.localRotation = Quaternion.Euler(0, Mathf.Atan2(-(float)row["dir"][1], (float)row["dir"][0]) * Mathf.Rad2Deg, 0);
+                }
                 var placed = new List<EnvStreet.Placed>();
                 var plots = ((JArray)row["plots"]).Cast<JObject>().ToList();
+                bool river = (string)row["role"] == "river";
                 string prevHue = null;
                 for (int k = 0; k < plots.Count; k++)
                 {
@@ -301,15 +554,34 @@ namespace JuegoDef.Env
                     if ((bool?)p["wall"] == true) { placed.Add(null); continue; }
                     var bs = SpecOf(p, $"{row["id"]}_{k}");
                     if (p["unit"] == null || (string)p["landmark"] == "Torre") EnvCharacter.Apply(bs, p, row, ref prevHue);
+                    // houses on a river row face the water with no walkway to a door (27 portals opened onto a 3 m drop);
+                    // they rise out of the channel wall, so they keep a stone base tall enough to read as part of it
+                    if ((string)row["role"] == "river") { bs.noEntrance = true; if (bs.basement < 0.45f) bs.basement = 0.45f; }
+                    EnvPolish.ApplyPlot(bs);   // hand-authored per-building corrections (micro-polish pass)
                     float w = (float)p["w"];
-                    placed.Add(new EnvStreet.Placed { spec = bs, x0 = (float)p["x0"], width = w, scale = w / (bs.bays * 2f), setback = (float?)p["setback"] ?? 0f, y = (float)p["y"] });
+                    bs.basement += bs.raise;   // a raised building keeps its stone base down to the same lowest ground
+                    placed.Add(new EnvStreet.Placed { spec = bs, x0 = (float)p["x0"], width = w, scale = w / (bs.bays * 2f), setback = (float?)p["setback"] ?? 0f, y = (float)p["y"] + bs.raise });
                 }
+                if (dry) continue;
                 EnvStreet.ResolveNeighbours(placed, (JObject)row["ends"]);
                 foreach (var p in placed.Where(p => p != null))
                 {
                     var go = BuildingAssembler.Build(p.spec, frame);
                     go.transform.localPosition = new Vector3(p.x0, p.y, -p.setback);
                     if (Mathf.Abs(p.scale - 1f) > 0.001f) go.transform.localScale = new Vector3(p.scale, 1, 1);
+                    if (river)
+                    {
+                        // the base reads as the same stretch of channel masonry the house stands on, not another wall
+                        var bas = go.transform.Find("Basement");
+                        if (bas != null)
+                        {
+                            var wp = frame.TransformPoint(new Vector3(p.x0 + p.width * 0.5f, 0, 0));
+                            float stretch = Mathf.Floor((wp.x + wp.z * 1.3f) / 22f);
+                            float hk = Hash01(stretch, 7, 3);
+                            string kind = hk < 0.45f ? "Canto" : hk < 0.85f ? "Mamposteria" : "Silleria";
+                            EnvKit.Remap(bas.gameObject, new Dictionary<string, string> { { "MI_UnevenBrick", "ENV_RiverWall_" + kind }, { "MI_RockTrim", "ENV_Dressed_Gris" } });
+                        }
+                    }
                     buildings++;
                 }
                 foreach (var p in plots.Where(p => (bool?)p["wall"] == true))
@@ -359,7 +631,9 @@ namespace JuegoDef.Env
                 bs.surrounds = true;
                 if (CasonaRows.TryGetValue(bs.bays, out var cr)) bs.rows = cr.Take(bs.floors).ToArray();
             }
-            bs.basement = (float?)p["basement"] ?? 0f;
+            // the spec's basement is the measured drop of the ground under the frontage, and below 5 cm no base is built at all: a
+            // 3 cm dip at a corner left a slit under the wall through which the void showed. Every facade gets a 10 cm footing.
+            bs.basement = ((float?)p["basement"] ?? 0f) + FootingMargin;
             // shop life (owner photos): striped awnings and wrought-iron hanging signs on a good share of the shops
             var lrng = new System.Random(bs.seed * 13 + 7);
             if (bs.type == "mixed_commercial" && string.IsNullOrEmpty(bs.awning) && lrng.NextDouble() < 0.55)
@@ -387,27 +661,51 @@ namespace JuegoDef.Env
             string bond = hh < 0.45f ? "Laja" : hh < 0.8f ? "Mamposteria" : "Canto";
             string tone = new[] { "Caliza", "Gris", "Arenisca", "Oscura" }[(int)(Hash01(key.x, key.y, 42) * 4) % 4];
             var map = new Dictionary<string, string> { { "MI_UnevenBrick", $"ENV_Mason_{bond}_{tone}_G" }, { "MI_RockTrim", "ENV_Dressed_Gris" } };
+            // A wall of 26-37 m in one height and one masonry, with no way through, is a wall "too long" whatever the ivy: panels
+            // of 7-11 m alternate height and masonry (an older, lower or repaired stretch) and each cut is a huerta gate or a stone
+            // pier. Short walls keep their single panel.
+            var cuts = new List<float>();
+            if (!tall && w > 10f)
+                for (float bx = 5f + 3f * Hash01(key.x, key.y, 44); bx < w - 3f; bx += 6f + 3f * Hash01(key.x + bx, key.y, 45)) cuts.Add(bx);
+            var repairMap = new Dictionary<string, string> { { "MI_UnevenBrick", $"ENV_Mason_{(bond == "Laja" ? "Canto" : "Laja")}_{tone}_G" }, { "MI_RockTrim", "ENV_Dressed_Gris" } };
             for (int k = 0; k < n; k++)
             {
                 float xc = x0 + seg * (k + 0.5f);
                 float y = ys[Mathf.Clamp(Mathf.RoundToInt((xc - x0) / 2f), 0, ys.Length - 1)];
+                float local = xc - x0;
+                int panel = cuts.Count(c => c < local - seg / 2f);
+                float hp = h; var mp = map;
+                if (cuts.Count > 0)
+                {
+                    float pr = Hash01(key.x + panel * 3.7f, key.y, 46);
+                    if (pr < 0.3f) hp = h * 0.72f; else if (pr < 0.55f) mp = repairMap;
+                }
+                bool cutHere = cuts.Any(c => Mathf.Abs(c - local) < seg / 2f);
+                if (cutHere && Hash01(key.x + k * 1.9f, key.y, 47) < 0.5f)
+                {
+                    EnvKit.Place("ENV_Gate_Timber", g, new Vector3(xc, y, -0.05f), 0, new Vector3(seg / 1.6f, 0.8f, 1));
+                    continue;
+                }
+                if (cutHere)   // a stone pier at the cut, standing proud of the coping: square in plan (0.6 m along the
+                               // wall, a little deeper than the panels), its own cap reads as the pier's coping
+                    EnvKit.Remap(EnvKit.Place("ENV_Retaining_Wall_2x2", g, new Vector3(xc, y + h + 0.45f, -0.05f), 0, new Vector3(0.3f, (h + 1.1f) / 2f, 0.75f)), new Dictionary<string, string> { { "MI_UnevenBrick", "ENV_Dressed_Gris" }, { "MI_RockTrim", "ENV_Dressed_Gris" } });
                 if (gate > 0 && Mathf.Abs(xc - (x0 + gate)) < seg / 2f)
                 {
                     // plank gate into the huerta (the kit timber fence is a banned alpine cue)
                     EnvKit.Place("ENV_Gate_Timber", g, new Vector3(xc, y, -0.05f), 0, new Vector3(seg / 1.6f, 0.8f, 1));
                     continue;
                 }
-                EnvKit.Remap(EnvKit.Place("ENV_Retaining_Wall_2x2", g, new Vector3(xc, y + h, -0.1f), 0, new Vector3(seg / 2f, (h + 0.6f) / 2f, 0.6f)), map);
+                EnvKit.Remap(EnvKit.Place("ENV_Retaining_Wall_2x2", g, new Vector3(xc, y + hp, -0.1f), 0, new Vector3(seg / 2f, (hp + 0.6f) / 2f, 0.6f)), mp);
                 float r = Hash01(key.x + k * 2.1f, key.y, 43);
                 if (r < 0.16f)
-                    EnvKit.Place("Prop_Vine" + (1 + (int)(r * 100) % 3), g, new Vector3(xc, y + h - 0.35f, 0.02f), 0);
+                    EnvKit.Place("Prop_Vine" + (1 + (int)(r * 100) % 3), g, new Vector3(xc, y + hp - 0.35f, 0.02f), 0);
                 else if (r < 0.3f)
                 {
-                    var st = EnvKit.Place("ENV_Stain_Quad", g, new Vector3(xc, y, -0.192f), 0, new Vector3(seg * 0.9f, 0.7f + h * 0.25f, 1));
+                    var st = EnvKit.Place("ENV_Stain_Quad", g, new Vector3(xc, y, -0.192f), 0, new Vector3(seg * 0.9f, 0.7f + hp * 0.25f, 1));
                     EnvKit.Remap(st, new Dictionary<string, string> { { "ENV_Stain_Downpipe", r < 0.22f ? "ENV_Stain_Algae" : "ENV_Stain_Damp" } });
                 }
                 else if (r < 0.38f)
-                    EnvKit.Place("ENV_Weeds_Grass", g, new Vector3(xc, y + h, -0.3f), r * 900f, Vector3.one * 0.55f);
+                    EnvKit.Place("ENV_Weeds_Grass", g, new Vector3(xc, y + hp, -0.3f), r * 900f, Vector3.one * 0.55f);
             }
         }
 
@@ -417,6 +715,7 @@ namespace JuegoDef.Env
         {
             EnsureSpec();
             var root = Root;
+            Debug.Log(EnvPolish.FixBlockedOpenings(root));   // windows that look at another building within 1.3 m
             var river = (JObject)spec["river"];
             var rv = EnvKit.Group(root, "River");
             float water = (float)river["water"];
@@ -475,6 +774,8 @@ namespace JuegoDef.Env
                 var mid = (a + b) / 2;
                 EnvKit.Place("ENV_Parapet_Rail_2m", rv, new Vector3(mid.x, (float)p[2], mid.y), Mathf.Atan2(d.y, d.x) * -Mathf.Rad2Deg, new Vector3(d.magnitude / 2f, 1, 1));
             }
+            BridgeDoors = root.Find("Rows") == null ? new List<Vector3>() :
+                root.Find("Rows").GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => t.position).ToList();
             foreach (JObject br in (JArray)spec["bridges"]) Bridge(rv, br, water);
             // stone arches under the decks, spanning the channel at each crossing: dressed voussoirs, the barrel in the
             // weathered river masonry, ivy hanging from the spandrel
@@ -501,14 +802,18 @@ namespace JuegoDef.Env
             }
             var dress = EnvKit.Group(root, "Dressing");
             foreach (JObject f in (JArray)spec["fountains"] ?? new JArray())
-                EnvKit.Place("ENV_Fountain_Trough", dress, new Vector3((float)f["at"][0], (float)f["y"], (float)f["at"][1]),
-                             Mathf.Atan2((float)f["face"][0], (float)f["face"][1]) * Mathf.Rad2Deg);
+                FountainCorner(dress, EnvKit.Place("ENV_Fountain_Trough", dress, new Vector3((float)f["at"][0], (float)f["y"], (float)f["at"][1]),
+                                                   Mathf.Atan2((float)f["face"][0], (float)f["face"][1]) * Mathf.Rad2Deg));
             foreach (JObject gi in (JArray)spec["garden"] ?? new JArray())
             {
                 bool tree = (string)gi["item"] == "tree";
-                // fruit trees, and low solid shrubs (the kit bush reads as red cards at a distance)
-                EnvKit.Place(tree ? "ENV_Tree_Plaza" : "ENV_Hill_Tree", dress, new Vector3((float)gi["at"][0], (float)gi["y"], (float)gi["at"][1]), (float)gi["rot"],
-                             Vector3.one * (tree ? (float)gi["scale"] : 0.28f * (float)gi["scale"]));
+                // fruit trees (Quaternius CommonTree variants) and shrubs (Quaternius bush, green leaves)
+                float gx = (float)gi["at"][0], gz = (float)gi["at"][1];
+                // on the ground under it (the spec height is the plot's; a slope or the plot edge left some in the air)
+                float gy = GroundY(gx, gz, float.NaN);
+                if (float.IsNaN(gy) || Mathf.Abs(gy - (float)gi["y"]) > 1.5f) continue;
+                EnvKit.Place(tree ? Variant("ENV_Tree_Plaza", gx, gz) : "ENV_Shrub_Garden", dress, new Vector3(gx, gy - 0.05f, gz), (float)gi["rot"],
+                             Vector3.one * (float)gi["scale"]);
             }
             Backdrop(root, water);
             var st = EnvKit.Group(root, "Stairs");
@@ -519,6 +824,10 @@ namespace JuegoDef.Env
             foreach (JObject pz in (JArray)spec["plazas"])
                 DressPlaza(pl, pz, seed++);
             StreetFurniture(root);
+            GroundContact(root);
+            HeroCables(root);
+            RiverPromenade(root);
+            EnvPolish.ApplyOps(root);   // last hand-authored object-level corrections, before the rig collects lamps
 
             // player at the river plaza
             var plaza = ((JArray)spec["plazas"]).Cast<JObject>().FirstOrDefault(pz => (string)pz["id"] == "Plaza_Rio");
@@ -535,7 +844,7 @@ namespace JuegoDef.Env
                 var probe = new GameObject("RouteProbe");
                 probe.transform.SetParent(root, false);
                 probe.SetActive(false);
-                probe.AddComponent<JuegoDef.Dev.JDRouteProbe>().waypoints = route.Select(w => new Vector3((float)w[0], (float)w[2], (float)w[1])).ToArray();
+                probe.AddComponent<JuegoDef.Dev.JDRouteProbe>().waypoints = DensifyRoute(route.Select(w => new Vector3((float)w[0], (float)w[2], (float)w[1])).ToList()).ToArray();
                 spawn = new Vector3((float)route[0][0], (float)route[0][2] + 0.2f, (float)route[0][1]);  // arriving from the east along the spine
             }
             EnvStreet.BringPlayer(new JObject { ["_spawnWorld"] = new JArray(spawn.x, spawn.y, spawn.z) });
@@ -609,7 +918,7 @@ namespace JuegoDef.Env
                 float tx = c.x + Mathf.Cos(a) * r, tz = c.y + Mathf.Sin(a) * r;
                 float h = H(a, r, Out(tx, tz));
                 if (h < 4f) continue;
-                EnvKit.Place("ENV_Hill_Tree", g, new Vector3(c.x + Mathf.Cos(a) * r, h - 0.3f, c.y + Mathf.Sin(a) * r), rng.Next(360), Vector3.one * (1.6f + 1.6f * (float)rng.NextDouble()));
+                EnvKit.Place(Variant("ENV_Hill_Tree", tx, tz), g, new Vector3(c.x + Mathf.Cos(a) * r, h - 0.3f, c.y + Mathf.Sin(a) * r), rng.Next(360), Vector3.one * (1.6f + 1.6f * (float)rng.NextDouble()));
             }
             // the town does not end on a lawn (owner points 38-39): dry-stone field walls running out from the edge with
             // hedgerow trees along them, and a few stone barns (cabañas) on the meadows
@@ -630,7 +939,7 @@ namespace JuegoDef.Env
                     if (h < -0.5f) continue;
                     EnvKit.Remap(EnvKit.Place("ENV_Retaining_Wall_2x1", g, new Vector3(q.x, h + 0.9f, q.y), Mathf.Atan2(-dir.y, dir.x) * Mathf.Rad2Deg, new Vector3(1.02f, 1f, 0.8f)), fw);
                     if (fr.NextDouble() < 0.28)
-                        EnvKit.Place("ENV_Hill_Tree", g, new Vector3(q.x + dir.y * 1.4f, h - 0.2f, q.y - dir.x * 1.4f), fr.Next(360), Vector3.one * (0.8f + 0.7f * (float)fr.NextDouble()));
+                        EnvKit.Place(Variant("ENV_Hill_Tree", q.x, q.y), g, new Vector3(q.x + dir.y * 1.4f, h - 0.2f, q.y - dir.x * 1.4f), fr.Next(360), Vector3.one * (0.8f + 0.7f * (float)fr.NextDouble()));
                 }
             }
             for (int k = 0; k < 7; k++)
@@ -651,9 +960,86 @@ namespace JuegoDef.Env
                 go.transform.position = new Vector3(q.x, h - 0.15f, q.y);
                 go.transform.rotation = Quaternion.Euler(0, fr.Next(360), 0);
             }
+            MountainRange(g, c);
             // the sea to the north, below the town
             var sea = new[] { new Vector3(c.x - 1600, water - 3.5f, c.y + 330), new Vector3(c.x + 1600, water - 3.5f, c.y + 330), new Vector3(c.x + 1600, water - 3.5f, c.y + 2600), new Vector3(c.x - 1600, water - 3.5f, c.y + 2600) };
             MeshObject("Backdrop_Sea", g, sea, sea.Select(p => new Vector2(p.x, p.z) / 20f).ToArray(), new[] { 0, 2, 1, 0, 3, 2 }, EnvKit.Mat("ENV_Water_Port"), collider: false);
+        }
+
+        /// <summary>Relief behind the hills (owner reference, river view: "vegetación y relieve al fondo"): two
+        /// low-poly ranges at ~820 m and ~960 m to the south, east and west — wooded foothills, then higher bare
+        /// limestone crests — flat-shaded facets lit by the sun and hazed towards the fog colour in their own shader
+        /// (linear fog ends at 750 m and would erase them). The sea side to the north stays open.</summary>
+        static void MountainRange(Transform g, Vector2 c)
+        {
+            var verts = new List<Vector3>();
+            var cols = new List<Color>();
+            var tris = new List<int>();
+            for (int layer = 0; layer < 2; layer++)
+            {
+                float R = layer == 0 ? 820f : 960f, hMin = layer == 0 ? 45f : 110f, hMax = layer == 0 ? 120f : 250f;
+                const int na = 240;
+                var tops = new float[na + 1];
+                for (int i = 0; i <= na; i++)
+                {
+                    float a = 2 * Mathf.PI * i / na;
+                    float fromNorth = Mathf.Abs(Mathf.DeltaAngle(a * Mathf.Rad2Deg, 90f)) / 180f;
+                    float h = 0, amp = 1, f = layer == 0 ? 6f : 4f, norm = 0;
+                    for (int o = 0; o < 5; o++) { h += amp * (1 - Mathf.Abs(Mathf.Sin(a * f + o * 1.7f + layer * 2.3f))); norm += amp; amp *= 0.55f; f *= 2.07f; }
+                    h = Mathf.Pow(h / norm, 1.7f);
+                    tops[i] = Mathf.Lerp(hMin, hMax, h) * Mathf.SmoothStep(0f, 1f, (fromNorth - 0.2f) / 0.35f) - 12f;
+                }
+                for (int i = 0; i < na; i++)
+                {
+                    float a0 = 2 * Mathf.PI * i / na, a1 = 2 * Mathf.PI * (i + 1) / na;
+                    if (tops[i] < 0 && tops[i + 1] < 0) continue;
+                    // foot, a shoulder a little further back, the crest further back again: faces lean away, catch the sun
+                    Vector3 P(float ang, float r, float y) => new Vector3(c.x + Mathf.Cos(ang) * r, y, c.y + Mathf.Sin(ang) * r);
+                    float s0 = tops[i] * 0.55f, s1 = tops[i + 1] * 0.55f;
+                    var rows = new[]
+                    {
+                        (P(a0, R, -30f), P(a1, R, -30f), 0f),
+                        (P(a0, R + 40f + 20f * Mathf.Sin(a0 * 23f), s0), P(a1, R + 40f + 20f * Mathf.Sin(a1 * 23f), s1), 0.5f),
+                        (P(a0, R + 90f, tops[i]), P(a1, R + 90f, tops[i + 1]), 1f),
+                    };
+                    for (int k = 0; k < 2; k++)
+                    {
+                        var (b0, b1, hb) = rows[k];
+                        var (u0, u1, hu) = rows[k + 1];
+                        foreach (var tri in new[] { new[] { b0, u0, u1 }, new[] { b0, u1, b1 } })
+                        {
+                            var nrm = Vector3.Cross(tri[1] - tri[0], tri[2] - tri[0]);
+                            var mid = (tri[0] + tri[1] + tri[2]) / 3f;
+                            var toC = new Vector3(c.x, mid.y, c.y) - mid;
+                            var t3 = Vector3.Dot(nrm, toC) < 0 ? new[] { tri[0], tri[2], tri[1] } : tri;
+                            foreach (var v in t3)
+                            {
+                                float h01 = Mathf.Clamp01((v.y + 30f) / (hMax + 30f));
+                                float rock = layer == 1 ? Mathf.Clamp01((v.y - 120f) / 90f) : 0f;
+                                tris.Add(verts.Count);
+                                verts.Add(v);
+                                cols.Add(new Color(h01, rock, layer, 1));
+                            }
+                        }
+                    }
+                }
+            }
+            var mesh = new Mesh { name = $"{id}_Backdrop_Range", indexFormat = IndexFormat.UInt32 };
+            mesh.SetVertices(verts);
+            mesh.SetColors(cols);
+            mesh.SetTriangles(tris, 0);
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
+            var path = $"{MeshFolder}/Backdrop_Range.asset";
+            AssetDatabase.DeleteAsset(path);
+            AssetDatabase.CreateAsset(mesh, path);
+            var go = new GameObject("Backdrop_Range");
+            go.transform.SetParent(g, false);
+            go.AddComponent<MeshFilter>().sharedMesh = mesh;
+            var mr = go.AddComponent<MeshRenderer>();
+            mr.sharedMaterial = EnvKit.Mat("ENV_Backdrop_Range");
+            mr.shadowCastingMode = ShadowCastingMode.Off;
+            mr.receiveShadows = false;
         }
 
         /// <summary>Ground height under (x, z) from the district colliders (ground meshes, decks, stairs).</summary>
@@ -703,15 +1089,26 @@ namespace JuegoDef.Env
             bool OnLane(Vector2 p, float margin = 1.3f) => lanes.Any(l => (Nearest(l.pts, p) - p).magnitude < l.w / 2f + margin);
             // clearance above the paving (the sphere must not touch the ground collider itself)
             bool Free(Vector2 p, float r) { float rr = Mathf.Min(r, 1.1f); return Physics.OverlapSphere(new Vector3(p.x, GroundY(p.x, p.y, 0) + rr + 0.35f, p.y), rr).Length == 0; }
+            // paving at the plaza's own level under the spot: the polygon reaches over the river channel and past the
+            // quay edge, where a prop stood on nothing (owner, S06 from the bridge: "árboles y farolas en el aire")
+            var levels = new List<float>();
+            for (float x = xmin; x <= xmax; x += 2f)
+                for (float z = zmin; z <= zmax; z += 2f)
+                    if (Inside(poly, new Vector2(x, z))) { float gy = GroundY(x, z, float.NaN); if (!float.IsNaN(gy)) levels.Add(gy); }
+            levels.Sort();
+            float level = levels.Count > 0 ? levels[levels.Count / 2] : float.NaN;
+            bool Solid(Vector2 p) { float gy = GroundY(p.x, p.y, float.NaN); return !float.IsNaN(gy) && (float.IsNaN(level) || Mathf.Abs(gy - level) < 1.0f); }
+            // first solid paving going inward from an edge point (the quay top behind the railing)
+            float Shore(Vector2 at, Vector2 dir) { for (float o = 0f; o < 14f; o += 0.4f) if (Solid(at + dir * o)) return o; return -1f; }
             var cands = new List<Vector2>();
             for (float x = xmin; x <= xmax; x += 1.0f)
                 for (float z = zmin; z <= zmax; z += 1.0f)
                 {
                     var p = new Vector2(x, z);
-                    if (Inside(poly, p) && EdgeDistance(poly, p) > 2.6f && !OnLane(p)) cands.Add(p);
+                    if (Inside(poly, p) && EdgeDistance(poly, p) > 2.6f && !OnLane(p) && Solid(p)) cands.Add(p);
                 }
             var used = new List<(Vector2 p, float r)>();
-            bool Clear(Vector2 p, float r) => used.All(u => (u.p - p).magnitude > u.r + r) && EdgeDistance(poly, p) > r * 0.7f && !OnLane(p, r * 0.6f + 0.8f) && Free(p, Mathf.Min(r, 1.5f));
+            bool Clear(Vector2 p, float r) => used.All(u => (u.p - p).magnitude > u.r + r) && EdgeDistance(poly, p) > r * 0.7f && !OnLane(p, r * 0.6f + 0.8f) && Solid(p) && Free(p, Mathf.Min(r, 1.5f));
             GameObject At(string module, Vector2 p, float rot, float scale = 1f) =>
                 EnvKit.Place(module, g, new Vector3(p.x, GroundY(p.x, p.y, 0), p.y), rot, Vector3.one * scale);
             float Face(Vector2 from, Vector2 to) => Mathf.Atan2(to.x - from.x, to.y - from.y) * Mathf.Rad2Deg;
@@ -749,9 +1146,11 @@ namespace JuegoDef.Env
                     if (!Inside(poly, (a + b) / 2f + inward * 3f)) inward = -inward;
                     for (float s = 3f; s < len - 2f; s += 7f)
                     {
-                        var p = a + d * s + inward * 3.2f;
+                        float sh = Shore(a + d * s, inward);
+                        if (sh < 0) continue;
+                        var p = a + d * s + inward * Mathf.Max(3.2f, sh + 2.0f);
                         if (!Clear(p, 1.6f)) continue;
-                        string sp = k % 3 == 1 ? "ENV_Tree_Common_B" : "ENV_Tree_Plaza";
+                        string sp = k % 3 == 1 ? "ENV_Tree_Plaza_B" : "ENV_Tree_Plaza";
                         At("ENV_Tree_Pit", p, 0);
                         At(sp, p, rng.Next(360), 0.75f + 0.35f * (float)rng.NextDouble());
                         used.Add((p, 1.4f));
@@ -765,7 +1164,8 @@ namespace JuegoDef.Env
                     }
                     if (edge.Count > 0 && k > 0)
                     {
-                        var lp = a + d * Mathf.Min(len - 1.5f, 1.5f) + inward * 1.8f;
+                        float sl = Shore(a + d * Mathf.Min(len - 1.5f, 1.5f), inward);
+                        var lp = a + d * Mathf.Min(len - 1.5f, 1.5f) + inward * (sl < 0 ? 1.8f : Mathf.Max(1.8f, sl + 0.9f));
                         if (Clear(lp, 0.5f)) { At("ENV_Lamp_Post", lp, 0); used.Add((lp, 0.5f)); }
                     }
                 }
@@ -777,49 +1177,84 @@ namespace JuegoDef.Env
                     var dd = new Vector2((float)row["dir"][0], (float)row["dir"][1]);
                     var fz = Quaternion.Euler(0, Mathf.Atan2(-dd.y, dd.x) * Mathf.Rad2Deg, 0) * Vector3.forward;
                     var nn = new Vector2(fz.x, fz.z);
-                    foreach (JObject p in (JArray)row["plots"])
+                    var plotsArr = (JArray)row["plots"];
+                    for (int pi = 0; pi < plotsArr.Count; pi++)
                     {
+                        JObject p = (JObject)plotsArr[pi];
                         if ((bool?)p["wall"] == true || (string)p["type"] != "mixed_commercial") continue;
+                        // a terrace belongs to a drinking/eating place: no parasol and barrels outside the pharmacy
+                        if (!EnvBusiness.IsHospitality((string)row["id"] + "_" + pi)) continue;
                         if (rng.NextDouble() < 0.2) continue;
                         float x0 = (float)p["x0"], w = (float)p["w"];
                         int sets = Mathf.Clamp(Mathf.FloorToInt(w / 3.2f), 1, 3);
                         bool barrels = rng.NextDouble() < 0.4;
                         for (int q = 0; q < sets; q++)
                         {
-                            // bars take the outer strip of the pavement in front of them, never the middle of the way
-                            var tp = o + dd * (x0 + (q + 0.5f) * w / sets) + nn * 1.55f;
+                            // bars take the outer strip of the pavement in front of them, never the middle of the way;
+                            // 2.05 m out: the parasol canopy is 1.5 m in radius, at 1.55 m its edge buried in the facade
+                            var tp = o + dd * (x0 + (q + 0.5f) * w / sets) + nn * 2.05f;
                             bool edgeOk = lanes.All(l => (Nearest(l.pts, tp) - tp).magnitude > l.w / 2f - 1.9f);
-                            if (!Inside(poly, tp) || !edgeOk || !used.All(u => (u.p - tp).magnitude > u.r + 1.3f) || !Free(tp, 1.0f)) continue;
+                            if (!Inside(poly, tp) || !edgeOk || !used.All(u => (u.p - tp).magnitude > u.r + 1.3f) || !Solid(tp) || !Free(tp, 1.0f)) continue;
                             At("ENV_Parasol", tp, 0);
-                            At(barrels ? "ENV_Prop_Barrel" : "ENV_Cafe_Table", tp, rng.Next(360));
-                            for (int c = 0; c < (barrels ? 2 : 3); c++)
+                            // grouped, not scattered (owner reference: "mesas/sillas agrupadas"): the table square to
+                            // the facade, four chairs round it (two stools at a barrel), now and then one taken away
+                            At(barrels ? "ENV_Prop_Barrel" : "ENV_Cafe_Table", tp, barrels ? rng.Next(360) : Mathf.Atan2(dd.x, dd.y) * Mathf.Rad2Deg);
+                            foreach (var sd in barrels ? new[] { dd, -dd } : new[] { dd, -dd, nn, -nn })
                             {
-                                float ang = c * 2.1f + (float)rng.NextDouble();
-                                var cp = tp + new Vector2(Mathf.Cos(ang), Mathf.Sin(ang)) * 0.75f;
-                                At(barrels ? "ENV_Prop_Stool" : "ENV_Cafe_Chair", cp, Face(cp, tp) + 180f + rng.Next(-20, 20));
+                                if (rng.NextDouble() < 0.12) continue;
+                                var cp = tp + sd * (barrels ? 0.62f : 0.74f);
+                                At(barrels ? "ENV_Prop_Stool" : "ENV_Cafe_Chair", cp, Face(cp, tp) + 180f + rng.Next(-10, 10));
                             }
-                            used.Add((tp, 1.4f));
+                            used.Add((tp, 1.6f));
                         }
                     }
                 }
-                // 5. stone planters with hydrangeas marking the edges of the free floor
+                // 5. seating round the fountain: four granite benches on the diagonals facing the water, a litter bin
+                // beside two of them (cohesion pass: grouped furniture and believable places to sit instead of props
+                // scattered over the floor)
+                if (f != default)
+                    for (int q = 0; q < 4; q++)
+                    {
+                        float ang = (q * 90f + 67.5f) * Mathf.Deg2Rad;
+                        var bp = f + new Vector2(Mathf.Sin(ang), Mathf.Cos(ang)) * 6.5f;
+                        if (!Inside(poly, bp) || !Clear(bp, 1.1f)) continue;
+                        At("ENV_Bench_Stone", bp, Face(bp, f));
+                        used.Add((bp, 1.1f));
+                        var lp = bp + new Vector2(Mathf.Cos(ang), -Mathf.Sin(ang)) * 1.4f;
+                        if (q % 2 == 0 && Clear(lp, 0.4f)) { At("ENV_Bin_Street", lp, 0); used.Add((lp, 0.4f)); }
+                    }
+                // 6. the plaza's thresholds: where a street comes in, a lamp on one side and a stone planter on the
+                // other — the edge is marked and the street-to-plaza transition reads (planters no longer scattered)
                 int planters = 0;
-                foreach (var p in cands.OrderBy(_ => rng.Next()))
+                foreach (var l in lanes)
+                    for (int i = 0; i + 1 < l.pts.Count; i++)
+                        for (int e0 = 0, e1 = poly.Count - 1; e0 < poly.Count; e1 = e0++)
+                        {
+                            if (!SegCross(l.pts[i], l.pts[i + 1], poly[e1], poly[e0], out var xp)) continue;
+                            var dir = (l.pts[i + 1] - l.pts[i]).normalized;
+                            var inward = Inside(poly, xp + dir * 2.5f) ? dir : -dir;
+                            var side = new Vector2(-inward.y, inward.x);
+                            var lp = xp + inward * 1.5f + side * (l.w / 2f + 1.3f);
+                            if (Inside(poly, lp) && Clear(lp, 0.5f)) { At("ENV_Lamp_Post", lp, 0); used.Add((lp, 0.5f)); }
+                            var pp = xp + inward * 1.8f - side * (l.w / 2f + 1.7f);
+                            if (planters < 6 && Inside(poly, pp) && Clear(pp, 1.0f))
+                            {
+                                At("ENV_Trough_Stone", pp, Face(pp, pp + inward));
+                                var h = At("ENV_Plant_Hydrangea", pp, rng.Next(360), 0.85f);
+                                h.transform.position += Vector3.up * 0.36f;
+                                EnvKit.Remap(h, new Dictionary<string, string> { { "ENV_Src_Flowers_Blue", new[] { "ENV_Src_Flowers_Blue", "ENV_Src_Flowers", "ENV_Src_Flowers_White" }[rng.Next(3)] } });
+                                used.Add((pp, 1.3f));
+                                planters++;
+                            }
+                        }
+                // 7. a bike rack against the edge with a bicycle locked to it
+                var rk = cands.Where(q => EdgeDistance(poly, q) < 3.6f && Clear(q, 1.5f)).OrderBy(_ => rng.Next()).FirstOrDefault();
+                if (rk != default)
                 {
-                    if (planters >= 5) break;
-                    if (EdgeDistance(poly, p) > 4.5f || !Clear(p, 1.2f)) continue;
-                    At("ENV_Trough_Stone", p, rng.Next(0, 4) * 90 + 10);
-                    var h = At("ENV_Plant_Hydrangea", p + new Vector2(0, 0), rng.Next(360), 0.85f);
-                    h.transform.position += Vector3.up * 0.36f;
-                    EnvKit.Remap(h, new Dictionary<string, string> { { "ENV_Flower_Blue", new[] { "ENV_Flower_Blue", "ENV_Flower_Pink", "ENV_Flower_White" }[rng.Next(3)] } });
-                    used.Add((p, 1.5f));
-                    planters++;
-                }
-                // 6. a litter bin and a bike rack where people pass
-                foreach (var (m, r) in new[] { ("ENV_Bin_Street", 0.5f), ("ENV_Bike_Rack", 1.4f), ("ENV_Bin_Street", 0.5f) })
-                {
-                    var p = cands.Where(q => EdgeDistance(poly, q) < 4f && Clear(q, r)).OrderBy(_ => rng.Next()).FirstOrDefault();
-                    if (p != default) { At(m, p, rng.Next(0, 4) * 90); used.Add((p, r)); }
+                    var rack = At("ENV_Bike_Rack", rk, Face(rk, c0));
+                    used.Add((rk, 1.5f));
+                    var bike = EnvKit.Place("ENV_Bicycle", rack.transform, new Vector3(0.86f, 0, 0), 0);
+                    EnvKit.Remap(bike, new Dictionary<string, string> { { "ENV_Paint_Red", "ENV_PropMat_Azul" } });
                 }
                 return;
             }
@@ -829,7 +1264,7 @@ namespace JuegoDef.Env
             for (int i = 0, j = poly.Count - 1; i < poly.Count; j = i++) area += (poly[j].x + poly[i].x) * (poly[j].y - poly[i].y);
             area = Mathf.Abs(area) / 2f;
             int trees = area > 120 ? 2 : 1;
-            string[] kinds = { "ENV_Tree_Plaza", "ENV_Tree_Common_A", "ENV_Tree_Common_C" };
+            string[] kinds = { "ENV_Tree_Plaza", "ENV_Tree_Plaza_B", "ENV_Tree_Plaza_C" };
             for (int n = 0; n < trees; n++)
             {
                 var p = cands.Where(q => Clear(q, 2.2f)).OrderBy(q => (q - c0).sqrMagnitude * (0.5f + (float)rng.NextDouble())).FirstOrDefault();
@@ -839,7 +1274,13 @@ namespace JuegoDef.Env
                 used.Add((p, 2.2f));
                 var toC = (c0 - p).normalized;
                 var b = p + toC * 1.6f;
-                if (Clear(b, 0.9f)) { At(rng.NextDouble() < 0.5 ? "ENV_Bench_Street" : "ENV_Bench_Stone", b, Face(b, c0) + 180f); used.Add((b, 0.9f)); }
+                if (Clear(b, 0.9f))
+                {
+                    At(rng.NextDouble() < 0.5 ? "ENV_Bench_Street" : "ENV_Bench_Stone", b, Face(b, c0) + 180f);
+                    used.Add((b, 0.9f));
+                    var bn = b + new Vector2(-toC.y, toC.x) * 1.35f;
+                    if (n == 0 && Clear(bn, 0.4f)) { At("ENV_Bin_Street", bn, 0); used.Add((bn, 0.4f)); }
+                }
             }
             var lampAt = poly.OrderBy(v => (v - c0).sqrMagnitude).Select(v => v + (c0 - v).normalized * 2.2f).FirstOrDefault(q => Inside(poly, q) && Clear(q, 0.4f));
             if (lampAt != default) At("ENV_Lamp_Post", lampAt, 0);
@@ -877,26 +1318,41 @@ namespace JuegoDef.Env
                     acc = 0f;
                 }
             }
-            // recycling points at the small plazas, off the walking lines that cross them (route probe: a set of bins
-            // on the lane through the Plazuela Oeste stalled the player)
-            var lanes = ((JArray)spec["streets"]).Cast<JObject>()
-                .Select(st => (w: (float)st["width"], pts: ((JArray)st["pts"]).Select(q => new Vector2((float)q[0], (float)q[1])).ToList())).ToList();
-            bool OffLanes(Vector2 p) => lanes.All(l => (Nearest(l.pts, p) - p).magnitude > l.w / 2f + 1.6f);
-            foreach (var id in new[] { "Plazuela_Oeste", "Cabeza_Puente", "Plazuela_Fuente" })
+            // recycling points where the refuse lorry reaches: the streets that leave the town, the three bins lined
+            // along a blind stretch of wall with their fronts to the street and the way left clear (a set of bins in
+            // the middle of the Plazuela Oeste lane stalled the route probe; the plaza search then found no place)
+            var doorsAt = root.GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => new Vector2(t.position.x, t.position.z)).ToList();
+            var route = ((JArray)spec["route"]).Select(q => new Vector2((float)q[0], (float)q[1])).ToList();
+            int recycling = 0;
+            foreach (var id in new[] { "Capitan_Salida", "San_Pedro_Salida", "Calle_Alta_Salida", "Llano", "Ronda_Huertas" })
             {
-                var pz = ((JArray)spec["plazas"]).Cast<JObject>().FirstOrDefault(q => (string)q["id"] == id);
-                if (pz == null) continue;
-                var poly = ((JArray)pz["poly"]).Select(c => new Vector2((float)c[0], (float)c[1])).ToList();
-                var c0 = poly.Aggregate(Vector2.zero, (x, q) => x + q) / poly.Count;
-                for (int k = 0; k < 24; k++)
+                if (recycling >= 2) break;
+                var st = ((JArray)spec["streets"]).Cast<JObject>().FirstOrDefault(q => (string)q["id"] == id);
+                if (st == null) continue;
+                var pts = ((JArray)st["pts"]).Select(q => new Vector2((float)q[0], (float)q[1])).ToList();
+                float w = (float)st["width"];
+                bool done = false;
+                for (int i = 0; i + 1 < pts.Count && !done; i++)
                 {
-                    float ang = k * 0.9f;
-                    var p = c0 + new Vector2(Mathf.Cos(ang), Mathf.Sin(ang)) * (2f + k * 0.25f);
-                    if (!Inside(poly, p) || EdgeDistance(poly, p) < 1.2f || !OffLanes(p)) continue;
-                    float y = GroundY(p.x, p.y, float.NaN);
-                    if (float.IsNaN(y) || Physics.OverlapBox(new Vector3(p.x, y + 1.0f, p.y), new Vector3(2.0f, 0.6f, 0.8f)).Length > 0) continue;
-                    EnvKit.Place("ENV_Recycling_Bins", g, new Vector3(p.x, y, p.y), Mathf.Atan2(c0.x - p.x, c0.y - p.y) * Mathf.Rad2Deg);
-                    break;
+                    var a = pts[i]; var b = pts[i + 1];
+                    float len = (b - a).magnitude;
+                    var d = (b - a) / Mathf.Max(len, 1e-3f);
+                    var n = new Vector2(-d.y, d.x);
+                    for (float t = 3f; t < len - 3f && !done; t += 1.5f)
+                        foreach (var side in new[] { 1f, -1f })
+                        {
+                            var p = a + d * t + n * side * (w / 2f - 0.62f);
+                            if (doorsAt.Any(q => (q - p).magnitude < 3.2f) || (Nearest(route, p) - p).magnitude < 1.4f) continue;
+                            float y = GroundY(p.x, p.y, float.NaN);
+                            if (float.IsNaN(y)) continue;
+                            float rot = Mathf.Atan2(-n.x * side, -n.y * side) * Mathf.Rad2Deg;   // fronts (+z) to the street
+                            if (!Physics.Raycast(new Vector3(p.x, y + 1.0f, p.y), new Vector3(n.x * side, 0, n.y * side), 1.2f)) continue;   // a wall behind
+                            if (Physics.OverlapBox(new Vector3(p.x, y + 0.85f, p.y), new Vector3(2.0f, 0.6f, 0.5f), Quaternion.Euler(0, rot, 0)).Length > 0) continue;
+                            EnvKit.Place("ENV_Recycling_Bins", g, new Vector3(p.x, y, p.y), rot);
+                            done = true;
+                            recycling++;
+                            break;
+                        }
                 }
             }
             // where the spine enters the town: pedestrian zone sign and a pair of bollards
@@ -946,6 +1402,258 @@ namespace JuegoDef.Env
             d.y = 0;
             var s = new Vector3(-d.z, 0, d.x).normalized * side;
             return EnvPreview.Capture(file, eye + s + Vector3.up * 1.7f, look + Vector3.up * 2.0f, fov);
+        }
+
+        /// <summary>The neighbourhood fountain as a lived corner (owner reference: "rincón memorable y muy vivido", a
+        /// northern service corner, not a themed patio): a plain wooden bench and a stool where the neighbours sit,
+        /// crates stacked by them and a bucket at the trough; a row of potted geraniums, box and hydrangea along the
+        /// wall, a watering bucket; ferns at the damp foot of the fountain, ivy down the wall, a bicycle leant beside
+        /// it, the spill puddle in front. Each piece keeps clear of doors, pipes and the walking route, or is left out.</summary>
+        static void FountainCorner(Transform parent, GameObject fountain)
+        {
+            Physics.SyncTransforms();
+            var g = EnvKit.Group(parent, "Rincon_Fuente");
+            var ft = fountain.transform;
+            float yaw0 = ft.eulerAngles.y;
+            var doorsAt = Root.GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => new Vector2(t.position.x, t.position.z)).ToList();
+            var route = ((JArray)spec["route"] ?? new JArray()).Select(q => new Vector2((float)q[0], (float)q[1])).ToList();
+            var rng = new System.Random(911);
+            // the back wall is wider than the old pillar: it must not cover a door beside it — slide it along the wall
+            // away from the nearest door, if there is still wall behind it there
+            var nearDoor = doorsAt.Select(d => ft.InverseTransformPoint(new Vector3(d.x, ft.position.y, d.y)))
+                                  .Where(l => Mathf.Abs(l.z) < 1.5f && Mathf.Abs(l.x) < 2.5f).OrderBy(l => Mathf.Abs(l.x)).ToList();
+            if (nearDoor.Count > 0)
+            {
+                var np = ft.TransformPoint(new Vector3((nearDoor[0].x < 0 ? 1f : -1f) * (2.5f - Mathf.Abs(nearDoor[0].x)), 0, 0));
+                var own = fountain.GetComponentsInChildren<Collider>();
+                foreach (var c in own) c.enabled = false;
+                bool wall = Physics.Raycast(np + Vector3.up * 1.2f + ft.forward * 0.6f, -ft.forward, 1.0f);
+                foreach (var c in own) c.enabled = true;
+                if (wall) { ft.position = np; Physics.SyncTransforms(); }
+            }
+            Vector3? Spot(float lx, float lz)
+            {
+                var w = ft.TransformPoint(new Vector3(lx, 0, lz));
+                float y = GroundY(w.x, w.z, float.NaN);
+                if (float.IsNaN(y) || Mathf.Abs(y - ft.position.y) > 0.5f) return null;
+                return new Vector3(w.x, y, w.z);
+            }
+            // against the wall where it fits, else a step further out (plinths, steps and pipes stand in the way)
+            GameObject Put(string module, float lx, float lz, float yaw, Vector3 half, float scale = 1f) =>
+                PutAt(module, lx, lz, yaw, half, scale) ?? (lz < 0.6f ? PutAt(module, lx, lz + 0.45f, yaw, half, scale) : null);
+            GameObject PutAt(string module, float lx, float lz, float yaw, Vector3 half, float scale)
+            {
+                var at = Spot(lx, lz);
+                if (at == null) return null;
+                var w = at.Value;
+                var p2 = new Vector2(w.x, w.z);
+                if (doorsAt.Any(d => (d - p2).magnitude < 1.0f + half.x)) return null;
+                if (route.Count > 1 && (Nearest(route, p2) - p2).magnitude < 0.8f + half.z) return null;
+                if (Physics.OverlapBox(new Vector3(w.x, w.y + half.y + 0.08f, w.z), half, Quaternion.Euler(0, yaw0 + yaw, 0)).Length > 0) return null;
+                var go = EnvKit.Place(module, g, w, yaw0 + yaw, Vector3.one * scale);
+                Physics.SyncTransforms();
+                return go;
+            }
+            void Plant(GameObject pot, string plant, float py, float ps, string flowers = null)
+            {
+                if (!pot) return;
+                var pl = EnvKit.Place(plant, g, pot.transform.position + Vector3.up * py, rng.Next(360), Vector3.one * ps);
+                if (flowers != null) EnvKit.Remap(pl, new Dictionary<string, string> { { "ENV_Src_Flowers_Blue", flowers }, { "ENV_Src_Flowers_Red", flowers } });
+            }
+            // sitting side
+            if (Put("ENV_Prop_Bench", -3.2f, 0.42f, 0, new Vector3(1.0f, 0.2f, 0.2f), 0.72f))
+            {
+                Put("ENV_Prop_Stool", -4.6f, 1.1f, rng.Next(360), new Vector3(0.18f, 0.2f, 0.18f), 0.85f);
+                var crate = Put("ENV_Prop_Crate_Wooden", -4.75f, 0.38f, 9, new Vector3(0.26f, 0.26f, 0.27f), 0.6f);
+                if (crate) EnvKit.Place("ENV_Prop_FarmCrate_Apple", g, crate.transform.position + Vector3.up * 0.53f, yaw0 - 14f, Vector3.one * 0.85f);
+            }
+            Put("ENV_Prop_Bucket_Wood", -1.95f, 1.25f, rng.Next(360), new Vector3(0.2f, 0.14f, 0.2f));
+            // plant side: pots of different kinds along the wall, a bucket for watering them
+            Plant(Put("ENV_Planter_Pot", 2.0f, 0.34f, 0, new Vector3(0.24f, 0.2f, 0.24f), 0.9f), "ENV_Plant_Geranium", 0.37f, 1.15f, "ENV_Src_Flowers_Red");
+            var glazed = Put("ENV_Pot_Glazed", 2.58f, 0.3f, 0, new Vector3(0.2f, 0.18f, 0.2f));
+            if (glazed) { EnvKit.Remap(glazed, new Dictionary<string, string> { { "ENV_Ceramic_Blue", "ENV_Ceramic_Green" } }); Plant(glazed, "ENV_Plant_Boxwood", 0.34f, 1.0f); }
+            Plant(Put("ENV_Planter_Pot", 3.18f, 0.36f, 0, new Vector3(0.25f, 0.2f, 0.25f)), "ENV_Plant_Hydrangea", 0.36f, 0.72f, "ENV_Src_Flowers");
+            Plant(Put("ENV_Pot_Tin", 3.72f, 0.3f, 0, new Vector3(0.12f, 0.15f, 0.12f)), "ENV_Plant_Geranium", 0.29f, 0.95f, "ENV_Src_Flowers_White");
+            Plant(Put("ENV_Planter_Pot", 4.22f, 0.34f, 0, new Vector3(0.2f, 0.17f, 0.2f), 0.75f), "ENV_Plant_Fern", 0.32f, 0.06f);
+            Put("ENV_Prop_Bucket", 2.1f, 1.3f, rng.Next(360), new Vector3(0.22f, 0.17f, 0.22f), 0.9f);
+            // the damp foot of the fountain, ivy down the wall, the spill in front, a bicycle leant beside it
+            foreach (var lx in new[] { -1.78f, 1.78f })
+            {
+                var at = Spot(lx, 0.28f);
+                if (at != null) EnvKit.Place("ENV_Plant_Fern", g, at.Value, rng.Next(360), Vector3.one * (0.06f + 0.015f * (float)rng.NextDouble()));
+            }
+            EnvKit.Place("Prop_Vine2", g, ft.TransformPoint(new Vector3(-1.95f, 2.9f, 0.12f)), yaw0);
+            var pud = Spot(0.25f, 2.0f);
+            if (pud != null) EnvKit.Place("ENV_Puddle_A", g, pud.Value + Vector3.up * 0.004f, yaw0 + rng.Next(360));
+            var bike = Put("ENV_Bicycle", 5.1f, 0.4f, 90, new Vector3(0.84f, 0.45f, 0.22f));
+            if (bike) EnvKit.Remap(bike, new Dictionary<string, string> { { "ENV_Paint_Red", "ENV_PropMat_Verde" } });
+        }
+
+        /// <summary>Ground contact of what stands in front of the facades (pots, benches, chairs, bicycles, goods):
+        /// facades are assembled at the plot's level, the paving in front can fall or rise, and in a few places it is
+        /// not there at all (a door onto the river edge — a semantic case left for the next pass). Each piece is set
+        /// down on what is under it, or removed with its plant when there is nothing (owner: props "en el aire").</summary>
+        static void GroundContact(Transform root)
+        {
+            Physics.SyncTransforms();
+            string[] standing = { "ENV_Planter", "ENV_Pot_", "ENV_Trough_Stone", "ENV_Bench", "ENV_Prop_Chair", "ENV_Prop_Stool", "ENV_Prop_Barrel", "ENV_Prop_Crate",
+                                  "ENV_Prop_FarmCrate", "ENV_Prop_Bucket", "ENV_Bicycle", "ENV_AFrame", "ENV_Cafe_", "ENV_Parasol" };
+            int moved = 0, removed = 0;
+            foreach (var group in root.GetComponentsInChildren<Transform>(true).Where(t => t.name == "Dressing" && t.parent != null && t.parent != root).ToList())
+            {
+                var building = group.parent;
+                var items = group.Cast<Transform>().ToList();
+                foreach (var it in items)
+                {
+                    if (!it || !standing.Any(it.name.StartsWith)) continue;
+                    if (building.InverseTransformPoint(it.position).y > 0.3f) continue;   // on a balcony or a sill
+                    var pos = it.position;
+                    var plants = items.Where(q => q && q != it && q.name.StartsWith("ENV_Plant_") && q.position.y >= pos.y - 0.01f &&
+                                                  new Vector2(q.position.x - pos.x, q.position.z - pos.z).magnitude < 0.12f).ToList();
+                    // what is under it: paving, a step, a deck — not itself nor another standing piece
+                    var hits = Physics.RaycastAll(pos + Vector3.up * 1.0f, Vector3.down, 2.4f)
+                        .Where(h => !h.collider.transform.IsChildOf(it))
+                        .Where(h => { var o = Owner(h.collider.transform, group); return o == null || !standing.Any(o.name.StartsWith); })
+                        .OrderBy(h => h.distance).ToList();
+                    float dy = hits.Count > 0 ? hits[0].point.y - pos.y : float.NaN;
+                    if (float.IsNaN(dy) || Mathf.Abs(dy) > 0.9f)
+                    {
+                        foreach (var q in plants) UnityEngine.Object.DestroyImmediate(q.gameObject);
+                        UnityEngine.Object.DestroyImmediate(it.gameObject);
+                        removed++;
+                        continue;
+                    }
+                    if (Mathf.Abs(dy) < 0.02f) continue;
+                    it.position += Vector3.up * dy;
+                    foreach (var q in plants) q.position += Vector3.up * dy;
+                    moved++;
+                }
+            }
+            Physics.SyncTransforms();
+            Debug.Log($"JD_GROUND_CONTACT moved={moved} removed={removed}");
+        }
+
+        /// <summary>The direct child of <paramref name="group"/> that owns <paramref name="t"/>, if any.</summary>
+        static Transform Owner(Transform t, Transform group)
+        {
+            while (t != null && t.parent != group) t = t.parent;
+            return t;
+        }
+
+        /// <summary>Hero lanes: telephone and power cables slung across between the facades every 10-16 m, between the
+        /// first-floor window heads and the second-floor sills, some on the skew (owner reference: "cableado").</summary>
+        static void HeroCables(Transform root)
+        {
+            Physics.SyncTransforms();
+            var g = EnvKit.Group(root, "HeroCables");
+            int n = 0;
+            foreach (JObject st in (JArray)spec["streets"])
+            {
+                if (!EnvCharacter.HeroStreets.Contains((string)st["id"])) continue;
+                var pts = ((JArray)st["pts"]).Select(q => new Vector2((float)q[0], (float)q[1])).ToList();
+                float w = (float)st["width"];
+                float acc = 4f + 6f * Hash01(pts[0].x, pts[0].y, 71);
+                for (int i = 0; i + 1 < pts.Count; i++)
+                {
+                    var a = pts[i]; var b = pts[i + 1];
+                    float len = (b - a).magnitude;
+                    var d = (b - a) / Mathf.Max(len, 1e-3f);
+                    var nrm = new Vector2(-d.y, d.x);
+                    for (float t = acc; t < len - 1f; t += 10f + 6f * Hash01(a.x + t, a.y, 72))
+                    {
+                        var c = a + d * t;
+                        float gy = GroundY(c.x, c.y, float.NaN);
+                        if (float.IsNaN(gy)) continue;
+                        float y = gy + 5.6f + 0.35f * Hash01(c.x, c.y, 73);
+                        var dir = (nrm + d * (Hash01(c.x, c.y, 74) - 0.5f) * 0.9f).normalized;
+                        var o = new Vector3(c.x, y, c.y);
+                        if (!Physics.Raycast(o, new Vector3(-dir.x, 0, -dir.y), out var h0, w / 2f + 2f)) continue;
+                        if (!Physics.Raycast(o, new Vector3(dir.x, 0, dir.y), out var h1, w / 2f + 2f)) continue;
+                        var span = h1.point - h0.point;
+                        span.y = 0;
+                        if (span.magnitude < 2f || span.magnitude > 7f) continue;
+                        var go = EnvKit.Place("ENV_Cable_Span", g, new Vector3(h0.point.x, y, h0.point.z), Mathf.Atan2(-span.z, span.x) * Mathf.Rad2Deg, new Vector3(span.magnitude / 4f, 1, 1));
+                        go.GetComponentsInChildren<Renderer>().ToList().ForEach(r => r.shadowCastingMode = ShadowCastingMode.Off);
+                        n++;
+                    }
+                    acc = 0f;
+                }
+            }
+            Debug.Log($"JD_HERO_CABLES {n}");
+        }
+
+        /// <summary>Riverside promenade (owner reference, river view: "barandillas, bicicletas, jardineras"): along the
+        /// railings, flower boxes on the ground at the rail's foot in small runs and a bicycle leant against the rail
+        /// here and there — on the land side, never on the walking route.</summary>
+        static void RiverPromenade(Transform root)
+        {
+            Physics.SyncTransforms();
+            var g = EnvKit.Group(root, "RiverPromenade");
+            var route = ((JArray)spec["route"] ?? new JArray()).Select(q => new Vector2((float)q[0], (float)q[1])).ToList();
+            var rng = new System.Random(57);
+            string[] paints = { "ENV_PropMat_Azul", "ENV_Paint_Red", "ENV_PropMat_Verde", "ENV_PropMat_Negro" };
+            string[] flowers = { "ENV_Src_Flowers_Red", "ENV_Src_Flowers", "ENV_Src_Flowers_White" };
+            int bikes = 0, boxes = 0;
+            foreach (JArray pp in (JArray)spec["river"]["parapets"])
+            {
+                var a = new Vector2((float)pp[0][0], (float)pp[0][1]);
+                var b = new Vector2((float)pp[1][0], (float)pp[1][1]);
+                float ry = (float)pp[2], len = (b - a).magnitude;
+                if (len < 1.2f) continue;
+                var d = (b - a) / len;
+                var nrm = new Vector2(-d.y, d.x);
+                int side = 0;
+                foreach (var sg in new[] { 1, -1 })
+                {
+                    var q = (a + b) / 2f + nrm * sg * 0.9f;
+                    float gy = GroundY(q.x, q.y, float.NaN);
+                    if (!float.IsNaN(gy) && Mathf.Abs(gy - ry) < 0.8f) { side = sg; break; }
+                }
+                if (side == 0) continue;
+                // the rail comes in 2 m pieces: one chance per piece, at its middle
+                for (float t = len / 2f; t < len; t += 2.0f)
+                {
+                    double r = rng.NextDouble();
+                    bool bike = r < 0.09 && bikes < 4;
+                    if (!bike && (r > 0.34 || boxes >= 14)) continue;
+                    var at = a + d * t + nrm * side * (bike ? 0.45f : 0.4f);
+                    if (route.Count > 1 && (Nearest(route, at) - at).magnitude < 1.4f) continue;
+                    float gy = GroundY(at.x, at.y, float.NaN);
+                    if (float.IsNaN(gy) || Mathf.Abs(gy - ry) > 0.8f) continue;
+                    float yaw = bike ? Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg : Mathf.Atan2(-d.y, d.x) * Mathf.Rad2Deg;
+                    var half = bike ? new Vector3(0.24f, 0.45f, 0.84f) : new Vector3(0.4f, 0.13f, 0.13f);
+                    // anything but the rail itself (they stand against it)
+                    if (Physics.OverlapBox(new Vector3(at.x, gy + half.y + 0.08f, at.y), half, Quaternion.Euler(0, yaw, 0))
+                               .Any(h => !h.transform.name.StartsWith("ENV_Parapet") && !(h.transform.parent && h.transform.parent.name.StartsWith("ENV_Parapet")))) continue;
+                    var go = EnvKit.Place(bike ? "ENV_Bicycle" : "ENV_Planter_Box", g, new Vector3(at.x, gy, at.y), yaw);
+                    if (bike) { EnvKit.Remap(go, new Dictionary<string, string> { { "ENV_Paint_Red", paints[rng.Next(paints.Length)] } }); bikes++; }
+                    else
+                    {
+                        string fl = flowers[rng.Next(flowers.Length)];
+                        foreach (var lx in new[] { -0.2f, 0.2f })
+                            EnvKit.Remap(EnvKit.Place("ENV_Plant_Geranium", g, go.transform.TransformPoint(new Vector3(lx, 0.2f, 0)), rng.Next(360), Vector3.one * 0.9f),
+                                         new Dictionary<string, string> { { "ENV_Src_Flowers_Red", fl } });
+                        boxes++;
+                    }
+                    Physics.SyncTransforms();
+                }
+            }
+            Debug.Log($"JD_RIVER_PROMENADE bikes={bikes} boxes={boxes}");
+        }
+
+        /// <summary>Crossing point of segments a-b and c-d.</summary>
+        static bool SegCross(Vector2 a, Vector2 b, Vector2 c, Vector2 d, out Vector2 x)
+        {
+            x = default;
+            var r = b - a;
+            var q = d - c;
+            float den = r.x * q.y - r.y * q.x;
+            if (Mathf.Abs(den) < 1e-6f) return false;
+            var ac = c - a;
+            float t = (ac.x * q.y - ac.y * q.x) / den, u = (ac.x * r.y - ac.y * r.x) / den;
+            if (t < 0 || t > 1 || u < 0 || u > 1) return false;
+            x = a + r * t;
+            return true;
         }
 
         static Vector2 Nearest(List<Vector2> line, Vector2 p)
@@ -1023,6 +1731,10 @@ namespace JuegoDef.Env
                 foreach (var sgn in new[] { 1f, -1f })
                 {
                     var at = c + side * sgn * (w / 2f - 0.24f);
+                    // a parapet piece stands where nobody needs to pass: the deck runs up to the doors of the bridgehead houses
+                    // (a bar's glass door faced a stone parapet), so no piece in front of a door
+                    float reach = len / np / 2f + 1.9f;   // half a piece + the door's half width + a way through
+                    if (BridgeDoors.Any(dp => Mathf.Abs(dp.y - at.y) < 1.6f && Vector2.Distance(new Vector2(dp.x, dp.z), new Vector2(at.x, at.z)) < reach)) continue;
                     EnvKit.Remap(EnvKit.Place("ENV_Parapet_Stone_2m", g, at, yaw + (sgn > 0 ? 0 : 180), new Vector3(len / np / 2f + 0.01f, 1f, 1f)), map);
                 }
             }

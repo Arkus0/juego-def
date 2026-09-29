@@ -29,15 +29,20 @@ namespace JuegoDef.Env
         public static void Lighting(string preset = "atlantic_overcast") => EnvLighting.Apply(preset);
 
         /// <summary>Renders <paramref name="camera"/> (or a temporary camera) to a PNG under the project folder.</summary>
-        public static string Capture(string projectRelativePng, Vector3 position, Vector3 lookAt, float fov = 50, int width = 1600, int height = 900)
+        public static string Capture(string projectRelativePng, Vector3 position, Vector3 lookAt, float fov = 50, int width = 1600, int height = 900, Color? solidBackground = null)
         {
             var go = new GameObject("PreviewCamera");
             var cam = go.AddComponent<Camera>();
+            if (solidBackground.HasValue)   // debug: anything showing this colour is a hole in the geometry (cracks between ground meshes)
+            {
+                cam.clearFlags = CameraClearFlags.SolidColor;
+                cam.backgroundColor = solidBackground.Value;
+            }
             cam.transform.position = position;
             cam.transform.LookAt(lookAt);
             cam.fieldOfView = fov;
             cam.nearClipPlane = 0.05f;
-            cam.farClipPlane = 600f;
+            cam.farClipPlane = 1300f;   // the distant range stands at 820-1050 m
             var data = go.AddComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>();
             data.renderPostProcessing = true;
             data.antialiasing = UnityEngine.Rendering.Universal.AntialiasingMode.SubpixelMorphologicalAntiAliasing;

@@ -58,7 +58,7 @@ namespace JuegoDef.Env
                 if (want != null && !want.Contains((string)w["name"])) { produced.Add((string)w["name"]); continue; }
                 var source = EnvKit.Module((string)w["source"]);
                 var remap = (w["remap"] as JObject)?.Properties().ToDictionary(pr => pr.Name, pr => (string)pr.Value);
-                SaveModule((string)w["name"], source, (string)w["collider"] ?? "box", remap);
+                SaveModule((string)w["name"], source, (string)w["collider"] ?? "box", remap, w);
                 produced.Add((string)w["name"]);
                 wrapped++;
             }
@@ -75,10 +75,22 @@ namespace JuegoDef.Env
 
         static HashSet<string> noShadow = new HashSet<string>();
 
-        static void SaveModule(string name, GameObject source, string collider, Dictionary<string, string> remap = null)
+        /// <summary>One wrapped model under the module root: optional holder transform from the wrapper entry
+        /// (<c>pos</c> [x,y,z], <c>rotY</c>, <c>scale</c> number or [x,y,z]) so the vendor model keeps its own import
+        /// rotation, then the vendor materials bound to owned ENV_Src_* copies and the entry's remap.</summary>
+        static GameObject Part(Transform root, GameObject source, Dictionary<string, string> remap, JObject w)
         {
-            var root = new GameObject(name);
-            var inst = (GameObject)PrefabUtility.InstantiatePrefab(source, root.transform);
+            var parent = root;
+            if (w != null && (w["pos"] != null || w["rotY"] != null || w["scale"] != null))
+            {
+                parent = new GameObject(source.name + "_Place").transform;
+                parent.SetParent(root, false);
+                if (w["pos"] is JArray p) parent.localPosition = new Vector3((float)p[0], (float)p[1], (float)p[2]);
+                if (w["rotY"] != null) parent.localRotation = Quaternion.Euler(0, (float)w["rotY"], 0);
+                if (w["scale"] is JArray sc) parent.localScale = new Vector3((float)sc[0], (float)sc[1], (float)sc[2]);
+                else if (w["scale"] != null) parent.localScale = Vector3.one * (float)w["scale"];
+            }
+            var inst = (GameObject)PrefabUtility.InstantiatePrefab(source, parent);
             inst.name = source.name;
             // Props/Nature materials are generated locally by Unity's model import (random GUID per machine):
             // bind every one of them to the owned ENV_Src_* material so the committed prefab never references them.
@@ -89,25 +101,41 @@ namespace JuegoDef.Env
                         map[m.name] = "ENV_Src_" + m.name;
             if (remap != null) foreach (var kv in remap) map[kv.Key] = kv.Value;
             EnvKit.Remap(inst, map);
+            return inst;
+        }
+
+        static void SaveModule(string name, GameObject source, string collider, Dictionary<string, string> remap = null, JObject wrapper = null)
+        {
+            var root = new GameObject(name);
+            var inst = Part(root.transform, source, remap, wrapper);
+            // composite wrappers (cohesion pass): a vendor model plus other modules/models, each placed, scaled and
+            // remapped — e.g. a Quaternius crown on an own stem, a Quaternius tree over an own ring bench
+            if (wrapper?["parts"] is JArray extra)
+                foreach (JObject pw in extra)
+                    Part(root.transform, EnvKit.Module((string)pw["source"]),
+                         (pw["remap"] as JObject)?.Properties().ToDictionary(pr => pr.Name, pr => (string)pr.Value), pw);
             // flush or tiny details: their shadow never resolves in the main-light cascade, so they skip the shadow pass
             if (noShadow.Contains(name))
-                foreach (var r in inst.GetComponentsInChildren<Renderer>(true))
+                foreach (var r in root.GetComponentsInChildren<Renderer>(true))
                     r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             switch (collider)
             {
+                case "none":
+                    foreach (var c in root.GetComponentsInChildren<Collider>(true)) Object.DestroyImmediate(c);
+                    break;
                 case "mesh":
-                    foreach (var mf in inst.GetComponentsInChildren<MeshFilter>())
+                    foreach (var mf in root.GetComponentsInChildren<MeshFilter>())
                         if (!mf.GetComponent<Collider>()) mf.gameObject.AddComponent<MeshCollider>().sharedMesh = mf.sharedMesh;
                     break;
                 case "trunk":
-                    var tb = EnvPreview.BoundsOf(inst);
+                    var tb = EnvPreview.BoundsOf(inst);   // the trunk of the main model
                     var cap = root.AddComponent<CapsuleCollider>();
                     cap.radius = 0.25f;
                     cap.height = 3f;
                     cap.center = new Vector3(tb.center.x - root.transform.position.x, 1.5f, tb.center.z - root.transform.position.z);
                     break;
                 case "box":
-                    var b = EnvPreview.BoundsOf(inst);
+                    var b = EnvPreview.BoundsOf(root);
                     var bc = root.AddComponent<BoxCollider>();
                     bc.center = b.center - root.transform.position;
                     bc.size = b.size;

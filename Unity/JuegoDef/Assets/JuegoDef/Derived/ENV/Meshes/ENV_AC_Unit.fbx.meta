@@ -24,6 +24,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: ENV_Plastic_Grey
     second: {fileID: 2100000, guid: 1a0b8a9ae98f7ae45814cedd87de0760, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Blanco
+    second: {fileID: 2100000, guid: 638e3876497b05449932fb4b3e21a12d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Galv
+    second: {fileID: 2100000, guid: c8f04e26e0fe07843a0e0384da4d91f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ENV_PropMat_Oscuro
+    second: {fileID: 2100000, guid: 36be579751659fe4aa38c08e951932ea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

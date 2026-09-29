@@ -45,6 +45,9 @@ namespace JuegoDef.Env
         public string eave = "";                 // "" (resolved: casco palettes -> canecillos unless reformed) | canecillos | plain
         public bool solana;                      // lebaniego solana across the top floor (door onto it, wing walls)
         public bool surrounds;                   // sandstone ashlar surrounds on rendered windows (casco)
+        public bool noEntrance;                  // the front looks onto water or a drop: no door on it (windows instead); the way in is elsewhere
+        public bool blockLeft, blockRight, blockBack;   // another building stands within 1.6 m of that wall (set from the spec): no windows on it
+        public float raise;                      // m: lift the whole building (floor and its stone base grow by the same amount): a door that opened into rising ground
         public bool escudo;                      // casona shield above the portal
         // Facade family (owner audit 2026-09-29: "la arquitectura canta a kit modular"). Empty fields keep the palette
         // behaviour; the district's character pass (EnvCharacter) fills them per building.
@@ -59,6 +62,7 @@ namespace JuegoDef.Env
         public string band;                      // floor-line band material ("" = palette trim; the render = no band)
         public string business = "";             // ground-floor business (EnvBusiness programme id)
         public float plantShare = 0.15f;         // share of portals/balconies with plants (street personality)
+        public float hero;                       // 0 sober .. 1 hero corner: the few lanes dressed as lived places
     }
 
     public static class BuildingAssembler
@@ -118,13 +122,22 @@ namespace JuegoDef.Env
             s.era = FacadeGrammar.ResolveEra(s, rng);
             rows = EnvBusiness.RewriteGround(s, rows);
             rows = FacadeGrammar.ApplyEra(s, rows, rng);
+            // a facade over the river has no walkway to a door: its ground-floor door bays become (grilled) windows
+            if (s.noEntrance && rows.Length > 0) rows[0] = new string(rows[0].Select(ch => "eEOoDAVG".IndexOf(ch) >= 0 ? 'W' : ch).ToArray());
             rows = FacadeGrammar.ResolveShutters(s, rows, rng);
             var history = s.dress && s.history ? FacadeGrammar.History.Draw(s, rows, rng) : FacadeGrammar.History.None;
             int width = s.bays * 2, nz = s.depth / 2;
-            string[] SideRows(string[] given, bool exposed) => Enumerable.Range(0, s.floors)
-                .Select(f => new string(Enumerable.Range(0, nz).Select(j => SideCode(given, exposed, f, j, nz, rng)).ToArray())).ToArray();
-            var leftRows = FacadeGrammar.ResolveShutters(s, SideRows(s.left, s.exposeLeft), rng);
-            var rightRows = FacadeGrammar.ResolveShutters(s, SideRows(s.right, s.exposeRight), rng);
+            // storeys above a lower neighbour are a side wall seen from the street even when the side is not an exposed end:
+            // from the second visible storey up they get the same sparse small window as an exposed end (the first stays plain,
+            // the neighbour's roof may reach it); before, a 72 m2 party wall over the plaza was a blank plane
+            // A side with no touching neighbour at all (party == 0) is open to whatever lies beside it even when the row end is
+            // not "open" (a concave bend corner): it was built as a plain plane [PPPP] on every storey, seen from the next street.
+            // A wall with another building within 1.6 m (two side walls 0.6 m apart between blocks) gets no windows: they would look
+            // straight at each other.
+            string[] SideRows(string[] given, bool exposed, int party, int sideTag, bool blocked) => Enumerable.Range(0, s.floors)
+                .Select(f => new string(Enumerable.Range(0, nz).Select(j => SideCode(given, !blocked && (exposed || party == 0 || (party < s.floors && f > party)), f, j, nz, s.seed, sideTag)).ToArray())).ToArray();
+            var leftRows = FacadeGrammar.ResolveShutters(s, SideRows(s.left, s.exposeLeft, s.partyLeft, 1, s.blockLeft), rng);
+            var rightRows = FacadeGrammar.ResolveShutters(s, SideRows(s.right, s.exposeRight, s.partyRight, 2, s.blockRight), rng);
             var root = new GameObject(s.id).transform;
             root.SetParent(parent, false);
             var wallMap = RoleMap(s.palette, "wall");
@@ -162,7 +175,10 @@ namespace JuegoDef.Env
                 }
                 var back = EnvKit.Group(EnvKit.Group(root, "Back"), "F" + f);
                 for (int i = 0; i < s.bays; i++)
-                    Slot(s, back, fam, FacadeGrammar.BackCode(f, i, rng), f, new Vector3(width - 1 - 2 * i, y, -s.depth), 180, rng, wm, joinMap, plinth: false, stoneMap);
+                {
+                    char bc = FacadeGrammar.BackCode(f, i, rng);   // drawn either way: the random sequence stays the same
+                    Slot(s, back, fam, s.blockBack ? 'P' : bc, f, new Vector3(width - 1 - 2 * i, y, -s.depth), 180, rng, wm, joinMap, plinth: false, stoneMap);
+                }
                 var left = EnvKit.Group(EnvKit.Group(root, "Side_L"), "F" + f);
                 var right = EnvKit.Group(EnvKit.Group(root, "Side_R"), "F" + f);
                 // Party walls: storeys covered by a neighbour get no side wall (no hidden double walls, no z-fighting).
@@ -309,7 +325,7 @@ namespace JuegoDef.Env
             return l ? 180 : 90;
         }
 
-        static char SideCode(string[] rows, bool exposed, int floor, int slot, int count, System.Random rng)
+        static char SideCode(string[] rows, bool exposed, int floor, int slot, int count, int seed, int sideTag)
         {
             if (rows != null && floor < rows.Length && !string.IsNullOrEmpty(rows[floor]))
             {
@@ -319,7 +335,11 @@ namespace JuegoDef.Env
             if (!exposed) return 'P';
             // exposed end wall: sparse small windows on upper floors, blank on the ground floor
             if (floor == 0) return 'P';
-            return slot == count / 2 ? 'T' : 'P';
+            if (slot == count / 2) return 'T';
+            // a few more plain windows so an 8 m end wall is not one plane with a single slit: staggered (never one above the
+            // other) and drawn from a generator of their own, so the building's other choices are not disturbed
+            if (count >= 3 && slot > 0 && ((floor + slot) & 1) == 0 && new System.Random(seed * 131 + sideTag * 17 + floor * 7 + slot).NextDouble() < 0.5) return 'w';
+            return 'P';
         }
 
         static void Slot(BuildingSpec s, Transform parent, string fam, char code, int floor, Vector3 pos, float rot,
@@ -357,8 +377,11 @@ namespace JuegoDef.Env
                 var k = familyPlinth ? new Vector3(1, Mathf.Max(0.3f, s.plinthHeight) / 0.44f, s.plinthMat.StartsWith("ENV_Paint") ? 0.65f : 1f) : Vector3.one;
                 foreach (var (x, wdt) in FacadeGrammar.PlinthRuns(code))
                 {
+                    // a narrow pier between openings keeps only a low base, less proud of the wall: a tall stone stub
+                    // beside a shop window read as a post planted in front of the shop (cohesion pass)
                     var pl = EnvKit.Place(wdt >= 1.9f ? "ENV_Plinth_2m" : "ENV_Plinth_Pier", slot, new Vector3(x, 0, 0), 0,
-                                          wdt >= 1.9f ? k : new Vector3(wdt / 0.2f * k.x, k.y, k.z));
+                                          wdt >= 1.9f ? k : wdt < 0.5f ? new Vector3(wdt / 0.2f * k.x, Mathf.Min(k.y, 0.48f / 0.44f), Mathf.Min(k.z, 0.7f))
+                                                                       : new Vector3(wdt / 0.2f * k.x, k.y, k.z));
                     if (familyPlinth) EnvKit.Remap(pl, new Dictionary<string, string> { { "MI_RockTrim", s.plinthMat } });
                 }
             }

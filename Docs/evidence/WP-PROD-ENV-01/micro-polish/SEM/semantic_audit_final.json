@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "DOOR_NOWHERE",
+    "unit": "STREET_G",
+    "street": "Ribera",
+    "where": "Rows/K2_13/K2_13_0/Front/F0/D_0/THR_Public_Portal_Closed",
+    "detail": "2.6 m in front is 1,4 m beyond the nearest street/plaza (Ribera); ground Ground_Pave_Canto_Viejo",
+    "x": 177.43,
+    "y": -2.2,
+    "z": 235.15
+  },
+  {
+    "kind": "DOOR_NOWHERE",
+    "unit": "STREET_E",
+    "street": "Calle_Alta_Salida",
+    "where": "Rows/K13_5/K13_5_0/Front/F0/D_1/THR_Public_Portal_Closed",
+    "detail": "2.6 m in front is 1,2 m beyond the nearest street/plaza (Calle_Alta_Salida); ground Ground_Pave_Canto",
+    "x": 195.17,
+    "y": 5.0,
+    "z": 154.78
+  }
+]

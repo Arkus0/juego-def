@@ -21,11 +21,22 @@ namespace JuegoDef.Env
         static JObject spec;
         static JObject Spec => spec ??= JObject.Parse(EnvKit.ReadText(EnvKit.Grammar + "/businesses.json"));
         static readonly HashSet<string> Used = new HashSet<string>();
+        // business type per built building id ("K9_0_2" -> "farmacia"): the plaza dressing only sets a bar terrace
+        // in front of a drinking/eating place, never a pharmacy or a shoe shop
+        public static readonly Dictionary<string, string> TypeByBuilding = new Dictionary<string, string>();
 
         public static void Reset()
         {
             spec = null;
             Used.Clear();
+            TypeByBuilding.Clear();
+        }
+
+        /// <summary>True when the building's ground floor is a bar, café or sidrería — the businesses that own a terrace.</summary>
+        public static bool IsHospitality(string buildingId)
+        {
+            string t;
+            return TypeByBuilding.TryGetValue(buildingId, out t) && (t == "bar" || t == "cafe" || t == "sidreria");
         }
 
         static JObject Business(string id) => Spec["businesses"].Cast<JObject>().FirstOrDefault(b => (string)b["id"] == id);
@@ -66,15 +77,18 @@ namespace JuegoDef.Env
                     var b = named[rng.Next(named.Count)];
                     Used.Add((string)b["id"]);
                     bs.business = (string)b["id"];
+                    TypeByBuilding[bs.id] = type;
                     return;
                 }
                 if (type == "garaje" || type == "cerrado" || type == "vivienda" || type == "taller")
                 {
                     bs.business = type;
+                    TypeByBuilding[bs.id] = type;
                     return;
                 }
             }
             bs.business = "cerrado";
+            TypeByBuilding[bs.id] = "cerrado";
         }
 
         public static void AssignLodging(BuildingSpec bs)
@@ -84,6 +98,7 @@ namespace JuegoDef.Env
             var b = named[new System.Random(bs.seed * 17 + 5).Next(named.Count)];
             Used.Add((string)b["id"]);
             bs.business = (string)b["id"];
+            TypeByBuilding[bs.id] = "hostal";
         }
 
         /// <summary>Ground-floor bay codes the business needs: a garage gets a roller door, a workshop a timber gate,
@@ -253,7 +268,13 @@ namespace JuegoDef.Env
                 }
                 // awning over part of the run, by type
                 float awn = (float?)ts?["awning"] ?? 0f;
-                if (!string.IsNullOrEmpty(s.awning) || rng.NextDouble() < awn)
+                bool awning = !string.IsNullOrEmpty(s.awning) || rng.NextDouble() < awn;
+                // or a pair of gooseneck lamps lighting the fascia (cohesion pass: shops need exterior light and a
+                // silhouette that tells one shop from the next at 10-20 m)
+                if (!awning && lettering && !modern && rng.NextDouble() < 0.6)
+                    foreach (var sx in new[] { -1f, 1f })
+                        tryPlace("ENV_Fascia_Lamp", g, new Vector3(cx + sx * Mathf.Min(w * 0.3f, 0.95f), 3.0f, 0), 0, null);
+                if (awning)
                 {
                     string canvas = string.IsNullOrEmpty(s.awning) ? new[] { "ENV_Canvas_Green", "ENV_Canvas_Red", "ENV_Canvas_Cream" }[rng.Next(3)] : s.awning;
                     for (int i = run.a; i <= run.b; i++)
@@ -303,7 +324,9 @@ namespace JuegoDef.Env
             {
                 float bx = 1 + 2 * doorBays[0] + (rng.NextDouble() < 0.5 ? -1.1f : 1.1f);
                 var a = EnvKit.Place("ENV_AFrame_Board", g, new Vector3(bx, 0, 0.75f), rng.Next(-20, 20));
-                EnvKit.Remap(a, new Dictionary<string, string> { { "ENV_Sign_Board", TextureMat("ENV_Notice_" + (t == "bar" || t == "sidreria" ? "pinchos" : "menu"), "T_ENV_Notice_" + (t == "bar" || t == "sidreria" ? "pinchos" : "menu"), 0.1f) } });
+                // what the board says follows what the business sells (a bakery does not chalk up a "menú del día")
+                string bn = (string)ts?["boardNotice"] ?? "menu";
+                EnvKit.Remap(a, new Dictionary<string, string> { { "ENV_Sign_Board", TextureMat("ENV_Notice_" + bn, "T_ENV_Notice_" + bn, 0.1f) } });
             }
             // opening-hours vinyl on the shop door glass
             if (doorBays.Count > 0 && (bool?)ts?["lit"] == true && t != "cerrado")

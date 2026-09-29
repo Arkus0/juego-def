@@ -244,6 +244,58 @@ def stains(rng):
     return Image.fromarray(img, "RGBA").filter(ImageFilter.GaussianBlur(0.6))
 
 
+def paint_wear(rng):
+    """Tintable worn paint for own street props (ENV_PropMat_* on Weathered Lit, _BaseColor = the paint colour): a
+    near-white multiplier with soft painted mottling, faint vertical grime runs, sparse chips showing a dark primer
+    with a lighter lip and a few fine scratches — the softly worn, hand-painted surface of the Quaternius props."""
+    n = 512
+    base = 0.86 + 0.1 * quantise(fbm(n, rng), 7)
+    runs = periodic_noise(n, 40, rng, 3)
+    base -= 0.07 * np.clip(runs * 2.0 - 1.1, 0, 1)
+    chips = fbm(n, rng, (16, 32, 64), (1.0, 0.6, 0.35))
+    lip = (chips > 0.765) & (chips <= 0.79)
+    hole = chips > 0.79
+    base = np.where(lip, np.minimum(base + 0.05, 1.0), base)
+    base = np.where(hole, 0.5 + 0.06 * fbm(n, rng, (32, 64), (1.0, 0.5)), base)
+    img = Image.fromarray(np.clip(base * 255, 0, 255).astype(np.uint8), "L")
+    d = ImageDraw.Draw(img)
+    for _ in range(70):
+        x, y = rng.random() * n, rng.random() * n
+        a, length = rng.random() * math.pi, rng.uniform(6, 22)
+        c = int(255 * rng.uniform(0.94, 1.0))
+        for ox in (-n, 0, n):
+            for oy in (-n, 0, n):
+                d.line([x + ox, y + oy, x + ox + math.cos(a) * length, y + oy + math.sin(a) * length], fill=c, width=1)
+    return img.filter(ImageFilter.GaussianBlur(0.7)).convert("RGB")
+
+
+def granite(rng):
+    """Tintable plain dressed stone for own monolith props (benches, troughs, fountain steps): soft mottling and a
+    fine two-tone speckle, no joints."""
+    n = 512
+    base = 0.8 + 0.13 * quantise(fbm(n, rng), 6)
+    sp = rng.random((n, n))
+    base = np.where(sp > 0.982, base * 0.66, base)
+    base = np.where(sp < 0.014, np.minimum(base * 1.1, 1.0), base)
+    return Image.fromarray(np.clip(base * 255, 0, 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(0.65)).convert("RGB")
+
+
+def leaves_box(_rng):
+    """Green copy of the Quaternius Nature bush leaf atlas (Leaves_TwistedTree_C, CC0, autumn red): same leaf cards
+    and alpha, hue turned to the dark glossy green of clipped box and bay (ENV_Src_Leaves_Box on the Quaternius
+    Bush_Common: box balls, laurel heads, garden shrubs)."""
+    src = os.path.join(os.path.dirname(__file__), "..", "Unity", "JuegoDef", "Assets", "ThirdParty", "Quaternius", "Nature", "Textures", "Leaves_TwistedTree_C.png")
+    im = Image.open(src).convert("RGBA")
+    a = im.getchannel("A")
+    h, sat, v = im.convert("RGB").convert("HSV").split()
+    h = h.point(lambda _: 62)                       # ~88 degrees: leaf green
+    sat = sat.point(lambda x: int(x * 0.62))
+    v = v.point(lambda x: int(min(255, x * 0.82)))
+    out = Image.merge("HSV", (h, sat, v)).convert("RGB")
+    out.putalpha(a)
+    return out
+
+
 def water_normal(rng):
     """Tileable ripple normal map for JuegoDef/ENV/River Water: soft fbm swell plus finer cross ripples."""
     n = 512
@@ -266,7 +318,8 @@ def main():
                      ("T_ENV_Galvanised", galvanised), ("T_ENV_Canvas_Red", lambda r: canvas(r, (150, 52, 40))),
                      ("T_ENV_Canvas_Green", lambda r: canvas(r, (54, 98, 70))), ("T_ENV_Canvas_Cream", lambda r: canvas(r, (226, 214, 186), False)),
                      ("T_ENV_Terracotta", terracotta), ("T_ENV_Foliage", foliage), ("T_ENV_Sign_Board", board),
-                     ("T_ENV_Window_Glow", window_glow), ("T_ENV_Weather_Noise", weather_noise), ("T_ENV_Stains", stains), ("T_ENV_Water_Normal", water_normal)):
+                     ("T_ENV_Window_Glow", window_glow), ("T_ENV_Weather_Noise", weather_noise), ("T_ENV_Stains", stains), ("T_ENV_Water_Normal", water_normal),
+                     ("T_ENV_PaintWear", paint_wear), ("T_ENV_Granite", granite), ("T_ENV_Leaves_Box", leaves_box)):
         path = os.path.join(a.out, name + ".png")
         fn(rng).save(path)
         print(path)

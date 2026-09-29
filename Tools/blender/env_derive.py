@@ -44,10 +44,17 @@ MANIFEST: dict[str, dict] = {}
 VAULT = DEFAULT_VAULT
 
 
-def recipe(name, lineage, donors=(), method=""):
+SMOOTH: dict[str, float] = {}
+
+
+def recipe(name, lineage, donors=(), method="", smooth=None):
+    """smooth: auto-smooth angle in degrees. Curved and bevel-rounded props export with smooth normals below that
+    angle (Quaternius look: soft, light-catching edges), hard edges above it stay crisp."""
     def wrap(fn):
         RECIPES[name] = fn
         MANIFEST[name] = {"class": lineage, "donors": list(donors), "method": method or (fn.__doc__ or "").strip()}
+        if smooth:
+            SMOOTH[name] = smooth
         return fn
     return wrap
 
@@ -913,6 +920,170 @@ def loft(name, sections, mat, cap_start=True, cap_end=True, hidden=()):
     return ob
 
 
+def rbox(name, lo, hi, mat, r=0.015, seg=2, uv="box", band=None):
+    """Box with rounded (multi-segment) bevels: soft, light-catching edges in the Quaternius manner."""
+    ob = box(name, lo, hi, mat, uv="none")
+    if r > 0:
+        do_bevel(ob, r, seg)
+    if uv == "band":
+        uv_band(ob, band)
+    else:
+        uv_box(ob)
+    return ob
+
+
+def beam(name, a, b, x0, x1, h, mat, r=0.01, seg=2, band=None):
+    """Straight bar of rectangular section lying in a y-z plane from a = (y, z) to b = (y, z), spanning x0..x1 in x;
+    h is the section depth across the bar. Bench and board frames, raked slats, ribs on tapered faces."""
+    (ay, az), (by, bz) = a, b
+    dy, dz = by - ay, bz - az
+    L = math.hypot(dy, dz) or 1e-4
+    py, pz = -dz / L * h / 2, dy / L * h / 2
+    bm = bmesh.new()
+    vs = {}
+    for i, x in enumerate((x0, x1)):
+        for j, (cy, cz) in enumerate(((ay, az), (by, bz))):
+            for k, sg in enumerate((-1, 1)):
+                vs[i, j, k] = bm.verts.new(U(x, cy + sg * py, cz + sg * pz))
+    for f in (((0, 0, 0), (0, 1, 0), (0, 1, 1), (0, 0, 1)), ((1, 0, 0), (1, 0, 1), (1, 1, 1), (1, 1, 0)),
+              ((0, 0, 0), (1, 0, 0), (1, 1, 0), (0, 1, 0)), ((0, 0, 1), (0, 1, 1), (1, 1, 1), (1, 0, 1)),
+              ((0, 0, 0), (0, 0, 1), (1, 0, 1), (1, 0, 0)), ((0, 1, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1))):
+        bm.faces.new([vs[t] for t in f])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    if r > 0:
+        do_bevel(ob, r, seg)
+    if band:
+        uv_band(ob, band)
+    else:
+        uv_box(ob)
+    return ob
+
+
+def sweep(name, pts, radius, mat, segments=12, caps=True):
+    """Tube swept along a Unity-frame polyline: one ring per point on the bisector, parallel-transported so it never
+    twists — continuous bent tubes (bike hoops, chair frames, handles) with no gaps at the bends."""
+    P = [U(*p) for p in pts]
+    bm = bmesh.new()
+    rings = []
+    n1 = None
+    for i, p in enumerate(P):
+        if i == 0:
+            t = P[1] - P[0]
+        elif i == len(P) - 1:
+            t = P[-1] - P[-2]
+        else:
+            t = (P[i + 1] - P[i]).normalized() + (P[i] - P[i - 1]).normalized()
+        t.normalize()
+        if n1 is None:
+            ref = Vector((0, 0, 1)) if abs(t.z) < 0.9 else Vector((1, 0, 0))
+            n1 = t.cross(ref).normalized()
+        else:
+            n1 = (n1 - t * n1.dot(t)).normalized()
+        n2 = t.cross(n1).normalized()
+        rings.append([bm.verts.new(p + (n1 * math.cos(2 * math.pi * j / segments) + n2 * math.sin(2 * math.pi * j / segments)) * radius)
+                      for j in range(segments)])
+    for a, b in zip(rings, rings[1:]):
+        for j in range(segments):
+            bm.faces.new([a[j], a[(j + 1) % segments], b[(j + 1) % segments], b[j]])
+    if caps:
+        bm.faces.new(rings[0][::-1])
+        bm.faces.new(rings[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    uv_box(ob)
+    return ob
+
+
+def arc(cx, cy, r, a0, a1, n, z=0.0):
+    """Points of a circular arc in the x-y plane at depth z (degrees, counter-clockwise)."""
+    return [(cx + r * math.cos(math.radians(a0 + (a1 - a0) * k / n)), cy + r * math.sin(math.radians(a0 + (a1 - a0) * k / n)), z) for k in range(n + 1)]
+
+
+def vloft(name, sections, mat, cap_bottom=True, cap_top=True):
+    """Loft up through horizontal sections: [(y, [(x, z), ...]), ...] with equal point counts (bins, lids, bodies)."""
+    bm = bmesh.new()
+    rings = [[bm.verts.new(U(x, y, z)) for x, z in pts] for y, pts in sections]
+    n = len(rings[0])
+    for a, b in zip(rings, rings[1:]):
+        for i in range(n):
+            bm.faces.new([a[i], a[(i + 1) % n], b[(i + 1) % n], b[i]])
+    if cap_bottom:
+        bm.faces.new(rings[0][::-1])
+    if cap_top:
+        bm.faces.new(rings[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    uv_box(ob)
+    return ob
+
+
+def rrect(w, d, c, x=0.0, z=0.0):
+    """Octagonal rounded-rectangle outline (half sizes w, d, corner cut c) for vloft sections."""
+    return [(x - w + c, z - d), (x + w - c, z - d), (x + w, z - d + c), (x + w, z + d - c),
+            (x + w - c, z + d), (x - w + c, z + d), (x - w, z + d - c), (x - w, z - d + c)]
+
+
+def revolve_poly(name, profile, mat, n=8, rot=math.pi / 8, closed=False, band=None):
+    """Closed surface of revolution on a regular n-gon (octagonal basins, piers): profile [(radius, y), ...]. With
+    closed=True the last point joins the first (an annulus section such as a basin rim); otherwise ends at radius 0
+    close to a point and others are capped. Faces follow the polygon's flats, so the corners stay crisp."""
+    bm = bmesh.new()
+    rings = []
+    for r, y in profile:
+        rings.append([bm.verts.new(U(r * math.cos(rot + 2 * math.pi * i / n), y, r * math.sin(rot + 2 * math.pi * i / n))) for i in range(n)])
+    pairs = list(zip(rings, rings[1:])) + ([(rings[-1], rings[0])] if closed else [])
+    for a, b in pairs:
+        for i in range(n):
+            bm.faces.new([a[i], a[(i + 1) % n], b[(i + 1) % n], b[i]])
+    if not closed:
+        if profile[0][0] > 1e-4:
+            bm.faces.new(rings[0][::-1])
+        if profile[-1][0] > 1e-4:
+            bm.faces.new(rings[-1])
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-5)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    if band:
+        uv_band(ob, band)
+    else:
+        uv_box(ob)
+    return ob
+
+
+def slab_xy(name, pts, z0, z1, mat, band=None, r=0.0):
+    """A polygon drawn in the x-y plane (Unity frame, counter-clockwise) extruded from z0 to z1: pediments, crowns."""
+    bm = bmesh.new()
+    back = [bm.verts.new(U(x, y, z0)) for x, y in pts]
+    front = [bm.verts.new(U(x, y, z1)) for x, y in pts]
+    bm.faces.new(back[::-1])
+    bm.faces.new(front)
+    k = len(pts)
+    for i in range(k):
+        bm.faces.new([back[i], back[(i + 1) % k], front[(i + 1) % k], front[i]])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    if r > 0:
+        do_bevel(ob, r, 2)
+    if band:
+        uv_band(ob, band)
+    else:
+        uv_box(ob)
+    return ob
+
+
+def water_jet(name, tip, direction, reach, y_end, radius=0.022, steps=10):
+    """A spout's stream: a parabola from the tip (Unity frame) along a horizontal direction, landing at y_end."""
+    dx, dz = direction
+    pts = [(tip[0] + dx * reach * t, tip[1] - (tip[1] - y_end) * t * t, tip[2] + dz * reach * t) for t in [k / steps for k in range(steps + 1)]]
+    return sweep(name, pts, radius, "ENV_Water_Jet", segments=6)
+
+
 # ---------------------------------------------------------------- recipes: ground details and junctions
 
 @recipe("ENV_Plinth_2m", "CREATE_DERIVED")
@@ -938,7 +1109,7 @@ def drain_grate():
     return join("ENV_Drain_Grate", parts)
 
 
-@recipe("ENV_Manhole", "ORIGINAL")
+@recipe("ENV_Manhole", "ORIGINAL", smooth=35)
 def manhole():
     """Round cast-iron manhole cover flush with the paving."""
     return join("ENV_Manhole", [cylinder("disc", (0, 0.004, 0), 0.36, 0.02, "ENV_Metal_Iron", segments=20),
@@ -1022,36 +1193,53 @@ def street_name_plate():
                                           box("f", (-0.26, -0.09, 0.12), (0.26, 0.09, 0.125), "ENV_Sign_White")])
 
 
-@recipe("ENV_Cafe_Table", "ORIGINAL")
+@recipe("ENV_Cafe_Table", "ORIGINAL", smooth=40)
 def cafe_table():
-    """Round aluminium bar-terrace table (0.7 m)."""
-    return join("ENV_Cafe_Table", [cylinder("top", (0, 0.73, 0), 0.35, 0.03, "ENV_Metal_Galvanised", segments=16),
-                                   cylinder("stem", (0, 0.37, 0), 0.03, 0.7, "ENV_Metal_Iron", segments=8),
-                                   cylinder("foot", (0, 0.02, 0), 0.22, 0.04, "ENV_Metal_Iron", segments=12)])
+    """Round aluminium bar-terrace table (0.72 m): moulded top with a rolled edge, tube stem, heavy cast foot."""
+    return join("ENV_Cafe_Table", [
+        lathe("top", [(0.0, 0.715), (0.34, 0.715), (0.358, 0.724), (0.364, 0.742), (0.356, 0.758), (0.34, 0.764), (0.0, 0.764)], "ENV_PropMat_Alu", segments=24),
+        lathe("stem", [(0.034, 0.05), (0.034, 0.69), (0.06, 0.705), (0.07, 0.716)], "ENV_PropMat_Alu", segments=14),
+        lathe("foot", [(0.25, 0.0), (0.25, 0.02), (0.22, 0.035), (0.08, 0.06), (0.05, 0.075), (0.0, 0.075)], "ENV_PropMat_Negro", segments=20)])
 
 
-@recipe("ENV_Cafe_Chair", "ORIGINAL")
+@recipe("ENV_Cafe_Chair", "ORIGINAL", smooth=40)
 def cafe_chair():
-    """Aluminium terrace chair (faces +z)."""
-    parts = [box("seat", (-0.21, 0.44, -0.2), (0.21, 0.47, 0.2), "ENV_Metal_Galvanised")]
-    for sx in (-0.19, 0.19):
-        for sz in (-0.18, 0.18):
-            parts.append(tube(f"leg{sx}{sz}", (sx, 0.0, sz), (sx, 0.44, sz), 0.012, "ENV_Metal_Galvanised"))
-        parts.append(tube(f"back{sx}", (sx, 0.47, -0.19), (sx, 0.85, -0.23), 0.012, "ENV_Metal_Galvanised"))
-    for y in (0.62, 0.8):
-        parts.append(box(f"slat{y}", (-0.2, y, -0.23 + (y - 0.47) * -0.1), (0.2, y + 0.05, -0.2 + (y - 0.47) * -0.1), "ENV_Metal_Galvanised"))
+    """Aluminium bistro chair (faces +z): continuous tube frame — front legs, seat frame, rear legs running up into
+    the raked back — slatted seat and two back slats, side stretchers."""
+    A = "ENV_PropMat_Alu"
+    r = 0.0145
+    parts = []
+    for sx in (-0.2, 0.2):
+        parts.append(sweep(f"front{sx}", [(sx, 0.0, 0.2), (sx, 0.44, 0.185)], r, A))
+        parts.append(sweep(f"rear{sx}", [(sx, 0.0, -0.21), (sx, 0.44, -0.19), (sx, 0.62, -0.215), (sx, 0.86, -0.255)], r, A))
+        parts.append(sweep(f"str{sx}", [(sx, 0.16, 0.195), (sx, 0.16, -0.2)], 0.009, A, segments=8))
+    parts.append(sweep("seatframe", [(-0.2, 0.445, 0.19), (0.2, 0.445, 0.19), (0.2, 0.445, -0.19), (-0.2, 0.445, -0.19), (-0.2, 0.445, 0.19)], 0.011, A, segments=8))
+    for i in range(5):
+        z = 0.155 - i * 0.078
+        parts.append(rbox(f"slat{i}", (-0.205, 0.452, z - 0.028), (0.205, 0.466, z + 0.028), A, r=0.005))
+    for i, y in enumerate((0.66, 0.79)):
+        zc = -0.215 + (y - 0.62) * (-0.04 / 0.24)
+        parts.append(beam(f"back{i}", (y - 0.035, zc + 0.006), (y + 0.035, zc - 0.006), -0.2, 0.2, 0.014, A, r=0.005))
     return join("ENV_Cafe_Chair", parts)
 
 
-@recipe("ENV_Parasol", "ORIGINAL")
+@recipe("ENV_Parasol", "ORIGINAL", smooth=30)
 def parasol():
-    """Terrace parasol, 2.4 m canopy; canvas colour is a material slot (ENV_Canvas_Cream)."""
-    return join("ENV_Parasol", [cylinder("pole", (0, 1.15, 0), 0.025, 2.3, "ENV_Metal_Galvanised", segments=8),
-                                frustum("canopy", (0, 2.05, 0), 1.2, 0.05, 0.4, "ENV_Canvas_Cream", segments=8),
-                                cylinder("base", (0, 0.04, 0), 0.25, 0.08, "ENV_Metal_Iron", segments=12)])
+    """Terrace parasol, 2.5 m canopy: eight-panel canvas shell (ENV_Canvas_Cream) over eight ribs, finial, aluminium
+    pole with a runner, heavy iron base."""
+    parts = [lathe("canopy", [(0.035, 2.2), (1.2, 1.955), (1.26, 1.955), (1.26, 2.0), (0.9, 2.17), (0.45, 2.33), (0.06, 2.43), (0.0, 2.44)],
+                   "ENV_Canvas_Cream", segments=8),
+             lathe("pole", [(0.028, 0.08), (0.028, 2.46), (0.0, 2.47)], "ENV_PropMat_Alu", segments=12),
+             lathe("runner", [(0.045, 1.72), (0.045, 1.84), (0.0, 1.85)], "ENV_PropMat_Alu", segments=12),
+             sphere("finial", (0.0, 2.48, 0.0), 0.045, "ENV_PropMat_Alu", segments=12),
+             lathe("base", [(0.3, 0.0), (0.3, 0.035), (0.26, 0.06), (0.07, 0.09), (0.045, 0.14), (0.0, 0.14)], "ENV_PropMat_Negro", segments=20)]
+    for k in range(8):
+        a = 2 * math.pi * (k + 0.5) / 8
+        parts.append(tube(f"rib{k}", (0.0, 1.84, 0.0), (1.12 * math.cos(a), 1.955, 1.12 * math.sin(a)), 0.009, "ENV_PropMat_Alu", segments=6))
+    return join("ENV_Parasol", parts)
 
 
-@recipe("ENV_Bicycle", "ORIGINAL")
+@recipe("ENV_Bicycle", "ORIGINAL", smooth=35)
 def bicycle():
     """Ordinary town bicycle, 1.7 m, wheels in the y-z plane (length along z); frame paint slot ENV_Paint_Red."""
     r, rear, front = 0.33, -0.52, 0.52
@@ -1098,17 +1286,33 @@ def box_cardboard():
                                       box("tape", (-0.03, 0.35, -0.2), (0.03, 0.352, 0.2), "ENV_Plastic_Grey")])
 
 
-@recipe("ENV_Bench_Street", "CREATE_DERIVED")
+@recipe("ENV_Bench_Street", "CREATE_DERIVED", smooth=35)
 def bench_street():
-    """Municipal street bench: cast-iron ends, timber slats (kit MI_WoodTrim dark band), faces +z."""
+    """Municipal street bench (banco de listones) 1.9 m, faces +z: two cast-iron end frames painted carriage green —
+    splayed legs, seat rail, raked back post and a rounded armrest on rubber feet — carrying four seat slats and three
+    back slats in the kit timber (MI_WoodTrim dark band). Every edge rounded, sections thick enough to read at 15 m."""
     parts = []
-    for sx in (-0.8, 0.8):
-        parts.append(box(f"end{sx}", (sx - 0.04, 0, -0.25), (sx + 0.04, 0.42, 0.2), "ENV_Metal_Iron"))
-        parts.append(box(f"back{sx}", (sx - 0.04, 0.42, -0.27), (sx + 0.04, 0.85, -0.2), "ENV_Metal_Iron"))
-    for i, z in enumerate((-0.18, -0.06, 0.06, 0.16)):
-        parts.append(box(f"s{i}", (-0.95, 0.42, z - 0.05), (0.95, 0.46, z + 0.05), "MI_WoodTrim", uv="band", band=WOOD_DARK))
-    for i, y in enumerate((0.55, 0.7)):
-        parts.append(box(f"b{i}", (-0.95, y, -0.26), (0.95, y + 0.1, -0.22), "MI_WoodTrim", uv="band", band=WOOD_DARK))
+    iron = "ENV_PropMat_Verde"
+    for sx in (-0.82, 0.82):
+        x0, x1 = sx - 0.032, sx + 0.032
+        for i, (a, b) in enumerate((((0.0, 0.27), (0.44, 0.22)),     # front leg
+                                     ((0.0, -0.28), (0.44, -0.2)),    # rear leg
+                                     ((0.40, 0.25), (0.40, -0.24)),   # seat rail
+                                     ((0.38, -0.23), (0.88, -0.36)),  # raked back post
+                                     ((0.42, 0.22), (0.66, 0.21)),    # arm post
+                                     ((0.65, 0.27), (0.68, -0.29)))):  # armrest
+            parts.append(beam(f"f{sx}{i}", a, b, x0, x1, 0.058, iron, r=0.014))
+        for z in (0.27, -0.28):
+            parts.append(rbox(f"foot{sx}{z}", (sx - 0.05, 0.0, z - 0.055), (sx + 0.05, 0.03, z + 0.055), "ENV_PropMat_Oscuro", r=0.01))
+    for i, z in enumerate((0.19, 0.085, -0.02, -0.125)):
+        parts.append(rbox(f"s{i}", (-0.96, 0.43, z - 0.047), (0.96, 0.472, z + 0.047), "MI_WoodTrim", r=0.013, uv="band", band=WOOD_DARK))
+    dy, dz = 0.5, -0.13
+    L = math.hypot(dy, dz)
+    ty, tz = dy / L, dz / L            # along the back post
+    ny, nz = -tz, ty                   # its front normal (towards +z)
+    for i, t in enumerate((0.3, 0.56, 0.82)):
+        y, z = 0.38 + dy * t + ny * 0.047, -0.23 + dz * t + nz * 0.047
+        parts.append(beam(f"b{i}", (y - ty * 0.05, z - tz * 0.05), (y + ty * 0.05, z + tz * 0.05), -0.96, 0.96, 0.036, "MI_WoodTrim", r=0.012, band=WOOD_DARK))
     return join("ENV_Bench_Street", parts)
 
 
@@ -1155,7 +1359,7 @@ def window_boarded():
     return join("ENV_Window_Boarded", parts)
 
 
-@recipe("ENV_Sat_Dish", "ORIGINAL")
+@recipe("ENV_Sat_Dish", "ORIGINAL", smooth=35)
 def sat_dish():
     """Satellite dish on a wall bracket (late-1990s addition), facing +z and up."""
     dish = frustum("dish", (0, 0, 0), 0.06, 0.4, 0.14, "ENV_Sign_White", segments=16)
@@ -1433,7 +1637,7 @@ def rafter(name, x, z0, z1, top0, slope, w, h, mat, carve=True, hide_top=True):
     return ob
 
 
-@recipe("ENV_Downpipe", "ORIGINAL")
+@recipe("ENV_Downpipe", "ORIGINAL", smooth=35)
 def downpipe():
     """Rain-water downpipe, 3 m per unit height (the assembler scales y by storeys): painted iron pipe with socket
     collars and wall brackets. Hopper head and shoe are separate modules so scaling never stretches them."""
@@ -1444,7 +1648,7 @@ def downpipe():
     return join("ENV_Downpipe", parts)
 
 
-@recipe("ENV_Downpipe_Head", "ORIGINAL")
+@recipe("ENV_Downpipe_Head", "ORIGINAL", smooth=35)
 def downpipe_head():
     """Hopper head (embudo) under the eave: flared box collecting the gutter, short neck into the pipe. Pipe top at
     y = 0; the hopper sits above it."""
@@ -1467,7 +1671,7 @@ def downpipe_head():
     return join("ENV_Downpipe_Head", parts)
 
 
-@recipe("ENV_Downpipe_Shoe", "ORIGINAL")
+@recipe("ENV_Downpipe_Shoe", "ORIGINAL", smooth=35)
 def downpipe_shoe():
     """Pipe shoe (zapata): the pipe kicks forward at the foot and ends in a cast-iron boot over the channel."""
     parts = [tube("kick", (0, 0.42, 0), (0, 0.16, 0.12), 0.05, "ENV_Metal_Downpipe", segments=12),
@@ -1528,7 +1732,7 @@ def awning():
     return join("ENV_Awning", parts)
 
 
-@recipe("ENV_Lamp_Post", "ORIGINAL")
+@recipe("ENV_Lamp_Post", "ORIGINAL", smooth=35)
 def lamp_post():
     """Cast-iron street lamp in the classic Spanish 'fernandina' line (about 3.9 m): moulded base, fluted-looking
     tapering shaft with collars, four-sided lantern with a pyramid hood and finial."""
@@ -1555,7 +1759,7 @@ def lamp_post():
     return join("ENV_Lamp_Post", parts)
 
 
-@recipe("ENV_Bollard_Street", "ORIGINAL")
+@recipe("ENV_Bollard_Street", "ORIGINAL", smooth=35)
 def bollard_street():
     """Cast-iron street bollard (pilona), 0.95 m: moulded foot, slightly tapering body, collar and domed cap."""
     prof = [(0.12, 0.0), (0.12, 0.05), (0.095, 0.09), (0.085, 0.12), (0.078, 0.68), (0.098, 0.7), (0.098, 0.76), (0.075, 0.79),
@@ -1563,7 +1767,7 @@ def bollard_street():
     return join("ENV_Bollard_Street", [lathe("b", prof, "ENV_Metal_Iron", segments=14)])
 
 
-@recipe("ENV_Bin_Street", "CREATE_DERIVED")
+@recipe("ENV_Bin_Street", "CREATE_DERIVED", smooth=35)
 def bin_street():
     """Rustic litter bin: ring of dark timber slats (kit MI_WoodTrim dark band) bound by two iron hoops, iron rim,
     dark liner inside. Free-standing, 0.8 m."""
@@ -1585,7 +1789,7 @@ def bin_street():
     return join("ENV_Bin_Street", parts)
 
 
-@recipe("ENV_Utility_Box", "ORIGINAL")
+@recipe("ENV_Utility_Box", "ORIGINAL", smooth=35)
 def utility_box():
     """Meter cabinet (hornacina de contadores) on a ground-floor facade: galvanised steel box with a recessed door,
     hinges, lock, louvres and the service conduit down to the ground."""
@@ -1604,7 +1808,7 @@ def utility_box():
     return join("ENV_Utility_Box", parts)
 
 
-@recipe("ENV_Sign_Bracket", "ORIGINAL")
+@recipe("ENV_Sign_Bracket", "ORIGINAL", smooth=35)
 def sign_bracket():
     """Hanging shop sign on a wrought-iron bracket (the Pyrenean/lebaniego street's signature): wall plate, top bar,
     a scrolled strut, two rings and a painted board in a moulded dark-timber frame (blank: no lettering in ENV)."""
@@ -1663,29 +1867,120 @@ def shop_fascia():
     return join("ENV_Shop_Fascia", parts)
 
 
-@recipe("ENV_Planter_Pot", "ORIGINAL")
+@recipe("ENV_Window_Reja", "ORIGINAL", smooth=40)
+def window_reja():
+    """Box grille (reja de cajón) over a ground-floor wide window: square wrought-iron bars on a flat-bar frame that
+    stands out from the wall far enough to clear the kit sill, three flat cross bands, returns back to the wall — the
+    Spanish ground floor's first line of privacy and a cheap way to vary ground floors. Fits the kit wide window
+    (±0.80 m, sill 0.94 m, head 2.52 m, sill 0.42 m proud)."""
+    M = "ENV_PropMat_Negro"
+    x0, x1, y0, y1, zf, z0 = -0.86, 0.86, 0.9, 2.6, 0.47, WALL_FACE
+    parts = [rbox("top", (x0, y1 - 0.025, zf - 0.012), (x1, y1 + 0.02, zf + 0.012), M, r=0.005),
+             rbox("bot", (x0, y0 - 0.02, zf - 0.012), (x1, y0 + 0.025, zf + 0.012), M, r=0.005)]
+    for sx in (x0, x1):
+        parts.append(rbox(f"side{sx}", (sx - 0.022, y0 - 0.02, zf - 0.012), (sx + 0.022, y1 + 0.02, zf + 0.012), M, r=0.005))
+        for yy in (y0, y1):
+            parts.append(rbox(f"ret{sx}{yy}", (sx - 0.012, yy - 0.02, z0), (sx + 0.012, yy + 0.02, zf), M, r=0.004))
+        for zz in (z0 + (zf - z0) * 0.5,):
+            parts.append(rbox(f"rv{sx}", (sx - 0.01, y0, zz - 0.01), (sx + 0.01, y1, zz + 0.01), M, r=0.003))
+    x = x0 + 0.13
+    while x < x1 - 0.08:
+        parts.append(rbox(f"bar{x:.2f}", (x - 0.011, y0, zf - 0.011), (x + 0.011, y1, zf + 0.011), M, r=0.003))
+        x += 0.13
+    for yy in (1.12, 1.76, 2.4):
+        parts.append(rbox(f"band{yy}", (x0, yy - 0.018, zf - 0.004), (x1, yy + 0.018, zf + 0.016), M, r=0.004))
+    return join("ENV_Window_Reja", parts)
+
+
+@recipe("ENV_Fascia_Lamp", "ORIGINAL", smooth=40)
+def fascia_lamp():
+    """Gooseneck shop-sign lamp (aplique de rótulo): round wall plate, a curved arm reaching 0.55 m out and a small
+    enamelled shade hanging over the fascia below. Origin = foot of the plate on the wall face."""
+    z = WALL_FACE
+    M = "ENV_PropMat_Negro"
+    arm = [(0.0, 0.05, z + 0.01), (0.0, 0.08, z + 0.14), (0.0, 0.15, z + 0.3), (0.0, 0.16, z + 0.43), (0.0, 0.11, z + 0.53), (0.0, 0.03, z + 0.57)]
+    parts = [sweep("arm", arm, 0.013, M, segments=8),
+             lathe("shade", [(0.03, 0.03), (0.05, 0.0), (0.12, -0.1), (0.125, -0.115), (0.0, -0.115)], M, segments=16, center=(0.0, z + 0.57)),
+             sphere("bulb", (0.0, -0.1, z + 0.57), 0.04, "ENV_Lamp_Glass", segments=10)]
+    plate = lathe("plate", [(0.0, 0.0), (0.06, 0.0), (0.06, 0.018), (0.0, 0.018)], M, segments=14)
+    plate.rotation_euler = (math.radians(90), 0, 0)
+    plate.location = U(0, 0.06, z)
+    apply_transform(plate)
+    parts.append(plate)
+    return join("ENV_Fascia_Lamp", parts)
+
+
+@recipe("ENV_Door_Canopy", "ORIGINAL", smooth=30)
+def door_canopy():
+    """Tejaroz: the small tiled canopy over an old house door in the northern towns — two timber brackets with struts
+    on the wall, a boarded rafter frame falling away from the wall, curved clay tiles (cobijas) in a row, a mortar
+    fillet against the wall. 2.1 m wide, 0.78 m deep. Origin = door centre on the ground; sits above the kit door
+    frames (top 2.58 m)."""
+    z = WALL_FACE
+    T = "ENV_Joinery_Timber"
+    y0, depth, fall = 3.04, 0.74, 0.3            # top at the wall, projection, drop to the eave
+    t = math.atan2(fall, depth)
+    parts = []
+    for x in (-0.86, 0.86):
+        parts.append(beam(f"post{x}", (2.2, z + 0.035), (y0 - 0.02, z + 0.035), x - 0.045, x + 0.045, 0.07, T, r=0.008))
+        parts.append(beam(f"strut{x}", (2.26, z + 0.05), (y0 - fall * 0.82, z + depth * 0.8), x - 0.04, x + 0.04, 0.07, T, r=0.008))
+        parts.append(beam(f"rafter{x}", (y0 - 0.03, z), (y0 - fall - 0.04, z + depth + 0.02), x - 0.045, x + 0.045, 0.09, T, r=0.008))
+    parts.append(beam("board", (y0 + 0.02, z), (y0 - fall + 0.02, z + depth + 0.04), -1.05, 1.05, 0.035, T, r=0.006))
+    parts.append(beam("fascia", (y0 - fall - 0.06, z + depth + 0.02), (y0 - fall + 0.04, z + depth + 0.05), -1.05, 1.05, 0.04, T, r=0.006))
+    # curved tiles laid down the slope, 0.21 m apart, a little overhang at the eave
+    bm = bmesh.new()
+    L, R, n = depth + 0.12, 0.092, 7
+    for c in range(10):
+        xc = -0.945 + c * 0.21
+        rings = []
+        for k in range(5):
+            sd = L * k / 4
+            base = (y0 + 0.04 - sd * math.sin(t), z + sd * math.cos(t))
+            ring = []
+            for j in range(n + 1):
+                ph = math.pi * j / n
+                off = R * math.sin(ph) * (1.0 - 0.12 * k / 4)
+                ring.append(bm.verts.new(U(xc + R * math.cos(ph), base[0] + off * math.cos(t), base[1] + off * math.sin(t))))
+            rings.append(ring)
+        for a, b in zip(rings, rings[1:]):
+            for j in range(n):
+                bm.faces.new([a[j], a[j + 1], b[j + 1], b[j]])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    tiles = new_object("tiles", bm)
+    tiles.data.materials.append(material("ENV_Tile_Aged"))
+    solid = tiles.modifiers.new("solid", "SOLIDIFY")
+    solid.thickness = 0.018
+    bpy.context.view_layer.objects.active = tiles
+    bpy.ops.object.modifier_apply(modifier="solid")
+    uv_box(tiles)
+    parts.append(tiles)
+    parts.append(rbox("fillet", (-1.08, y0 - 0.02, z - 0.01), (1.08, y0 + 0.14, z + 0.07), "ENV_PropMat_Gris", r=0.02))
+    return join("ENV_Door_Canopy", parts)
+
+
+@recipe("ENV_Cable_Span", "ORIGINAL", smooth=40)
+def cable_span():
+    """Service cable slung across a lane between two facades (palomillas): a sagging black cable 4 m long from a
+    wall bracket with a white insulator at each end; scaled along x to the span. Origin = left anchor on its wall,
+    the cable runs along +x."""
+    M = "ENV_PropMat_Negro"
+    pts = [(4.0 * k / 16, -0.2 * (1 - (2 * k / 16 - 1) ** 2), 0.0) for k in range(17)]
+    parts = [sweep("cable", pts, 0.011, M, segments=6, caps=False)]
+    for x, sgn in ((0.0, 1), (4.0, -1)):
+        px0, px1 = (x, x + 0.012) if sgn > 0 else (x - 0.012, x)
+        parts.append(rbox(f"plate{x}", (px0, -0.06, -0.05), (px1, 0.06, 0.05), M, r=0.004))
+        parts.append(tube(f"hook{x}", (x, 0.0, 0.0), (x + 0.1 * sgn, 0.0, 0.0), 0.008, M, segments=6))
+        parts.append(sphere(f"ins{x}", (x + 0.1 * sgn, 0.0, 0.0), 0.028, "ENV_PropMat_Blanco", segments=8))
+    return join("ENV_Cable_Span", parts)
+
+
+@recipe("ENV_Planter_Pot", "ORIGINAL", smooth=40)
 def planter_pot():
-    """Terracotta planter pot (0.45 m): foot ring, flared body, rolled rim; soil top. Plants are placed separately."""
-    prof = [(0.0, 0.0), (0.15, 0.0), (0.16, 0.03), (0.155, 0.05), (0.19, 0.2), (0.225, 0.36), (0.25, 0.37), (0.255, 0.42), (0.235, 0.43), (0.215, 0.41)]
-    return join("ENV_Planter_Pot", [lathe("pot", prof, "ENV_Terracotta", segments=12),
-                                    lathe("soil", [(0.0, 0.39), (0.215, 0.39)], "ENV_Soil", segments=12)])
-
-
-@recipe("ENV_Tree_Plaza", "ORIGINAL")
-def tree_plaza():
-    """Plaza tree (plane/lime, pollarded): tapering trunk with bark (Nature pack bark), three limbs and a solid
-    painted crown of clustered lobes — no alpha cards (owner: card crowns read as big cards)."""
-    import random
-    rnd = random.Random(5)
-    parts = [lathe("trunk", [(0.22, 0.0), (0.17, 0.25), (0.15, 1.2), (0.13, 2.4), (0.1, 2.9)], "ENV_Src_Bark_NormalTree", segments=10)]
-    limbs = [((0, 2.5, 0), (0.9, 4.0, 0.3)), ((0, 2.6, 0), (-0.7, 4.2, 0.6)), ((0, 2.7, 0), (0.1, 4.3, -0.9))]
-    for i, (a, b) in enumerate(limbs):
-        parts.append(tube(f"limb{i}", a, b, 0.07, "ENV_Src_Bark_NormalTree", segments=7))
-    lobes = [(0.0, 4.9, 0.0, 1.5), (1.1, 4.4, 0.4, 1.15), (-0.9, 4.5, 0.7, 1.1), (0.2, 4.6, -1.1, 1.1), (0.9, 5.2, -0.6, 0.95),
-             (-0.8, 5.3, -0.4, 0.95), (-0.2, 5.6, 0.6, 1.0), (0.5, 4.0, 1.0, 0.8)]
-    for i, (x, y, z, r) in enumerate(lobes):
-        parts.append(lump(f"lobe{i}", (x, y - r * 0.55, z), (r, r * 0.85, r), "ENV_Foliage", seed=10 + i, rough=0.12))
-    return join("ENV_Tree_Plaza", parts)
+    """Terracotta planter pot (0.45 m): foot ring, flared body, thick rolled rim; soil top. Smooth-shaded."""
+    prof = [(0.0, 0.0), (0.15, 0.0), (0.162, 0.018), (0.158, 0.045), (0.19, 0.2), (0.222, 0.35), (0.235, 0.352), (0.258, 0.37),
+            (0.262, 0.4), (0.25, 0.428), (0.228, 0.432), (0.215, 0.41)]
+    return join("ENV_Planter_Pot", [lathe("pot", prof, "ENV_Terracotta", segments=20),
+                                    lathe("soil", [(0.0, 0.39), (0.215, 0.39)], "ENV_Soil", segments=20)])
 
 
 # ---- lebaniego vocabulary
@@ -1960,26 +2255,47 @@ def bridge_arch():
     return join("ENV_Bridge_Arch", parts)
 
 
-@recipe("ENV_Fountain_Trough", "CREATE_DERIVED")
+@recipe("ENV_Fountain_Trough", "CREATE_DERIVED", smooth=35)
 def fountain_trough():
-    """Village fountain and trough (fuente-abrevadero): dressed stone pillar with a moulded cap and an iron spout, a
-    long stone trough with water, a step. Back against a wall at z = 0, facing +z."""
-    st = "ENV_Stone_Sandstone"
-    parts = [box("step", (-1.35, 0.0, 0.0), (1.35, 0.12, 1.25), st, uv="band", band=ROCK_SLAB, bevel=0.02),
-             box("pillar", (-0.34, 0.12, 0.0), (0.34, 1.75, 0.34), st, uv="band", band=ROCK_SLAB, bevel=0.02),
-             box("cap", (-0.42, 1.75, -0.02), (0.42, 1.9, 0.42), st, uv="band", band=ROCK_SLAB, bevel=0.025),
-             lathe("ball", [(0.0, 1.9), (0.12, 1.94), (0.14, 2.02), (0.1, 2.1), (0.0, 2.14)], st, segments=10, center=(0.0, 0.2)),
-             box("plaque", (-0.2, 1.2, 0.34), (0.2, 1.45, 0.37), st, uv="band", band=ROCK_SLAB, bevel=0.01),
-             tube("spout", (0.0, 1.02, 0.34), (0.0, 0.96, 0.62), 0.025, "ENV_Metal_Iron", segments=8)]
-    # trough: floor + four walls
-    x0, x1, z0, z1, y0, y1 = -1.2, 1.2, 0.36, 1.12, 0.12, 0.66
-    t = 0.12
-    parts += [box("tb", (x0, y0, z0), (x1, y0 + 0.1, z1), st, uv="band", band=ROCK_SLAB),
-              box("tf", (x0, y0, z1 - t), (x1, y1, z1), st, uv="band", band=ROCK_SLAB, bevel=0.02),
-              box("tk", (x0, y0, z0), (x1, y1, z0 + t), st, uv="band", band=ROCK_SLAB, bevel=0.02),
-              box("tl", (x0, y0, z0), (x0 + t, y1, z1), st, uv="band", band=ROCK_SLAB, bevel=0.02),
-              box("tr", (x1 - t, y0, z0), (x1, y1, z1), st, uv="band", band=ROCK_SLAB, bevel=0.02),
-              box("water", (x0 + t, y1 - 0.1, z0 + t), (x1 - t, y1 - 0.09, z1 - t), "ENV_Water_Port")]
+    """Neighbourhood fountain of the Cantabrian towns (fuente de caños): a sandstone ashlar back wall framed by two
+    pilasters under a moulded cornice, a semicircular crown with ball finials (bolas), a plain plaque, two bronze
+    spouts pouring into a long stone trough (pilón), all on a granite apron. Back against a wall at z = 0, facing +z;
+    2.9 m wide, 3.1 m high. Invented; replaces the pillar-and-box version (owner: "esa fuente... está fatal")."""
+    ds, ash, gr = "ENV_Dressed_Arenisca", "ENV_Mason_Silleria_Arenisca", "ENV_PropMat_Granito"
+    parts = [rbox("apron", (-1.62, 0.0, 0.0), (1.62, 0.08, 1.55), gr, r=0.025),
+             rbox("plinth", (-1.36, 0.08, 0.0), (1.36, 0.34, 0.42), ds, r=0.02, uv="band", band=ROCK_SLAB),
+             box("body", (-1.12, 0.34, 0.0), (1.12, 1.96, 0.3), ash),
+             rbox("pilL", (-1.34, 0.34, 0.0), (-1.1, 1.96, 0.4), ds, r=0.02, uv="band", band=ROCK_SLAB),
+             rbox("pilR", (1.1, 0.34, 0.0), (1.34, 1.96, 0.4), ds, r=0.02, uv="band", band=ROCK_SLAB),
+             rbox("capL", (-1.38, 1.9, 0.0), (-1.06, 1.97, 0.44), ds, r=0.012, uv="band", band=ROCK_SLAB),
+             rbox("capR", (1.06, 1.9, 0.0), (1.38, 1.97, 0.44), ds, r=0.012, uv="band", band=ROCK_SLAB),
+             rbox("cornice", (-1.46, 1.97, 0.0), (1.46, 2.11, 0.48), ds, r=0.025, uv="band", band=ROCK_SLAB),
+             rbox("cornice2", (-1.36, 2.11, 0.0), (1.36, 2.17, 0.4), ds, r=0.015, uv="band", band=ROCK_SLAB),
+             rbox("plaque", (-0.42, 1.28, 0.28), (0.42, 1.7, 0.335), ds, r=0.012, uv="band", band=ROCK_SLAB),
+             rbox("plaque_in", (-0.34, 1.34, 0.3), (0.34, 1.64, 0.35), ds, r=0.008, uv="band", band=ROCK_SLAB)]
+    # semicircular crown with a thin moulded edge
+    crown = [(-0.78, 2.17)] + [(0.78 * math.cos(math.radians(180 - 180 * k / 16)), 2.17 + 0.62 * math.sin(math.radians(180 - 180 * k / 16))) for k in range(1, 16)] + [(0.78, 2.17)]
+    crown = [(x, y) for x, y in crown][::-1]
+    parts.append(slab_xy("crown", crown[::-1], 0.04, 0.3, ds, band=ROCK_SLAB, r=0.015))
+    # ball finials: on the pilasters and at the crown's apex
+    for x, y, z, rr in ((-1.2, 2.17, 0.2, 0.13), (1.2, 2.17, 0.2, 0.13), (0.0, 2.79, 0.17, 0.11)):
+        parts.append(lathe(f"fin{x}", [(0.1, y), (0.1, y + 0.08), (0.07, y + 0.1)], ds, segments=10, center=(x, z)))
+        parts.append(sphere(f"ball{x}", (x, y + 0.1 + rr, z), rr, ds, segments=12))
+    # two spouts with rosettes, the streams falling into the trough
+    for x in (-0.46, 0.46):
+        parts.append(cylinder(f"rose{x}", (x, 0.98, 0.31), 0.085, 0.03, "ENV_Bronze", segments=12, axis="z"))
+        tip = (x, 0.95, 0.66)
+        parts.append(sweep(f"spout{x}", [(x, 0.99, 0.3), (x, 0.985, 0.5), tip], 0.026, "ENV_Bronze", segments=10))
+        parts.append(water_jet(f"jet{x}", tip, (0.0, 1.0), 0.14, 0.64, radius=0.018))
+    # trough: floor + four rounded walls, water, an overflow notch spout on the right
+    x0, x1, z0, z1, y0, y1, t = -1.24, 1.24, 0.34, 1.16, 0.08, 0.74, 0.13
+    parts += [box("tb", (x0, y0, z0), (x1, y0 + 0.1, z1), gr),
+              rbox("tf", (x0, y0, z1 - t), (x1, y1, z1), gr, r=0.035),
+              rbox("tk", (x0, y0, z0), (x1, y1, z0 + t), gr, r=0.035),
+              rbox("tl", (x0, y0, z0), (x0 + t, y1, z1), gr, r=0.035),
+              rbox("tr", (x1 - t, y0, z0), (x1, y1, z1), gr, r=0.035),
+              box("water", (x0 + t, y1 - 0.11, z0 + t), (x1 - t, y1 - 0.1, z1 - t), "ENV_Water_Port"),
+              tube("overflow", (x1 - 0.02, 0.62, 0.75), (x1 + 0.1, 0.6, 0.75), 0.02, "ENV_Bronze", segments=8)]
     return join("ENV_Fountain_Trough", parts)
 
 
@@ -2007,16 +2323,6 @@ def river_stairs():
     parts.append(tube("rail", (0.0, 0.95, w + 0.12), (lx, 0.95 - 3.0, w + 0.12), 0.022, "ENV_Metal_Iron", segments=8))
     parts.append(tube("rail2", (lx, -2.05, w + 0.12), (lx + 1.5, -2.05, w + 0.12), 0.022, "ENV_Metal_Iron", segments=8))
     return join("ENV_River_Stairs", parts)
-
-
-@recipe("ENV_Hill_Tree", "ORIGINAL")
-def hill_tree():
-    """Low-cost backdrop tree for the hills around the town: a conifer/oak blob of 2-3 solid painted lobes on a short
-    trunk, readable in silhouette through the valley fog."""
-    parts = [lathe("trunk", [(0.25, 0.0), (0.18, 1.6), (0.12, 2.6)], "ENV_Src_Bark_NormalTree", segments=6)]
-    for i, (x, y, z, r) in enumerate(((0, 4.2, 0, 2.2), (0.9, 3.4, 0.5, 1.5), (-0.8, 3.6, -0.4, 1.6))):
-        parts.append(lump(f"l{i}", (x, y - r * 0.55, z), (r, r * 1.1, r), "ENV_Foliage", seed=30 + i, rough=0.1))
-    return join("ENV_Hill_Tree", parts)
 
 
 @recipe("ENV_Kiosk_Plaza", "CREATE_DERIVED")
@@ -2121,17 +2427,21 @@ def sign_panel():
     return join("ENV_Sign_Panel", [body, face])
 
 
-@recipe("ENV_Blade_Sign", "ORIGINAL")
+@recipe("ENV_Blade_Sign", "ORIGINAL", smooth=40)
 def blade_sign():
-    """Projecting light-box sign (modern shops, pharmacy cross): steel arm and a 0.6 m square box, both faces carry
-    the sign texture (ENV_Sign_Board remapped per business)."""
+    """Projecting light-box sign (modern shops, pharmacy cross): round wall plate and steel arm, a 0.6 m box with
+    rounded edges; both faces carry the sign texture (ENV_Sign_Board remapped per business)."""
     y0, y1, z0, z1 = 2.75, 3.35, WALL_FACE + 0.18, WALL_FACE + 0.78
-    parts = [box("plate", (-0.07, 3.0, WALL_FACE - 0.005), (0.07, 3.2, WALL_FACE + 0.02), "ENV_Metal_Galvanised", bevel=0.005),
-             box("arm", (-0.025, 3.07, WALL_FACE), (0.025, 3.13, z0 + 0.02), "ENV_Metal_Galvanised"),
-             box("case", (-0.05, y0, z0), (0.05, y1, z1), "ENV_Metal_Galvanised", bevel=0.012)]
+    parts = [lathe("plate", [(0.0, 0.0), (0.09, 0.0), (0.09, 0.02), (0.0, 0.02)], "ENV_Metal_Galvanised", segments=16),
+             rbox("arm", (-0.025, 3.07, WALL_FACE), (0.025, 3.13, z0 + 0.02), "ENV_Metal_Galvanised", r=0.008),
+             rbox("case", (-0.055, y0, z0), (0.055, y1, z1), "ENV_Metal_Galvanised", r=0.025, seg=3)]
+    plate = parts[0]
+    plate.rotation_euler = (math.radians(90), 0, 0)
+    plate.location = U(0, 3.1, WALL_FACE)
+    apply_transform(plate)
     for sx in (-1, 1):
         q = bmesh.new()
-        vs = [q.verts.new(U(sx * 0.052, y, z)) for y, z in ((y0 + 0.03, z0 + 0.03), (y0 + 0.03, z1 - 0.03), (y1 - 0.03, z1 - 0.03), (y1 - 0.03, z0 + 0.03))]
+        vs = [q.verts.new(U(sx * 0.0565, y, z)) for y, z in ((y0 + 0.035, z0 + 0.035), (y0 + 0.035, z1 - 0.035), (y1 - 0.035, z1 - 0.035), (y1 - 0.035, z0 + 0.035))]
         q.faces.new(vs)
         ob = new_object(f"face{sx}", q)
         ob.data.materials.append(material("ENV_Sign_Board"))
@@ -2143,31 +2453,45 @@ def blade_sign():
     return join("ENV_Blade_Sign", parts)
 
 
-@recipe("ENV_AFrame_Board", "ORIGINAL")
+@recipe("ENV_AFrame_Board", "ORIGINAL", smooth=35)
 def aframe_board():
-    """Bar A-frame chalkboard (pizarra): two timber-framed boards leaning together, the chalk face maps a notice."""
+    """Bar A-frame chalkboard (pizarra de caballete) 1 m: two framed boards hinged at the top — chunky timber stiles
+    and rails with rounded edges around a dark board, the chalk face (ENV_Sign_Board, remapped per business) on the
+    outside of each, iron hinges and a spreader bar."""
     parts = []
-    h, w, lean = 0.95, 0.56, 0.22
+    h, lean, zt = 1.0, 0.25, 0.03
+    L = math.hypot(h, lean - zt)
     for s in (1, -1):
-        zb, zt = s * lean, s * 0.02
-        for x in (-w / 2, w / 2 - 0.035):
-            parts.append(tube(f"leg{s}{x}", (x + 0.017, 0.0, zb), (x + 0.017, h, zt), 0.018, "MI_WoodTrim", segments=4))
-        parts.append(tube(f"top{s}", (-w / 2, h - 0.03, zt + (zb - zt) * 0.03), (w / 2, h - 0.03, zt + (zb - zt) * 0.03), 0.02, "MI_WoodTrim", segments=4))
+        zb = s * lean
+        ty, tz = h / L, (s * zt - zb) / L          # up along the board
+        ny, nz = -tz * s, ty * s                   # outward normal
+        ny, nz = (ny, nz) if nz * s > 0 else (-ny, -nz)
+        def at(v, w=0.0):
+            return (v * ty + w * ny, zb + v * tz + w * nz)
+        for x0, x1 in ((-0.31, -0.26), (0.26, 0.31)):
+            parts.append(beam(f"stile{s}{x0}", at(0.0), at(L), x0, x1, 0.032, "MI_WoodTrim", r=0.009, band=WOOD_DARK))
+        parts.append(beam(f"top{s}", at(L - 0.09), at(L - 0.01), -0.26, 0.26, 0.032, "MI_WoodTrim", r=0.009, band=WOOD_DARK))
+        parts.append(beam(f"bot{s}", at(0.1), at(0.18), -0.26, 0.26, 0.032, "MI_WoodTrim", r=0.009, band=WOOD_DARK))
+        parts.append(beam(f"panel{s}", at(0.18), at(L - 0.09), -0.26, 0.26, 0.014, "ENV_PropMat_Oscuro", r=0.0))
         q = bmesh.new()
-        pts = [(-w / 2 + 0.04, 0.12), (w / 2 - 0.04, 0.12), (w / 2 - 0.04, h - 0.06), (-w / 2 + 0.04, h - 0.06)]
-        vs = [q.verts.new(U(x, y, zb + (zt - zb) * (y / h) + s * 0.004)) for x, y in pts]
+        (ay, az), (by, bz) = at(0.2, 0.0085), at(L - 0.11, 0.0085)
+        vs = [q.verts.new(U(x, y, z)) for x, y, z in ((-0.245, ay, az), (0.245, ay, az), (0.245, by, bz), (-0.245, by, bz))]
         q.faces.new(vs)
         ob = new_object(f"chalk{s}", q)
         ob.data.materials.append(material("ENV_Sign_Board"))
         layer = _uv_layer(ob.data).data
         for li, uv in zip(ob.data.polygons[0].loop_indices, [(0, 0), (1, 0), (1, 1), (0, 1)]):
             layer[li].uv = (1 - uv[0], uv[1]) if s > 0 else uv
-        fix_face_normal(ob, (0, 0.3, s))
+        fix_face_normal(ob, (0, ny, nz))
         parts.append(ob)
+    for hx in (-0.2, 0.2):
+        parts.append(cylinder(f"hinge{hx}", (hx, h - 0.005, 0.0), 0.016, 0.09, "ENV_PropMat_Negro", segments=10, axis="x"))
+    parts.append(sweep("spreader", [(-0.24, 0.36, -0.17), (-0.24, 0.36, 0.17)], 0.008, "ENV_PropMat_Negro", segments=6))
+    parts.append(sweep("spreader2", [(0.24, 0.36, -0.17), (0.24, 0.36, 0.17)], 0.008, "ENV_PropMat_Negro", segments=6))
     return join("ENV_AFrame_Board", parts)
 
 
-@recipe("ENV_ATM", "ORIGINAL")
+@recipe("ENV_ATM", "ORIGINAL", smooth=35)
 def atm():
     """Cash machine set in a bank's ground floor: stainless surround, hood, screen, keypad, card and cash slots."""
     z = WALL_FACE
@@ -2181,31 +2505,43 @@ def atm():
     return join("ENV_ATM", parts)
 
 
-@recipe("ENV_AC_Unit", "ORIGINAL")
+@recipe("ENV_AC_Unit", "ORIGINAL", smooth=40)
 def ac_unit():
-    """Split air-conditioning outdoor unit on wall brackets, fan grille, refrigerant pipes in a white trunking:
-    the 21st-century addition every Spanish facade has somewhere (owner: "falta arquitectura contemporánea")."""
+    """Split air-conditioning outdoor unit on wall brackets: rounded white case, round fan grille (rings and spokes
+    over the dark fan), louvred side panel, insulated refrigerant pipes into a white trunking — the 21st-century
+    addition every Spanish facade has somewhere."""
     z = WALL_FACE
-    parts = [box("case", (-0.4, 0.0, z + 0.06), (0.4, 0.55, z + 0.34), "ENV_Plastic_Grey", bevel=0.02),
-             cylinder("fan", (-0.08, 0.28, z + 0.345), 0.2, 0.012, "ENV_Plastic_Black", segments=20, axis="z"),
-             box("side", (0.2, 0.05, z + 0.345), (0.36, 0.5, z + 0.35), "ENV_Plastic_Black")]
+    W, D = "ENV_PropMat_Blanco", "ENV_PropMat_Oscuro"
+    fz = z + 0.36
+    parts = [rbox("case", (-0.4, 0.0, z + 0.07), (0.4, 0.56, fz), W, r=0.028),
+             cylinder("fan", (-0.1, 0.28, fz - 0.004), 0.2, 0.012, D, segments=24, axis="z"),
+             rbox("sidepanel", (0.17, 0.06, fz - 0.004), (0.36, 0.5, fz + 0.004), D, r=0.004)]
+    for k, rr in enumerate((0.2, 0.14, 0.08)):
+        parts.append(torus(f"ring{k}", (-0.1, 0.28, fz + 0.006), rr, 0.009, W, axis="z", segments=24))
+    parts.append(rbox("spokeH", (-0.3, 0.272, fz), (0.1, 0.288, fz + 0.012), W, r=0.004))
+    parts.append(rbox("spokeV", (-0.108, 0.08, fz), (-0.092, 0.48, fz + 0.012), W, r=0.004))
+    for k in range(8):
+        y = 0.09 + k * 0.05
+        parts.append(rbox(f"louvre{k}", (0.18, y, fz + 0.002), (0.35, y + 0.022, fz + 0.016), W, r=0.004))
     for sx in (-0.3, 0.3):
-        parts.append(box(f"brk{sx}", (sx - 0.02, -0.06, z), (sx + 0.02, 0.0, z + 0.4), "ENV_Metal_Galvanised"))
-        parts.append(box(f"brv{sx}", (sx - 0.02, -0.06, z), (sx + 0.02, 0.35, z + 0.03), "ENV_Metal_Galvanised"))
-    parts.append(box("trunk", (0.34, 0.25, z), (0.4, 1.3, z + 0.05), "ENV_Blind_PVC"))
+        parts.append(rbox(f"brk{sx}", (sx - 0.022, -0.06, z), (sx + 0.022, -0.02, z + 0.44), "ENV_PropMat_Galv", r=0.006))
+        parts.append(rbox(f"brv{sx}", (sx - 0.022, -0.06, z), (sx + 0.022, 0.32, z + 0.035), "ENV_PropMat_Galv", r=0.006))
+    parts.append(sweep("pipe1", [(0.4, 0.1, z + 0.14), (0.47, 0.1, z + 0.1), (0.47, 0.2, z + 0.04)], 0.018, D, segments=8))
+    parts.append(sweep("pipe2", [(0.4, 0.16, z + 0.2), (0.47, 0.16, z + 0.12), (0.47, 0.26, z + 0.04)], 0.014, D, segments=8))
+    parts.append(rbox("trunk", (0.43, 0.24, z), (0.51, 1.35, z + 0.06), W, r=0.01))
     return join("ENV_AC_Unit", parts)
 
 
-@recipe("ENV_Alarm_Box", "ORIGINAL")
+@recipe("ENV_Alarm_Box", "ORIGINAL", smooth=40)
 def alarm_box():
-    """Burglar-alarm siren box over a shop: white case, coloured flash lens."""
+    """Burglar-alarm siren box over a shop: rounded white moulded case, coloured flash lens, red band."""
     z = WALL_FACE
-    return join("ENV_Alarm_Box", [box("case", (-0.14, 0.0, z), (0.14, 0.34, z + 0.09), "ENV_Paint_White", bevel=0.02),
-                                  box("lens", (-0.06, 0.24, z + 0.09), (0.06, 0.31, z + 0.11), "ENV_Plastic_Blue", bevel=0.01),
-                                  box("band", (-0.14, 0.1, z + 0.09), (0.14, 0.13, z + 0.095), "ENV_Plastic_Red")])
+    return join("ENV_Alarm_Box", [rbox("case", (-0.14, 0.0, z), (0.14, 0.34, z + 0.09), "ENV_PropMat_Blanco", r=0.03, seg=3),
+                                  rbox("lens", (-0.065, 0.235, z + 0.07), (0.065, 0.31, z + 0.108), "ENV_Plastic_Blue", r=0.012),
+                                  rbox("band", (-0.142, 0.1, z + 0.05), (0.142, 0.135, z + 0.094), "ENV_Plastic_Red", r=0.006)])
 
 
-@recipe("ENV_Intercom", "ORIGINAL")
+@recipe("ENV_Intercom", "ORIGINAL", smooth=35)
 def intercom():
     """Door-entry panel beside a portal (portero automático): aluminium plate, speaker grille, a column of buttons."""
     z = WALL_FACE
@@ -2216,26 +2552,29 @@ def intercom():
     return join("ENV_Intercom", parts)
 
 
-@recipe("ENV_Extractor_Vent", "ORIGINAL")
+@recipe("ENV_Extractor_Vent", "ORIGINAL", smooth=40)
 def extractor_vent():
-    """Kitchen/bathroom extractor outlet: louvred plastic grille with a sooty drip below."""
+    """Kitchen/bathroom extractor outlet: rounded louvred plastic grille."""
     z = WALL_FACE
-    parts = [box("frame", (-0.13, 0.0, z), (0.13, 0.26, z + 0.03), "ENV_Plastic_Grey", bevel=0.006)]
+    parts = [rbox("frame", (-0.13, 0.0, z), (0.13, 0.26, z + 0.035), "ENV_Plastic_Grey", r=0.01)]
     for k in range(5):
-        parts.append(box(f"l{k}", (-0.11, 0.03 + k * 0.045, z + 0.03), (0.11, 0.05 + k * 0.045, z + 0.045), "ENV_Plastic_Grey"))
+        parts.append(rbox(f"l{k}", (-0.11, 0.03 + k * 0.045, z + 0.03), (0.11, 0.052 + k * 0.045, z + 0.05), "ENV_Plastic_Grey", r=0.005))
     return join("ENV_Extractor_Vent", parts)
 
 
-@recipe("ENV_Telecom_Box", "ORIGINAL")
+@recipe("ENV_Telecom_Box", "ORIGINAL", smooth=40)
 def telecom_box():
-    """Telecom/electric junction box with the cable dropping into it."""
+    """Telecom/electric junction box: rounded grey case with a lid seam, the cable dropping into it in a clip line."""
     z = WALL_FACE
-    return join("ENV_Telecom_Box", [box("box", (-0.18, 0.0, z), (0.18, 0.46, z + 0.13), "ENV_Plastic_Grey", bevel=0.012),
-                                    box("lid", (-0.16, 0.03, z + 0.13), (0.16, 0.43, z + 0.14), "ENV_Plastic_Grey"),
-                                    tube("cable", (0.1, 0.46, z + 0.06), (0.1, 1.6, z + 0.04), 0.012, "ENV_Rubber", segments=6)])
+    parts = [rbox("box", (-0.18, 0.0, z), (0.18, 0.46, z + 0.13), "ENV_Plastic_Grey", r=0.018),
+             rbox("lid", (-0.16, 0.03, z + 0.12), (0.16, 0.43, z + 0.142), "ENV_Plastic_Grey", r=0.01),
+             sweep("cable", [(0.1, 0.44, z + 0.07), (0.1, 0.6, z + 0.04), (0.1, 1.6, z + 0.035)], 0.012, "ENV_Rubber", segments=6)]
+    for y in (0.8, 1.2):
+        parts.append(rbox(f"clip{y}", (0.08, y, z), (0.12, y + 0.025, z + 0.055), "ENV_Plastic_Grey", r=0.005))
+    return join("ENV_Telecom_Box", parts)
 
 
-@recipe("ENV_Gas_Pipe", "ORIGINAL")
+@recipe("ENV_Gas_Pipe", "ORIGINAL", smooth=35)
 def gas_pipe():
     """Natural-gas riser: yellow painted pipe up the facade from a meter box, with clamps."""
     z = WALL_FACE
@@ -2256,22 +2595,71 @@ def _container(name, x, colour, lid):
     return parts
 
 
-@recipe("ENV_Recycling_Bins", "ORIGINAL")
+@recipe("ENV_Recycling_Bins", "ORIGINAL", smooth=50)
 def recycling_bins():
-    """Street recycling set (contenedores): glass (green), packaging (yellow), paper (blue), rounded plastic bodies."""
-    parts = _container("g", -1.25, "ENV_Paint_Green", "ENV_Paint_Green") + _container("y", 0.0, "ENV_Plastic_Yellow", "ENV_Plastic_Yellow") \
-        + _container("b", 1.25, "ENV_Plastic_Blue", "ENV_Plastic_Blue")
+    """Street recycling point (contenedores de carga trasera): packaging (yellow), paper (blue) and general waste
+    (grey) 800 l bins — tapered moulded bodies with rounded corners, overhanging domed lids, front ribs and label,
+    handle bar, foot pedal and castors. Paint-worn plastic prop materials, grime at the foot."""
+    parts = []
+    # y: tapered body, overhanging domed lid, front ribs, handle, pedal, label, four castors
+    parts += [vloft("ybody", [(0.17, rrect(0.5, 0.41, 0.09, -1.3)), (1.1, rrect(0.56, 0.46, 0.1, -1.3)),
+                                     (1.14, rrect(0.58, 0.48, 0.1, -1.3))], "ENV_PropMat_Amarillo"),
+              vloft("ylid", [(1.14, rrect(0.61, 0.52, 0.1, -1.3)), (1.2, rrect(0.61, 0.52, 0.1, -1.3)),
+                                    (1.27, rrect(0.57, 0.46, 0.12, -1.3)), (1.31, rrect(0.5, 0.36, 0.12, -1.3))], "ENV_PropMat_Amarillo"),
+              sweep("yhandle", [(-1.3 - 0.3, 1.2, 0.52), (-1.3 - 0.3, 1.2, 0.58), (-1.3 + 0.3, 1.2, 0.58), (-1.3 + 0.3, 1.2, 0.52)], 0.018, "ENV_PropMat_Oscuro", segments=8),
+              rbox("ypedal", (-1.3 - 0.16, 0.16, 0.38), (-1.3 + 0.16, 0.2, 0.52), "ENV_PropMat_Oscuro", r=0.01),
+              beam("ylabel", (0.72, 0.4425), (1.0, 0.4555), -1.3 - 0.2, -1.3 + 0.2, 0.012, "ENV_PropMat_Blanco", r=0.004)]
+    for rx in (-0.34, 0.34):
+        parts.append(beam(f"yrib{rx}", (0.25, 0.415 + 0.004), (1.08, 0.458 + 0.004), -1.3 + rx - 0.025, -1.3 + rx + 0.025, 0.03, "ENV_PropMat_Amarillo", r=0.01))
+    for wx in (-0.38, 0.38):
+        for wz in (-0.3, 0.3):
+            parts.append(cylinder(f"yw{wx}{wz}", (-1.3 + wx, 0.085, wz), 0.085, 0.055, "ENV_PropMat_Oscuro", segments=14, axis="x"))
+            parts.append(rbox(f"yfork{wx}{wz}", (-1.3 + wx - 0.04, 0.1, wz - 0.05), (-1.3 + wx + 0.04, 0.2, wz + 0.05), "ENV_PropMat_Oscuro", r=0.01))
+
+    # b: tapered body, overhanging domed lid, front ribs, handle, pedal, label, four castors
+    parts += [vloft("bbody", [(0.17, rrect(0.5, 0.41, 0.09, 0.0)), (1.1, rrect(0.56, 0.46, 0.1, 0.0)),
+                                     (1.14, rrect(0.58, 0.48, 0.1, 0.0))], "ENV_PropMat_Azul"),
+              vloft("blid", [(1.14, rrect(0.61, 0.52, 0.1, 0.0)), (1.2, rrect(0.61, 0.52, 0.1, 0.0)),
+                                    (1.27, rrect(0.57, 0.46, 0.12, 0.0)), (1.31, rrect(0.5, 0.36, 0.12, 0.0))], "ENV_PropMat_Azul"),
+              sweep("bhandle", [(0.0 - 0.3, 1.2, 0.52), (0.0 - 0.3, 1.2, 0.58), (0.0 + 0.3, 1.2, 0.58), (0.0 + 0.3, 1.2, 0.52)], 0.018, "ENV_PropMat_Oscuro", segments=8),
+              rbox("bpedal", (0.0 - 0.16, 0.16, 0.38), (0.0 + 0.16, 0.2, 0.52), "ENV_PropMat_Oscuro", r=0.01),
+              beam("blabel", (0.72, 0.4425), (1.0, 0.4555), 0.0 - 0.2, 0.0 + 0.2, 0.012, "ENV_PropMat_Blanco", r=0.004)]
+    for rx in (-0.34, 0.34):
+        parts.append(beam(f"brib{rx}", (0.25, 0.415 + 0.004), (1.08, 0.458 + 0.004), 0.0 + rx - 0.025, 0.0 + rx + 0.025, 0.03, "ENV_PropMat_Azul", r=0.01))
+    for wx in (-0.38, 0.38):
+        for wz in (-0.3, 0.3):
+            parts.append(cylinder(f"bw{wx}{wz}", (0.0 + wx, 0.085, wz), 0.085, 0.055, "ENV_PropMat_Oscuro", segments=14, axis="x"))
+            parts.append(rbox(f"bfork{wx}{wz}", (0.0 + wx - 0.04, 0.1, wz - 0.05), (0.0 + wx + 0.04, 0.2, wz + 0.05), "ENV_PropMat_Oscuro", r=0.01))
+
+    # g: tapered body, overhanging domed lid, front ribs, handle, pedal, label, four castors
+    parts += [vloft("gbody", [(0.17, rrect(0.5, 0.41, 0.09, 1.3)), (1.1, rrect(0.56, 0.46, 0.1, 1.3)),
+                                     (1.14, rrect(0.58, 0.48, 0.1, 1.3))], "ENV_PropMat_Gris"),
+              vloft("glid", [(1.14, rrect(0.61, 0.52, 0.1, 1.3)), (1.2, rrect(0.61, 0.52, 0.1, 1.3)),
+                                    (1.27, rrect(0.57, 0.46, 0.12, 1.3)), (1.31, rrect(0.5, 0.36, 0.12, 1.3))], "ENV_PropMat_Gris"),
+              sweep("ghandle", [(1.3 - 0.3, 1.2, 0.52), (1.3 - 0.3, 1.2, 0.58), (1.3 + 0.3, 1.2, 0.58), (1.3 + 0.3, 1.2, 0.52)], 0.018, "ENV_PropMat_Oscuro", segments=8),
+              rbox("gpedal", (1.3 - 0.16, 0.16, 0.38), (1.3 + 0.16, 0.2, 0.52), "ENV_PropMat_Oscuro", r=0.01),
+              beam("glabel", (0.72, 0.4425), (1.0, 0.4555), 1.3 - 0.2, 1.3 + 0.2, 0.012, "ENV_PropMat_Blanco", r=0.004)]
+    for rx in (-0.34, 0.34):
+        parts.append(beam(f"grib{rx}", (0.25, 0.415 + 0.004), (1.08, 0.458 + 0.004), 1.3 + rx - 0.025, 1.3 + rx + 0.025, 0.03, "ENV_PropMat_Gris", r=0.01))
+    for wx in (-0.38, 0.38):
+        for wz in (-0.3, 0.3):
+            parts.append(cylinder(f"gw{wx}{wz}", (1.3 + wx, 0.085, wz), 0.085, 0.055, "ENV_PropMat_Oscuro", segments=14, axis="x"))
+            parts.append(rbox(f"gfork{wx}{wz}", (1.3 + wx - 0.04, 0.1, wz - 0.05), (1.3 + wx + 0.04, 0.2, wz + 0.05), "ENV_PropMat_Oscuro", r=0.01))
+
     return join("ENV_Recycling_Bins", parts)
 
 
-@recipe("ENV_Bike_Rack", "ORIGINAL")
+@recipe("ENV_Bike_Rack", "ORIGINAL", smooth=40)
 def bike_rack():
-    """Three galvanised hoops set in the paving."""
+    """Three galvanised Sheffield hoops (0.82 m, 0.8 m apart) on round base flanges, each with a low tie bar for the
+    wheel: continuous bent 60 mm tube, thick enough to read from across the street."""
     parts = []
     for x in (-0.8, 0.0, 0.8):
-        pts = [(x - 0.3, 0.0), (x - 0.3, 0.6)] + [(x + 0.3 * math.cos(math.pi - a * math.pi / 8), 0.6 + 0.3 * math.sin(math.pi - a * math.pi / 8)) for a in range(1, 8)] + [(x + 0.3, 0.6), (x + 0.3, 0.0)]
-        for i, (a, b) in enumerate(zip(pts, pts[1:])):
-            parts.append(tube(f"h{x}{i}", (a[0], a[1], 0), (b[0], b[1], 0), 0.025, "ENV_Metal_Galvanised", segments=6))
+        pts = [(x - 0.31, 0.0, 0.0), (x - 0.31, 0.6, 0.0)] + arc(x - 0.1, 0.6, 0.21, 180, 90, 6)[1:] + arc(x + 0.1, 0.6, 0.21, 90, 0, 6) + [(x + 0.31, 0.0, 0.0)]
+        parts.append(sweep(f"hoop{x}", pts, 0.03, "ENV_PropMat_Galv", segments=12))
+        parts.append(sweep(f"tie{x}", [(x - 0.31, 0.3, 0.0), (x + 0.31, 0.3, 0.0)], 0.018, "ENV_PropMat_Galv", segments=10))
+        for fx in (x - 0.31, x + 0.31):
+            parts.append(lathe(f"flange{fx}", [(0.075, 0.0), (0.075, 0.008), (0.045, 0.02), (0.0, 0.02)], "ENV_PropMat_Galv", segments=16, center=(fx, 0.0)))
     return join("ENV_Bike_Rack", parts)
 
 
@@ -2296,7 +2684,7 @@ def chimney_stone():
     return join("ENV_Chimney_Stone", parts)
 
 
-@recipe("ENV_Chimney_Flue", "ORIGINAL")
+@recipe("ENV_Chimney_Flue", "ORIGINAL", smooth=35)
 def chimney_flue():
     """Galvanised stove flue with a conical rain cap and a guy wire stub (a later addition on many roofs)."""
     return join("ENV_Chimney_Flue", [cylinder("pipe", (0, 0.8, 0), 0.08, 1.6, "ENV_Metal_Galvanised", segments=10),
@@ -2316,77 +2704,63 @@ def _plant_crown(prefix, rng_seed, n, r, h, mat, base=0.0, spread=1.0):
     return out
 
 
-@recipe("ENV_Plant_Hydrangea", "ORIGINAL")
-def plant_hydrangea():
-    """Hortensia: the damp-north doorstep and garden shrub — dark leaf mass with big flower balls (blue by default;
-    the dresser remaps ENV_Flower_Blue to pink or white)."""
-    parts = _plant_crown("leaf", 21, 7, 0.75, 0.75, "ENV_Foliage")
-    import random
-    rnd = random.Random(8)
-    for i in range(7):
-        a = rnd.uniform(0, 2 * math.pi)
-        d = rnd.uniform(0.1, 0.35)
-        parts.append(lump(f"fl{i}", (math.cos(a) * d, 0.45 + rnd.uniform(0, 0.25), math.sin(a) * d), (0.13, 0.11, 0.13), "ENV_Flower_Blue", seed=40 + i, rough=0.2))
-    return join("ENV_Plant_Hydrangea", parts)
+@recipe("ENV_Laurel_Stem", "ORIGINAL", smooth=40)
+def laurel_stem():
+    """Stem of a bay-laurel standard in a pot (laurel a la puerta); the clipped head is a Quaternius bush in the
+    ENV_Plant_Laurel wrapper (modules.json)."""
+    return join("ENV_Laurel_Stem", [sweep("stem", [(0, -0.02, 0), (0.01, 0.5, 0.0), (0.0, 0.95, 0.01)], 0.022, "ENV_Src_Bark_NormalTree", segments=8)])
 
 
-@recipe("ENV_Plant_Geranium", "ORIGINAL")
-def plant_geranium():
-    """Geranio for balcony and window boxes: small round leaves and scattered red flower heads."""
-    parts = _plant_crown("leaf", 33, 6, 0.36, 0.3, "ENV_Foliage")
-    import random
-    rnd = random.Random(9)
-    for i in range(8):
-        a = rnd.uniform(0, 2 * math.pi)
-        d = rnd.uniform(0.02, 0.16)
-        parts.append(lump(f"fl{i}", (math.cos(a) * d, 0.24 + rnd.uniform(0, 0.12), math.sin(a) * d), (0.045, 0.04, 0.045), "ENV_Flower_Red", seed=60 + i, rough=0.25))
-    return join("ENV_Plant_Geranium", parts)
-
-
-@recipe("ENV_Plant_Boxwood", "ORIGINAL")
-def plant_boxwood():
-    """Clipped box ball (boj) for a shop door or a formal pot."""
-    return join("ENV_Plant_Boxwood", [lump("ball", (0, 0.0, 0), (0.28, 0.26, 0.28), "ENV_Foliage", seed=5, rough=0.06)])
-
-
-@recipe("ENV_Plant_Laurel", "ORIGINAL")
-def plant_laurel():
-    """Bay laurel standard in a pot (laurel a la puerta): straight stem and a round clipped head."""
-    return join("ENV_Plant_Laurel", [tube("stem", (0, 0.0, 0), (0, 0.9, 0), 0.02, "ENV_Src_Bark_NormalTree", segments=6),
-                                     lump("head", (0, 0.8, 0), (0.32, 0.3, 0.32), "ENV_Foliage", seed=12, rough=0.08)])
-
-
-@recipe("ENV_Pot_Glazed", "ORIGINAL")
+@recipe("ENV_Pot_Glazed", "ORIGINAL", smooth=40)
 def pot_glazed():
-    """Glazed ceramic pot (blue by default; remapped to green/ochre): rounded belly, narrow foot, soil."""
-    prof = [(0.0, 0.0), (0.12, 0.0), (0.14, 0.03), (0.21, 0.14), (0.22, 0.24), (0.19, 0.34), (0.2, 0.37), (0.18, 0.38)]
-    return join("ENV_Pot_Glazed", [lathe("pot", prof, "ENV_Ceramic_Blue", segments=14),
-                                   lathe("soil", [(0.0, 0.35), (0.185, 0.35)], "ENV_Soil", segments=14)])
+    """Glazed ceramic pot (blue by default; remapped to green/ochre): foot ring, round belly, collar, soil."""
+    prof = [(0.0, 0.0), (0.11, 0.0), (0.125, 0.012), (0.13, 0.03), (0.17, 0.07), (0.205, 0.14), (0.222, 0.22), (0.21, 0.3),
+            (0.185, 0.34), (0.19, 0.35), (0.2, 0.37), (0.196, 0.385), (0.18, 0.39), (0.172, 0.37)]
+    return join("ENV_Pot_Glazed", [lathe("pot", prof, "ENV_Ceramic_Blue", segments=20),
+                                   lathe("soil", [(0.0, 0.35), (0.175, 0.35)], "ENV_Soil", segments=20)])
 
 
-@recipe("ENV_Pot_Tin", "ORIGINAL")
+@recipe("ENV_Pot_Tin", "ORIGINAL", smooth=35)
 def pot_tin():
-    """Old olive-oil tin reused as a planter (lata), painted and dented — the modest household touch."""
-    return join("ENV_Pot_Tin", [box("tin", (-0.12, 0.0, -0.12), (0.12, 0.32, 0.12), "ENV_Metal_Galvanised", bevel=0.01),
-                                box("soil", (-0.11, 0.29, -0.11), (0.11, 0.3, 0.11), "ENV_Soil")])
+    """Old olive-oil tin reused as a planter (lata): square galvanised can with a rolled rim and a faded painted band."""
+    parts = [rbox("tin", (-0.12, 0.0, -0.12), (0.12, 0.31, 0.12), "ENV_PropMat_Galv", r=0.012),
+             rbox("band", (-0.123, 0.1, -0.123), (0.123, 0.22, 0.123), "ENV_PropMat_Amarillo", r=0.008),
+             box("soil", (-0.108, 0.285, -0.108), (0.108, 0.3, 0.108), "ENV_Soil")]
+    for k, (a, b) in enumerate((((-0.12, 0.315, -0.12), (0.12, 0.315, -0.12)), ((0.12, 0.315, -0.12), (0.12, 0.315, 0.12)),
+                                ((0.12, 0.315, 0.12), (-0.12, 0.315, 0.12)), ((-0.12, 0.315, 0.12), (-0.12, 0.315, -0.12)))):
+        parts.append(tube(f"rim{k}", a, b, 0.009, "ENV_PropMat_Galv", segments=8))
+    return join("ENV_Pot_Tin", parts)
 
 
-@recipe("ENV_Planter_Box", "CREATE_DERIVED")
+@recipe("ENV_Planter_Box", "CREATE_DERIVED", smooth=35)
 def planter_box():
-    """Timber window/doorstep box 0.8 m with soil (flowers placed by the dresser)."""
-    return join("ENV_Planter_Box", [box("box", (-0.4, 0.0, -0.13), (0.4, 0.24, 0.13), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.01),
-                                    box("soil", (-0.37, 0.2, -0.1), (0.37, 0.22, 0.1), "ENV_Soil")])
+    """Timber window/doorstep box 0.8 m: corner posts, two rows of planks each side with a shadow gap, little feet and
+    soil (flowers placed by the dresser). Kit MI_WoodTrim."""
+    W = "MI_WoodTrim"
+    parts = []
+    for sx in (-0.38, 0.38):
+        for sz in (-0.11, 0.11):
+            parts.append(rbox(f"post{sx}{sz}", (sx - 0.028, 0.0, sz - 0.028), (sx + 0.028, 0.27, sz + 0.028), W, r=0.008, uv="band", band=WOOD_DARK))
+    for i, (y0, y1) in enumerate(((0.03, 0.14), (0.148, 0.258))):
+        for sz in (-1, 1):
+            parts.append(rbox(f"pl{i}{sz}", (-0.36, y0, sz * 0.118 - 0.012), (0.36, y1, sz * 0.118 + 0.012), W, r=0.006, uv="band", band=WOOD_LIGHT))
+        for sx in (-1, 1):
+            parts.append(rbox(f"pe{i}{sx}", (sx * 0.378 - 0.012, y0, -0.1), (sx * 0.378 + 0.012, y1, 0.1), W, r=0.006, uv="band", band=WOOD_LIGHT))
+    parts.append(box("soil", (-0.36, 0.2, -0.1), (0.36, 0.225, 0.1), "ENV_Soil"))
+    return join("ENV_Planter_Box", parts)
 
 
-@recipe("ENV_Trough_Stone", "CREATE_DERIVED")
+@recipe("ENV_Trough_Stone", "CREATE_DERIVED", smooth=35)
 def trough_stone():
-    """Old stone trough (pila) reused as a planter by a house door."""
-    parts = [box("base", (-0.55, 0.0, -0.25), (0.55, 0.12, 0.25), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.02)]
-    for sx in (-1, 1):
-        parts.append(box(f"e{sx}", (sx * 0.55 - (0.1 if sx > 0 else 0), 0.12, -0.25), (sx * 0.55 + (0.0 if sx > 0 else 0.1), 0.42, 0.25), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.02))
+    """Old granite trough (pila) reused as a planter by a door: a hollowed block with thick rounded rims, worn at the
+    foot, soil inside (plants placed by the dresser at y = 0.36)."""
+    M = "ENV_PropMat_Granito"
+    parts = [rbox("floor", (-0.56, 0.0, -0.26), (0.56, 0.16, 0.26), M, r=0.035)]
     for sz in (-1, 1):
-        parts.append(box(f"s{sz}", (-0.45, 0.12, sz * 0.25 - (0.08 if sz > 0 else 0)), (0.45, 0.42, sz * 0.25 + (0.0 if sz > 0 else 0.08)), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.02))
-    parts.append(box("soil", (-0.45, 0.36, -0.17), (0.45, 0.38, 0.17), "ENV_Soil"))
+        parts.append(rbox(f"side{sz}", (-0.56, 0.1, sz * 0.26 - (0.1 if sz > 0 else 0.0)), (0.56, 0.44, sz * 0.26 + (0.0 if sz > 0 else 0.1)), M, r=0.035))
+    for sx in (-1, 1):
+        parts.append(rbox(f"end{sx}", (sx * 0.56 - (0.11 if sx > 0 else 0.0), 0.1, -0.2), (sx * 0.56 + (0.0 if sx > 0 else 0.11), 0.44, 0.2), M, r=0.035))
+    parts.append(box("soil", (-0.46, 0.37, -0.17), (0.46, 0.39, 0.17), "ENV_Soil"))
     return join("ENV_Trough_Stone", parts)
 
 
@@ -2402,7 +2776,7 @@ def threshold_slab():
     return join("ENV_Threshold_Slab", [box("slab", (-0.8, -0.02, 0.0), (0.8, 0.02, 0.55), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.012)])
 
 
-@recipe("ENV_Drain_Outlet", "ORIGINAL")
+@recipe("ENV_Drain_Outlet", "ORIGINAL", smooth=35)
 def drain_outlet():
     """Drain outlet through the river wall: iron pipe mouth with a lip, a little stone apron under it."""
     return join("ENV_Drain_Outlet", [cylinder("pipe", (0, 0, 0.12), 0.14, 0.3, "ENV_Metal_Iron", segments=12, axis="z"),
@@ -2410,27 +2784,31 @@ def drain_outlet():
                                      cylinder("dark", (0, 0, 0.26), 0.11, 0.02, "ENV_Plastic_Black", segments=12, axis="z")])
 
 
-@recipe("ENV_Bench_Stone", "CREATE_DERIVED")
+@recipe("ENV_Bench_Stone", "CREATE_DERIVED", smooth=35)
 def bench_stone():
-    """Stone bench (poyo) against a wall or around a tree: two blocks and a thick slab."""
-    parts = [box("seat", (-0.9, 0.38, -0.22), (0.9, 0.48, 0.22), "MI_RockTrim", uv="band", band=ROCK_SLAB, bevel=0.02)]
-    for sx in (-0.65, 0.65):
-        parts.append(box(f"leg{sx}", (sx - 0.14, 0.0, -0.18), (sx + 0.14, 0.38, 0.18), "MI_RockTrim", uv="band", band=ROCK_ASHLAR, bevel=0.015))
+    """Stone bench (poyo) 1.8 m: one thick granite seat with a rounded front edge on two squat supports, plain dressed
+    granite with no joints (a monolith, not masonry), damp at the foot, moss on top from the prop material."""
+    parts = [rbox("seat", (-0.9, 0.35, -0.24), (0.9, 0.47, 0.24), "ENV_PropMat_Granito", r=0.04, seg=3)]
+    for sx in (-0.6, 0.6):
+        parts.append(rbox(f"leg{sx}", (sx - 0.17, 0.0, -0.2), (sx + 0.17, 0.37, 0.2), "ENV_PropMat_Granito", r=0.03))
     return join("ENV_Bench_Stone", parts)
 
 
-@recipe("ENV_Fountain_Monument", "CREATE_DERIVED")
+@recipe("ENV_Fountain_Monument", "CREATE_DERIVED", smooth=35)
 def fountain_monument():
-    """The plaza's landmark (owner: "algo que haga que el jugador diga: estoy aquí"): a granite octagonal basin on
-    two steps, a fluted central pier with four bronze spouts and, on top, a cast-iron five-lantern candelabra that
-    lights the plaza at night. ~9 m across the steps, 7.5 m high. Invented; no real monument copied."""
+    """The plaza's landmark (owner: "algo que haga que el jugador diga: estoy aquí"): a northern-Spanish four-spout
+    plaza fountain — an open octagonal basin of sandstone ashlar with a granite coping and the water showing, on two
+    granite steps; a moulded granite pier with four bronze masks and spouts pouring into the basin; on top, a
+    cast-iron five-lantern candelabra that lights the plaza at night. ~9 m across the steps, 7.4 m high. Invented;
+    no real monument copied. (Cohesion pass: the old coping was a solid lid, so the basin read as a plinth, and the
+    streams read as black legs.)"""
     parts = []
     n = 8
 
     def ring(r, rot=math.pi / 8):
         return [(r * math.cos(rot + 2 * math.pi * i / n), r * math.sin(rot + 2 * math.pi * i / n)) for i in range(n)]
 
-    def prism(name, pts, y0, y1, mat, band=ROCK_SLAB):
+    def prism(name, pts, y0, y1, mat):
         bm = bmesh.new()
         lo = [bm.verts.new(U(x, y0, z)) for x, z in pts]
         hi = [bm.verts.new(U(x, y1, z)) for x, z in pts]
@@ -2441,39 +2819,33 @@ def fountain_monument():
         bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
         ob = new_object(name, bm)
         ob.data.materials.append(material(mat))
-        do_bevel(ob, 0.025)
-        uv_band(ob, band) if band else uv_box(ob)
+        do_bevel(ob, 0.03, 2)
+        uv_box(ob)
         return ob
 
-    parts.append(prism("step1", ring(4.4), 0.0, 0.16, "ENV_Stone_Granite"))
-    parts.append(prism("step2", ring(3.95), 0.16, 0.32, "ENV_Stone_Granite"))
-    # basin: outer wall with a thick rounded kerb, water inside
-    outer, inner = ring(3.4), ring(3.0)
-    for i in range(n):
-        a0, a1, b0, b1 = outer[i], outer[(i + 1) % n], inner[i], inner[(i + 1) % n]
-        bm = bmesh.new()
-        vs = [bm.verts.new(U(x, y, z)) for (x, z), y in ((a0, 0.32), (a1, 0.32), (a1, 0.95), (a0, 0.95), (b0, 0.32), (b1, 0.32), (b1, 0.95), (b0, 0.95))]
-        for f in ((0, 1, 2, 3), (5, 4, 7, 6), (3, 2, 6, 7)):
-            bm.faces.new([vs[k] for k in f])
-        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-        ob = new_object(f"wall{i}", bm)
-        ob.data.materials.append(material("ENV_Stone_Sandstone"))
-        uv_band(ob, ROCK_ASHLAR)
-        parts.append(ob)
-    parts.append(prism("kerb", ring(3.5), 0.95, 1.08, "ENV_Stone_Granite"))
-    parts.append(prism("water", ring(3.0), 0.32, 0.8, "ENV_Water_Port", band=None))
-    # pier: octagonal shaft on a plinth, capital, four spouts
-    parts.append(prism("plinth", ring(0.75), 0.8, 1.5, "ENV_Stone_Granite"))
-    parts.append(prism("shaft", ring(0.5), 1.5, 3.6, "ENV_Stone_Sandstone", band=ROCK_ASHLAR))
-    parts.append(prism("capital", ring(0.68), 3.6, 3.85, "ENV_Stone_Granite"))
+    gr = "ENV_PropMat_Granito"
+    parts.append(prism("step1", ring(4.4), 0.0, 0.16, gr))
+    parts.append(prism("step2", ring(3.95), 0.16, 0.32, gr))
+    # basin: ashlar wall with a plinth course, rounded granite coping as an open ring, water 20 cm below the coping
+    parts.append(revolve_poly("basin_wall", [(3.46, 0.32), (3.46, 0.44), (3.38, 0.48), (3.38, 0.93), (2.99, 0.93), (2.99, 0.32)],
+                              "ENV_Mason_Silleria_Arenisca_G", closed=True))
+    parts.append(revolve_poly("coping", [(3.4, 0.92), (3.53, 0.96), (3.56, 1.02), (3.53, 1.08), (3.44, 1.11), (3.02, 1.11),
+                                         (2.96, 1.08), (2.95, 0.98), (2.99, 0.92)], gr, closed=True))
+    parts.append(prism("water", ring(3.0), 0.32, 0.9, "ENV_Water_Port"))
+    # pier: plinth in the water, torus, shaft with a collar that carries the masks, flared capital
+    parts.append(revolve_poly("pier", [(0.0, 0.32), (0.82, 0.32), (0.82, 1.0), (0.74, 1.05), (0.76, 1.12), (0.66, 1.2),
+                                        (0.56, 1.28), (0.53, 1.8), (0.6, 1.86), (0.6, 2.3), (0.52, 2.36), (0.48, 3.2),
+                                        (0.55, 3.26), (0.66, 3.38), (0.74, 3.5), (0.76, 3.62), (0.62, 3.68), (0.0, 3.68)], gr))
     for k in range(4):
         a = k * math.pi / 2
         x, z = math.cos(a), math.sin(a)
-        parts.append(tube(f"spout{k}", (x * 0.5, 2.1, z * 0.5), (x * 0.95, 2.02, z * 0.95), 0.035, "ENV_Bronze", segments=8))
-        parts.append(sphere(f"mask{k}", (x * 0.5, 2.15, z * 0.5), 0.12, "ENV_Bronze", segments=10))
-        parts.append(tube(f"jet{k}", (x * 0.95, 2.0, z * 0.95), (x * 1.5, 0.82, z * 1.5), 0.02, "ENV_Water_Port", segments=6))
+        ap = 0.6 * math.cos(math.pi / 8)          # the collar's flat
+        parts.append(sphere(f"mask{k}", (x * ap, 2.08, z * ap), 0.14, "ENV_Bronze", segments=12))
+        tip = (x * (ap + 0.38), 2.02, z * (ap + 0.38))
+        parts.append(sweep(f"spout{k}", [(x * (ap + 0.05), 2.06, z * (ap + 0.05)), (x * (ap + 0.24), 2.05, z * (ap + 0.24)), tip], 0.032, "ENV_Bronze", segments=10))
+        parts.append(water_jet(f"jet{k}", tip, (x, z), 0.75, 0.9))
     # candelabra: iron column, four curved arms with lanterns and a crowning lantern
-    parts.append(lathe("post", [(0.16, 3.85), (0.16, 4.0), (0.09, 4.15), (0.07, 5.9), (0.11, 6.0), (0.13, 6.1)], "ENV_Metal_Iron", segments=10))
+    parts.append(lathe("post", [(0.18, 3.68), (0.18, 3.8), (0.1, 3.95), (0.07, 5.8), (0.11, 5.9), (0.13, 6.0)], "ENV_Metal_Iron", segments=10))
 
     def lantern(prefix, x, y, z):
         return [lathe(prefix + "b", [(0.07, y), (0.13, y + 0.06), (0.13, y + 0.1)], "ENV_Metal_Iron", segments=6, center=(x, z)),
@@ -2483,54 +2855,40 @@ def fountain_monument():
     for k in range(4):
         a = k * math.pi / 2 + math.pi / 4
         x, z = math.cos(a) * 0.95, math.sin(a) * 0.95
-        prev = (0, 5.3, 0)
-        for t in range(1, 6):
-            u = t / 5
-            p = (x * u, 5.3 + 0.55 * math.sin(u * math.pi * 0.8), z * u)
-            parts.append(tube(f"arm{k}{t}", prev, p, 0.03, "ENV_Metal_Iron", segments=6))
-            prev = p
-        parts += lantern(f"l{k}", x, prev[1] - 0.05, z)
-    parts += lantern("ltop", 0, 6.1, 0)
+        pts = [(x * t / 6, 5.2 + 0.55 * math.sin(t / 6 * math.pi * 0.8), z * t / 6) for t in range(7)]
+        parts.append(sweep(f"arm{k}", pts, 0.03, "ENV_Metal_Iron", segments=8))
+        parts += lantern(f"l{k}", x, pts[-1][1] - 0.05, z)
+    parts += lantern("ltop", 0, 6.0, 0)
     return join("ENV_Fountain_Monument", parts)
 
 
-@recipe("ENV_Tree_Singular", "ORIGINAL")
-def tree_singular():
-    """The old plane tree of the plaza (árbol singular): thick buttressed trunk, big limbs, a wide high crown, and
-    a round stone bench around it — the second 'I am here' of the plaza, the shade where the old men sit."""
-    import random
-    rnd = random.Random(17)
-    parts = [lathe("trunk", [(0.75, 0.0), (0.55, 0.35), (0.45, 1.2), (0.4, 2.6), (0.36, 3.6)], "ENV_Src_Bark_NormalTree", segments=12)]
-    limbs = [((0, 3.2, 0), (2.2, 6.3, 0.6)), ((0, 3.3, 0), (-1.9, 6.6, 1.2)), ((0, 3.4, 0), (0.3, 7.2, -2.1)), ((0, 3.5, 0), (-0.6, 7.6, -0.4)), ((0, 3.3, 0), (1.4, 6.8, -1.6))]
-    for i, (a, b) in enumerate(limbs):
-        parts.append(tube(f"limb{i}", a, b, 0.2, "ENV_Src_Bark_NormalTree", segments=8))
-    for i in range(14):
-        ang = rnd.uniform(0, 2 * math.pi)
-        d = rnd.uniform(0.5, 3.4)
-        r = rnd.uniform(1.4, 2.1)
-        parts.append(lump(f"lobe{i}", (math.cos(ang) * d, rnd.uniform(6.0, 8.2) - r * 0.55, math.sin(ang) * d), (r, r * 0.8, r), "ENV_Foliage", seed=80 + i, rough=0.12))
-    # ring bench
+@recipe("ENV_Tree_Bench_Ring", "CREATE_DERIVED", smooth=35)
+def tree_bench_ring():
+    """Round granite bench around the plaza's singular tree (the shade where the old men sit): twelve rounded seat
+    stones on six squat supports, inner radius 1.3 m. The tree itself is a Quaternius CommonTree (modules.json)."""
+    parts = []
     segs = 12
     for k in range(segs):
-        a0, a1 = 2 * math.pi * k / segs, 2 * math.pi * (k + 1) / segs
+        a0, a1 = 2 * math.pi * k / segs + 0.004, 2 * math.pi * (k + 1) / segs - 0.004
         bm = bmesh.new()
         vs = []
-        for r in (1.3, 1.75):
+        for r in (1.3, 1.78):
             for a in (a0, a1):
-                for y in (0.38, 0.48):
+                for y in (0.36, 0.47):
                     vs.append(bm.verts.new(U(r * math.cos(a), y, r * math.sin(a))))
-        idx = [(0, 2, 3, 1), (4, 5, 7, 6), (1, 3, 7, 5), (0, 4, 6, 2), (0, 1, 5, 4), (2, 6, 7, 3)]
-        for f in idx:
+        for f in ((0, 2, 3, 1), (4, 5, 7, 6), (1, 3, 7, 5), (0, 4, 6, 2), (0, 1, 5, 4), (2, 6, 7, 3)):
             bm.faces.new([vs[i] for i in f])
         bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
         ob = new_object(f"seat{k}", bm)
-        ob.data.materials.append(material("MI_RockTrim"))
-        uv_band(ob, ROCK_SLAB)
+        ob.data.materials.append(material("ENV_PropMat_Granito"))
+        do_bevel(ob, 0.03, 2)
+        uv_box(ob)
         parts.append(ob)
-        mid = (a0 + a1) / 2
         if k % 2 == 0:
-            parts.append(box(f"leg{k}", (1.52 * math.cos(mid) - 0.12, 0.0, 1.52 * math.sin(mid) - 0.12), (1.52 * math.cos(mid) + 0.12, 0.38, 1.52 * math.sin(mid) + 0.12), "MI_RockTrim", uv="band", band=ROCK_ASHLAR))
-    return join("ENV_Tree_Singular", parts)
+            mid = a1
+            cx, cz = 1.54 * math.cos(mid), 1.54 * math.sin(mid)
+            parts.append(rbox(f"leg{k}", (cx - 0.15, 0.0, cz - 0.15), (cx + 0.15, 0.38, cz + 0.15), "ENV_PropMat_Granito", r=0.03))
+    return join("ENV_Tree_Bench_Ring", parts)
 
 
 @recipe("ENV_Parapet_Stone_2m", "CREATE_DERIVED")
@@ -2558,7 +2916,7 @@ def clock_face():
     return join("ENV_Clock_Face", parts)
 
 
-@recipe("ENV_Bell", "ORIGINAL")
+@recipe("ENV_Bell", "ORIGINAL", smooth=35)
 def bell():
     """Bronze bell with yoke for the belfry openings."""
     prof = [(0.0, 0.62), (0.12, 0.6), (0.16, 0.5), (0.18, 0.3), (0.24, 0.12), (0.3, 0.02), (0.31, 0.0), (0.27, 0.0)]
@@ -2604,6 +2962,12 @@ def main(argv):
         reset()
         ob = fn()
         ob.name = name
+        if name in SMOOTH:
+            for o in bpy.context.selected_objects:
+                o.select_set(False)
+            ob.select_set(True)
+            bpy.context.view_layer.objects.active = ob
+            bpy.ops.object.shade_smooth_by_angle(angle=math.radians(SMOOTH[name]), keep_sharp_edges=True)
         export(ob, name)
         tris = sum(len(p.vertices) - 2 for p in ob.data.polygons)
         mats = sorted({m.name for m in ob.data.materials if m})
