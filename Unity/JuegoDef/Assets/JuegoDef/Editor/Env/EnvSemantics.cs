@@ -779,7 +779,11 @@ namespace JuegoDef.Env
                     var q = door.Value.p;
                     float t = Vector2.Dot(new Vector2(q.x - a.x, q.z - a.z), new Vector2(dv.x, dv.z));
                     float lat = Mathf.Abs((q.x - a.x) * dv.z - (q.z - a.z) * dv.x);
-                    if (lat < w / 2f + 0.45f)
+                    // a door the stair serves must open onto its walk line, not just stand near it: the tread under the
+                    // door has to be within half a storey of the sill (a door 1.4 m off-axis opens onto the lane's edge)
+                    float rise = b.y - a.y;
+                    float treadY = a.y + rise * Mathf.Clamp01(t / Mathf.Max(len, 0.01f));
+                    if (lat < w / 2f - 0.25f && Mathf.Abs(q.y - treadY) < 0.5f)   // on the walk line, not on the lane's skirt
                     {
                         float past = len - t;    // > 0: the door stands inside the run (the stair overshoots it); < 0: the door lies beyond the top tread
                         if (past > 1.2f) list.Add(F("STAIR_PAST_DOOR", unit, id, b, "Stairs/" + id, $"stair runs {past:0.0} m past its door: the landing cuts into what should be its opening"));

@@ -18,6 +18,26 @@
    "class": "SEM",
    "why": "K15_5_1 and K14_0_0 (both Solana lanes) were built with the identical ground floor D,P,R: two cloned frontages a street apart. K15_5_1's stone ground floor already reads as a work yard; pinned to a taller (timber gate) so the two differ at a glance.",
    "business": "taller"
+  },
+  "K6_11_2": {
+   "unit": "RIVER_A",
+   "class": "SEM",
+   "why": "River frontage 6.5 m with no opening on any floor (audit BLANK_WALL): the third bay column was plain on all four floors. A small window on the first floor gives the quay wall a lived front like its neighbours.",
+   "rows": [
+    "WPP",
+    "PWP",
+    "PWw",
+    "PTP"
+   ]
+  },
+  "K6_11_3": {
+   "unit": "RIVER_A",
+   "class": "SEM",
+   "why": "River frontage 6.5 m with no opening on any floor (audit BLANK_WALL, same run as K6_11_2): its first two bays were plain on both floors. A small window on the upper floor continues the staggered rhythm of the row.",
+   "rows": [
+    "PPW",
+    "wPW"
+   ]
   }
  },
  "ops": [
