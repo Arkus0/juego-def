@@ -150,6 +150,83 @@ namespace JuegoDef.Env
             return (todo.Count, rowsToRebuild.Count);
         }
 
+        /// <summary>Physical check after the rows stand at their final plot positions (assembly happens at the row origin
+        /// and the building is moved afterwards, so no build-time query sees the real ground): the worn granite step under
+        /// a portal grows down to the pavement where the street fell away on a slope — its top stays flush with the floor,
+        /// so it still reads as the building's own step, not a loose slab — and street props placed at floor level (barrel
+        /// tables, crates, buckets) drop onto the pavement when the building sits over falling ground. Stacked props follow
+        /// the prop that carries them. Idempotent; run again by <see cref="EnvDistrict.Finish"/> and after row rebuilds.</summary>
+        public static string SeatOnGround(Transform root)
+        {
+            Physics.SyncTransforms();
+            int steps = 0, props = 0;
+            var rowsT = root.Find("Rows");
+            foreach (var t in rowsT.GetComponentsInChildren<Transform>(true))
+            {
+                if (t.name != "ENV_Door_Step" || (t.parent != null && t.parent.name == "ENV_Door_Step")) continue;
+                var rs = t.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                var bb = rs[0].bounds; foreach (var r in rs) bb.Encapsulate(r.bounds);
+                var fwd = t.forward; fwd.y = 0; fwd.Normalize();
+                var p = t.position;
+                float g1 = EnvWalk.Ground(p.x, p.z, float.NaN), g2 = EnvWalk.Ground(p.x + fwd.x * 0.35f, p.z + fwd.z * 0.35f, float.NaN);
+                float g = float.IsNaN(g1) ? g2 : float.IsNaN(g2) ? g1 : Mathf.Min(g1, g2);
+                if (float.IsNaN(g) || bb.min.y - g <= 0.06f) continue;
+                float grow = bb.min.y - g + 0.03f;                       // reach 3 cm into the ground
+                float k = (bb.size.y + grow) / bb.size.y;
+                float hAbove = bb.max.y - p.y;                           // keep the top where it is
+                var sc = t.localScale;
+                t.localScale = new Vector3(sc.x, sc.y * k, sc.z);
+                var lp = t.localPosition;
+                lp.y -= (k - 1f) * hAbove / Mathf.Max(t.parent != null ? t.parent.lossyScale.y : 1f, 0.0001f);
+                t.localPosition = lp;
+                steps++;
+            }
+            // street props by dressing group: each floating ground prop drops by its own gap; a stacked prop follows
+            var propNames = new HashSet<string> { "ENV_Prop_Barrel", "ENV_Prop_Barrel_Apples", "ENV_Prop_Stool", "ENV_Cafe_Chair", "ENV_Cafe_Table",
+                "ENV_Prop_FarmCrate_Apple", "ENV_Prop_FarmCrate_Carrot", "ENV_Prop_FarmCrate_Empty", "ENV_Prop_Bucket", "ENV_Prop_Bucket_Wood",
+                "ENV_Prop_Rope_Coil", "ENV_Prop_Bag", "ENV_Prop_Crate_Wooden" };
+            foreach (Transform row in rowsT)
+                foreach (Transform b in row)
+                {
+                    if (b.name == "Walls") continue;
+                    var dress = b.Find("Dressing"); if (dress == null) continue;
+                    var items = new List<(Transform t, Bounds bb, float drop)>();
+                    foreach (Transform c in dress)
+                        if (propNames.Contains(c.name) && c.gameObject.activeInHierarchy && (c.parent == null || c.parent.name != c.name))
+                        {
+                            var rs = c.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                            var bb = rs[0].bounds; foreach (var r in rs) bb.Encapsulate(r.bounds);
+                            items.Add((c, bb, 0f));
+                        }
+                    if (items.Count == 0) continue;
+                    var byBase = items.OrderBy(i => i.bb.min.y).ToList();
+                    for (int i = 0; i < byBase.Count; i++)
+                    {
+                        var it = byBase[i];
+                        // a prop standing on another prop of the same group follows its carrier, whatever it does
+                        int carrier = -1;
+                        for (int j = 0; j < i; j++)
+                        {
+                            var other = byBase[j].bb;
+                            if (Mathf.Abs(other.max.y - it.bb.min.y) < 0.12f && other.min.x < it.bb.max.x - 0.08f && other.max.x > it.bb.min.x + 0.08f
+                                && other.min.z < it.bb.max.z - 0.08f && other.max.z > it.bb.min.z + 0.08f) { carrier = j; break; }
+                        }
+                        if (carrier >= 0) { byBase[i] = (it.t, it.bb, byBase[carrier].drop); continue; }
+                        float g = EnvWalk.Ground(it.bb.center.x, it.bb.center.z, float.NaN);
+                        float gap = float.IsNaN(g) ? 0f : it.bb.min.y - g;
+                        byBase[i] = (it.t, it.bb, Mathf.Abs(gap) > 0.06f ? gap - Mathf.Sign(gap) * 0.01f : 0f);   // seat up or down
+                    }
+                    foreach (var it in byBase)
+                        if (Mathf.Abs(it.drop) > 0.001f)
+                        {
+                            it.t.position += Vector3.down * it.drop;
+                            props++;
+                        }
+                }
+            Physics.SyncTransforms();
+            return $"JD_POLISH seat on ground: {steps} door steps grown down to the street, {props} street props dropped onto it";
+        }
+
         /// <summary>Rebuilds one row exactly as a full build would (stateful passes replayed in a dry run first) and swaps it in.</summary>
         public static string RebuildRow(string rowId)
         {

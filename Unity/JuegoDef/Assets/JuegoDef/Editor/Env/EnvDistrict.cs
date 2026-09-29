@@ -716,6 +716,7 @@ namespace JuegoDef.Env
             EnsureSpec();
             var root = Root;
             Debug.Log(EnvPolish.FixBlockedOpenings(root));   // windows that look at another building within 1.3 m
+            Debug.Log(EnvPolish.SeatOnGround(root));         // door steps and street props seated on the real ground
             var river = (JObject)spec["river"];
             var rv = EnvKit.Group(root, "River");
             float water = (float)river["water"];

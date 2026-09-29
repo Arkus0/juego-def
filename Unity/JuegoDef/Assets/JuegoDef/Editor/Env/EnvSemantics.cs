@@ -1093,12 +1093,16 @@ namespace JuegoDef.Env
                 string unit = b != null ? UnitOfRow(b.parent.name) : "PLAZAS";
                 var hits = Physics.RaycastAll(new Vector3(p.x, bb.max.y + 0.3f, p.z), Vector3.down, 8f)
                     .Where(h => !h.collider.isTrigger && !h.collider.transform.IsChildOf(t)).OrderBy(h => h.distance).ToArray();
-                if (hits.Length == 0) { list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name}: no ground within 8 m below it")); continue; }
-                var hit = hits[0];
-                float gap = bb.min.y - hit.point.y;
+                // effective support: the nearest surface under it (a step, a sill, a wall the prop stands on), but seam-safe
+                // for the pavement itself — a single ray falls through a seam between ground meshes onto whatever lies below
+                float g = EnvWalk.Ground(bb.center.x, bb.center.z, float.NaN);
+                float top = hits.Length > 0 ? hits[0].point.y : float.NaN;
+                float support = float.IsNaN(g) ? top : float.IsNaN(top) ? g : Mathf.Max(g, top);
+                if (float.IsNaN(support)) { list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name}: no ground within 8 m below it")); continue; }
+                float gap = bb.min.y - support;
                 if (gap > 0.2f) list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name} floats {gap:0.00} m above the ground"));
-                else if (Vector3.Angle(hit.normal, Vector3.up) > 32f)
-                    list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name} perched on a {Vector3.Angle(hit.normal, Vector3.up):0}° slope with no ledge"));
+                else if (hits.Length > 0 && Vector3.Angle(hits[0].normal, Vector3.up) > 32f)
+                    list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name} perched on a {Vector3.Angle(hits[0].normal, Vector3.up):0}° slope with no ledge"));
             }
             return list;
         }
