@@ -587,6 +587,60 @@ def window_insert_thin():
     return join("ENV_Window_Insert_Thin", parts)
 
 
+# ---------------------------------------------------------------- window head suites (phase 3 anti-procedural)
+
+# One head line per building, not per window: every wide window of the district is cut at the kit line
+# (sill 0.94 / head 2.52). The suite cuts the SAME clean plaster panel and a kit-proportioned sash at a head
+# 10 cm higher or lower (2.41 / 2.21 m), chosen per building by a dedicated hash in FacadeGrammar — vernacular
+# fabric never holds one lintel line for a whole town. Hole ±0.85 m (kit sash is ±0.804), sill 0.90 so the
+# sash at 0.94 covers the cut the way the kit wall covers its own.
+
+WIN_HALF, WIN_SILL = 0.85, 0.90
+
+
+def window_cutter(head):
+    return box("cutter", (-WIN_HALF, WIN_SILL, -0.5), (WIN_HALF, head, 0.5), "MI_RockTrim", uv="band", band=ROCK_SLAB)
+
+
+def _window_suite_wall(head):
+    return cut(clean_plaster("Wall_Plaster_Straight"), window_cutter(head))
+
+
+@recipe("ENV_Wall_Plaster_Clean_Window_Hi", "DONOR", ["Wall_Plaster_Straight"])
+def wall_plaster_clean_window_hi():
+    """Clean plaster bay with the wide window opening cut at head 2.41 m (10 cm above the kit line)."""
+    return _window_suite_wall(2.41)
+
+
+@recipe("ENV_Wall_Plaster_Clean_Window_Lo", "DONOR", ["Wall_Plaster_Straight"])
+def wall_plaster_clean_window_lo():
+    """Clean plaster bay with the wide window opening cut at head 2.21 m (10 cm below the kit line)."""
+    return _window_suite_wall(2.21)
+
+
+def _window_suite_sash(head):
+    """Kit-proportioned sash for the suite hole (frame ±0.80, sill 0.94 like Window_Wide_Flat1) with the
+    head of the building's line. Frame, mullion, one transom, glass; recessed behind the wall face."""
+    x0, x1, y0, y1, zf, zb = -0.80, 0.80, 0.94, head, 0.0, -0.08
+    parts = _frame_rect("f", x0, x1, y0, y1, zf, zb, 0.07)
+    parts.append(box("mul", (-0.03, y0 + 0.07, zb + 0.01), (0.03, y1 - 0.07, zf - 0.01), "MI_WoodTrim", uv="band", band=WOOD_LIGHT))
+    parts.append(box("tr", (x0 + 0.07, 1.86, zb + 0.01), (x1 - 0.07, 1.91, zf - 0.01), "MI_WoodTrim", uv="band", band=WOOD_LIGHT))
+    parts.append(box("glass", (x0 + 0.07, y0 + 0.07, -0.05), (x1 - 0.07, y1 - 0.07, -0.04), "MI_WindowGlass"))
+    return join("suite_sash", parts)
+
+
+@recipe("ENV_Window_Insert_Wide_Hi", "CREATE_DERIVED")
+def window_insert_wide_hi():
+    """Glazed sash for the Hi suite hole (sill 0.94, head 2.41 m)."""
+    return _window_suite_sash(2.41)
+
+
+@recipe("ENV_Window_Insert_Wide_Lo", "CREATE_DERIVED")
+def window_insert_wide_lo():
+    """Glazed sash for the Lo suite hole (sill 0.94, head 2.21 m)."""
+    return _window_suite_sash(2.21)
+
+
 @recipe("ENV_Balcony_Iron", "CREATE_DERIVED")
 def balcony_iron():
     """Shallow stone-slab balcony with a wrought-iron railing and two iron brackets (balconera).

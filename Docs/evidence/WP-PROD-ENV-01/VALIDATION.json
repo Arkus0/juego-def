@@ -104,7 +104,7 @@
         "thresholds": 370,
         "openWalkable": 0,
         "closedBlocked": 370,
-        "renderers": 29105
+        "renderers": 29044
       },
       "issues": []
     }

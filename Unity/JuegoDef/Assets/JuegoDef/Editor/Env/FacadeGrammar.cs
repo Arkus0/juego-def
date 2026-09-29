@@ -377,7 +377,6 @@ namespace JuegoDef.Env
             return o.Select(r => new string(r)).ToArray();
         }
 
-        /// <summary>Modules for one bay slot.</summary>
         /// <summary>Iron box grilles on the ground-floor windows of some houses (all of that house's ground windows or
         /// none): the cheapest strong variation of ground floors, and what a street-level window looks like here.</summary>
         static bool Reja(BuildingSpec s)
@@ -385,6 +384,21 @@ namespace JuegoDef.Env
             if (s.type == "landmark" || s.family == "modern" || s.family == "rehab" || !EnvKit.HasModule("ENV_Window_Reja")) return false;
             uint h = (uint)(s.seed * 2654435761u) >> 7;
             return h % 100 < (s.family == "stone" || s.family == "stone_ground" ? 45 : 32);
+        }
+
+        /// <summary>Head line of a building's wide windows (phase 3 anti-procedural): 0 = the kit cut (head 2.52),
+        /// +1 = Hi (2.41), -1 = Lo (2.21). ONE line per building — a second would break the structural read of the
+        /// facade. Drawn from a dedicated hash of the seed (never the shared <paramref name="rng"/> consumed in order
+        /// by Rows/Era/Shutters/History/Dress: inserting draws there would shift every later choice of the district).
+        /// Exterior shutters are kit-height, so a building off the kit line keeps its windows bare; roller blinds hang
+        /// from above the head and cover any line. Neglected houses get at most Lo: their boarded planks reach 2.27.</summary>
+        public static int HeadLine(BuildingSpec s)
+        {
+            if (s.surrounds) return 0;                          // ashlar surrounds carry their own head
+            uint h = (uint)s.seed * 2654435761u >> 11;
+            int v = (int)(h % 100);
+            if (s.era == "neglected") return v < 25 ? -1 : 0;
+            return v < 28 ? 1 : v < 53 ? -1 : 0;
         }
 
         public static List<EnvPart> Recipe(BuildingSpec s, string fam, char code, int floor, System.Random rng)
@@ -397,11 +411,17 @@ namespace JuegoDef.Env
             void Join(string module, Vector3 at = default, float rot = 0) => parts.Add(new EnvPart(module, "joinery", at, rot));
             void Stone(string module, Vector3 at = default) => parts.Add(new EnvPart(module, "stone", at));
             string door = string.IsNullOrEmpty(s.door) ? PortalDoors[Math.Abs(s.seed) % PortalDoors.Length] : s.door;
+            // the wide-window wall of the building's head line (kit cut, Hi 2.41 or Lo 2.21); stone bays keep the kit wall
+            int hl = HeadLine(s);
+            string WindowWall() => hl > 0 ? "ENV_Wall_Plaster_Clean_Window_Hi" : hl < 0 ? "ENV_Wall_Plaster_Clean_Window_Lo" : CleanPlaster["Window_Wide_Flat"];
+            void WindowWallPart() { if (stone) Wall("Window_Wide_Flat"); else parts.Add(new EnvPart(WindowWall(), "wall")); }
             // stone bays: the kit "Rocks" window is only a stone surround, the glazed sash is a derived insert
             void WideWindow()
             {
                 if (stone) { Stone("Window_Wide_Flat_Rocks"); Join("ENV_Window_Insert_Wide"); }
                 else if (s.surrounds) parts.Add(new EnvPart("ENV_Window_Wide_Ashlar", "stone"));  // casco: sandstone surround + sash
+                else if (hl > 0) Join("ENV_Window_Insert_Wide_Hi");
+                else if (hl < 0) Join("ENV_Window_Insert_Wide_Lo");
                 else Join("Window_Wide_Flat1");
             }
 
@@ -411,25 +431,25 @@ namespace JuegoDef.Env
                     parts.Add(new EnvPart(stone ? "Wall_UnevenBrick_Straight" : floor == 0 ? "ENV_Wall_Plaster_Clean_Base" : "ENV_Wall_Plaster_Clean", "wall"));
                     break;
                 case 'W':
-                    Wall("Window_Wide_Flat");
+                    WindowWallPart();
                     WideWindow();
-                    if (floor > 0) { if (s.era == "reformed") Stone("ENV_Window_Blind"); else Join("WindowShutters_Wide_Flat_Open"); }
+                    if (floor > 0) { if (s.era == "reformed") Stone("ENV_Window_Blind"); else if (hl == 0) Join("WindowShutters_Wide_Flat_Open"); }
                     else if (Reja(s)) parts.Add(new EnvPart("ENV_Window_Reja", "prop"));
                     break;
                 case 'X':
-                    Wall("Window_Wide_Flat");
+                    WindowWallPart();
                     WideWindow();
                     Stone("ENV_Window_Boarded");
                     break;
                 case 'w':
-                    Wall("Window_Wide_Flat");
+                    WindowWallPart();
                     WideWindow();
                     if (floor == 0 && Reja(s)) parts.Add(new EnvPart("ENV_Window_Reja", "prop"));
                     break;
                 case 'c':
-                    Wall("Window_Wide_Flat");
+                    WindowWallPart();
                     WideWindow();
-                    if (s.era == "reformed") Stone("ENV_Window_Blind"); else Join("WindowShutters_Wide_Flat_Closed");
+                    if (s.era == "reformed") Stone("ENV_Window_Blind"); else if (hl == 0) Join("WindowShutters_Wide_Flat_Closed");
                     break;
                 case 'T':
                     Wall("Window_Thin_Round");

@@ -1376,6 +1376,32 @@
     "triangles": 88,
     "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
   },
+  "ENV_Wall_Plaster_Clean_Window_Hi": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Straight"
+    ],
+    "method": "Clean plaster bay with the wide window opening cut at head 2.41 m (10 cm above the kit line).",
+    "materials": [
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 85,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
+  "ENV_Wall_Plaster_Clean_Window_Lo": {
+    "class": "DONOR",
+    "donors": [
+      "Wall_Plaster_Straight"
+    ],
+    "method": "Clean plaster bay with the wide window opening cut at head 2.21 m (10 cm below the kit line).",
+    "materials": [
+      "MI_Plaster",
+      "MI_WoodTrim"
+    ],
+    "triangles": 85,
+    "donorSource": "Medieval Village/MedievalVillage_AllModels.blend"
+  },
   "ENV_Wall_Plaster_Shopfront": {
     "class": "DONOR",
     "donors": [
@@ -1459,6 +1485,28 @@
     "class": "CREATE_DERIVED",
     "donors": [],
     "method": "Glazed joinery insert for the kit rubble-stone wide window opening (\u00b10.60 x 1.05\u20132.31 m, measured on the\ndonor wall). The kit's `Window_Wide_Flat_Rocks` is only a stone surround; without this the building's empty\ninterior shows through. Recessed behind the surround: frame, mullion, transom, glass.",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 212,
+    "donorSource": null
+  },
+  "ENV_Window_Insert_Wide_Hi": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Glazed sash for the Hi suite hole (sill 0.94, head 2.41 m).",
+    "materials": [
+      "MI_WindowGlass",
+      "MI_WoodTrim"
+    ],
+    "triangles": 212,
+    "donorSource": null
+  },
+  "ENV_Window_Insert_Wide_Lo": {
+    "class": "CREATE_DERIVED",
+    "donors": [],
+    "method": "Glazed sash for the Lo suite hole (sill 0.94, head 2.21 m).",
     "materials": [
       "MI_WindowGlass",
       "MI_WoodTrim"

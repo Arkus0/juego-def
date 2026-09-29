@@ -114,6 +114,32 @@
    "yaw": 155
   },
   {
+   "op": "place",
+   "unit": "RIVER_A",
+   "class": "SEM",
+   "why": "K0_6_0 (river house, reappeared after the phase-3 full rebuild): FLAT_FACADE — nothing stands out from the front. An iron balconera under the first-floor shuttered window, the quay language of K6_10_1 two doors along.",
+   "module": "ENV_Balcony_Iron",
+   "at": [
+    110.55,
+    3.4,
+    227.89
+   ],
+   "yaw": 134
+  },
+  {
+   "op": "place",
+   "unit": "RIVER_A",
+   "class": "SEM",
+   "why": "K8_12_2 (river house, reappeared after the phase-3 full rebuild): FLAT_FACADE — the Hueso row behind the K6_11 gap reads as one flat plane. An iron balconera under its stacked first/second-floor window axis.",
+   "module": "ENV_Balcony_Iron",
+   "at": [
+    15.65,
+    3.96,
+    155.75
+   ],
+   "yaw": 353
+  },
+  {
    "op": "remove",
    "unit": "STREET_B",
    "class": "TECH",
