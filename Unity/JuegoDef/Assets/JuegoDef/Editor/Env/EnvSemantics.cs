@@ -781,9 +781,9 @@ namespace JuegoDef.Env
                     float lat = Mathf.Abs((q.x - a.x) * dv.z - (q.z - a.z) * dv.x);
                     if (lat < w / 2f + 0.45f)
                     {
-                        float past = len - t;    // > 0: the door stands beyond the top tread; < 0: the stair runs past the door line
-                        if (past > 1.2f) list.Add(F("STAIR_SHORT_OF_DOOR", unit, id, b, "Stairs/" + id, $"top tread {past:0.0} m before the door it serves (door {door.Value.dist:0.0} m from the top end)"));
-                        if (past < -0.35f) list.Add(F("STAIR_PAST_DOOR", unit, id, b, "Stairs/" + id, $"stair runs {-past:0.00} m past the door line: the first tread is inside its opening"));
+                        float past = len - t;    // > 0: the door stands inside the run (the stair overshoots it); < 0: the door lies beyond the top tread
+                        if (past > 1.2f) list.Add(F("STAIR_PAST_DOOR", unit, id, b, "Stairs/" + id, $"stair runs {past:0.0} m past its door: the landing cuts into what should be its opening"));
+                        if (past < -0.35f) list.Add(F("STAIR_SHORT_OF_DOOR", unit, id, b, "Stairs/" + id, $"top tread {-past:0.00} m short of the door it serves (door {door.Value.dist:0.0} m from the top end)"));
                     }
                 }
                 var n = new Vector3(-dv.z, 0, dv.x);
