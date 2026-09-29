@@ -982,7 +982,12 @@ namespace JuegoDef.Env
                             foreach (Transform m in f)
                                 if ("WwTc".IndexOf(m.name[0]) >= 0)
                                 {
-                                    var rs = m.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                                    // the lintel is the top of the carpentry/shutter/surround, never of the wall panel:
+                                    // wall renderers cover the whole storey (0-3 m), so including one flattened every
+                                    // window's head onto the floor line (top - floorLine = 0.0 district-wide)
+                                    var rs = m.GetComponentsInChildren<Renderer>()
+                                        .Where(r => { var n = EnvClearance.ModuleName(r.gameObject); return !n.StartsWith("ENV_Wall_") && !n.StartsWith("Wall_"); }).ToArray();
+                                    if (rs.Length == 0) continue;
                                     float top = float.MinValue; foreach (var r in rs) top = Mathf.Max(top, r.bounds.max.y);
                                     float floorLine = b.TransformPoint(new Vector3(0, (fl + 1) * BuildingAssembler.Storey, 0)).y;
                                     if (!lintels.ContainsKey(unit)) { lintels[unit] = new HashSet<float>(); lintelN[unit] = 0; }
