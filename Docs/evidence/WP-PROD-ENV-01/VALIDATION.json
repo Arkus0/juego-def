@@ -107,46 +107,6 @@
         "renderers": 27220
       },
       "issues": []
-    },
-    {
-      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes.unity",
-      "stats": {
-        "thresholds": 37,
-        "openWalkable": 3,
-        "closedBlocked": 34,
-        "renderers": 2882
-      },
-      "issues": []
-    },
-    {
-      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_CascoRef_Potes_KitPalette.unity",
-      "stats": {
-        "thresholds": 37,
-        "openWalkable": 3,
-        "closedBlocked": 34,
-        "renderers": 2768
-      },
-      "issues": []
-    },
-    {
-      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_DemoA_Commercial_To_Quay.unity",
-      "stats": {
-        "thresholds": 20,
-        "openWalkable": 2,
-        "closedBlocked": 18,
-        "renderers": 1156
-      },
-      "issues": []
-    },
-    {
-      "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_DemoB_Upper_Lane.unity",
-      "stats": {
-        "thresholds": 10,
-        "openWalkable": 0,
-        "closedBlocked": 10,
-        "renderers": 649
-      },
-      "issues": []
     }
   ],
   "problems": 0,

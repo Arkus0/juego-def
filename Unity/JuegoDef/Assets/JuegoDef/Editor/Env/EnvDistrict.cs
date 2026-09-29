@@ -120,7 +120,7 @@ namespace JuegoDef.Env
             go.AddComponent<MeshFilter>().sharedMesh = mesh;
             go.AddComponent<MeshRenderer>().sharedMaterial = mat;
             if (collider) go.AddComponent<MeshCollider>().sharedMesh = mesh;
-            GameObjectUtility.SetStaticEditorFlags(go, (StaticEditorFlags)~0);
+            GameObjectUtility.SetStaticEditorFlags(go, EnvKit.StaticFlags);
             return go;
         }
 

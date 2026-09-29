@@ -154,6 +154,28 @@ def board(rng):
     return Image.fromarray(np.clip(base, 0, 255).astype(np.uint8), "RGB").filter(ImageFilter.SMOOTH)
 
 
+
+def window_glow(rng):
+    """Lit interior seen through a window at night (neutral grey: the emission colour gives warm lamp / cool TV):
+    ceiling light falling off downwards, curtains drawn at both sides with soft vertical folds."""
+    n = 128
+    y = np.linspace(0, 1, n)[:, None]                     # 0 top .. 1 bottom (image rows)
+    x = np.linspace(0, 1, n)[None, :]
+    v = 0.92 - 0.38 * y                                   # ceiling lamp: brighter above
+    v = v + 0.12 * np.exp(-(((x - 0.5) / 0.22) ** 2 + ((y - 0.08) / 0.18) ** 2))
+    v = np.broadcast_to(v, (n, n)).copy()
+    for side in (0, 1):
+        w = 0.16 + 0.08 * rng.random()
+        d = x if side == 0 else 1 - x
+        folds = 0.5 + 0.5 * np.sin(d * 2 * math.pi * 9 + rng.random() * 6)
+        curtain = np.broadcast_to(0.42 + 0.14 * folds + 0.1 * (1 - y), (n, n))
+        edge = np.clip((w - np.broadcast_to(d, (n, n))) / 0.03, 0, 1)
+        v = v * (1 - edge) + curtain * edge
+    v = v * (0.94 + 0.06 * fbm(n, rng, (4, 8), (1, 0.5)))
+    g = np.clip(v * 255, 0, 255).astype(np.uint8)
+    return Image.fromarray(np.stack([g, g, g], -1), "RGB").filter(ImageFilter.SMOOTH)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", required=True)
@@ -164,7 +186,8 @@ def main():
     for name, fn in (("T_ENV_Ground_Grass", grass), ("T_ENV_Ground_Earth", earth), ("T_ENV_Iron", iron),
                      ("T_ENV_Galvanised", galvanised), ("T_ENV_Canvas_Red", lambda r: canvas(r, (150, 52, 40))),
                      ("T_ENV_Canvas_Green", lambda r: canvas(r, (54, 98, 70))), ("T_ENV_Canvas_Cream", lambda r: canvas(r, (226, 214, 186), False)),
-                     ("T_ENV_Terracotta", terracotta), ("T_ENV_Foliage", foliage), ("T_ENV_Sign_Board", board)):
+                     ("T_ENV_Terracotta", terracotta), ("T_ENV_Foliage", foliage), ("T_ENV_Sign_Board", board),
+                     ("T_ENV_Window_Glow", window_glow)):
         path = os.path.join(a.out, name + ".png")
         fn(rng).save(path)
         print(path)

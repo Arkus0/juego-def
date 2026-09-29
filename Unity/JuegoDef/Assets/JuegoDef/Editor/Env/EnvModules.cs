@@ -26,6 +26,7 @@ namespace JuegoDef.Env
             var none = new HashSet<string>(policy["noCollider"].Select(t => (string)t));
             var boxes = new HashSet<string>(policy["boxCollider"].Select(t => (string)t));
             var trunks = new HashSet<string>((policy["trunkCollider"] ?? new JArray()).Select(t => (string)t));
+            noShadow = new HashSet<string>((policy["noShadow"] ?? new JArray()).Select(t => (string)t));
             int derived = 0, wrapped = 0;
             var produced = new HashSet<string>();
 
@@ -65,6 +66,8 @@ namespace JuegoDef.Env
             Debug.Log($"JD_ENV_MODULES derived={derived} wrapped={wrapped}");
         }
 
+        static HashSet<string> noShadow = new HashSet<string>();
+
         static void SaveModule(string name, GameObject source, string collider, Dictionary<string, string> remap = null)
         {
             var root = new GameObject(name);
@@ -79,6 +82,10 @@ namespace JuegoDef.Env
                         map[m.name] = "ENV_Src_" + m.name;
             if (remap != null) foreach (var kv in remap) map[kv.Key] = kv.Value;
             EnvKit.Remap(inst, map);
+            // flush or tiny details: their shadow never resolves in the main-light cascade, so they skip the shadow pass
+            if (noShadow.Contains(name))
+                foreach (var r in inst.GetComponentsInChildren<Renderer>(true))
+                    r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             switch (collider)
             {
                 case "mesh":

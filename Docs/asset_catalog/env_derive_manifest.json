@@ -286,7 +286,7 @@
     "materials": [
       "MI_WoodTrim"
     ],
-    "triangles": 316,
+    "triangles": 154,
     "donorSource": null
   },
   "ENV_Escudo": {
@@ -518,7 +518,7 @@
       "ENV_Soil",
       "ENV_Terracotta"
     ],
-    "triangles": 316,
+    "triangles": 236,
     "donorSource": null
   },
   "ENV_Plinth_2m": {
@@ -600,7 +600,7 @@
     "materials": [
       "ENV_Stone_Sandstone"
     ],
-    "triangles": 880,
+    "triangles": 240,
     "donorSource": null
   },
   "ENV_Railing_Quay_2m": {
@@ -761,7 +761,7 @@
       "ENV_Metal_Iron",
       "ENV_Metal_Shutter"
     ],
-    "triangles": 1324,
+    "triangles": 204,
     "donorSource": null
   },
   "ENV_Sign_Bracket": {
@@ -817,7 +817,7 @@
     "materials": [
       "MI_WoodTrim"
     ],
-    "triangles": 2324,
+    "triangles": 1130,
     "donorSource": null
   },
   "ENV_Solana_Wing": {
@@ -1097,7 +1097,7 @@
       "MI_WindowGlass",
       "MI_WoodTrim"
     ],
-    "triangles": 652,
+    "triangles": 396,
     "donorSource": null
   }
 }

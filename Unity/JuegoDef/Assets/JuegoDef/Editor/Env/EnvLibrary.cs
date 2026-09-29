@@ -121,7 +121,7 @@ namespace JuegoDef.Env
                     throw new System.ArgumentException("ENV_UNKNOWN_UNIT_KIND " + u["kind"]);
             }
             foreach (var t in root.GetComponentsInChildren<Transform>(true))
-                if (!t.GetComponent<Light>()) GameObjectUtility.SetStaticEditorFlags(t.gameObject, (StaticEditorFlags)~0);
+                if (!t.GetComponent<Light>()) GameObjectUtility.SetStaticEditorFlags(t.gameObject, EnvKit.StaticFlags);
             return root;
         }
 

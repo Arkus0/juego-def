@@ -113,6 +113,14 @@ namespace JuegoDef.Env
                 }
             if (r["floats"] is JObject floats)
                 foreach (var kv in floats) mat.SetFloat(kv.Key, (float)kv.Value);
+            if (r["emission"] is JArray em)
+            {
+                // HDR emission: hex colour times intensity (night lamps and lit windows drive the bloom)
+                var e = EnvKit.Hex((string)em[0]) * (float)em[1];
+                e.a = 1f;
+                mat.SetColor("_EmissionColor", e);
+                mat.EnableKeyword("_EMISSION");
+            }
             if (r["keywords"] is JArray keywords)
                 foreach (var k in keywords) mat.EnableKeyword((string)k);
             if (mat.IsKeywordEnabled("_EMISSION")) mat.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;

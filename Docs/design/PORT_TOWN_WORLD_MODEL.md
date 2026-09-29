@@ -1,7 +1,7 @@
 # Port-town world model
 
 Status: **CURRENT PRODUCT PLANNING MODEL**  
-Date: 2026-09-28
+Date: 2026-09-28 (amended 2026-09-29: CASCO reference, terrain and water)
 
 ## Setting scale
 
@@ -22,6 +22,27 @@ These are production/world-organization zones, not necessarily formal municipal 
 - `VIVIENDAS` — lower-intensity residential fabric and quieter night contrast.
 
 Nightlife is a **city layer**, not a sixth dedicated district. Casco is primary; Talleres secondary; Mercado has ordinary evening life; Muelle has night work; Viviendas quiets down.
+
+### CASCO reference, terrain and water (owner decisions 2026-09-28, district approved 2026-09-29)
+
+- **Real-town reference, fictional town.** The CASCO takes the historic core of a real Cantabrian town (Potes,
+  Liébana) as its **morphology and look reference** ("mini Potes": lebaniego old-town architecture). The reference
+  donates structure — street network, block and plot grain, node/plaza logic, slopes — and a regional look, studied
+  from primary data (OSM, IGN MDT05). It never donates names, signage, named landmarks or geography: the setting stays
+  this fictional port town and the old inland/Potes setting is **not** restored. Method and rules:
+  [`../production/ENV_COMPOSITION_RULES.md`](../production/ENV_COMPOSITION_RULES.md); study and built district:
+  [`../evidence/WP-PROD-ENV-01/CASCO_REFERENCE_STUDY.md`](../evidence/WP-PROD-ENV-01/CASCO_REFERENCE_STUDY.md).
+- **Soul, not trace.** The playable CASCO keeps the spine, 2–3 characterful secondary streets, 1–2 descents to the
+  water and a few corners; everything else is simplified for walking, NPC routes and legibility (plaza, bar, tower /
+  town hall, way to the port).
+- **The town rises from the port** towards Casco and Viviendas. Route grades by network length: about **70 %
+  comfortable, 20 % perceptible, 10 % steep or stairs**; stairs are an accent. District terrain characters: Casco short
+  slopes, stairs and small terraces; Mercado flatter with stepped plazas; Muelle almost flat with service ramps;
+  Talleres gentle slopes and vehicle ramps; Viviendas hillside terraces and retaining walls.
+- **A small/medium river**, partially channelled between stone walls, runs along one edge of the Casco (houses tight on
+  the water, 1–2 small stone bridges, a plaza opening to it) and continues down to the port, where it opens or meets
+  the sea. It is an edge, never a wide urban frontier. The built CASCO district leaves this riverside seam towards the
+  port open (candidate for the optional Casco–Muelle descent `U08` of `CITY_URBAN_00_HANDOFF.md`).
 
 ## First keeper block authority
 

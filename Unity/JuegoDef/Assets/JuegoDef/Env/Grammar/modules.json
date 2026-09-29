@@ -1,5 +1,5 @@
 {
-  "comment": "Module step policy (JuegoDef > ENV > 2 Build Modules). Derived meshes get a MeshCollider unless listed here. Wrappers give Props/Nature models (which ship without collision) an owned module prefab with a box collider. Collider 'trunk' = capsule on the stem only, so people walk under canopies.",
+  "comment": "Module step policy (JuegoDef > ENV > 2 Build Modules). Derived meshes get a MeshCollider unless listed here. Wrappers give Props/Nature models (which ship without collision) an owned module prefab with a box collider. Collider 'trunk' = capsule on the stem only, so people walk under canopies. 'noShadow' modules are flush or tiny details whose shadow never resolves in the 2048 cascade; they skip the shadow pass.",
   "noCollider": [
     "ENV_Awning",
     "ENV_Downpipe",
@@ -32,7 +32,8 @@
     "ENV_Escudo",
     "ENV_Window_Wide_Ashlar",
     "ENV_Solana_Bay",
-    "ENV_Solana_Wing"
+    "ENV_Solana_Wing",
+    "ENV_Hill_Tree"
   ],
   "boxCollider": [
     "ENV_Bollard_Mooring",
@@ -51,10 +52,39 @@
     "ENV_Lamp_Post",
     "ENV_Net_Pile",
     "ENV_Lifebuoy_Post",
-    "ENV_Sign_NoEntry"
+    "ENV_Sign_NoEntry",
+    "ENV_Window_Insert_Wide",
+    "ENV_Wall_Plaster_Clean",
+    "ENV_Retaining_Wall_2x2"
   ],
   "trunkCollider": [
     "ENV_Tree_Plaza"
+  ],
+  "noShadow": [
+    "ENV_Quoin_Ashlar",
+    "ENV_Window_Wide_Ashlar",
+    "ENV_Window_Insert_Wide",
+    "ENV_Door_Balcony",
+    "ENV_Shutter_Roller",
+    "ENV_Planter_Pot",
+    "ENV_Sign_Bracket",
+    "ENV_Shop_Fascia",
+    "ENV_Downpipe",
+    "ENV_Downpipe_Head",
+    "ENV_Downpipe_Shoe",
+    "ENV_Escudo",
+    "ENV_Plinth_2m",
+    "ENV_Plinth_Pier",
+    "ENV_Street_Name_Plate",
+    "ENV_Utility_Box",
+    "ENV_Cable_Run_2m",
+    "ENV_Puddle_A",
+    "ENV_Puddle_B",
+    "ENV_Drain_Grate",
+    "ENV_Manhole",
+    "ENV_Tree_Pit",
+    "ENV_Window_Blind",
+    "ENV_Window_Boarded"
   ],
   "wrappers": [
     {

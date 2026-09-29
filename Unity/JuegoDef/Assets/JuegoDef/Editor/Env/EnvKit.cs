@@ -16,6 +16,11 @@ namespace JuegoDef.Env
         public const string Derived = "Assets/JuegoDef/Derived/ENV";
         public const string Grammar = "Assets/JuegoDef/Env/Grammar";
         public const string Specs = "Assets/JuegoDef/Env/Specs";
+
+        /// <summary>Static flags for built environment: everything but static batching. URP's GPU Resident Drawer draws
+        /// static kit pieces instanced; static batching would instead copy every mesh into combined buffers at load
+        /// (the CASCO district: 9 s first frame, 2 GB of graphics memory).</summary>
+        public const StaticEditorFlags StaticFlags = (StaticEditorFlags)~0 & ~StaticEditorFlags.BatchingStatic;
         public static readonly string[] SourceRoots =
         {
             Derived + "/Modules",

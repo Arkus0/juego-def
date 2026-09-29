@@ -467,12 +467,26 @@ def shutter_roller():
     """Closed metal roller shutter (persiana) filling the shop opening: ribbed curtain, guide rails, housing box."""
     x0, x1 = -OPEN_W / 2, OPEN_W / 2
     parts = []
+    bm = bmesh.new()
+    top = OPEN_H - 0.28
+    rows = []
     y = 0.0
-    i = 0
-    while y < OPEN_H - 0.28:
-        parts.append(box(f"slat{i}", (x0 + 0.04, y, -0.06), (x1 - 0.04, y + 0.075, -0.03 + (0.012 if i % 2 else 0)), "ENV_Metal_Shutter", bevel=0.006))
-        y += 0.075
-        i += 1
+    k = 0
+    while y <= top + 1e-6:
+        z = -0.03 + (0.012 if k % 2 else 0.0)
+        rows.append((bm.verts.new(U(x0 + 0.04, y, z)), bm.verts.new(U(x1 - 0.04, y, z))))
+        y += 0.0375
+        k += 1
+    for (a0, a1), (b0, b1) in zip(rows, rows[1:]):
+        bm.faces.new([a0, a1, b1, b0])
+    for f in bm.faces:
+        f.normal_update()
+        if f.normal.dot(Vector(U(0, 0, 1))) < 0:
+            f.normal_flip()
+    curtain = new_object("curtain", bm)
+    curtain.data.materials.append(material("ENV_Metal_Shutter"))
+    uv_box(curtain)
+    parts.append(curtain)
     parts.append(box("bar", (x0 + 0.04, 0.0, -0.065), (x1 - 0.04, 0.05, -0.015), "ENV_Metal_Iron"))
     parts.append(box("railL", (x0, 0.0, -0.08), (x0 + 0.05, OPEN_H - 0.28, 0.0), "ENV_Metal_Shutter"))
     parts.append(box("railR", (x1 - 0.05, 0.0, -0.08), (x1, OPEN_H - 0.28, 0.0), "ENV_Metal_Shutter"))
@@ -871,17 +885,28 @@ def flat_poly(name, pts_xz, y, mat):
     return ob
 
 
-def loft(name, sections, mat):
-    """Closed loft through cross-sections: list of (z, [(x, y), ...]) with equal point counts (Unity frame)."""
+def loft(name, sections, mat, cap_start=True, cap_end=True, hidden=()):
+    """Loft through cross-sections: list of (z, [(x, y), ...]) with equal point counts (Unity frame). The loft is
+    built closed (so normals resolve), then the start/end caps and the side columns listed in `hidden` (column i runs
+    between section points i and i+1) are dropped where they face a wall or a board and never render."""
     bm = bmesh.new()
     rings = [[bm.verts.new(U(x, y, z)) for x, y in pts] for z, pts in sections]
     n = len(rings[0])
+    drop = []
     for a, b in zip(rings, rings[1:]):
         for i in range(n):
-            bm.faces.new([a[i], a[(i + 1) % n], b[(i + 1) % n], b[i]])
-    bm.faces.new(rings[0][::-1])
-    bm.faces.new(rings[-1])
+            f = bm.faces.new([a[i], a[(i + 1) % n], b[(i + 1) % n], b[i]])
+            if i in hidden:
+                drop.append(f)
+    f0 = bm.faces.new(rings[0][::-1])
+    f1 = bm.faces.new(rings[-1])
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    if not cap_start:
+        drop.append(f0)
+    if not cap_end:
+        drop.append(f1)
+    if drop:
+        bmesh.ops.delete(bm, geom=drop, context="FACES_ONLY")
     ob = new_object(name, bm)
     ob.data.materials.append(material(mat))
     uv_box(ob)
@@ -1389,14 +1414,12 @@ def lathe(name, profile, mat, segments=16, center=(0.0, 0.0), band=None):
     return ob
 
 
-def rafter(name, x, z0, z1, top0, slope, w, h, mat, carve=True):
+def rafter(name, x, z0, z1, top0, slope, w, h, mat, carve=True, hide_top=True):
     """Timber rafter/joist tail running out along +z: top follows y = top0 - slope*(z - z0); the tip is carved
     (bottom rises in a quarter round) as on lebaniego eaves."""
     xs = (x - w / 2, x + w / 2)
     secs = []
-    n = 6
-    for k in range(n + 1):
-        t = k / n
+    for t in (0.0, 0.55, 0.7, 0.85, 1.0):
         z = z0 + (z1 - z0) * t
         top = top0 - slope * (z - z0)
         if carve and t > 0.55:
@@ -1405,7 +1428,7 @@ def rafter(name, x, z0, z1, top0, slope, w, h, mat, carve=True):
         else:
             bot = top - h
         secs.append((z, [(xs[0], bot), (xs[1], bot), (xs[1], top), (xs[0], top)]))
-    ob = loft(name, secs, mat)
+    ob = loft(name, secs, mat, cap_start=False, hidden=(2,) if hide_top else ())
     uv_band(ob, WOOD_DARK)
     return ob
 
@@ -1629,8 +1652,8 @@ def shop_fascia():
 def planter_pot():
     """Terracotta planter pot (0.45 m): foot ring, flared body, rolled rim; soil top. Plants are placed separately."""
     prof = [(0.0, 0.0), (0.15, 0.0), (0.16, 0.03), (0.155, 0.05), (0.19, 0.2), (0.225, 0.36), (0.25, 0.37), (0.255, 0.42), (0.235, 0.43), (0.215, 0.41)]
-    return join("ENV_Planter_Pot", [lathe("pot", prof, "ENV_Terracotta", segments=16),
-                                    lathe("soil", [(0.0, 0.39), (0.215, 0.39)], "ENV_Soil", segments=16)])
+    return join("ENV_Planter_Pot", [lathe("pot", prof, "ENV_Terracotta", segments=12),
+                                    lathe("soil", [(0.0, 0.39), (0.215, 0.39)], "ENV_Soil", segments=12)])
 
 
 @recipe("ENV_Tree_Plaza", "ORIGINAL")
@@ -1678,7 +1701,7 @@ def eave_canecillos():
     parts.append(boards)
     for i, x in enumerate((-0.8, -0.4, 0.0, 0.4, 0.8)):
         parts.append(rafter(f"can{i}", x, z0, z1 - 0.04, -0.075, EAVE_SLOPE, 0.11, 0.17, "MI_WoodTrim"))
-    parts.append(box("plate", (-1.0, -0.26, z0 - 0.02), (1.0, -0.075, z0 + 0.13), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.01))
+    parts.append(box("plate", (-1.0, -0.26, z0 - 0.02), (1.0, -0.075, z0 + 0.13), "MI_WoodTrim", uv="band", band=WOOD_DARK))
     return join("ENV_Eave_Canecillos", parts)
 
 
@@ -1688,18 +1711,18 @@ def solana_bay():
     front fascia, balustrade of turned balusters between rails, a post at the bay's left edge rising to the eave with
     a zapata. Bays chain along the facade; ENV_Solana_Wing closes the ends. Kit MI_WoodTrim (palette joinery)."""
     zf = 1.0
-    parts = [box("floor", (-1.0, -0.02, WALL_FACE - 0.02), (1.0, 0.06, zf), "MI_WoodTrim", uv="band", band=WOOD_LIGHT, bevel=0.008),
-             box("fascia", (-1.0, -0.12, zf - 0.03), (1.0, 0.06, zf + 0.02), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.006)]
+    parts = [box("floor", (-1.0, -0.02, WALL_FACE - 0.02), (1.0, 0.06, zf), "MI_WoodTrim", uv="band", band=WOOD_LIGHT),
+             box("fascia", (-1.0, -0.12, zf - 0.03), (1.0, 0.06, zf + 0.02), "MI_WoodTrim", uv="band", band=WOOD_DARK)]
     for i, x in enumerate((-0.66, 0.0, 0.66)):
         parts.append(rafter(f"joist{i}", x, WALL_FACE, zf + 0.12, -0.02, 0.0, 0.1, 0.18, "MI_WoodTrim"))
     rail_z = zf - 0.07
-    parts.append(box("rail_b", (-1.0, 0.07, rail_z - 0.04), (1.0, 0.13, rail_z + 0.04), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.008))
+    parts.append(box("rail_b", (-1.0, 0.07, rail_z - 0.04), (1.0, 0.13, rail_z + 0.04), "MI_WoodTrim", uv="band", band=WOOD_DARK))
     parts.append(box("rail_t", (-1.0, 0.98, rail_z - 0.055), (1.0, 1.05, rail_z + 0.055), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.012))
-    bal = [(0.02, 0.13), (0.028, 0.18), (0.022, 0.26), (0.034, 0.44), (0.036, 0.56), (0.022, 0.74), (0.028, 0.86), (0.02, 0.98)]
+    bal = [(0.022, 0.13), (0.03, 0.24), (0.036, 0.5), (0.022, 0.76), (0.02, 0.98)]
     x = -0.86
     k = 0
     while x < 0.95:
-        parts.append(lathe(f"bal{k}", bal, "MI_WoodTrim", segments=8, center=(x, rail_z), band=WOOD_DARK))
+        parts.append(lathe(f"bal{k}", bal, "MI_WoodTrim", segments=6, center=(x, rail_z), band=WOOD_DARK))
         x += 0.125
         k += 1
     parts.append(box("post", (-0.99, 0.06, rail_z - 0.06), (-0.87, 2.9, rail_z + 0.06), "MI_WoodTrim", uv="band", band=WOOD_DARK, bevel=0.012))
@@ -1726,14 +1749,46 @@ def quoin_ashlar():
     c = WALL_FACE
     parts = []
     h = 0.3
+    o, e, i = c + 0.03, 0.012, c - 0.06      # proud face, arris chamfer, inner line inside the wall
     for k in range(10):
         y0 = k * h + 0.004
         y1 = (k + 1) * h - 0.004
         long_front = k % 2 == 0
         lf, ls = (0.5, 0.26) if long_front else (0.28, 0.46)
-        parts.append(box(f"f{k}", (c - lf, y0, c - 0.06), (c + 0.03, y1, c + 0.03), "ENV_Stone_Sandstone", uv="band", band=ROCK_SLAB, bevel=0.012))
-        parts.append(box(f"s{k}", (c - 0.06, y0, c - ls), (c + 0.03, y1, c - 0.06), "ENV_Stone_Sandstone", uv="band", band=ROCK_SLAB, bevel=0.012))
+        # outline (x, z) around the L; the last two edges run inside the wall
+        pts = [(c - lf, i), (c - lf, o), (o - e, o), (o, o - e), (o, i), (o, c - ls), (i, c - ls), (i, i)]
+        caps = [[0, 1, 2, 3, 4, 7], [7, 4, 5, 6]]
+        parts.append(prism_xz(f"q{k}", pts, y0, y1, "ENV_Stone_Sandstone", band=ROCK_SLAB, caps=caps, hidden=(6, 7)))
     return join("ENV_Quoin_Ashlar", parts)
+
+
+def prism_xz(name, pts, y0, y1, mat, band=None, caps=None, hidden=()):
+    """Vertical prism over an (x, z) outline between y0 and y1 (Unity frame). caps: convex pieces of the outline
+    (point indices) for top and bottom, so concave outlines triangulate correctly; hidden: side faces (edge i from
+    point i to i+1) dropped after the normals resolve, where they sit inside a wall."""
+    bm = bmesh.new()
+    lo = [bm.verts.new(U(x, y0, z)) for x, z in pts]
+    hi = [bm.verts.new(U(x, y1, z)) for x, z in pts]
+    n = len(pts)
+    drop = []
+    for k in range(n):
+        f = bm.faces.new([lo[k], lo[(k + 1) % n], hi[(k + 1) % n], hi[k]])
+        if k in hidden:
+            drop.append(f)
+    for poly in caps or [list(range(n))]:
+        bm.faces.new([lo[k] for k in poly][::-1])
+        bm.faces.new([hi[k] for k in poly])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    if drop:
+        bmesh.ops.delete(bm, geom=drop, context="FACES_ONLY")
+    bmesh.ops.triangulate(bm, faces=bm.faces[:])
+    ob = new_object(name, bm)
+    ob.data.materials.append(material(mat))
+    if band:
+        uv_band(ob, band)
+    else:
+        uv_box(ob)
+    return ob
 
 
 @recipe("ENV_Window_Wide_Ashlar", "CREATE_DERIVED")
@@ -1749,7 +1804,7 @@ def window_wide_ashlar():
         w = 0.24 if k % 2 == 0 else 0.17
         for sx in (-1, 1):
             xa, xb = sorted((sx * 0.6, sx * (0.6 + w)))
-            parts.append(box(f"j{k}{sx}", (xa, ys[k] + 0.004, c - 0.12), (xb, ys[k + 1] - 0.004, c + 0.03), st, uv="band", band=ROCK_SLAB, bevel=0.01))
+            parts.append(box(f"j{k}{sx}", (xa, ys[k] + 0.004, c - 0.12), (xb, ys[k + 1] - 0.004, c + 0.03), st, uv="band", band=ROCK_SLAB))
     parts.append(box("lintel", (-0.9, 2.31, c - 0.12), (0.9, 2.57, c + 0.035), st, uv="band", band=ROCK_SLAB, bevel=0.012))
     parts.append(box("sill", (-0.82, 0.97, c - 0.12), (0.82, 1.05, c + 0.08), st, uv="band", band=ROCK_SLAB, bevel=0.01))
     x0, x1, y0, y1, zf, zb = -0.6, 0.6, 1.05, 2.31, -0.02, -0.1

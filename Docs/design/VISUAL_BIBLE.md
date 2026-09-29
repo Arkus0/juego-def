@@ -54,6 +54,16 @@ Useful family anchors, adjustable in the real Unity lighting baseline:
 
 Avoid pure black/white albedo and uncontrolled saturation. District identity may legitimately shift material balance and accent frequency.
 
+### CASCO identity (owner, 2026-09-28; district approved 2026-09-29)
+
+The old town speaks the **lebaniego** vernacular of its real reference (see `PORT_TOWN_WORLD_MODEL.md`, CASCO
+reference): *canto rodado* paving with a central strip of big flags; rubble-stone ground floors under lime,
+sandstone or ochre render; dressed ashlar quoins only on corners that are seen; red Arab tile with little moss on
+deep eaves carried by carved rafter tails (*canecillos*); timber *solanas* across the top floor; *casonas* of ashlar
+with arched portal and shield; striped awnings, wrought-iron hanging signs, pots and barrels at the bars. Its roofs
+sit warmer than the `dark wet roof` anchor (terracotta `#AE6448` weathering to `#6E4535`). Solanas and deep eaves are regional
+northern-Spain cues, not the alpine/chalet signals rejected above. Detail rules: `Docs/production/ENV_COMPOSITION_RULES.md`.
+
 ## 5. Composition oracle
 
 Human-scale third-person readability is the primary judge. Streets, thresholds, facade depth, roof/base junctions and ground contact must look intentional at player distance.

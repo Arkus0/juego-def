@@ -8,15 +8,15 @@ Operator posture: `BOUNDED_OPERATOR` (Claude Code + MCP for Unity; headless Blen
 A small, data-driven path from **CITY demand** to **walkable street content**:
 
 ```text
-CITY/B0 brief ─► request units by outcome (units.json / street spec)
+CITY/B0 brief ─► request units by outcome (units.json / district trace)
       │                 │
       │   discover:  python Tools/env_catalog.py search|modules  +  python Tools/asset_catalog.py search
       ▼                 ▼
  vendor kit (installed, ignored) ─► Blender recipes (donor cleanup / new pieces on kit trim sheets)
       │                                   │  Tools/blender/env_derive.py  →  Derived/ENV/Meshes/*.fbx
       ▼                                   ▼
- Unity: 1 Generate Materials → 2 Build Modules → 3 Build Library → 4 Build Street Demos → 5 Validate
-      │     palettes/textures      prefabs+colliders    units+previews     scenes+probe        report
+ Unity: 1 Generate Materials → 2 Build Modules → 3 Build Library → 7 Build District → 5 Validate
+      │     palettes/textures      prefabs+colliders    units+previews    district scene     report
       │
       │  districts: real reference (OSM + IGN MDT05) ─► Tools/env_district.py measure
       │             authored trace (Env/Specs/districts/<id>.trace.json) ─► Tools/env_district_skeleton.py
@@ -35,12 +35,12 @@ Not a city generator: buildings, streets and edges are assembled from a vocabula
 | What | Path |
 | --- | --- |
 | Grammar data (palettes, material recipes, module policy, validator policy) | `Unity/JuegoDef/Assets/JuegoDef/Env/Grammar/*.json` |
-| Unit library request + street specs | `Unity/JuegoDef/Assets/JuegoDef/Env/Specs/units.json`, `Env/Specs/streets/*.json` |
-| Factory code (Editor only) | `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/` (`EnvKit`, `FacadeGrammar`, `BuildingAssembler`, `EnvTemplates`, `EnvStreet`, `EnvMaterials`, `EnvModules`, `EnvLibrary`, `EnvValidator`, `EnvImportRules`, `EnvPreview`) |
+| Unit library request | `Unity/JuegoDef/Assets/JuegoDef/Env/Specs/units.json` |
+| Factory code (Editor only) | `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/` (`EnvKit`, `FacadeGrammar`, `BuildingAssembler`, `EnvTemplates`, `EnvStreet` (facade-row rules), `EnvDistrict`, `EnvMaterials`, `EnvModules`, `EnvLibrary`, `EnvValidator`, `EnvClearance`, `EnvImportRules`, `EnvPreview`, `EnvLighting`) |
 | Route probe (dev runtime) | `Unity/JuegoDef/Assets/JuegoDef/Runtime/Dev/JDRouteProbe.cs` |
 | Blender derivation recipes | `Tools/blender/env_derive.py` (reads the vault `.blend`, never writes it) |
 | Owned outputs (with lineage) | `Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/{Meshes,Modules,Materials,Textures,Units}` |
-| Demo/test street scenes | `Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/` |
+| District scenes (generated, not committed) | `Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/` |
 | District specs (authored trace + generated spec) | `Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/` |
 | District tools | `Tools/env_morphology.py` (street study), `Tools/env_district.py` (district metrics, IGN DEM), `Tools/env_district_skeleton.py` (trace → spec), `Tools/env_textures.py` (painted tileable textures) |
 | Composition rules | [`ENV_COMPOSITION_RULES.md`](ENV_COMPOSITION_RULES.md) |
@@ -53,7 +53,7 @@ python Tools/asset_catalog.py install --pack medieval   # plus props, nature (va
 blender -b --factory-startup --python Tools/blender/env_derive.py      # only if a recipe changed; add -- --only NAME
 ```
 
-Unity menu `JuegoDef > ENV`: **1 Generate Materials → 2 Build Modules → 3 Build Library → 4 Build Street Demos → 5 Validate** (and **6 Validator Self-Test** after touching the validator). Then:
+Unity menu `JuegoDef > ENV`: **1 Generate Materials → 2 Build Modules → 3 Build Library → 7 Build District → 5 Validate** (and **6 Validator Self-Test** after touching the validator). Then:
 
 ```powershell
 python Tools/env_catalog.py lineage ; python Tools/env_catalog.py check ; python Tools/env_catalog.py inventory
@@ -124,20 +124,28 @@ A palette names `facade`, `trim`, `joinery`, `roof`, `tiles`, `glass`. Vendor ma
 
 Every ground-floor door/gate carries an empty `THR_*` marker on its clear passage centre, forward = out to the street: `THR_Public_Shop`, `THR_Public_Portal` (walkable), `THR_*_Closed` (leaf shut), `THR_Service_Closed` (must never be a public shortcut). Routes, validators and later interaction/NPC work use these instead of guessing coordinates.
 
-### Street spec (`Env/Specs/streets/*.json`)
+### District spec (`Env/Specs/districts/<id>.json`, generated from `<id>.trace.json`)
 
-`length`, `width`, `ground` (`kerbed`/`pedestrian`), `rows.south|north` = ordered list of `{ "unit": "<library id>", ...overrides }` or `{ "gap": metres }`, `ends` (open/hidden), `templates` (`kind`/`unit` + `at` + `rotY` + `params`), `spawn`, `route`. The assembler resolves party walls (shared storeys build no side walls), one quoin column per shared edge, verges/gables only where the roof end is open, datum on the pavement, a baked reflection probe, the GC2 player and a disabled `RouteProbe`.
+`streets` (centreline, width, role, heights), `blocks` with `rows` (one per block edge: frame, `ends`
+open/hidden/tip_keep/tip_cede/concave, `plots` with width, depth, floors, palette, setback, level), `plazas`, `zones`
+(huertas, yards), `ground` meshes per paving zone, `river` (channel, banks, parapets, stairs, bridge arches),
+`fountains`, `garden`, `route` and `spawn`. `EnvDistrict` resolves each row with the facade-row rules (`EnvStreet`),
+builds ground, stairs, bridges and dressing, the GC2 player and a disabled `RouteProbe`.
+
+The four v1 street demos (A commercial-to-quay, B upper lane, C casco reference and its kit-palette control) and their
+street-spec assembler and street-life pass were retired on 2026-09-29, when the owner kept the CASCO district as the
+one ENV scene; their captures stay in the WP evidence and the code in git history (commit `c3d7796`).
 
 ## Routine recipes
 
 - **New building variant:** add a `units.json` entry (`type`, `bays`, `floors`, `palette`, optional `rows`) → steps 3–5. No code.
-- **New street:** new spec in `Env/Specs/streets/` referencing library ids → step 4, enable `RouteProbe`, Play, read `JD_ROUTE` lines.
+- **New district:** measured reference → authored `Env/Specs/districts/<id>.trace.json` → `env_district_skeleton.py` → `EnvDistrict.Begin/BuildRows/Finish`, enable `RouteProbe`, Play, read `JD_ROUTE` lines.
 - **New derived piece:** add a `@recipe` in `env_derive.py` (donor via `donor()`/`clean_*()` or new geometry on kit trim-sheet bands via `box(..., uv="band")`), run it, add a collider policy if not mesh, reference it from a bay code/template → steps 2–5 + lineage.
 - **New source prop:** add a wrapper to `modules.json` (collider + owned `ENV_Src_*` material with declared `sources`) → steps 1–2.
 
 ## Validation (`JuegoDef > ENV > 5 Validate`, report `Docs/evidence/WP-PROD-ENV-01/VALIDATION.json`)
 
-Units and street scenes are checked for: banned kit modules (medieval/alpine cues, `Env/Grammar/validation.json`); missing materials or machine-local vendor materials; Unity primitives or `Proxy`/`Greybox` objects; facade bays without collision; open thresholds blocked for the **real GC2 capsule** (radius 0.2 + skin 0.08, height 2.0; sills ≤ 0.1 m allowed) and closed/service thresholds that are actually open; buildings not sitting on the street surface; duplicated coplanar tiles. `6 Validator Self-Test` seeds one defect of each class and must report `missed=0`. Python `env_catalog.py check` covers B0 demand coverage, library/preview/prefab presence, recipe↔mesh parity and lineage completeness.
+Units and district scenes are checked for: banned kit modules (medieval/alpine cues, `Env/Grammar/validation.json`); missing materials or machine-local vendor materials; Unity primitives or `Proxy`/`Greybox` objects; facade bays without collision; open thresholds blocked for the **real GC2 capsule** (radius 0.2 + skin 0.08, height 2.0; sills ≤ 0.1 m allowed) and closed/service thresholds that are actually open; buildings not sitting on the street surface; duplicated coplanar tiles. `6 Validator Self-Test` seeds one defect of each class and must report `missed=0`. Python `env_catalog.py check` covers B0 demand coverage, library/preview/prefab presence, recipe↔mesh parity and lineage completeness.
 
 ## Hard-won rules
 
