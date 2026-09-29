@@ -44,7 +44,7 @@ namespace JuegoDef.Env
                 // owner reference pass: warmer, deeper, better modelled — a lower warmer sun, a cool sky fill against a
                 // warm ground bounce so lit and shaded planes separate, a touch more contrast; still the Atlantic day
                 name = "day", sun = new Vector3(33, 212, 0), temp = 4950, intensity = 2.0f, shadow = 0.9f,
-                ambSky = "#8292A8", ambEq = "#8A8174", ambGround = "#58493C", fog = "#C2C6C4", fogStart = 45, fogEnd = 750, reflection = 0.85f,
+                ambSky = "#8292A8", ambEq = "#8A8174", ambGround = "#58493C", fog = "#C2C6C4", fogStart = 30, fogEnd = 300, reflection = 0.85f,
                 zenith = "#6B8CAD", horizon = "#C2C6C4", sunCol = "#FFE8C8", cloudLit = "#F6F1E8", cloudShade = "#A2A9B2", cloudCover = 0.48f, exposure = 1.0f, sunGlow = 0.45f,
                 postExposure = 0.08f, contrast = 19, saturation = 3, temperature = 6, bloom = 0.2f, vignette = 0.22f,
                 shadows = new Vector4(0.95f, 0.98f, 1.07f, 0), highlights = new Vector4(1.04f, 1.0f, 0.94f, 0),
