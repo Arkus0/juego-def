@@ -443,12 +443,14 @@ namespace JuegoDef.Env
                 {
                     if (b.name == "Walls") continue;
                     var front = b.Find("Front"); if (front == null) continue;
-                    // relief: the furthest a front-side renderer stands out of the street face (local z), balconies and awnings included
+                    // relief: the furthest a front-side renderer stands out of the street face (local z), balconies and awnings
+                    // included — also pieces added by hand polish (an iron balcony placed on the built district)
                     float relief = 0;
-                    foreach (var sec in new[] { front, b.Find("Dressing") })
+                    var polishGroup = root.Find("Polish");
+                    foreach (var sec2 in new[] { front, b.Find("Dressing") })
                     {
-                        if (sec == null) continue;
-                        foreach (var r in sec.GetComponentsInChildren<Renderer>())
+                        if (sec2 == null) continue;
+                        foreach (var r in sec2.GetComponentsInChildren<Renderer>())
                         {
                             var lb = r.localBounds;
                             for (int i = 0; i < 8; i++)
@@ -458,6 +460,17 @@ namespace JuegoDef.Env
                             }
                         }
                     }
+                    if (polishGroup != null)
+                        foreach (var r in polishGroup.GetComponentsInChildren<Renderer>())
+                            if ((r.bounds.center - b.position).magnitude < 8f)
+                            {
+                                var lb = r.localBounds;
+                                for (int i = 0; i < 8; i++)
+                                {
+                                    var l = b.InverseTransformPoint(r.transform.TransformPoint(lb.center + Vector3.Scale(lb.extents, new Vector3((i & 1) == 0 ? -1 : 1, (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1))));
+                                    relief = Mathf.Max(relief, l.z);
+                                }
+                            }
                     if (relief < 0.3f) list.Add(F("FLAT_FACADE", UnitOfRow(row.name), null, b.position, Path(b), $"nothing stands out more than {relief * 100:0} cm from the front: no balcony, awning, sign or canopy"));
                     int fl = 0;
                     foreach (Transform f in front)

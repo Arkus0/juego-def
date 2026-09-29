@@ -38,6 +38,27 @@
     "PPW",
     "wPW"
    ]
+  },
+  "K2_13_0": {
+   "unit": "STREET_G",
+   "class": "SEM",
+   "why": "The portal opened onto paving 1.4 m beyond the street edge, under the broken balustrade of the promenade (audit DOOR_NOWHERE, owner-confirmed on Ribera fwd_03): a door that leads nowhere. The bay becomes a small window; the house is entered from the other side.",
+   "rows": [
+    "wP",
+    "PW",
+    "Pc",
+    "Pw"
+   ]
+  },
+  "K13_5_0": {
+   "unit": "STREET_E",
+   "class": "SEM",
+   "why": "The portal opened straight onto bare ground and a slope, no pavement in front of it (audit DOOR_NOWHERE, owner-confirmed on Calle_Alta_Salida fwd_01). The bay becomes a small window beside the shop; the way in is the shop door.",
+   "rows": [
+    "Ew",
+    "PB",
+    "Pc"
+   ]
   }
  },
  "ops": [

@@ -184,7 +184,7 @@ namespace JuegoDef.Env
             // street props by dressing group: each floating ground prop drops by its own gap; a stacked prop follows
             var propNames = new HashSet<string> { "ENV_Prop_Barrel", "ENV_Prop_Barrel_Apples", "ENV_Prop_Stool", "ENV_Cafe_Chair", "ENV_Cafe_Table",
                 "ENV_Prop_FarmCrate_Apple", "ENV_Prop_FarmCrate_Carrot", "ENV_Prop_FarmCrate_Empty", "ENV_Prop_Bucket", "ENV_Prop_Bucket_Wood",
-                "ENV_Prop_Rope_Coil", "ENV_Prop_Bag", "ENV_Prop_Crate_Wooden" };
+                "ENV_Prop_Rope_Coil", "ENV_Prop_Bag", "ENV_Prop_Crate_Wooden", "ENV_Planter_Box", "ENV_Planter_Pot" };
             foreach (Transform row in rowsT)
                 foreach (Transform b in row)
                 {
@@ -196,6 +196,8 @@ namespace JuegoDef.Env
                         {
                             var rs = c.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
                             var bb = rs[0].bounds; foreach (var r in rs) bb.Encapsulate(r.bounds);
+                            float pg = EnvWalk.Ground(bb.center.x, bb.center.z, float.NaN);
+                            if (!float.IsNaN(pg) && bb.min.y - pg > 1.5f) continue;   // a sill or wall planter, not a floor prop
                             items.Add((c, bb, 0f));
                         }
                     if (items.Count == 0) continue;
