@@ -22,22 +22,25 @@
   "K6_11_2": {
    "unit": "RIVER_A",
    "class": "SEM",
-   "why": "River frontage 6.5 m with no opening on any floor (audit BLANK_WALL): the third bay column was plain on all four floors. A small window on the first floor gives the quay wall a lived front like its neighbours.",
+   "why": "River frontage 6.5 m with no opening on any floor (audit BLANK_WALL): the third bay column was plain on all four floors. A small window on the first floor gives the quay wall a lived front like its neighbours. Fase 3: a grey dressed stone floor-line band (the quay course) crosses the party seam with K6_11_3, so the two renders read as one house split by a course, not two buildings stitched together.",
    "rows": [
     "WPP",
     "PWP",
     "PWw",
     "PTP"
-   ]
+   ],
+   "band": "ENV_Dressed_Gris"
   },
   "K6_11_3": {
    "unit": "RIVER_A",
    "class": "SEM",
-   "why": "River frontage 6.5 m with no opening on any floor (audit BLANK_WALL, same run as K6_11_2): its first two bays were plain on both floors. A small window on the upper floor continues the staggered rhythm of the row.",
+   "why": "River frontage 6.5 m with no opening on any floor (audit BLANK_WALL, same run as K6_11_2): its first two bays were plain on both floors. A small window on the upper floor continues the staggered rhythm of the row. Fase 3: the two new first-floor windows sat a hand higher than the sill line of the neighbouring quay windows (painted ashlar surrounds, sill ~1.05, against the kit line ~0.94); surrounds off drops them onto the neighbour line, and the shared grey dressed floor-line band ties the seam.",
    "rows": [
     "PPW",
     "wPW"
-   ]
+   ],
+   "surrounds": false,
+   "band": "ENV_Dressed_Gris"
   },
   "K2_13_0": {
    "unit": "STREET_G",
