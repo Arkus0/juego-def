@@ -317,6 +317,8 @@ def main():
     for name, fn in (("T_ENV_Ground_Grass", grass), ("T_ENV_Ground_Earth", earth), ("T_ENV_Iron", iron),
                      ("T_ENV_Galvanised", galvanised), ("T_ENV_Canvas_Red", lambda r: canvas(r, (150, 52, 40))),
                      ("T_ENV_Canvas_Green", lambda r: canvas(r, (54, 98, 70))), ("T_ENV_Canvas_Cream", lambda r: canvas(r, (226, 214, 186), False)),
+                     ("T_ENV_Canvas_Blue", lambda r: canvas(r, (58, 82, 118))), ("T_ENV_Canvas_Amber", lambda r: canvas(r, (170, 122, 58))),
+                     ("T_ENV_Canvas_Sage", lambda r: canvas(r, (128, 138, 106))),
                      ("T_ENV_Terracotta", terracotta), ("T_ENV_Foliage", foliage), ("T_ENV_Sign_Board", board),
                      ("T_ENV_Window_Glow", window_glow), ("T_ENV_Weather_Noise", weather_noise), ("T_ENV_Stains", stains), ("T_ENV_Water_Normal", water_normal),
                      ("T_ENV_PaintWear", paint_wear), ("T_ENV_Granite", granite), ("T_ENV_Leaves_Box", leaves_box)):

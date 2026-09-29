@@ -156,6 +156,10 @@ namespace JuegoDef.Env
                                      "MI_Brick", !string.IsNullOrEmpty(s.plinthMat) ? s.plinthMat : s.renderGround ?? s.render);
                 if (history.groundRepaint != null && string.IsNullOrEmpty(s.renderGround)) groundWallMap["MI_Plaster"] = history.groundRepaint;
                 stoneMap = With(stoneMap, "ENV_Stone_Sandstone", s.dressed, "MI_RockTrim", s.dressed, "MI_Brick", s.dressed);
+                // phase 3: the balconera ironwork is painted per house (black, bottle green, dark blue) instead of one
+                // district grey; dedicated hash of the seed, never the shared rng
+                stoneMap["ENV_Metal_Iron"] = ((uint)s.seed * 2654435761u >> 17) % 3 == 0 ? "ENV_PropMat_Negro"
+                    : ((uint)s.seed * 2654435761u >> 17) % 3 == 1 ? "ENV_PropMat_Verde" : "ENV_PropMat_Azul";
                 joinMap = With(joinMap, "MI_WoodTrim", s.joinery, "MI_WoodTrim_Wear", s.joinery);
                 roofMap = With(roofMap, "MI_RoundTiles", s.roofMat, "MI_FlatTiles", s.roofMat, "MI_Plaster", s.render);
             }
@@ -170,7 +174,8 @@ namespace JuegoDef.Env
                 for (int i = 0; i < s.bays; i++)
                 {
                     if (f == 0 && s.cornerEntrance && i == (cl ? 0 : s.bays - 1)) continue;
-                    var jm = history.oddWindow == (f, i) ? With(joinMap, "MI_WoodTrim", "ENV_Joinery_Silver", "MI_WoodTrim_Wear", "ENV_Joinery_Silver") : joinMap;
+                    // phase 3: the odd window is an old joinery colour off the palette (a repair), not always silver
+                    var jm = history.oddWindow == (f, i) ? With(joinMap, "MI_WoodTrim", FacadeGrammar.OldJoineryPick(s), "MI_WoodTrim_Wear", FacadeGrammar.OldJoineryPick(s)) : joinMap;
                     Slot(s, front, fam, rows[f][i], f, new Vector3(1 + 2 * i, y, 0), 0, rng, wm, jm, plinth: true, stoneMap);
                 }
                 var back = EnvKit.Group(EnvKit.Group(root, "Back"), "F" + f);

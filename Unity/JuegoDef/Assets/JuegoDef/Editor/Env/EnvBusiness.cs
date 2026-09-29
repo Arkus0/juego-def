@@ -226,7 +226,7 @@ namespace JuegoDef.Env
                 int portal = rows[0].IndexOfAny(new[] { 'A', 'O', 'D', 'o' });
                 if (portal < 0) return;
                 float px = 1 + 2 * portal;
-                var plaque = tryPlace("ENV_Sign_Panel", g, new Vector3(px, 2.62f, WallFace + 0.016f), 0, new Vector3(1.5f, 0.3f, 1));
+                var plaque = tryPlace("ENV_Sign_Panel", g, new Vector3(px, 2.62f + JitterY(s, 1), WallFace + 0.016f), 0, new Vector3(1.5f, 0.3f, 1));
                 if (plaque) EnvKit.Remap(plaque, new Dictionary<string, string> { { "ENV_Sign_Board", SignMat(s.business) } });
                 var br = tryPlace("ENV_Sign_Bracket", g, new Vector3(px + (portal == 0 ? 1.15f : -1.15f), 0.35f, 0), 0, null);
                 if (br) EnvKit.Remap(br, With(joinMap, "ENV_Sign_Face", TextureMat("ENV_Blade_" + s.business, "T_ENV_Blade_" + s.business, 0.2f)));
@@ -248,14 +248,14 @@ namespace JuegoDef.Env
                 bool lettering = named != null && run.Equals(main);
                 if (!modern)
                 {
-                    // timber fascia board spanning the run (one board, not one per 2 m bay)
-                    var f = place("ENV_Shop_Fascia", g, new Vector3(cx, 0, 0), 0, new Vector3(w / 1.94f, 1, 1));
+                    // timber fascia board spanning the run (one board, not one per 2 m bay); its height is the shop's own
+                    var f = place("ENV_Shop_Fascia", g, new Vector3(cx, 0, 0), 0, new Vector3(w / 1.94f, FasciaK(s), 1));
                     EnvKit.Remap(f, joinMap);
                     if (named != null) EnvKit.Remap(f, new Dictionary<string, string> { { "ENV_Sign_Board", BoardMat(s.business) } });
                     if (lettering)
                     {
                         float sw = Mathf.Min(w - 0.25f, 0.34f * 5f);
-                        var p = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(cx, 2.675f, 0.143f), 0, new Vector3(sw, 0.34f, 1));
+                        var p = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(cx, 2.675f + JitterY(s, 2), 0.143f), 0, new Vector3(sw, 0.34f, 1));
                         EnvKit.Remap(p, new Dictionary<string, string> { { "ENV_Sign_Board", SignMat(s.business, t == "cerrado") } });
                     }
                 }
@@ -263,7 +263,7 @@ namespace JuegoDef.Env
                 {
                     // light box / vinyl lettering straight on the wall over the opening
                     float sw = Mathf.Min(w - 0.1f, 0.44f * 5f);
-                    var p = place("ENV_Sign_Panel", g, new Vector3(cx, 2.68f, WallFace + 0.016f), 0, new Vector3(sw, 0.44f, 1));
+                    var p = place("ENV_Sign_Panel", g, new Vector3(cx, 2.68f + JitterY(s, 3), WallFace + 0.016f), 0, new Vector3(sw, 0.44f, 1));
                     EnvKit.Remap(p, new Dictionary<string, string> { { "ENV_Sign_Board", SignMat(s.business) }, { "MI_WoodTrim", "ENV_Metal_Galvanised" } });
                 }
                 // awning over part of the run, by type
@@ -276,10 +276,11 @@ namespace JuegoDef.Env
                         tryPlace("ENV_Fascia_Lamp", g, new Vector3(cx + sx * Mathf.Min(w * 0.3f, 0.95f), 3.0f, 0), 0, null);
                 if (awning)
                 {
-                    string canvas = string.IsNullOrEmpty(s.awning) ? new[] { "ENV_Canvas_Green", "ENV_Canvas_Red", "ENV_Canvas_Cream" }[rng.Next(3)] : s.awning;
+                    string canvas = string.IsNullOrEmpty(s.awning) ? Canvases[rng.Next(Canvases.Length)] : s.awning;
+                    float ak = AwningK(s);
                     for (int i = run.a; i <= run.b; i++)
                         if (rows[0][i] != 'R')
-                            EnvKit.Remap(place("ENV_Awning", g, new Vector3(1 + 2 * i, 0, 0), 0, null), new Dictionary<string, string> { { "ENV_Canvas_Green", canvas } });
+                            EnvKit.Remap(place("ENV_Awning", g, new Vector3(1 + 2 * i, 0, 0), 0, new Vector3(1, ak, 1)), new Dictionary<string, string> { { "ENV_Canvas_Green", canvas } });
                 }
             }
             if (named == null && t == "cerrado" && shop.Count > 0 && rng.NextDouble() < 0.5)
@@ -288,7 +289,7 @@ namespace JuegoDef.Env
                 var ghost = Spec["businesses"].Cast<JObject>().ElementAt(rng.Next(Spec["businesses"].Count()));
                 var run = main;
                 float cx = run.a + run.b + 1;
-                var p = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(cx, 2.675f, 0.143f), 0, new Vector3(Mathf.Min(2 * (run.b - run.a + 1) - 0.4f, 1.6f), 0.3f, 1));
+                var p = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(cx, 2.675f + JitterY(s, 4), 0.143f), 0, new Vector3(Mathf.Min(2 * (run.b - run.a + 1) - 0.4f, 1.6f), 0.3f, 1));
                 EnvKit.Remap(p, new Dictionary<string, string> { { "ENV_Sign_Board", SignMat((string)ghost["id"], true) } });
             }
             // hanging sign on a wrought-iron bracket with the trade icon (painted / gilded shops)
@@ -299,7 +300,7 @@ namespace JuegoDef.Env
                 for (int i = 1; i < shop.Count; i++) xs.Add(2 * shop[i]);
                 foreach (var bx in xs)
                 {
-                    var br = tryPlace("ENV_Sign_Bracket", g, new Vector3(bx, 0.62f, 0), 0, null);
+                    var br = tryPlace("ENV_Sign_Bracket", g, new Vector3(bx, 0.62f + JitterY(s, 5), 0), 0, null);
                     if (!br) continue;
                     EnvKit.Remap(br, With(joinMap, "ENV_Sign_Face", TextureMat("ENV_Blade_" + s.business, "T_ENV_Blade_" + s.business, 0.2f)));
                     break;
@@ -309,7 +310,7 @@ namespace JuegoDef.Env
             if ((bool?)ts?["cross"] == true)
             {
                 float bx = shop.Count > 0 ? 2 * shop[shop.Count - 1] + 1.9f : 1f;
-                var c = tryPlace("ENV_Blade_Sign", g, new Vector3(Mathf.Min(bx, s.bays * 2 - 0.4f), 0.2f, 0), 0, null);
+                var c = tryPlace("ENV_Blade_Sign", g, new Vector3(Mathf.Min(bx, s.bays * 2 - 0.4f), 0.2f + JitterY(s, 6), 0), 0, null);
                 if (c) EnvKit.Remap(c, new Dictionary<string, string> { { "ENV_Sign_Board", TextureMat("ENV_Cross_Pharmacy", "T_ENV_Cross_Pharmacy", 0.5f, new Color(0.35f, 1.4f, 0.55f)) } });
             }
             // bank: cash machine on a plain ground bay beside the door
@@ -331,7 +332,7 @@ namespace JuegoDef.Env
             // opening-hours vinyl on the shop door glass
             if (doorBays.Count > 0 && (bool?)ts?["lit"] == true && t != "cerrado")
             {
-                var v = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(1 + 2 * doorBays[0] + 0.25f, 1.45f, 0.035f), 0, new Vector3(0.3f, 0.15f, 0.2f));
+                var v = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(1 + 2 * doorBays[0] + 0.25f, 1.45f + JitterY(s, 7), 0.035f), 0, new Vector3(0.3f, 0.15f, 0.2f));
                 EnvKit.Remap(v, new Dictionary<string, string> { { "ENV_Sign_Board", TextureMat("ENV_Notice_horario", "T_ENV_Notice_horario", 0.5f) }, { "MI_WoodTrim", "ENV_Paint_White" } });
             }
             // closed: a notice in the window; garage: the municipal "vado" plate
@@ -340,13 +341,13 @@ namespace JuegoDef.Env
                 var notices = new[] { "se_alquila", "se_vende", "jubilacion", "traspaso" };
                 var n = notices[rng.Next(notices.Length)];
                 int i = shop[rng.Next(shop.Count)];
-                var v = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(1 + 2 * i, 1.45f, 0.03f), 0, new Vector3(0.62f, 0.31f, 0.2f));
+                var v = EnvKit.Place("ENV_Sign_Panel", g, new Vector3(1 + 2 * i, 1.45f + JitterY(s, 8), 0.03f), 0, new Vector3(0.62f, 0.31f, 0.2f));
                 EnvKit.Remap(v, new Dictionary<string, string> { { "ENV_Sign_Board", TextureMat("ENV_Notice_" + n, "T_ENV_Notice_" + n, 0.1f) }, { "MI_WoodTrim", "ENV_Paint_White" } });
             }
             if (t == "garaje")
             {
                 int i = Enumerable.Range(0, s.bays).FirstOrDefault(k => rows[0][k] == 'R');
-                var v = tryPlace("ENV_Sign_Panel", g, new Vector3(1 + 2 * i + 1.05f, 2.25f, WallFace + 0.016f), 0, new Vector3(0.44f, 0.22f, 1));
+                var v = tryPlace("ENV_Sign_Panel", g, new Vector3(1 + 2 * i + 1.05f, 2.25f + JitterY(s, 9), WallFace + 0.016f), 0, new Vector3(0.44f, 0.22f, 1));
                 if (v) EnvKit.Remap(v, new Dictionary<string, string> { { "ENV_Sign_Board", TextureMat("ENV_Notice_vado", "T_ENV_Notice_vado", 0.4f) }, { "MI_WoodTrim", "ENV_Metal_Galvanised" } });
             }
             // bars on the street: a barrel as a table and two stools against the front, beside the door
@@ -389,6 +390,37 @@ namespace JuegoDef.Env
         }
 
         const float WallFace = 0.092f;
+
+        // ---------------------------------------------------------------- phase 3: per-shop variation (dedicated hashes)
+
+        /// <summary>Awning canvases of the district (Tools/env_textures.py atlas): green/red/cream stripes plus the
+        /// phase-3 blue, amber and sage ones.</summary>
+        public static readonly string[] Canvases = { "ENV_Canvas_Green", "ENV_Canvas_Red", "ENV_Canvas_Cream", "ENV_Canvas_Blue", "ENV_Canvas_Amber", "ENV_Canvas_Sage" };
+
+        /// <summary>Sign height jitter, ±0.10 m: no two shops on a street hang their signs at quite the same height.
+        /// Dedicated hash of the seed with a per-call-site salt — NEVER the shared <c>rng</c> of the build, whose
+        /// sequence Rows/Era/Shutters/History/Dress consume in order.</summary>
+        public static float JitterY(BuildingSpec s, float salt)
+        {
+            uint h = (uint)s.seed * 2654435761u ^ (uint)(salt * 977f);
+            return ((h % 1000u) / 1000f - 0.5f) * 0.20f;
+        }
+
+        /// <summary>Fascia board height factor per shop, 0.9-1.1 clamped at 1.13 (above that the kit fascia reads as
+        /// a floor beam). Dedicated hash of the seed.</summary>
+        public static float FasciaK(BuildingSpec s)
+        {
+            uint h = (uint)s.seed * 2654435761u >> 13;
+            return Mathf.Min(1.13f, 0.9f + (h % 100u) / 100f * 0.2f);
+        }
+
+        /// <summary>Awning canvas height factor per shop, 0.95-1.05: the slope and drop of the cloth vary a hand,
+        /// the front bar stays a passage. Dedicated hash of the seed.</summary>
+        public static float AwningK(BuildingSpec s)
+        {
+            uint h = (uint)s.seed * 2654435761u >> 19;
+            return 0.95f + (h % 100u) / 100f * 0.1f;
+        }
 
         static Dictionary<string, string> With(Dictionary<string, string> map, string k, string v)
         {

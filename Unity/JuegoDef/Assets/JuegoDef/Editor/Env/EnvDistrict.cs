@@ -637,7 +637,7 @@ namespace JuegoDef.Env
             // shop life (owner photos): striped awnings and wrought-iron hanging signs on a good share of the shops
             var lrng = new System.Random(bs.seed * 13 + 7);
             if (bs.type == "mixed_commercial" && string.IsNullOrEmpty(bs.awning) && lrng.NextDouble() < 0.55)
-                bs.awning = new[] { "ENV_Canvas_Green", "ENV_Canvas_Red", "ENV_Canvas_Cream" }[lrng.Next(3)];
+                bs.awning = EnvBusiness.Canvases[lrng.Next(EnvBusiness.Canvases.Length)];   // phase 3: 6 canvases, not 3
             if ((bs.type == "mixed_commercial" || bs.type == "lodging") && lrng.NextDouble() < 0.5) bs.sign = "bracket";
             return bs;
         }

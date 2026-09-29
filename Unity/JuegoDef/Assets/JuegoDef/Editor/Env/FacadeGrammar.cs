@@ -123,7 +123,10 @@ namespace JuegoDef.Env
                 for (int f = 1; f < rows.Length; f++)
                     for (int i = 0; i < rows[f].Length; i++)
                         if ("Wwc".IndexOf(rows[f][i]) >= 0) windows.Add((f, i));
-                if (windows.Count > 0 && s.era != "reformed" && rng.NextDouble() < 0.18) h.oddWindow = windows[rng.Next(windows.Count)];
+                // phase 3: the one window the house replaced itself, on ~15 % of buildings (a reformed house keeps
+                // exactly one old joinery window — the one they never got to); colour from OldJoineryPick, never
+                // always silver. Same draw count as before the generalisation (one draw + one pick).
+                if (windows.Count > 0 && rng.NextDouble() < 0.15) h.oddWindow = windows[rng.Next(windows.Count)];
                 if (s.type != "warehouse" && (string.IsNullOrEmpty(s.ground) ? DefaultGround(s.type) : s.ground) == "plaster" && rng.NextDouble() < 0.2)
                     h.groundRepaint = Repaints[rng.Next(Repaints.Length)];
                 if (s.floors > 1 && rng.NextDouble() < 0.25) { h.dishFloor = s.floors - 1; h.dishBay = rng.Next(s.bays); }
@@ -386,6 +389,20 @@ namespace JuegoDef.Env
             return h % 100 < (s.family == "stone" || s.family == "stone_ground" ? 45 : 32);
         }
 
+        /// <summary>The joinery colour of the one odd window a house replaced itself (phase 3): a draw from the
+        /// OldJoinery palette that is NOT the house's own colour. Dedicated hash of the seed, never the shared rng.</summary>
+        public static string OldJoineryPick(BuildingSpec s)
+        {
+            var table = new[]
+            {
+                "ENV_Joinery_Chestnut", "ENV_Joinery_Walnut", "ENV_Joinery_Oxblood", "ENV_Joinery_Green", "ENV_Joinery_GreenBlue",
+                "ENV_Joinery_Cream", "ENV_Joinery_Teal", "ENV_Joinery_Honey", "ENV_Joinery_Mustard", "ENV_Joinery_White",
+            };
+            uint h = (uint)s.seed * 2654435761u >> 23;
+            string pick = table[h % (uint)table.Length];
+            return pick == s.joinery ? table[(h + 1) % (uint)table.Length] : pick;
+        }
+
         /// <summary>Head line of a building's wide windows (phase 3 anti-procedural): 0 = the kit cut (head 2.52),
         /// +1 = Hi (2.41), -1 = Lo (2.21). ONE line per building — a second would break the structural read of the
         /// facade. Drawn from a dedicated hash of the seed (never the shared <paramref name="rng"/> consumed in order
@@ -555,11 +572,12 @@ namespace JuegoDef.Env
                     // edge bays stop the fascia/awning 0.36 m short of the party line: the quoin pilaster (0.22 m on
                     // our side) and the downpipe beside it
                     float inset = i == 0 ? 0.155f : i == s.bays - 1 ? -0.155f : 0f;
-                    var k = inset != 0 ? new Vector3(0.837f, 1, 1) : Vector3.one;
+                    var k = inset != 0 ? new Vector3(0.837f, EnvBusiness.FasciaK(s), 1) : new Vector3(1, EnvBusiness.FasciaK(s), 1);
                     var fascia = EnvKit.Place("ENV_Shop_Fascia", dress, new Vector3(x + inset, 0, 0), 0, k);
                     EnvKit.Remap(fascia, joinMap);
                     if (!string.IsNullOrEmpty(s.awning) && (g == 'S' || g == 'E' || g == 'e'))
-                        EnvKit.Remap(EnvKit.Place("ENV_Awning", dress, new Vector3(x + inset, 0, 0), 0, k), new Dictionary<string, string> { { "ENV_Canvas_Green", s.awning } });
+                        EnvKit.Remap(EnvKit.Place("ENV_Awning", dress, new Vector3(x + inset, 0, 0), 0, new Vector3(k.x, EnvBusiness.AwningK(s), 1)),
+                            new Dictionary<string, string> { { "ENV_Canvas_Green", s.awning } });
                 }
                 if ((g == 'A' || g == 'D' || g == 'O' || g == 'o') && !district && (s.type == "lodging" || s.sign == "bracket"))
                     EnvKit.Remap(EnvKit.Place("ENV_Sign_Bracket", dress, new Vector3(x - 1f, 0, 0), 0), joinMap);
@@ -820,7 +838,7 @@ namespace JuegoDef.Env
             foreach (var x in doors)
             {
                 int num = 1 + (int)(((uint)(s.seed * 2654435761u) >> 8) % 40);
-                var plate = tryPlace("ENV_Sign_Panel", hist, new Vector3(x + 0.78f, 2.2f, 0.108f), 0, new Vector3(0.17f, 0.13f, 0.4f), null);
+                var plate = tryPlace("ENV_Sign_Panel", hist, new Vector3(x + 0.78f, 2.2f + EnvBusiness.JitterY(s, 10), 0.108f), 0, new Vector3(0.17f, 0.13f, 0.4f), null);
                 if (plate) EnvKit.Remap(plate, new Dictionary<string, string> { { "ENV_Sign_Board", NumberMat(num, s.seed) }, { "MI_WoodTrim", "ENV_Paint_White" } });
                 if (recent || rng.NextDouble() < 0.55)
                     foreach (var dx in rng.NextDouble() < 0.5 ? new[] { -0.95f, 0.95f } : new[] { 0.95f, -0.95f })
