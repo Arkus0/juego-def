@@ -13,6 +13,11 @@ namespace JuegoDef.Env
     /// person). What is measured, not what a sign says: doors that open onto the river, a void, a drop or a wall; walls and
     /// facades that squeeze the street; long runs of blank wall; windows that look onto a wall; bare side walls seen from the
     /// street; identical neighbours; props with no human function (no wall, door or plaza to belong to, or on the centreline).
+    /// Phase 1 (owner addenda 2026-09-29): missing volumes between neighbours and at open terrace ends; stairs and door steps
+    /// without logic; garden walls with nothing to retain, ending in the air or sealing public space; monotone rhythm per unit
+    /// (bay widths, lintel lines, ground patterns, fuzzy silhouettes); flat painted windows and glass with no room behind it;
+    /// doors opening onto a falling street with no landing; floating props; unreachable gallery passages; plaza edges with no
+    /// closure and twin-plaza massing.
     /// Findings are grouped by inspection unit (Env/Specs/districts/&lt;id&gt;.inspection.json).
     /// Operator: <c>EnvSemantics.Run("Captures/micro-polish/semantic_audit.json")</c>.
     /// </summary>
@@ -29,6 +34,8 @@ namespace JuegoDef.Env
         static List<List<Vector2>> plazas;
         static List<Vector2> channel;
         static Dictionary<string, string> segUnit, rowStreet, rowRole;
+        static Dictionary<string, (string west, string east)> rowEnds;   // authored closure (open/hidden/tip/concave) per row end
+        static Dictionary<string, Vector2> rowDir;                       // spec dir (west -> east) per row, plan
         static JObject inspection;
         static Transform root, rows;
 
@@ -43,7 +50,13 @@ namespace JuegoDef.Env
             foreach (JObject u in (JArray)inspection["units"])
                 foreach (var s in (JArray)u["segments"]) segUnit[(string)s] = (string)u["id"];
             rowStreet = new Dictionary<string, string>(); rowRole = new Dictionary<string, string>();
-            foreach (JObject r in (JArray)spec["rows"]) { rowStreet[(string)r["id"]] = (string)r["street"]; rowRole[(string)r["id"]] = (string)r["role"]; }
+            rowEnds = new Dictionary<string, (string, string)>(); rowDir = new Dictionary<string, Vector2>();
+            foreach (JObject r in (JArray)spec["rows"])
+            {
+                rowStreet[(string)r["id"]] = (string)r["street"]; rowRole[(string)r["id"]] = (string)r["role"];
+                rowEnds[(string)r["id"]] = ((string)r["ends"]["west"], (string)r["ends"]["east"]);
+                rowDir[(string)r["id"]] = new Vector2((float)r["dir"][0], (float)r["dir"][1]);
+            }
             root = GameObject.Find("ENV01_Casco_District").transform;
             rows = root.Find("Rows");
             Physics.SyncTransforms();
@@ -245,7 +258,7 @@ namespace JuegoDef.Env
                                || cuts.Any(c => c > walls[i - 1].x && c < walls[i].x + 0.01f);
                     if (!brk) continue;
                     float len = walls[i - 1].x - walls[start].x + 2f;
-                    if (len >= 10f)
+                    if (len >= 8f)
                     {
                         var mid = row.TransformPoint(new Vector3((walls[start].x + walls[i - 1].x) / 2f, 0, 0));
                         mid.y = EnvWalk.Ground(mid.x, mid.z, mid.y);
@@ -306,7 +319,7 @@ namespace JuegoDef.Env
                         if (run.Count > 0)
                         {
                             float len = run[run.Count - 1].x - run[0].x + 2f;
-                            float min = kind == "all" ? 8f : 12f;
+                            float min = kind == "all" ? 6f : 12f;
                             if (len >= min)
                             {
                                 var mid = run[run.Count / 2].pos;
@@ -518,6 +531,7 @@ namespace JuegoDef.Env
 
         static string WallMaterial(Transform module)
         {
+            if (module == null) return null;
             var r = module.GetComponentsInChildren<Renderer>().FirstOrDefault(x => x.sharedMaterial != null && x.sharedMaterial.name.StartsWith("ENV_"));
             return r == null ? null : r.sharedMaterial.name.Replace("_G", "");
         }
@@ -660,6 +674,560 @@ namespace JuegoDef.Env
             return list;
         }
 
+        // ------------------------------------------------------------------ volume
+
+        /// <summary>Which side section of a building faces the lower / higher local x of its row (Side_L is the west
+        /// end for south rows and the east end for north rows, so it is decided geometrically, per building).</summary>
+        static (string low, string high) SideOrder(Transform b, Transform row)
+        {
+            var l = b.Find("Side_L"); var r = b.Find("Side_R");
+            if (l == null || r == null) return ("Side_L", "Side_R");
+            return row.InverseTransformPoint(l.position).x <= row.InverseTransformPoint(r.position).x ? ("Side_L", "Side_R") : ("Side_R", "Side_L");
+        }
+
+        /// <summary>Missing volumes in a row: a gap between neighbours faced by a party wall (a side with no opening),
+        /// and terrace ends the spec left "open" whose blank side stands visible to the street — half a building
+        /// missing, the seam the eye reads as "something should be here".</summary>
+        public static List<Finding> VolumeGaps()
+        {
+            var list = new List<Finding>();
+            foreach (Transform row in rows)
+            {
+                var boxes = new List<(float x0, float x1, Transform b)>();
+                foreach (Transform b in row)
+                {
+                    if (b.name == "Walls") continue;
+                    float x0 = float.MaxValue, x1 = float.MinValue;
+                    foreach (var r in b.GetComponentsInChildren<Renderer>())
+                    {
+                        var wb = r.bounds;
+                        x0 = Mathf.Min(x0, row.InverseTransformPoint(wb.min).x, row.InverseTransformPoint(new Vector3(wb.max.x, wb.min.y, wb.min.z)).x);
+                        x1 = Mathf.Max(x1, row.InverseTransformPoint(wb.max).x, row.InverseTransformPoint(new Vector3(wb.min.x, wb.min.y, wb.max.z)).x);
+                    }
+                    if (x1 > x0) boxes.Add((x0, x1, b));
+                }
+                boxes.Sort((p, q) => p.x0.CompareTo(q.x0));
+                int Openings(Transform b, string side) { var sec = b.Find(side); return sec == null ? -1 : Bays(b, side).Count(m => m.name[0] != 'P'); }
+                for (int i = 1; i < boxes.Count; i++)
+                {
+                    float gap = boxes[i].x0 - boxes[i - 1].x1;
+                    if (gap < 1.2f) continue;
+                    var orderA = SideOrder(boxes[i - 1].b, row); var orderB = SideOrder(boxes[i].b, row);
+                    int innerA = Openings(boxes[i - 1].b, orderA.high); int innerB = Openings(boxes[i].b, orderB.low);
+                    if (innerA != 0 && innerB != 0) continue;   // both facing sides are living walls: a side alley, not a missing house
+                    var mid = row.TransformPoint(new Vector3((boxes[i - 1].x1 + boxes[i].x0) / 2f, 0, 0));
+                    mid.y = EnvWalk.Ground(mid.x, mid.z, mid.y);
+                    float pub = PublicGap(new Vector2(mid.x, mid.z), out var street);
+                    if (pub > 3f && !VisibleFromPublic(mid + Vector3.up * 2.2f, row)) continue;   // nobody can see it
+                    list.Add(F("VOLUME_GAP_ROW", UnitOfRow(row.name), rowStreet.TryGetValue(row.name, out var s) ? s : null, mid,
+                        row.name + ": " + boxes[i - 1].b.name + "+" + boxes[i].b.name,
+                        $"{gap:0.0} m gap between neighbours; facing side of {boxes[i - 1].b.name} {(innerA == 0 ? "has no opening (party wall)" : "has windows")}, of {boxes[i].b.name} {(innerB == 0 ? "has no opening (party wall)" : "has windows")}; {pub:0.0} m from public space"));
+                }
+                if (boxes.Count > 0 && rowEnds.TryGetValue(row.name, out var ends))
+                {
+                    bool eastIsPlus = true;
+                    if (rowDir.TryGetValue(row.name, out var d)) { var right = row.right; eastIsPlus = Vector2.Dot(new Vector2(right.x, right.z), d) >= 0; }
+                    void End((float x0, float x1, Transform b) box, string kind, string endName)
+                    {
+                        if (kind != "open") return;                       // a closure was authored (tip / concave / hidden)
+                        var order = SideOrder(box.b, row);
+                        string side = endName == "west" ? order.low : order.high;   // the side section facing that end of the row
+                        if (Openings(box.b, side) != 0) return;          // the end wall has windows: it is a front, not a seam
+                        var sec = box.b.Find(side); if (sec == null) return;
+                        var p = sec.position; p.y = EnvWalk.Ground(p.x, p.z, p.y);
+                        var dir = sec.forward; dir.y = 0; dir.Normalize();
+                        if (Physics.Raycast(p + Vector3.up * 1.5f + dir * 0.3f, dir, 2.5f)) return;   // something stands beside it
+                        if (!VisibleFromPublic(p + Vector3.up * 2.5f, box.b)) return;
+                        list.Add(F("VOLUME_GAP_END", UnitOfRow(row.name), rowStreet.TryGetValue(row.name, out var s2) ? s2 : null, p,
+                            row.name + ": " + box.b.name + "/" + side,
+                            $"row end '{endName}' left open: the blank side of {box.b.name} faces public space with nothing behind it"));
+                    }
+                    End(boxes[0], eastIsPlus ? ends.west : ends.east, "west");
+                    End(boxes[boxes.Count - 1], eastIsPlus ? ends.east : ends.west, "east");
+                }
+            }
+            return list;
+        }
+
+        // ------------------------------------------------------------------ stairs
+
+        /// <summary>Stairs and door steps that make no sense to a person: an escalinata that stops short of its door or
+        /// runs past its opening, whose landing is narrower than the door, that disembarks on a way with no room, or
+        /// that climbs to nothing; and door steps floating over the terrain, buried by it, or serving no door.</summary>
+        public static List<Finding> StairLogic()
+        {
+            var list = new List<Finding>();
+            var doors = rows.GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => t.position).ToList();
+            foreach (JObject s in (JArray)spec["stairs"])
+            {
+                string id = (string)s["id"];
+                var pts = ((JArray)s["pts"]).Select(c => new Vector3((float)c[0], (float)c[2], (float)c[1])).ToList();
+                float w = (float)s["width"];
+                var a = pts[0]; var b = pts[pts.Count - 1];
+                if (a.y > b.y) (a, b) = (b, a);
+                var dv = b - a; dv.y = 0; float len = dv.magnitude; dv /= len;
+                string unit = UnitOfStreet(id);
+                if (w < 1.2f) list.Add(F("STAIR_NARROW_LANDING", unit, id, a, "Stairs/" + id, $"landing {w:0.0} m wide, narrower than the door it serves"));
+                (float dist, Vector3 p)? door = null;
+                foreach (var q in doors)
+                {
+                    float dd = Vector2.Distance(new Vector2(q.x, q.z), new Vector2(b.x, b.z));
+                    if (dd < 6f && (door == null || dd < door.Value.dist)) door = (dd, q);
+                }
+                if (door != null)
+                {
+                    var q = door.Value.p;
+                    float t = Vector2.Dot(new Vector2(q.x - a.x, q.z - a.z), new Vector2(dv.x, dv.z));
+                    float lat = Mathf.Abs((q.x - a.x) * dv.z - (q.z - a.z) * dv.x);
+                    if (lat < w / 2f + 0.45f)
+                    {
+                        float past = len - t;    // > 0: the door stands beyond the top tread; < 0: the stair runs past the door line
+                        if (past > 1.2f) list.Add(F("STAIR_SHORT_OF_DOOR", unit, id, b, "Stairs/" + id, $"top tread {past:0.0} m before the door it serves (door {door.Value.dist:0.0} m from the top end)"));
+                        if (past < -0.35f) list.Add(F("STAIR_PAST_DOOR", unit, id, b, "Stairs/" + id, $"stair runs {-past:0.00} m past the door line: the first tread is inside its opening"));
+                    }
+                }
+                var n = new Vector3(-dv.z, 0, dv.x);
+                var (dl, _) = Probe(a + Vector3.up * 1.4f, -n); var (dr, _) = Probe(a + Vector3.up * 1.4f, n);
+                if (dl < 9f && dr < 9f && dl + dr < 2.5f)
+                    list.Add(F("STAIR_LANDS_NARROW", unit, id, a, "Stairs/" + id, $"disembarks with {dl + dr:0.0} m free across the way (needs 2.5 m)"));
+                bool doorNear = doors.Any(q => Vector2.Distance(new Vector2(q.x, q.z), new Vector2(b.x, b.z)) < 6f);
+                float pubTop = PublicGap(new Vector2(b.x, b.z), out _);
+                if (!doorNear && pubTop > 4f && PublicGap(new Vector2(a.x, a.z), out _) > 4f)
+                    list.Add(F("STAIR_TO_NOTHING", unit, id, b, "Stairs/" + id, $"no door within 6 m of the top and {pubTop:0.0} m from any street or plaza: climbs to nothing"));
+            }
+            foreach (var t in rows.GetComponentsInChildren<Transform>(true))
+            {
+                if (t.name != "ENV_Door_Step") continue;
+                if (t.parent != null && t.parent.name == "ENV_Door_Step") continue;   // the step nests a mesh child of its own name
+                var b = BuildingOf(t); if (b == null) continue;
+                var rs = t.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                var bb = rs[0].bounds; foreach (var r in rs) bb.Encapsulate(r.bounds);
+                var p = t.position; string unit = UnitOfRow(b.parent.name);
+                float g = EnvWalk.Ground(p.x, p.z, float.NaN);
+                if (!VisibleFromPublic(p + Vector3.up * 0.2f, b)) continue;
+                if (float.IsNaN(g)) list.Add(F("STEP_FLOATS", unit, null, p, Path(t), "no ground under the door step"));
+                else if (bb.min.y - g > 0.18f) list.Add(F("STEP_FLOATS", unit, null, p, Path(t), $"step floats {bb.min.y - g:0.00} m over the ground"));
+                else if (g - bb.max.y > 0.08f) list.Add(F("STEP_BURIED", unit, null, p, Path(t), $"ground {g - bb.max.y:0.00} m above the step: invisible"));
+                if (!doors.Any(q => Vector2.Distance(new Vector2(q.x, q.z), new Vector2(p.x, p.z)) < 1.4f))
+                    list.Add(F("STEP_ORPHAN", unit, null, p, Path(t), "no door within 1.4 m of the step"));
+            }
+            return list;
+        }
+
+        // ------------------------------------------------------------------ walls
+
+        /// <summary>Garden and retaining walls with no reason to be: holding back no level change at all, ending in the
+        /// air with no pier, gate, corner or building to anchor them, floating over the terrain, or sealing a long
+        /// stretch of public space with no access through. Covers the row Walls groups and the backdrop hillside runs.</summary>
+        public static List<Finding> WallSense()
+        {
+            var list = new List<Finding>();
+            var doors = rows.GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => t.position).ToList();
+            // one wall piece in world terms: cut = a gate or pier breaks the run there
+            void Audit(List<(Vector3 p, float y0, float y1, bool cut, string path)> pieces, string unit, string tag)
+            {
+                if (pieces.Count < 2) return;
+                var used = new bool[pieces.Count];
+                int Chain(int seed, List<int> run)
+                {
+                    used[seed] = true; run.Add(seed);
+                    int last = seed;
+                    while (true)
+                    {
+                        int best = -1; float bd = 2.7f;
+                        for (int j = 0; j < pieces.Count; j++)
+                        {
+                            if (used[j]) continue;
+                            float d = Vector3.Distance(pieces[j].p, pieces[last].p);
+                            if (d < bd) { bd = d; best = j; }
+                        }
+                        if (best < 0) break;
+                        used[best] = true; run.Add(best); last = best;
+                    }
+                    return run.Count;
+                }
+                var runs = new List<List<int>>();
+                for (int i = 0; i < pieces.Count; i++) if (!used[i]) runs.Add(new List<int>(Chain(i, new List<int>())));
+                foreach (var run in runs.OrderByDescending(r => r.Count))
+                {
+                    if (run.Count < 2) continue;
+                    var ps = run.Select(i => pieces[i]).ToList();
+                    float len = 2f; for (int i = 1; i < ps.Count; i++) len += Vector3.Distance(ps[i - 1].p, ps[i].p);
+                    var first = ps[0]; var last = ps[ps.Count - 1];
+                    var mid = (first.p + last.p) / 2f;
+                    var dir = last.p - first.p; dir.y = 0; float l2 = dir.magnitude; if (l2 < 0.5f) continue; dir /= l2;
+                    var nrm = new Vector3(-dir.z, 0, dir.x);
+                    bool gate = ps.Any(p => p.cut);
+                    bool doorNear = doors.Any(q => ps.Any(p => Vector2.Distance(new Vector2(q.x, q.z), new Vector2(p.p.x, p.p.z)) < 3.5f));
+                    float pub = PublicGap(new Vector2(mid.x, mid.z), out var street);
+                    mid.y = EnvWalk.Ground(mid.x, mid.z, mid.y);
+                    // retaining nothing: flat ground on both sides along the whole run, no gate, no door, and near public space
+                    if (len >= 6f && !gate && !doorNear && pub < 4f)
+                    {
+                        bool retains = false;
+                        for (int k = 1; k <= 3 && !retains; k++)
+                        {
+                            var q = first.p + (last.p - first.p) * (k / 4f);
+                            var gl = EnvWalk.Ground(q.x + nrm.x * 0.6f, q.z + nrm.z * 0.6f, float.NaN);
+                            var gr = EnvWalk.Ground(q.x - nrm.x * 0.6f, q.z - nrm.z * 0.6f, float.NaN);
+                            if (float.IsNaN(gl) || float.IsNaN(gr) || Mathf.Abs(gl - gr) > 0.22f) retains = true;
+                        }
+                        if (!retains)
+                            list.Add(F("WALL_RETAINS_NOTHING", unit, street, mid, tag + " run " + ps[0].path, $"{len:0.0} m of wall on flat ground (level change under 0.22 m on both sides), no gate, no door: holds back nothing"));
+                    }
+                    // dead frontage: a long wall along public space with no access through anywhere
+                    if (len >= 14f && !gate && !doorNear && pub < 2.5f)
+                        list.Add(F("WALL_NO_ACCESS", unit, street, mid, tag + " run " + ps[0].path, $"{len:0.0} m along public space with no gate, door or gap"));
+                    // floating: base clearly above the ground under it
+                    int floats = 0; float worst = 0;
+                    foreach (var p in ps)
+                    {
+                        float g = EnvWalk.Ground(p.p.x, p.p.z, float.NaN);
+                        float gap = float.IsNaN(g) ? 1f : p.y0 - g;
+                        if (gap > 0.3f) { floats++; worst = Mathf.Max(worst, gap); }
+                    }
+                    if (floats >= 2 && pub < 8f)
+                        list.Add(F("WALL_FLOATS", unit, street, mid, tag + " run " + ps[0].path, $"{floats} of {ps.Count} pieces float over the terrain (worst {worst:0.00} m)"));
+                    // ends in the air: no anchor at the free ends of the run
+                    void EndTip((Vector3 p, float y0, float y1, bool cut, string path) piece, Vector3 outDir)
+                    {
+                        var e = piece.p + outDir * 1.1f;
+                        if (Physics.OverlapSphere(e, 2.5f).Any(c => !c.isTrigger && c.transform.IsChildOf(rows) && !c.name.StartsWith("Ground_"))) return;   // a building takes it
+                        if (pieces.Any(p => p.cut && Vector3.Distance(p.p, piece.p) < 2.3f)) return;                                                        // dies on its own gate or pier
+                        var beyond = piece.p + outDir * 2.6f;
+                        float g1 = EnvWalk.Ground(piece.p.x, piece.p.z, float.NaN), g2 = EnvWalk.Ground(beyond.x, beyond.z, float.NaN);
+                        if (!float.IsNaN(g1) && !float.IsNaN(g2) && Mathf.Abs(g2 - g1) > 0.5f) return;                                                      // dies into a real level change
+                        if (!VisibleFromPublic(piece.p + Vector3.up * 1.2f, null)) return;
+                        list.Add(F("WALL_ENDS_AIR", unit, street, piece.p, tag + " " + piece.path, $"wall run ends in the air: no building, gate, corner or level change within 2.5 m"));
+                    }
+                    if (len >= 4f) { EndTip(first, -dir); EndTip(last, dir); }
+                }
+            }
+            foreach (Transform row in rows)
+            {
+                var g = row.Find("Walls"); if (g == null) continue;
+                var pieces = new List<(Vector3, float, float, bool, string)>();
+                foreach (Transform t in g)
+                {
+                    if (t.name == "ENV_Gate_Timber") { pieces.Add((t.position, 0, 0, true, Path(t))); continue; }
+                    if (t.name.StartsWith("ENV_Retaining_Wall"))
+                    {
+                        var r = t.GetComponentInChildren<Renderer>();
+                        if (t.localScale.x < 0.4f) { pieces.Add((t.position, 0, 0, true, Path(t))); continue; }   // pier
+                        if (r != null) pieces.Add((t.position, r.bounds.min.y, r.bounds.max.y, false, Path(t)));
+                    }
+                }
+                Audit(pieces, UnitOfRow(row.name), row.name);
+            }
+            var bd = root.Find("Backdrop");
+            if (bd != null)
+            {
+                var pieces = new List<(Vector3, float, float, bool, string)>();
+                foreach (Transform t in bd)
+                    if (t.name.StartsWith("ENV_Retaining_Wall"))
+                    {
+                        var r = t.GetComponentInChildren<Renderer>();
+                        if (r != null) pieces.Add((t.position, r.bounds.min.y, r.bounds.max.y, false, Path(t)));
+                    }
+                Audit(pieces.OrderByDescending(p => Vector2.Distance(new Vector2(p.Item1.x, p.Item1.z), new Vector2(96, 116))).ToList(), "BACKDROP", "Backdrop");
+            }
+            return list;
+        }
+
+        // ------------------------------------------------------------------ rhythm
+
+        /// <summary>Rhythm per unit: frontage widths with no variance, one lintel line for every upper window, one
+        /// ground-floor pattern for most fronts, and the same fuzzy silhouette (bay count + floors + wall and roof
+        /// material, not the exact fronts) stamped across the unit.</summary>
+        public static List<Finding> Rhythm()
+        {
+            var list = new List<Finding>();
+            var per = new Dictionary<string, List<(Transform b, string row, int bays, int floors, string f0, string wall, string roof)>>();
+            var lintels = new Dictionary<string, HashSet<float>>();
+            var lintelN = new Dictionary<string, int>();
+            foreach (Transform row in rows)
+                foreach (Transform b in row)
+                {
+                    if (b.name == "Walls") continue;
+                    var front = b.Find("Front"); var f0 = front?.Find("F0"); if (front == null || f0 == null) continue;
+                    string unit = UnitOfRow(row.name);
+                    int bays = f0.childCount, floors = front.childCount;
+                    var f0codes = new string(f0.Cast<Transform>().OrderBy(m => int.TryParse(m.name.Substring(m.name.IndexOf('_') + 1), out var bi) ? bi : 99).Select(m => m.name[0]).ToArray());
+                    var wall = WallMaterial(f0.Cast<Transform>().FirstOrDefault(m => m.name[0] == 'P')) ?? "-";
+                    var roofR = b.Find("Roof")?.GetComponentInChildren<Renderer>();
+                    var roof = roofR != null && roofR.sharedMaterial != null ? roofR.sharedMaterial.name.Replace("_G", "") : "-";
+                    if (!per.ContainsKey(unit)) per[unit] = new List<(Transform, string, int, int, string, string, string)>();
+                    per[unit].Add((b, row.name, bays, floors, f0codes, wall, roof));
+                    int fl = 0;
+                    foreach (Transform f in front)
+                    {
+                        if (fl >= 1)
+                            foreach (Transform m in f)
+                                if ("WwTc".IndexOf(m.name[0]) >= 0)
+                                {
+                                    var rs = m.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                                    float top = float.MinValue; foreach (var r in rs) top = Mathf.Max(top, r.bounds.max.y);
+                                    float floorLine = b.TransformPoint(new Vector3(0, (fl + 1) * BuildingAssembler.Storey, 0)).y;
+                                    if (!lintels.ContainsKey(unit)) { lintels[unit] = new HashSet<float>(); lintelN[unit] = 0; }
+                                    lintels[unit].Add(Mathf.Round((top - floorLine) * 10f) / 10f);
+                                    lintelN[unit]++;
+                                }
+                        fl++;
+                    }
+                }
+            foreach (var u in per.Where(e => e.Value.Count >= 6))
+            {
+                var bs = u.Value;
+                var widths = bs.Select(x => x.bays * 2f).ToList();
+                float mean = widths.Average();
+                float sd = Mathf.Sqrt(widths.Sum(x => (x - mean) * (x - mean)) / widths.Count);
+                if (sd < 0.75f)
+                    list.Add(F("RHYTHM_MONO_WIDTHS", u.Key, null, bs[bs.Count / 2].b.position, string.Join(",", bs.Select(x => x.row + "/" + x.b.name).Take(6)),
+                        $"{bs.Count} fronts with a frontage stdev of {sd:0.00} m (mean {mean:0.0} m): the same bay width all along"));
+                var top = bs.GroupBy(x => x.f0).OrderByDescending(g => g.Count()).First();
+                if (top.Count() * 1f / bs.Count >= 0.55f && top.Count() >= 5)
+                    list.Add(F("RHYTHM_MONO_GROUND", u.Key, null, top.First().b.position, string.Join(",", top.Select(x => x.row + "/" + x.b.name).Take(6)),
+                        $"{top.Count()} of {bs.Count} fronts share the ground-floor pattern {top.Key}"));
+                var sil = bs.GroupBy(x => (x.bays, x.floors, x.wall, x.roof)).OrderByDescending(g => g.Count()).First();
+                if (sil.Count() * 1f / bs.Count >= 0.4f && sil.Count() >= 5)
+                    list.Add(F("RHYTHM_MONO_SILHOUETTE", u.Key, null, sil.First().b.position, string.Join(",", sil.Select(x => x.row + "/" + x.b.name).Take(6)),
+                        $"{sil.Count()} of {bs.Count} fronts share one silhouette: {sil.Key.bays} bays x {sil.Key.floors} floors, {sil.Key.wall}, roof {sil.Key.roof}"));
+            }
+            foreach (var kv in lintels.Where(e => lintelN[e.Key] >= 8 && e.Value.Count <= 2))
+                list.Add(F("RHYTHM_MONO_LINTELS", kv.Key, null, per[kv.Key][0].b.position, per[kv.Key].Count + " fronts",
+                    $"every upper window cuts its lintel at the same {string.Join(" / ", kv.Value.Select(v => v.ToString("0.0")))} m below the floor line ({lintelN[kv.Key]} windows)"));
+            return list;
+        }
+
+        // ------------------------------------------------------------------ glass
+
+        /// <summary>Windows that cheat the eye: flat painted rectangles with no reveal depth (the kit window is a
+        /// recessed box), and glazing with no room behind it — no interior material, the glass shows the void.</summary>
+        public static List<Finding> WindowDepth()
+        {
+            var list = new List<Finding>();
+            var fake = new Dictionary<Transform, int>();
+            var voids = new Dictionary<Transform, int>();
+            foreach (Transform row in rows)
+                foreach (Transform b in row)
+                {
+                    if (b.name == "Walls") continue;
+                    foreach (var section in new[] { "Front", "Side_L", "Side_R", "Back" })
+                    {
+                        var sec = b.Find(section); if (sec == null) continue;
+                        foreach (Transform f in sec)
+                            foreach (Transform m in f)
+                            {
+                                if (!WindowCodes.Contains(m.name[0])) continue;
+                                var rs = m.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                                float minF = float.MaxValue, maxF = float.MinValue; bool glass = false, room = false;
+                                foreach (var r in rs)
+                                    foreach (var mat in r.sharedMaterials)
+                                    {
+                                        if (mat == null) continue;
+                                        if (mat.name.StartsWith("ENV_Interior_")) room = true;
+                                        if (mat.name.Contains("Glass")) glass = true;
+                                    }
+                                foreach (var r in rs)
+                                {
+                                    var wb = r.bounds;
+                                    foreach (var corner in new[] { wb.min, wb.max, new Vector3(wb.min.x, wb.min.y, wb.max.z), new Vector3(wb.max.x, wb.min.y, wb.min.z) })
+                                    {
+                                        float d = Vector3.Dot(corner - m.position, m.forward);
+                                        minF = Mathf.Min(minF, d); maxF = Mathf.Max(maxF, d);
+                                    }
+                                }
+                                if (maxF - minF < 0.09f) { fake[b] = fake.TryGetValue(b, out var c) ? c + 1 : 1; continue; }
+                                if (glass && !room) voids[b] = voids.TryGetValue(b, out var c2) ? c2 + 1 : 1;
+                            }
+                    }
+                }
+            foreach (var kv in fake.Where(e => VisibleFromPublic(e.Key.position + Vector3.up * 4f, e.Key)))
+                list.Add(F("WINDOW_FAKE", UnitOfRow(kv.Key.parent.name), null, kv.Key.position, Path(kv.Key), $"{kv.Value} windows are flat planes with no reveal depth (the kit window is a recessed box)"));
+            foreach (var kv in voids.Where(e => VisibleFromPublic(e.Key.position + Vector3.up * 4f, e.Key)))
+                list.Add(F("WINDOW_INTO_VOID", UnitOfRow(kv.Key.parent.name), null, kv.Key.position, Path(kv.Key), $"{kv.Value} glazed windows show no room behind: plain glass, the void shows through"));
+            return list;
+        }
+
+        // ------------------------------------------------------------------ thresholds and props
+
+        /// <summary>Doors that open straight onto a falling street: the ground drops across the threshold (no flat
+        /// landing) or falls away just past the sill, and no step or tread covers it.</summary>
+        public static List<Finding> Landings()
+        {
+            var list = new List<Finding>();
+            foreach (var t in rows.GetComponentsInChildren<Transform>(true))
+            {
+                if (!t.name.StartsWith("THR_")) continue;
+                var b = BuildingOf(t); if (b == null) continue;
+                var p = t.position; var f = t.forward; f.y = 0; f.Normalize();
+                var rgt = new Vector3(f.z, 0, -f.x);
+                float G(float lat, float d) => EnvWalk.Ground(p.x + f.x * d + rgt.x * lat, p.z + f.z * d + rgt.z * lat, float.NaN);
+                bool step = Physics.OverlapSphere(p + f * 0.5f, 1.2f).Any(c => !c.isTrigger && (c.name == "ENV_Door_Step" || c.name.EndsWith("_Treads")));
+                if (step) continue;   // a worn step or tread is the landing
+                var g0 = G(0, 0.6f); var gl = G(-0.55f, 0.6f); var gr = G(0.55f, 0.6f);
+                var vals = new[] { g0, gl, gr }.Where(g => !float.IsNaN(g)).ToList();
+                if (vals.Count >= 2 && vals.Max() - vals.Min() > 0.28f && VisibleFromPublic(p + Vector3.up * 1.2f, b))
+                    list.Add(F("DOOR_NO_LANDING", UnitOfRow(b.parent.name), null, p, Path(t), $"the street falls {vals.Max() - vals.Min():0.00} m across the threshold (0.6 m out): the door opens onto the slope, no landing"));
+                var g1 = G(0, 0.1f); var g9 = G(0, 0.9f);
+                if (!float.IsNaN(g1) && !float.IsNaN(g9) && Mathf.Abs(g1 - p.y) < 0.2f && g9 < p.y - 0.45f && VisibleFromPublic(p + Vector3.up * 1.2f, b))
+                    list.Add(F("DOOR_NO_LANDING", UnitOfRow(b.parent.name), null, p, Path(t), $"level at the sill but the ground drops {p.y - g9:0.00} m by 0.9 m out: the street falls away right past the threshold"));
+            }
+            return list;
+        }
+
+        /// <summary>Props with no ground to stand on: floating above the terrain, or perched on a near-vertical face of
+        /// a sloping street with no ledge under them.</summary>
+        public static List<Finding> FloatingProps()
+        {
+            var list = new List<Finding>();
+            foreach (var t in root.GetComponentsInChildren<Transform>(true))
+            {
+                if (!PropKind.TryGetValue(t.name, out var kind) || !t.gameObject.activeInHierarchy) continue;
+                if (t.parent != null && PropKind.ContainsKey(t.parent.name)) continue;
+                var p = t.position;
+                if (PublicGap(new Vector2(p.x, p.z), out var street) > 8f) continue;
+                var rs = t.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                var bb = rs[0].bounds; foreach (var r in rs) bb.Encapsulate(r.bounds);
+                var b = BuildingOf(t);
+                string unit = b != null ? UnitOfRow(b.parent.name) : "PLAZAS";
+                var hits = Physics.RaycastAll(new Vector3(p.x, bb.max.y + 0.3f, p.z), Vector3.down, 8f)
+                    .Where(h => !h.collider.isTrigger && !h.collider.transform.IsChildOf(t)).OrderBy(h => h.distance).ToArray();
+                if (hits.Length == 0) { list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name}: no ground within 8 m below it")); continue; }
+                var hit = hits[0];
+                float gap = bb.min.y - hit.point.y;
+                if (gap > 0.2f) list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name} floats {gap:0.00} m above the ground"));
+                else if (Vector3.Angle(hit.normal, Vector3.up) > 32f)
+                    list.Add(F("PROP_FLOAT", unit, street, p, Path(t), $"{t.name} perched on a {Vector3.Angle(hit.normal, Vector3.up):0}° slope with no ledge"));
+            }
+            return list;
+        }
+
+        /// <summary>Gallery bays and bridging pieces with no way up: a passage above head height whose floor aligns
+        /// with no door threshold, with nothing supporting its ends.</summary>
+        public static List<Finding> Passages()
+        {
+            var list = new List<Finding>();
+            var doors = rows.GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => t.position).ToList();
+            foreach (var t in root.GetComponentsInChildren<Transform>(true))
+            {
+                if (t.name != "ENV_Gallery_Bay" || !t.gameObject.activeInHierarchy) continue;
+                var rs = t.GetComponentsInChildren<Renderer>(); if (rs.Length == 0) continue;
+                var bb = rs[0].bounds; foreach (var r in rs) bb.Encapsulate(r.bounds);
+                var c = bb.center;
+                float g = EnvWalk.Ground(c.x, c.z, float.NaN);
+                if (float.IsNaN(g)) continue;
+                float h = bb.min.y - g;
+                if (h < 1.9f) continue;   // reachable from the ground below
+                if (doors.Any(q => Mathf.Abs(q.y - bb.min.y) < 1.4f && Vector2.Distance(new Vector2(q.x, q.z), new Vector2(c.x, c.z)) < 6f)) continue;   // a door opens at its floor
+                var ends = new[] { bb.min + Vector3.right * 0.2f, bb.max - Vector3.right * 0.2f };
+                bool supported = false;
+                foreach (var e in ends)
+                    if (Physics.OverlapSphere(new Vector3(e.x, bb.min.y - 0.6f, e.z), 0.8f).Any(col => !col.isTrigger && !col.transform.IsChildOf(t)))
+                        supported = true;
+                if (supported) continue;
+                var b = BuildingOf(t);
+                if (!VisibleFromPublic(c, b)) continue;
+                list.Add(F("PASSAGE_FLOAT", b != null ? UnitOfRow(b.parent.name) : "OTHER", null, c, Path(t),
+                    $"gallery floor {h:0.0} m above the ground, no door at its level within 6 m, nothing under its ends"));
+            }
+            return list;
+        }
+
+        /// <summary>Notices (se vende, se alquila...) stamped twice at the same height on one front: the eye reads the
+        /// duplication before it reads the sign.</summary>
+        public static List<Finding> SignDuplicates()
+        {
+            var list = new List<Finding>();
+            var signs = new List<(Vector3 p, string mat, Transform t)>();
+            foreach (var t in rows.GetComponentsInChildren<Transform>(true))
+                if (t.name == "ENV_Sign_Panel" && t.gameObject.activeInHierarchy)
+                {
+                    var r = t.GetComponentInChildren<Renderer>();
+                    var mat = r != null && r.sharedMaterial != null ? r.sharedMaterial.name : "?";
+                    if (!mat.Contains("Notice")) continue;
+                    signs.Add((t.position, mat, t));
+                }
+            for (int i = 0; i < signs.Count; i++)
+                for (int j = i + 1; j < signs.Count; j++)
+                    if (signs[i].mat == signs[j].mat
+                        && Mathf.Abs(signs[i].p.y - signs[j].p.y) < 0.15f
+                        && Vector2.Distance(new Vector2(signs[i].p.x, signs[i].p.z), new Vector2(signs[j].p.x, signs[j].p.z)) < 3.5f)
+                    {
+                        var b = BuildingOf(signs[i].t);
+                        list.Add(F("SIGN_FLOAT", b != null ? UnitOfRow(b.parent.name) : "OTHER", null, (signs[i].p + signs[j].p) / 2f,
+                            Path(signs[i].t) + " + " + Path(signs[j].t), $"two '{signs[i].mat}' notices at the same height within 3.5 m"));
+                    }
+            return list;
+        }
+
+        // ------------------------------------------------------------------ plazas
+
+        /// <summary>Plaza borders: pavement that ends with no building or wall to close it (it drains onto the
+        /// hillside instead of onto a facade), and twin plazas ringed by the same massing.</summary>
+        public static List<Finding> PlazaEdges()
+        {
+            var list = new List<Finding>();
+            var sigs = new List<(Vector2 c, int floors, string wall, string roof, int n)>();
+            foreach (var pl in plazas)
+            {
+                var cx = pl.Average(p => p.x); var cz = pl.Average(p => p.y);
+                float open = 0; Vector3 worst = Vector3.zero; float worstOpen = 0;
+                var closed = new List<Vector2>(pl) { pl[0] };
+                for (int i = 0; i + 1 < closed.Count; i++)
+                {
+                    var a = closed[i]; var b2 = closed[i + 1];
+                    var seg = b2 - a; float l = seg.magnitude; if (l < 0.01f) continue;
+                    var nrm = new Vector2(-seg.y, seg.x) / l;
+                    if (nrm.x * (a.x - cx) + nrm.y * (a.y - cz) < 0) nrm = -nrm;   // outward
+                    for (float t = 1.5f; t < l; t += 3f)
+                    {
+                        var q = a + seg * (t / l);
+                        var probe = new Vector3(q.x + nrm.x * 4f, 1.5f, q.y + nrm.y * 4f);
+                        if (Inside(channel, new Vector2(probe.x, probe.z))) continue;          // opens onto the river by design
+                        if (PublicGap(new Vector2(probe.x, probe.z), out _) < 2.5f) continue;  // a street continues there
+                        bool hit = Physics.RaycastAll(new Vector3(q.x + nrm.x * 1.2f, 1.5f, q.y + nrm.y * 1.2f), new Vector3(nrm.x, 0, nrm.y), 5f)
+                            .Any(h => !h.collider.isTrigger && h.collider.transform.IsChildOf(rows));
+                        if (!hit)
+                        {
+                            open += 3f;
+                            if (open > worstOpen) { worstOpen = open; worst = new Vector3(q.x, EnvWalk.Ground(q.x, q.y, 0), q.y); }
+                        }
+                        else worstOpen = Mathf.Max(0f, worstOpen - 0f);
+                    }
+                }
+                if (open >= 8f)
+                    list.Add(F("PLAZA_NOT_CLOSED", "PLAZAS", null, worst, "plaza near (" + cx.ToString("0") + "," + cz.ToString("0") + ")",
+                        $"{open:0} m of plaza edge with no building or wall within 5 m outside: the pavement ends and the space drains away"));
+                // massing signature: the fronts that stand within 15 m of the polygon
+                var bs = new List<(int floors, string wall, string roof)>();
+                foreach (Transform row in rows)
+                    foreach (Transform bld in row)
+                    {
+                        if (bld.name == "Walls") continue;
+                        var q = new Vector2(bld.position.x, bld.position.z);
+                        if (DistToPolygonEdge(pl, q) < 15f && !Inside(pl, q))
+                        {
+                            var front = bld.Find("Front"); if (front == null) continue;
+                            var wallR = WallMaterial(front.Find("F0")?.Cast<Transform>().FirstOrDefault(m => m.name[0] == 'P')) ?? "-";
+                            var roofR = bld.Find("Roof")?.GetComponentInChildren<Renderer>();
+                            bs.Add((front.childCount, wallR, roofR != null && roofR.sharedMaterial != null ? roofR.sharedMaterial.name.Replace("_G", "") : "-"));
+                        }
+                    }
+                if (bs.Count >= 5)
+                {
+                    var dom = bs.GroupBy(x => x).OrderByDescending(g => g.Count()).First();
+                    sigs.Add((new Vector2(cx, cz), dom.Key.floors, dom.Key.wall, dom.Key.roof, dom.Count()));
+                }
+            }
+            for (int i = 0; i < sigs.Count; i++)
+                for (int j = i + 1; j < sigs.Count; j++)
+                    if (sigs[i].floors == sigs[j].floors && sigs[i].wall == sigs[j].wall && sigs[i].roof == sigs[j].roof && sigs[i].n >= 5 && sigs[j].n >= 5)
+                        list.Add(F("PLAZA_TWIN_ROWS", "PLAZAS", null, new Vector3(sigs[i].c.x, 0, sigs[i].c.y), "plazas " + sigs[i].c + " + " + sigs[j].c,
+                            $"two plazas ringed by the same massing: {sigs[i].floors} floors, {sigs[i].wall}, roof {sigs[i].roof} ({sigs[i].n} and {sigs[j].n} fronts)"));
+            return list;
+        }
+
         // ------------------------------------------------------------------ views
 
         /// <summary>Two views of a finding position: from the front at 1.7 m (or from where the opening looks out, if given a
@@ -681,7 +1249,7 @@ namespace JuegoDef.Env
 
         // ------------------------------------------------------------------ run
 
-        public static string Run(string outJson, string kinds = "doors,narrow,walls,blanks,windows,sides,materials,twins,props,facades,roofs,shops")
+        public static string Run(string outJson, string kinds = "doors,narrow,walls,blanks,windows,sides,materials,twins,props,facades,roofs,shops,volume,stairs,wallsense,rhythm,windowdepth,landings,floaters,passages,plazas,signs")
         {
             Load();
             var want = new HashSet<string>(kinds.Split(','));
@@ -697,6 +1265,8 @@ namespace JuegoDef.Env
             Do("doors", Doors); Do("narrow", () => Narrowings()); Do("walls", Walls); Do("blanks", Blanks);
             Do("windows", Windows); Do("sides", BareSides); Do("materials", Materials); Do("twins", Twins); Do("props", Props);
             Do("facades", Facades); Do("roofs", Roofs); Do("shops", Storefronts);
+            Do("volume", VolumeGaps); Do("stairs", StairLogic); Do("wallsense", WallSense); Do("rhythm", Rhythm);
+            Do("windowdepth", WindowDepth); Do("landings", Landings); Do("floaters", FloatingProps); Do("passages", Passages); Do("plazas", PlazaEdges); Do("signs", SignDuplicates);
             var full = System.IO.Path.Combine(Directory.GetCurrentDirectory(), outJson);
             Directory.CreateDirectory(System.IO.Path.GetDirectoryName(full));
             File.WriteAllText(full, JsonConvert.SerializeObject(all.Select(f => new { f.kind, f.unit, f.street, f.where, f.detail, x = System.Math.Round(f.x, 2), y = System.Math.Round(f.y, 2), z = System.Math.Round(f.z, 2) }), Formatting.Indented));

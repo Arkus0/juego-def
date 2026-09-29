@@ -104,37 +104,10 @@
         "thresholds": 372,
         "openWalkable": 0,
         "closedBlocked": 372,
-        "renderers": 29142
+        "renderers": 29144
       },
       "issues": []
     }
   ],
-  "problems": 0,
-  "selfTest": {
-    "expected": {
-      "banned module": "DETECTED",
-      "primitive": "DETECTED",
-      "blocked open threshold": "DETECTED",
-      "open service shortcut": "DETECTED",
-      "machine-local material": "DETECTED",
-      "duplicated tile": "DETECTED",
-      "open party wall": "DETECTED",
-      "service across an opening": "DETECTED"
-    },
-    "missed": 0,
-    "issuesReported": [
-      "banned kit module Wall_Plaster_Straight at SelfTest/Wall_Plaster_Straight",
-      "machine-local vendor material T_Trim_Furniture_BaseColor on SelfTest/Barrel",
-      "machine-local vendor material T_Trim_Metal_BaseColor on SelfTest/Barrel",
-      "Unity primitive mesh used as content: SelfTest/Cube",
-      "THR_Public_Shop blocked by ENV_Counter_Shop at (0.80, 0.73, -0.36) (SelfTest/Front/F0/e_0/THR_Public_Shop)",
-      "THR_Service_Closed is not closed (walkable shortcut) at SelfTest/Front/F0b/V_0/THR_Service_Closed",
-      "building Shallow threshold not on the street surface",
-      "building Deep threshold not on the street surface",
-      "open party wall: Deep Side_L storey 0 at local z -7,2",
-      "open party wall: Deep Side_L storey 1 at local z -7,2",
-      "ENV_SERVICE_CLASH ENV_Downpipe crosses DoorFrame_Flat_Brick at SelfTest/Piped/Dressing/ENV_Downpipe",
-      "duplicated coplanar tile SelfTest/Floor_Bridge"
-    ]
-  }
+  "problems": 0
 }
