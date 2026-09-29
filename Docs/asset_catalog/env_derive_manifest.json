@@ -1460,6 +1460,26 @@
     "triangles": 308,
     "donorSource": null
   },
+  "ENV_Window_Blind_Half": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Roller blind pulled down to 1.85 m (half): enough shade to see by, the room behind still reads.",
+    "materials": [
+      "ENV_Blind_PVC"
+    ],
+    "triangles": 236,
+    "donorSource": null
+  },
+  "ENV_Window_Blind_Up": {
+    "class": "ORIGINAL",
+    "donors": [],
+    "method": "Roller blind pulled up to 2.45 m (a slit under the box): the shop is open, someone is home.",
+    "materials": [
+      "ENV_Blind_PVC"
+    ],
+    "triangles": 80,
+    "donorSource": null
+  },
   "ENV_Window_Boarded": {
     "class": "CREATE_DERIVED",
     "donors": [],

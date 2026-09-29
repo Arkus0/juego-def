@@ -1403,6 +1403,33 @@ def window_blind():
     return join("ENV_Window_Blind", parts)
 
 
+def _roller_blind(name, bottom):
+    """The same retro-fitted roller blind pulled down to a different level: slats run from `bottom` up to the box
+    (2.5 m). Phase 3: a street of reformed facades no longer holds one blind state on every window."""
+    parts = [box("box", (-0.82, 2.5, 0.09), (0.82, 2.74, 0.3), "ENV_Blind_PVC", bevel=0.01)]
+    y = bottom
+    i = 0
+    while y < 2.5:
+        parts.append(box(f"s{i}", (-0.74, y, 0.2), (0.74, y + 0.045, 0.225), "ENV_Blind_PVC"))
+        y += 0.05
+        i += 1
+    parts.append(box("guideL", (-0.8, 1.0, 0.18), (-0.76, 2.5, 0.24), "ENV_Blind_PVC"))
+    parts.append(box("guideR", (0.76, 1.0, 0.18), (0.8, 2.5, 0.24), "ENV_Blind_PVC"))
+    return join(name, parts)
+
+
+@recipe("ENV_Window_Blind_Half", "ORIGINAL")
+def window_blind_half():
+    """Roller blind pulled down to 1.85 m (half): enough shade to see by, the room behind still reads."""
+    return _roller_blind("ENV_Window_Blind_Half", 1.85)
+
+
+@recipe("ENV_Window_Blind_Up", "ORIGINAL")
+def window_blind_up():
+    """Roller blind pulled up to 2.45 m (a slit under the box): the shop is open, someone is home."""
+    return _roller_blind("ENV_Window_Blind_Up", 2.45)
+
+
 @recipe("ENV_Window_Boarded", "CREATE_DERIVED")
 def window_boarded():
     """Boarded-up window for neglected buildings: rough planks across the kit wide window (MI_WoodTrim dark)."""

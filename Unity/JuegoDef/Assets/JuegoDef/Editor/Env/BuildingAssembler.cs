@@ -356,7 +356,7 @@ namespace JuegoDef.Env
             slot.SetParent(parent, false);
             slot.localPosition = pos;
             slot.localRotation = side;
-            foreach (var p in FacadeGrammar.Recipe(s, fam, code, floor, rng))
+            foreach (var p in FacadeGrammar.Recipe(s, fam, code, floor, rng, parent.childCount - 1))
             {
                 var go = EnvKit.Place(p.module, slot, p.offset, p.rotY, p.scale);
                 if (p.role == "wall") EnvKit.Remap(go, floor > 0 ? With(wallMap, "MI_Brick", wallMap.TryGetValue("MI_Plaster", out var fac) ? fac : null) : wallMap);

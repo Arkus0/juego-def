@@ -22,6 +22,8 @@
     "ENV_TV_Aerial",
     "ENV_Street_Name_Plate",
     "ENV_Window_Blind",
+    "ENV_Window_Blind_Half",
+    "ENV_Window_Blind_Up",
     "ENV_Window_Boarded",
     "ENV_Mooring_Line",
     "ENV_Buoy",

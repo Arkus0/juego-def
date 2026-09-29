@@ -418,7 +418,7 @@ namespace JuegoDef.Env
             return v < 28 ? 1 : v < 53 ? -1 : 0;
         }
 
-        public static List<EnvPart> Recipe(BuildingSpec s, string fam, char code, int floor, System.Random rng)
+        public static List<EnvPart> Recipe(BuildingSpec s, string fam, char code, int floor, System.Random rng, int bay = 0)
         {
             bool stone = fam == "stone";
             string F = stone ? "UnevenBrick" : "Plaster";
@@ -428,6 +428,11 @@ namespace JuegoDef.Env
             void Join(string module, Vector3 at = default, float rot = 0) => parts.Add(new EnvPart(module, "joinery", at, rot));
             void Stone(string module, Vector3 at = default) => parts.Add(new EnvPart(module, "stone", at));
             string door = string.IsNullOrEmpty(s.door) ? PortalDoors[Math.Abs(s.seed) % PortalDoors.Length] : s.door;
+            // phase 3: how far the roller blind is pulled down, per window (dedicated hash of seed/floor/bay): the
+            // two-thirds drop (base), half (1.85) or a slit under the box (2.45) — a street of reformed facades no
+            // longer holds one blind state. Never the shared rng.
+            string Blind() => ((uint)s.seed * 2654435761u ^ (uint)floor * 19349663u ^ (uint)bay * 83492791u) % 3 == 0 ? "ENV_Window_Blind_Half"
+                : ((uint)s.seed * 2654435761u ^ (uint)floor * 19349663u ^ (uint)bay * 83492791u) % 3 == 1 ? "ENV_Window_Blind_Up" : "ENV_Window_Blind";
             // the wide-window wall of the building's head line (kit cut, Hi 2.41 or Lo 2.21); stone bays keep the kit wall
             int hl = HeadLine(s);
             string WindowWall() => hl > 0 ? "ENV_Wall_Plaster_Clean_Window_Hi" : hl < 0 ? "ENV_Wall_Plaster_Clean_Window_Lo" : CleanPlaster["Window_Wide_Flat"];
@@ -450,7 +455,7 @@ namespace JuegoDef.Env
                 case 'W':
                     WindowWallPart();
                     WideWindow();
-                    if (floor > 0) { if (s.era == "reformed") Stone("ENV_Window_Blind"); else if (hl == 0) Join("WindowShutters_Wide_Flat_Open"); }
+                    if (floor > 0) { if (s.era == "reformed") Stone(Blind()); else if (hl == 0) Join("WindowShutters_Wide_Flat_Open"); }
                     else if (Reja(s)) parts.Add(new EnvPart("ENV_Window_Reja", "prop"));
                     break;
                 case 'X':
@@ -466,7 +471,7 @@ namespace JuegoDef.Env
                 case 'c':
                     WindowWallPart();
                     WideWindow();
-                    if (s.era == "reformed") Stone("ENV_Window_Blind"); else if (hl == 0) Join("WindowShutters_Wide_Flat_Closed");
+                    if (s.era == "reformed") Stone(Blind()); else if (hl == 0) Join("WindowShutters_Wide_Flat_Closed");
                     break;
                 case 'T':
                     Wall("Window_Thin_Round");
