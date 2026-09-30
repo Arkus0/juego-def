@@ -13,7 +13,7 @@ The separation is deliberate:
 - `PROD-ASSET-00` = **shared lawful production substrate** — accepted;
 - `PROD-ANIM-01` = **animation intake/retarget/admission factory** — accepted;
 - `PROD-ENV/CHAR` = **remaining graphical factories**;
-- `PROD-ENV-DIRECTOR-00` = **owner-facing direct-manipulation surface** that keeps human spatial/composition judgment upstream of AI mass production;
+- `PROD-ENV-DIRECTOR-00` = **owner-facing visual world builder**: direct layout + thumbnail catalogue + simple placement/modification + map expansion, with AI supplying reusable pieces under human direction;
 - `PROD-ANIM-02` = **runtime multi-NPC proof**, waiting on accepted CHAR output;
 - `CITY-URBAN-01` = **physical keeper realization** of the first block with those factories.
 
@@ -90,7 +90,7 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 | `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
-| `WP-PROD-ENV-DIRECTOR-00` | Owner-facing Unity editor for direct layout/building/detail direction + bounded AI actions | Bootstrap + CITY-URBAN-00 + ENV trace/build substrate; urgent parallel enabler |
+| `WP-PROD-ENV-DIRECTOR-00` | Owner-facing visual world builder: layout + thumbnail catalogue + game-like placement + map expansion + AI-supplied reusable pieces | Bootstrap + CITY-URBAN-00 + ENV trace/build substrate; urgent parallel enabler |
 | `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory using the human-directed production loop | ENV-01 + ENV-DIRECTOR-00 |
 | `WP-PROD-CHAR-01` | Civilian/wardrobe production factory serving B0 role priorities | ASSET-00 |
 | `WP-PROD-CHAR-02` | Representative civilian batch from factory | CHAR-01 |
@@ -105,4 +105,4 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 
 **Continue `WP-PROD-ENV-01` and `WP-PROD-CHAR-01`, and execute `WP-PROD-ENV-DIRECTOR-00` urgently against the current ENV authoring substrate. `WP-PROD-ANIM-01` is complete.**
 
-The first Director milestone is deliberately small: direct Scene View manipulation of the real district trace with safe SAVE / REVERT / REBUILD / PLAY HERE. Do not delay that owner-visible MVP for AI buttons or general editor features. ENV-02 waits for Director PASS. ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.
+The first Director milestones remain deliberately small: D0/D1 direct Scene View layout manipulation with safe SAVE / REVERT / REBUILD / PLAY HERE. **Do not restart already-running D0/D1 work.** D2 then makes the tool a real builder with a thumbnail catalogue, ghost placement/snap and direct manipulation; D3 adds map expansion; D4 makes AI-created/adapted pieces flow back into the same catalogue. ENV-02 waits for Director PASS. ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.
