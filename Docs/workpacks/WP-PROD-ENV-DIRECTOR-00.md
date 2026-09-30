@@ -7,6 +7,14 @@ Consumes when available: active `WP-PROD-ENV-01` trace/spec/build/polish/rebuild
 Blocks: `WP-PROD-ENV-02`  
 Feeds immediately: current ENV-01 human logic pass and all later keeper environment composition
 
+## Compact semantic city sequencing amendment — 2026-09-30 candidate
+
+[`WP-CITY-URBAN-00R`](WP-CITY-URBAN-00R.md) and [`WP-PROD-ENV-CASCO-V2-00`](WP-PROD-ENV-CASCO-V2-00.md) establish scale/grammar and one physical programme pilot before ENV02. **D0/D1, D0.1 transactional repair and useful generic D2–D7 requirements remain valid; no restart is required.** The pilot uses bounded operator/native authoring and does not wait for Director PASS or new semantic commands. Director can continue on the legacy ENV01 fixture without claiming its scale as final city design.
+
+Do not implement speculative `merge semantic building`, `assign programme`, `playable floors` or equivalent capabilities from this amendment. The pilot supplies evidence/friction for a later bounded handoff. Any authoring operation that decides V2 building/programme semantics must consume that evidence after pilot PASS. Existing `MAKE ENTERABLE`/`EXPAND` examples are tools inside an explicit programme, never automatic plot-to-interior authority. Generic tooling and the commercial/provider boundary are preserved; accepted pilot assemblies can flow through existing catalogue placement without requiring every probable new operation.
+
+ENV02 retains ENV01 + Director PASS and adds CITY00R + pilot PASS. No ENV02/Director/CITY01 → pilot dependency is introduced; Director's existing dependencies and acceptance proof are not expanded by speculative semantic features.
+
 ## Claim
 
 juego-def has an owner-facing **ENV Director** inside Unity with the interaction simplicity of a building game and the production power of the existing ENV factory.

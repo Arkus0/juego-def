@@ -1,8 +1,8 @@
 # WP-PROD-ENV-02 — Environment Batch Production Proof
 
-Status: **READY AFTER ENV-01 + ENV-DIRECTOR-00**  
+Status: **READY AFTER COMPACT SEMANTIC PILOT + ENV-01 + ENV-DIRECTOR-00**
 Class: PRODUCTION SCALE PROOF / ENVIRONMENT  
-Depends on: `WP-PROD-ENV-01` PASS + `WP-PROD-ENV-DIRECTOR-00` PASS  
+Depends on: `WP-PROD-ENV-01` PASS + `WP-PROD-ENV-DIRECTOR-00` PASS + `WP-CITY-URBAN-00R` PASS + `WP-PROD-ENV-CASCO-V2-00` PASS
 Blocks: `WP-CITY-URBAN-01`; authoring-path revisit
 
 ## Claim
@@ -10,6 +10,8 @@ Blocks: `WP-CITY-URBAN-01`; authoring-path revisit
 The ENV factory + ENV Director can now support **human-built environment production at scale**: the owner can edit existing space, expand the playable map and consume AI-made/adapted pieces through the same visual catalogue and rebuild/validation path, without falling back to prompt-by-prompt coordinate manipulation or Unity prefab/path archaeology.
 
 ## Required outputs
+
+All new compositions apply the accepted [`compact semantic city baseline`](../design/COMPACT_SEMANTIC_CITY_REBASELINE.md): independent FacadeCells/buildings/programmes, purposeful selective interiors, 100% building identity and zero unintentional exterior pockets. Consume the pilot recipe and reusable outputs before extending methods. EXPAND MAP consumes the global city budget; it does not authorize another ENV01-sized district. Do not count the earlier pilot as one of these Director batch/UX proofs unless a new candidate independently performs every applicable ENV02 step with its own receipts. Probable Director semantic operations remain a post-pilot disposition, not a compulsory speculative feature set.
 
 Produce **three materially different keeper proofs**, each exercising a distinct Director use case:
 

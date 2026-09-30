@@ -47,7 +47,7 @@ The goal is **existing solution -> adapt -> minimal missing glue**.
    - `WP-M0-00` — small gameplay fixture when useful;
    - `WP-PROD-DIALOGUE-01` may progress independently.
 4. Scale proofs:
-   - `ENV-02` after ENV-01;
+   - `ENV-02` after ENV-01 + ENV-DIRECTOR-00 + CITY-URBAN-00R + CASCO-V2-00 pilot; the compact-city sequence/guards live in [`ROADMAP.md`](ROADMAP.md), not this superseded overview;
    - `CHAR-02` after CHAR-01;
    - `ANIM-02` after accepted ANIM-01 + CHAR-01; only CHAR-01 remains blocking.
 5. `UI-01` follows Dialogue.
