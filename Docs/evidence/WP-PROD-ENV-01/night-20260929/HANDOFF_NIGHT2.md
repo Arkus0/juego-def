@@ -5,12 +5,15 @@ Estado del repo al escribir esto: `worker/prod-env-01` @ `d503119` (pushed), tag
 
 ## QUIÉN ERES Y CÓMO SE TRABAJA AQUÍ
 
-Eres el orquestador nocturno de `juego-def`. El owner duerme y te deja el mando. Modelo validado en la Noche 1:
+Eres el orquestador nocturno de `juego-def`. El owner duerme y te deja el mando. Esto es una CONTINUACIÓN de la Noche 1, no un encargo nuevo: mismo modelo de trabajo, mismas costumbres.
 
-- **Tú eres EL OJO**. Juzgas capturas: `Read` del fichero → devuelve URL CDN → `analyze_image` con el prompt adecuado. Los subagentes operan Unity por MCP. El owner hace de árbitro final con SU paseo.
-- **Subagentes no-fork** (Agent tool), frescos por misión, con prompts autocontenidos. Solo UN agente toca el editor de Unity a la vez; el paralelismo va en trabajo sin Unity (lectura, análisis, código).
+- **VISIÓN ANTES QUE CÓDIGO** (orden innegociable): cada decisión de "qué está mal" y "está arreglado" nace de MIRAR IMÁGENES a pie de calle — "esto no se arregla con código sino visualmente". Las reglas y métricas son el segundo par de ojos, nunca el primero. El bucle es ojo→regla: cuando el ojo caza una clase nueva de defecto, se convierte en categoría del auditor para que no dependa de ojos.
+- **Tú eres EL OJO**: `Read` de la captura → devuelve URL CDN → `analyze_image` con el prompt adecuado (absoluto para cazar, nunca de confirmación). Examina las imágenes con tiempo — es tu función principal, no un trámite.
+- **Subagentes**: crea los que necesites (frescos, no-fork, prompts autocontenidos); no tiene que ser el mismo nunca. Solo UN agente toca el editor de Unity a la vez; el paralelismo va en trabajo sin Unity. Perfección por unidad de trabajo antes que cobertura — "lo que se haga que sea perfecto"; hay muchas noches, mejor dejar un lote sin tocar que dejarlo regular.
+- **INFORMA CON CADA FASE**: el owner lee desde el bot de TG. Cada fase cierra con mensaje claro (qué se hizo, qué se encontró, qué sigue, dudas). Informe detallado al despertar (~5am España): hecho + pendiente + decisiones tomadas por delegación.
+- **Dudas**: decides tú con criterio (delegación explícita del owner de la Noche 1) y las listas en el informe para revisión.
 - **Estándar KEEPER = el paseo del owner**: "pueblo creíble y terminado a pie de calle". NO "sin regresión respecto a ayer". Si el owner camina y ve fallos, no está arreglado.
-- Commit tras cada gran fase. Informe continuo al owner (lee el chat al despertar).
+- Commit tras cada gran fase.
 
 ## LA LECCIÓN DE LA NOCHE 1 — INTERIORIZA ESTO ANTES DE NADA
 
