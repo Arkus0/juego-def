@@ -92,6 +92,52 @@ The Worker must distinguish **pattern reuse** from **code reuse**:
 
 If Director later becomes a sellable asset, it must remain possible to separate all third-party obligations cleanly.
 
+### Optional geometry-editor integration — UModeler X first candidate
+
+The owner already has **UModeler X** available in Unity. Director should exploit that capability when useful, but **must not depend on it**.
+
+Current official product posture verified 2026-09-30:
+
+- UModeler X is an **Editor-only** Unity tool;
+- its current Unity Asset Store listing is an **Extension Asset** under the Standard Unity Asset Store EULA;
+- the current publisher FAQ/listing allows commercial project use and states that generated/created assets may be used commercially;
+- Director must therefore integrate with UModeler X as a separately installed optional tool, not redistribute its package/code as part of a future Director asset.
+
+Binding architecture:
+
+```text
+ENV Director Core
+├── semantic selection
+├── placement / chains / map expansion
+├── persistence / rebuild
+├── AI context / preview / acceptance
+└── GeometryEditAdapter interface
+      ├── UModelerXAdapter   [optional, only when detected]
+      ├── ProBuilderAdapter  [optional/future]
+      └── NoGeometryEditor   [valid standalone state]
+```
+
+Requirements:
+
+- Director core must compile and remain usable when UModeler X is not installed.
+- Do not create an assembly-definition hard dependency on UModeler X unless it is isolated behind a separately compiled optional adapter.
+- Prefer documented/public integration surfaces. Reflection or compile guards are acceptable only when bounded, version-checked and fail-closed.
+- If the integration cannot be maintained safely against a UModeler X version, Director falls back to standalone behavior rather than breaking core authoring.
+- A commercial Director package must not bundle or redistribute UModeler X binaries/source/package content unless separate redistribution permission exists.
+- Geometry edited through UModeler X must be saved as juego-def-owned derived output with normal lineage; do not destructively edit vendor/source packages.
+- UModeler X is not canonical scene/world authority. Director/ENV remains responsible for semantic identity, placement, locks, persistence, rebuild and catalogue admission.
+
+Owner-facing behavior when the adapter is available may expose:
+
+- `EDIT GEOMETRY`;
+- `EDIT GEOMETRY WITH UMODELER X`;
+- geometry refinement as one execution route for `AI MODIFY SELECTED` or `EXPAND`.
+
+When the adapter is unavailable, those geometry-specific actions are hidden/disabled gracefully; all normal Director builder operations remain available.
+
+This integration deliberately prevents Director from growing into a full DCC/modeler. Director owns **what semantic object is being edited and how the result re-enters ENV**; UModeler X may own the bounded mesh-editing session.
+
+
 ### Required implementation shape
 
 Do **not** implement D2-D5 as one giant `EnvDirectorWindow.cs`.
@@ -514,6 +560,7 @@ Keep the default command vocabulary small and stable.
 - **VARIANT**
 - **REPLACE**
 - **EXPAND**
+- **EDIT GEOMETRY** *(only when a compatible optional geometry adapter is available)*
 - **AI MODIFY SELECTED**
 - **CREATE WITH AI**
 - **GENERATE HERE**
@@ -583,6 +630,24 @@ owner selects object / chain / area
 **PREVIEW must not silently become authority.** ACCEPT is the normal commit point for a material AI proposal. DISCARD leaves canonical content unchanged. TRY ANOTHER creates another proposal from the same owner intent/selection unless the owner edits it.
 
 The AI must not treat visible neighbouring content as editable merely because it appears in screenshots. Locks and explicit mutation scope take precedence.
+
+### Geometry execution route for selected AI edits
+
+For requests that genuinely require changing mesh topology/shape rather than rearranging catalogue modules, `AI MODIFY SELECTED` may choose an optional geometry-editor route:
+
+```text
+selected semantic object
+ -> Director packages bounds / locks / authority / intent
+ -> AI/operator proposes geometry change
+ -> optional UModeler X adapter performs bounded derived-mesh edit
+ -> Director preview candidate
+ -> ACCEPT
+ -> juego-def-owned derived asset + lineage
+ -> canonical ENV reference updated
+ -> affected rebuild / validation
+```
+
+This route is optional. AI modification must still support non-UModeler modular/assembly workflows, and lack of UModeler X must not make D4 fail.
 
 ### `CREATE WITH AI`
 
@@ -1025,6 +1090,14 @@ At minimum test:
 - malformed/unsupported source fails closed;
 - Undo/Revert cannot leave half-written authority;
 - generated scene remains rebuildable from repository authority.
+
+### Optional-integration / commercial-separability safety
+
+- Director core compiles and performs its normal D0-D7 responsibilities without UModeler X installed;
+- optional geometry integration is isolated behind an adapter/boundary rather than leaked through core types;
+- UModeler X package content is not redistributed by Director;
+- geometry edits produce juego-def-owned derived outputs with lineage instead of mutating vendor packages;
+- disabling an unavailable/incompatible geometry adapter fails gracefully and does not corrupt canonical ENV state.
 
 ### Architecture / prior-art safety
 
