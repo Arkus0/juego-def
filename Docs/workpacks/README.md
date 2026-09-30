@@ -99,6 +99,23 @@ pilot -- evidence only --> later Director semantic capability disposition
 | `WP-CITY-URBAN-01` | Realize preserved B0 Mercado–Muelle within amended city grammar | CITY00 + CITY00R + CASCO-V2 pilot + M0 + ENV02 + CHAR02 + ANIM02 + UI01 |
 | `WP-PROD-LOOK-GATE` | Prove factories ready for content-scale production | CITY-URBAN-01 |
 
+## Potes 1:1 historic-core chain
+
+This branch introduces a bounded real-reference path for the first physical district. It does not claim finished gameplay content; it locks the dense historic environment that later systems/content will populate.
+
+| WP | Outcome | Depends on |
+| --- | --- | --- |
+| `WP-POTES-00` | Exact bounded Potes core, ~55–65 real buildings, source/ledger/sector authority | accepted ENV01 reference substrate |
+| `WP-POTES-01` | 8–15 real-building First Slice physical reconstruction | POTES-00 PASS |
+| `WP-POTES-02` | Complete Sector 01 + freeze repeatable reconstruction recipe | POTES-01 PASS |
+| `WP-POTES-03` | Sector 02 reconstruction | POTES-02 PASS |
+| `WP-POTES-04` | Sector 03 reconstruction | POTES-03 PASS |
+| `WP-POTES-05` | Sector 04 reconstruction, only if defined by accepted sector plan | POTES-04 PASS + sector exists |
+| `WP-POTES-06` | Sector 05 reconstruction, only if defined by accepted sector plan | prior required sectors PASS + sector exists |
+| `WP-POTES-07` | Whole-core integration, traversal/identity proof and District Lock | all required sectors PASS |
+
+The accepted POTES-00 `SECTOR_PLAN.md` decides whether POTES-05 and POTES-06 are applicable. Do not create extra sectors merely to execute numbered WPs.
+
 ## Immediate sequence
 
 **Execute the one-block CASCO-V2 pilot before new ENV scale.** CITY-URBAN-00R is accepted; reference reconstruction is the pilot's first material gate. ENV01 closure, CHAR01 and useful Director work remain independent; ANIM01 is complete. This documentation candidate does not authorize Unity implementation or modification of the shared ENV01 checkout.
