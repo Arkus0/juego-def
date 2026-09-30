@@ -13,7 +13,7 @@ The ENV factory + ENV Director can now support **human-built environment product
 
 Produce **three materially different keeper proofs**, each exercising a distinct Director use case:
 
-1. **EDIT EXISTING** — materially improve an existing bounded composition through direct layout/building/detail manipulation.
+1. **EDIT EXISTING** — materially improve an existing bounded composition through direct manipulation, including (where present) a visible misplaced prop corrected by click+drag and a modular railing/wall/edge corrected by endpoint extension rather than segment-by-segment editing.
 2. **EXPAND MAP** — extend a real boundary into new connected playable space using Director layout + catalogue placement.
 3. **AI-SUPPLIED CONTENT** — request at least one missing asset/structure from AI/operator, admit it through ENV lineage/validation, expose it in the visual catalogue, place/modify it through the Director and retain it.
 
@@ -74,6 +74,8 @@ PASS when:
 - EDIT EXISTING, EXPAND MAP and AI-SUPPLIED CONTENT keeper proofs all exist;
 - all were produced through the ENV factory + ENV Director path rather than bespoke scene-specific pipelines;
 - catalogue placement works without routine prefab/path archaeology;
+- direct Scene View correction of an existing visible prop is proven without hierarchy/path lookup;
+- at least one supported modular linear structure is extended/shortened by endpoint manipulation with persistent rebuild-safe output;
 - AI-supplied reusable content enters the same catalogue/placement path;
 - the complete human-build -> AI-supply -> rebuild/validate -> human-correct loop is proven;
 - route/collision validation passes or documented defects are repaired;
