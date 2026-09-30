@@ -15,12 +15,14 @@ namespace JuegoDef.Env
     /// Visual layout editor for an authored district trace (owner brief 2026-09-30: "quiero utilizar esto yo mismo
     /// como level designer visual"). Draws the trace (nodes, streets with their width, plazas, landmarks, river) in the
     /// Scene View and edits it in place: nodes drag on X/Z with a PositionHandle and an explicit height field, street
-    /// via points, plaza vertices/discs, landmarks and river points drag too. Edits live in memory only — SAVE TRACE
-    /// writes the file (a .bak copy of the previous state first) and shows exactly which elements changed; REVERT
-    /// drops them. REBUILD reruns the existing pipeline (Tools/env_district_skeleton.py with the pinned OSM extract ->
-    /// district spec -> EnvDistrict): it diffs the regenerated spec against the current one, shows the impact, and
-    /// rebuilds only the affected rows when that is provably safe (same row ids, ground/river/plazas/streets intact)
-    /// or the whole district otherwise. Menu: JuegoDef &gt; ENV &gt; Layout Editor.
+    /// via points, plaza vertices/discs, landmarks and river points drag too. Edits live in memory only — nothing
+    /// dirties disk until SAVE TRACE writes the trace file (a .bak copy of the previous state first) and shows
+    /// exactly which elements changed; REVERT drops them. REBUILD reruns the existing pipeline (Tools/env_district_skeleton.py
+    /// with the pinned OSM extract -> district spec -> EnvDistrict): it diffs the regenerated spec against the current
+    /// one, shows the impact, and rebuilds only the affected rows when that is provably safe (same row ids,
+    /// ground/river/plazas/streets intact) or the whole district otherwise. REBUILD is transactional: all consents run
+    /// before the spec is promoted, spec+scene are snapshotted, and any cancel/exception/reload rolls them back.
+    /// Menu: JuegoDef &gt; ENV &gt; Layout Editor.
     /// Undo/Redo is real Unity Undo on a hidden ScriptableObject mirror of the editable points.
     /// </summary>
     public class EnvLayoutEditor : EditorWindow
@@ -876,10 +878,20 @@ namespace JuegoDef.Env
 
     /// <summary>Frame-driven runner for REBUILD: regenerates the district spec with the existing skeleton tool, diffs
     /// it against the current one, and either rebuilds just the affected rows (only when the diff proves that safe) or
-    /// the whole district through EnvDistrict.Begin/BuildRows/Finish, chunked so the Editor never locks up.</summary>
+    /// the whole district through EnvDistrict.Begin/BuildRows/Finish, chunked so the Editor never locks up.
+    /// The promote of the regenerated spec is transactional: every consent/environment precondition runs BEFORE the
+    /// spec authority is touched, the previous spec AND the saved district scene are snapshotted outside Assets, and
+    /// any cancel, exception or domain reload after the promote rolls both authorities back — spec and scene can never
+    /// be left disagreeing at any exit of the operation.</summary>
+    [UnityEditor.InitializeOnLoad]
     public static class LayoutRebuild
     {
         public enum Phase { None, Regen, Confirm, Rows, BeginPhase, RowsChunk, FinishPhase, Done, Failed }
+
+        /// <summary>Operator/MCP evidence hook: injects a failure at this point of the next rebuild (after the spec was
+        /// promoted) to prove the transaction rolls spec and scene back. Resets itself after firing.</summary>
+        public enum DebugFailPoint { None, AfterPromote, MidChunk, MidRows }
+        public static DebugFailPoint DebugFailAt = DebugFailPoint.None;
 
         public static Phase phase = Phase.None;
         public static string status = "";
@@ -887,6 +899,16 @@ namespace JuegoDef.Env
         public static readonly List<string> log = new List<string>();
         /// <summary>Operator/MCP runs set this to skip the impact confirmation dialog (the summary is still logged).</summary>
         public static bool AutoConfirm = false;
+
+        // EditorPrefs registry of the open promote transaction: unlike the statics below it survives domain reloads
+        // (script compile, Play) and editor restarts, so an interrupted rebuild can always be rolled back on next load.
+        const string TxKey = "JuegoDef.ENV.Layout.RebuildTx";
+        static bool txOpen;                // spec promoted, transaction not yet committed/rolled back
+
+        static LayoutRebuild()
+        {
+            EditorApplication.update += RecoverInterruptedTick;
+        }
 
         static string districtId, projectRoot, repoRoot, traceAbs, specAbs, candidatePath;
         static Process proc;
@@ -940,10 +962,147 @@ namespace JuegoDef.Env
 
         public static void Cancel(string why)
         {
+            if (txOpen) { Rollback("cancelado: " + why); return; }
             if (proc is { HasExited: false }) { try { proc.Kill(); } catch { } }
             phase = Phase.None;
             Status("REBUILD cancelado: " + why);
             EditorApplication.update -= Tick;
+        }
+
+        // ---------------------------------------------------------------- transaction
+
+        /// <summary>Every consent/environment precondition runs BEFORE the spec authority is touched: Play Mode for
+        /// both routes, the AFFECTED route additionally needs the district scene open with its root present (it edits
+        /// the open scene in place), and a dirty scene always needs an explicit continue because the rollback restores
+        /// the scene from disk. A "no" here leaves every repository byte untouched.</summary>
+        static bool TxGate(bool rowsOnly)
+        {
+            if (EditorApplication.isPlaying) { Cancel("no se reconstruye en Play Mode"); return false; }
+            var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            if (rowsOnly && !scene.path.EndsWith($"{districtId}.unity"))
+            { Cancel($"la ruta AFFECTED necesita abierta la escena {districtId}.unity (activa: {(scene.path == "" ? "(sin guardar)" : scene.path)})"); return false; }
+            if (rowsOnly && GameObject.Find(districtId) == null)
+            { Cancel($"la escena abierta no contiene el root {districtId} — abre la escena del distrito o fuerza la ruta DISTRICT"); return false; }
+            if (scene.isDirty)
+            {
+                var body = rowsOnly
+                    ? "El rebuild sustituye filas de la escena abierta; si el rebuild falla, la transacción recarga la escena desde disco y estos cambios sin guardar se pierden."
+                    : "El rebuild abre una escena nueva y guarda el distrito; la escena abierta tiene cambios sin guardar y se descartarán.";
+                if (!EditorUtility.DisplayDialog("Escena sin guardar",
+                        body + "\n\nREBUILD es transaccional: si algo falla, spec y escena se restauran al estado anterior.", "Continuar", "Cancelar"))
+                { Cancel("escena con cambios sin guardar"); return false; }
+            }
+            return true;
+        }
+
+        /// <summary>Opens the promote transaction: snapshots of the previous spec and of the saved district scene go to
+        /// %LOCALAPPDATA%\JuegoDef (outside Assets, so nothing pollutes the project), then the EditorPrefs registry
+        /// marks the transaction in flight. The caller promotes the spec only after this returns.</summary>
+        static void TxOpen(bool rowsOnly)
+        {
+            var dir = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "JuegoDef");
+            Directory.CreateDirectory(dir);
+            var specBak = Path.Combine(dir, districtId + "_spec.prev.json");
+            var sceneBak = Path.Combine(dir, districtId + "_scene.prev.unity");
+            var sceneAbs = Path.Combine(projectRoot, "Assets", "JuegoDef", "Scenes", "ENV", districtId + ".unity");
+            File.Copy(specAbs, specBak, true);
+            var hadScene = File.Exists(sceneAbs);
+            if (hadScene) File.Copy(sceneAbs, sceneBak, true);
+            EditorPrefs.SetString(TxKey + ".DistrictId", districtId);
+            EditorPrefs.SetString(TxKey + ".SpecBak", specBak);
+            EditorPrefs.SetString(TxKey + ".SceneBak", hadScene ? sceneBak : "");
+            EditorPrefs.SetString(TxKey + ".PrevScene", UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);
+            EditorPrefs.SetInt(TxKey + ".Route", rowsOnly ? 0 : 1);
+            EditorPrefs.SetBool(TxKey + ".Committed", false);
+            EditorPrefs.SetBool(TxKey + ".InFlight", true);
+            txOpen = true;
+            Status($"TX abierta: snapshots de spec{(hadScene ? " y escena" : "")} previas en {dir} — rollback automático ante cualquier fallo");
+        }
+
+        /// <summary>Commits the transaction at a success exit: marks committed first (a crash from here on must never
+        /// roll a finished rebuild back), drops the scene snapshot, keeps the spec snapshot for the operator.</summary>
+        static void CommitTx()
+        {
+            if (!txOpen) return;
+            txOpen = false;
+            EditorPrefs.SetBool(TxKey + ".Committed", true);
+            var sceneBak = EditorPrefs.GetString(TxKey + ".SceneBak", "");
+            var specBak = EditorPrefs.GetString(TxKey + ".SpecBak", "");
+            if (sceneBak != "") { try { if (File.Exists(sceneBak)) File.Delete(sceneBak); } catch { } }
+            EditorPrefs.DeleteKey(TxKey + ".InFlight");
+            Status($"TX commit: spec aplicada y escena guardada (snapshot de la spec anterior en {specBak})");
+            ClearTxKeys();
+        }
+
+        /// <summary>Compensates an unfinished transaction: restores the previous spec bytes and the previous saved
+        /// district scene, then reloads the right scene in the editor, so spec authority and scene can never disagree.
+        /// All inputs come from the EditorPrefs registry, so this works identically after a domain reload or restart;
+        /// if the compensation itself fails it says so loudly with the snapshot paths for a manual restore.</summary>
+        static void Rollback(string why)
+        {
+            txOpen = false;
+            if (proc is { HasExited: false }) { try { proc.Kill(); } catch { } }
+            var id = EditorPrefs.GetString(TxKey + ".DistrictId", districtId);
+            var specBak = EditorPrefs.GetString(TxKey + ".SpecBak", "");
+            var sceneBak = EditorPrefs.GetString(TxKey + ".SceneBak", "");
+            var prevScene = EditorPrefs.GetString(TxKey + ".PrevScene", "");
+            bool rowsRoute = EditorPrefs.GetInt(TxKey + ".Route", 1) == 0;
+            var proj = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
+            var specAbsR = Path.Combine(proj, EnvDistrict.DistrictSpecs.Replace('/', Path.DirectorySeparatorChar), id + ".json");
+            var sceneRel = $"Assets/JuegoDef/Scenes/ENV/{id}.unity";
+            var sceneAbsR = Path.Combine(proj, sceneRel.Replace('/', Path.DirectorySeparatorChar));
+            var problems = new List<string>();
+            try
+            {
+                if (specBak != "" && File.Exists(specBak)) { File.Copy(specBak, specAbsR, true); AssetDatabase.ImportAsset($"{EnvDistrict.DistrictSpecs}/{id}.json"); }
+                else problems.Add($"snapshot de spec no encontrado: {specBak}");
+            }
+            catch (System.Exception ex) { problems.Add("restaurar spec: " + ex.Message); }
+            try { if (sceneBak != "" && File.Exists(sceneBak)) File.Copy(sceneBak, sceneAbsR, true); }
+            catch (System.Exception ex) { problems.Add("restaurar escena: " + ex.Message); }
+            if (!EditorApplication.isPlaying)
+            {
+                try
+                {
+                    string open = null;   // AFFECTED returns to the district scene; DISTRICT prefers the scene it came from
+                    if (rowsRoute && File.Exists(sceneAbsR)) open = sceneRel;
+                    else if (prevScene != "" && File.Exists(Path.Combine(proj, prevScene.Replace('/', Path.DirectorySeparatorChar)))) open = prevScene;
+                    else if (File.Exists(sceneAbsR)) open = sceneRel;
+                    if (open != null) UnityEditor.SceneManagement.EditorSceneManager.OpenScene(open, UnityEditor.SceneManagement.OpenSceneMode.Single);
+                    else UnityEditor.SceneManagement.EditorSceneManager.NewScene(UnityEditor.SceneManagement.NewSceneSetup.DefaultGameObjects, UnityEditor.SceneManagement.NewSceneMode.Single);
+                }
+                catch (System.Exception ex) { problems.Add("recargar escena: " + ex.Message); }
+            }
+            ClearTxKeys();
+            if (problems.Count > 0)
+                Status($"TX ROLLBACK INCOMPLETO ({why}). Restaurar a mano:\n  spec   {specAbsR}  <=  {specBak}\n  escena {sceneAbsR}  <=  {sceneBak}\n" + string.Join("\n", problems));
+            else
+                Status($"TX rollback ({why}): spec y escena quedan exactamente como antes del REBUILD");
+            Finish(Phase.Failed);
+        }
+
+        static void ClearTxKeys()
+        {
+            EditorPrefs.DeleteKey(TxKey + ".InFlight");
+            EditorPrefs.DeleteKey(TxKey + ".Committed");
+            EditorPrefs.DeleteKey(TxKey + ".DistrictId");
+            EditorPrefs.DeleteKey(TxKey + ".SpecBak");
+            EditorPrefs.DeleteKey(TxKey + ".SceneBak");
+            EditorPrefs.DeleteKey(TxKey + ".PrevScene");
+            EditorPrefs.DeleteKey(TxKey + ".Route");
+        }
+
+        /// <summary>Runs on every domain reload (via [InitializeOnLoad]) and checks once per editor frame: a
+        /// transaction left in flight (compile/Play entered mid-rebuild, editor crash) that never committed is rolled
+        /// back on the first frame that can. Per-frame polling instead of a one-shot delayCall because the latter can
+        /// fire while Play Mode is still tearing down, which would silently lose the recovery trigger.</summary>
+        static void RecoverInterruptedTick()
+        {
+            if (!EditorPrefs.GetBool(TxKey + ".InFlight", false)) { EditorApplication.update -= RecoverInterruptedTick; return; }
+            if (EditorPrefs.GetBool(TxKey + ".Committed", false)) { ClearTxKeys(); EditorApplication.update -= RecoverInterruptedTick; return; }
+            if (EditorApplication.isPlaying || EditorApplication.isCompiling || EditorApplication.isUpdating) return;
+            EditorApplication.update -= RecoverInterruptedTick;
+            Rollback("rebuild interrumpido (domain reload / cierre del editor)");
         }
 
         static void Status(string s)
@@ -978,6 +1137,7 @@ namespace JuegoDef.Env
                         {
                             var rid = affectedRows[rowCursor++];
                             EnvPolish.RebuildRow(rid);
+                            if (DebugFailAt == DebugFailPoint.MidRows) { DebugFailAt = DebugFailPoint.None; throw new System.InvalidOperationException("JD_LAYOUT_DEBUG_FAIL MidRows"); }
                             progress = 0.2f + 0.7f * rowCursor / affectedRows.Length;
                             Status($"fila {rid} reconstruida ({rowCursor}/{affectedRows.Length})");
                         }
@@ -987,6 +1147,7 @@ namespace JuegoDef.Env
                             Debug.Log(EnvPolish.FixBlockedOpenings(root));
                             Debug.Log(EnvPolish.SeatOnGround(root));
                             SaveSceneIfDistrict();
+                            CommitTx();
                             Status($"JD_LAYOUT_REBUILD affected: {affectedRows.Length} fila(s) reconstruidas desde la spec nueva");
                             Finish(Phase.Done);
                         }
@@ -1001,6 +1162,7 @@ namespace JuegoDef.Env
                         var rows = (JArray)currentSpec["rows"];
                         Debug.Log(EnvDistrict.BuildRows(chunkCursor, 8));
                         chunkCursor += 8;
+                        if (DebugFailAt == DebugFailPoint.MidChunk) { DebugFailAt = DebugFailPoint.None; throw new System.InvalidOperationException("JD_LAYOUT_DEBUG_FAIL MidChunk"); }
                         progress = 0.3f + 0.6f * Mathf.Min(1f, (float)chunkCursor / rows.Count);
                         if (chunkCursor >= rows.Count) phase = Phase.FinishPhase;
                         break;
@@ -1008,6 +1170,7 @@ namespace JuegoDef.Env
                     case Phase.FinishPhase:
                         Debug.Log(EnvDistrict.Finish());
                         progress = 1f;
+                        CommitTx();
                         Status($"JD_LAYOUT_REBUILD district completo ({(int)(EditorApplication.timeSinceStartup - startedAt)} s)");
                         Finish(Phase.Done);
                         break;
@@ -1015,14 +1178,16 @@ namespace JuegoDef.Env
             }
             catch (System.Exception ex)
             {
-                Status("FALLO: " + ex.Message + "\n" + ex.StackTrace);
-                Finish(Phase.Failed);
+                Debug.LogException(ex);
+                if (txOpen) Rollback("FALLO: " + ex.Message);
+                else { Status("FALLO: " + ex.Message + "\n" + ex.StackTrace); Finish(Phase.Failed); }
             }
         }
 
         /// <summary>Compares the regenerated spec with the current one and routes: affected rows only when nothing but
         /// some rows changed (same ids, ground/river/plazas/streets/route byte-identical, at most 6 rows); otherwise
-        /// the whole district. The impact summary is confirmed in a dialog before anything is applied.</summary>
+        /// the whole district. The impact summary and every other precondition are confirmed in dialogs BEFORE the
+        /// spec is applied; from the apply on, the operation is transactional (see TxOpen/Rollback).</summary>
         static void OnRegenDone()
         {
             candidateSpec = JObject.Parse(File.ReadAllText(candidatePath));
@@ -1042,18 +1207,22 @@ namespace JuegoDef.Env
             bool proceed = AutoConfirm;
             if (!proceed)
                 proceed = EditorUtility.DisplayDialog("REBUILD — impacto de la regeneración",
-                    $"El pipeline regeneró la spec desde el trace guardado.\n\n{diff.Summary()}\n\nRuta: {route}\n\n¿Aplicar la spec nueva y reconstruir?", "REBUILD", "Cancelar");
+                    $"El pipeline regeneró la spec desde el trace guardado.\n\n{diff.Summary()}\n\nRuta: {route}\n\n¿Aplicar la spec nueva y reconstruir?\n(transaccional: si algo falla, spec y escena se restauran)", "REBUILD", "Cancelar");
             if (!proceed)
             {
                 Cancel("cancelado en el diálogo de impacto");
                 return;
             }
 
-            File.Copy(specAbs, specAbs + ".bak", true);
+            // Transaction gate: every precondition and consent runs BEFORE the spec authority is touched, so a "no"
+            // leaves every byte as it was (the reviewer repro SAVE->REBUILD->accept->dirty->Cancel ends here, clean).
+            if (!TxGate(diff.RowsOnly)) return;
+
+            TxOpen(diff.RowsOnly);
             File.Copy(candidatePath, specAbs, true);
             AssetDatabase.ImportAsset($"{EnvDistrict.DistrictSpecs}/{districtId}.json");
             currentSpec = candidateSpec;
-            Status("spec aplicada (.bak del anterior conservado)");
+            if (DebugFailAt == DebugFailPoint.AfterPromote) { DebugFailAt = DebugFailPoint.None; throw new System.InvalidOperationException("JD_LAYOUT_DEBUG_FAIL AfterPromote"); }
 
             if (diff.RowsOnly)
             {
@@ -1061,15 +1230,7 @@ namespace JuegoDef.Env
                 rowCursor = 0;
                 phase = Phase.Rows;
             }
-            else
-            {
-                if (EditorApplication.isPlaying) { Cancel("no se reconstruye en Play Mode"); return; }
-                var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-                if (scene.isDirty && !EditorUtility.DisplayDialog("Escena sin guardar",
-                        "El rebuild abre una escena nueva y guarda el distrito; la escena abierta tiene cambios sin guardar. ¿Continuar?", "Continuar", "Cancelar"))
-                { Cancel("escena con cambios sin guardar"); return; }
-                phase = Phase.BeginPhase;
-            }
+            else phase = Phase.BeginPhase;
         }
 
         static void SaveSceneIfDistrict()

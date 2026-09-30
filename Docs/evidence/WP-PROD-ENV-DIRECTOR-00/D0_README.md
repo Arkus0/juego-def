@@ -2,6 +2,8 @@
 
 Status: **IMPLEMENTED + VERIFIED END-TO-END ON THE REAL CASCO** (2026-09-30, branch `worker/prod-env-01`)
 Tool: `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvLayoutEditor.cs` — menu **JuegoDef > ENV > Layout Editor** (Editor-only)
+Repair history: candidate `b3bb466` received an independent **FAIL** (PR #10 review 5366116751:
+REBUILD was not transactional). Repaired and re-verified — see **`D0_REPAIR1.md`** in this folder.
 
 ## What D0 is (contract) and what shipped
 
@@ -32,6 +34,11 @@ envelope by role; dirty state + pre-save change list; `SAVE TRACE | REVERT | REB
   streets/route byte-identical, ≤6 rows, via `EnvPolish.RebuildRow`), otherwise *full district*
   through `EnvDistrict.Begin` + `BuildRows` chunked per editor frame + `Finish` (~73 s observed).
   The scene is saved by `Finish` exactly as menu 7 does.
+- **REBUILD is transactional** (repair 1): every consent/environment precondition runs BEFORE the
+  spec authority is touched; the previous spec AND the saved district scene are snapshotted to
+  `%LOCALAPPDATA%\JuegoDef\`; and any cancel, exception or domain reload after the promote rolls both
+  back — spec authority and scene can never disagree at any exit of the operation. See
+  `D0_REPAIR1.md` for the contract and the byte-level receipts.
 
 ## Verified proofs (2026-09-30, MCP-driven against the real district)
 
@@ -47,6 +54,7 @@ envelope by role; dirty state + pre-save change list; `SAVE TRACE | REVERT | REB
 | Rebuild reflects the edit | rebuilt terrain height at the NEW node position (118, 166) = **0.70 m** = the node's authored height; rows 161 → 168 in spec and scene |
 | Survives reopen | scene saved by `Finish`; reopened: root + 168 rows + 0.70 m still there |
 | Undo/Revert cannot corrupt | trace never written except by SAVE; `.bak` byte-equality above |
+| **REBUILD transaction (repair 1)** | reviewer repro (accept impact → dirty → Cancelar): spec+scene byte-untouched; failures injected after promote (`DebugFailAt`) and a Play-mode domain reload mid-rebuild: spec+scene rolled back byte-identical every time; happy path commits (`TX commit`) and survives reopen — full table in `D0_REPAIR1.md` |
 
 ## REBUILD safety model (why the impact dialog exists)
 
@@ -55,8 +63,12 @@ The district spec is not a pure function of the trace today: it carries accepted
 extract that is intentionally not in the repo. Regenerating therefore shows (and asks before
 applying): (a) geometry spread, (b) stochastic re-rolls downstream of geometry changes
 (seed 1971 stream — observed 40–75 rows changing palette/seed for one node move), (c) OSM drift
-(today's fetch has 2 plots more than the 2026-09-28 one). The diff always reports these classes;
-REBUILD proceeds only after explicit confirmation (or `AutoConfirm` for operator runs).
+  (today's fetch has 2 plots more than the 2026-09-28 one). The diff always reports these classes;
+  REBUILD proceeds only after explicit confirmation (or `AutoConfirm` for operator runs).
+  All consents happen BEFORE the spec is promoted; from the promote on, the operation is
+  transactional — a failed or interrupted rebuild restores spec and scene to exactly the pre-rebuild
+  bytes (`TX rollback`), a completed one commits (`TX commit`). The spec snapshot of the previous
+  authority is kept at `%LOCALAPPDATA%\JuegoDef\<id>_spec.prev.json` after a commit.
 
 ## Pinned OSM extract (operator requirement)
 
@@ -101,8 +113,11 @@ drag handle); plaza disc height is a guide value (trace discs carry no y).
 - **Honest gaps (recorded, not hidden)**:
   1. The AFFECTED (rows-only) rebuild route was never triggered by a real edit in this session
      (node moves correctly routed to FULL because ground changed); it is built on the existing
-     proven `EnvPolish.RebuildRow` but is live-untested.
-  2. The PLAY button (Play Mode toggle) was not exercised via MCP.
+     proven `EnvPolish.RebuildRow`, now gated by a preflight (district scene open + root present,
+     checked before any authority write) and covered by the same transaction/rollback machinery the
+     DISTRICT route proved — but it is still live-untested with a real rows-only diff.
+  2. The PLAY toolbar button itself was not clicked via MCP; Play Mode entry/exit WAS exercised
+     programmatically (`EditorApplication.isPlaying`) in the repair-1 reload test (D0_REPAIR1.md #5).
   3. Validation ran on the working tree while unrelated in-flight night-20260931 editor
      modifications existed (`EnvDistrict.cs` additive passes, `BuildingAssembler.cs`,
      `EnvInteriors.cs`); the API surface this tool consumes
@@ -117,7 +132,7 @@ drag handle); plaza disc height is a guide value (trace discs carry no y).
 ## Candidate scope (frozen bytes)
 
 Exactly: `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvLayoutEditor.cs` (+ `.meta`) and
-`Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` (this README + `D0_scene_guides_JA_moved.png`).
-The working tree also carries unrelated uncommitted night-20260931 work; it is NOT part of this
-candidate. PRODUCT_SHA is recorded in the freeze report outside the repository bytes (any further
-commit would create a new candidate).
+`Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` (this README + `D0_scene_guides_JA_moved.png` +
+`D0_REPAIR1.md`). The working tree also carries unrelated uncommitted night-20260931 work; it is NOT
+part of this candidate. PRODUCT_SHA is recorded in the freeze report outside the repository bytes
+(any further commit would create a new candidate).
