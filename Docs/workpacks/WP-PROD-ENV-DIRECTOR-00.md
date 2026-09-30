@@ -823,23 +823,3 @@ ENV-02 must prove three materially different use cases:
 The desired production model is:
 
 **human-built/directed world + AI-made/adapted pieces + deterministic factory + automated QA**.
-
-
-
-`WP-PROD-ENV-02` is updated conceptually by this WP:
-
-```text
-fresh brief
- -> owner blockout / direct composition in ENV Director
- -> lock important human decisions
- -> ENV factory + AI/operator production
- -> validation
- -> owner third-person correction in ENV Director
- -> keeper candidate
-```
-
-At least one fresh ENV-02 composition must prove this loop end-to-end.
-
-The desired production model is:
-
-**human-directed space + AI-assisted production + deterministic factory + automated QA**.
