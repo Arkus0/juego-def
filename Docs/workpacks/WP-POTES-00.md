@@ -440,7 +440,7 @@ Create under `Docs/evidence/WP-POTES-00/` at minimum:
 - `sector-01/REFERENCE_INDEX.md`
 - `sector-01/FIRST_SLICE.md`
 - machine-readable sector/building geometry used by the next Worker;
-- map images sufficient for Owner review of the three candidate boundaries and final sectorization.
+- map images sufficient for Owner review of the exact selected boundary, any narrow fallback caused by real GIS ambiguity, and final sectorization.
 
 If lawful downloadable reference imagery is retained, include attribution/license. Otherwise retain links/viewpoint metadata, not copied bytes.
 
