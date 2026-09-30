@@ -1255,6 +1255,276 @@ namespace JuegoDef.Env
             return list;
         }
 
+        // ------------------------------------------------------------------ night-2 census categories (owner walk 2026-09-30)
+        // The owner's walk found defect classes the auditor had no category for. These rules are the mechanical half of
+        // them (what can be measured without an eye); the census ledger (Captures/censo_noche2) is the visual half.
+
+        static bool PavedCollider(string name) =>
+            name.StartsWith("Ground_Pave_") || name == "Ground_Ground_Concrete" || name.StartsWith("Plaza") ||
+            name.Contains("_Deck") || name.Contains("_Treads") || name.Contains("Overlay_");
+
+        static string GroundMatAt(float x, float z)   // collider name hit straight down, or null
+        {
+            var hit = Physics.RaycastAll(new Vector3(x, 80, z), Vector3.down, 200)
+                .Where(h => !h.collider.isTrigger && (h.collider.name.StartsWith("Ground_") || h.collider.name.StartsWith("Plaza") || h.collider.name.Contains("_Deck") || h.collider.name.Contains("_Treads") || h.collider.name.StartsWith("Overlay_")))
+                .OrderBy(h => h.distance).FirstOrDefault();
+            return hit.collider != null ? hit.collider.name : null;
+        }
+
+        /// <summary>PAVE_MISSING — walkable public space whose surface is grass or earth: streets and plazas of the spec
+        /// sampled on a grid; every sample must land on paving (or a bridge deck). Grass, earth or no ground at all is a
+        /// finding; samples inside the river channel are skipped (the water is by design).</summary>
+        public static List<Finding> PaveMissing()
+        {
+            var list = new List<Finding>();
+            foreach (var s in streets)
+            {
+                float total = 0; for (int i = 0; i + 1 < s.pts.Count; i++) total += Vector2.Distance(s.pts[i], s.pts[i + 1]);
+                var lastAt = -99f;
+                for (int i = 0; i + 1 < s.pts.Count; i++)
+                {
+                    var a = s.pts[i]; var ab = s.pts[i + 1] - a; float l = ab.magnitude; if (l < 0.01f) continue;
+                    for (float t = 0; t <= l; t += 2.5f)
+                    {
+                        var q = a + ab * (t / l);
+                        if (Inside(channel, q)) continue;
+                        if (t + total - l - lastAt < 5f) continue;   // one finding per 5 m of run
+                        // the centreline AND both edges where the street meets the facade line (the owner walks the
+                        // whole width, not the axis; unpaved edges were his "edificios sobre hierba")
+                        var nrm = new Vector2(-ab.y, ab.x) / l * (s.w / 2f - 0.5f);
+                        string bad = null; Vector2 at2 = q;
+                        foreach (var q2 in new[] { q, q + nrm, q - nrm })
+                        {
+                            var name = GroundMatAt(q2.x, q2.y);
+                            if (name == null || !PavedCollider(name)) { bad = name; at2 = q2; break; }
+                        }
+                        if (bad != null)
+                        {
+                            lastAt = t;
+                            list.Add(F("PAVE_MISSING", UnitOfStreet(s.id), s.id, new Vector3(at2.x, EnvWalk.Ground(at2.x, at2.y, 0), at2.y), s.id,
+                                bad == null ? $"no ground collider under {s.id}" : $"{s.id} surfaced as {bad.Replace("Ground_", "")} at street width {s.w:0.0} m"));
+                        }
+                    }
+                }
+            }
+            foreach (var pl in plazas)
+            {
+                var done = new HashSet<Vector2Int>();
+                float minx = pl.Min(p => p.x), maxx = pl.Max(p => p.x), miny = pl.Min(p => p.y), maxy = pl.Max(p => p.y);
+                for (float x = minx + 1f; x < maxx; x += 2.5f)
+                    for (float z = miny + 1f; z < maxy; z += 2.5f)
+                    {
+                        var q = new Vector2(x, z);
+                        if (!Inside(pl, q) || Inside(channel, q)) continue;
+                        var key = new Vector2Int(Mathf.RoundToInt(x / 5f), Mathf.RoundToInt(z / 5f));
+                        if (!done.Add(key)) continue;
+                        var name = GroundMatAt(x, z);
+                        if (name == null || !PavedCollider(name))
+                            list.Add(F("PAVE_MISSING", "PLAZAS", null, new Vector3(x, EnvWalk.Ground(x, z, 0), z), "plaza", $"{name?.Replace("Ground_", "") ?? "no ground"} inside a plaza polygon"));
+                    }
+            }
+            return list;
+        }
+
+        /// <summary>GROUND_DIRT_IN_STREET — a weathering decal (ENV_Stain_Quad) lying flat on the paving in the middle of
+        /// public space, far from any wall: a mud or moss blob with no cause. Damp belongs at the foot of walls, under
+        /// downpipes and sills; a stain more than ~1.3 m from any structure has no reason to be there.</summary>
+        public static List<Finding> GroundDirtInStreet()
+        {
+            var list = new List<Finding>();
+            foreach (var r in root.GetComponentsInChildren<Renderer>(true))
+            {
+                if (r.name != "ENV_Stain_Quad" || !r.gameObject.activeInHierarchy) continue;
+                if (Mathf.Abs(Vector3.Dot(r.transform.forward, Vector3.up)) < 0.7f) continue;   // only decals lying flat (quad facing the sky)
+                var p = r.transform.position;
+                var q = new Vector2(p.x, p.z);
+                if (Inside(channel, q) || PublicGap(q, out var street) > 0.2f) continue;       // only in/near public space
+                float wall = 99f;
+                for (int i = 0; i < 8 && wall > 1.3f; i++)
+                {
+                    var d = Quaternion.Euler(0, i * 45f, 0) * Vector3.forward;
+                    var hit = Physics.RaycastAll(p + Vector3.up * 0.5f, d, 2.5f).Where(h => !h.collider.isTrigger && !h.collider.name.StartsWith("Ground_") && !h.collider.transform.IsChildOf(r.transform)).OrderBy(h => h.distance).FirstOrDefault();
+                    if (hit.collider != null) wall = Mathf.Min(wall, hit.distance);
+                }
+                if (wall > 1.3f)
+                    list.Add(F("GROUND_DIRT_IN_STREET", street != null ? UnitOfStreet(street) : "PLAZAS", street, p, Path(r.transform),
+                        $"flat dirt decal {wall:0.0} m from any wall: mud/moss in the middle of the paving with no cause"));
+            }
+            return list;
+        }
+
+        /// <summary>TEX_WRONG_SURFACE — a paving material (ENV_Pave_*, ENV_Ground_Concrete) on a renderer that is not the
+        /// ground, an overlay or a plaza: cobbles or flags painted on a vertical wall, the "muelas gigantes" of the owner's
+        /// walk. Only the ground groups may use paving materials.</summary>
+        public static List<Finding> TexWrongSurface()
+        {
+            var list = new List<Finding>();
+            foreach (var r in root.GetComponentsInChildren<Renderer>(true))
+            {
+                if (r.sharedMaterial == null || !r.gameObject.activeInHierarchy) continue;
+                string m = r.sharedMaterial.name;
+                if (!m.StartsWith("ENV_Pave_") && m != "ENV_Ground_Concrete") continue;
+                string path = Path(r.transform);
+                if (path.StartsWith("Ground/") || path.StartsWith("PavingOverlays/") || path.StartsWith("Plazas/")) continue;
+                var b = r.bounds;
+                list.Add(F("TEX_WRONG_SURFACE", UnitNear(new Vector2(b.center.x, b.center.z)), null, b.center, path,
+                    $"{m} on {r.name} ({b.size.y:0.0} m tall): paving texture on a non-ground surface"));
+            }
+            return list;
+        }
+
+        static string NearestStreet(Vector2 p)
+        {
+            var best = streets.OrderBy(s => DistToPolyline(s.pts, p)).First();
+            return DistToPolyline(best.pts, p) < 12f ? best.id : null;
+        }
+
+        static string UnitNear(Vector2 q) { var s = NearestStreet(q); return s != null ? UnitOfStreet(s) : "OTHER"; }
+
+        static bool IsVeg(Transform t) =>
+            t.name.StartsWith("ENV_Plant_") || t.name.StartsWith("ENV_Tree") || t.name.StartsWith("ENV_Hill_Tree") ||
+            t.name.Contains("Weeds") || t.name.StartsWith("ENV_Shrub") || t.name.Contains("Hedge") || t.name.Contains("Ivy") || t.name.Contains("Fern");
+
+        /// <summary>VEG_CLIP — vegetation whose volume intersects built structure (a facade, a garden or retaining wall, a
+        /// parapet): grass through stone, shoots out of a vertical wall, a tree crown inside a balcony.</summary>
+        public static List<Finding> VegClip()
+        {
+            var list = new List<Finding>();
+            foreach (var r in root.GetComponentsInChildren<Renderer>(true))
+            {
+                if (!IsVeg(r.transform) && !IsVeg(r.transform.parent != null ? r.transform.parent : r.transform)) continue;
+                if (!r.gameObject.activeInHierarchy) continue;
+                var veg = IsVeg(r.transform) ? r.transform : r.transform.parent;
+                var b = r.bounds;
+                var hits = Physics.OverlapBox(b.center, b.extents * 0.8f, Quaternion.identity)
+                    .Where(c => !c.isTrigger && c.transform != veg && !c.transform.IsChildOf(veg) && !IsVeg(c.transform) && !IsVeg(c.transform.parent != null ? c.transform.parent : c.transform)
+                        && !c.name.StartsWith("Ground_") && !c.name.StartsWith("Plaza") && !c.name.StartsWith("Overlay_") && !c.name.Contains("_Deck") && !c.name.Contains("_Treads"))
+                    .ToList();
+                if (hits.Count == 0) continue;
+                var structure = hits.Select(h => Path(h.transform)).OrderBy(p2 => p2.Length).First();
+                var q = new Vector2(b.center.x, b.center.z);
+                list.Add(F("VEG_CLIP", UnitNear(q), null, b.center, Path(veg),
+                    $"{veg.name} intersects {structure.Split('/').Last()} ({hits.Count} collider{(hits.Count > 1 ? "s" : "")})"));
+            }
+            var seen = new List<Finding>();
+            foreach (var f in list.ToList())     // one finding per veg plant, not per renderer
+                if (seen.Any(s2 => s2.where == f.where)) list.Remove(f); else seen.Add(f);
+            return list;
+        }
+
+        /// <summary>SEAM_NO_KERB — two different paving materials meeting in a hard line with no kerb or edge piece: the
+        /// spec's zone borders (spine strip/canto, lane/plaza, plaza rim) meet flat because nothing is generated there.
+        /// Sampled on a grid; one finding per ~6 m of seam. Transitions onto grass/earth are PAVE_MISSING, not this.</summary>
+        public static List<Finding> SeamNoKerb()
+        {
+            var list = new List<Finding>();
+            var dd = (JArray)spec["district"];
+            float x0 = -2f, z0 = -2f, x1 = (float)dd[1][0] + 2f, z1 = (float)dd[1][1] + 2f;
+            var done = new HashSet<Vector2Int>();
+            for (float x = x0; x < x1; x += 1.2f)
+                for (float z = z0; z < z1; z += 1.2f)
+                {
+                    foreach (var d in new[] { new Vector2(1.2f, 0), new Vector2(0, 1.2f) })
+                    {
+                        var a = GroundMatAt(x, z); var b = GroundMatAt(x + d.x, z + d.y);
+                        if (a == null || b == null || a == b || !PavedCollider(a) || !PavedCollider(b)) continue;
+                        if (a.Contains("_Deck") || a.Contains("_Treads") || b.Contains("_Deck") || b.Contains("_Treads")) continue;
+                        var mid = new Vector3(x + d.x / 2f, 0, z + d.y / 2f);
+                        var q = new Vector2(mid.x, mid.z);
+                        if (Inside(channel, q)) continue;
+                        var key = new Vector2Int(Mathf.RoundToInt(q.x / 6f), Mathf.RoundToInt(q.y / 6f));
+                        if (!done.Add(key)) continue;
+                        if (Physics.OverlapSphere(mid, 0.8f).Any(c => !c.isTrigger && System.Text.RegularExpressions.Regex.IsMatch(c.name, "Kerb|Curb|Edge|Bordillo"))) continue;
+                        mid.y = EnvWalk.Ground(mid.x, mid.z, 0);
+                        list.Add(F("SEAM_NO_KERB", UnitNear(q), null, mid, "seam " + a.Replace("Ground_", "") + "/" + b.Replace("Ground_", ""),
+                            $"{a.Replace("Ground_", "")} meets {b.Replace("Ground_", "")} in a hard line with no kerb"));
+                    }
+                }
+            return list;
+        }
+
+        /// <summary>PROP_LOGIC — furniture that makes no sense to a person: a seat facing a wall less than a metre away,
+        /// one prop buried inside another (stool in a barrel), a parasol shading no table. The owner's walk class 5.</summary>
+        public static List<Finding> PropLogic()
+        {
+            var list = new List<Finding>();
+            bool IsStructure2(Collider c) => !c.isTrigger && !c.name.StartsWith("Ground_") && !c.name.StartsWith("Plaza") && !c.name.StartsWith("Overlay_") && !c.transform.name.StartsWith("ENV_Tree");
+            var props = root.GetComponentsInChildren<Transform>(true).Where(t => PropKind.ContainsKey(t.name) && t.gameObject.activeInHierarchy && (t.parent == null || !PropKind.ContainsKey(t.parent.name))).ToList();
+            foreach (var t in props)
+            {
+                var p = t.position;
+                var q = new Vector2(p.x, p.z);
+                var unit = PublicGap(q, out var street) < 0 ? UnitOfStreet(street) : "PLAZAS";
+                if (PropKind[t.name] == "seat" || PropKind[t.name] == "cafe" || t.name == "ENV_Bench_Stone")
+                {
+                    var fh = Physics.RaycastAll(p + Vector3.up * 0.45f, t.forward, 1.0f).Where(h => IsStructure2(h.collider) && !h.collider.transform.IsChildOf(t)).OrderBy(h => h.distance).FirstOrDefault();
+                    if (fh.collider != null)
+                        list.Add(F("PROP_LOGIC", unit, street, p, Path(t), $"{t.name} faces a wall {fh.distance:0.00} m away"));
+                }
+                if (t.name == "ENV_Parasol")
+                {
+                    var table = props.Any(o => o.name == "ENV_Cafe_Table" && Vector2.Distance(new Vector2(o.position.x, o.position.z), q) < 1.4f);
+                    if (!table) list.Add(F("PROP_LOGIC", unit, street, p, Path(t), "parasol with no table beneath"));
+                }
+            }
+            for (int i = 0; i < props.Count; i++)
+                for (int j = i + 1; j < props.Count; j++)
+                {
+                    var a = props[i]; var b2 = props[j];
+                    if (a.IsChildOf(b2) || b2.IsChildOf(a)) continue;
+                    var ba = a.GetComponent<Renderer>() != null ? a.GetComponent<Renderer>().bounds : new Bounds(a.position, Vector3.one * 0.5f);
+                    var bb = b2.GetComponent<Renderer>() != null ? b2.GetComponent<Renderer>().bounds : new Bounds(b2.position, Vector3.one * 0.5f);
+                    if (!ba.Intersects(bb)) continue;
+                    var smaller = ba.size.sqrMagnitude <= bb.size.sqrMagnitude ? (a, ba) : (b2, bb);
+                    var inter = BoundsInter(ba, bb);
+                    if (inter / Mathf.Max(0.001f, VolumeOf(smaller.Item2)) > 0.35f && inter / Mathf.Max(0.001f, VolumeOf(ba)) > 0.12f && inter / Mathf.Max(0.001f, VolumeOf(bb)) > 0.12f)
+                        list.Add(F("PROP_LOGIC", UnitNear(new Vector2(smaller.Item1.position.x, smaller.Item1.position.z)), null, smaller.Item1.position,
+                            Path(smaller.Item1) + " in " + Path(b2 == smaller.Item1 ? a : b2), $"{smaller.Item1.name} buried in {(b2 == smaller.Item1 ? a.name : b2.name)} ({inter / Mathf.Max(0.001f, VolumeOf(smaller.Item2)):0%} of its volume)"));
+                }
+            return list;
+        }
+
+        static float VolumeOf(Bounds b) => b.size.x * b.size.y * b.size.z;
+
+        static float BoundsInter(Bounds a, Bounds b)
+        {
+            var mn = Vector3.Max(a.min, b.min); var mx = Vector3.Min(a.max, b.max);
+            var s = mx - mn;
+            return Mathf.Max(0, s.x) * Mathf.Max(0, s.y) * Mathf.Max(0, s.z);
+        }
+
+        /// <summary>WALL_PURPOSE — a wall, parapet or railing piece whose end anchors to nothing: the run just stops in the
+        /// air (over the river it reads as the "pasamanos muriendo en el agua" of the owner's walk), or a short stub stands
+        /// alone in a plaza. Interior ends of a run are anchored by the neighbour piece and stay quiet.</summary>
+        public static List<Finding> WallPurpose()
+        {
+            var list = new List<Finding>();
+            var pieces = root.GetComponentsInChildren<Transform>(true)
+                .Where(t => (t.name == "ENV_Retaining_Wall_2x2" || t.name == "ENV_Parapet_Stone_2m" || t.name == "ENV_Parapet_Rail_2m") && t.gameObject.activeInHierarchy).ToList();
+            bool IsWallish(Collider c) => !c.isTrigger && (c.name == "ENV_Retaining_Wall_2x2" || c.name == "ENV_Parapet_Stone_2m" || c.name == "ENV_Parapet_Rail_2m" || (c.transform.parent != null && c.transform.parent.parent != null && c.transform.parent.parent.parent == rows));
+            foreach (var t in pieces)
+            {
+                var r = t.GetComponent<Renderer>(); if (r == null) continue;
+                var b = r.bounds;
+                var run = t.right; run.y = 0; run.Normalize();                    // pieces are laid along their local X
+                float half = Mathf.Abs(run.x) > Mathf.Abs(run.z) ? b.size.x / 2f : b.size.z / 2f;
+                var mid = b.center;
+                foreach (var sign in new[] { 1f, -1f })
+                {
+                    var end = mid + run * (half + 0.35f) * sign;
+                    var fwd = run * sign;
+                    bool anchored = Physics.RaycastAll(end + Vector3.up * Mathf.Max(0.6f, b.size.y * 0.4f), fwd, 0.9f).Any(h => IsWallish(h.collider) && !h.collider.transform.IsChildOf(t))
+                        || Physics.RaycastAll(end + Vector3.up * Mathf.Max(0.6f, b.size.y * 0.4f), -fwd, 0.9f).Any(h => IsWallish(h.collider) && !h.collider.transform.IsChildOf(t))
+                        || Physics.OverlapSphere(end, 0.55f).Any(c => IsWallish(c) && !c.transform.IsChildOf(t));
+                    if (anchored) continue;
+                    var q = new Vector2(end.x, end.z);
+                    string detail = Inside(channel, q) ? $"{t.name} run ends over the water with no anchor" : $"{t.name} ends loose in the open (no wall, pier or building picks it up)";
+                    list.Add(F("WALL_PURPOSE", UnitNear(q), null, end, Path(t), detail));
+                }
+            }
+            return list;
+        }
+
         // ------------------------------------------------------------------ views
 
         /// <summary>Two views of a finding position: from the front at 1.7 m (or from where the opening looks out, if given a
@@ -1276,7 +1546,7 @@ namespace JuegoDef.Env
 
         // ------------------------------------------------------------------ run
 
-        public static string Run(string outJson, string kinds = "doors,narrow,walls,blanks,windows,sides,materials,twins,props,facades,roofs,shops,volume,stairs,wallsense,rhythm,windowdepth,landings,floaters,passages,plazas,signs")
+        public static string Run(string outJson, string kinds = "doors,narrow,walls,blanks,windows,sides,materials,twins,props,facades,roofs,shops,volume,stairs,wallsense,rhythm,windowdepth,landings,floaters,passages,plazas,signs,pave,dirt,texwrong,vegclip,seam,proplogic,wallpurpose")
         {
             Load();
             var want = new HashSet<string>(kinds.Split(','));
@@ -1294,6 +1564,7 @@ namespace JuegoDef.Env
             Do("facades", Facades); Do("roofs", Roofs); Do("shops", Storefronts);
             Do("volume", VolumeGaps); Do("stairs", StairLogic); Do("wallsense", WallSense); Do("rhythm", Rhythm);
             Do("windowdepth", WindowDepth); Do("landings", Landings); Do("floaters", FloatingProps); Do("passages", Passages); Do("plazas", PlazaEdges); Do("signs", SignDuplicates);
+            Do("pave", PaveMissing); Do("dirt", GroundDirtInStreet); Do("texwrong", TexWrongSurface); Do("vegclip", VegClip); Do("seam", SeamNoKerb); Do("proplogic", PropLogic); Do("wallpurpose", WallPurpose);
             var full = System.IO.Path.Combine(Directory.GetCurrentDirectory(), outJson);
             Directory.CreateDirectory(System.IO.Path.GetDirectoryName(full));
             File.WriteAllText(full, JsonConvert.SerializeObject(all.Select(f => new { f.kind, f.unit, f.street, f.where, f.detail, x = System.Math.Round(f.x, 2), y = System.Math.Round(f.y, 2), z = System.Math.Round(f.z, 2) }), Formatting.Indented));
