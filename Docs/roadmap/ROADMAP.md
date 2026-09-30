@@ -1,6 +1,6 @@
 # Roadmap jugable
 
-Status: **ANIM-01 DONE / CURRENT: ENV-01 + ENV-DIRECTOR-00 D0/D1 + CHAR-01** — Director grows from safe layout editing into the owner-facing world builder
+Status: **COMPACT SEMANTIC CITY REBASELINE CANDIDATE / BEFORE FURTHER ENV SCALE** — ENV01 closure, Director D0/D1 and other useful lane work remain independent
 
 ## Immediate sequence
 
@@ -12,18 +12,20 @@ Status: **ANIM-01 DONE / CURRENT: ENV-01 + ENV-DIRECTOR-00 D0/D1 + CHAR-01** —
    - ~~`CITY-URBAN-00`~~ — **done / accepted**: five-zone topology + final B0 Mercado–Muelle route/programme/elevation + factory-demand matrix.
 5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks the graphical factories.
 6. **Factories + human builder — CURRENT:** continue `ENV-01` and `CHAR-01`, and execute **`PROD-ENV-DIRECTOR-00` urgently**. D0/D1 stay focused on safe direct layout editing; later Director milestones add a thumbnail catalogue, game-like placement/manipulation, map expansion and a coherent-content forge that grows the catalogue by reusing/recombining/deriving before generating missing content. ~~`ANIM-01`~~ is **done / accepted**: 254 clips catalogued, 45 sampled on two Humanoid targets and 19 motions admitted across five families, with contact/navigation gaps kept explicit.
-7. **Factory scale proofs** — `ENV-02` requires both ENV-01 and ENV-DIRECTOR-00; it must prove three Director use cases: **EDIT EXISTING**, **EXPAND MAP**, and **AI-SUPPLIED CONTENT**, all through the same factory/catalogue/QA path. `CHAR-02` follows CHAR-01; `ANIM-02` consumes accepted ANIM-01 but waits for CHAR-01. UI follows Dialogue.
-8. **B0 Keeper Block (`CITY-URBAN-01`)** — physical third-person realization of the accepted city brief using the factories.
-9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.
-10. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, 20–30 minute slice, then district/population breadth.
+7. **Compact city correction before ENV scale:** independent acceptance of [`CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) freezes scale, `FacadeCell != SemanticBuilding != InteriorProgramme` and deliberate exterior space; then [`PROD-ENV-CASCO-V2-00`](../workpacks/WP-PROD-ENV-CASCO-V2-00.md) tests one K2 block (23 current bodies → 4–7 semantic buildings) against an exact ENV01 reference. No full ENV01 conversion or speculative Director semantic tooling. The pilot does not require ENV01/Director PASS or later factory/integration proofs; it requires accepted rebaseline/bootstrap/ASSET and a reproducible pinned reference.
+8. **Factory scale proofs** — `ENV-02` requires ENV01 + ENV-DIRECTOR-00 + CITY00R + pilot PASS; it retains **EDIT EXISTING**, **EXPAND MAP**, and **AI-SUPPLIED CONTENT** through the same factory/catalogue/QA path within the compact budget. `CHAR-02` follows CHAR-01; `ANIM-02` consumes accepted ANIM-01 but waits for CHAR-01. UI follows Dialogue.
+9. **B0 Keeper Block (`CITY-URBAN-01`)** — Mercado–Muelle integration remains first keeper block, consuming rebaseline/pilot plus its existing factory/M0 prerequisites.
+10. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.
+11. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, the 20–30 minute slice and deliberate city breadth. Full CASCO reduction needs a later explicit brief based on pilot evidence; this proposal does not authorize it.
 
 Executable contracts live in [`../workpacks/`](../workpacks/README.md).
 
 ## What vs how
 
-The new production architecture has three distinct owners:
+The production responsibilities are:
 
 - [`WP-CITY-URBAN-00`](../workpacks/WP-CITY-URBAN-00.md) = **what city / what first block / what spatial roles are needed**;
+- [`WP-CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) = **bounded scale/semantic-space amendment**; [`CASCO-V2-00`](../workpacks/WP-PROD-ENV-CASCO-V2-00.md) = **one physical falsification before scale**;
 - `PROD-ASSET/ENV/CHAR/ANIM/DIALOGUE/UI` = **how to manufacture those roles repeatedly**;
 - [`WP-PROD-ENV-DIRECTOR-00`](../workpacks/WP-PROD-ENV-DIRECTOR-00.md) = **how the owner visually builds, places, modifies and expands the world while AI/factory supply reusable pieces**;
 - [`WP-CITY-URBAN-01`](../workpacks/WP-CITY-URBAN-01.md) = **realize and tune the keeper block in actual third-person game space**.
@@ -46,6 +48,8 @@ ENV now consumes that accepted demand together with the accepted ASSET substrate
 |---|---|---|---|
 | Bootstrap Unity ✅ | Unity + GC2 operational | player/camera baseline | Play Mode + hand test work. |
 | CITY-URBAN-00 ✅ | decide enough city/B0 product space to drive production | topology + B0 programme + demand matrix | **PASS / accepted** — ENV no longer has to guess what to manufacture. |
+| CITY-URBAN-00R | freeze compact scale, semantic buildings/programmes and deliberate space | bounded amendment; preserve five identities/B0 | architecture feasible and independently accepted; no Unity proof claimed. |
+| PROD-ENV-CASCO-V2-00 | test larger semantic buildings in one existing CASCO block | isolated programme-first block + matched ENV01 comparison | radical playable utility AND retained character, proven with GC2/camera/concurrent NPC scale. |
 | PROD-ASSET-00 ✅ | make lawful source corpus searchable/reproducible | shared catalogue/intake/validators | **PASS / accepted** — routine source discovery no longer needs path archaeology. |
 | M0 | validate camera/scale/reach/interaction | tiny gameplay fixture | walk + world/NPC interaction work. |
 | ENV Factory | manufacture city architecture/urban vocabulary repeatedly | reusable kit + assembly grammar + validation | normal new ENV unit is production, not R&D. |
@@ -125,7 +129,7 @@ Keeper realization is not a literal extrusion of a planning diagram. It must res
 - public/service/private and public-port/controlled-work boundaries;
 - third-person support for walking, following, searching and bounded chase movement.
 
-Local level-design iteration is encouraged. Material topology/programme changes go back to CITY-URBAN-00; ordinary local geometry corrections do not require historical CITY bureaucracy.
+Local level-design iteration is encouraged. Material topology/programme changes amend the current CITY handoff; scale/semantic-space changes consume CITY-00R once accepted. Ordinary local geometry corrections do not require historical CITY bureaucracy.
 
 ## Tooling rule
 

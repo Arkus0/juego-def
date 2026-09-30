@@ -1,8 +1,8 @@
 # WP-CITY-URBAN-01 — B0 Mercado–Muelle Keeper Realization
 
-Status: **READY AFTER FACTORY BATCH PROOFS**  
+Status: **READY AFTER COMPACT SEMANTIC PILOT + FACTORY BATCH PROOFS**
 Class: PRODUCT INTEGRATION / KEEPER GAME-SPACE REALIZATION  
-Depends on: `WP-CITY-URBAN-00` PASS + `WP-M0-00` PASS + `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS  
+Depends on: `WP-CITY-URBAN-00` PASS + `WP-CITY-URBAN-00R` PASS + `WP-PROD-ENV-CASCO-V2-00` PASS + `WP-M0-00` PASS + `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS
 Blocks: `WP-PROD-LOOK-GATE`
 
 ## Claim
@@ -16,6 +16,7 @@ This WP is the juego-def successor to the useful part of Juego2 CITY-07: **keepe
 ## Binding city inputs
 
 - accepted `WP-CITY-URBAN-00` outputs;
+- accepted compact scale/grammar amendment from `WP-CITY-URBAN-00R`, [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](../design/COMPACT_SEMANTIC_CITY_REBASELINE.md), and physical programme lessons from `WP-PROD-ENV-CASCO-V2-00` (CASCO pilot does not replace B0);
 - [`../design/CITY_PRODUCTION_KNOWLEDGE.md`](../design/CITY_PRODUCTION_KNOWLEDGE.md);
 - [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
 
@@ -33,6 +34,8 @@ The semantic anchors and route roles are binding product intent:
 - honest expansion seams toward arrival, Casco, Viviendas and deeper Muelle/Talleres.
 
 Starting coordinates/width bands are measurable hypotheses, not immutable shipping coordinates. Local geometry may be tuned through actual third-person realization when the functional roles, access truth and loops remain intact.
+
+Frontage rows/FacadeCells do not imply one property or interior each. Every semantic building has identity/use; accessible interiors fit their programme, camera and occupants, with visual/playable floors mapped honestly. Apply the accepted compact city budget and assign all exterior gaps/rears/setbacks a proved purpose or absorb/redesign them. Do not recreate the old diagram's acreage merely to fit coordinates. This integration retains its factory integrity and full NPC/dialogue requirements; the earlier bounded pilot does not claim those lane proofs.
 
 ## Required block composition
 

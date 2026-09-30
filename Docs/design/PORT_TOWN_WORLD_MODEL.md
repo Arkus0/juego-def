@@ -1,11 +1,11 @@
 # Port-town world model
 
 Status: **CURRENT PRODUCT PLANNING MODEL**  
-Date: 2026-09-28
+Date: 2026-09-28 (compact-city Owner direction and architecture candidate: 2026-09-30)
 
 ## Setting scale
 
-The final setting is a **large fictional port town in northern Spain**, with a late-1990s / early-2000s feel. It should read socially as a substantial town/comarca hub rather than an anonymous major city: repeated faces, family/business connections, rumours, reputations and reasons to encounter the same people across days.
+The final setting is a **compact, deliberately authored fictional port town in northern Spain**, with a late-1990s / early-2000s feel. Its social role as a town/comarca hub survives through repeated faces, family/business connections, rumours and reputations; that role does not require a large playable footprint.
 
 The final proper name is **undecided**. Do not bake `Villa Bruma` or any other provisional name into keeper signage, assets or UI.
 
@@ -13,7 +13,7 @@ This document owns neighbourhood **roles**. `Docs/workpacks/WP-CITY-URBAN-00.md`
 
 ## Five production neighbourhoods
 
-These are production/world-organization zones, not necessarily formal municipal districts:
+These are five functional identities within **one continuous compact city**, with soft boundaries and very unequal sizes, not five equivalent maps or five repetitions of the ENV01 CASCO district:
 
 - `CASCO` — dense old town; civic/family/day uses plus the **primary nightlife pole** in a bounded lower/central strip.
 - `MERCADO` — main repeat-visit commercial/everyday zone; cafés, ordinary bars, restaurants and shopping.
@@ -22,6 +22,14 @@ These are production/world-organization zones, not necessarily formal municipal 
 - `VIVIENDAS` — lower-intensity residential fabric and quieter night contrast.
 
 Nightlife is a **city layer**, not a sixth dedicated district. Casco is primary; Talleres secondary; Mercado has ordinary evening life; Muelle has night work; Viviendas quiets down.
+
+### Compact semantic city amendment
+
+Owner direction: **FacadeCell != SemanticBuilding != InteriorProgramme**. Several narrow historical facade bodies may belong to one larger functional building. Every semantic building has identity/use; selective accessible interiors exist for a reason, and a minority supports deeper programmes. Visual storeys and playable floors may differ. No space between/around buildings may remain a procedural leftover: it needs a defensible street, passage, court, garden, terrace, service, loading, river-edge, grade or setback function, or is absorbed/redesigned.
+
+~90–130 semantic buildings town-wide and ~30–40 in CASCO, often 2–4 visual bodies per building, are **starting directions, without minimum quotas**. The proposed quantitative guardrails, counting rules, preserve/reopen ledger and dependency change live once in [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md), awaiting independent acceptance through `WP-CITY-URBAN-00R`. No complete ENV01 conversion is authorized here.
+
+CASCO preserves ENV01's lebaniego/Potes morphology and visual character as reference: irregular streets, regional materials, roof/eave rhythms, slopes/terraces, a small/medium channelled river at the edge, bridges and a descent toward the working port. The town rises from the port; ~70/20/10 comfortable/perceptible/strong-or-stairs by network length remains intent. The reference donates soul and structure, never town names or named landmarks. Its current evidence lives on the exact ENV01 branch reference identified in the rebaseline source note; that visual direction does not imply formal ENV01 PASS or final acceptance of its 311-plot scale.
 
 ## First keeper block authority
 

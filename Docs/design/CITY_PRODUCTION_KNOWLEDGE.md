@@ -15,6 +15,8 @@ The key separation for juego-def is:
 
 The current first-block demand brief is [`FIRST_KEEPER_BLOCK_B0.md`](FIRST_KEEPER_BLOCK_B0.md).
 
+Owner direction 2026-09-30 is one compact continuous city of five unequal functional identities. The bounded architecture candidate [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md) / `WP-CITY-URBAN-00R` owns the revised scale, semantic grammar and zero-residual-space rule. Existing CITY topology/B0 and ENV01 visual vocabulary remain useful; the CASCO pilot tests their physical composition before further scale.
+
 ## Knowledge retained from CITY-00..06
 
 ### Spatial constitution
@@ -59,7 +61,9 @@ Do not turn “living city” into every door open, every prop interactive or ev
 
 Reuse the CITY-05 production idea:
 
-`module -> assembly -> shell -> reusable building -> functional place -> street segment`
+`module -> visual assembly / FacadeCell -> SemanticBuilding -> programme-designed place -> street segment`
+
+**FacadeCell != SemanticBuilding != InteriorProgramme.** Several narrow visual bodies can share one larger coherent property/programme. Do not derive playable rooms or floors mechanically from the number of frontage bays/windows, and do not count visible cells as city properties. Closed buildings still have concrete use. Each exterior pocket requires physical intent/ownership/access evidence; decoration or a category alone cannot resolve it.
 
 Near-term families should cover as demanded by the actual port town:
 
@@ -181,7 +185,7 @@ Review from gameplay camera, not only top-down:
 ## Current juego-def ownership
 
 - `PORT_TOWN_WORLD_MODEL.md` owns current five-neighbourhood product roles.
-- `WP-CITY-URBAN-00` owns the current town topology/planning handoff and validates/freezes the first-block demand brief.
+- `WP-CITY-URBAN-00` owns the accepted topology/B0 handoff; `WP-CITY-URBAN-00R` makes the bounded scale/semantic-space amendment, without reopening unrelated accepted truths.
 - `FIRST_KEEPER_BLOCK_B0.md` is the concrete first factory customer.
 - `PROD-ENV-*` owns scalable environment manufacturing/assembly methods.
 - `WP-CITY-URBAN-01` owns physical keeper realization of B0 using accepted factories.

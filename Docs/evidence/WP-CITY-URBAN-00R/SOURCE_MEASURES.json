@@ -1,0 +1,352 @@
+{
+  "kind": "READ_ONLY_ARCHITECTURE_SOURCE_MEASURES",
+  "date": "2026-09-30",
+  "env_ref_sha": "246756c72d7181cd034c04c6b5cde163d076cb66",
+  "architecture_base_sha": "088a23bc802145d1f4c322a8b6f936a1778c1921",
+  "district_frame": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      196.0,
+      236.0
+    ]
+  ],
+  "frame_area_m2": 46256,
+  "non_wall_plot_count": 311,
+  "frontage_m": {
+    "min": 1.847,
+    "median": 6.756,
+    "max": 16.414
+  },
+  "depths_m": [
+    4,
+    6,
+    8
+  ],
+  "nominal_rectangular_ground_floor_area_m2": {
+    "min": 9.044,
+    "median": 47.488,
+    "max": 109.552,
+    "warning": "Not net usable area; not resolved non-overlapping footprints"
+  },
+  "selected_block": 2,
+  "selected_plot_count": 23,
+  "selected_plots": [
+    {
+      "id": "K2_0_0",
+      "row": "K2_0",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 6.783,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "mixed_commercial",
+      "level_m": -1.32
+    },
+    {
+      "id": "K2_0_1",
+      "row": "K2_0",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 6.783,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "mixed_commercial",
+      "level_m": -1.013
+    },
+    {
+      "id": "K2_0_2",
+      "row": "K2_0",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 6.783,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": -0.706
+    },
+    {
+      "id": "K2_0_3",
+      "row": "K2_0",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 6.783,
+      "depth_m": 6,
+      "visual_floors": 3,
+      "type": "mixed_commercial",
+      "level_m": -0.399
+    },
+    {
+      "id": "K2_1_0",
+      "row": "K2_1",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 3.873,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": -0.187
+    },
+    {
+      "id": "K2_1_1",
+      "row": "K2_1",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 11.619,
+      "depth_m": 8,
+      "visual_floors": 2,
+      "type": "closed_residential",
+      "level_m": 0.164
+    },
+    {
+      "id": "K2_2_0",
+      "row": "K2_2",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 8.582,
+      "depth_m": 8,
+      "visual_floors": 2,
+      "type": "closed_residential",
+      "level_m": 0.528
+    },
+    {
+      "id": "K2_2_1",
+      "row": "K2_2",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 4.291,
+      "depth_m": 4,
+      "visual_floors": 2,
+      "type": "closed_residential",
+      "level_m": 0.819
+    },
+    {
+      "id": "K2_5_0",
+      "row": "K2_5",
+      "street": null,
+      "role": "plaza",
+      "width_m": 4.887,
+      "depth_m": 6,
+      "visual_floors": 3,
+      "type": "mixed_commercial",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_6_0",
+      "row": "K2_6",
+      "street": null,
+      "role": "plaza",
+      "width_m": 6.061,
+      "depth_m": 8,
+      "visual_floors": 3,
+      "type": "closed_residential",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_6_1",
+      "row": "K2_6",
+      "street": null,
+      "role": "plaza",
+      "width_m": 8.081,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "mixed_commercial",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_7_0",
+      "row": "K2_7",
+      "street": null,
+      "role": "plaza",
+      "width_m": 7.775,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_7_1",
+      "row": "K2_7",
+      "street": null,
+      "role": "plaza",
+      "width_m": 3.887,
+      "depth_m": 8,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_8_0",
+      "row": "K2_8",
+      "street": null,
+      "role": "plaza",
+      "width_m": 11.402,
+      "depth_m": 8,
+      "visual_floors": 4,
+      "type": "mixed_commercial",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_9_0",
+      "row": "K2_9",
+      "street": null,
+      "role": "plaza",
+      "width_m": 3.676,
+      "depth_m": 4,
+      "visual_floors": 4,
+      "type": "mixed_commercial",
+      "level_m": 0.2
+    },
+    {
+      "id": "K2_10_0",
+      "row": "K2_10",
+      "street": null,
+      "role": "river",
+      "width_m": 6.546,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": 0.3
+    },
+    {
+      "id": "K2_10_1",
+      "row": "K2_10",
+      "street": null,
+      "role": "river",
+      "width_m": 6.546,
+      "depth_m": 6,
+      "visual_floors": 2,
+      "type": "closed_residential",
+      "level_m": 0.3
+    },
+    {
+      "id": "K2_10_2",
+      "row": "K2_10",
+      "street": null,
+      "role": "river",
+      "width_m": 6.546,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": 0.3
+    },
+    {
+      "id": "K2_10_3",
+      "row": "K2_10",
+      "street": null,
+      "role": "river",
+      "width_m": 6.546,
+      "depth_m": 6,
+      "visual_floors": 3,
+      "type": "closed_residential",
+      "level_m": 0.3
+    },
+    {
+      "id": "K2_11_0",
+      "row": "K2_11",
+      "street": null,
+      "role": "river",
+      "width_m": 12.473,
+      "depth_m": 6,
+      "visual_floors": 3,
+      "type": "closed_residential",
+      "level_m": 0.192
+    },
+    {
+      "id": "K2_13_0",
+      "row": "K2_13",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 3.8,
+      "depth_m": 6,
+      "visual_floors": 4,
+      "type": "closed_residential",
+      "level_m": -2.204
+    },
+    {
+      "id": "K2_14_0",
+      "row": "K2_14",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 6.81,
+      "depth_m": 6,
+      "visual_floors": 2,
+      "type": "mixed_commercial",
+      "level_m": -1.979
+    },
+    {
+      "id": "K2_14_1",
+      "row": "K2_14",
+      "street": "Ribera",
+      "role": "secondary",
+      "width_m": 6.81,
+      "depth_m": 6,
+      "visual_floors": 2,
+      "type": "mixed_commercial",
+      "level_m": -1.671
+    }
+  ],
+  "versioned_validation_report": {
+    "thresholds": 370,
+    "openWalkable": 0,
+    "closedBlocked": 370,
+    "renderers": 29148
+  },
+  "fingerprints": {
+    "Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/ENV01_Casco_District.json": {
+      "reference_sha256": "942fb24f31026da77b9469aee0ad32db8632a2d49fa915bea74ce4c0ceeef9c9",
+      "working_copy_sha256": "942fb24f31026da77b9469aee0ad32db8632a2d49fa915bea74ce4c0ceeef9c9"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/ENV01_Casco_District.trace.json": {
+      "reference_sha256": "82d96b251dd0238a507b45271883699c40b8eaf0801293d13ac731f12b8bb744",
+      "working_copy_sha256": "82d96b251dd0238a507b45271883699c40b8eaf0801293d13ac731f12b8bb744"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/ENV01_Casco_District.polish.json": {
+      "reference_sha256": "15547d686cc4f1d09effaccd8b8c2ef000d5431a28cfa1a2009a15011994915f",
+      "working_copy_sha256": "bbc5578c4b832eec0daaf2fef84e0dd1761fcdf66d61095413d7c1ae9b96eb3c"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/ENV01_Casco_District.shots.json": {
+      "reference_sha256": "32b203a7e1dc1f4386de1bbdd0e536e43383a2d4a72e7c9d00d7c30447543ed1",
+      "working_copy_sha256": "2d20fd856021011eb2460e3955aff956f7675fb083530d146e509daa2cc4bd5f"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvDistrict.cs": {
+      "reference_sha256": "a7432114c16c577772eff5b5987196af72efbb3e400e04b0789152df5dba5f7c",
+      "working_copy_sha256": "abbbb9e5594e107a4a69a438a8f5f2e4917a982da5ad85a21d473e0270671b8b"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Editor/Env/BuildingAssembler.cs": {
+      "reference_sha256": "f37bc576b92986c12ddffd81fea7dacbff393ceaf36f34b6a6047e1336204365",
+      "working_copy_sha256": "db786af5060caddffe2047e19b4c62d000cdeb54e177a8621e418ead8fed4214"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvTemplates.cs": {
+      "reference_sha256": "aedd63af08b656f3cfc08c1e7ddb5296c2caff1d956d5087b70f4a1a270c3faa",
+      "working_copy_sha256": "aedd63af08b656f3cfc08c1e7ddb5296c2caff1d956d5087b70f4a1a270c3faa"
+    },
+    "Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvBusiness.cs": {
+      "reference_sha256": "f22d87a20636963bd3d724c09049e33e6158f5fb4d69ffa43041e109b5ee4444",
+      "working_copy_sha256": "2cc3b397ff7493bc5e807c3786d11801a6e519c2f7149bd728858bf6616b6e14"
+    },
+    "Docs/evidence/WP-PROD-ENV-01/VALIDATION.json": {
+      "reference_sha256": "129089ee4b2c6e72bcc7591bb0d50536f8368c8a94bb60e9a03ac6db8bd83cef",
+      "working_copy_sha256": "64dd9abd676cd840d57d87ebdffb0d4c0e05a169d850815f76513975ffea8937"
+    }
+  },
+  "inspected_legacy_captures": [
+    {
+      "path": "Docs/evidence/WP-PROD-ENV-01/captures/cohesion/after/S02_espina_comercios.jpg",
+      "sha256": "6faffab95776abf66a4316e82a94a36d7de907a235c552464719938696471c1c",
+      "provenance": "Style observation only; no exact scene/candidate A/B proof"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-ENV-01/captures/cohesion/after/A02_aerea_borde.jpg",
+      "sha256": "1924070666cf81f5ea94ef09490b5b2789e20abea7d21752ce1163b774fb211c",
+      "provenance": "Style observation only; no exact scene/candidate A/B proof"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-ENV-01/micro-polish/pass2/alleys/_pair_Llano.jpg",
+      "sha256": "09c543343e063ba21e3f2b4b5bfe040d7f018ed12746eeef74c3199909a924e0",
+      "provenance": "Style observation only; no exact scene/candidate A/B proof"
+    }
+  ]
+}
