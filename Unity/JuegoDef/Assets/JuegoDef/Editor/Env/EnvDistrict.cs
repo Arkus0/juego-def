@@ -250,10 +250,58 @@ namespace JuegoDef.Env
                     tris.AddRange(new[] { va, vc, vb, vb, vc, vd });                                  // clockwise from above
                     cells++;
                 }
+            StreetEndAprons(g);
             if (verts.Count == 0 || verts.Count > 65000) return;
             MeshObject("Underlay_GapFill", g, verts.ToArray(), verts.Select(p => new Vector2(p.x / 6f, p.z / 6f)).ToArray(), tris.ToArray(), EnvKit.Mat("ENV_Ground_Earth"), collider: false)
                 .GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
             Debug.Log($"JD_GAPFILL cells={cells}");
+        }
+
+        /// <summary>Street-end aprons (owner walk 30-09: "calles sin pavimentar"; auditor PAVE_MISSING): a Salida
+        /// street that leaves the town ended on grass the moment the paving stopped. The paving now runs 4.5 m past
+        /// every street end that falls on unpaved ground — in the street's own material, flush, slightly tapering —
+        /// so the town ends on a built edge, not mid-stone. Pure geometry, no rng.</summary>
+        static void StreetEndAprons(Transform g)
+        {
+            Physics.SyncTransforms();
+            bool Paved(string n) => n.StartsWith("Ground_Pave_") || n == "Ground_Ground_Concrete" || n.Contains("_Deck") || n.Contains("_Treads");
+            foreach (var s in StreetLines())
+            {
+                var pts = s.pts; if (pts.Count < 2) continue;
+                foreach (var (endIdx, inIdx) in new[] { (0, 1), (pts.Count - 1, pts.Count - 2) })
+                {
+                    var e2 = pts[endIdx];
+                    var dirOut = -(pts[inIdx] - e2).normalized;
+                    var probe = e2 + dirOut * 1.5f;
+                    var hit = Physics.RaycastAll(new Vector3(probe.x, 80, probe.y), Vector3.down, 200)
+                        .Where(h => h.collider.name.StartsWith("Ground_")).OrderBy(h => h.distance).FirstOrDefault();
+                    if (hit.collider != null && Paved(hit.collider.name)) continue;   // the paving already continues there
+                    if (Inside(((JArray)spec["river"]["channel"]).Select(c => new Vector2((float)c[0], (float)c[1])).ToList(), e2)) continue;
+                    // three 1.5 m strips follow the terrain (a single quad lifted 12 mm left the grass poking
+                    // through where it rises mid-apron), each corner 3 cm over the ground below
+                    var nrm = new Vector2(-dirOut.y, dirOut.x);
+                    for (int k = 0; k < 3; k++)
+                    {
+                        float t0 = k * 1.5f, t1 = t0 + 1.5f;
+                        float wk0 = Mathf.Lerp(s.w / 2f, s.w * 0.42f, t0 / 4.5f);
+                        float wk1 = Mathf.Lerp(s.w / 2f, s.w * 0.42f, t1 / 4.5f);
+                        var b0 = e2 + dirOut * t0; var b1 = e2 + dirOut * t1;
+                        float Lift(Vector2 p2) => EnvWalk.Ground(p2.x, p2.y, 0f) + 0.03f;
+                        var q = new[] {
+                            new Vector3((b0 + nrm * wk0).x, Lift(b0 + nrm * wk0), (b0 + nrm * wk0).y),
+                            new Vector3((b0 - nrm * wk0).x, Lift(b0 - nrm * wk0), (b0 - nrm * wk0).y),
+                            new Vector3((b1 - nrm * wk1).x, Lift(b1 - nrm * wk1), (b1 - nrm * wk1).y),
+                            new Vector3((b1 + nrm * wk1).x, Lift(b1 + nrm * wk1), (b1 + nrm * wk1).y) };
+                        var t = new List<int> { 0, 1, 2, 0, 2, 3 };
+                        if (Vector3.Cross(q[1] - q[0], q[2] - q[0]).y < 0) t = new List<int> { 0, 2, 1, 0, 3, 2 };   // clockwise from above
+                        string mat = s.role == "main" ? "ENV_Pave_CantoKit" : s.role == "secondary" ? (s.id.StartsWith("Ribera") || s.id.StartsWith("Capitan") ? "ENV_Pave_Canto_Viejo" : "ENV_Pave_Canto") : "ENV_Pave_CantoKit_Viejo";
+                        // unique name per street END: MeshObject deletes the asset at the path, and two ends of one
+                        // street (Ribera) erased each other's mesh
+                        MeshObject($"Ground_Apron_{s.id}_{endIdx}_{k}", g, q, q.Select(p => new Vector2(p.x / 2f, p.z / 2f)).ToArray(), t.ToArray(), EnvKit.Mat(mat), collider: true)
+                            .GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
+                    }
+                }
+            }
         }
 
         static List<Vector3> BridgeDoors = new List<Vector3>();   // every door threshold, so the bridges keep their parapets off them

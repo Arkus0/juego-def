@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "PAVE_MISSING",
+    "unit": "STREET_E",
+    "street": "Calle_Alta_Salida",
+    "where": "Calle_Alta_Salida",
+    "detail": "Calle_Alta_Salida surfaced as Grass at street width 4,6 m",
+    "x": 196.51,
+    "y": 5.0,
+    "z": 159.19
+  },
+  {
+    "kind": "PAVE_MISSING",
+    "unit": "STREET_H",
+    "street": "Capitan_Salida",
+    "where": "Capitan_Salida",
+    "detail": "Capitan_Salida surfaced as Grass at street width 4,6 m",
+    "x": 12.1,
+    "y": -2.42,
+    "z": 236.17
+  },
+  {
+    "kind": "PAVE_MISSING",
+    "unit": "STREET_I",
+    "street": "San_Pedro_Salida",
+    "where": "San_Pedro_Salida",
+    "detail": "San_Pedro_Salida surfaced as Grass at street width 4,2 m",
+    "x": 196.63,
+    "y": 10.38,
+    "z": 18.84
+  }
+]

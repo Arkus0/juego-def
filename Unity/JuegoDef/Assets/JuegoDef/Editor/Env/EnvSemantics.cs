@@ -1260,7 +1260,7 @@ namespace JuegoDef.Env
         // them (what can be measured without an eye); the census ledger (Captures/censo_noche2) is the visual half.
 
         static bool PavedCollider(string name) =>
-            name.StartsWith("Ground_Pave_") || name == "Ground_Ground_Concrete" || name.StartsWith("Plaza") ||
+            name.StartsWith("Ground_Pave_") || name.StartsWith("Ground_Apron_") || name == "Ground_Ground_Concrete" || name.StartsWith("Plaza") ||
             name.Contains("_Deck") || name.Contains("_Treads") || name.Contains("Overlay_");
 
         static string GroundMatAt(float x, float z)   // collider name hit straight down, or null
