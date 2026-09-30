@@ -9,40 +9,65 @@ Feeds immediately: current ENV-01 human logic pass and all later keeper environm
 
 ## Claim
 
-juego-def has a deliberately simple but powerful **Owner Director** inside Unity that lets the owner make the high-value human spatial and composition decisions directly, while the ENV factory and AI/operator perform the repetitive generation, adaptation, rebuilding and validation work.
+juego-def has an owner-facing **ENV Director** inside Unity with the interaction simplicity of a building game and the production power of the existing ENV factory.
 
-For normal environment direction, the owner does **not** need to edit JSON, write code, use the Unity Inspector, understand internal object paths or ask an agent to translate every spatial intention into coordinates.
+The owner can **build, reshape and expand the world visually** by selecting, dragging and placing catalogued pieces/structures, while AI/operator + factory manufacture or adapt the content requested by the owner.
 
-The production split becomes:
+For normal environment work, the owner does **not** need to edit JSON, write code, use Inspector coordinates, know prefab paths/GUIDs, navigate generated hierarchies or translate spatial intent into prompts.
+
+The target production split is:
 
 ```text
-OWNER DIRECTS
-layout / spatial relationships / important placement / keep-change judgment
+OWNER BUILDS / DIRECTS
+draw layout -> place pieces -> move/rotate/duplicate -> lock good results -> expand map
         |
         v
 ENV DIRECTOR
-direct manipulation + explicit semantic commands + safe upstream writes
+visual catalogue + thumbnails + drag/drop + placement ghost + snap + safe persistence
         |
-        v
-ENV FACTORY / AI OPERATOR
-generate / adapt / vary / expand / dress / rebuild / validate
-        |
-        v
-OWNER REVIEWS IN THIRD PERSON
-        |
-        +--> accept
-        +--> direct another change
+        +-------------------------+
+        |                         |
+        v                         v
+ENV FACTORY                  AI / OPERATOR
+repeatable assembly          make/adapt requested assets or structures
+validation / lineage         within explicit human selection/bounds
+        |                         |
+        +------------+------------+
+                     v
+              OWNER PLACES / REVIEWS
+                     |
+                     v
+              PLAY HERE + QA
 ```
 
-This WP does not attempt to make the AI a better autonomous level designer. It changes the authoring interface so the human owns the decisions where current agents are weakest.
+The Director is therefore **not merely a visual editor for `trace.json`**. D0/D1 establish safe direct manipulation of canonical layout; subsequent milestones turn that foundation into a simple world-building surface for existing and AI-created environment content.
+
+The AI is a production multiplier and asset/structure maker. It is not autonomous spatial authority.
 
 ## Why this exists
 
-ENV-01 has demonstrated a useful but important failure mode: a district can have structured planning data, deterministic generation, extensive semantic rules, route probes, validators, screenshots and repeated AI/operator correction while still containing choices that a human immediately reads as spatially or compositionally wrong.
+ENV-01 has demonstrated that structured planning, deterministic generation, semantic rules, route probes, validators, screenshots and repeated AI/operator correction can all be green while a human still sees spatial or composition choices that make little sense.
 
-The response is **not** another universal generator, a larger validation framework, or a different LLM.
+The answer is not another universal generator and not asking a stronger model to design the whole district.
 
-The response is to preserve the existing factory and give the owner a very low-friction way to directly author the small number of decisions that dominate how a place reads.
+The answer is to give the owner a low-friction visual construction surface:
+
+- direct manipulation for layout and important relationships;
+- a browsable **visual catalogue** for reusable pieces/structures;
+- game-like placement and editing instead of prefab/path archaeology;
+- map expansion controlled by the owner;
+- AI generation/adaptation **on demand**, feeding new reusable content back into the catalogue;
+- deterministic rebuild/validation underneath.
+
+The Director should feel closer to a builder/editor from a game than to an internal Unity engineering tool.
+
+### Compatibility guarantee for work already in progress
+
+**D0 and D1 remain valid exactly as the foundation already defined.**
+
+Any Worker already implementing D0/D1 should continue. This revision must not force a restart merely because later milestones became more ambitious.
+
+Reopen D0/D1 only if implementation evidence shows they violate their existing safety/authority requirements.
 
 ## Authority split
 
@@ -98,35 +123,43 @@ The tool must make these boundaries visible enough that the owner is never surpr
 
 ## Owner UX contract — non-negotiable
 
-The Director is an **owner-facing production surface**, not an internal debug window.
+The Director is an **owner-facing world-building surface**, not an internal debug window.
 
-For the normal workflow the owner must not need to:
+A person who can use a simple building/city game should be able to learn the normal workflow without understanding Unity internals.
 
-- open or edit `*.trace.json`, generated specs or polish JSON manually;
-- use the Inspector to type coordinates;
+For normal authoring the owner must not need to:
+
+- open/edit `*.trace.json`, generated specs or polish JSON manually;
+- type transform coordinates in the Inspector;
 - know GameObject hierarchy paths;
+- know prefab filenames, GUIDs or package folders;
 - write C#/Python;
 - invoke MCP commands manually;
+- browse the Project window to find routine placeable content;
 - understand factory implementation classes;
-- use a text diff to know what moved.
+- use a text diff to know what changed.
 
-The owner should be able to perform the normal loop with:
+The default interaction vocabulary is visual and small:
 
-- click to select;
-- drag to move;
-- rotate/scale handles when contextually valid;
-- a small contextual action bar;
-- visible labels/guides;
+- **click** to select;
+- **drag** to move/place;
+- obvious rotate/width/height handles when relevant;
+- thumbnails to choose placeable content;
+- placement ghost before commit;
+- green/valid vs conflict/invalid feedback;
+- snap/alignment assistance;
 - `SAVE`, `REVERT`, `REBUILD`, `PLAY HERE`;
-- safe AI actions on the current selection.
+- contextual actions such as `LOCK`, `VARIANT`, `REPLACE`, `EXPAND`, `CREATE WITH AI`.
 
-The editor may expose advanced details behind an explicit advanced foldout, but the default surface must remain simple.
+Advanced implementation detail may exist behind an explicit advanced/debug surface but must not leak into the normal workflow.
 
 ## Interaction model
 
-Use one Unity Editor window plus Scene View overlays. Prefer direct manipulation over forms.
+Use one Unity Editor window plus Scene View overlays/tools. Prefer direct manipulation, thumbnails and contextual actions over forms.
 
 ### Mode A — LAYOUT
+
+This remains the D0/D1 foundation.
 
 Editable visually:
 
@@ -145,42 +178,114 @@ Expected interactions:
 - drag a handle to move;
 - drag width handles to widen/narrow a street;
 - drag a plaza/zone vertex;
-- add/remove a `via` or polygon vertex through a contextual action;
+- add/remove a `via` or polygon vertex contextually;
 - constrain movement to X/Z or Y when requested;
-- show names and semantic role in the Scene View;
-- show approximate street envelope/width, not only a centre line.
+- show names and semantic role;
+- show approximate street envelopes, not only centre lines.
 
-### Mode B — BUILDINGS
+### Mode B — BUILD / CATALOGUE
 
-The owner can work with generated/assembled buildings as spatial objects without learning their implementation.
+The owner browses existing ENV content visually instead of by internal prefab/path name.
 
-Minimum interactions:
+The catalogue must provide, when relevant:
 
-- select building;
+- thumbnail;
+- human-readable display name;
+- semantic category;
+- useful tags/role;
+- compatibility/placement hints;
+- favourites;
+- recent items;
+- **AI Created** collection for newly manufactured content.
+
+Minimum top-level categories should emerge from the real library rather than hardcoded asset paths, for example:
+
+- Buildings / Houses;
+- Shops / Frontages;
+- Walls / Edges;
+- Streets / Ground / Stairs;
+- Vegetation;
+- Street furniture / Props;
+- Port / Market;
+- Interiors / Thresholds;
+- Landmarks / Specials.
+
+The catalogue must reuse existing ENV/asset catalogues and lineage where possible; this WP does not authorize a second asset database.
+
+### Placement contract
+
+Placing an ordinary catalogue item should be:
+
+```text
+choose thumbnail
+ -> drag/click into Scene View
+ -> placement ghost follows cursor
+ -> snap/alignment assistance
+ -> valid/conflict feedback
+ -> click to commit
+ -> persistent upstream representation
+```
+
+Expected assistance:
+
+- ground snap;
+- reasonable orientation to street/edge when semantically applicable;
+- optional grid/angle snap;
+- collision/clearance preview where cheap;
+- no silent movement of locked neighbours;
+- no placement that exists only in the generated scene and disappears on rebuild.
+
+### Mode C — SELECT / MODIFY
+
+Selected placed structures/content expose simple contextual operations:
+
 - move;
 - rotate;
-- duplicate when semantically safe;
-- delete/remove from the authored result;
-- change high-level role/type from a short list;
-- mark `KEEP` / `LOCK`;
-- request `VARIANT`, `REPLACE`, `EXPAND`, `MAKE ENTERABLE`.
+- duplicate;
+- delete/remove;
+- lock/keep;
+- semantic role/type where appropriate;
+- replace from compatible catalogue items;
+- `VARIANT`;
+- `EXPAND`;
+- `MAKE ENTERABLE`;
+- `POLISH SELECTED`.
 
-A building edit must persist through rebuild by writing to the correct upstream source/override. Direct edits to generated scene objects that disappear on rebuild do not satisfy this WP.
+A building or placed-structure edit must survive rebuild through the correct upstream trace/spec/polish/authoring mechanism.
 
-### Mode C — DETAIL
+### Mode D — EXPAND MAP
 
-For props, vegetation, signs, street furniture and similar local content:
+The owner can extend the current authored world rather than only polish an existing district.
 
-- select / move / rotate / duplicate / remove;
-- semantic replace from a filtered palette;
-- `GENERATE HERE` or `FILL AREA` for a bounded selected area;
-- `POLISH SELECTED` for a bounded object/group only.
+Minimum expansion operations:
 
-The owner must be able to correct an obviously wrong prop in seconds without asking an agent to locate it by world coordinates.
+- extend an existing street;
+- add a new street segment / bend / connection;
+- add or reshape a plaza/space;
+- place new buildings/structures along the expansion;
+- continue a wall/edge;
+- add a bounded new area/zone where the existing data model supports it;
+- connect the expansion back to existing routes.
+
+The Director must make expansion **human-authored**. It may assist with geometry and populate ordinary content, but it must not autonomously decide the direction/topology/programme of district growth.
+
+### Mode E — DETAIL
+
+For props, vegetation, signs, furniture and other local content:
+
+- visual palette;
+- place;
+- move/rotate;
+- duplicate/remove;
+- semantic replace;
+- bounded `FILL AREA`;
+- bounded `POLISH SELECTED`.
+
+A wrong local prop should be correctable in seconds.
 
 ## Contextual command bar
 
-The default command vocabulary should remain small and stable.
+Keep the default command vocabulary small and stable.
 
 ### Always visible
 
@@ -189,7 +294,7 @@ The default command vocabulary should remain small and stable.
 - **REBUILD**
 - **PLAY HERE**
 
-### Selection-dependent
+### Selection/context dependent
 
 - **KEEP / LOCK**
 - **DELETE**
@@ -197,74 +302,85 @@ The default command vocabulary should remain small and stable.
 - **VARIANT**
 - **REPLACE**
 - **EXPAND**
+- **CREATE WITH AI**
 - **GENERATE HERE**
 - **FILL AREA**
 - **MAKE ENTERABLE**
 - **POLISH SELECTED**
 - **VALIDATE SELECTED**
 
-Commands that are not valid for the current selection should be disabled, not silently reinterpreted.
+Commands that do not apply to the current selection are disabled rather than silently reinterpreted.
+
+Routine placement from the catalogue should not require opening a modal form.
 
 ## AI/operator command semantics
 
 This WP does **not** require embedding a paid LLM API into Unity.
 
-The Director may invoke the existing external AI/operator workflow through the simplest robust mechanism available, or emit a structured request for the active operator. The important contract is the selection and authority boundary.
+The Director may invoke the existing external AI/operator workflow through the simplest robust integration, or emit a structured request consumed by the active operator. What is binding is the **human selection, spatial bounds and mutation authority**.
+
+### `CREATE WITH AI`
+
+Create/adapt a reusable asset or bounded structure that the current catalogue does not provide satisfactorily.
+
+The request should automatically include relevant context:
+
+- requested semantic category;
+- explicit owner text intent when supplied;
+- target dimensions/slot/selected area when available;
+- nearby locked relationships;
+- existing visual/ENV grammar constraints;
+- allowed mutation scope.
+
+Expected completion path:
+
+```text
+owner requests piece/structure
+ -> reuse/search existing content first
+ -> AI/operator adapts/derives/creates only if needed
+ -> ENV intake/material/collision/lineage/validation
+ -> thumbnail/metadata generated
+ -> result appears in catalogue / AI Created
+ -> owner decides where/how often to place it
+```
+
+Creating a new piece is not permission to redesign surrounding layout.
 
 ### `VARIANT`
 
-Keep:
-
-- footprint;
-- placement;
-- access role;
-- important clearances;
-- locked relationships.
-
-Allow AI/factory variation of appropriate visual/content dimensions.
+Keep footprint/placement/access/locks unless the owner explicitly allows otherwise. Vary appropriate visual/content dimensions and expose the result as a selectable/replaceable candidate.
 
 ### `REPLACE`
 
-Replace the selected object with another compatible semantic candidate while preserving the owner's placement intent as far as possible.
-
-Show the proposed replacement before final acceptance when the change is material.
+Replace the selected object with a compatible semantic candidate while preserving placement intent as far as possible. Material changes should preview before commit.
 
 ### `EXPAND`
 
-On a building/space, request a bounded extension such as:
+For a selected building/structure, request a bounded structural extension such as:
 
 - additional floor;
 - rear/side volume;
 - shallow interior;
 - yard/patio;
-- small frontage extension.
+- frontage extension.
 
-Never infer a new district route or major programme change from `EXPAND`.
+For the map/layout, expansion remains owner-driven through Layout/Expand Map tools; `EXPAND` must not invent a new district topology.
 
 ### `GENERATE HERE`
 
-Generate content only inside the explicitly selected point/area/slot.
-
-Examples:
-
-- ordinary residential frontage;
-- market props;
-- port props;
-- vegetation;
-- wall/edge continuation;
-- facade variant.
+Generate/adapt content only inside an explicitly selected point/slot/area. Nearby locked content is immutable.
 
 ### `FILL AREA`
 
-Populate a bounded selected polygon/area using an explicit semantic category and density. Preview before committing when the fill creates many objects.
+Populate a bounded selected area using an explicit category and density. Preview before committing a material batch.
 
 ### `MAKE ENTERABLE`
 
-Create/adapt the minimum coherent threshold + shallow interior path for the selected building while respecting current access truth.
+Create/adapt the minimum coherent threshold + shallow interior path for the selected building while respecting access truth.
 
 ### `POLISH SELECTED`
 
-Inspect and improve only the selected object/group for obvious local visual/semantic defects. It is not permission to restyle or rearrange the surrounding district.
+Inspect/improve only the selected object/group for obvious local visual/semantic defects. It is not permission to restyle or rearrange the district.
 
 ## Canonical data / no duplicate authority
 
@@ -357,7 +473,7 @@ Do not build a custom rendering framework. Unity Handles/Overlays/EditorWindow/T
 
 ## Delivery roadmap
 
-### D0 — 1-hour-shape spike: move one thing correctly
+### D0 — 1-hour-shape spike: move one thing correctly — **PRESERVED**
 
 Prove the architecture with the smallest vertical slice:
 
@@ -375,7 +491,9 @@ open CASCO
 
 If this requires a new general authoring architecture, stop and simplify.
 
-### D1 — LAYOUT MVP — **first usable owner release**
+**This revision does not change D0 and does not invalidate an implementation already in progress.**
+
+### D1 — LAYOUT MVP — **PRESERVED / first usable owner release**
 
 Must include:
 
@@ -395,111 +513,180 @@ Must include:
 - Undo/Redo;
 - real CASCO test.
 
-This milestone is the urgent production unlock. Do not wait for AI buttons before giving it to the owner.
+This remains the urgent production unlock. Do not delay it for catalogue, AI or expansion features.
 
-### D2 — BUILDINGS + DETAIL direct manipulation
+### D2 — VISUAL CATALOGUE + PLACE/MODIFY — **mandatory builder release**
 
-Add:
+Turn the Director from a layout tool into a simple visual world builder.
 
-- building select/move/rotate;
-- persistent placement/role override;
-- keep/lock;
-- duplicate/delete;
-- detail/prop selection and persistent move/remove/place;
-- filtered semantic replace;
-- box/multi-select where it materially speeds real work.
+Must include:
 
-### D3 — AI-assisted selected operations
+- catalogue panel with thumbnails and human-readable categories;
+- search/filter plus favourites and recent items if cheap;
+- ordinary placeable ENV prefabs/structures surfaced without Project-browser path knowledge;
+- drag/click placement into Scene View;
+- placement ghost;
+- ground snap;
+- orientation/snap assistance where context supports it;
+- obvious valid/conflict feedback;
+- select placed content;
+- move;
+- rotate;
+- duplicate;
+- delete;
+- KEEP/LOCK;
+- persistent rebuild-safe authoring;
+- generated-scene-only edits rejected as incomplete.
 
-Add the bounded verbs:
+D2 is not PASS if the owner still needs prefab filenames, GUIDs, hierarchy paths or Inspector transforms.
 
+### D3 — MAP EXPANSION
+
+Enable the owner to grow the authored world using the same simple interaction model.
+
+Must prove on a real edge/extension:
+
+- extend an existing street;
+- create a new bounded street segment/bend/connection;
+- add/reshape one public space or expansion area;
+- place/arrange structures from the catalogue in the extension;
+- connect the extension to existing playable space;
+- save/rebuild/play the result;
+- preserve existing locked layout/content.
+
+No autonomous district growth is required or desired.
+
+### D4 — AI ASSET / STRUCTURE FORGE
+
+Make AI useful as a **supplier to the builder**.
+
+Add bounded:
+
+- CREATE WITH AI;
 - VARIANT;
 - REPLACE;
 - EXPAND;
 - GENERATE HERE;
-- FILL AREA;
-- MAKE ENTERABLE;
-- POLISH SELECTED.
+- MAKE ENTERABLE.
 
-Every request carries:
+At least one AI-created/adapted reusable piece/structure must:
 
-- exact selection identity;
-- semantic role;
-- locked constraints;
-- spatial bounds;
-- current before-state;
-- allowed mutation scope.
+- originate from an explicit owner request/selection;
+- pass the normal ENV intake/lineage/validation path;
+- receive a thumbnail/category;
+- appear in the visual catalogue;
+- be placeable/movable by the owner like ordinary content;
+- survive rebuild;
+- not rewrite unrelated layout/content.
 
-Material AI output is previewed/accepted or at minimum clearly summarized before becoming authoritative.
+### D5 — SMART BUILDERS / BRUSHES
 
-### D4 — fast QA loop
+Add high-leverage construction gestures only after D2-D4 work.
 
-Add/complete:
+Candidate tools, implemented only where the existing grammar supports them cleanly:
+
+- wall/edge draw tool;
+- street continuation tool;
+- building-row/frontage tool;
+- vegetation/prop brush;
+- bounded area fill with category + simple density control.
+
+Each tool must preview before material commit and remain editable after creation.
+
+This milestone is about reducing repetitive clicks, not giving procedural tooling authority over composition.
+
+### D6 — FAST QA / PLAY LOOP
+
+Complete the edit -> experience -> correct loop:
 
 - validate selected/affected;
 - targeted rebuild where reliable;
 - route/clearance probe launch for affected area;
 - third-person capture shortcuts;
 - before/after comparison;
-- conflict/highlight when a human edit violates a known hard constraint.
+- conflict/highlight for known hard constraints;
+- PLAY HERE from current/selected area.
 
-### D5 — usability + production proof
+### D7 — OWNER PRODUCTION PROOF
 
-Run an owner trial on real keeper work, not a synthetic sandbox. Fix friction discovered by the trial. Freeze only when the Director is genuinely easier than asking an agent to perform each equivalent edit.
+Run a real keeper production trial, not a synthetic sandbox.
+
+The owner must use the Director to:
+
+- modify existing composition;
+- place content from the visual catalogue;
+- expand playable map space;
+- request at least one new AI-created/adapted piece;
+- place and modify that piece;
+- play/inspect;
+- correct;
+- validate;
+- retain the result.
+
+Freeze only when this is genuinely easier than prompt-by-prompt spatial manipulation or normal Unity prefab/path work.
 
 ## Required owner trial
 
-Without opening a JSON file, writing code or using the Inspector for coordinates, the owner must be able to complete all materially applicable steps on a real ENV district:
+Without opening JSON, writing code, using Inspector coordinates or searching prefab paths in the Project browser, the owner must be able to complete all materially applicable steps on a real ENV district:
 
-1. select a street node and move it;
-2. move a street `via` point;
+1. move a real street node;
+2. move a `via` point;
 3. change a street width;
 4. reshape a plaza;
-5. move or rotate an important building/landmark;
-6. move/remove/place a local prop;
-7. lock one accepted element;
-8. request at least one bounded AI-assisted action from D3;
-9. SAVE and inspect a human-readable summary;
-10. rebuild;
-11. enter/play near the edited area;
-12. validate the affected area;
-13. Undo or REVERT one change safely;
-14. close/reopen Unity and prove accepted edits persist.
+5. open the visual catalogue and identify useful pieces by thumbnail/category;
+6. drag/place a structure or prefab;
+7. move and rotate it;
+8. duplicate one item and delete another;
+9. lock an accepted element;
+10. extend playable map/layout at a real boundary;
+11. populate part of that expansion with catalogue content;
+12. request one bounded AI-created/adapted asset or structure;
+13. see that result enter the catalogue;
+14. place or replace with the AI-created result;
+15. SAVE and inspect a human-readable summary;
+16. rebuild;
+17. PLAY HERE in/near the edited or expanded area;
+18. validate the affected area;
+19. Undo or REVERT one change safely;
+20. close/reopen Unity and prove accepted edits persist.
 
-The owner should complete the normal path using the Director controls and Scene View, not by being coached through internal implementation fields.
+The owner should be able to discover this workflow from the Director UI itself with minimal instruction.
 
 ## Power-user features allowed after the basic UX works
 
-Only after D1/D2 are genuinely usable:
+Only after the core builder UX is genuinely usable:
 
 - keyboard shortcuts;
-- snap increments;
+- numeric snap increments;
 - copy/paste style/role;
 - align/distribute;
-- frontage-row move;
+- frontage-row group move;
 - constrained street offset;
-- area density slider;
-- layer visibility;
-- semantic palette thumbnails;
+- richer density controls;
+- layer visibility presets;
 - reusable selection sets;
 - side-by-side reference image/bookmark;
 - batch lock/unlock;
-- change history panel.
+- change history panel;
+- custom palette collections.
 
-Do not delay the owner-visible MVP for these.
+**Thumbnail catalogue, placement ghost, snap/basic alignment and direct place/move/rotate are not power-user extras; they are D2 requirements.**
 
 ## Evidence
 
 Retain under `Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` at minimum:
 
 - short implementation/readme;
-- screenshots or short capture sequence of D1 and final owner flow;
-- round-trip proof for trace/spec data;
+- D0/D1 evidence without rewriting/re-proving already accepted implementation unnecessarily;
+- capture sequence of visual catalogue -> ghost placement -> commit -> move/rotate -> rebuild persistence;
+- capture/evidence of real map expansion;
+- round-trip proof for trace/spec/polish/other authority touched by the Director;
 - backup/revert/undo proof;
-- exact example of targeted vs full rebuild behavior;
-- persistence proof after editor restart;
-- AI scope proof showing an operation stayed inside its declared selection/bounds;
-- owner trial checklist/result;
+- targeted vs full rebuild behavior;
+- persistence proof after Editor restart;
+- AI-created/adapted piece provenance + catalogue thumbnail + placement proof;
+- AI scope proof that unrelated/locked content remained unchanged;
+- owner production-trial checklist/result;
 - known limitations that are real product constraints rather than hidden unfinished basics.
 
 ## Validation
@@ -509,29 +696,45 @@ At minimum test:
 ### Data safety
 
 - load/save with no edits is semantically no-op;
-- unknown JSON fields survive;
-- backup created;
+- unknown fields survive supported round trips;
+- backup created before authoritative replacement;
 - malformed/unsupported source fails closed;
 - Undo/Revert cannot leave half-written authority;
-- generated scene can be rebuilt from repository authority.
+- generated scene remains rebuildable from repository authority.
 
-### Selection safety
+### Builder safety
 
-- selecting one node does not move neighbours except connected preview consequences;
-- AI action scope is explicit;
+- catalogue item maps to known/admitted source or generated content with lineage;
+- ghost preview does not commit authority until placement;
+- cancelling placement leaves no durable object;
 - locked elements cannot be modified accidentally;
-- hidden/unselected content is not silently rewritten by a local command.
+- local placement/edit does not silently rewrite unrelated content;
+- placed/modified content survives rebuild.
+
+### Expansion safety
+
+- expansion remains connected to intended existing space;
+- existing locked layout/content survives;
+- saving expansion does not require hand-editing JSON;
+- expansion can be rebuilt from canonical upstream data.
+
+### AI scope safety
+
+- AI request has explicit selection/bounds;
+- generated/adapted result records provenance/lineage;
+- AI-created content is independently placeable from the catalogue;
+- AI action does not gain implicit authority over district topology.
 
 ### Scale
 
-Test on the real ENV-01 CASCO-scale district rather than a ten-object fixture. Scene View guides must remain usable at the current district scale and dragging must not trigger full regeneration every frame.
+Test on the real ENV-01 CASCO-scale district, not only a toy fixture. Catalogue/selection/guides must remain usable at that scale; ordinary dragging/placement must not trigger full regeneration every frame.
 
 ### Product loop
 
-- edit;
+- edit/build/expand;
 - save;
 - rebuild;
-- Play Mode;
+- Play Here;
 - affected validation;
 - owner visual judgment.
 
@@ -539,30 +742,36 @@ Test on the real ENV-01 CASCO-scale district rather than a ten-object fixture. S
 
 PASS when all of the following are true:
 
-- the owner can direct real environment composition in Unity without normal JSON/code/Inspector-coordinate work;
-- D1 direct layout editing is reliable on the actual district;
-- D2 lets the owner correct important building/detail placement with rebuild-persistent edits;
-- D3 provides bounded AI generation/adaptation from explicit human selection rather than global autonomous composition;
-- normal edits have visible preview, safe save/revert and no hidden second authority;
-- affected rebuild/validation is fast enough for iterative direction, with full rebuild as safe fallback;
-- Play Here closes the loop back to third-person judgment;
-- the owner trial succeeds and the owner explicitly prefers the Director for these tasks over prompt-by-prompt spatial manipulation through an agent;
+- D0/D1 safe direct layout manipulation works on the real district;
+- the owner can use normal Director workflows without JSON/code/Inspector-coordinate/prefab-path knowledge;
+- D2 provides a genuinely visual thumbnail catalogue plus game-like place/move/rotate/duplicate/delete/lock;
+- placed and modified structures survive rebuild through canonical upstream authority;
+- D3 lets the owner expand real playable map space visually without autonomous topology invention;
+- D4 lets AI/operator manufacture/adapt at least one reusable requested piece/structure that enters the catalogue and can then be placed by the owner;
+- AI actions remain bounded by human selection/intent and do not silently rewrite locked/unselected content;
+- D5, if implemented for PASS, reduces repetitive construction while leaving generated results editable;
+- D6 closes the loop through PLAY HERE and affected QA;
+- the real owner production trial succeeds;
+- the owner explicitly prefers this path for routine environment building over prompt-by-prompt agent spatial manipulation and normal prefab/path archaeology;
 - no material ENV regression is hidden by the tool.
 
 ## FAIL
 
 FAIL if any of the following survives:
 
-- normal use still requires Inspector coordinate editing, JSON editing or code;
-- the Director is mainly a debug visualizer rather than a manipulation tool;
-- owner edits vanish on rebuild;
-- generated Unity scene becomes the hidden authority;
-- save can discard unknown source fields;
-- AI commands may rewrite unselected/global content without an explicit scope change;
-- every small move requires a full district rebuild;
-- the implementation grows into a general-purpose Unity replacement/editor framework;
-- the tool only works on a toy fixture and not the current real district;
-- the owner finds it slower or more confusing than the current manual/agent path.
+- normal use still requires Inspector transforms, JSON editing, code or prefab/path/GUID knowledge;
+- the Director remains mainly a trace/debug visualizer instead of becoming a builder;
+- catalogue items lack usable thumbnails/categories or still require Project-browser archaeology;
+- placement is blind rather than ghosted/direct;
+- owner edits/placements disappear on rebuild;
+- generated Unity scene becomes hidden authority;
+- map expansion still requires an agent to translate owner intent into coordinates;
+- AI-created content cannot flow back into the same reusable catalogue/placement path;
+- AI commands can rewrite unselected/locked/global content without explicit scope;
+- the tool becomes an autonomous city generator rather than a human construction surface;
+- every small move/place requires a full district rebuild;
+- implementation grows into a general-purpose Unity replacement/editor framework;
+- the owner finds it slower or more confusing than the current path.
 
 ## Forbidden scope
 
@@ -588,6 +797,34 @@ If implemented while ENV-01 is still active, it may be used to finish the human-
 If execution requires code that currently exists only on the ENV-01 branch, the Worker must base the implementation on the appropriate current branch/candidate deliberately rather than duplicating the ENV factory on main.
 
 ## Handoff to ENV-02
+
+`WP-PROD-ENV-02` must now prove the complete builder model rather than only scene assembly:
+
+```text
+fresh brief
+ -> owner draws/reshapes layout in ENV Director
+ -> owner places existing catalogue pieces
+ -> owner expands playable space
+ -> AI/operator manufactures missing requested pieces/structures
+ -> new pieces enter the same catalogue
+ -> owner places/adjusts/locks
+ -> factory rebuild + validators
+ -> PLAY HERE
+ -> owner corrects directly
+ -> keeper candidate
+```
+
+ENV-02 must prove three materially different use cases:
+
+1. **EDIT EXISTING** — materially improve an existing area through Director manipulation.
+2. **EXPAND MAP** — extend a real boundary into new playable space through Director tools.
+3. **AI-SUPPLIED CONTENT** — request at least one missing piece/structure from AI/operator, admit it through ENV, place it from the catalogue, and retain it.
+
+The desired production model is:
+
+**human-built/directed world + AI-made/adapted pieces + deterministic factory + automated QA**.
+
+
 
 `WP-PROD-ENV-02` is updated conceptually by this WP:
 
