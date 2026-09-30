@@ -69,9 +69,24 @@ Retain evidence that:
 - railing/wall extension edits the semantic chain and rematerializes modules rather than requiring manual segment management;
 - area/lasso selection can bound at least one fill, validation or AI request;
 - AI-created accepted multi-object content can become a reusable catalogue/assembly unit with lineage;
-- no unlicensed/reference-only prior-art code was imported into production.
+- no unlicensed/reference-only prior-art code was imported into production;
+- optional third-party geometry integrations, if used, remain separable from Director core and do not become canonical ENV authority.
 
 The evidence should identify any third-party MIT code actually reused and retain required notices.
+
+## Optional geometry-tool proof
+
+UModeler X is **not** a dependency of ENV-02 and its absence cannot cause FAIL.
+
+If the Director UModeler X adapter is enabled during the proof, retain one bounded geometry-edit example showing:
+
+- a semantic object is selected through Director rather than by raw mesh archaeology;
+- UModeler X edits only a juego-def-owned derived copy / admitted target;
+- the edit returns through Director/ENV with semantic identity, lineage and rebuild-safe reference intact;
+- disabling the optional adapter does not break catalogue placement, direct manipulation, semantic chains, map expansion or AI modular/assembly workflows;
+- no UModeler X package code/binaries are copied into juego-def-owned commercializable Director code.
+
+A geometry-edit proof is useful evidence of extensibility, not a PASS requirement.
 
 ## Automated walkability proof
 
