@@ -13,6 +13,7 @@ The separation is deliberate:
 - `PROD-ASSET-00` = **shared lawful production substrate** — accepted;
 - `PROD-ANIM-01` = **animation intake/retarget/admission factory** — accepted;
 - `PROD-ENV/CHAR` = **remaining graphical factories**;
+- `PROD-ENV-DIRECTOR-00` = **owner-facing direct-manipulation surface** that keeps human spatial/composition judgment upstream of AI mass production;
 - `PROD-ANIM-02` = **runtime multi-NPC proof**, waiting on accepted CHAR output;
 - `CITY-URBAN-01` = **physical keeper realization** of the first block with those factories.
 
@@ -63,7 +64,7 @@ BOOTSTRAP-UNITY-GC2 (PASS)
       +----> PROD-ASSET-00 (PASS) ----------+----> CHAR-01 -> CHAR-02 ----+
       |                                     +----> ANIM-01 (PASS) --------+----> ANIM-02 --+
       |                                     |                              ^               |
-      +----> CITY-URBAN-00 (PASS) -----------+----> ENV-01  -> ENV-02 -----+               |
+      +----> CITY-URBAN-00 (PASS) -----------+----> ENV-01 -> DIRECTOR-00 -> ENV-02 --------+               |
       |          what to build                                      CHAR-01 ---------------+
       +----> M0-00 ------------------------------------------------------------------------+
       |                                                                                    |
@@ -79,7 +80,7 @@ BOOTSTRAP-UNITY-GC2 (PASS)
                                                                              CONTENT PRODUCTION AT SCALE
 ```
 
-`CITY-URBAN-00`, `PROD-ASSET-00` and `PROD-ANIM-01` are accepted. ENV-01 and CHAR-01 remain the current graphical factory work. ANIM-02 already has its animation-factory prerequisite and waits for CHAR-01.
+`CITY-URBAN-00`, `PROD-ASSET-00` and `PROD-ANIM-01` are accepted. ENV-01 and CHAR-01 remain the current graphical factory work. `PROD-ENV-DIRECTOR-00` is an urgent parallel production enabler: it does not retroactively block ENV-01, but it must PASS before ENV-02 so later scene-scale work is human-directed instead of globally agent-composed. ANIM-02 already has its animation-factory prerequisite and waits for CHAR-01.
 
 ## Workpacks
 
@@ -89,7 +90,8 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 | `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
-| `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory | ENV-01 |
+| `WP-PROD-ENV-DIRECTOR-00` | Owner-facing Unity editor for direct layout/building/detail direction + bounded AI actions | Bootstrap + CITY-URBAN-00 + ENV trace/build substrate; urgent parallel enabler |
+| `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory using the human-directed production loop | ENV-01 + ENV-DIRECTOR-00 |
 | `WP-PROD-CHAR-01` | Civilian/wardrobe production factory serving B0 role priorities | ASSET-00 |
 | `WP-PROD-CHAR-02` | Representative civilian batch from factory | CHAR-01 |
 | `WP-PROD-ANIM-01` ✅ | Animation intake/retarget/coverage factory serving B0 motion priorities | **PASS / accepted** |
@@ -101,6 +103,6 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 
 ## Immediate sequence
 
-**Continue `WP-PROD-ENV-01` and `WP-PROD-CHAR-01`. `WP-PROD-ANIM-01` is complete.**
+**Continue `WP-PROD-ENV-01` and `WP-PROD-CHAR-01`, and execute `WP-PROD-ENV-DIRECTOR-00` urgently against the current ENV authoring substrate. `WP-PROD-ANIM-01` is complete.**
 
-ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.
+The first Director milestone is deliberately small: direct Scene View manipulation of the real district trace with safe SAVE / REVERT / REBUILD / PLAY HERE. Do not delay that owner-visible MVP for AI buttons or general editor features. ENV-02 waits for Director PASS. ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.
