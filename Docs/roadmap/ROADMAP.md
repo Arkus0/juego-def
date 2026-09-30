@@ -1,6 +1,6 @@
 # Roadmap jugable
 
-Status: **ANIM-01 DONE / CURRENT: ENV-01 + ENV-DIRECTOR-00 + CHAR-01** — human-directed ENV authoring becomes the production path
+Status: **ANIM-01 DONE / CURRENT: ENV-01 + ENV-DIRECTOR-00 + CHAR-01** — human-directed ENV authoring is the next environment-production gate
 
 ## Immediate sequence
 
