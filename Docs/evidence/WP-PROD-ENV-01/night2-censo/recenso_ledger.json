@@ -1,0 +1,1235 @@
+{
+ "meta": {
+  "date": "2026-09-30",
+  "method": "re-censo mismo metodo absoluto sobre 27 vistas de lo arreglado (rio completo, mirador, terrazas, aprons)"
+ },
+ "entries": [
+  {
+   "file": "recenso/apron_Calle_Alta_Salida.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "R",
+     "loc": "izq primer plano",
+     "desc": "terreno 100% hierba donde debería haber pavimento urbano, sin rastro de calle ni adoquín"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "R",
+     "loc": "todo el encuadre",
+     "desc": "escena sin edificios ni calles en entorno supuestamente urbano, terreno sin construir"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "centro plano medio",
+     "desc": "muro de piedra bajo con tapa de losas recorre el prado sin delimitar nada lógico"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq plano medio",
+     "desc": "tramo de muro suelto junto a los árboles, cortado y sin conexión con nada"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "centro plano medio",
+     "desc": "árboles alineados simétricamente sobre el muro como seto decorativo, colocación artificial"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "todo el encuadre",
+     "desc": "hierba con textura de parche visible, parcheo irregular de decoloración sin transición"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "horizonte centro-der",
+     "desc": "montañas lejanas casi fundidas con la niebla, silueta del horizonte poco legible"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "izq plano medio",
+     "desc": "copas de árboles solapándose entre sí y con el muro, sin separación clara"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "der fondo",
+     "desc": "posible caseta/prop medio fundida en la niebla, sin integración con el entorno"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "todo el encuadre",
+     "desc": "iluminación plana sin oclusión ambiental, conjunto sin contraste ni profundidad"
+    }
+   ]
+  },
+  {
+   "file": "recenso/apron_Capitan_Salida.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "R",
+     "loc": "izq primer plano",
+     "desc": "terreno 100% hierba donde debería haber pavimento urbano, sin calle ni adoquín"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "R",
+     "loc": "todo el encuadre",
+     "desc": "entorno completamente vacío sin edificios ni elementos urbanos"
+    }
+   ]
+  },
+  {
+   "file": "recenso/apron_Espina_E.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "R",
+     "loc": "izq primer plano",
+     "desc": "terreno 100% hierba donde debería haber pavimento urbano, sin calle ni adoquín"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "R",
+     "loc": "todo el encuadre",
+     "desc": "entorno rural vacío sin ningún edificio ni elemento urbano"
+    }
+   ]
+  },
+  {
+   "file": "recenso/apron_Ribera.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "R",
+     "loc": "izq primer plano",
+     "desc": "terreno 100% hierba donde debería haber pavimento urbano, sin calle ni adoquín"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "R",
+     "loc": "todo el encuadre",
+     "desc": "entorno vacío sin edificios ni elementos urbanos"
+    }
+   ]
+  },
+  {
+   "file": "recenso/apron_San_Pedro_Salida.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "R",
+     "loc": "izq primer plano",
+     "desc": "terreno 100% hierba donde debería haber pavimento urbano, sin calle ni adoquín"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "R",
+     "loc": "todo el encuadre",
+     "desc": "entorno rural vacío sin ningún edificio ni elemento urbano"
+    }
+   ]
+  },
+  {
+   "file": "recenso/escalera_desde_agua.jpg",
+   "defects": [
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "R",
+     "loc": "centro primer plano",
+     "desc": "escalera de piedra emergiendo del agua sin borde ni transición, el agua corta abruptamente los escalones"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "R",
+     "loc": "centro primer plano",
+     "desc": "transición brusca entre agua y escalera sin bordillo ni tratamiento"
+    }
+   ]
+  },
+  {
+   "file": "recenso/escalera_desde_plaza.jpg",
+   "defects": [
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "R",
+     "loc": "centro primer plano",
+     "desc": "escalera de piedra que termina directamente en el agua sin barrera ni muelle, el agua corta los escalones bajos"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "R",
+     "loc": "centro primer plano",
+     "desc": "transición brusca entre agua y escalera sin bordillo ni tratamiento"
+    }
+   ]
+  },
+  {
+   "file": "recenso/mirador_skyline.jpg",
+   "defects": [
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "todo el encuadre",
+     "desc": "niebla densa uniforme que aplana el conjunto y funde las montañas con el cielo, horizonte poco legible"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "centro fondo",
+     "desc": "siluetas de tejados y casas casi disueltas en la bruma, sin contraste"
+    }
+   ]
+  },
+  {
+   "file": "recenso/props_K10_10.jpg",
+   "defects": [
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "O",
+     "loc": "der primer plano",
+     "desc": "mesa y sillas de terraza metidas dentro de un garaje/portón con persiana a medio bajar, bloqueando el paso"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "der plano medio",
+     "desc": "persiana/estor enrollable a media altura en el portón del garaje, sin marco visible ni mecanismo"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "Y",
+     "loc": "izq plano medio",
+     "desc": "ventana del primer piso con cristales muy oscuros, casi negro absoluto, sin reflejo ni cortina"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "centro fondo",
+     "desc": "calle con niebla uniforme que aplana profundidad y funde el fondo con el cielo"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq primer plano",
+     "desc": "farola moderna sin correspondencia estética con el pueblo"
+    }
+   ]
+  },
+  {
+   "file": "recenso/props_K10_2.jpg",
+   "defects": [
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "O",
+     "loc": "der primer plano",
+     "desc": "mesa y sillas de terraza metidas dentro de un garaje/portón con persiana a medio bajar, bloqueando el paso"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "der plano medio",
+     "desc": "persiana/estor enrollable a media altura en el portón del garaje, sin marco visible ni mecanismo"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "Y",
+     "loc": "izq plano medio",
+     "desc": "ventana del primer piso con cristales muy oscuros, casi negro absoluto, sin reflejo ni cortina"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "centro fondo",
+     "desc": "calle con niebla uniforme que aplana profundidad y funde el fondo con el cielo"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq primer plano",
+     "desc": "farola moderna sin correspondencia estética con el pueblo"
+    }
+   ]
+  },
+  {
+   "file": "recenso/props_plazario_parasol.jpg",
+   "defects": [
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "O",
+     "loc": "centro plano medio",
+     "desc": "mesa de terraza con sillas en mitad de una plaza peatonal sin bar ni contexto de hostelería visible"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "O",
+     "loc": "der plano medio",
+     "desc": "portón de madera con aberturas completamente negras, sin interior visible"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "Y",
+     "loc": "izq plano medio",
+     "desc": "ventanas de la casa de la izquierda con cristales oscuros casi negros"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "centro fondo",
+     "desc": "niebla uniforme que funde el fondo con el cielo y aplana la plaza"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "centro primer plano",
+     "desc": "macetas con flores idénticas repetidas como clones"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_00_L_along.jpg",
+   "defects": [
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq primer plano",
+     "desc": "escalera/pasarela de piedra junto al agua con una sección que flota o corta el muro sin apoyo visible"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "centro fondo",
+     "desc": "agua del río con reflejos saturados artificialmente brillantes que no se corresponden con la niebla del entorno"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "todo el encuadre",
+     "desc": "niebla uniforme que aplana la profundidad de la ribera"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "izq plano medio",
+     "desc": "ramas de árbol que atraviesan el muro"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_00_L_water.jpg",
+   "defects": [
+    {
+     "cls": "RENDER",
+     "sev": "R",
+     "loc": "centro primer plano",
+     "desc": "agua con reflejos saturados artificialmente brillantes que reflejan un cielo rosado/dorado incompatible con la niebla gris del entorno"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq plano medio",
+     "desc": "muro de piedra que se hunde en el agua sin transición ni tratamiento de base/muelle"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "todo el encuadre",
+     "desc": "niebla uniforme que aplana la profundidad"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "der plano medio",
+     "desc": "ramas de árbol atravesando el muro de piedra"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_00_R_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "R",
+     "loc": "centro plano medio",
+     "desc": "toda la plaza es hierba plana sin textura de detalle ni adoquinado donde se espera pavimento urbano"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "R",
+     "loc": "izq-centro plano medio",
+     "desc": "pasillo de losas cruza la hierba sin bordillo ni transición, cortado bruscamente contra la casa central"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "der plano medio",
+     "desc": "paso de losas bajo el arco muere contra la hierba sin transición"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "R",
+     "loc": "centro primer plano",
+     "desc": "casa central es un cubo con fachada trasera completamente lisa, sin ventanas ni puertas"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "O",
+     "loc": "izq fondo",
+     "desc": "ventanas bajo las dos ventanas rojas a negro absoluto"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "O",
+     "loc": "der plano medio",
+     "desc": "ventana inferior sin postico a negro absoluto"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "general",
+     "desc": "hierba con sombra proyectada dura de borde geometricamente recto que no coincide con ningun volumen visible"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "general ambiente",
+     "desc": "iluminacion plana de tinte verde uniforme en toda la escena, sin variacion de rebote"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "der fondo",
+     "desc": "agua/canal azulado corta directamente contra los muros de piedra sin cauce definido"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "der plano medio",
+     "desc": "brotes de hiedra atraviesan la linea de la tapia de piedra sin adaptarse a la geometria"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "centro plano medio",
+     "desc": "mata de hierba atraviesa la base de la casa central y la losa"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "izq plano medio",
+     "desc": "franja amarilla/lisa en la base de la fachada con textura sin alinear con la piedra adyacente"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "izq fondo",
+     "desc": "las dos casas del fondo repiten identica silueta, cubierta y chimenea"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "centro plano medio",
+     "desc": "tablon/losa suelto en el suelo junto a la casa central sin funcion aparente"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_00_R_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "O",
+     "loc": "centro/primer plano",
+     "desc": "la calle termina en césped sin transición"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "R",
+     "loc": "centro/plano medio",
+     "desc": "borde de asfalto cortado en línea recta contra hierba, sin bordillo"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "R",
+     "loc": "centro/plano medio",
+     "desc": "mancha blanca plana flotante bajo el edificio sin justificación"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "O",
+     "loc": "centro-der/plano medio",
+     "desc": "manchas marrones difusas sin lógica sobre el prado"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "junta recta entre dos texturas de hierba sin mezcla"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "izq/primer plano",
+     "desc": "fachada trasera lisa sin cornisa, voladizo cortado en geometría pura"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "edificio flota sobre la pendiente sin cimentación visible"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "izq/primer plano",
+     "desc": "maleza atraviesa el zócalo de piedra"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano lejano",
+     "desc": "hilera de árboles idénticos en línea perfecta sin variación"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "árboles clónicos repetidos en la fila del horizonte"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "montañas desvanecidas a blanco, horizonte poco legible"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "izq/primer plano",
+     "desc": "persiana metálica con textura lisa gris-plana sin detalle"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "antenas repetidas mismo modelo y orientación"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "conjunto",
+     "desc": "sombras con direcciones poco coherentes, ambiente sin rebotes"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_04_R_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "adoquinado choca con muro perimetral sin remate ni bordillo"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "O",
+     "loc": "centro-izq/plano medio",
+     "desc": "puerta incrustada en muro de sillar sin marco ni dintel"
+    },
+    {
+     "cls": "PUERTA_NEGRA",
+     "sev": "Y",
+     "loc": "centro/plano medio",
+     "desc": "vano abuhardillado casi negro absoluto sin interior"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "hiedra atraviesa borde de piedra y cuelga por ambas caras"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "remate de muro bajo se interrumpe al aire sin encuentro"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "centro/plano medio",
+     "desc": "franja de ladrillo estirado sobre puerta sin referencia constructiva"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "global/plano medio",
+     "desc": "iluminación plana, fachadas cálidas sin sombra coherente en primer plano"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "copas de árboles se interpenetran con barandilla y lámpara"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "farola tras barandilla parece flotar sin base clara"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "O",
+     "loc": "der/plano de fondo",
+     "desc": "manzana repite módulos de ventana y cornisa clonados"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "der/plano de fondo",
+     "desc": "fachada trasera lisa grande sin alero contra el cielo"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "muro de contención corta en seco contra el talud"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "der/plano cercano",
+     "desc": "postes de barandilla clavados en piedra sin base"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_04_R_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_PAVE_MISSING",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "falta pavimento en borde derecho del puente, césped donde debería haber losa"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "derrames de lodo/limo negro muy irregulares en suelo del puente"
+    },
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "izq/plano cercano",
+     "desc": "transición brusca entre camino y plataforma del puente sin bordillo"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "rama/arbusto atraviesa la barandilla del puente"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano medio",
+     "desc": "manzana de fondo sobresaturada y plana rompe el ambiente"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "tres edificios de fondo comparten misma fachada y ventanas clonadas"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "soporte metálico en zigzag bajo el puente sin apoyo claro en el agua"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "toldo cerrado y sillas a media luz en el borde del agua sin lógica"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "Y",
+     "loc": "global",
+     "desc": "sombras difusas sin dirección solar coherente"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_05_L_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "camino de tierra choca con escalinata de piedra sin bordillo ni transición"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "muro con textura estirada verticalmente sobre arco ciego, sillares deformados"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "balcón vuelo sin puntales aparentes"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "hedera atraviesa el peto del mirador"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "cajones y palés apilados sin acceso ni uso"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "casas adosadas idénticas repetidas"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano medio",
+     "desc": "fachada con iluminación incompatible con resto de la calle"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "der/plano lejano",
+     "desc": "edificio liso grande sin alero contra el cielo"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "mancha de lodo en cruz con el borde de piedra"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_05_L_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "borde abrupto entre hierba y pavimento sin bordillo"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "manchas de barro/derrame dentro del lavadero"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "rama atraviesa barandilla del lavadero"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "canal de agua corta el muro de contención sin encuentro"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "utensilios flotando dentro del lavadero sin apoyo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "casas repetidas con misma fachada"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "global",
+     "desc": "ambiente plano sin sombras coherentes"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "muro liso sin remate superior"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_06_L_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano cercano",
+     "desc": "sendero de tierra choca con primer escalón sin bordillo ni remate"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "mancha de barro negro al pie de la escalera"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "mata de hierba atraviesa el bordillo de piedra"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "farola sin base apoyada solo en el talud"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "cajón y palé apilados bloqueando el paso de la escalera"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "casas adosadas idénticas repetidas"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "der/plano lejano",
+     "desc": "edificio grande liso sin alero contra el cielo"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano medio",
+     "desc": "fachada iluminada de forma incompatible con el resto"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "textura de muro estirada verticalmente en el arco"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_06_L_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "transición sin remate entre hierba del sendero y muro de piedra"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "manchas de barro/derrame dentro del lavadero"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "rama atraviesa la barandilla del lavadero"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "canal de agua corta el muro de contención sin encuentro"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "objetos flotando dentro del lavadero sin apoyo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "casas repetidas con misma fachada"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "global",
+     "desc": "ambiente plano sin sombras coherentes"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "muro liso sin remate superior"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_08_R_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano cercano",
+     "desc": "borde abrupto entre sendero de tierra y primer escalón"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "matorral atraviesa el bordillo de piedra"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "farola sin base apoyada en el talud"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "palé y cajón bloqueando la escalera sin lógica"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "der/plano lejano",
+     "desc": "edificio grande liso sin alero contra el cielo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "casas adosadas idénticas"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano medio",
+     "desc": "fachada iluminada de forma incompatible"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "textura estirada verticalmente en el muro del arco"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "barro al pie de la escalera"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_08_R_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "falta transición rematada entre orilla de hierba y plataforma del lavadero"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "manchas de barro y derrame dentro del lavadero"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "rama atraviesa la barandilla del lavadero"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "canal de agua corta el muro de contención sin encuentro"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "objetos flotando en el lavadero sin apoyo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "casas repetidas con misma fachada"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "global",
+     "desc": "ambiente plano sin sombras coherentes"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "muro liso sin remate superior"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_09_L_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano cercano",
+     "desc": "sin bordillo ni remate entre sendero y primer escalón"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "mancha de barro en el arranque de la escalera"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "hierba atraviesa bordillo de piedra"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "farola sin base sobre el talud"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "cajón y palé bloqueando el paso"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "der/plano lejano",
+     "desc": "edificio liso grande sin alero contra el cielo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "casas adosadas idénticas repetidas"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano medio",
+     "desc": "fachada con iluminación incompatible"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "textura de muro estirada verticalmente en el arco"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_09_L_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "borde directo sin remate entre orilla de hierba y plataforma del lavadero"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "manchas de barro y derrame dentro del lavadero"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "rama atraviesa la barandilla del lavadero"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "canal de agua corta el muro de contención sin encuentro"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "objetos flotando en el lavadero sin apoyo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "casas repetidas con misma fachada"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "global",
+     "desc": "ambiente plano sin sombras coherentes"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "muro liso sin remate superior"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_09_R_along.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano cercano",
+     "desc": "sin bordillo entre sendero de tierra y primer escalón"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "mancha de lodo en el arranque de la escalera"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "matorral atraviesa el bordillo de piedra"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "farola sin base sobre el talud"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "palé y cajón bloqueando la escalera"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "O",
+     "loc": "der/plano lejano",
+     "desc": "edificio grande liso sin alero contra el cielo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "casas adosadas idénticas"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "der/plano medio",
+     "desc": "fachada con iluminación incompatible"
+    },
+    {
+     "cls": "TEX_WRONG",
+     "sev": "Y",
+     "loc": "izq/plano medio",
+     "desc": "textura de muro estirada verticalmente en el arco"
+    }
+   ]
+  },
+  {
+   "file": "recenso/rio_09_R_water.jpg",
+   "defects": [
+    {
+     "cls": "SUELO_SEAM",
+     "sev": "O",
+     "loc": "centro/plano medio",
+     "desc": "borde directo sin remate entre orilla y plataforma del lavadero"
+    },
+    {
+     "cls": "SUELO_DIRT",
+     "sev": "Y",
+     "loc": "centro/plano cercano",
+     "desc": "manchas de barro y derrame dentro del lavadero"
+    },
+    {
+     "cls": "VEG_CLIP",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "rama atraviesa la barandilla del lavadero"
+    },
+    {
+     "cls": "ESTRUCTURA",
+     "sev": "O",
+     "loc": "izq/plano medio",
+     "desc": "canal de agua corta el muro de contención sin encuentro"
+    },
+    {
+     "cls": "PROP_LOGIC",
+     "sev": "Y",
+     "loc": "izq/plano cercano",
+     "desc": "objetos flotando en el lavadero sin apoyo"
+    },
+    {
+     "cls": "GEMELOS",
+     "sev": "Y",
+     "loc": "der/plano lejano",
+     "desc": "casas repetidas con misma fachada"
+    },
+    {
+     "cls": "RENDER",
+     "sev": "O",
+     "loc": "global",
+     "desc": "ambiente plano sin sombras coherentes"
+    },
+    {
+     "cls": "SIN_TERMINAR",
+     "sev": "Y",
+     "loc": "der/plano medio",
+     "desc": "muro liso sin remate superior"
+    }
+   ]
+  }
+ ]
+}

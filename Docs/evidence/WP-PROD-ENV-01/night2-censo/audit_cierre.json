@@ -1,0 +1,1332 @@
+[
+  {
+    "kind": "BLANK_WALL",
+    "unit": "ALLEY_I",
+    "street": "Ronda_Huertas",
+    "where": "K15_12: K15_12_5,K15_12_6",
+    "detail": "6,1 m of frontage with no opening on any floor",
+    "x": 46.32,
+    "y": 7.55,
+    "z": 51.62
+  },
+  {
+    "kind": "BLANK_WALL",
+    "unit": "ALLEY_I",
+    "street": "Ronda_Huertas",
+    "where": "K15_12: K15_12_6,K15_12_7",
+    "detail": "6,1 m of frontage with no opening on any floor",
+    "x": 39.21,
+    "y": 7.55,
+    "z": 55.51
+  },
+  {
+    "kind": "BLANK_WALL",
+    "unit": "ALLEY_G",
+    "street": "Solana_Baja",
+    "where": "K14_10: K14_10_1",
+    "detail": "6,0 m of frontage with no opening on any floor",
+    "x": 83.59,
+    "y": 8.62,
+    "z": 69.11
+  },
+  {
+    "kind": "PROP_ON_CENTRELINE",
+    "unit": "ALLEY_B",
+    "street": "Cimavilla_Baja",
+    "where": "Rows/K10_6/K10_6_1/Dressing/ENV_Prop_Chair",
+    "detail": "ENV_Prop_Chair 0,32 m from the centreline of a 3,8 m street",
+    "x": 40.86,
+    "y": 1.99,
+    "z": 122.59
+  },
+  {
+    "kind": "PAVE_MISSING",
+    "unit": "STREET_E",
+    "street": "Calle_Alta_Salida",
+    "where": "Calle_Alta_Salida",
+    "detail": "Calle_Alta_Salida surfaced as Grass at street width 4,6 m",
+    "x": 196.51,
+    "y": 5.0,
+    "z": 159.19
+  },
+  {
+    "kind": "PAVE_MISSING",
+    "unit": "STREET_H",
+    "street": "Capitan_Salida",
+    "where": "Capitan_Salida",
+    "detail": "Capitan_Salida surfaced as Grass at street width 4,6 m",
+    "x": 12.1,
+    "y": -2.42,
+    "z": 236.17
+  },
+  {
+    "kind": "PAVE_MISSING",
+    "unit": "STREET_I",
+    "street": "San_Pedro_Salida",
+    "where": "San_Pedro_Salida",
+    "detail": "San_Pedro_Salida surfaced as Grass at street width 4,2 m",
+    "x": 196.63,
+    "y": 10.38,
+    "z": 18.84
+  },
+  {
+    "kind": "VEG_CLIP",
+    "unit": "BRIDGE_A",
+    "street": null,
+    "where": "River/WallLife/ENV_Weeds_Grass",
+    "detail": "ENV_Weeds_Grass intersects ENV_Shutter_Roller (1 collider)",
+    "x": 56.58,
+    "y": 0.5,
+    "z": 183.09
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_A",
+    "street": null,
+    "where": "seam Apron_Callejon_Oeste_Salida_1_1/Apron_Callejon_Oeste_Salida_1_0",
+    "detail": "Apron_Callejon_Oeste_Salida_1_1 meets Apron_Callejon_Oeste_Salida_1_0 in a hard line with no kerb",
+    "x": -1.4,
+    "y": 1.33,
+    "z": 128.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_A",
+    "street": null,
+    "where": "seam Apron_Callejon_Oeste_Salida_1_1/Apron_Callejon_Oeste_Salida_1_0",
+    "detail": "Apron_Callejon_Oeste_Salida_1_1 meets Apron_Callejon_Oeste_Salida_1_0 in a hard line with no kerb",
+    "x": -1.4,
+    "y": 1.33,
+    "z": 130.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_D",
+    "street": null,
+    "where": "seam Apron_El_Sol_3_1/Apron_El_Sol_3_0",
+    "detail": "Apron_El_Sol_3_1 meets Apron_El_Sol_3_0 in a hard line with no kerb",
+    "x": -1.4,
+    "y": 0.06,
+    "z": 179.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto_Viejo",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 0.4,
+    "y": -0.88,
+    "z": 207.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Apron_Capitan_Salida_2_0",
+    "detail": "Pave_Canto_Viejo meets Apron_Capitan_Salida_2_0 in a hard line with no kerb",
+    "x": 7.0,
+    "y": 0.0,
+    "z": 235.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Apron_Capitan_Salida_2_1/Apron_Capitan_Salida_2_2",
+    "detail": "Apron_Capitan_Salida_2_1 meets Apron_Capitan_Salida_2_2 in a hard line with no kerb",
+    "x": 7.6,
+    "y": -2.46,
+    "z": 237.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Apron_Capitan_Salida_2_0/Pave_Canto_Viejo",
+    "detail": "Apron_Capitan_Salida_2_0 meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 9.4,
+    "y": -2.45,
+    "z": 235.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Apron_Capitan_Salida_2_0/Apron_Capitan_Salida_2_1",
+    "detail": "Apron_Capitan_Salida_2_0 meets Apron_Capitan_Salida_2_1 in a hard line with no kerb",
+    "x": 10.0,
+    "y": -2.45,
+    "z": 237.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto_Viejo meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 27.4,
+    "y": -2.01,
+    "z": 235.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_D",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto_Viejo",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 35.2,
+    "y": -0.04,
+    "z": 203.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_E",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto_Viejo meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 37.0,
+    "y": -0.64,
+    "z": 211.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_D",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 38.2,
+    "y": 1.01,
+    "z": 131.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_D",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 38.2,
+    "y": 0.99,
+    "z": 136.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto_Viejo",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 38.2,
+    "y": 0.01,
+    "z": 200.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto_Viejo meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 39.4,
+    "y": -0.17,
+    "z": 206.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_D",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 40.6,
+    "y": 1.06,
+    "z": 130.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_E",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Apron_Cervantes_4_0",
+    "detail": "Pave_CantoKit_Viejo meets Apron_Cervantes_4_0 in a hard line with no kerb",
+    "x": 41.2,
+    "y": -2.17,
+    "z": 236.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_E",
+    "street": null,
+    "where": "seam Apron_Cervantes_4_0/Apron_Cervantes_4_1",
+    "detail": "Apron_Cervantes_4_0 meets Apron_Cervantes_4_1 in a hard line with no kerb",
+    "x": 41.2,
+    "y": -2.17,
+    "z": 237.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto_Viejo meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 45.4,
+    "y": -0.12,
+    "z": 200.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_A",
+    "street": null,
+    "where": "seam Pave_Adoquin/Pave_Canto_Viejo",
+    "detail": "Pave_Adoquin meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 48.4,
+    "y": 0.2,
+    "z": 185.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_H",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto_Viejo meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 51.4,
+    "y": 0.09,
+    "z": 194.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_K",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 52.6,
+    "y": 3.71,
+    "z": 112.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_A",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Adoquin",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Adoquin in a hard line with no kerb",
+    "x": 57.4,
+    "y": 0.18,
+    "z": 191.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_F",
+    "street": null,
+    "where": "seam Apron_Independencia_3_0/Pave_CantoKit_Viejo",
+    "detail": "Apron_Independencia_3_0 meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 59.8,
+    "y": -1.96,
+    "z": 235.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_F",
+    "street": null,
+    "where": "seam Apron_Independencia_3_0/Apron_Independencia_3_1",
+    "detail": "Apron_Independencia_3_0 meets Apron_Independencia_3_1 in a hard line with no kerb",
+    "x": 59.2,
+    "y": -1.95,
+    "z": 237.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Apron_Solana_Acceso_1_2/Apron_Solana_Acceso_1_1",
+    "detail": "Apron_Solana_Acceso_1_2 meets Apron_Solana_Acceso_1_1 in a hard line with no kerb",
+    "x": 67.0,
+    "y": 0.06,
+    "z": 97.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 68.2,
+    "y": 0.2,
+    "z": 173.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 69.4,
+    "y": 0.21,
+    "z": 172.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_A",
+    "street": null,
+    "where": "seam Pave_Adoquin/Pave_CantoKit",
+    "detail": "Pave_Adoquin meets Pave_CantoKit in a hard line with no kerb",
+    "x": 69.4,
+    "y": 0.2,
+    "z": 180.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 70.0,
+    "y": 3.33,
+    "z": 107.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Apron_Solana_Baja_0_0",
+    "detail": "Pave_CantoKit_Viejo meets Apron_Solana_Baja_0_0 in a hard line with no kerb",
+    "x": 71.2,
+    "y": 6.2,
+    "z": 91.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 71.8,
+    "y": 0.23,
+    "z": 170.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Apron_Solana_Baja_0_1",
+    "detail": "Pave_CantoKit_Viejo meets Apron_Solana_Baja_0_1 in a hard line with no kerb",
+    "x": 72.4,
+    "y": 2.17,
+    "z": 93.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 75.4,
+    "y": 0.25,
+    "z": 167.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 76.6,
+    "y": 3.21,
+    "z": 108.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 76.6,
+    "y": 0.2,
+    "z": 173.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 77.8,
+    "y": 0.27,
+    "z": 164.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_D",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit",
+    "detail": "Pave_Canto meets Pave_CantoKit in a hard line with no kerb",
+    "x": 82.0,
+    "y": 0.0,
+    "z": 157.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 82.6,
+    "y": 0.29,
+    "z": 162.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_C",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 82.6,
+    "y": 0.2,
+    "z": 167.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_D",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit",
+    "detail": "Pave_Canto meets Pave_CantoKit in a hard line with no kerb",
+    "x": 87.4,
+    "y": 0.38,
+    "z": 158.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Adoquin",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Adoquin in a hard line with no kerb",
+    "x": 87.4,
+    "y": 0.27,
+    "z": 235.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 88.0,
+    "y": 0.37,
+    "z": 159.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 88.0,
+    "y": 0.2,
+    "z": 166.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_F",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Adoquin",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Adoquin in a hard line with no kerb",
+    "x": 88.6,
+    "y": 0.22,
+    "z": 210.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_B",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Adoquin",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Adoquin in a hard line with no kerb",
+    "x": 91.0,
+    "y": 0.29,
+    "z": 215.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 93.4,
+    "y": 0.41,
+    "z": 161.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 93.4,
+    "y": 0.2,
+    "z": 167.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_B",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 98.2,
+    "y": 0.2,
+    "z": 193.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 100.0,
+    "y": 0.47,
+    "z": 163.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 100.0,
+    "y": 0.2,
+    "z": 169.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_B",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 100.6,
+    "y": 0.2,
+    "z": 187.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_B",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 100.6,
+    "y": 0.2,
+    "z": 190.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "BRIDGE_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 100.0,
+    "y": 0.32,
+    "z": 195.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 101.2,
+    "y": 4.56,
+    "z": 105.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 103.6,
+    "y": 0.2,
+    "z": 171.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 105.4,
+    "y": 0.49,
+    "z": 164.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 105.4,
+    "y": 0.4,
+    "z": 166.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 106.0,
+    "y": 4.42,
+    "z": 106.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 106.0,
+    "y": 0.2,
+    "z": 172.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 106.0,
+    "y": 0.2,
+    "z": 184.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_C",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 108.4,
+    "y": 3.73,
+    "z": 112.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 110.2,
+    "y": 0.2,
+    "z": 181.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 111.4,
+    "y": 4.55,
+    "z": 108.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_CantoKit_Viejo",
+    "detail": "Pave_CantoKit meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 111.4,
+    "y": 0.67,
+    "z": 164.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 111.4,
+    "y": 0.2,
+    "z": 173.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 112.0,
+    "y": 0.66,
+    "z": 165.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 112.0,
+    "y": 0.2,
+    "z": 181.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 116.8,
+    "y": 4.33,
+    "z": 111.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 117.4,
+    "y": 0.66,
+    "z": 167.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 117.4,
+    "y": 0.2,
+    "z": 179.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_H",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 118.6,
+    "y": 10.35,
+    "z": 44.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 118.0,
+    "y": 4.39,
+    "z": 111.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit",
+    "detail": "Pave_Canto meets Pave_CantoKit in a hard line with no kerb",
+    "x": 118.6,
+    "y": 4.27,
+    "z": 118.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 118.0,
+    "y": 0.2,
+    "z": 175.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_G",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 119.8,
+    "y": 4.58,
+    "z": 107.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_I",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 122.2,
+    "y": 10.37,
+    "z": 37.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_I",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 123.4,
+    "y": 10.39,
+    "z": 36.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_H",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa",
+    "detail": "Pave_CantoKit meets Pave_Losa in a hard line with no kerb",
+    "x": 124.6,
+    "y": 10.4,
+    "z": 40.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit",
+    "detail": "Pave_Canto meets Pave_CantoKit in a hard line with no kerb",
+    "x": 124.0,
+    "y": 4.41,
+    "z": 118.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 124.0,
+    "y": 0.65,
+    "z": 171.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_I",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 125.8,
+    "y": 10.4,
+    "z": 31.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_I",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 129.4,
+    "y": 10.4,
+    "z": 35.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_I",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 130.0,
+    "y": 10.4,
+    "z": 32.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_H",
+    "street": null,
+    "where": "seam Pave_Losa/Pave_CantoKit",
+    "detail": "Pave_Losa meets Pave_CantoKit in a hard line with no kerb",
+    "x": 130.0,
+    "y": 10.4,
+    "z": 43.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 130.0,
+    "y": 0.7,
+    "z": 173.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 133.6,
+    "y": 0.43,
+    "z": 177.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_H",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_CantoKit_Viejo",
+    "detail": "Pave_CantoKit meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 135.4,
+    "y": 10.4,
+    "z": 42.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 135.4,
+    "y": 0.52,
+    "z": 178.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "ALLEY_H",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_CantoKit",
+    "detail": "Pave_CantoKit_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 136.0,
+    "y": 10.4,
+    "z": 34.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 136.0,
+    "y": 0.83,
+    "z": 176.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 141.4,
+    "y": 1.16,
+    "z": 179.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_B",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_CantoKit_Viejo",
+    "detail": "Pave_CantoKit meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 142.6,
+    "y": 1.34,
+    "z": 176.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_G",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Apron_Espina_Plaza_0_0",
+    "detail": "Pave_Canto_Viejo meets Apron_Espina_Plaza_0_0 in a hard line with no kerb",
+    "x": 142.6,
+    "y": 1.09,
+    "z": 184.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Apron_Espina_Plaza_0_2",
+    "detail": "Pave_CantoKit meets Apron_Espina_Plaza_0_2 in a hard line with no kerb",
+    "x": 147.4,
+    "y": 1.44,
+    "z": 180.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Apron_Espina_Plaza_0_2/Pave_CantoKit",
+    "detail": "Apron_Espina_Plaza_0_2 meets Pave_CantoKit in a hard line with no kerb",
+    "x": 147.4,
+    "y": 1.3,
+    "z": 184.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_F",
+    "street": null,
+    "where": "seam Pave_Canto/Apron_Obispo_Bajo_0_0",
+    "detail": "Pave_Canto meets Apron_Obispo_Bajo_0_0 in a hard line with no kerb",
+    "x": 148.0,
+    "y": 2.22,
+    "z": 173.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 152.2,
+    "y": 10.37,
+    "z": 0.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 153.4,
+    "y": 1.35,
+    "z": 186.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_I",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 158.8,
+    "y": 9.87,
+    "z": 64.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 159.4,
+    "y": 1.43,
+    "z": 187.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 158.8,
+    "y": 1.43,
+    "z": 189.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_I",
+    "street": null,
+    "where": "seam Pave_CantoKit_Viejo/Pave_Canto",
+    "detail": "Pave_CantoKit_Viejo meets Pave_Canto in a hard line with no kerb",
+    "x": 160.6,
+    "y": 10.03,
+    "z": 59.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 160.0,
+    "y": 1.45,
+    "z": 189.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 166.0,
+    "y": 1.53,
+    "z": 190.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 171.4,
+    "y": 1.62,
+    "z": 193.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 172.0,
+    "y": 1.64,
+    "z": 195.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 178.0,
+    "y": 1.72,
+    "z": 196.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 183.4,
+    "y": 1.8,
+    "z": 199.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_Losa_Viejo/Pave_CantoKit",
+    "detail": "Pave_Losa_Viejo meets Pave_CantoKit in a hard line with no kerb",
+    "x": 184.0,
+    "y": 1.82,
+    "z": 201.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_G",
+    "street": null,
+    "where": "seam Pave_Canto_Viejo/Apron_Ribera_5_0",
+    "detail": "Pave_Canto_Viejo meets Apron_Ribera_5_0 in a hard line with no kerb",
+    "x": 184.6,
+    "y": -2.36,
+    "z": 235.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_G",
+    "street": null,
+    "where": "seam Apron_Ribera_5_0/Apron_Ribera_5_1",
+    "detail": "Apron_Ribera_5_0 meets Apron_Ribera_5_1 in a hard line with no kerb",
+    "x": 184.0,
+    "y": -2.37,
+    "z": 237.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Losa_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Losa_Viejo in a hard line with no kerb",
+    "x": 190.0,
+    "y": 1.9,
+    "z": 202.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_I",
+    "street": null,
+    "where": "seam Pave_Canto/Apron_San_Pedro_Salida_1_0",
+    "detail": "Pave_Canto meets Apron_San_Pedro_Salida_1_0 in a hard line with no kerb",
+    "x": 194.2,
+    "y": 10.4,
+    "z": 16.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_I",
+    "street": null,
+    "where": "seam Pave_Canto/Apron_San_Pedro_Salida_1_1",
+    "detail": "Pave_Canto meets Apron_San_Pedro_Salida_1_1 in a hard line with no kerb",
+    "x": 195.4,
+    "y": 10.43,
+    "z": 14.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 195.4,
+    "y": 10.0,
+    "z": 89.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit_Viejo",
+    "detail": "Pave_Canto meets Pave_CantoKit_Viejo in a hard line with no kerb",
+    "x": 194.8,
+    "y": 9.99,
+    "z": 89.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_E",
+    "street": null,
+    "where": "seam Pave_Canto/Apron_Calle_Alta_Salida_1_0",
+    "detail": "Pave_Canto meets Apron_Calle_Alta_Salida_1_0 in a hard line with no kerb",
+    "x": 195.4,
+    "y": 5.0,
+    "z": 161.2
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit",
+    "detail": "Pave_Canto meets Pave_CantoKit in a hard line with no kerb",
+    "x": 195.4,
+    "y": 3.56,
+    "z": 181.6
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_Canto/Pave_CantoKit",
+    "detail": "Pave_Canto meets Pave_CantoKit in a hard line with no kerb",
+    "x": 194.8,
+    "y": 3.16,
+    "z": 183.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Apron_Espina_E_0_0",
+    "detail": "Pave_CantoKit meets Apron_Espina_E_0_0 in a hard line with no kerb",
+    "x": 195.4,
+    "y": 2.0,
+    "z": 206.8
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_A",
+    "street": null,
+    "where": "seam Pave_CantoKit/Apron_Espina_E_0_0",
+    "detail": "Pave_CantoKit meets Apron_Espina_E_0_0 in a hard line with no kerb",
+    "x": 195.4,
+    "y": 2.02,
+    "z": 208.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Canto_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 194.8,
+    "y": -0.19,
+    "z": 223.0
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "STREET_I",
+    "street": null,
+    "where": "seam Apron_San_Pedro_Salida_1_1/Apron_San_Pedro_Salida_1_0",
+    "detail": "Apron_San_Pedro_Salida_1_1 meets Apron_San_Pedro_Salida_1_0 in a hard line with no kerb",
+    "x": 196.0,
+    "y": 10.43,
+    "z": 15.4
+  },
+  {
+    "kind": "SEAM_NO_KERB",
+    "unit": "OTHER",
+    "street": null,
+    "where": "seam Pave_CantoKit/Pave_Canto_Viejo",
+    "detail": "Pave_CantoKit meets Pave_Canto_Viejo in a hard line with no kerb",
+    "x": 196.0,
+    "y": -0.02,
+    "z": 223.0
+  }
+]
