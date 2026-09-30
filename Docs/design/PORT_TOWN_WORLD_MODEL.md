@@ -1,11 +1,11 @@
 # Port-town world model
 
-Status: **CURRENT PRODUCT PLANNING MODEL**  
-Date: 2026-09-28 (amended 2026-09-29: CASCO reference, terrain and water)
+Status: **CURRENT PRODUCT PLANNING MODEL — COMPACT CITY REBASELINE IN PROGRESS**  
+Date: 2026-09-30 (compact semantic-city amendment; preserves accepted five-zone roles)
 
 ## Setting scale
 
-The final setting is a **large fictional port town in northern Spain**, with a late-1990s / early-2000s feel. It should read socially as a substantial town/comarca hub rather than an anonymous major city: repeated faces, family/business connections, rumours, reputations and reasons to encounter the same people across days.
+The final setting is a **compact but substantial fictional port town in northern Spain**, with a late-1990s / early-2000s feel. It should read socially as a comarca hub rather than an anonymous major city: repeated faces, family/business connections, rumours, reputations and reasons to encounter the same people across days. Production should favor unusually high consequence per metre over geographical breadth.
 
 The final proper name is **undecided**. Do not bake `Villa Bruma` or any other provisional name into keeper signage, assets or UI.
 
@@ -13,7 +13,7 @@ This document owns neighbourhood **roles**. `Docs/workpacks/WP-CITY-URBAN-00.md`
 
 ## Five production neighbourhoods
 
-These are production/world-organization zones, not necessarily formal municipal districts:
+These are production/world-organization **identities**, not five equal-size maps or hard municipal districts. They belong to one continuous compact town and may overlap perceptually at their seams:
 
 - `CASCO` — dense old town; civic/family/day uses plus the **primary nightlife pole** in a bounded lower/central strip.
 - `MERCADO` — main repeat-visit commercial/everyday zone; cafés, ordinary bars, restaurants and shopping.
@@ -22,6 +22,25 @@ These are production/world-organization zones, not necessarily formal municipal 
 - `VIVIENDAS` — lower-intensity residential fabric and quieter night contrast.
 
 Nightlife is a **city layer**, not a sixth dedicated district. Casco is primary; Talleres secondary; Mercado has ordinary evening life; Muelle has night work; Viviendas quiets down.
+
+### Compact semantic-city scale (owner amendment 2026-09-30)
+
+Physical ENV01 evidence showed that visual parcel grain and gameplay building grain must be separated before city breadth continues.
+
+Planning orientation, subject to the CASCO-V2 pilot:
+
+- approximately **90–130 SemanticBuildings across the whole town**, not hundreds per zone;
+- approximately **30–40 SemanticBuildings in CASCO**;
+- five neighbourhood names remain five functional identities, but **must not become five ENV01-sized districts**;
+- CASCO should plausibly occupy about **15–25% of final urban playable surface**, with uneven zone sizes and soft transitions;
+- current ENV01's ~196x236 m extent is reference evidence, not a required final footprint;
+- effective CASCO compression of roughly **30–45%** is allowed where it removes low-value breadth while preserving route identity, views and character.
+
+The structural model is:
+
+`FacadeCell != SemanticBuilding != InteriorProgramme`
+
+Several apparent narrow historic frontage bodies may belong to one larger semantic/gameplay property. Every retained urban area must have a deliberate role; generator provenance such as `yard` or `huerta` does not by itself prove gameplay value.
 
 ### CASCO reference, terrain and water (owner decisions 2026-09-28, district approved 2026-09-29)
 
