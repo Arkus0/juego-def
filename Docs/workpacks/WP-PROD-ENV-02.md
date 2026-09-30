@@ -70,9 +70,25 @@ Retain evidence that:
 - area/lasso selection can bound at least one fill, validation or AI request;
 - AI-created accepted multi-object content can become a reusable catalogue/assembly unit with lineage;
 - no unlicensed/reference-only prior-art code was imported into production;
-- optional third-party geometry integrations, if used, remain separable from Director core and do not become canonical ENV authority.
+- optional third-party geometry integrations, if used, remain separable from Director core and do not become canonical ENV authority;
+- juego-def project authority and AI-provider integrations remain behind explicit adapters rather than leaking through Director Core.
 
 The evidence should identify any third-party MIT code actually reused and retain required notices.
+
+## Portability + provider-neutrality proof
+
+ENV-02 must retain a small architecture proof that Director is a reusable product layer rather than a juego-def-only editor.
+
+The proof does **not** require packaging or publishing a separate Unity asset. It must show:
+
+- Director Core code does not directly depend on CASCO IDs, juego-def repository paths or concrete trace/spec/polish types for normal selection/catalogue/preview/AI-context behavior;
+- juego-def persistence, rebuild, lineage and validators are reached through a project/authoring adapter boundary;
+- the AI request/proposal contract exists in a provider-neutral form before translation to the active provider/operator;
+- disabling the configured AI provider leaves normal Director selection, placement, chains, map expansion, save/rebuild and validation functional;
+- provider failure or malformed output leaves canonical ENV authority unchanged;
+- adding a hypothetical second provider is structurally an adapter task rather than a rewrite of Director Core.
+
+A second live AI provider is **not** required for PASS. The proof is architectural separability, not provider-count theatre.
 
 ## Optional geometry-tool proof
 
@@ -114,6 +130,7 @@ PASS when:
 - AI-supplied reusable content enters the same catalogue/placement path;
 - the complete human-build -> AI-supply -> rebuild/validate -> human-correct loop is proven;
 - semantic pick, ghost preview, native Undo, isolated thumbnails, semantic chain editing and bounded area selection are proven on real content;
+- Director Core/project-adapter separation and provider-neutral AI request/proposal boundaries are evidenced without requiring a second live provider;
 - route/collision validation passes or documented defects are repaired;
 - later builds show materially lower rediscovery/setup friction than the first;
 - owner accepts the environment quality/direction;
