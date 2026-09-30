@@ -1,6 +1,6 @@
 # Roadmap jugable
 
-Status: **COMPACT SEMANTIC CITY REBASELINE CANDIDATE / BEFORE FURTHER ENV SCALE** — ENV01 closure, Director D0/D1 and other useful lane work remain independent
+Status: **CITY-URBAN-00R ACCEPTED / NEXT: CASCO-V2 PILOT** — ENV01 closure, Director D0/D1 and other useful lane work remain independent
 
 ## Immediate sequence
 
@@ -12,7 +12,7 @@ Status: **COMPACT SEMANTIC CITY REBASELINE CANDIDATE / BEFORE FURTHER ENV SCALE*
    - ~~`CITY-URBAN-00`~~ — **done / accepted**: five-zone topology + final B0 Mercado–Muelle route/programme/elevation + factory-demand matrix.
 5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks the graphical factories.
 6. **Factories + human builder — CURRENT:** continue `ENV-01` and `CHAR-01`, and execute **`PROD-ENV-DIRECTOR-00` urgently**. D0/D1 stay focused on safe direct layout editing; later Director milestones add a thumbnail catalogue, game-like placement/manipulation, map expansion and a coherent-content forge that grows the catalogue by reusing/recombining/deriving before generating missing content. ~~`ANIM-01`~~ is **done / accepted**: 254 clips catalogued, 45 sampled on two Humanoid targets and 19 motions admitted across five families, with contact/navigation gaps kept explicit.
-7. **Compact city correction before ENV scale:** independent acceptance of [`CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) freezes scale, `FacadeCell != SemanticBuilding != InteriorProgramme` and deliberate exterior space; then [`PROD-ENV-CASCO-V2-00`](../workpacks/WP-PROD-ENV-CASCO-V2-00.md) tests one K2 block (23 current bodies → 4–7 semantic buildings) against an exact ENV01 reference. No full ENV01 conversion or speculative Director semantic tooling. The pilot does not require ENV01/Director PASS or later factory/integration proofs; it requires accepted rebaseline/bootstrap/ASSET and a reproducible pinned reference.
+7. **Compact city correction before ENV scale:** [`CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) is **accepted** and freezes scale, `FacadeCell != SemanticBuilding != InteriorProgramme` and deliberate exterior space. Next, [`PROD-ENV-CASCO-V2-00`](../workpacks/WP-PROD-ENV-CASCO-V2-00.md) tests one K2 block (23 current bodies → 4–7 semantic buildings) against an exact ENV01 reference. No full ENV01 conversion or speculative Director semantic tooling. The pilot does not require ENV01/Director PASS or later factory/integration proofs; it requires accepted rebaseline/bootstrap/ASSET and a reproducible pinned reference.
 8. **Factory scale proofs** — `ENV-02` requires ENV01 + ENV-DIRECTOR-00 + CITY00R + pilot PASS; it retains **EDIT EXISTING**, **EXPAND MAP**, and **AI-SUPPLIED CONTENT** through the same factory/catalogue/QA path within the compact budget. `CHAR-02` follows CHAR-01; `ANIM-02` consumes accepted ANIM-01 but waits for CHAR-01. UI follows Dialogue.
 9. **B0 Keeper Block (`CITY-URBAN-01`)** — Mercado–Muelle integration remains first keeper block, consuming rebaseline/pilot plus its existing factory/M0 prerequisites.
 10. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.

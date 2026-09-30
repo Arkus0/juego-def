@@ -4,9 +4,9 @@ Status: **WORKER CANDIDATE / PRODUCT HANDOFF**
 Date: 2026-09-28  
 Source WP: `Docs/workpacks/WP-CITY-URBAN-00.md`
 
-## Bounded scale amendment — 2026-09-30 candidate
+## Bounded scale amendment — accepted 2026-09-30
 
-[`WP-CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) reopens only scale, plot-to-building ownership, interior programme/floors and residual-space policy. The proposed binding amendment is [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md). Five zones mean unequal functional identities in one compact continuous town. The tables/edges/B0 roles below remain preserved accepted intent; their lengths/footprints are budgeted during rebaseline, not multiplied into five ENV01-sized maps. Final exact geometry stays physical authoring.
+[`WP-CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) reopens only scale, plot-to-building ownership, interior programme/floors and residual-space policy. The accepted binding amendment is [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md). Five zones mean unequal functional identities in one compact continuous town. The tables/edges/B0 roles below remain preserved accepted intent; their lengths/footprints are budgeted during rebaseline, not multiplied into five ENV01-sized maps. Final exact geometry stays physical authoring.
 
 The CASCO V2 block is a prior spatial experiment, not a replacement for B0 Mercado–Muelle. ENV01 factory/visual-reference closure remains independent. After CITY-00R acceptance, future ENV02/B0 production consumes `FacadeCell != SemanticBuilding != InteriorProgramme`, programme-first interiors and zero unintentional exterior space; shallow pieces remain useful for tasks that fit them.
 

@@ -1,6 +1,6 @@
 # WP-PROD-ENV-CASCO-V2-00 — Semantic Block Pilot
 
-Status: **CONTRACT CANDIDATE / BLOCKED UNTIL CITY-00R ACCEPTED + REFERENCE REPRODUCIBLE**
+Status: **CONTRACT ACCEPTED / NEXT PHYSICAL PILOT / REFERENCE RECONSTRUCTION IS FIRST GATE**
 Class: BOUNDED PRODUCT / ENV REALIZATION EXPERIMENT
 Depends on: `WP-CITY-URBAN-00R` PASS + bootstrap Unity/GC2 PASS + `WP-PROD-ASSET-00` PASS + exact reproducible ENV01 reference snapshot.
 Consumes: active ENV01 factory/catalogue/derived path; current Director only if useful and safe.

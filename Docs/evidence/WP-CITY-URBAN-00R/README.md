@@ -1,7 +1,16 @@
 # CITY-00R — fuente y candidato de arquitectura
 
-Status: **ARCHITECT PRE-REVIEW / INDEPENDENT REVIEW PENDING**
+Status: **ACCEPTED / DOCSYNC COMPLETE**
 Date: 2026-09-30
+
+## Proveniencia aceptada
+
+- Accepted candidate: `09f8b226f432ff8b1bec921ce2a33b88ce3820da`.
+- Canonical PR: `#19`.
+- Independent Reviewer PASS: review `#5369675521`.
+- Merge commit: `8a371790c055f8088fafd231fd4eb7c8873f3012`.
+- DocSync closure: [`DOCSYNC.md`](DOCSYNC.md).
+- El PASS acepta CITY-00R y el contrato del piloto; **no** acepta la implementación CASCO-V2, ENV01, Director, ENV02 ni CITY01.
 
 ## Resultado causal y alcance
 

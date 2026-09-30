@@ -1,11 +1,11 @@
-# Compact Semantic City — arquitectura propuesta
+# Compact Semantic City — arquitectura aceptada
 
-Status: **ARCHITECTURE CANDIDATE / INDEPENDENT REVIEW PENDING**
+Status: **ACCEPTED / CITY-URBAN-00R BASELINE**
 Date: 2026-09-30
 Owns: escala urbana, unidad semántica y espacio deliberado.
 Contracts: [`WP-CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md), después [`WP-PROD-ENV-CASCO-V2-00`](../workpacks/WP-PROD-ENV-CASCO-V2-00.md).
 
-La decisión de dirección viene del Owner en este encargo. Los límites y pruebas numéricas adicionales de este documento son la propuesta del Arquitecto para revisión; no se presentan como mediciones de una ciudad V2 ni como aceptación ya emitida. Al aceptar CITY-00R se congelan como presupuesto inicial; el piloto valida su realización local, no la ciudad entera.
+La decisión de dirección viene del Owner en este encargo. Los límites y pruebas numéricas adicionales se originaron como propuesta del Arquitecto y fueron aceptados por revisión independiente en CITY-00R; no son mediciones de una ciudad V2. Quedan congelados como presupuesto inicial. El piloto valida su realización local, no la ciudad entera.
 
 ## Causa y corrección
 

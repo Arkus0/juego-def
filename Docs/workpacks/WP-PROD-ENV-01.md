@@ -5,7 +5,7 @@ Class: PRODUCTION FACTORY / ENVIRONMENT
 Depends on: `WP-PROD-ASSET-00` PASS + `WP-CITY-URBAN-00` PASS  
 Blocks: `WP-PROD-ENV-02`
 
-2026-09-30 architecture candidate: [`WP-CITY-URBAN-00R`](WP-CITY-URBAN-00R.md) and [`WP-PROD-ENV-CASCO-V2-00`](WP-PROD-ENV-CASCO-V2-00.md) insert compact semantic-city proof before later ENV scale. They do **not** add a retroactive pilot requirement to ENV01 closure or discard its factory/visual reference. ENV01 PASS alone does not approve its 311 visual bodies as 311 final city properties. The current shared ENV01 implementation/reference is not modified by this documentation proposal.
+2026-09-30 accepted architecture amendment: [`WP-CITY-URBAN-00R`](WP-CITY-URBAN-00R.md) and the accepted [`WP-PROD-ENV-CASCO-V2-00`](WP-PROD-ENV-CASCO-V2-00.md) contract insert compact semantic-city proof before later ENV scale. They do **not** add a retroactive pilot requirement to ENV01 closure or discard its factory/visual reference. ENV01 PASS alone does not approve its 311 visual bodies as 311 final city properties. The current shared ENV01 implementation/reference is not modified by this documentation proposal.
 
 ## Claim
 

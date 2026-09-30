@@ -1,7 +1,11 @@
 # WP-CITY-URBAN-00R — Compact Semantic City Rebaseline
 
-Status: **CONTRACT + ARCHITECTURE CANDIDATE / NOT ACCEPTED**
+Status: **PASS / ACCEPTED ARCHITECTURE BASELINE**
 Class: PRODUCT ARCHITECTURE / BOUNDED CITY REBASELINE / DOCS ONLY
+Accepted candidate: `09f8b226f432ff8b1bec921ce2a33b88ce3820da`
+Reviewer PASS: PR #19 review `#5369675521`
+Merge: `8a371790c055f8088fafd231fd4eb7c8873f3012`
+DocSync: `Docs/evidence/WP-CITY-URBAN-00R/DOCSYNC.md`
 Depends on: `WP-CITY-URBAN-00` PASS; current product authorities; exact ENV01 reference as evidence input (ENV01 PASS is not required).
 Blocks: `WP-PROD-ENV-CASCO-V2-00`, new ENV scene-scale production under `WP-PROD-ENV-02`, and revised `WP-CITY-URBAN-01`.
 Does not block: ENV01 closure under its existing factory claim; Director D0/D1; CHAR/ANIM/M0/Dialogue work with preserved requirements.
@@ -10,7 +14,7 @@ Does not block: ENV01 closure under its existing factory claim; Director D0/D1; 
 
 Freeze one compact continuous city grammar in which **FacadeCell, SemanticBuilding and InteriorProgramme are different units**. Bound city size, functional depth and intentional space before producing more ENV. Reopen only the inherited CITY decisions causally contradicted by ENV01's fine plot/threshold morphology; retain the useful topology, five identities and B0 brief.
 
-This WP proves an actionable architecture and budget, not a playable city or the success of its pilot. The proposed baseline is [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](../design/COMPACT_SEMANTIC_CITY_REBASELINE.md). Its numeric guardrails are proposed here for independent review, distinct from Owner-provided directional counts.
+This WP proves an actionable architecture and budget, not a playable city or the success of its pilot. The accepted baseline is [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](../design/COMPACT_SEMANTIC_CITY_REBASELINE.md). Its numeric guardrails originated as Architect proposals and were accepted by independent review, distinct from Owner-provided directional counts.
 
 ## Inputs / binding authorities
 
@@ -97,6 +101,6 @@ Reviewer should try: a 130-building city spread over huge scenic gaps; one build
 
 Finish docs/evidence; stop overlapping writers in the candidate checkout; commit the complete candidate; read exact 40-character `PRODUCT_SHA`; run relevant documentation/graph/source-integrity checks; inspect full baseline diff and attempt the falsifiers above; freeze for a **fresh** Reviewer. Later commits create a new candidate. Worker/Architect pre-review is readiness evidence only. Do not run Unity merely to close this WP.
 
-## Next work unlocked
+## Current handoff after acceptance
 
-After independent PASS/acceptance: execute the one-block pilot using the frozen grammar. ENV01 closure and Director D0/D1 can progress independently. After pilot PASS, adapt only evidenced production limitations and proceed to ENV02, then B0 integration. New scale/content never inherits an implicit requirement to reproduce the full current CASCO footprint.
+Execute the one-block pilot using the frozen grammar. ENV01 closure and Director D0/D1 can progress independently. After pilot PASS, adapt only evidenced production limitations and proceed to ENV02, then B0 integration. New scale/content never inherits an implicit requirement to reproduce the full current CASCO footprint.

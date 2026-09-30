@@ -3,7 +3,7 @@
 Status: **CURRENT PRODUCT / PRODUCTION DEMAND BASELINE**  
 Date: 2026-09-28
 
-Compact-city amendment proposed 2026-09-30: [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md), through `WP-CITY-URBAN-00R`. B0 remains Mercado–Muelle; its anchors, routes, access and port/elevation roles below are preserved. CASCO-V2 is a preceding programme/scale experiment, not B0 integration acceptance. Illustrative coordinates and frontage rows do not determine separate buildings or justify growing the city to fit the old diagram.
+Compact-city amendment accepted 2026-09-30: [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md), through `WP-CITY-URBAN-00R`. B0 remains Mercado–Muelle; its anchors, routes, access and port/elevation roles below are preserved. CASCO-V2 is a preceding programme/scale experiment, not B0 integration acceptance. Illustrative coordinates and frontage rows do not determine separate buildings or justify growing the city to fit the old diagram.
 
 ## Purpose
 

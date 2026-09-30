@@ -10,7 +10,7 @@ This directory turns the roadmap into executable product/production contracts. T
 The separation is deliberate:
 
 - `CITY-URBAN-00` = **what town/block we need** — accepted;
-- `CITY-URBAN-00R` = **compact semantic-city amendment** — architecture candidate; then `PROD-ENV-CASCO-V2-00` proves one programme-designed block before ENV scale;
+- `CITY-URBAN-00R` = **compact semantic-city amendment** — accepted; then `PROD-ENV-CASCO-V2-00` proves one programme-designed block before ENV scale;
 - `PROD-ASSET-00` = **shared lawful production substrate** — accepted;
 - `PROD-ANIM-01` = **animation intake/retarget/admission factory** — accepted;
 - `PROD-ENV/CHAR` = **remaining graphical factories**;
@@ -76,14 +76,14 @@ CITY-00 + CITY-00R + pilot + ENV-02 + M0 + CHAR-02 + ANIM-02 + UI-01
 pilot -- evidence only --> later Director semantic capability disposition
 ```
 
-`CITY-URBAN-00`, `PROD-ASSET-00` and `PROD-ANIM-01` remain accepted. Compact-city amendment/pilot are candidates, not accepted implementation. Director retains its existing gate before ENV02; its D0/D1 and transactional repair can proceed in parallel, without semantic upgrades or a pilot dependency. The pilot uses bounded operator/native authoring and needs a reproducible ENV01 reference, not ENV01/Director PASS. See the [before/after DAG and preserve/reopen ledger](../design/COMPACT_SEMANTIC_CITY_REBASELINE.md). ANIM02 retains CHAR01 as prerequisite.
+`CITY-URBAN-00`, `CITY-URBAN-00R`, `PROD-ASSET-00` and `PROD-ANIM-01` are accepted. CASCO-V2 is the next physical pilot and is not yet implemented. Director retains its existing gate before ENV02; its D0/D1 and transactional repair can proceed in parallel, without semantic upgrades or a pilot dependency. The pilot uses bounded operator/native authoring and needs a reproducible ENV01 reference, not ENV01/Director PASS. See the [before/after DAG and preserve/reopen ledger](../design/COMPACT_SEMANTIC_CITY_REBASELINE.md). ANIM02 retains CHAR01 as prerequisite.
 
 ## Workpacks
 
 | WP | Outcome | Depends on |
 | --- | --- | --- |
 | `WP-CITY-URBAN-00` ✅ | Five-zone topology + accepted B0 programme/route/elevation + factory-demand matrix | **PASS / accepted** |
-| `WP-CITY-URBAN-00R` | Compact scale + separate cells/buildings/programmes + zero residual space | CITY00 PASS + current authorities + exact ENV01 reference input |
+| `WP-CITY-URBAN-00R` ✅ | Compact scale + separate cells/buildings/programmes + zero residual space | **PASS / accepted** |
 | `WP-PROD-ENV-CASCO-V2-00` | One K2 semantic block pilot; radical utility with retained ENV01 character | CITY00R PASS + bootstrap/ASSET PASS + reproducible exact ENV01 reference |
 | `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
@@ -101,6 +101,6 @@ pilot -- evidence only --> later Director semantic capability disposition
 
 ## Immediate sequence
 
-**Review/accept CITY-URBAN-00R, then execute the one-block CASCO-V2 pilot before new ENV scale.** ENV01 closure, CHAR01 and useful Director work remain independent; ANIM01 is complete. This documentation candidate does not authorize Unity implementation or modification of the shared ENV01 checkout.
+**Execute the one-block CASCO-V2 pilot before new ENV scale.** CITY-URBAN-00R is accepted; reference reconstruction is the pilot's first material gate. ENV01 closure, CHAR01 and useful Director work remain independent; ANIM01 is complete. This documentation candidate does not authorize Unity implementation or modification of the shared ENV01 checkout.
 
 The first Director milestones remain deliberately small: D0/D1 direct Scene View layout manipulation with safe SAVE / REVERT / REBUILD / PLAY HERE. **Do not restart already-running D0/D1 work.** D2 then makes the tool a real builder with a thumbnail catalogue, semantic pick, ghost placement/snap, native Undo and direct manipulation; D3 adds map expansion; D4 adds the **Coherent Content Forge**: selection-context requests use a project Style Profile and prefer REUSE → RECOMBINE → DERIVE before generating missing content, with Admission Gate before reusable catalogue entry. D2-D5 must reuse proven Unity-editor patterns from inspected prior art rather than reinvent basic picking/placement/line/lasso/thumbnail mechanics, while respecting source licenses. UModeler X may be consumed through an **optional geometry-editor adapter** for advanced selected-object mesh edits, but Director must remain fully functional and commercially separable without it. ENV-02 waits for Director PASS. ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.

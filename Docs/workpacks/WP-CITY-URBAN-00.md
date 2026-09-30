@@ -12,7 +12,7 @@ Implementation merge: `2fdd75d6db10d71e5676c0b0d1c161d100e11c15`
 Owner acceptance: `2026-09-28`  
 DocSync: `Docs/evidence/WP-CITY-URBAN-00/DOCSYNC.md`
 
-Bounded amendment candidate (2026-09-30): [`WP-CITY-URBAN-00R`](WP-CITY-URBAN-00R.md) revises scale, semantic-building/programme ownership and residual-space policy. This accepted WP's five roles, U01–U07/U08 optional, B0 programme/loops/access and provenance remain valid; its acceptance is not revoked or reissued. New bounds are owned by the rebaseline after its independent acceptance.
+Accepted bounded amendment (2026-09-30): [`WP-CITY-URBAN-00R`](WP-CITY-URBAN-00R.md) revises scale, semantic-building/programme ownership and residual-space policy. This accepted WP's five roles, U01–U07/U08 optional, B0 programme/loops/access and provenance remain valid; its acceptance is not revoked or reissued. New bounds are owned by the rebaseline after its independent acceptance.
 
 ## Claim
 

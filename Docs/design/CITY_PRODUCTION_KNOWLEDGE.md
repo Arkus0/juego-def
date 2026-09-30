@@ -15,7 +15,7 @@ The key separation for juego-def is:
 
 The current first-block demand brief is [`FIRST_KEEPER_BLOCK_B0.md`](FIRST_KEEPER_BLOCK_B0.md).
 
-Owner direction 2026-09-30 is one compact continuous city of five unequal functional identities. The bounded architecture candidate [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md) / `WP-CITY-URBAN-00R` owns the revised scale, semantic grammar and zero-residual-space rule. Existing CITY topology/B0 and ENV01 visual vocabulary remain useful; the CASCO pilot tests their physical composition before further scale.
+Owner direction 2026-09-30 is one compact continuous city of five unequal functional identities. The accepted compact-city baseline [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md) / `WP-CITY-URBAN-00R` owns the revised scale, semantic grammar and zero-residual-space rule. Existing CITY topology/B0 and ENV01 visual vocabulary remain useful; the CASCO pilot tests their physical composition before further scale.
 
 ## Knowledge retained from CITY-00..06
 
