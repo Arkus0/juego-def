@@ -84,13 +84,22 @@ Celdas de fachada actuales del casco: **9.816** totales (3.190 de frente).
 | calle (buffers del generador + puentes/escaleras) | 5.662,3 | 12,2 % |
 | plaza | 1.521,1 | 3,3 % |
 | agua (canal) | 1.094,6 | 2,4 % |
-| ground deliberado (yard+huerta) | 21.327,6 | 46,1 % |
+| ground deliberado (yard+huerta, tags del generador) | 21.327,6 | 46,1 % |
 | muro ( strips 0,6 m) | 226,5 | 0,5 % |
 | **residual (no clasificado)** | **2.170,1** | **4,7 %** |
 
 Solapes crudos de interés (pre-prioridad): plaza∩calle 335,6 · edificio∩calle 129,7 ·
 ground deliberado∩edificio 182,4 · calle∩agua 70,2 (pasos de puente) · edificio∩agua 16,1.
 Referencia informativa: el estudio Potes marca 41 % de edificación en su box.
+
+**Advertencia sobre "deliberate_ground" (corrección del Owner 2026-09-30):**
+`deliberate` significa **"clasificado intencionalmente por el generador"** (zonas
+taggeadas `yard`/`huerta` al generar el distrito) y **NO "validado como útil para
+CASCO-V2"**. Una huerta gigantesca cae en esta clase sólo por su tag. El 46,1 % no
+debe preservarse automáticamente por llevar la etiqueta; qué parte de ese ground es
+jugablemente justificable es una decisión de diseño abierta (registrada, no
+resuelta). La misma advertencia viaja en `stats.surface_classification.deliberate_note`
+del JSON y en la leyenda del overlay.
 
 ## 7. Hallazgos mecánicos (flags automáticos, dependen del config)
 
@@ -109,9 +118,12 @@ Referencia informativa: el estudio Potes marca 41 % de edificación en su box.
 
 Definición exacta: toda corrida contigua de 2–6 edificios en la misma fila, sin muro
 ni hueco de x0 entre medios (contigüidad medida, no asumida: 0 violaciones).
-**342 candidatos**: tamaño 2→166, 3→87, 4→51, 5→25, 6→13. 49 contienen algún
-miembro flaggeado; 5 contienen landmark (Torre/casona); detalle completo en
-`stats.json.candidates`.
+**342 candidatos**: tamaño 2→166, 3→87, 4→51, 5→25, 6→13. **49 contienen algún
+miembro rojo** (edificio bajo el mínimo heurístico de footprint O frontage);
+**66 contienen algún miembro estrecho** (banda ámbar, w ≤ 4,6 m — incluye a los
+rojos que también sean estrechos; las bandas solapan); 5 contienen landmark
+(Torre/casona); detalle completo en `stats.json.candidates`
+(`with_below_minimum_member` / `with_narrow_member`).
 
 Por candidato (columnas en `candidates.csv`): IDs, frontage combinado, depth
 min/max, footprint sumado y de unión/hull, floors min/max, **celdas de fachada
@@ -133,7 +145,25 @@ casona; **ejemplos de filas del CSV, no una selección ni una recomendación**):
 | K16_3_00_6 | K16_3_0…5 | 53,0 m | 4–6 | 285,4 m² | 134 (de 180) | 6 | 12,5 m² | tocando |
 | K14_3_00_6 | K14_3_0…5 (incl. casona) | 44,0 m | 6–8 | 339,8 m² | 142 (de 226) | 6 | 19,0 m² | tocando |
 
-## 9. Ambigüedades registradas (NO resueltas)
+## 9. Inspección visual (mapas desde el propio JSON)
+
+`Tools/casco_diag_render_maps.py` rasteriza el MISMO `casco_diagnostic.json` que
+dibuja el overlay (Pillow, determinista, doble render byte-idéntico; validación
+píxel↔área: ratios 0,88–1,21 explicables por contornos/orden de capas, y el
+residual a 0,72 porque el overlay sólo lleva componentes ≥1 m² simplificados).
+Estos mapas NO son capturas del SceneView de Unity; esa pasada sigue en
+`RUNBOOK_OVERLAY.md` como paso de operador.
+
+| mapa | qué muestra |
+|---|---|
+| `captures/map_01_overview.png` | todo: clases de superficie + parcelas rojo/ámbar/verde + residual |
+| `captures/map_02_residual.png` | residual resaltado; los 3 mayores por centroide: banda sur-centro (74,24 → ≈572 m²), franja pegada al borde este (194,82 → ≈230 m²), parche norte-centro junto al borde superior (86,234 → ≈98 m²); + anillo perimetral del dominio |
+| `captures/map_03_deliberate.png` | ground deliberado POR TAG: losas enormes en cuadrante SE, borde este y sur — exactamente el caso "tag ≠ validación" del Owner |
+| `captures/map_04_deficient.png` | rojos/ámbar concentrados de NO a SE con las callejas/secundarias (Ronda_Huertas, Calle_Alta, Cimavilla, Llano); los 3 edificios de 1 bay etiquetados |
+| `captures/map_05_candidates_all.png` | los 342 hulls de candidatura sobre la trama |
+| `captures/map_06_candidates_red.png` | los 49 candidatos con algún miembro rojo, etiquetados `tamaño·frontage` |
+
+## 10. Ambigüedades registradas (NO resueltas)
 
 - **A1** No existe umbral autoritativo de "interior jugable"; los mínimos son
   heurísticas del config.
@@ -149,7 +179,7 @@ casona; **ejemplos de filas del CSV, no una selección ni una recomendación**):
 - **A7** `entrances_assumed` deriva de `noEntrance`; no se ejecuta el grammar para
   contar portales reales.
 
-## 10. Cumplimiento de restricciones duras
+## 11. Cumplimiento de restricciones duras
 
 No se movió ni modificó nada de ENV01: el tool sólo lee JSONs; el overlay
 `EnvCascoDiag.cs` dibuja con Handles en SceneView (cero GameObjects, cero escrituras
@@ -157,11 +187,12 @@ de escena, cero saves) y su verificación es read-only. Escena/spec/trace quedan
 byte-idénticos (verificable con `git status` y los SHA del §1). Ningún output decide
 usos ni diseño; toda heurística está en el config versionado.
 
-## 11. Archivos de este paquete
+## 12. Archivos de este paquete
 
 - `casco_diagnostic.json` — todo (plots, vecinos, candidatos, stats, checks,
   config embebida, manifest, polígonos para overlay).
 - `plots.csv` / `candidates.csv` — tablas machine-readable.
 - `stats.json` — stats + checks.
 - `scene_crosscheck.json` — verificación contra la escena commitada.
+- `captures/map_01..06_*.png` — inspección visual (§9).
 - `REPRODUCE.md` / `RUNBOOK_OVERLAY.md` / `README.md`.

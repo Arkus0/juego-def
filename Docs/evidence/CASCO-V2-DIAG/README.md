@@ -10,6 +10,7 @@ Paquete de evidencia del workpack de diagnóstico (Owner-directo, ejecutado sobr
 | `plots.csv` · `candidates.csv` | tablas por parcela y por candidato |
 | `stats.json` | estadísticas + checks |
 | `scene_crosscheck.json` | 27/27 muestras vs escena commitada, delta máx 0,5 mm |
+| `captures/map_01..06_*.png` | inspección visual (renders de datos, no SceneView) |
 | `REPRODUCE.md` · `RUNBOOK_OVERLAY.md` | reproducción numérica · overlay Unity |
 
 Restricciones respetadas: nada de ENV01 se movió, fusionó ni modificó; los

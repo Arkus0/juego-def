@@ -17,12 +17,15 @@ nada, no toca Undo. Cerrar la ventana elimina el dibujo.
    perspectiva a altura de calle para detalle):
    - **rojo** = parcela bajo el mínimo heurístico de interior (footprint o frontage);
    - **ámbar** = estrecha (≤ 4,6 m) pero sobre el mínimo;
-   - **verde** = individualmente razonable;
+   - **verde** = `above_current_minimum_heuristic`: supera la heurística mínima
+     provisional. NO significa "individualmente razonable" — no existe umbral
+     autoritativo todavía (corrección del Owner 2026-09-30);
    - **contorno azul + etiqueta** = candidato de agrupación 2–6 (sólo datos);
-     el slider de tamaño y el toggle "solo con miembros flaggeados" reducen el
-     ruido de 342 hulls;
-   - **amarillo** = residual no clasificado; **cian** = espacio urbano deliberado
-     (calles, plazas, agua, yards/huertas).
+     el slider de tamaño y el toggle "solo con miembros rojos (bajo mínimo)"
+     reducen el ruido de 342 hulls;
+   - **amarillo** = residual no clasificado; **cian** = deliberado según TAGS del
+     GENERADOR (calles, plazas, agua, yards/huertas) — clasificado
+     intencionalmente al generar, NO validado como útil para CASCO-V2.
 4. Botón `Verify 5 sampled buildings`: escribe en consola `JD_CASCO_DIAG …
    OK/FAIL` comparando transforms de K8_3_0, K14_3_0, K14_1_0, K11_0_1, K14_3_6
    contra el JSON (tolerancia 2 mm; la prueba completa 27/27 está en
@@ -39,6 +42,10 @@ nada, no toca Undo. Cerrar la ventana elimina el dibujo.
 
 ## Estado
 
-- [ ] Capturas del overlay — PENDIENTE de operador (este entorno no tenía Unity
-      MCP disponible; el núcleo numérico no depende de Unity).
+- [x] **Inspección visual realizada** (2026-09-30) vía `Tools/casco_diag_render_maps.py`:
+      6 mapas deterministas renderizados desde el mismo `casco_diagnostic.json`
+      (ver `captures/` y la sección "Inspección visual" del informe). Son renders
+      de datos, no capturas de SceneView.
+- [ ] Capturas del SceneView de Unity — paso final de operador (este entorno no
+      exponía Unity MCP; el núcleo numérico no depende de Unity).
 - [x] Verificación por consola implementada (read-only).

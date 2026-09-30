@@ -10,6 +10,10 @@ python Tools/casco_diagnostic.py --out Docs/evidence/CASCO-V2-DIAG
 # 2) cross-check contra los bytes commitados de la escena (streaming YAML, sin Unity)
 python Tools/casco_diag_scene_crosscheck.py
 
+# 2b) mapas de inspección visual (renders Pillow desde el JSON; deterministas)
+python Tools/casco_diag_render_maps.py
+python Tools/casco_diag_render_maps.py --out "$TEMP/captures_rerun"   # deben ser byte-idénticos
+
 # 3) determinismo: segunda corrida a carpeta temporal y comparar hashes
 python Tools/casco_diagnostic.py --out "$TEMP/casco_diag_rerun"
 sha256sum Docs/evidence/CASCO-V2-DIAG/casco_diagnostic.json "$TEMP/casco_diag_rerun/casco_diagnostic.json"

@@ -692,11 +692,13 @@ def make_stats(spec, recs, cands, areas, domain, cfg, overlaps, raw_areas):
             "by_size": {str(s): sum(1 for c in cands if c["size"] == s)
                         for s in cfg["heuristics"]["candidate_sizes"]},
             "back_flags": dict(Counter(c["back_flag"] for c in cands)),
-            "with_small_members": sum(1 for c in cands if c["n_small_members"] > 0),
+            "with_below_minimum_member": sum(1 for c in cands if c["n_small_members"] > 0),
+            "with_narrow_member": sum(1 for c in cands if c["n_narrow_members"] > 0),
             "with_landmark": sum(1 for c in cands if c["landmark_ids"]),
         },
         "surface_classification": {
             "domain_area_m2": domain_area,
+            "deliberate_note": "deliberate_ground = clasificado intencionalmente por el generador (zonas taggeadas yard/huerta). NO implica validacion de uso, tamano o valor para CASCO-V2; el 46% no debe preservarse automaticamente por llevar esta etiqueta.",
             "priority": cfg["classification"]["priority"],
             "areas_m2": area_cls,
             "areas_pct": {k: r3(100.0 * v / domain_area) for k, v in area_cls.items()},

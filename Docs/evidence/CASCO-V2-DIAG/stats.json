@@ -288,8 +288,9 @@
         "6": 13
       },
       "total": 342,
+      "with_below_minimum_member": 49,
       "with_landmark": 5,
-      "with_small_members": 49
+      "with_narrow_member": 91
     },
     "counts": {
       "buildings": 311,
@@ -500,6 +501,7 @@
         "wall": 0.49,
         "water": 2.366
       },
+      "deliberate_note": "deliberate_ground = clasificado intencionalmente por el generador (zonas taggeadas yard/huerta). NO implica validacion de uso, tamano o valor para CASCO-V2; el 46% no debe preservarse automaticamente por llevar esta etiqueta.",
       "domain_area_m2": 46256.0,
       "overlaps_m2": {
         "building_x_plaza": 5.348,

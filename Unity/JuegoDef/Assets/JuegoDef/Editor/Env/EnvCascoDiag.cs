@@ -333,7 +333,7 @@ namespace JuegoDef.Env
             EditorGUILayout.LabelField("source", _source);
             EditorGUILayout.Space();
 
-            _layerPlots = EditorGUILayout.Toggle("Plots (small/narrow/ok)", _layerPlots);
+            _layerPlots = EditorGUILayout.Toggle("Plots (red=below min / amber=narrow / green=above min)", _layerPlots);
             _layerCands = EditorGUILayout.Toggle("Grouping candidates", _layerCands);
             _layerResidual = EditorGUILayout.Toggle("Residual gaps", _layerResidual);
             _layerDeliberate = EditorGUILayout.Toggle("Deliberate urban space", _layerDeliberate);
@@ -341,15 +341,15 @@ namespace JuegoDef.Env
             _alpha = EditorGUILayout.Slider("Fill alpha", _alpha, 0.05f, 0.6f);
             EditorGUILayout.MinMaxSlider("Candidate size", ref _candMin, ref _candMax, 2, 6);
             _onlyDeficientCands = EditorGUILayout.Toggle(
-                "Only candidates with flagged members", _onlyDeficientCands);
+                "Only candidates with red (below-minimum) members", _onlyDeficientCands);
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Legend");
-            EditorGUILayout.LabelField("  ■ red", "below heuristic interior minimum");
+            EditorGUILayout.LabelField("  ■ red", "below current minimum heuristic (NOT 'unreasonable' — no authoritative threshold exists)");
             EditorGUILayout.LabelField("  ■ amber", $"narrow (<= {NarrowLimit()} m) but above minimum");
-            EditorGUILayout.LabelField("  ■ green", "individually reasonable");
+            EditorGUILayout.LabelField("  ■ green", "above_current_minimum_heuristic (not 'reasonable' — provisional thresholds only)");
             EditorGUILayout.LabelField("  ■ yellow", "residual / unclassified");
-            EditorGUILayout.LabelField("  ■ cyan", "deliberate: street, plaza, water, yard");
+            EditorGUILayout.LabelField("  ■ cyan", "deliberate per GENERATOR tags (street, plaza, water, yard) — not validated for V2");
             EditorGUILayout.LabelField("  □ blue", "2-6 plot grouping candidate (data only)");
             EditorGUILayout.HelpBox(_thresholds, MessageType.None);
 
