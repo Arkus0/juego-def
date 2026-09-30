@@ -863,6 +863,7 @@ namespace JuegoDef.Env
             foreach (JObject pz in (JArray)spec["plazas"])
                 DressPlaza(pl, pz, seed++);
             StreetFurniture(root);
+            PropLogic(root);
             GroundContact(root);
             HeroCables(root);
             RiverPromenade(root);
@@ -1528,8 +1529,117 @@ namespace JuegoDef.Env
             if (bike) EnvKit.Remap(bike, new Dictionary<string, string> { { "ENV_Paint_Red", "ENV_PropMat_Verde" } });
         }
 
-        /// <summary>Ground contact of what stands in front of the facades (pots, benches, chairs, bicycles, goods):
-        /// facades are assembled at the plot's level, the paving in front can fall or rise, and in a few places it is
+        /// <summary>Prop sense pass (owner walk 30-09, class "PROP_LOGIC"): furniture that makes no sense to a person —
+        /// a chalkboard buried in the terrace barrel, a stool facing a blank wall, a bicycle on a bench, a pot planted
+        /// inside its trough. Pure geometry after the generators: nothing is re-rolled and no shared-rng draw is added
+        /// or removed; pieces are pushed apart, turned to face what they belong to, or removed when no placement can
+        /// give them a function. Crosses dressing groups (a bike on the neighbour's bench). Runs before GroundContact
+        /// so everything moved is seated again.</summary>
+        static int PropLogic(Transform root)
+        {
+            const int version = 2;   // world-space StepAside, cross-group pairs, chair recheck+remove; bump to force a fresh-assembly check
+            Debug.Log($"JD_PROPLOGIC v{version}");
+            Physics.SyncTransforms();
+            int fixes = 0;
+            var all = root.GetComponentsInChildren<Transform>(true)
+                .Where(t => t.parent != null && t.parent.name == "Dressing").ToList();
+            Bounds B(Transform t) { var r = t.GetComponentInChildren<Renderer>(); return r != null ? r.bounds : new Bounds(t.position, Vector3.one * 0.4f); }
+            // world-space step along the mover's own facade line, away from the other piece (local x of different
+            // dressing groups is not comparable: buildings across a street face opposite ways)
+            void StepAside(Transform mover, Transform away, float dist)
+            {
+                var axis = mover.parent.rotation * Vector3.right;
+                float s = Vector3.Dot(away.position - mover.position, axis) >= 0 ? 1f : -1f;
+                mover.position += axis * (s * dist);
+            }
+            foreach (var it in all.ToList())
+            {
+                if (!it) continue;
+                string n = it.name;
+                var ba = B(it);
+                if (n == "ENV_AFrame_Board")
+                {
+                    foreach (var o in all)
+                    {
+                        if (!o || o == it) continue;
+                        if (o.name != "ENV_Prop_Barrel" && o.name != "ENV_Cafe_Table" && !o.name.StartsWith("ENV_Prop_FarmCrate") && !o.name.StartsWith("ENV_Prop_Bucket")) continue;
+                        if (!ba.Intersects(B(o))) continue;
+                        StepAside(it, o, 0.95f);
+                        it.position += (it.parent.rotation * Vector3.forward) * 0.35f;
+                        fixes++;
+                        break;
+                    }
+                }
+                else if (n == "ENV_Prop_Stool" || n == "ENV_Cafe_Chair" || n == "ENV_Prop_Chair")
+                {
+                    // a seat faces what it serves: the barrel/table/parasol it was laid round. No host and a wall
+                    // ahead: turn it out to the street; if every way is a wall (wedged at a jamb), it has no
+                    // function there — it goes.
+                    Transform host = null; float best = 1.3f;
+                    foreach (var o in all)
+                    {
+                        if (!o || o == it) continue;
+                        if (o.name != "ENV_Prop_Barrel" && o.name != "ENV_Cafe_Table" && o.name != "ENV_Parasol") continue;
+                        float d = Vector3.Distance(o.position, it.position);
+                        if (d < best) { best = d; host = o; }
+                    }
+                    if (host != null)
+                    {
+                        var fwd = host.position - it.position; fwd.y = 0;
+                        if (fwd.sqrMagnitude > 0.0004f)
+                        {
+                            it.rotation = Quaternion.Euler(0, Mathf.Atan2(fwd.x, fwd.z) * Mathf.Rad2Deg + (Hash01(it.position.x, it.position.z, 61) - 0.5f) * 24f, 0);
+                            fixes++;
+                        }
+                    }
+                    else
+                    {
+                        System.Func<Vector3, float> wallAhead = fwd2 =>
+                            Physics.RaycastAll(it.position + Vector3.up * 0.45f, fwd2, 1.0f)
+                                .Where(h => !h.collider.transform.IsChildOf(it) && h.collider.name != "ENV_Prop_Chair" && h.collider.name != "ENV_Cafe_Chair" && h.collider.name != "ENV_Prop_Stool")
+                                .OrderBy(h => h.distance).FirstOrDefault().collider != null ? 1f : 0f;
+                        if (wallAhead(it.forward) > 0)
+                        {
+                            var dress = it.parent;
+                            var out2 = dress.rotation * Vector3.forward;   // the building's street side
+                            if (wallAhead(out2) > 0)
+                            {
+                                UnityEngine.Object.DestroyImmediate(it.gameObject);   // a lone chair wedged at a jamb has no function
+                            }
+                            else
+                            {
+                                it.rotation = Quaternion.LookRotation(out2, Vector3.up) * Quaternion.Euler(0, (Hash01(it.position.x, it.position.z, 62) - 0.5f) * 20f, 0);
+                                fixes++;
+                            }
+                        }
+                    }
+                }
+                else if (n == "ENV_Bench_Stone")
+                {
+                    foreach (var o in all)
+                    {
+                        if (!o || o == it || o.name != "ENV_Bicycle") continue;
+                        if (!ba.Intersects(B(o))) continue;
+                        StepAside(o, it, 1.0f);
+                        fixes++;
+                    }
+                }
+                else if (n.StartsWith("ENV_Pot_"))
+                {
+                    foreach (var o in all)
+                    {
+                        if (!o || o == it || o.name != "ENV_Trough_Stone") continue;
+                        if (!ba.Intersects(B(o))) continue;
+                        StepAside(it, o, 0.75f);
+                        it.position += (it.parent.rotation * Vector3.forward) * 0.08f;
+                        fixes++;
+                    }
+                }
+            }
+            return fixes;
+        }
+
+        /// <summary>Ground contact of what stands in front of the facades (pots, benches, chairs, bicycles, goods):        /// facades are assembled at the plot's level, the paving in front can fall or rise, and in a few places it is
         /// not there at all (a door onto the river edge — a semantic case left for the next pass). Each piece is set
         /// down on what is under it, or removed with its plant when there is nothing (owner: props "en el aire").</summary>
         static void GroundContact(Transform root)

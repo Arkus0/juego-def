@@ -1,0 +1,12 @@
+[
+  {
+    "kind": "VEG_CLIP",
+    "unit": "BRIDGE_A",
+    "street": null,
+    "where": "River/WallLife/ENV_Weeds_Grass",
+    "detail": "ENV_Weeds_Grass intersects ENV_Shutter_Roller (1 collider)",
+    "x": 56.58,
+    "y": 0.5,
+    "z": 183.09
+  }
+]

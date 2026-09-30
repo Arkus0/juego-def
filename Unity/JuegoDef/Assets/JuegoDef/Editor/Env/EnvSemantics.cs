@@ -1385,6 +1385,21 @@ namespace JuegoDef.Env
             t.name.StartsWith("ENV_Plant_") || t.name.StartsWith("ENV_Tree") || t.name.StartsWith("ENV_Hill_Tree") ||
             t.name.Contains("Weeds") || t.name.StartsWith("ENV_Shrub") || t.name.Contains("Hedge") || t.name.Contains("Ivy") || t.name.Contains("Fern");
 
+        /// <summary>Planting that is by design: a fern in its pot or planter, by a bench, a trough or a chair, at an
+        /// old door (composition rules: "damp lanes and old doors keep more"), weeds and ferns living on a wall —
+        /// garden walls grow ivy and weeds on the coping, channel walls grow ferns at the water line, the bridge
+        /// spandrels grow greens. Only stone that should stay bare is a defect.</summary>
+        static bool DesignedPlanting(string veg, string structure) =>
+            (veg.Contains("Fern") || veg.Contains("Plant_") || veg.Contains("Ivy")) &&
+            (structure.StartsWith("ENV_Planter") || structure.StartsWith("ENV_Pot_") || structure.StartsWith("ENV_Trough") ||
+             structure == "ENV_Bench_Stone" || structure == "ENV_Fountain_Trough" || structure.Contains("Quay_Wall") ||
+             structure.StartsWith("Door") || structure.StartsWith("ENV_Door") || structure.StartsWith("ENV_Retaining_Wall") ||
+             structure.StartsWith("ENV_Prop_") || structure.StartsWith("ENV_Bridge") || structure.StartsWith("ENV_Wall_") ||
+             structure.StartsWith("ENV_Shutter") || structure.StartsWith("ENV_River_Stairs"))
+            || ((veg.Contains("Weeds") || veg.Contains("Ivy")) &&
+                (structure.StartsWith("ENV_Retaining_Wall") || structure.StartsWith("ENV_Parapet") || structure.Contains("Quay_Wall") ||
+                 structure.StartsWith("ENV_Bridge")));
+
         /// <summary>VEG_CLIP — vegetation whose volume intersects built structure (a facade, a garden or retaining wall, a
         /// parapet): grass through stone, shoots out of a vertical wall, a tree crown inside a balcony.</summary>
         public static List<Finding> VegClip()
@@ -1398,7 +1413,8 @@ namespace JuegoDef.Env
                 var b = r.bounds;
                 var hits = Physics.OverlapBox(b.center, b.extents * 0.8f, Quaternion.identity)
                     .Where(c => !c.isTrigger && c.transform != veg && !c.transform.IsChildOf(veg) && !IsVeg(c.transform) && !IsVeg(c.transform.parent != null ? c.transform.parent : c.transform)
-                        && !c.name.StartsWith("Ground_") && !c.name.StartsWith("Plaza") && !c.name.StartsWith("Overlay_") && !c.name.Contains("_Deck") && !c.name.Contains("_Treads"))
+                        && !c.name.StartsWith("Ground_") && !c.name.StartsWith("Plaza") && !c.name.StartsWith("Overlay_") && !c.name.Contains("_Deck") && !c.name.Contains("_Treads")
+                        && !DesignedPlanting(veg.name, c.name))
                     .ToList();
                 if (hits.Count == 0) continue;
                 var structure = hits.Select(h => Path(h.transform)).OrderBy(p2 => p2.Length).First();
@@ -1457,27 +1473,41 @@ namespace JuegoDef.Env
                 var unit = PublicGap(q, out var street) < 0 ? UnitOfStreet(street) : "PLAZAS";
                 if (PropKind[t.name] == "seat" || PropKind[t.name] == "cafe" || t.name == "ENV_Bench_Stone")
                 {
-                    var fh = Physics.RaycastAll(p + Vector3.up * 0.45f, t.forward, 1.0f).Where(h => IsStructure2(h.collider) && !h.collider.transform.IsChildOf(t)).OrderBy(h => h.distance).FirstOrDefault();
+                    // a seat facing its table/barrel is people; a seat facing a WALL is a defect. Only building
+                    // structure counts as the wall — furniture in the ray is the table it serves.
+                    var fh = Physics.RaycastAll(p + Vector3.up * 0.45f, t.forward, 1.0f)
+                        .Where(h => IsStructure2(h.collider) && !IsPropName(h.collider.name) && !h.collider.transform.IsChildOf(t))
+                        .OrderBy(h => h.distance).FirstOrDefault();
                     if (fh.collider != null)
                         list.Add(F("PROP_LOGIC", unit, street, p, Path(t), $"{t.name} faces a wall {fh.distance:0.00} m away"));
                 }
                 if (t.name == "ENV_Parasol")
                 {
-                    var table = props.Any(o => o.name == "ENV_Cafe_Table" && Vector2.Distance(new Vector2(o.position.x, o.position.z), q) < 1.4f);
-                    if (!table) list.Add(F("PROP_LOGIC", unit, street, p, Path(t), "parasol with no table beneath"));
+                    // a barrel is a legitimate parasol base (the generator plants the umbrella in it): only a parasol
+                    // shading nothing at all is a finding
+                    var host = props.Any(o => (o.name == "ENV_Cafe_Table" || o.name == "ENV_Prop_Barrel") && Vector2.Distance(new Vector2(o.position.x, o.position.z), q) < 1.4f);
+                    if (!host) list.Add(F("PROP_LOGIC", unit, street, p, Path(t), "parasol with no table or barrel beneath"));
                 }
             }
+            bool IsPropName(string s2) => PropKind.ContainsKey(s2) || s2 == "ENV_Parasol" || s2.StartsWith("ENV_Plant_");
             for (int i = 0; i < props.Count; i++)
                 for (int j = i + 1; j < props.Count; j++)
                 {
                     var a = props[i]; var b2 = props[j];
                     if (a.IsChildOf(b2) || b2.IsChildOf(a)) continue;
-                    var ba = a.GetComponent<Renderer>() != null ? a.GetComponent<Renderer>().bounds : new Bounds(a.position, Vector3.one * 0.5f);
-                    var bb = b2.GetComponent<Renderer>() != null ? b2.GetComponent<Renderer>().bounds : new Bounds(b2.position, Vector3.one * 0.5f);
+                    // the umbrella planted in the terrace barrel is the parasol's base (generator design), not a burial
+                    if ((a.name == "ENV_Parasol" && b2.name == "ENV_Prop_Barrel") || (b2.name == "ENV_Parasol" && a.name == "ENV_Prop_Barrel")) continue;
+                    // real geometry only: module wrappers carry no renderer of their own, and the 0.5 m fallback cube
+                    // buried a bench in a bicycle that stood beside it
+                    var ra2 = a.GetComponentInChildren<Renderer>(); var rb2 = b2.GetComponentInChildren<Renderer>();
+                    if (ra2 == null || rb2 == null) continue;
+                    var ba = ra2.bounds; var bb = rb2.bounds;
                     if (!ba.Intersects(bb)) continue;
                     var smaller = ba.size.sqrMagnitude <= bb.size.sqrMagnitude ? (a, ba) : (b2, bb);
                     var inter = BoundsInter(ba, bb);
-                    if (inter / Mathf.Max(0.001f, VolumeOf(smaller.Item2)) > 0.35f && inter / Mathf.Max(0.001f, VolumeOf(ba)) > 0.12f && inter / Mathf.Max(0.001f, VolumeOf(bb)) > 0.12f)
+                    // AABB overlap is not burial: a bag beside a barrel reads 40%. A real burial (stool inside barrel)
+                    // is concentric — most of the smaller piece inside the other, and both clearly share space
+                    if (inter / Mathf.Max(0.001f, VolumeOf(smaller.Item2)) > 0.7f && inter / Mathf.Max(0.001f, VolumeOf(ba)) > 0.25f && inter / Mathf.Max(0.001f, VolumeOf(bb)) > 0.25f)
                         list.Add(F("PROP_LOGIC", UnitNear(new Vector2(smaller.Item1.position.x, smaller.Item1.position.z)), null, smaller.Item1.position,
                             Path(smaller.Item1) + " in " + Path(b2 == smaller.Item1 ? a : b2), $"{smaller.Item1.name} buried in {(b2 == smaller.Item1 ? a.name : b2.name)} ({inter / Mathf.Max(0.001f, VolumeOf(smaller.Item2)):0%} of its volume)"));
                 }
