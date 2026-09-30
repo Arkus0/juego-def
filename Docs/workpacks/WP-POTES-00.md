@@ -1,4 +1,4 @@
-# WP-POTES-00 — Bounded 1:1 Potes Core Reference Lock
+# WP-POTES-00 — Potes 1:1 Exterior Core + Semantic Consolidation Lock
 
 Status: **READY / RESEARCH + PRODUCT BOUNDARY / NO UNITY IMPLEMENTATION**
 Class: PRODUCT MAP AUTHORITY / REFERENCE RECONSTRUCTION PREPARATION
@@ -8,7 +8,7 @@ Supersedes for new CASCO physical direction: starting CASCO-V2 implementation be
 
 ## Claim
 
-juego-def can replace the current authored/procedural CASCO layout authority with a **bounded, externally reproducible 1:1 exterior reference of a deliberately selected part of real Potes**, while keeping the resulting historic core small enough to remain only **40–60% of the final game's authored experience** rather than becoming the whole map.
+juego-def can replace the current authored/procedural CASCO layout authority with an **externally reproducible 1:1 exterior reference of the already studied compact Potes core**, while consolidating its many real exterior cells into approximately **60 large semantic/gameplay buildings**. The historic core must remain roughly **40–60% of the final game's authored gameplay/activity weight**, leaving the rest of the game to a small number of more open expansion zones.
 
 The WP does **not** build the casco in Unity.
 
@@ -51,49 +51,85 @@ For the initial reconstruction, observable real-world facts decide:
 
 ENV01 may provide the reusable mesh/material/prefab pieces used to reproduce those facts. Its current 311 generated bodies are **not geometry authority**.
 
-Interior programmes are not copied 1:1 unless independently known and later useful. Exterior historical cell != final gameplay programme.
+Interior programmes are not copied 1:1 unless independently known and later useful.
 
-## Critical scope rule — Potes is the core, not the whole game
+### Binding identity rule
 
-The casco must be a great, dense place, but it must leave substantial production/gameplay space for later non-casco expansion.
+**Real exterior cell != semantic/gameplay building.**
 
-Interpret **40–60% of the game** as authored gameplay/activity weight, not raw square metres.
+The starting ~145 real Potes footprints/cells may be consolidated into approximately **60 semantic buildings** when adjacent real cells can form one plausible gameplay property.
 
-The Potes core is expected to host a high share of:
+Consolidation may:
+- union adjacent source cells behind the public-facing exterior;
+- allow one gameplay interior/programme to occupy several apparent historic facades;
+- remove internal party-wall authority where the wall is not externally observable and later interior design benefits;
+- retain multiple roof/facade subcells under one gameplay-building root.
 
-- investigation;
-- dialogue/social play;
-- commerce;
-- municipal/political activity;
-- NPC crossing/routine encounters;
-- compact minigames;
-- small encounters;
-- recurring hubs.
+Consolidation may **not**:
+- move the public street edge;
+- invent a new public-facing footprint;
+- erase observable facade divisions merely to simplify production;
+- change visible window/door/roof placement from the reference baseline;
+- turn the casco back into procedurally designed architecture.
 
-Later expansion is expected to carry a disproportionate share of:
+The intended Unity/product model is therefore approximately:
 
-- large combat spaces;
-- industrial/workshop interiors;
-- large sports/minigame spaces;
-- broader parks/nature;
-- large mission buildings unavailable inside the chosen core.
+```text
+~145 real exterior source cells
+        ↓ faithful public-facing reconstruction
+~60 semantic/gameplay buildings
+        ↓ interiors/programmes later
+15–25 meaningfully enterable buildings
+```
 
-Therefore **do not select all historic Potes merely because data exist**.
+The exact cell-to-building mapping is an explicit deliverable of this WP.
 
-### Hard production envelope for the selected Potes core
+## Critical scope rule — the core is dense; the rest of the map is open
 
-The Worker starts from the previously studied ~180 × 220 m Potes reference box with ~145 real footprints, but must select one **contiguous smaller gameplay core**.
+The intended final-town composition is now:
 
-Target envelope:
+| Zone | Semantic/gameplay buildings | Spatial character | Primary gameplay |
+| --- | ---: | --- | --- |
+| **Potes historic core** | **~60** | dense / vertical / urban | investigation, social play, politics, commerce, NPC routines, compact minigames |
+| **Market / civic expansion** | **~10–20** | medium/open | events, crowds, commerce, social systems, medium encounters |
+| **Residential expansion** | **~10–20** | open | home routines, personal substories, quieter traversal, local encounters |
+| **Port + workshops / industrial expansion** | **~10–20** | very open | combat, workshops, large interiors, jobs, port activity, systemic spaces |
 
-- **70–100 exterior building footprints**; prefer 75–95.
-- **Hard cap: 110** exterior building footprints without an explicit Owner amendment.
-- coherent walkable network target: roughly **0.9–1.5 km** inside the selected core;
-- normal third-person traversal from one meaningful edge to the opposite meaningful edge should target roughly **2.5–4.5 minutes** before later expansion exists;
-- retain enough large/medium footprints to support later core gameplay, but do not inflate the boundary merely to collect hero buildings;
-- aim for later capacity of roughly **15–25 enterable core buildings**, of which approximately **4–7** could support deep/hero treatment. These are capacity targets, not interior commitments in this WP.
+The final map therefore targets roughly **90–120 semantic/gameplay buildings**, not hundreds of independently authored properties.
 
-If no contiguous Potes subarea can satisfy the product claim within the hard cap, **FAIL / OWNER DECISION**. Do not silently expand to the whole historic core.
+The historic core should account for about **40–60% of gameplay/activity weight**, despite potentially occupying a smaller share of final traversable area. Later zones are intentionally more open and get more gameplay from exterior space per building.
+
+### Hard production envelope for Potes core
+
+Use the previously studied approximately **180 × 220 m** Potes reference area as the starting exterior authority. Do **not** automatically shrink it merely to reduce cadastral cells; its physical compactness is acceptable if the semantic consolidation works.
+
+Targets:
+
+- source exterior authority: approximately the existing **145 real Potes footprint/cells**, subject to source revalidation;
+- semantic/gameplay building target: **55–65**, nominal target **60**;
+- hard cap: **70 semantic buildings** without explicit Owner amendment;
+- every semantic building must have an explicit gameplay identity/purpose class, even when closed to the player;
+- later capacity target: approximately **15–25 enterable buildings** in the core, with roughly **4–8 deep/hero buildings**;
+- no requirement that every semantic building have a deep interior;
+- preserve at least **3 credible outward expansion interfaces** for market/civic, residential and port/workshop growth;
+- do not enlarge the Potes reference area to solve gameplay-space needs that belong in the later open zones.
+
+### What “every building contains something” means
+
+Every semantic building must justify its existence through at least one durable game role, for example:
+
+- enterable destination;
+- named NPC home/workplace;
+- shop/service;
+- faction/institution;
+- investigation clue location;
+- recurring routine anchor;
+- mission exterior/threshold;
+- systemic prop/service location;
+- landmark/navigation role;
+- narrative/background identity that participates in world state.
+
+A building may remain non-enterable while still having a real gameplay role. “Contains something” does **not** mean authoring 60 full interiors.
 
 ## Starting reference already available
 
@@ -134,58 +170,74 @@ Street-level imagery may be used as **visual reference** without being redistrib
 
 If two sources materially disagree, record the discrepancy. Do not silently choose whichever is easier to build.
 
-## Workstream A — choose the bounded Potes core
+## Workstream A — freeze the Potes exterior core and consolidation hypothesis
 
-Start from the known reference box, but evaluate contiguous candidate boundaries against product utility.
+Start from the known approximately 180 × 220 m reference box. Re-fetch/revalidate its authoritative geometry and determine whether the existing box remains the best compact exterior core.
 
-The chosen core should strongly prefer keeping a coherent sequence including as much as feasible of:
+Do **not** spend the WP searching for a much smaller arbitrary cut merely to hit 60. The 60 target applies to **semantic/gameplay buildings**, not source exterior cells.
 
-- the Torre del Infantado / plaza / river node;
-- at least one meaningful bridge crossing;
-- a compact commercial/social street sequence;
-- one distinctive lane/callejón sequence;
-- a meaningful Solana/Cimavilla or equivalent vertical/irregular sequence;
-- at least one breathing space/plaza;
-- enough residential fabric that NPC routines can plausibly originate/terminate inside the core;
-- at least two natural outward interfaces where later expansion can connect without demolishing the core.
+The exterior core should preserve the coherent real sequence around the Torre/plaza/river node, commercial/social streets, distinctive lanes, Solana/Cimavilla-type vertical fabric, residential origins/destinations and outward seams.
 
-Do **not** select streets independently to maximise landmarks. The result must be one contiguous place whose boundary follows defensible physical edges: river, major street, block edge, slope transition, parcel/back boundary or another visible urban seam.
+### Required boundary alternatives
 
-### Boundary alternatives
+Produce only **bounded boundary checks**, not three unrelated landmark collages:
 
-Produce at least **three candidate bounded cores** from the same pinned data.
+1. the existing ~180 × 220 m reference box;
+2. a conservative trim if obvious low-value edge fabric can be removed without harming coherence;
+3. a conservative extension only if needed to obtain a materially better outward seam.
 
-For each candidate report:
+For each report:
 
-- polygon / bounding dimensions / area;
-- exact building count;
+- polygon / dimensions / area;
+- source exterior cell count;
 - walkable network length;
 - meaningful edge-to-edge walking distance;
-- block/parcel count;
 - landmark/node coverage;
-- street hierarchy coverage;
-- number of bridges/river interfaces;
-- distribution of building footprints;
-- number >100, >200 and >400 m²;
-- obvious expansion interfaces;
-- what important Potes character is lost by the cut;
+- expansion interfaces;
+- what is gained/lost;
 - expected reconstruction burden.
 
-Then recommend one candidate **without exceeding the hard cap**.
+Owner chooses the exterior boundary.
 
-Owner final selection is required before the Worker freezes the Master Reference.
+### Semantic consolidation study
 
-## Workstream B — Master Building Ledger
+For the Owner-selected boundary, propose a complete mapping from source exterior cells to **55–65 semantic/gameplay buildings**.
 
-For every building inside the Owner-selected core assign a stable immutable ID:
+Each proposed semantic building must:
+- be one contiguous property/group;
+- preserve the real public-facing shell;
+- have a plausible unified gameplay identity;
+- have enough useful area/shape to justify its role;
+- avoid arbitrary cross-street or cross-courtyard unions;
+- record all source cells it consumes.
+
+Output the distribution:
+- 1 source cell -> 1 semantic building;
+- 2 source cells -> 1 semantic building;
+- 3+ source cells -> 1 semantic building;
+- resulting footprint/usable-envelope distribution;
+- candidates for deep/hero, medium/partial and closed-but-purposeful roles.
+
+The Owner must approve the consolidation logic before it becomes production authority.
+
+## Workstream B — Source-cell ledger + Semantic Building Ledger
+
+For every real exterior source cell inside the Owner-selected core assign a stable immutable ID:
+
+`POT-C001`, `POT-C002`, ...
+
+For every consolidated semantic/gameplay building assign:
 
 `POT-B001`, `POT-B002`, ...
+
+Each `POT-Bxxx` records the exact ordered set of `POT-Cxxx` cells it owns.
 
 Do not use current ENV01 plot IDs as final Potes authority.
 
 For each building retain, as recoverable:
 
-- source footprint polygon in real metric coordinates;
+- source cell footprint polygon(s) in real metric coordinates;
+- semantic union polygon / envelope and constituent cell IDs;
 - local-game coordinate transform;
 - footprint area;
 - oriented dimensions / frontage;
@@ -260,7 +312,7 @@ Do not preserve a generated ENV01 building because of sunk cost.
 
 ## Workstream E — production sectorization
 
-Partition only the Owner-selected Potes core into **3–5 natural production sectors**.
+Partition only the Owner-selected Potes core into **3–5 natural production sectors**, using semantic buildings as production ownership units while retaining source-cell geometry beneath them.
 
 Sector boundaries should follow actual urban seams and should minimise visual seam risk.
 
@@ -293,14 +345,15 @@ It should contain a representative mix where feasible:
 - enough windows/doors/roof relationships to test 1:1 facade reproduction;
 - river/bridge/public edge if this can be included without making the first sector excessively large.
 
-Within Sector 01 identify a **First Slice** of roughly **8–15 buildings** for the first physical reconstruction WP.
+Within Sector 01 identify a **First Slice** of roughly **6–10 semantic buildings** (likely more real exterior cells/facades) for the first physical reconstruction WP.
 
 The Sector Pack must leave the visual Worker with factual questions already answered.
 
 Required pack:
 
 - sector polygon + metric coordinate transform;
-- building ledger subset;
+- source-cell ledger subset;
+- semantic-building ledger subset and cell-to-building mapping;
 - street/public-space ledger subset;
 - source/reference index;
 - per-building reference links/views;
@@ -324,8 +377,9 @@ This WP defines the initial reconstruction standard consumed by later WPs.
 - Preserve pinned source footprint/alignment unless the source itself is uncertain.
 - Target positional/edge error <= **0.5 m** for ordinary visible exterior geometry where source precision supports it.
 - Preserve real relative road/building relationships rather than snapping to ENV module widths.
-- Do not split one real building into several gameplay properties merely because ENV modules are narrow.
-- Do not merge real exterior buildings for convenience during reference reconstruction.
+- Do not split one real source cell into several gameplay properties merely because ENV modules are narrow.
+- **Semantic consolidation of adjacent source cells is allowed and required**, but the visible public-facing shell of every source cell remains part of the 1:1 baseline.
+- A semantic union may simplify hidden internal party walls/interior planning, not observable public geometry.
 - A later gameplay-adaptation WP may deliberately change the replica after the baseline exists.
 
 ### Facades
@@ -374,8 +428,11 @@ Create under `Docs/evidence/WP-POTES-00/` at minimum:
 - `CORE_CANDIDATES.md`
 - `CORE_SELECTED.md`
 - `potes_core.geojson` or equivalent reproducible metric geometry
-- `BUILDING_LEDGER.csv`
-- `BUILDING_LEDGER.json`
+- `SOURCE_CELL_LEDGER.csv`
+- `SOURCE_CELL_LEDGER.json`
+- `SEMANTIC_BUILDING_LEDGER.csv`
+- `SEMANTIC_BUILDING_LEDGER.json`
+- `CELL_TO_BUILDING_MAP.json`
 - `STREET_PUBLIC_SPACE_LEDGER.json`
 - `ENV01_REUSE_MAP.md`
 - `SECTOR_PLAN.md`
@@ -391,7 +448,7 @@ If lawful downloadable reference imagery is retained, include attribution/licens
 
 There are exactly two subjective/product decisions before PASS:
 
-1. **Core Boundary Gate** — Owner chooses one of the measured bounded candidates.
+1. **Core + Consolidation Gate** — Owner chooses the exterior boundary and approves the ~60-building semantic consolidation.
 2. **Sectorization Gate** — Owner confirms the selected core and production-sector division are understandable and appropriately scoped.
 
 Do not ask the Owner to decide building geometry that external evidence can resolve.
@@ -401,28 +458,31 @@ Do not ask the Owner to decide building geometry that external evidence can reso
 PASS requires:
 
 - exact external source identities and reproducible acquisition/derivation are recorded;
-- selected core is one contiguous Potes subarea;
-- selected core remains <=110 exterior buildings unless explicitly amended by Owner;
-- selected core is demonstrably smaller than the prior 145-footprint study box;
-- boundary preserves a recognisable, coherent Potes urban sequence rather than a landmark collage;
-- at least two credible outward expansion interfaces remain;
-- every selected building has a stable ID and footprint;
+- selected exterior core is one coherent compact Potes area, nominally around the already studied ~180 × 220 m box;
+- source exterior geometry remains 1:1 authority for streets, public-facing footprints, facades, roofs and structural public-space relationships;
+- source cells are mapped into **55–65 semantic/gameplay buildings**, nominal target 60, and <=70 without explicit Owner amendment;
+- every semantic building has an explicit durable gameplay-purpose class;
+- no semantic consolidation erases or invents observable public-facing geometry merely for convenience;
+- at least three credible outward interfaces remain for later market/civic, residential and port/workshop expansion;
+- every source cell and every semantic building has a stable ID;
 - all production-relevant facts carry source/confidence state;
 - no unknown facade fact is silently invented;
 - streets/public spaces/elevations are independently reconstructible;
 - ENV01 reuse is mapped as kit/component reuse rather than layout authority;
 - core is partitioned into 3–5 natural production sectors;
 - Sector Pack 01 is sufficiently complete for a fresh visual Worker;
-- First Slice contains 8–15 exact buildings and representative environment complexity;
-- Owner passes both boundary and sectorization gates;
-- Worker strict pre-review finds no hidden expansion toward “all Potes”.
+- First Slice contains 6–10 semantic buildings and representative environment complexity;
+- Owner passes both gates;
+- Worker strict pre-review finds no hidden expansion of the casco to solve gameplay needs that belong in later open zones.
 
 ## FAIL
 
 FAIL if any survives:
 
-- Worker chooses all/most of the 145-footprint reference simply because it already exists;
-- selected core exceeds 110 buildings without explicit Owner amendment;
+- Worker treats ~145 real exterior cells as ~145 independent gameplay buildings;
+- semantic building count exceeds 70 without explicit Owner amendment;
+- Worker destroys 1:1 public-facing geometry simply to hit the semantic count;
+- semantic unions are implausible, disconnected or cross public streets;
 - core boundary is a disconnected highlight reel;
 - core has no plausible later expansion interfaces;
 - current ENV01 311 bodies remain spatial authority;
@@ -441,6 +501,6 @@ After PASS, the immediate successor is:
 
 `WP-POTES-01 — Sector 01 First Slice Reconstruction`
 
-It consumes the frozen Sector Pack 01 and reconstructs only its 8–15 building First Slice in an isolated Unity authority/output using ENV components under the 1:1 fidelity rules.
+It consumes the frozen Sector Pack 01 and reconstructs only its 6–10 semantic-building First Slice (including all constituent real exterior cells) in an isolated Unity authority/output using ENV components under the 1:1 fidelity rules.
 
 Later WPs may complete Sector 01 and subsequent sectors, but **no later casco WP may enlarge the Potes core boundary without a separate Owner-approved map-scope amendment**.
