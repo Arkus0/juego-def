@@ -56,6 +56,23 @@ Across the three proofs, preserve a clear authority split:
 
 The proofs must include at least one meaningful owner correction after AI/factory work and show that direct placement, map expansion and AI-supplied content all survive rebuild.
 
+## Prior-art implementation proof
+
+ENV-02 must prove that the Director's builder UX is built on reusable editor primitives rather than one-off scene hacks.
+
+Retain evidence that:
+
+- clicking a visible child renderer/collider resolves the correct semantic authored object;
+- placement/movement uses a cancellable non-authoritative ghost/preview;
+- catalogue thumbnails are generated without polluting the production scene;
+- Undo/Revert operates across at least one placement/move and one chain edit;
+- railing/wall extension edits the semantic chain and rematerializes modules rather than requiring manual segment management;
+- area/lasso selection can bound at least one fill, validation or AI request;
+- AI-created accepted multi-object content can become a reusable catalogue/assembly unit with lineage;
+- no unlicensed/reference-only prior-art code was imported into production.
+
+The evidence should identify any third-party MIT code actually reused and retain required notices.
+
 ## Automated walkability proof
 
 Each route must run the accepted automated traversal/collision probe plus one human walk-through. Detect/report obvious snags, threshold failures, prop blockage, invalid spawn/approach or geometry escapes.
@@ -81,6 +98,7 @@ PASS when:
 - AI MODIFY SELECTED is proven with automatic bounded context + explicit PREVIEW/ACCEPT or DISCARD;
 - AI-supplied reusable content enters the same catalogue/placement path;
 - the complete human-build -> AI-supply -> rebuild/validate -> human-correct loop is proven;
+- semantic pick, ghost preview, native Undo, isolated thumbnails, semantic chain editing and bounded area selection are proven on real content;
 - route/collision validation passes or documented defects are repaired;
 - later builds show materially lower rediscovery/setup friction than the first;
 - owner accepts the environment quality/direction;

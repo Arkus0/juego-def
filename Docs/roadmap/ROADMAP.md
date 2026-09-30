@@ -90,6 +90,20 @@ Delivery order:
 
 D0/D1 are the foundation, not discarded prototypes. Do not pause or restart them because the later product target expanded.
 
+### Prior-art posture
+
+D2-D5 are not greenfield Unity-editor R&D. Their basic mechanics already have strong prior art:
+
+- PrefabPalette: palette/placement-mode separation and thumbnail UX;
+- Prefab Painter: minimal Scene View raycast + placement + Undo loop;
+- MAST: ghost/occupancy, isolated thumbnails, modular tools and reusable assemblies;
+- Prefabshop: pick-under-cursor, line tools and lasso/area interaction.
+
+Director should reuse these **patterns** and compatible licensed code where lawful, while concentrating original engineering on juego-def's differentiators: semantic selection, rebuild-persistent upstream commits, semantic chains, locks/authority, bounded AI context and accepted AI output admission.
+
+Do not adopt a third-party tool wholesale if it creates a second asset database, grid/world authority or scene-serialization path.
+
+
 The core authority rule remains: **the owner decides where the world grows and what is kept; AI modifies/makes content only inside explicit human selection and intent.** Selecting something supplies context automatically; it does not grant authority over everything visible around it. Generated scenes remain rebuildable from upstream ENV authority; the Director must not become a second scene-state architecture.
 
 ## B0 target

@@ -69,6 +69,157 @@ Any Worker already implementing D0/D1 should continue. This revision must not fo
 
 Reopen D0/D1 only if implementation evidence shows they violate their existing safety/authority requirements.
 
+## Implementation prior art — binding reuse posture
+
+D2-D5 must begin from proven Unity editor patterns rather than re-inventing basic Scene View tooling.
+
+The following prior art was inspected before this revision:
+
+- **PrefabPalette** — visual prefab palette, stable thumbnail cache, surface interaction, single/line placement modes, Scene View overlays. Repository: `FrayedFunction/PrefabPalette`.
+- **Prefab Painter** — minimal `SceneView.duringSceneGui -> GUIPointToWorldRay -> Physics.Raycast -> PrefabUtility.InstantiatePrefab -> Undo` placement/brush loop. Repository: `danielnagydeveloper/Prefab-Painter-Unity-Editor-Tool`.
+- **MAST** — placement ghost, cell/footprint occupancy, lazy invalidation after hierarchy/Undo/object changes, isolated `PreviewRenderUtility` thumbnails, modular scene tools and assembly creation. Repository: `fertilesoilproductions/MAST`.
+- **Prefabshop** — direct picking under cursor, Magic Wand-style related selection, line tool and polygon/lasso area interaction. Repository: `Raptorij/Prefabshop`.
+- Commercial fence/wall builders and prefab/world brushes are **UX prior art only** for endpoint stretching, modular continuation and builder-style interaction.
+
+### Licensing guardrail
+
+The Worker must distinguish **pattern reuse** from **code reuse**:
+
+- MAST and Prefab Painter are MIT at the inspected revisions; code reuse is allowed only with their license/copyright obligations preserved.
+- PrefabPalette uses a non-resale license that forbids selling/distributing the tool or modified versions for a fee; **do not derive a commercial Director implementation from its code**. Use it as architecture/UX prior art only unless legal posture changes.
+- No license was found in the inspected Prefabshop repository; treat its code as **reference-only** unless a compatible license is verified before reuse.
+- Closed/commercial Asset Store tools are UX/behavior references only unless juego-def has a lawful local copy whose license explicitly permits the intended reuse.
+
+If Director later becomes a sellable asset, it must remain possible to separate all third-party obligations cleanly.
+
+### Required implementation shape
+
+Do **not** implement D2-D5 as one giant `EnvDirectorWindow.cs`.
+
+Prefer a small owner-facing EditorWindow/Overlay plus native Unity tool surfaces and separable services:
+
+```text
+DirectorContext
+├── SemanticSelectionResolver
+├── PlacementSurfaceResolver
+├── PreviewSession
+├── AuthoringCommitService
+├── CatalogService
+├── ThumbnailService
+├── Constraint/OccupancyService
+└── SelectionContextBuilder
+
+Editor tools / modes
+├── LayoutTool
+├── SelectMoveTool
+├── PlaceTool
+├── ChainTool
+├── AreaTool
+├── SmartBrushTool
+└── AiModifyTool
+```
+
+Names may differ, but responsibilities must stay separable enough that adding a tool does not require growing a single Scene View switch or duplicating input/preview/commit code.
+
+### Native interaction patterns to reuse
+
+For supported scene content:
+
+1. **Pick**
+   - start with Unity Scene View picking/raycast APIs;
+   - resolve picked child renderer/collider upward to the nearest meaningful authored semantic identity;
+   - selecting a barrel mesh child should select the logical barrel, not an implementation fragment.
+
+2. **Surface resolution**
+   - resolve mouse position through scene raycast/surface hit first;
+   - support a safe ground-plane/fallback where appropriate;
+   - ground/surface drag is the default for ordinary props.
+
+3. **Preview**
+   - dragging/placing/stretching updates a non-authoritative ghost/guide immediately;
+   - preview objects must be clearly temporary and removable without dirty durable state;
+   - cancel leaves canonical authority unchanged.
+
+4. **Undo**
+   - use Unity Undo grouping for Editor-facing operations where possible;
+   - the upstream authoring commit must remain reversible/transactional as already required by this WP.
+
+5. **Thumbnails**
+   - prefer isolated preview rendering similar to MAST's `PreviewRenderUtility` approach for stable catalogue thumbnails;
+   - cache results and invalidate when source content materially changes;
+   - do not instantiate thumbnail subjects into the user's production scene.
+
+6. **Tool strategy**
+   - placement, chain, area and AI tools share common selection/preview/commit services;
+   - avoid duplicated mouse/raycast logic per tool.
+
+7. **Constraint cache**
+   - borrow MAST's idea of lazily invalidating occupancy/constraint data after hierarchy changes, Undo/Redo and object transform changes;
+   - do **not** copy MAST's rigid grid as Director's product model;
+   - Director constraints should operate on semantic footprints, clearances, locks and route/access rules.
+
+### Semantic object contract
+
+Every directly editable generated/placed object needs a resolvable semantic identity:
+
+```text
+visible renderer/collider
+ -> generated GameObject
+ -> semantic authored identity
+ -> authoritative trace/spec/polish/catalogue source
+```
+
+The Director operates on that semantic object. Generated child-object structure is an implementation detail.
+
+### Semantic chain contract
+
+Stretchable railings/walls/fences/edges are one authored **semantic chain**, not N user-facing segments.
+
+Minimum chain data should be equivalent to:
+
+```text
+chain id
+start / end or ordered control points
+module family
+spacing / admissible module lengths
+end-cap / terminal treatment
+ground/terrain conformance rule
+locks
+authoritative source
+```
+
+Dragging an endpoint previews a new materialization. The factory chooses repeated modules, compatible short/end pieces and bounded adjustment; the owner never manually maintains hidden segment counts.
+
+### Area/lasso contract
+
+A bounded polygon/lasso is a reusable interaction primitive for:
+
+- `FILL AREA`;
+- multi-select;
+- map-expansion bounds;
+- `AI MODIFY SELECTED` authority;
+- validation scope.
+
+The area itself defines edit authority. A screenshot of surrounding content does not.
+
+### AI output admission
+
+When AI creates a useful multi-object result, prefer converting it into a reusable admitted assembly/prefab-like catalogue unit rather than leaving a one-off scene mutation:
+
+```text
+AI proposal
+ -> preview
+ -> ACCEPT
+ -> validate/intake/lineage
+ -> reusable assembly/catalogue identity
+ -> isolated thumbnail
+ -> AI Created
+ -> owner can place it again
+```
+
+This mirrors the useful assembly workflow seen in MAST while preserving juego-def's own ENV authority and lineage.
+
+
 ## Authority split
 
 Every editable environment decision belongs to one of three authority classes.
@@ -675,6 +826,16 @@ Must include:
 
 D2 is not PASS if the owner still needs prefab filenames, GUIDs, hierarchy paths or Inspector transforms. It also does not PASS if a visibly misplaced ordinary prop (the reference case is a barrel) cannot simply be clicked and dragged to a better location, or if a supported modular railing/wall chain cannot be extended/shortened from an endpoint without manually placing each segment.
 
+**D2 implementation proof must demonstrate the prior-art-derived primitives, not merely equivalent screenshots:**
+
+- semantic pick from visible child -> logical authored object;
+- shared surface resolver;
+- non-authoritative placement/move ghost;
+- native Undo integration;
+- isolated/stable catalogue thumbnail generation;
+- chain endpoint preview/commit;
+- no duplicated Scene View input loop per tool.
+
 ### D3 — MAP EXPANSION
 
 D3 builds on D2's direct object manipulation and stretchable-chain interaction. The same mental model should scale from "make this railing 4 m longer" to "continue this street / edge / block into new playable space".
@@ -748,6 +909,8 @@ Candidate tools, implemented only where the existing grammar supports them clean
 Each tool must preview before material commit and remain editable after creation.
 
 This milestone is about reducing repetitive clicks, not giving procedural tooling authority over composition.
+
+D5 tools should reuse the common Area/Chain/Placement primitives established by D2-D3. Line/fill/lasso behavior has strong prior art; inventing a second independent brush/input framework is a FAIL unless a concrete limitation of the shared tool stack is demonstrated.
 
 ### D6 — FAST QA / PLAY LOOP
 
@@ -846,6 +1009,7 @@ Retain under `Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` at minimum:
 - PREVIEW -> ACCEPT and PREVIEW -> DISCARD evidence;
 - AI-created/adapted piece provenance + catalogue thumbnail + placement proof;
 - AI scope proof that unrelated/locked content remained unchanged;
+- prior-art implementation note: which mechanisms were reimplemented, which MIT code (if any) was reused with attribution, and which sources remained reference-only;
 - owner production-trial checklist/result;
 - known limitations that are real product constraints rather than hidden unfinished basics.
 
@@ -861,6 +1025,14 @@ At minimum test:
 - malformed/unsupported source fails closed;
 - Undo/Revert cannot leave half-written authority;
 - generated scene remains rebuildable from repository authority.
+
+### Architecture / prior-art safety
+
+- no third-party code is copied from a source whose license does not permit the intended use;
+- any reused MIT code retains required notices/attribution;
+- normal tool modes share picking/surface/preview/commit primitives instead of duplicating them;
+- thumbnail generation does not modify the production scene;
+- semantic picking resolves meaningful authored units rather than exposing generated child hierarchy as the user model.
 
 ### Builder safety
 
