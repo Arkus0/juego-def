@@ -15,7 +15,7 @@ Produce **three materially different keeper proofs**, each exercising a distinct
 
 1. **EDIT EXISTING** — materially improve an existing bounded composition through direct manipulation, including (where present) a visible misplaced prop corrected by click+drag and a modular railing/wall/edge corrected by endpoint extension rather than segment-by-segment editing.
 2. **EXPAND MAP** — extend a real boundary into new connected playable space using Director layout + catalogue placement.
-3. **AI-SUPPLIED CONTENT** — request at least one missing asset/structure from AI/operator, admit it through ENV lineage/validation, expose it in the visual catalogue, place/modify it through the Director and retain it.
+3. **AI-SUPPLIED / AI-MODIFIED CONTENT** — use AI MODIFY SELECTED on an existing object/chain/area with automatic scene context and explicit preview/acceptance, and request at least one missing reusable asset/structure from AI/operator; admit reusable output through ENV lineage/validation, expose it in the visual catalogue, place/modify it through the Director and retain it.
 
 The proofs may contribute to the same larger district if their boundaries/evidence remain independently reviewable. They must reuse the accepted ENV catalogue/modules/adaptation path/assembly grammar/validators rather than creating three bespoke pipelines.
 
@@ -23,7 +23,7 @@ The proofs may contribute to the same larger district if their boundaries/eviden
 
 For each composition:
 
-`brief -> owner shapes/extends layout in ENV Director -> owner places existing catalogue pieces -> lock important decisions -> AI/operator manufactures only missing requested content -> new content enters catalogue -> owner places/modifies -> rebuild -> Play Mode -> automated route/collision/affected QA -> owner correction in ENV Director -> gameplay captures -> owner review`
+`brief -> owner shapes/extends layout in ENV Director -> owner places existing catalogue pieces -> lock important decisions -> owner may select object/chain/area + natural-language AI MODIFY request -> Director packages bounded structural/visual context -> explicit proposal preview/acceptance -> AI/operator manufactures only missing requested reusable content -> new content enters catalogue -> owner places/modifies -> rebuild -> Play Mode -> automated route/collision/affected QA -> owner correction in ENV Director -> gameplay captures -> owner review`
 
 At least one proof must begin from a fresh brief and prove the complete builder loop without exact object/path/coordinate instructions from the owner. Spatial intent is expressed through Director manipulation/selection; AI receives bounded manufacturing/adaptation requests rather than authority to compose the district.
 
@@ -47,7 +47,9 @@ Across the three proofs, preserve a clear authority split:
 
 - owner directly establishes/changes layout, placement and expansion decisions through `ENV Director`;
 - existing content is chosen/placed through the visual catalogue;
-- AI/operator generates/adapts missing content only inside declared human intent and selection scope;
+- AI/operator modifies/generates content only inside declared human intent and selection scope;
+- at least one selected-scene AI request derives local geometry/semantics/locks/views automatically rather than requiring owner-supplied coordinates/paths;
+- material selected-scene AI output is previewed before canonical acceptance;
 - AI-made reusable output returns to the catalogue rather than remaining a one-off hidden scene edit;
 - factory/procedural systems perform repeatable mechanical work;
 - owner can correct the result directly without reverting to JSON, Inspector-coordinate editing or prompt-by-prompt spatial translation.
@@ -76,6 +78,7 @@ PASS when:
 - catalogue placement works without routine prefab/path archaeology;
 - direct Scene View correction of an existing visible prop is proven without hierarchy/path lookup;
 - at least one supported modular linear structure is extended/shortened by endpoint manipulation with persistent rebuild-safe output;
+- AI MODIFY SELECTED is proven with automatic bounded context + explicit PREVIEW/ACCEPT or DISCARD;
 - AI-supplied reusable content enters the same catalogue/placement path;
 - the complete human-build -> AI-supply -> rebuild/validate -> human-correct loop is proven;
 - route/collision validation passes or documented defects are repaired;
@@ -93,4 +96,4 @@ End with one recommendation:
 
 ## FAIL
 
-FAIL if any of the three required use cases is missing, factory/Director mechanisms are bypassed, ordinary placement still requires prefab/path archaeology, map expansion still requires prompt/coordinate translation, AI-created pieces cannot re-enter the reusable catalogue, AI actions overwrite locked/unselected human decisions, or each new area still triggers foundational pipeline invention.
+FAIL if any of the three required use cases is missing, factory/Director mechanisms are bypassed, ordinary placement still requires prefab/path archaeology, map expansion still requires prompt/coordinate translation, selected-scene AI still requires coordinate/path transcription, AI preview silently mutates canonical state, AI-created pieces cannot re-enter the reusable catalogue, AI actions overwrite locked/unselected human decisions, or each new area still triggers foundational pipeline invention.
