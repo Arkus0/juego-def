@@ -1,0 +1,652 @@
+{
+  "inputs": {
+    "scene": {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity",
+      "sha256": "41e2cefdc4c3d0bbce7d95e7cd269b5c0d81e9f38697decda7d3567d78aa54b8"
+    },
+    "spec": {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/ENV01_Casco_District.json",
+      "sha256": "942fb24f31026da77b9469aee0ad32db8632a2d49fa915bea74ce4c0ceeef9c9"
+    }
+  },
+  "purpose": "verificacion mecanica de las convenciones geometricas del diagnostico contra los bytes commitados de la escena; read-only",
+  "samples": [
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000434,
+      "expected_local": [
+        0.0,
+        0.012,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K0_1_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K0_1",
+      "scene_local": [
+        0.0,
+        0.012,
+        -0.0
+      ],
+      "street": "Independencia"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 0.0,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000227,
+      "expected_local": [
+        0.0,
+        0.2,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K2_8_0",
+      "ok": true,
+      "role": "plaza",
+      "row": "K2_8",
+      "scene_local": [
+        0.0,
+        0.2,
+        -0.0
+      ],
+      "street": null
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000473,
+      "expected_local": [
+        0.0,
+        1.994,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K4_0_0",
+      "ok": true,
+      "role": "main",
+      "row": "K4_0",
+      "scene_local": [
+        0.0,
+        1.994,
+        -0.0
+      ],
+      "street": "Espina_E"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000477,
+      "expected_local": [
+        23.237,
+        1.632,
+        0.4
+      ],
+      "father_is_frame": true,
+      "id": "K4_0_3",
+      "ok": true,
+      "role": "main",
+      "row": "K4_0",
+      "scene_local": [
+        23.237,
+        1.632,
+        0.4
+      ],
+      "street": "Espina_E"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000497,
+      "expected_local": [
+        50.346,
+        1.248,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K4_0_6",
+      "ok": true,
+      "role": "main",
+      "row": "K4_0",
+      "scene_local": [
+        50.346,
+        1.248,
+        -0.0
+      ],
+      "street": "Espina_E"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000458,
+      "expected_local": [
+        0.0,
+        0.18,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K6_4_0",
+      "ok": true,
+      "role": "secondary",
+      "row": "K6_4",
+      "scene_local": [
+        0.0,
+        0.18,
+        -0.0
+      ],
+      "street": "Capitan"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-05,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000438,
+      "expected_local": [
+        0.0,
+        0.981,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K8_6_0",
+      "ok": true,
+      "role": "secondary",
+      "row": "K8_6",
+      "scene_local": [
+        0.0,
+        0.981,
+        -0.0
+      ],
+      "street": "Cantabra"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 4e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.00037,
+      "expected_local": [
+        0.0,
+        4.426,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K9_8_0",
+      "ok": true,
+      "role": "secondary",
+      "row": "K9_8",
+      "scene_local": [
+        0.0,
+        4.426,
+        -0.0
+      ],
+      "street": "Calle_Alta_E"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000485,
+      "expected_local": [
+        0.0,
+        0.878,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K10_10_0",
+      "ok": true,
+      "role": "secondary",
+      "row": "K10_10",
+      "scene_local": [
+        0.0,
+        0.878,
+        -0.0
+      ],
+      "street": "Cantabra"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000482,
+      "expected_local": [
+        23.476,
+        0.666,
+        -1.2
+      ],
+      "father_is_frame": true,
+      "id": "K10_10_2",
+      "ok": true,
+      "role": "secondary",
+      "row": "K10_10",
+      "scene_local": [
+        23.476,
+        0.666,
+        -1.2
+      ],
+      "street": "Cantabra"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000373,
+      "expected_local": [
+        35.214,
+        0.545,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K10_10_4",
+      "ok": true,
+      "role": "secondary",
+      "row": "K10_10",
+      "scene_local": [
+        35.214,
+        0.545,
+        -0.0
+      ],
+      "street": "Cantabra"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000464,
+      "expected_local": [
+        13.378,
+        6.189,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K12_3_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K12_3",
+      "scene_local": [
+        13.378,
+        6.189,
+        -0.0
+      ],
+      "street": "Solana_Terraza"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1.7e-05,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000462,
+      "expected_local": [
+        0.0,
+        10.251,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K14_5_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K14_5",
+      "scene_local": [
+        0.0,
+        10.251,
+        -0.0
+      ],
+      "street": "Ronda_Mirador"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000367,
+      "expected_local": [
+        0.0,
+        9.842,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K15_7_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K15_7",
+      "scene_local": [
+        0.0,
+        9.842,
+        -0.0
+      ],
+      "street": "Subida_Mirador"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000463,
+      "expected_local": [
+        13.361,
+        10.039,
+        0.4
+      ],
+      "father_is_frame": true,
+      "id": "K15_7_2",
+      "ok": true,
+      "role": "lane",
+      "row": "K15_7",
+      "scene_local": [
+        13.361,
+        10.039,
+        0.4
+      ],
+      "street": "Subida_Mirador"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000466,
+      "expected_local": [
+        20.041,
+        10.135,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K15_7_3",
+      "ok": true,
+      "role": "lane",
+      "row": "K15_7",
+      "scene_local": [
+        20.041,
+        10.135,
+        -0.0
+      ],
+      "street": "Subida_Mirador"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 5e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000494,
+      "expected_local": [
+        6.101,
+        10.242,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K16_10_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K16_10",
+      "scene_local": [
+        6.101,
+        10.242,
+        -0.0
+      ],
+      "street": "Ronda_Mirador"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 7e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000464,
+      "expected_local": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K5_4_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K5_4",
+      "scene_local": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "street": "El_Sol"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 4e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000375,
+      "expected_local": [
+        9.935,
+        0.145,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K6_10_1",
+      "ok": true,
+      "role": "river",
+      "row": "K6_10",
+      "scene_local": [
+        9.935,
+        0.145,
+        -0.0
+      ],
+      "street": null
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000458,
+      "expected_local": [
+        42.485,
+        1.874,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K7_6_6",
+      "ok": true,
+      "role": "main",
+      "row": "K7_6",
+      "scene_local": [
+        42.485,
+        1.874,
+        -0.0
+      ],
+      "street": "Espina_E"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000429,
+      "expected_local": [
+        0.0,
+        0.413,
+        1.2
+      ],
+      "father_is_frame": true,
+      "id": "K8_3_0",
+      "ok": true,
+      "role": "secondary",
+      "row": "K8_3",
+      "scene_local": [
+        0.0,
+        0.413,
+        1.2
+      ],
+      "street": "Cantabra"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 2e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000459,
+      "expected_local": [
+        0.0,
+        0.2,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K8_15_0",
+      "ok": true,
+      "role": "bridge",
+      "row": "K8_15",
+      "scene_local": [
+        0.0,
+        0.2,
+        -0.0
+      ],
+      "street": "Puente_Piedra"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 4e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000301,
+      "expected_local": [
+        5.637,
+        2.555,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K11_0_1",
+      "ok": true,
+      "role": "lane",
+      "row": "K11_0",
+      "scene_local": [
+        5.637,
+        2.555,
+        -0.0
+      ],
+      "street": "Llano"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000425,
+      "expected_local": [
+        0.0,
+        6.164,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K14_0_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K14_0",
+      "scene_local": [
+        0.0,
+        6.164,
+        -0.0
+      ],
+      "street": "Solana_Bajada"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000488,
+      "expected_local": [
+        0.0,
+        4.604,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K14_1_0",
+      "ok": true,
+      "role": "lane",
+      "row": "K14_1",
+      "scene_local": [
+        0.0,
+        4.604,
+        -0.0
+      ],
+      "street": "Solana_Bajada"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000434,
+      "expected_local": [
+        0.0,
+        5.036,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K14_3_0",
+      "ok": true,
+      "role": "secondary",
+      "row": "K14_3",
+      "scene_local": [
+        0.0,
+        5.036,
+        -0.0
+      ],
+      "street": "San_Pedro"
+    },
+    {
+      "d_frame_pos_m": 0.0,
+      "d_frame_yaw_deg": 1e-06,
+      "d_local_pos_m": 0.0,
+      "d_local_scale": 0.0,
+      "d_world_center_m": 0.000417,
+      "expected_local": [
+        43.971,
+        9.804,
+        -0.0
+      ],
+      "father_is_frame": true,
+      "id": "K14_3_6",
+      "ok": true,
+      "role": "secondary",
+      "row": "K14_3",
+      "scene_local": [
+        43.971,
+        9.804,
+        -0.0
+      ],
+      "street": "San_Pedro"
+    }
+  ],
+  "summary": {
+    "all_ok": true,
+    "duplicate_go_names": [],
+    "n_ok": 27,
+    "n_rows": 20,
+    "n_samples": 27,
+    "n_streets": 14,
+    "scene_gameobjects_knamed": 475,
+    "scene_transforms_total": 19823
+  },
+  "tolerances": {
+    "pos_m": 0.002,
+    "scale": 0.001,
+    "yaw_deg": 0.01
+  },
+  "tool": "Tools/casco_diag_scene_crosscheck.py"
+}

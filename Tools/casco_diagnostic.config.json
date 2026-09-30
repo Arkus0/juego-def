@@ -1,0 +1,38 @@
+{
+  "comment": [
+    "Heuristicas EXPLICITAS del diagnostico mecanico del CASCO (ENV01).",
+    "Ningun valor de este archivo es verdad de producto: son umbrales de filtro",
+    "parametrizables para inventario/flags/candidatos. Cambiar un valor cambia los",
+    "flags y los candidatos, no el casco. El diagnostico nunca modifica nada."
+  ],
+  "heuristics": {
+    "min_interior_footprint_m2": 24.0,
+    "min_interior_frontage_m": 4.0,
+    "narrow_plot_max_w_m": 4.6,
+    "adjacency_tol_m": 0.05,
+    "absorb_buffer_m": 1.5,
+    "back_clearance_m": 1.6,
+    "candidate_sizes": [2, 3, 4, 5, 6],
+    "candidate_mode": "same_row",
+    "residual_min_area_m2": 2.0,
+    "neighbor_search_m": 30.0
+  },
+  "bins": {
+    "width_edges_m": [0, 3, 4, 5, 6, 8, 10, 12, 16],
+    "footprint_edges_m2": [0, 12, 18, 24, 30, 40, 50, 65],
+    "candidate_frontage_edges_m": [0, 8, 12, 16, 20, 26, 32],
+    "front_distance_edges_m": [0, 2, 3, 4, 5, 6, 8, 12]
+  },
+  "classification": {
+    "domain": [[0.0, 0.0], [196.0, 236.0]],
+    "priority": ["building", "wall", "street", "plaza", "water", "deliberate_ground"],
+    "street_buffer": { "cap_style": "square", "join_style": "mitre", "mitre_limit": 2.5 },
+    "flat_buffer": { "cap_style": "flat" },
+    "deliberate_ground_zones": ["yard", "huerta"],
+    "coverage_tolerance_m2": 0.5
+  },
+  "debug_overlay": {
+    "residual_min_area_m2": 1.0,
+    "simplify_tol_m": 0.2
+  }
+}
