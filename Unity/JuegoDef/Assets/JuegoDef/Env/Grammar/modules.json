@@ -1,0 +1,364 @@
+{
+  "comment": "Module step policy (JuegoDef > ENV > 2 Build Modules). Derived meshes get a MeshCollider unless listed here. Wrappers give Props/Nature models (which ship without collision) an owned module prefab with a box collider. Collider 'trunk' = capsule on the stem only, so people walk under canopies. 'noShadow' modules are flush or tiny details whose shadow never resolves in the 2048 cascade; they skip the shadow pass.",
+  "noCollider": [
+    "ENV_Door_Canopy",
+    "ENV_Cable_Span",
+    "ENV_Awning",
+    "ENV_Downpipe",
+    "ENV_Shop_Fascia",
+    "ENV_Sign_Bracket",
+    "ENV_Water_Plane_20m",
+    "ENV_Quay_Ladder",
+    "ENV_Puddle_A",
+    "ENV_Puddle_B",
+    "ENV_Drain_Grate",
+    "ENV_Manhole",
+    "ENV_Tree_Pit",
+    "ENV_Plinth_2m",
+    "ENV_Plinth_Pier",
+    "ENV_Cable_Run_2m",
+    "ENV_Clothesline",
+    "ENV_Sat_Dish",
+    "ENV_TV_Aerial",
+    "ENV_Street_Name_Plate",
+    "ENV_Window_Blind",
+    "ENV_Window_Blind_Half",
+    "ENV_Window_Blind_Up",
+    "ENV_Window_Boarded",
+    "ENV_Mooring_Line",
+    "ENV_Buoy",
+    "ENV_Parasol",
+    "ENV_Utility_Box",
+    "ENV_Downpipe_Head",
+    "ENV_Downpipe_Shoe",
+    "ENV_Eave_Canecillos",
+    "ENV_Quoin_Ashlar",
+    "ENV_Quoin_Slim",
+    "ENV_Escudo",
+    "ENV_Window_Wide_Ashlar",
+    "ENV_Solana_Bay",
+    "ENV_Solana_Wing",
+    "ENV_Sign_Panel",
+    "ENV_Blade_Sign",
+    "ENV_AC_Unit",
+    "ENV_Alarm_Box",
+    "ENV_Intercom",
+    "ENV_Extractor_Vent",
+    "ENV_Telecom_Box",
+    "ENV_Gas_Pipe",
+    "ENV_Solar_Panel",
+    "ENV_Chimney_Stone",
+    "ENV_Chimney_Flue",
+    "ENV_Laurel_Stem",
+    "ENV_Fascia_Lamp",
+    "ENV_Threshold_Slab",
+    "ENV_Drain_Outlet",
+    "ENV_Clock_Face",
+    "ENV_Bell",
+    "ENV_Weathervane",
+    "ENV_Stain_Quad",
+    "ENV_ATM"
+  ],
+  "boxCollider": [
+    "ENV_Bollard_Mooring",
+    "ENV_Bollard_Street",
+    "ENV_Bin_Street",
+    "ENV_Crate_Fish",
+    "ENV_Pallet",
+    "ENV_Counter_Shop",
+    "ENV_Cafe_Table",
+    "ENV_Cafe_Chair",
+    "ENV_Bicycle",
+    "ENV_Trash_Bags",
+    "ENV_Box_Cardboard",
+    "ENV_Bench_Street",
+    "ENV_Planter_Pot",
+    "ENV_Lamp_Post",
+    "ENV_Net_Pile",
+    "ENV_Lifebuoy_Post",
+    "ENV_Sign_NoEntry",
+    "ENV_Window_Insert_Wide",
+    "ENV_Wall_Plaster_Clean",
+    "ENV_Retaining_Wall_2x2",
+    "ENV_AFrame_Board",
+    "ENV_Recycling_Bins",
+    "ENV_Bike_Rack",
+    "ENV_Pot_Glazed",
+    "ENV_Pot_Tin",
+    "ENV_Planter_Box",
+    "ENV_Trough_Stone",
+    "ENV_Bench_Stone",
+    "ENV_Parapet_Stone_2m",
+    "ENV_Window_Reja"
+  ],
+  "trunkCollider": [],
+  "noShadow": [
+    "ENV_Quoin_Ashlar",
+    "ENV_Quoin_Slim",
+    "ENV_Window_Wide_Ashlar",
+    "ENV_Window_Insert_Wide",
+    "ENV_Door_Balcony",
+    "ENV_Shutter_Roller",
+    "ENV_Planter_Pot",
+    "ENV_Sign_Bracket",
+    "ENV_Shop_Fascia",
+    "ENV_Downpipe",
+    "ENV_Downpipe_Head",
+    "ENV_Downpipe_Shoe",
+    "ENV_Escudo",
+    "ENV_Plinth_2m",
+    "ENV_Plinth_Pier",
+    "ENV_Street_Name_Plate",
+    "ENV_Utility_Box",
+    "ENV_Cable_Run_2m",
+    "ENV_Puddle_A",
+    "ENV_Puddle_B",
+    "ENV_Drain_Grate",
+    "ENV_Manhole",
+    "ENV_Tree_Pit",
+    "ENV_Window_Blind",
+    "ENV_Window_Boarded",
+    "ENV_Sign_Panel",
+    "ENV_Alarm_Box",
+    "ENV_Intercom",
+    "ENV_Extractor_Vent",
+    "ENV_Telecom_Box",
+    "ENV_Gas_Pipe",
+    "ENV_Stain_Quad",
+    "ENV_Threshold_Slab",
+    "ENV_Drain_Outlet",
+    "ENV_Clock_Face"
+  ],
+  "wrappers": [
+    {
+      "name": "ENV_Prop_Crate_Wooden",
+      "source": "Crate_Wooden"
+    },
+    {
+      "name": "ENV_Prop_Barrel",
+      "source": "Barrel"
+    },
+    {
+      "name": "ENV_Prop_Barrel_Apples",
+      "source": "Barrel_Apples"
+    },
+    {
+      "name": "ENV_Prop_FarmCrate_Apple",
+      "source": "FarmCrate_Apple"
+    },
+    {
+      "name": "ENV_Prop_FarmCrate_Carrot",
+      "source": "FarmCrate_Carrot"
+    },
+    {
+      "name": "ENV_Prop_FarmCrate_Empty",
+      "source": "FarmCrate_Empty"
+    },
+    {
+      "name": "ENV_Prop_Bag",
+      "source": "Bag"
+    },
+    {
+      "name": "ENV_Prop_Bench",
+      "source": "Bench"
+    },
+    {
+      "name": "ENV_Prop_Table_Large",
+      "source": "Table_Large"
+    },
+    {
+      "name": "ENV_Prop_Stool",
+      "source": "Stool"
+    },
+    {
+      "name": "ENV_Prop_Chair",
+      "source": "Chair_1"
+    },
+    {
+      "name": "ENV_Prop_Stall",
+      "source": "Stall_Empty"
+    },
+    {
+      "name": "ENV_Prop_Stall_Cart",
+      "source": "Stall_Cart_Empty"
+    },
+    {
+      "name": "ENV_Prop_Shelf_Simple",
+      "source": "Shelf_Simple"
+    },
+    {
+      "name": "ENV_Prop_Shelf_Bottles",
+      "source": "Shelf_Small_Bottles"
+    },
+    {
+      "name": "ENV_Prop_Cabinet",
+      "source": "Cabinet"
+    },
+    {
+      "name": "ENV_Prop_Bucket",
+      "source": "Bucket_Metal"
+    },
+    {
+      "name": "ENV_Prop_Rope_Coil",
+      "source": "Rope_1"
+    },
+    {
+      "name": "ENV_Prop_Chain_Coil",
+      "source": "Chain_Coil"
+    },
+    {
+      "name": "ENV_Prop_Lantern_Wall",
+      "source": "Lantern_Wall",
+      "collider": "none",
+      "remap": {
+        "T_Trim_Metal_BaseColor": "ENV_Metal_Iron"
+      }
+    },
+    {
+      "name": "ENV_Plant_Bush",
+      "source": "Bush_Common",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Plant_Small",
+      "source": "Plant_1",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Tree_Common_A",
+      "source": "CommonTree_1",
+      "collider": "trunk"
+    },
+    {
+      "name": "ENV_Tree_Common_B",
+      "source": "CommonTree_3",
+      "collider": "trunk"
+    },
+    {
+      "name": "ENV_Tree_Common_C",
+      "source": "CommonTree_4",
+      "collider": "trunk"
+    },
+    {
+      "name": "ENV_Plant_Bush_Flowers",
+      "source": "Bush_Common_Flowers",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Plant_Fern",
+      "source": "Fern_1",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Weeds_Grass",
+      "source": "Grass_Common_Short",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Weeds_Tall",
+      "source": "Grass_Wispy_Tall",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Prop_Crate_Metal",
+      "source": "Crate_Metal"
+    },
+    {
+      "name": "ENV_Prop_Bucket_Wood",
+      "source": "Bucket_Wooden_1"
+    },
+    {
+      "name": "ENV_Rock_A",
+      "source": "Rock_Medium_1",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Rock_B",
+      "source": "Rock_Medium_2",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Rock_C",
+      "source": "Rock_Medium_3",
+      "collider": "none"
+    },
+    {
+      "name": "ENV_Tree_Plaza",
+      "source": "CommonTree_1",
+      "collider": "trunk",
+      "scale": 0.8
+    },
+    {
+      "name": "ENV_Tree_Plaza_B",
+      "source": "CommonTree_2",
+      "collider": "trunk",
+      "scale": 0.78
+    },
+    {
+      "name": "ENV_Tree_Plaza_C",
+      "source": "CommonTree_5",
+      "collider": "trunk",
+      "scale": 0.85
+    },
+    {
+      "name": "ENV_Tree_Singular",
+      "source": "CommonTree_2",
+      "collider": "trunk",
+      "scale": 1.3,
+      "parts": [{"source": "ENV_Tree_Bench_Ring"}]
+    },
+    {
+      "name": "ENV_Hill_Tree",
+      "source": "CommonTree_1",
+      "collider": "none",
+      "scale": 0.95
+    },
+    {
+      "name": "ENV_Hill_Tree_B",
+      "source": "CommonTree_2",
+      "collider": "none",
+      "scale": 0.9
+    },
+    {
+      "name": "ENV_Hill_Tree_C",
+      "source": "Pine_1",
+      "collider": "none",
+      "scale": 0.95
+    },
+    {
+      "name": "ENV_Plant_Hydrangea",
+      "source": "Bush_Common_Flowers",
+      "collider": "none",
+      "scale": 0.5,
+      "remap": {"Flowers": "ENV_Src_Flowers_Blue"}
+    },
+    {
+      "name": "ENV_Plant_Geranium",
+      "source": "Bush_Common_Flowers",
+      "collider": "none",
+      "scale": 0.22,
+      "remap": {"Flowers": "ENV_Src_Flowers_Red"}
+    },
+    {
+      "name": "ENV_Plant_Boxwood",
+      "source": "Bush_Common",
+      "collider": "none",
+      "scale": 0.3,
+      "pos": [0, 0.05, 0],
+      "remap": {"Leaves_TwistedTree_C": "ENV_Src_Leaves_Box"}
+    },
+    {
+      "name": "ENV_Plant_Laurel",
+      "source": "ENV_Laurel_Stem",
+      "collider": "none",
+      "parts": [{"source": "Bush_Common", "pos": [0, 0.98, 0], "scale": 0.3, "remap": {"Leaves_TwistedTree_C": "ENV_Src_Leaves_Box"}}]
+    },
+    {
+      "name": "ENV_Shrub_Garden",
+      "source": "Bush_Common",
+      "collider": "none",
+      "scale": 0.7,
+      "remap": {"Leaves_TwistedTree_C": "ENV_Src_Leaves_Box"}
+    }
+  ]
+}

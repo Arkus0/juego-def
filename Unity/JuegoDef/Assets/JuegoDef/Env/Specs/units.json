@@ -1,0 +1,158 @@
+{
+  "comment": "ENV factory library (JuegoDef > ENV > 3 Build Library). Each unit is requested by outcome (frontage type, bays, floors, palette, template params) and built through the same grammar/templates the street assembler uses. demand = CITY-URBAN-00 ENV demand-matrix rows it serves (see Docs/evidence/WP-PROD-ENV-01/B0_COVERAGE.md).",
+  "units": [
+    {
+      "id": "U01_Mixed_Commercial_8m", "title": "Ordinary mixed commercial frontage, 8 m, 3 storeys",
+      "demand": ["mixed_commercial_facade", "shopfront_service_threshold", "signage_utilities_furniture", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "mixed_commercial", "bays": 4, "depth": 6, "floors": 3, "seed": 2, "palette": "cream_green", "awning": "ENV_Canvas_Green" }
+    },
+    {
+      "id": "U02_Mixed_Gallery_6m", "title": "Narrow mixed frontage with glazed gallery, 6 m, 4 storeys",
+      "demand": ["mixed_commercial_facade", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "mixed_commercial", "bays": 3, "depth": 6, "floors": 4, "seed": 5, "palette": "white_blue", "rows": ["DES", "LPI", "LPW", "wPw"] }
+    },
+    {
+      "id": "U03_Shop_Witness_Threshold", "title": "Everyday shop with walkable shallow interior + separate service door",
+      "demand": ["shopfront_service_threshold", "shallow_interior_threshold", "mixed_commercial_facade"],
+      "kind": "building",
+      "building": { "type": "mixed_commercial", "bays": 3, "depth": 6, "floors": 3, "seed": 8, "palette": "ochre_white", "rows": ["SeS", "WPI", "cPW"], "interior": "shop", "awning": "ENV_Canvas_Red" },
+      "notes": "Public shop door is open/walkable; the service door is on the back partition inside and on the building's side, never a street shortcut."
+    },
+    {
+      "id": "U04_Lodging_Frontage_10m", "title": "Lodging (pension) frontage with open arched portal and common vestibule, 10 m, 4 storeys",
+      "demand": ["lodging_frontage", "shallow_interior_threshold", "signage_utilities_furniture"],
+      "kind": "building",
+      "building": { "type": "lodging", "bays": 5, "depth": 6, "floors": 4, "seed": 3, "palette": "rose_green", "rows": ["WPOPW"], "interior": "lodging", "sign": "bracket" }
+    },
+    {
+      "id": "U05_Corner_Mixed_8x8", "title": "Corner building: two frontages, shop wrapping the corner, 4 storeys",
+      "demand": ["corners_terminations", "mixed_commercial_facade"],
+      "kind": "building",
+      "building": { "type": "mixed_commercial", "bays": 4, "depth": 8, "floors": 4, "seed": 6, "palette": "bluegrey_white", "exposeRight": true, "rows": ["DSES", "WPPI", "WPPc", "wPPw"], "right": ["SEPW", "WPPW", "cPPW", "wPPw"] }
+    },
+    {
+      "id": "U06_Closed_Residential_6m", "title": "Closed ordinary frontage, stone ground floor, 6 m, 3 storeys",
+      "demand": ["closed_ordinary_frontage", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 3, "depth": 6, "floors": 3, "seed": 4, "palette": "sage_oxblood" }
+    },
+    {
+      "id": "U07_Closed_Narrow_4m", "title": "Narrow infill house, 4 m, 3 storeys",
+      "demand": ["closed_ordinary_frontage"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 2, "depth": 6, "floors": 3, "seed": 9, "palette": "rose_green", "ground": "plaster" }
+    },
+    {
+      "id": "U08_Closed_Residential_8m_4F", "title": "Ordinary residential block, plaster ground floor with garage shutter, 8 m, 4 storeys",
+      "demand": ["closed_ordinary_frontage", "mixed_commercial_facade"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 4, "depth": 6, "floors": 4, "seed": 12, "palette": "white_blue", "ground": "plaster", "rows": ["DPWR"] }
+    },
+    {
+      "id": "U09_Terrace_End_Termination", "title": "End-of-terrace termination with exposed party wall, 6 m, 3 storeys",
+      "demand": ["corners_terminations", "closed_ordinary_frontage"],
+      "kind": "building",
+      "building": { "type": "termination", "bays": 3, "depth": 6, "floors": 3, "seed": 7, "palette": "weathered_timber", "exposeLeft": true }
+    },
+    {
+      "id": "U10_Port_Warehouse_8x10", "title": "Port warehouse / fish-market shed, 8 x 10 m, gable to the quay, timber gates",
+      "demand": ["quay_public_edge_railings", "controlled_yard_boundary", "port_market_shop_street_props"],
+      "kind": "building",
+      "building": { "type": "warehouse", "bays": 4, "depth": 10, "floors": 2, "seed": 1, "palette": "port_stone", "roof": "gable", "exposeLeft": true, "exposeRight": true, "chimney": false }
+    },
+    {
+      "id": "U11_Street_Kerbed_8x8", "title": "Street section: cobbled carriageway, flagged pavements, granite kerbs",
+      "demand": ["street_kerb_pavement_drain"],
+      "kind": "street_ground", "params": { "length": 8, "width": 8, "style": "kerbed", "pavement": 1.5 }
+    },
+    {
+      "id": "U12_Street_Pedestrian_8x6", "title": "Pedestrian lane section: single cobbled level with central drainage channel",
+      "demand": ["street_kerb_pavement_drain"],
+      "kind": "street_ground", "params": { "length": 8, "width": 6, "style": "pedestrian" }
+    },
+    {
+      "id": "U13_Stepped_Connector_3m", "title": "Stepped public connector (3 m rise) cut into a terrace, retaining walls, guard rails",
+      "demand": ["stairs_ramps_retaining"],
+      "kind": "stepped_connector", "params": { "height": 3, "terraceBays": 2 }
+    },
+    {
+      "id": "U14_Quay_Public_Overlook_12m", "title": "Public quay edge / overlook: rubble quay wall, coping, bollards, ladder, guard rail, water",
+      "demand": ["quay_public_edge_railings"],
+      "kind": "quay_edge", "params": { "length": 12, "railing": true }
+    },
+    {
+      "id": "U15_Yard_Boundary_10m", "title": "Controlled work-yard boundary with closed gate (distinct from the public edge)",
+      "demand": ["controlled_yard_boundary"],
+      "kind": "yard_boundary", "params": { "length": 10, "gateAt": 2 }
+    },
+    {
+      "id": "U16_Market_Stall_Set", "title": "Market court stall set: stall, produce crates, table, stools",
+      "demand": ["port_market_shop_street_props"],
+      "kind": "cluster",
+      "parts": [
+        ["ENV_Prop_Stall", 0, 0, 0, 0], ["ENV_Prop_FarmCrate_Apple", -0.35, 0.78, 0.05, 5], ["ENV_Prop_FarmCrate_Carrot", 0.35, 0.78, 0.05, -4],
+        ["ENV_Prop_Table_Large", 2.6, 0, 0.1, 0], ["ENV_Prop_FarmCrate_Empty", 2.1, 0.81, 0.1, 0], ["ENV_Prop_Barrel_Apples", 3.2, 0.81, 0.15, 0],
+        ["ENV_Prop_Stall_Cart", -2.4, 0, 0.3, 20], ["ENV_Prop_Stool", 1.2, 0, -0.8, 0], ["ENV_Prop_Bag", -1.3, 0, 0.6, 30],
+        ["ENV_Prop_FarmCrate_Empty", 0.9, 0, 0.9, 10], ["ENV_Prop_FarmCrate_Empty", 0.9, 0.38, 0.9, 25]
+      ]
+    },
+    {
+      "id": "U17_Port_Work_Props", "title": "Working-port props: plastic fish crates, pallets, barrels, rope and chain",
+      "demand": ["port_market_shop_street_props"],
+      "kind": "cluster",
+      "parts": [
+        ["ENV_Pallet", 0, 0, 0, 0], ["ENV_Crate_Fish", -0.3, 0.14, -0.2, 0], ["ENV_Crate_Fish", 0.3, 0.14, -0.2, 0], ["ENV_Crate_Fish", -0.3, 0.14, 0.2, 0],
+        ["ENV_Crate_Fish", 0.3, 0.14, 0.2, 0], ["ENV_Crate_Fish", 0.0, 0.36, 0.0, 12], ["ENV_Pallet", 1.6, 0, 0.2, 90], ["ENV_Pallet", 1.6, 0.14, 0.2, 92],
+        ["ENV_Prop_Barrel", -1.3, 0, 0.4, 0], ["ENV_Prop_Barrel", -1.7, 0, -0.2, 40], ["ENV_Prop_Rope_Coil", -1.0, 0, -0.9, 0],
+        ["ENV_Prop_Chain_Coil", 0.9, 0, -1.0, 0], ["ENV_Prop_Bucket", 2.4, 0, -0.6, 0], ["ENV_Crate_Fish", 2.6, 0, 0.9, 30]
+      ]
+    },
+    {
+      "id": "U18_Street_Furniture_Utilities", "title": "Street furniture and utilities: bench, litter bin, bollards, wall lamp, downpipe, planting",
+      "demand": ["signage_utilities_furniture"],
+      "kind": "cluster",
+      "parts": [
+        ["ENV_Prop_Bench", 0, 0, 0, 0], ["ENV_Bin_Street", 2.0, 0, 0.2, 0], ["ENV_Bollard_Street", 3.0, 0, 0.8, 0], ["ENV_Bollard_Street", 4.2, 0, 0.8, 0],
+        ["ENV_Bollard_Street", 5.4, 0, 0.8, 0], ["ENV_Plant_Bush", -2.2, 0, -0.2, 0], ["ENV_Plant_Small", -1.6, 0, 0.3, 0]
+      ]
+    },
+    {
+      "id": "U19_Ground_Frontage_Vocabulary", "title": "Ground-floor frontage vocabulary strip: display window, open/closed shop doors, shutter, gate, service door, portal, fascias, awning, blade sign",
+      "demand": ["shopfront_service_threshold", "signage_utilities_furniture", "closed_ordinary_frontage"],
+      "kind": "building",
+      "building": { "type": "mixed_commercial", "bays": 7, "depth": 4, "floors": 1, "seed": 11, "palette": "cream_green", "rows": ["SEeRGVD"], "roof": "none", "awning": "ENV_Canvas_Cream", "sign": "bracket", "exposeLeft": true, "exposeRight": true, "chimney": false }
+    },
+    {
+      "id": "U20_Landmark_Tower_4x4", "title": "Singular stone tower closing a view: solid shaft, small round-head openings, pyramid roof (view terminator at a plaza node)",
+      "demand": ["corners_terminations", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "landmark", "bays": 2, "depth": 4, "floors": 5, "seed": 3, "palette": "core_sandstone_chestnut", "ground": "stone", "upper": "stone", "roof": "tower", "chimney": false, "exposeLeft": true, "exposeRight": true }
+    },
+    {
+      "id": "U21_Plaza_Node_16x12", "title": "Small plaza at a street node: flagstone floor, trees with pits, bar terrace, benches",
+      "demand": ["corners_terminations", "port_market_shop_street_props", "signage_utilities_furniture"],
+      "kind": "plaza",
+      "params": { "w": 16, "d": 12, "trees": 2, "terrace": true, "seed": 3 }
+    },
+    {
+      "id": "U22_Quay_Composed_24m", "title": "Composed working-water edge: overlook with rail and benches, open working quay with bollards, steps to the water, slipway, moored boats",
+      "demand": ["quay_public_edge_railings", "port_market_shop_street_props"],
+      "kind": "quay_edge",
+      "params": { "length": 24, "railing": false, "depth": 5, "overlookFrom": 0, "overlookTo": 10, "stepsAt": 11, "slipwayAt": 19, "boats": 2, "seed": 4 }
+    },
+    {
+      "id": "U23_Core_House_Narrow_Stone", "title": "Historic-core narrow house: stone ground floor, lime render, chestnut timber balcony, 4 m",
+      "demand": ["closed_ordinary_frontage", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 2, "depth": 8, "floors": 3, "seed": 61, "palette": "core_lime_chestnut", "ground": "stone", "era": "old" }
+    },
+    {
+      "id": "U24_Core_House_Stone_Solana", "title": "Historic-core house in exposed stone with timber balcony, 6 m",
+      "demand": ["closed_ordinary_frontage", "damp_palette_families"],
+      "kind": "building",
+      "building": { "type": "closed_residential", "bays": 3, "depth": 8, "floors": 3, "seed": 62, "palette": "core_sandstone_chestnut", "ground": "stone", "upper": "stone", "era": "old", "rows": ["", "PBP"] }
+    }
+  ]
+}

@@ -1,0 +1,901 @@
+{
+  "comment": "Ground-floor programme for commercial plots (owner audit 2026-09-29: locales genéricos, carteles vacíos, poca evidencia de función). EnvBusiness draws one per mixed_commercial plot by street kind; a named business is used once per district. Tools/env_signs.py renders every sign/icon texture from this file. Fictional names only (no real brands, no Potes names). type -> room (interior cubemap), ground (bay-code rewrite), sign placement and exterior dressing.",
+  "types": {
+    "bar": {
+      "room": "Bar",
+      "door": "open",
+      "awning": 0.45,
+      "terrace": "bar",
+      "bracket": 0.6,
+      "board": 0.5,
+      "boardNotice": "pinchos",
+      "lit": true
+    },
+    "cafe": {
+      "room": "Bar",
+      "door": "open",
+      "awning": 0.6,
+      "terrace": "cafe",
+      "bracket": 0.3,
+      "board": 0.4,
+      "boardNotice": "menu",
+      "lit": true
+    },
+    "sidreria": {
+      "room": "Bar",
+      "door": "open",
+      "awning": 0.2,
+      "terrace": "barrels",
+      "bracket": 0.8,
+      "board": 0.5,
+      "boardNotice": "pinchos",
+      "lit": true
+    },
+    "panaderia": {
+      "room": "Panaderia",
+      "door": "open",
+      "awning": 0.5,
+      "bracket": 0.6,
+      "board": 0.6,
+      "boardNotice": "pan",
+      "lit": true
+    },
+    "farmacia": {
+      "room": "Farmacia",
+      "door": "open",
+      "awning": 0.0,
+      "cross": true,
+      "lit": true
+    },
+    "estanco": {
+      "room": "Tienda",
+      "door": "closed",
+      "awning": 0.0,
+      "bracket": 0.0,
+      "lit": true
+    },
+    "ferreteria": {
+      "room": "Taller",
+      "door": "open",
+      "awning": 0.3,
+      "goods": "ferreteria",
+      "lit": true
+    },
+    "fruteria": {
+      "room": "Tienda",
+      "door": "open",
+      "awning": 0.85,
+      "goods": "fruta",
+      "lit": true
+    },
+    "carniceria": {
+      "room": "Tienda",
+      "door": "closed",
+      "awning": 0.4,
+      "lit": true
+    },
+    "ultramarinos": {
+      "room": "Tienda",
+      "door": "open",
+      "awning": 0.5,
+      "goods": "ultramarinos",
+      "bracket": 0.4,
+      "lit": true
+    },
+    "tienda": {
+      "room": "Tienda",
+      "door": "closed",
+      "awning": 0.35,
+      "lit": true
+    },
+    "recuerdos": {
+      "room": "Tienda",
+      "door": "open",
+      "awning": 0.3,
+      "goods": "recuerdos",
+      "bracket": 0.5,
+      "board": 0.5,
+      "boardNotice": "regional",
+      "lit": true
+    },
+    "oficina": {
+      "room": "Oficina",
+      "door": "closed",
+      "awning": 0.0,
+      "lit": true
+    },
+    "banco": {
+      "room": "Oficina",
+      "door": "closed",
+      "awning": 0.0,
+      "atm": true,
+      "lit": true
+    },
+    "peluqueria": {
+      "room": "Oficina",
+      "door": "closed",
+      "awning": 0.2,
+      "bracket": 0.4,
+      "lit": true
+    },
+    "taller": {
+      "room": "Taller",
+      "door": "gate",
+      "awning": 0.0,
+      "lit": false
+    },
+    "garaje": {
+      "room": "Taller",
+      "door": "roller",
+      "awning": 0.0,
+      "vado": true,
+      "lit": false
+    },
+    "cerrado": {
+      "room": "Vacio",
+      "door": "closed",
+      "awning": 0.0,
+      "lit": false,
+      "closed": true
+    },
+    "vivienda": {
+      "room": "",
+      "door": "portal",
+      "awning": 0.0,
+      "lit": false,
+      "home": true
+    },
+    "hostal": {
+      "room": "",
+      "door": "keep",
+      "awning": 0.0,
+      "bracket": 0.7,
+      "lit": true,
+      "lodging": true
+    }
+  },
+  "kinds": {
+    "comercial": {
+      "panaderia": 3,
+      "farmacia": 2,
+      "estanco": 2,
+      "ferreteria": 2,
+      "fruteria": 2,
+      "carniceria": 2,
+      "ultramarinos": 2,
+      "tienda": 6,
+      "recuerdos": 3,
+      "banco": 2,
+      "oficina": 2,
+      "peluqueria": 2,
+      "cafe": 3,
+      "bar": 2,
+      "cerrado": 3
+    },
+    "bares": {
+      "bar": 7,
+      "sidreria": 3,
+      "cafe": 3,
+      "tienda": 2,
+      "ultramarinos": 1,
+      "cerrado": 2,
+      "peluqueria": 1
+    },
+    "plaza": {
+      "cafe": 4,
+      "bar": 3,
+      "banco": 2,
+      "farmacia": 2,
+      "recuerdos": 2,
+      "tienda": 2,
+      "oficina": 1
+    },
+    "ribera": {
+      "bar": 2,
+      "taller": 3,
+      "garaje": 3,
+      "cerrado": 3,
+      "vivienda": 3,
+      "ultramarinos": 1
+    },
+    "alta": {
+      "taller": 3,
+      "peluqueria": 2,
+      "ultramarinos": 2,
+      "tienda": 2,
+      "oficina": 2,
+      "cerrado": 3,
+      "garaje": 3,
+      "vivienda": 3,
+      "bar": 1
+    },
+    "residencial": {
+      "garaje": 4,
+      "cerrado": 3,
+      "vivienda": 5,
+      "taller": 2,
+      "ultramarinos": 1,
+      "bar": 1
+    },
+    "huertas": {
+      "garaje": 3,
+      "vivienda": 4,
+      "taller": 2,
+      "cerrado": 2
+    }
+  },
+  "businesses": [
+    {
+      "id": "bar_ribera",
+      "type": "bar",
+      "name": "Bar La Ribera",
+      "style": "painted",
+      "bg": "#2F4A3C",
+      "fg": "#EFE3C4",
+      "font": "BOOKOSB.TTF",
+      "icon": "copa"
+    },
+    {
+      "id": "bar_puente",
+      "type": "bar",
+      "name": "Bar El Puente",
+      "style": "enamel",
+      "bg": "#1F3558",
+      "fg": "#F2F2EE",
+      "font": "GILB____.TTF",
+      "icon": "copa"
+    },
+    {
+      "id": "taberna_chelo",
+      "type": "bar",
+      "name": "Taberna Casa Chelo",
+      "style": "painted",
+      "bg": "#6E2E28",
+      "fg": "#F0DDB0",
+      "font": "BOOKOSB.TTF",
+      "icon": "jarra"
+    },
+    {
+      "id": "bar_tito",
+      "type": "bar",
+      "name": "Bar Tito",
+      "style": "modern",
+      "bg": "#F2EEE4",
+      "fg": "#B0281F",
+      "font": "COOPBL.TTF",
+      "icon": "copa"
+    },
+    {
+      "id": "cerveceria_espuela",
+      "type": "bar",
+      "name": "Cervecería La Espuela",
+      "style": "gilded",
+      "bg": "#1C1C1A",
+      "fg": "#D8B45A",
+      "font": "GARABD.TTF",
+      "icon": "jarra"
+    },
+    {
+      "id": "bar_arcos",
+      "type": "bar",
+      "name": "Bar Los Soportales",
+      "style": "painted",
+      "bg": "#E6D8B4",
+      "fg": "#3B2A1E",
+      "font": "BELLB.TTF",
+      "icon": "copa"
+    },
+    {
+      "id": "vinos_paco",
+      "type": "bar",
+      "name": "Casa Paco · Vinos",
+      "style": "painted",
+      "bg": "#4A2530",
+      "fg": "#EAD7B0",
+      "font": "BOOKOSB.TTF",
+      "icon": "copa"
+    },
+    {
+      "id": "sidreria_llagar",
+      "type": "sidreria",
+      "name": "Sidrería El Llagar",
+      "style": "painted",
+      "bg": "#3E5A2E",
+      "fg": "#F3E6C2",
+      "font": "BOOKOSB.TTF",
+      "icon": "sidra"
+    },
+    {
+      "id": "sidreria_pomar",
+      "type": "sidreria",
+      "name": "Sidrería El Pomar",
+      "style": "enamel",
+      "bg": "#7A2A22",
+      "fg": "#F4EEDC",
+      "font": "GILB____.TTF",
+      "icon": "sidra"
+    },
+    {
+      "id": "meson_torre",
+      "type": "sidreria",
+      "name": "Mesón La Torre",
+      "style": "gilded",
+      "bg": "#2A1E16",
+      "fg": "#D9B862",
+      "font": "GARABD.TTF",
+      "icon": "sidra"
+    },
+    {
+      "id": "cafe_central",
+      "type": "cafe",
+      "name": "Café Central",
+      "style": "gilded",
+      "bg": "#1E3A2E",
+      "fg": "#E2C572",
+      "font": "BELLB.TTF",
+      "icon": "taza"
+    },
+    {
+      "id": "cafe_plaza",
+      "type": "cafe",
+      "name": "Café de la Plaza",
+      "style": "painted",
+      "bg": "#EDE3CC",
+      "fg": "#2E4A60",
+      "font": "BOOKOSB.TTF",
+      "icon": "taza"
+    },
+    {
+      "id": "cafeteria_nube",
+      "type": "cafe",
+      "name": "Cafetería La Nube",
+      "style": "modern",
+      "bg": "#F4F1EA",
+      "fg": "#2F6F8A",
+      "font": "BRUSHSCI.TTF",
+      "icon": "taza"
+    },
+    {
+      "id": "cafe_indiano",
+      "type": "cafe",
+      "name": "Café El Indiano",
+      "style": "gilded",
+      "bg": "#3A1E1A",
+      "fg": "#E0BE6A",
+      "font": "GARABD.TTF",
+      "icon": "taza"
+    },
+    {
+      "id": "panaderia_cuesta",
+      "type": "panaderia",
+      "name": "Panadería Cuesta",
+      "style": "painted",
+      "bg": "#D9B77A",
+      "fg": "#3A2616",
+      "font": "BOOKOSB.TTF",
+      "icon": "pan"
+    },
+    {
+      "id": "horno_sanroque",
+      "type": "panaderia",
+      "name": "Horno San Roque",
+      "style": "painted",
+      "bg": "#6B3A24",
+      "fg": "#F2DDAE",
+      "font": "BELLB.TTF",
+      "icon": "pan"
+    },
+    {
+      "id": "confiteria_dulce",
+      "type": "panaderia",
+      "name": "Confitería La Dulce",
+      "style": "modern",
+      "bg": "#F6EEE8",
+      "fg": "#B4506A",
+      "font": "BRUSHSCI.TTF",
+      "icon": "pan"
+    },
+    {
+      "id": "farmacia_mier",
+      "type": "farmacia",
+      "name": "FARMACIA",
+      "style": "modern",
+      "bg": "#F4F6F2",
+      "fg": "#1F7A3E",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "farmacia_plaza",
+      "type": "farmacia",
+      "name": "Farmacia Lda. Mier",
+      "style": "enamel",
+      "bg": "#1F6A3A",
+      "fg": "#F4F4EE",
+      "font": "GILB____.TTF"
+    },
+    {
+      "id": "estanco_1",
+      "type": "estanco",
+      "name": "ESTANCO Nº 1 · TABACOS",
+      "style": "enamel",
+      "bg": "#6E4B22",
+      "fg": "#F2C94A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "estanco_2",
+      "type": "estanco",
+      "name": "EXPENDEDURÍA Nº 2",
+      "style": "enamel",
+      "bg": "#6E4B22",
+      "fg": "#F2C94A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "ferreteria_gutierrez",
+      "type": "ferreteria",
+      "name": "Ferretería Gutiérrez",
+      "style": "painted",
+      "bg": "#2C4A6E",
+      "fg": "#F2EAD6",
+      "font": "BOOKOSB.TTF",
+      "icon": "llave"
+    },
+    {
+      "id": "drogueria_norte",
+      "type": "ferreteria",
+      "name": "Droguería del Norte",
+      "style": "modern",
+      "bg": "#F2EFE6",
+      "fg": "#2A5C8A",
+      "font": "ARIALNB.TTF",
+      "icon": "llave"
+    },
+    {
+      "id": "frutas_maribel",
+      "type": "fruteria",
+      "name": "Frutas Maribel",
+      "style": "modern",
+      "bg": "#F4EFE0",
+      "fg": "#3E7A2E",
+      "font": "COOPBL.TTF"
+    },
+    {
+      "id": "fruteria_huerta",
+      "type": "fruteria",
+      "name": "Frutería La Huerta",
+      "style": "painted",
+      "bg": "#4E6A2A",
+      "fg": "#F4E9C8",
+      "font": "BOOKOSB.TTF"
+    },
+    {
+      "id": "carniceria_mazo",
+      "type": "carniceria",
+      "name": "Carnicería Mazo",
+      "style": "enamel",
+      "bg": "#8A1E1E",
+      "fg": "#F6F2EA",
+      "font": "GILB____.TTF"
+    },
+    {
+      "id": "charcuteria_pepa",
+      "type": "carniceria",
+      "name": "Charcutería Pepa",
+      "style": "painted",
+      "bg": "#F0E6D2",
+      "fg": "#7A2020",
+      "font": "BELLB.TTF"
+    },
+    {
+      "id": "ultramarinos_remedios",
+      "type": "ultramarinos",
+      "name": "Ultramarinos Remedios",
+      "style": "painted",
+      "bg": "#E8DCB8",
+      "fg": "#2A3E2A",
+      "font": "BOOKOSB.TTF",
+      "icon": "pan"
+    },
+    {
+      "id": "alimentacion_plaza",
+      "type": "ultramarinos",
+      "name": "Alimentación La Plaza",
+      "style": "modern",
+      "bg": "#F2F0E8",
+      "fg": "#C04A1E",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "coloniales_herrera",
+      "type": "ultramarinos",
+      "name": "Coloniales Herrera",
+      "style": "gilded",
+      "bg": "#20302A",
+      "fg": "#DCC07A",
+      "font": "GARABD.TTF"
+    },
+    {
+      "id": "merceria_aguja",
+      "type": "tienda",
+      "name": "Mercería La Aguja",
+      "style": "painted",
+      "bg": "#E8D6D0",
+      "fg": "#6A2A3A",
+      "font": "BELLB.TTF",
+      "icon": "tijeras"
+    },
+    {
+      "id": "calzados_pereda",
+      "type": "tienda",
+      "name": "Calzados Pereda",
+      "style": "modern",
+      "bg": "#EEEAE0",
+      "fg": "#2A2A2A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "libreria_faro",
+      "type": "tienda",
+      "name": "Librería El Faro",
+      "style": "painted",
+      "bg": "#1E3A5A",
+      "fg": "#F2E6C8",
+      "font": "BOOKOSB.TTF",
+      "icon": "libro"
+    },
+    {
+      "id": "optica_norte",
+      "type": "tienda",
+      "name": "Óptica Norte",
+      "style": "modern",
+      "bg": "#F6F6F4",
+      "fg": "#1E4E7A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "modas_carmen",
+      "type": "tienda",
+      "name": "Modas Carmen",
+      "style": "modern",
+      "bg": "#F4EEF0",
+      "fg": "#6A3A5A",
+      "font": "BRUSHSCI.TTF"
+    },
+    {
+      "id": "papeleria_pluma",
+      "type": "tienda",
+      "name": "Papelería La Pluma",
+      "style": "painted",
+      "bg": "#EEE2C2",
+      "fg": "#2A4A6A",
+      "font": "BELLB.TTF",
+      "icon": "libro"
+    },
+    {
+      "id": "electro_hnos",
+      "type": "tienda",
+      "name": "Electrodomésticos Hnos. Sainz",
+      "style": "modern",
+      "bg": "#F2F2F0",
+      "fg": "#1E5AA0",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "quesos_orujos",
+      "type": "recuerdos",
+      "name": "Quesos y Orujos del Valle",
+      "style": "painted",
+      "bg": "#5A3A20",
+      "fg": "#F0DDAA",
+      "font": "BOOKOSB.TTF",
+      "icon": "queso"
+    },
+    {
+      "id": "artesania_valle",
+      "type": "recuerdos",
+      "name": "Artesanía del Valle",
+      "style": "painted",
+      "bg": "#E4D4AE",
+      "fg": "#4A2E1A",
+      "font": "BELLB.TTF",
+      "icon": "queso"
+    },
+    {
+      "id": "miel_monte",
+      "type": "recuerdos",
+      "name": "Miel y Productos del Monte",
+      "style": "painted",
+      "bg": "#C8962E",
+      "fg": "#2A1C0E",
+      "font": "BOOKOSB.TTF",
+      "icon": "queso"
+    },
+    {
+      "id": "caja_norte",
+      "type": "banco",
+      "name": "CAJA DEL NORTE",
+      "style": "modern",
+      "bg": "#F4F4F2",
+      "fg": "#0E5A5A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "caja_rural_valle",
+      "type": "banco",
+      "name": "Caja Rural del Valle",
+      "style": "modern",
+      "bg": "#1E5A3A",
+      "fg": "#F4F4EE",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "inmobiliaria",
+      "type": "oficina",
+      "name": "Inmobiliaria Costa Norte",
+      "style": "modern",
+      "bg": "#F2F2EE",
+      "fg": "#8A1E2E",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "seguros_diaz",
+      "type": "oficina",
+      "name": "Seguros Díaz · Gestoría",
+      "style": "modern",
+      "bg": "#EEF0F2",
+      "fg": "#1E3A6A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "estudio_arq",
+      "type": "oficina",
+      "name": "Estudio Abascal · Arquitectura",
+      "style": "modern",
+      "bg": "#1E1E1E",
+      "fg": "#EEEEEA",
+      "font": "bahnschrift.ttf"
+    },
+    {
+      "id": "peluqueria_loli",
+      "type": "peluqueria",
+      "name": "Peluquería Loli",
+      "style": "modern",
+      "bg": "#F6EEF2",
+      "fg": "#8A2E5A",
+      "font": "BRUSHSCI.TTF",
+      "icon": "tijeras"
+    },
+    {
+      "id": "barberia_tono",
+      "type": "peluqueria",
+      "name": "Barbería Toño",
+      "style": "enamel",
+      "bg": "#1E1E22",
+      "fg": "#E8E4DA",
+      "font": "GILB____.TTF",
+      "icon": "tijeras"
+    },
+    {
+      "id": "talleres_ruiz",
+      "type": "taller",
+      "name": "Talleres Ruiz",
+      "style": "painted",
+      "bg": "#E8E2D2",
+      "fg": "#2A2A2A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "carpinteria_abascal",
+      "type": "taller",
+      "name": "Carpintería Abascal",
+      "style": "painted",
+      "bg": "#6A4A2A",
+      "fg": "#F2E6CC",
+      "font": "BOOKOSB.TTF"
+    },
+    {
+      "id": "herreria_cosio",
+      "type": "taller",
+      "name": "Cerrajería Cossío",
+      "style": "painted",
+      "bg": "#3A3A3A",
+      "fg": "#E6DDC8",
+      "font": "GILB____.TTF"
+    },
+    {
+      "id": "tapiceria_lola",
+      "type": "taller",
+      "name": "Tapicería Lola",
+      "style": "painted",
+      "bg": "#E2D2B8",
+      "fg": "#5A2A2A",
+      "font": "BELLB.TTF"
+    },
+    {
+      "id": "hostal_torre",
+      "type": "hostal",
+      "name": "Hostal La Torre",
+      "style": "enamel",
+      "bg": "#1F3A6A",
+      "fg": "#F2F2EE",
+      "font": "GILB____.TTF",
+      "icon": "cama"
+    },
+    {
+      "id": "pension_rosi",
+      "type": "hostal",
+      "name": "Pensión Rosi",
+      "style": "painted",
+      "bg": "#E8DCC0",
+      "fg": "#2A3A5A",
+      "font": "BOOKOSB.TTF",
+      "icon": "cama"
+    },
+    {
+      "id": "posada_valle",
+      "type": "hostal",
+      "name": "Posada del Valle",
+      "style": "gilded",
+      "bg": "#2A2220",
+      "fg": "#DAB866",
+      "font": "GARABD.TTF",
+      "icon": "cama"
+    },
+    {
+      "id": "hotel_casona",
+      "type": "hostal",
+      "name": "Hotel Casona del Río",
+      "style": "gilded",
+      "bg": "#1E2E2A",
+      "fg": "#E0C274",
+      "font": "BELLB.TTF",
+      "icon": "cama"
+    },
+    {
+      "id": "apartamentos",
+      "type": "hostal",
+      "name": "Apartamentos Turísticos El Puente",
+      "style": "modern",
+      "bg": "#F2F2EE",
+      "fg": "#2A4A6A",
+      "font": "ARIALNB.TTF",
+      "icon": "cama"
+    }
+  ],
+  "generic": {
+    "garaje": {
+      "sign": "vado"
+    },
+    "cerrado": {
+      "signs": [
+        "se_alquila",
+        "se_vende",
+        "jubilacion",
+        "traspaso"
+      ]
+    },
+    "vivienda": {}
+  },
+  "notices": [
+    {
+      "id": "se_alquila",
+      "text": "SE ALQUILA",
+      "sub": "Razón en el 2º",
+      "bg": "#F2E200",
+      "fg": "#C01818",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "se_vende",
+      "text": "SE VENDE",
+      "sub": "Particular",
+      "bg": "#F4F2EC",
+      "fg": "#C01818",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "jubilacion",
+      "text": "CERRADO",
+      "sub": "por jubilación · gracias a todos",
+      "bg": "#F6F2E6",
+      "fg": "#222222",
+      "font": "BOOKOSB.TTF"
+    },
+    {
+      "id": "traspaso",
+      "text": "SE TRASPASA",
+      "sub": "Negocio en marcha",
+      "bg": "#F4F4F0",
+      "fg": "#1E3A8A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "vado",
+      "text": "VADO PERMANENTE",
+      "sub": "Nº 27",
+      "bg": "#F4F4F4",
+      "fg": "#1E1E1E",
+      "font": "ARIALNB.TTF",
+      "vado": true
+    },
+    {
+      "id": "horario",
+      "text": "ABIERTO",
+      "sub": "L-V 9:30-13:30 · 17-20",
+      "bg": "#F4F4F0",
+      "fg": "#1E6A3A",
+      "font": "ARIALNB.TTF"
+    },
+    {
+      "id": "menu",
+      "text": "MENÚ DEL DÍA",
+      "sub": "12 €, cocido, pescado",
+      "bg": "#1E2420",
+      "fg": "#F0F0E8",
+      "font": "BRUSHSCI.TTF",
+      "board": true
+    },
+    {
+      "id": "pinchos",
+      "text": "PINCHOS",
+      "sub": "raciones y vermú",
+      "bg": "#1E2420",
+      "fg": "#F0F0E8",
+      "font": "BRUSHSCI.TTF",
+      "board": true
+    },
+    {
+      "id": "pan",
+      "text": "PAN DEL DÍA",
+      "sub": "hogaza, bollería y empanadas",
+      "bg": "#1E2420",
+      "fg": "#F0F0E8",
+      "font": "BRUSHSCI.TTF",
+      "board": true
+    },
+    {
+      "id": "regional",
+      "text": "DE LA TIERRA",
+      "sub": "queso, miel y orujo",
+      "bg": "#1E2420",
+      "fg": "#F0F0E8",
+      "font": "BRUSHSCI.TTF",
+      "board": true
+    }
+  ],
+  "ghosts": [
+    {
+      "id": "ghost_anis",
+      "text": "ANÍS LA ROSA",
+      "sub": "el mejor del Norte",
+      "bg": "#7A2E26",
+      "fg": "#EFE2C4",
+      "font": "BOOKOSB.TTF"
+    },
+    {
+      "id": "ghost_chocolates",
+      "text": "CHOCOLATES DEL VALLE",
+      "sub": "desde 1921",
+      "bg": "#3A2A20",
+      "fg": "#E8D4A4",
+      "font": "GARABD.TTF"
+    },
+    {
+      "id": "ghost_abonos",
+      "text": "ABONOS Y PIENSOS",
+      "sub": "Casa Gómez · almacén",
+      "bg": "#E6DCC4",
+      "fg": "#2A3A5A",
+      "font": "BOOKOSB.TTF"
+    },
+    {
+      "id": "ghost_hotel",
+      "text": "HOTEL ESPAÑA",
+      "sub": "a 50 m · comidas",
+      "bg": "#E8E0CC",
+      "fg": "#8A2A22",
+      "font": "GILB____.TTF"
+    }
+  ]
+}

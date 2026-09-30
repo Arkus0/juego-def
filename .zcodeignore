@@ -1,0 +1,80 @@
+# Unity: generated / editor-local state (regenerated on open).
+Unity/JuegoDef/[Ll]ibrary/
+Unity/JuegoDef/[Tt]emp/
+Unity/JuegoDef/[Oo]bj/
+Unity/JuegoDef/[Bb]uild/
+Unity/JuegoDef/[Bb]uilds/
+Unity/JuegoDef/[Ll]ogs/
+Unity/JuegoDef/[Uu]ser[Ss]ettings/
+Unity/JuegoDef/MemoryCaptures/
+Unity/JuegoDef/Recordings/
+Unity/JuegoDef/*.csproj
+Unity/JuegoDef/*.sln
+Unity/JuegoDef/*.slnx
+Unity/JuegoDef/*.user
+Unity/JuegoDef/*.pidb
+Unity/JuegoDef/*.booproj
+Unity/JuegoDef/.vs/
+Unity/JuegoDef/.vscode/
+Unity/JuegoDef/.idea/
+Unity/JuegoDef/sysinfo.txt
+Unity/JuegoDef/crashlytics-build.properties
+# MCP operator screenshots (curated evidence is copied to Docs/evidence/).
+Unity/JuegoDef/Captures/
+Unity/JuegoDef/Assets/Screenshots/
+Unity/JuegoDef/Assets/Screenshots.meta
+
+# Game Creator 2 Core: owner-licensed Asset Store package (per-seat EULA, not redistributable).
+# This repository is public: GC2 bytes are never committed. Restore with `python Tools/gc2-provision.py install`.
+Unity/JuegoDef/Assets/Plugins/GameCreator/
+Unity/JuegoDef/Assets/Plugins/GameCreator.meta
+
+# Quaternius source copies are restored from C:/Juego2-Assets by Tools/asset_catalog.py.
+Unity/JuegoDef/Assets/ThirdParty/Quaternius/
+Unity/JuegoDef/Assets/ThirdParty/Quaternius.meta
+Unity/JuegoDef/Assets/ThirdParty.meta
+# GC2 writes its generated settings/installs under Assets/Plugins/GameCreator (ignored above).
+
+# OS / tooling noise.
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+
+# Generated districts (WP-PROD-ENV-01): scenes of ~100 MB and their ground meshes are rebuilt from the committed
+# spec (Env/Specs/districts/*.json) with JuegoDef > ENV > 7 Build District; never commit them.
+Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity
+Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity.meta
+Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District/
+Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District.meta
+
+# ===== ↑ 以上同步自 .gitignore（「从 .gitignore 同步」只重写以上部分）=====
+.git/
+.hg/
+.svn/
+node_modules/
+bower_components/
+jspm_packages/
+site-packages/
+venv/
+coverage/
+htmlcov/
+lcov-report/
+cmakefiles/
+cmake-build-*/
+bazel-*/
+pods/
+deriveddata/
+storybook-static/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+cdk.out/
+*.egg-info/
+*.dist-info/
+eggs/
+pip-wheel-metadata/
+wheels/
+# ----- ↑ 以上为 ZCode 默认排除规则（自定义规则请写在本行下方，不会被同步/恢复改动）-----
+# 自定义规则写在下方（本行提示可删除）

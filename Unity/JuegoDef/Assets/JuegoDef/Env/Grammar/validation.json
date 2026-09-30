@@ -1,0 +1,13 @@
+{
+  "comment": "ENV validator policy (JuegoDef > ENV > 5 Validate). Player capsule = GC2 bootstrap Player CharacterController (radius 0.2, height 2.0, skin 0.08); thresholds may carry a sill up to sillClearance (the controller steps it; anything higher is a trip edge). Banned modules are kit pieces whose own silhouette is a medieval/alpine cue the Visual Bible rejects; derived clean versions exist for each.",
+  "player": { "radius": 0.2, "height": 2.0, "skin": 0.08, "probe": 1.2, "sillClearance": 0.1 },
+  "bannedModules": [
+    "Wall_Plaster_Straight", "Wall_Plaster_Straight_Base", "Wall_Plaster_Window_Wide_Flat", "Wall_Plaster_Door_Flat",
+    "Wall_Plaster_Door_Round", "Wall_Plaster_Window_Thin_Round", "Wall_Plaster_WoodGrid",
+    "Roof_Front_Brick4", "Roof_Front_Brick6", "Roof_Front_Brick8", "Roof_Front_Wood4", "Roof_Front_Wood6", "Roof_Front_Wood8",
+    "Door_3_Flat", "Door_4_Flat", "Door_7_Flat", "Door_3_Round", "Door_4_Round", "Door_7_Round", "Door_8_Flat",
+    "Prop_Wagon", "Roof_Spike", "Roof_Spikes5", "Roof_Spikes10", "Prop_WoodenFence_Single", "Corner_Exterior_Wood", "Corner_ExteriorWide_Wood"
+  ],
+  "bannedPrefixes": ["Wall_WoodWear_", "Wall_WoodBrick_", "Overhang_Wood", "Roof_Wooden_"],
+  "groundedKinds": ["building", "cluster", "street_ground", "yard_boundary"]
+}

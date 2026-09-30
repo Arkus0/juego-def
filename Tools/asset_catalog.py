@@ -560,7 +560,12 @@ def validate(vault: Path, catalog: dict) -> list[str]:
                 problems.append(f"missing derived id: {path}")
             if not path.startswith("Assets/JuegoDef/Derived/") or not (PROJECT / path).is_file():
                 problems.append(f"missing/invalid derived output: {path}")
-            if not derived.get("sourceIds") or any(x not in ids for x in derived["sourceIds"]):
+            if derived.get("origin") == "ORIGINAL":
+                # juego-def-authored geometry/material with no vendor source: allowed, but it must say how it
+                # was made and may not also claim sources.
+                if not derived.get("method") or derived.get("sourceIds"):
+                    problems.append(f"invalid ORIGINAL lineage: {path}")
+            elif not derived.get("sourceIds") or any(x not in ids for x in derived["sourceIds"]):
                 problems.append(f"broken lineage: {path}")
             recorded.add(path)
         for file in DERIVED.rglob("*") if DERIVED.exists() else []:

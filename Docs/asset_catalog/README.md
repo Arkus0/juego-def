@@ -36,6 +36,8 @@ The regression probe `python Tools/test_asset_intake_identity.py` uses a synthet
 
 Place retained derived Unity assets under `Assets/JuegoDef/Derived/<ENV|CHAR|ANIM|PROP>/<stable-name>/`. Never edit ignored vendor source in place. Add a record to `Docs/asset_catalog/lineage.json` with `id`, `path` (Unity project relative, e.g. `Assets/JuegoDef/Derived/ENV/market-shopfront.prefab`), `sourceIds` (catalog IDs), `method`, and `notes`. Rebuild the catalogue after editing lineage to populate each source's `derivedIds`. The validator refuses an unrecorded derived file or a record whose source is absent.
 
+Geometry or materials authored entirely in juego-def (no vendor source) are recorded with `"origin": "ORIGINAL"`, an empty `sourceIds` and a mandatory `method`; the validator refuses an ORIGINAL record that also claims sources. The ENV lane generates all its records with `python Tools/env_catalog.py lineage` (see [`Docs/production/ENV_FACTORY.md`](../production/ENV_FACTORY.md)) and then rebuilds this catalogue so each source exposes its `derivedIds`.
+
 Unity `Assets/ThirdParty/Quaternius/` is local intake state and is excluded from the public repository. This keeps source bytes and the generated snapshot separate while giving scene/prefab references deterministic GUIDs on another installation. The provisioning script records a content-addressed receipt inside each ignored pack folder.
 
 ## Scope and gaps

@@ -54,6 +54,11 @@ Current juego-def authorities:
 
 The migrated baseline is **not** equivalent to a PASS of local CITY-URBAN-00. Do not restore old inland/Potes geography or H1-linked CITY governance merely because a source document contains useful spatial detail.
 
+**Amendment 2026-09-28/29 (owner):** Potes returns only as the **CASCO morphology and look reference** of the fictional
+port town ("mini Potes", lebaniego old town), re-studied from primary data (OSM, IGN MDT05) in `WP-PROD-ENV-01` — see
+`Docs/design/PORT_TOWN_WORLD_MODEL.md` (CASCO reference) and `Docs/production/ENV_COMPOSITION_RULES.md`. The inland
+geography, names and old CITY governance stay retired; the Juego2 sources above do not become authority through it.
+
 ## NPC depth / population planning
 
 Raw source:
@@ -121,6 +126,10 @@ Current juego-def product/design docs govern where wording differs.
 Juego2 `Docs/art/Refs/` is **not current visual authority** because its curated index was built around the old Potes/Liébana setting.
 
 Use current juego-def Visual Bible and port-town design docs first. Historical generic style/anti-reference observations may be consulted selectively, but do not bulk-migrate the old location-reference set.
+
+The current CASCO look reference (2026-09-28) is the new study in `Docs/evidence/WP-PROD-ENV-01/CASCO_REFERENCE_STUDY.md`
+and the owner's style photos (traits recorded in `Docs/production/ENV_COMPOSITION_RULES.md`, images kept out of the
+repo); it does not re-admit the old Juego2 archive.
 
 ## Agent/process archive
 

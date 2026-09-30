@@ -1,0 +1,31 @@
+{
+  "comment": "Fixed review viewpoints for the CASCO (EnvShots.Capture). Street shots are eye-level (1.7 m) along a street centreline; absolute shots give eye/at in district coordinates. Keep names stable: before/after sheets pair them by name.",
+  "shots": [
+    { "name": "S01_espina_este", "street": "Espina_E", "from": 0.04, "to": 0.95 },
+    { "name": "S02_espina_comercios", "street": "Espina_E", "from": 0.35, "to": 0.75, "side": 1.7, "fov": 55 },
+    { "name": "S03_entrada_plaza", "street": "Espina_Plaza", "from": 0.15, "look": "Espina_Nodo", "to": 0.9 },
+    { "name": "S04_plaza_centro_torre", "eye": [104, 2.1, 186], "at": [81, 8, 158] },
+    { "name": "S05_plaza_hacia_rio", "eye": [116, 2.0, 172], "at": [80, 1.5, 196] },
+    { "name": "S06_plaza_desde_puente", "eye": [62, 2.0, 181], "at": [112, 2.5, 176] },
+    { "name": "S07_rio_desde_puente", "eye": [60.5, 2.0, 182.5], "at": [30, -1.5, 162] },
+    { "name": "S08_rio_nivel_agua", "eye": [84, -1.1, 199], "at": [60, -0.5, 179], "fov": 65 },
+    { "name": "S09_calle_alta", "street": "Calle_Alta_C", "from": 0.04, "to": 0.95 },
+    { "name": "S10_el_sol", "street": "El_Sol", "from": 0.08, "to": 0.9 },
+    { "name": "S11_callejon_arco", "street": "Callejon_Arco", "from": 0.08, "to": 0.9 },
+    { "name": "S12_solana_terraza", "street": "Solana_Terraza", "from": 0.05, "to": 0.95 },
+    { "name": "S13_ronda_huertas", "street": "Ronda_Huertas", "from": 0.2, "to": 0.6 },
+    { "name": "S14_cervantes", "street": "Cervantes", "from": 0.08, "to": 0.9 },
+    { "name": "S15_ribera", "street": "Ribera", "from": 0.08, "to": 0.6 },
+    { "name": "S16_fuente", "street": "Fuente", "from": 0.05, "to": 0.95 },
+    { "name": "S17_fachadas_cerca", "street": "Espina_Plaza", "from": 0.3, "to": 0.62, "side": -1.9, "fov": 50, "lookUp": 3.0 },
+    { "name": "A01_aerea_sur", "eye": [95, 120, -60], "at": [95, 0, 130], "fov": 55 },
+    { "name": "A02_aerea_borde", "eye": [-90, 60, 40], "at": [90, 0, 140], "fov": 55 },
+    { "name": "A03_tejados_mirador", "eye": [129, 24, 40], "at": [100, 2, 150], "fov": 60 },
+    { "name": "C01_comercio_cerca", "street": "Espina_E", "from": 0.52, "to": 0.66, "side": 2.0, "fov": 45, "lookUp": 1.8 },
+    { "name": "C02_fachadas_callejon", "street": "Cimavilla_Baja", "from": 0.2, "to": 0.55, "side": 0.8, "fov": 55, "lookUp": 4.0 },
+    { "name": "C03_terraza_plaza", "eye": [112, 1.9, 172], "at": [124, 2.2, 181], "fov": 55 },
+    { "name": "C04_puente_desde_plaza", "eye": [80, 1.9, 186], "at": [60, 0.5, 182], "fov": 55 },
+    { "name": "C05_torre", "eye": [96, 1.8, 170], "at": [81, 12, 158], "fov": 55 },
+    { "name": "C06_rincon_fuente", "eye": [119.9, 5.9, 111.5], "at": [117.3, 5.0, 117.6], "fov": 55 }
+  ]
+}
