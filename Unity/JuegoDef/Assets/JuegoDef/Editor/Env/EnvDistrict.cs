@@ -775,6 +775,32 @@ namespace JuegoDef.Env
                 var mid = (a + b) / 2;
                 EnvKit.Place("ENV_Parapet_Rail_2m", rv, new Vector3(mid.x, (float)p[2], mid.y), Mathf.Atan2(d.y, d.x) * -Mathf.Rad2Deg, new Vector3(d.magnitude / 2f, 1, 1));
             }
+            // rail ends that nothing receives (owner walk: "pasamanos muriendo en el agua", "barandillas ancladas a
+            // nada"): a stone pier picks up every free end of a railing run — the plaza-parapet language — unless
+            // another run continues there. Pure geometry, no rng.
+            {
+                var pars = ((JArray)river["parapets"]).Cast<JArray>().ToList();
+                var ends = new List<(Vector2 p, float y, Vector2 dir)>();
+                foreach (JArray p in pars)
+                {
+                    var a = new Vector2((float)p[0][0], (float)p[0][1]);
+                    var b = new Vector2((float)p[1][0], (float)p[1][1]);
+                    var d = (b - a).normalized;
+                    ends.Add((a, (float)p[2], -d));
+                    ends.Add((b, (float)p[2], d));
+                }
+                for (int ei = 0; ei < ends.Count; ei++)
+                {
+                    var e = ends[ei];
+                    bool received = false;
+                    for (int oi = 0; oi < ends.Count; oi++)
+                        if (oi != ei && (ends[oi].p - e.p).sqrMagnitude < 0.8f * 0.8f) { received = true; break; }   // contiguous runs share the exact end point
+                    if (received) continue;
+                    var pier = EnvKit.Place("ENV_Retaining_Wall_2x2", rv, new Vector3(e.p.x + e.dir.x * 0.18f, e.y + 0.3f, e.p.y + e.dir.y * 0.18f),
+                        Mathf.Atan2(e.dir.x, e.dir.y) * Mathf.Rad2Deg, new Vector3(0.3f, 0.65f, 0.75f));
+                    EnvKit.Remap(pier, new Dictionary<string, string> { { "MI_UnevenBrick", "ENV_RiverWall_Silleria" }, { "MI_RockTrim", "ENV_Dressed_Gris" } });
+                }
+            }
             BridgeDoors = root.Find("Rows") == null ? new List<Vector3>() :
                 root.Find("Rows").GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("THR_")).Select(t => t.position).ToList();
             foreach (JObject br in (JArray)spec["bridges"]) Bridge(rv, br, water);
@@ -800,6 +826,18 @@ namespace JuegoDef.Env
                 var at = new Vector3((float)r["at"][0], (float)r["y"], (float)r["at"][1]);
                 var stairs = EnvKit.Place("ENV_River_Stairs", rv, at, Mathf.Atan2(-(float)r["u"][1], (float)r["u"][0]) * Mathf.Rad2Deg);
                 EnvKit.Remap(stairs, new Dictionary<string, string> { { "MI_UnevenBrick", "ENV_RiverWall_Mamposteria" } });
+                // the stair is a feature (the washing stair to the water) but it read as steps drowning (owner walk:
+                // "escalones hundiéndose en el agua sin rellano"): a stone landing at the water line closes the run —
+                // the platform the stair was always going down to — so the last tread and the rails land on stone
+                // instead of into the water. Geometry from the module bounds; no rng.
+                var u = new Vector3((float)r["u"][0], 0, (float)r["u"][1]).normalized;
+                var b = new Bounds(at, Vector3.zero);
+                foreach (var rr in stairs.GetComponentsInChildren<Renderer>()) b.Encapsulate(rr.bounds);
+                float half = Mathf.Abs(Vector3.Dot(u, b.extents));
+                var landC = b.center + u * (half + 0.55f);
+                var slab = EnvKit.Place("ENV_Retaining_Wall_2x2", rv, new Vector3(landC.x, water + 0.12f, landC.z),
+                    Mathf.Atan2(u.x, u.z) * Mathf.Rad2Deg + 90f, new Vector3(0.8f, 0.18f, 0.55f));
+                EnvKit.Remap(slab, new Dictionary<string, string> { { "MI_UnevenBrick", "ENV_RiverWall_Silleria" }, { "MI_RockTrim", "ENV_Dressed_Gris" } });
             }
             var dress = EnvKit.Group(root, "Dressing");
             foreach (JObject f in (JArray)spec["fountains"] ?? new JArray())
@@ -1783,6 +1821,13 @@ namespace JuegoDef.Env
             var rot = Quaternion.Euler(0, yaw, 0);
             Vector3 P(float x, float y, float z) => top + rot * new Vector3(x, 0, z) + Vector3.up * (y - top.y);
             float face = 0.0f;
+            // a continuous water line (owner walk 30-09: "agua cortando los muros en seco"): every wall piece
+            // greens at the water line, a slim algae/damp band along the piece, denser where a drain feeds it
+            {
+                float bh = 0.32f + 0.22f * Hash01(top.x, top.z, 33) + (h < 0.22f ? 0.15f : 0f);
+                var band = EnvKit.Place("ENV_Stain_Quad", g, P(0, water + 0.02f, face - 0.095f), yaw, new Vector3(len * 0.96f, bh, 1));
+                EnvKit.Remap(band, new Dictionary<string, string> { { "ENV_Stain_Downpipe", Hash01(top.x, top.z, 34) < 0.6f ? "ENV_Stain_Algae" : "ENV_Stain_Damp" } });
+            }
             if (h < 0.22f)
             {
                 float y = water + 0.8f + 0.9f * Hash01(top.x, top.z, 21);
