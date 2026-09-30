@@ -1,13 +1,15 @@
 # WP-PROD-ENV-02 — Environment Batch Production Proof
 
-Status: **READY AFTER ENV-01**  
+Status: **READY AFTER ENV-01 + COMPACT-CITY PILOT**  
 Class: PRODUCTION SCALE PROOF / ENVIRONMENT  
-Depends on: `WP-PROD-ENV-01` PASS  
+Depends on: `WP-PROD-ENV-01` PASS + `WP-CITY-URBAN-00R` PASS + `WP-PROD-ENV-CASCO-V2-00` PASS  
 Blocks: `WP-CITY-URBAN-01`; authoring-path revisit
 
 ## Claim
 
-The ENV factory can now produce multiple distinct keeper-quality game spaces quickly enough that environment creation is a content-production problem, not a tooling problem.
+The ENV factory can now produce multiple distinct keeper-quality game spaces using the accepted **compact semantic-city grammar** quickly enough that environment creation is a content-production problem, not a tooling problem.
+
+ENV-02 may not use current ENV01's one-plot/one-building grain as the default city-scale template. The CASCO-V2 pilot is the binding physical evidence for facade-cell / semantic-building / interior-programme separation.
 
 ## Required outputs
 
@@ -18,6 +20,8 @@ Produce **three materially different bounded environment compositions** using th
 - small enterable shop/bar/service threshold/interior composition.
 
 They must reuse the same catalogue, modules, adaptation path, assembly grammar and validators. They may not be three cosmetic rearrangements of one prefab strip.
+
+At least one composition must demonstrate the CASCO-V2 rule that several apparent frontage bodies can belong to one larger SemanticBuilding without reading as a monolithic block. Every composition must account deliberately for non-building ground rather than preserving generator residuals by default.
 
 ## Required production loop
 
@@ -62,7 +66,9 @@ PASS when:
 - route/collision validation passes or documented defects are repaired;
 - later builds show materially lower rediscovery/setup friction than the first;
 - owner accepts the environment quality/direction;
-- remaining environment work is mostly breadth, new art needs and polish.
+- remaining environment work is mostly deliberately bounded breadth, new art needs and polish;
+- later district production no longer assumes five ENV01-scale maps;
+- the compact semantic-building grammar proven in CASCO-V2 survives at batch scale.
 
 ## Authoring-path decision
 
@@ -74,4 +80,4 @@ End with one recommendation:
 
 ## FAIL
 
-FAIL if only one composition reaches quality, factory mechanisms are bypassed to make later scenes work, owner repeatedly rejects scene composition, or each new scene still triggers foundational pipeline invention.
+FAIL if only one composition reaches quality, factory mechanisms are bypassed to make later scenes work, owner repeatedly rejects scene composition, each new scene still triggers foundational pipeline invention, or ENV-02 recreates the superseded pattern of hundreds of narrow pseudo-buildings / unjustified residual ground merely to demonstrate breadth.
