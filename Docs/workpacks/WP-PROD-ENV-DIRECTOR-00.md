@@ -939,6 +939,8 @@ AI proposal generation should be non-blocking from the owner's point of view: th
 
 At least one `AI MODIFY SELECTED` proof and at least one AI-created/adapted reusable piece/structure must be retained.
 
+UModeler X may accelerate geometry-heavy selected edits, but **D4 remains standalone-capable**: its required proof may be satisfied entirely through Director + ENV modular/assembly paths. Geometry-editor integration is an optional enhancement, never a hidden prerequisite.
+
 The selected-modification proof must show:
 
 - object/area selected in Scene View;
