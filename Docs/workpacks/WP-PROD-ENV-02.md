@@ -15,7 +15,7 @@ Produce **three materially different keeper proofs**, each exercising a distinct
 
 1. **EDIT EXISTING** — materially improve an existing bounded composition through direct manipulation, including (where present) a visible misplaced prop corrected by click+drag and a modular railing/wall/edge corrected by endpoint extension rather than segment-by-segment editing.
 2. **EXPAND MAP** — extend a real boundary into new connected playable space using Director layout + catalogue placement.
-3. **AI-SUPPLIED / AI-MODIFIED CONTENT** — use AI MODIFY SELECTED on an existing object/chain/area with automatic scene context and explicit preview/acceptance, and request at least one missing reusable asset/structure from AI/operator; admit reusable output through ENV lineage/validation, expose it in the visual catalogue, place/modify it through the Director and retain it.
+3. **COHERENT CONTENT FORGE / AI-MODIFIED CONTENT** — use AI MODIFY SELECTED on an existing object/chain/area with automatic scene context and explicit preview/acceptance, then satisfy at least one missing-content request through the Director's coherent planner. The proof must evaluate REUSE → RECOMBINE → DERIVE → GENERATE in that order, use the active Project Style Profile, admit at least one new/materially-derived reusable result through the Admission Gate, expose it in the visual catalogue, reuse/place it and retain it.
 
 The proofs may contribute to the same larger district if their boundaries/evidence remain independently reviewable. They must reuse the accepted ENV catalogue/modules/adaptation path/assembly grammar/validators rather than creating three bespoke pipelines.
 
@@ -23,7 +23,7 @@ The proofs may contribute to the same larger district if their boundaries/eviden
 
 For each composition:
 
-`brief -> owner shapes/extends layout in ENV Director -> owner places existing catalogue pieces -> lock important decisions -> owner may select object/chain/area + natural-language AI MODIFY request -> Director packages bounded structural/visual context -> explicit proposal preview/acceptance -> AI/operator manufactures only missing requested reusable content -> new content enters catalogue -> owner places/modifies -> rebuild -> Play Mode -> automated route/collision/affected QA -> owner correction in ENV Director -> gameplay captures -> owner review`
+`brief -> owner shapes/extends layout in ENV Director -> owner places existing catalogue pieces -> lock important decisions -> owner may select object/chain/area + natural-language request -> Director packages bounded structural/visual context + Style Profile -> coherent planner tries REUSE / RECOMBINE / DERIVE before GENERATE -> explicit proposal preview/acceptance -> candidate passes Admission Gate -> admitted reusable content enters catalogue -> owner places/modifies -> rebuild -> Play Mode -> automated route/collision/affected QA -> owner correction in ENV Director -> gameplay captures -> owner review`
 
 At least one proof must begin from a fresh brief and prove the complete builder loop without exact object/path/coordinate instructions from the owner. Spatial intent is expressed through Director manipulation/selection; AI receives bounded manufacturing/adaptation requests rather than authority to compose the district.
 
@@ -51,10 +51,30 @@ Across the three proofs, preserve a clear authority split:
 - at least one selected-scene AI request derives local geometry/semantics/locks/views automatically rather than requiring owner-supplied coordinates/paths;
 - material selected-scene AI output is previewed before canonical acceptance;
 - AI-made reusable output returns to the catalogue rather than remaining a one-off hidden scene edit;
+- missing-content requests prefer reuse/recombination/derivation over unconstrained new generation;
+- admitted content is checked against an inspectable project-owned Style Profile and accepted by the owner before normal catalogue admission;
 - factory/procedural systems perform repeatable mechanical work;
 - owner can correct the result directly without reverting to JSON, Inspector-coordinate editing or prompt-by-prompt spatial translation.
 
 The proofs must include at least one meaningful owner correction after AI/factory work and show that direct placement, map expansion and AI-supplied content all survive rebuild.
+
+## Coherent-content proof
+
+ENV-02 must prove that D4 grows a coherent reusable vocabulary rather than producing isolated AI assets.
+
+Retain:
+
+- the Project Style Profile used by the proof and where its rules/families came from;
+- one request where suitable existing catalogue/family candidates are considered before generation;
+- the planner disposition for `REUSE`, `RECOMBINE`, `DERIVE` and `GENERATE MISSING CONTENT`;
+- at least one retained result produced by `RECOMBINE` or `DERIVE`;
+- one candidate that passes the Admission Gate and becomes an admitted catalogue item;
+- evidence that the admitted item is subsequently reused or placed again;
+- owner visual verdict that the result belongs to the same project language as accepted neighbouring content;
+- candidate lineage, semantic family and thumbnail;
+- where a candidate is rejected or revised, retain the reason if useful.
+
+Free-form generation of a complete building from scratch is **not** required. A proof that sensibly avoids generation because existing/derived vocabulary solves the request is stronger than gratuitous generation.
 
 ## Prior-art implementation proof
 
@@ -127,7 +147,8 @@ PASS when:
 - direct Scene View correction of an existing visible prop is proven without hierarchy/path lookup;
 - at least one supported modular linear structure is extended/shortened by endpoint manipulation with persistent rebuild-safe output;
 - AI MODIFY SELECTED is proven with automatic bounded context + explicit PREVIEW/ACCEPT or DISCARD;
-- AI-supplied reusable content enters the same catalogue/placement path;
+- coherent-content planning is proven, including REUSE → RECOMBINE → DERIVE → GENERATE ordering;
+- at least one recombined/derived reusable result passes the Admission Gate and enters the same catalogue/placement path;
 - the complete human-build -> AI-supply -> rebuild/validate -> human-correct loop is proven;
 - semantic pick, ghost preview, native Undo, isolated thumbnails, semantic chain editing and bounded area selection are proven on real content;
 - Director Core/project-adapter separation and provider-neutral AI request/proposal boundaries are evidenced without requiring a second live provider;
@@ -146,4 +167,4 @@ End with one recommendation:
 
 ## FAIL
 
-FAIL if any of the three required use cases is missing, factory/Director mechanisms are bypassed, ordinary placement still requires prefab/path archaeology, map expansion still requires prompt/coordinate translation, selected-scene AI still requires coordinate/path transcription, AI preview silently mutates canonical state, AI-created pieces cannot re-enter the reusable catalogue, AI actions overwrite locked/unselected human decisions, or each new area still triggers foundational pipeline invention.
+FAIL if any of the three required use cases is missing, factory/Director mechanisms are bypassed, ordinary placement still requires prefab/path archaeology, map expansion still requires prompt/coordinate translation, selected-scene AI still requires coordinate/path transcription, AI preview silently mutates canonical state, the coherent planner jumps to unconstrained generation while suitable admitted vocabulary exists, Style Profile is opaque/non-project-owned, generated/derived candidates bypass Admission Gate or owner acceptance, admitted pieces cannot re-enter/reuse the catalogue, AI actions overwrite locked/unselected human decisions, or each new area still triggers foundational pipeline invention.

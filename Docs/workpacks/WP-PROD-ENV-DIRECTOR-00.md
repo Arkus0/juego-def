@@ -719,27 +719,9 @@ owner selects object / chain / area
 
 The AI must not treat visible neighbouring content as editable merely because it appears in screenshots. Locks and explicit mutation scope take precedence.
 
-### Geometry execution route for selected AI edits
-
-For requests that genuinely require changing mesh topology/shape rather than rearranging catalogue modules, `AI MODIFY SELECTED` may choose an optional geometry-editor route:
-
-```text
-selected semantic object
- -> Director packages bounds / locks / authority / intent
- -> AI/operator proposes geometry change
- -> optional UModeler X adapter performs bounded derived-mesh edit
- -> Director preview candidate
- -> ACCEPT
- -> juego-def-owned derived asset + lineage
- -> canonical ENV reference updated
- -> affected rebuild / validation
-```
-
-This route is optional. AI modification must still support non-UModeler modular/assembly workflows, and lack of UModeler X must not make D4 fail.
-
 ### `CREATE WITH AI`
 
-Create/adapt a reusable asset or bounded structure that the current catalogue does not provide satisfactorily.
+This command enters the **Coherent Content Forge**. It is a request for a coherent solution, not an instruction to invoke free-form generation. Director must run the `REUSE → RECOMBINE → DERIVE → GENERATE MISSING CONTENT` planner and only manufacture new content when existing admitted vocabulary cannot satisfy the request satisfactorily.
 
 The request should automatically include relevant context:
 
@@ -748,18 +730,22 @@ The request should automatically include relevant context:
 - target dimensions/slot/selected area when available;
 - nearby locked relationships;
 - existing visual/ENV grammar constraints;
+- active Project Style Profile / accepted families;
 - allowed mutation scope.
 
 Expected completion path:
 
 ```text
 owner requests piece/structure
- -> reuse/search existing content first
- -> AI/operator adapts/derives/creates only if needed
- -> ENV intake/material/collision/lineage/validation
- -> thumbnail/metadata generated
- -> result appears in catalogue / AI Created
- -> owner decides where/how often to place it
+ -> evaluate REUSE
+ -> evaluate RECOMBINE
+ -> evaluate DERIVE
+ -> GENERATE only genuinely missing content
+ -> candidate + Style Profile / ENV validation
+ -> owner PREVIEW / ACCEPT
+ -> lineage + thumbnail + metadata
+ -> admitted result appears in catalogue / AI Created
+ -> owner can reuse it later
 ```
 
 Creating a new piece is not permission to redesign surrounding layout.
@@ -1007,49 +993,178 @@ Must prove on a real edge/extension:
 
 No autonomous district growth is required or desired.
 
-### D4 — AI ASSET / STRUCTURE FORGE
+### D4 — COHERENT CONTENT FORGE
 
-Make AI useful as a **supplier to the builder**.
+D4 is **not** "connect an LLM to Unity". Its claim is stronger:
 
-Add bounded:
+> Director can extend a project's visual vocabulary without turning the catalogue into incoherent generated one-offs.
 
-- **AI MODIFY SELECTED** with automatic structural + visual context packet;
-- CREATE WITH AI;
-- VARIANT;
-- REPLACE;
-- EXPAND;
-- GENERATE HERE;
-- MAKE ENTERABLE.
+AI/operator is one execution resource inside a constrained content-production system. The default planning order is binding:
 
-`AI MODIFY SELECTED` is the preferred path when the owner can point at the relevant world content and describe the desired result in natural language. It must support object, semantic-chain and bounded-area selections without requiring the owner to transcribe coordinates or hierarchy paths.
+```text
+REUSE
+  ↓ if insufficient
+RECOMBINE
+  ↓ if insufficient
+DERIVE
+  ↓ if insufficient
+GENERATE MISSING CONTENT
+```
 
-AI proposal generation should be non-blocking from the owner's point of view: the Director remains usable while a request is outstanding, and completed proposals return to an explicit review/accept surface.
+Full free-form generation is the last resort, not the default.
 
-At least one `AI MODIFY SELECTED` proof and at least one AI-created/adapted reusable piece/structure must be retained.
+#### D4.1 — Selection context + proposal transaction
 
-D4 must exercise the provider-neutral boundary: the selected-scene context is assembled into Director's own request/proposal model before provider-specific translation. The proof may use the current preferred provider/operator, but core authoring semantics must not depend on that provider's SDK, prompt format or object model.
+Retain the existing `AI MODIFY SELECTED` interaction:
 
-UModeler X may accelerate geometry-heavy selected edits, but **D4 remains standalone-capable**: its required proof may be satisfied entirely through Director + ENV modular/assembly paths. Geometry-editor integration is an optional enhancement, never a hidden prerequisite.
+- select one authored object, semantic chain or bounded area;
+- write a short natural-language intent;
+- Director builds the bounded structural/visual context automatically;
+- configured provider/operator proposes a change without owner-supplied coordinates or hierarchy paths;
+- proposal returns through `PREVIEW / ACCEPT / TRY ANOTHER / DISCARD`;
+- locked/unselected content remains outside mutation authority;
+- provider failure or malformed output leaves canonical authority unchanged;
+- normal Director authoring remains usable while a proposal is outstanding.
 
-The selected-modification proof must show:
+This is the interaction shell for D4, not the whole milestone.
 
-- object/area selected in Scene View;
-- short owner request in natural language;
-- automatically assembled context packet with locks/bounds;
-- proposal produced without owner-provided coordinates/object paths;
-- PREVIEW before authority;
-- ACCEPT or DISCARD semantics;
+#### D4.2 — Project Style Profile
+
+Director must maintain or derive an explicit **Project Style Profile** from accepted project content rather than relying on an unstructured prompt such as "PS2 Galician town".
+
+The profile should expose only rules useful to production, drawn from real accepted corpus/ENV knowledge where available, for example:
+
+- scale bands and common dimensions;
+- storey/door/window proportions;
+- admitted material/palette families;
+- roof, opening, balcony, trim, base/retaining and frontage families;
+- semantic building/edge/prop families;
+- compatible assembly relationships;
+- detail-density / wear ranges;
+- geometry/performance budget bands where relevant;
+- accepted examples / keeper families;
+- explicit forbidden or out-of-language motifs where useful.
+
+The Style Profile may be partly machine-derived and partly authored, but it must be **inspectable, versionable and project-owned**. It may not exist only as hidden model context or an opaque embedding.
+
+For juego-def, reuse ENV-01 catalogue, semantic tags, material families, assembly grammar, dimensions and accepted keeper evidence instead of creating a competing style database.
+
+For a future commercial Director, the same contract must support a project supplied through its own catalogue/authoring adapter.
+
+#### D4.3 — Coherent Content Planner
+
+Before manufacturing anything new, Director must classify the request into one production strategy:
+
+1. **REUSE** — an existing admitted catalogue item already satisfies the need.
+2. **RECOMBINE** — build the requested result from compatible admitted modules/assemblies/recipes.
+3. **DERIVE** — create a bounded variant of an admitted source while preserving style/lineage.
+4. **GENERATE MISSING CONTENT** — create only the genuinely missing reusable content when the first three paths cannot satisfy the request economically.
+
+The planner must prefer the **smallest coherent mutation**.
+
+Examples:
+
+- "make this house a pension but keep the ground floor" should prefer retaining the footprint/ground floor and replacing/recombining upper-floor/frontage/identity cues;
+- "I need a narrower balcony" should prefer deriving an accepted balcony family before generating a whole building;
+- "continue this railing to the wall with a proper stone termination" should reuse the chain grammar and manufacture only a missing terminal piece if necessary;
+- "I need a narrow three-storey shop-house here" should first search/recombine compatible shell/frontage/window/roof/material families before asking a generator for a complete mesh.
+
+The selected strategy and source lineage must be retained in the proposal/evidence so the system does not silently jump to unconstrained generation.
+
+#### D4.4 — Admission Gate + catalogue growth
+
+New or materially derived content is a **candidate**, not an admitted catalogue item.
+
+Before reusable admission, run the applicable gate:
+
+```text
+CANDIDATE
+ -> geometry/reference validity
+ -> scale/dimension checks
+ -> material/palette compatibility
+ -> semantic/family compatibility
+ -> collision/clearance where relevant
+ -> performance/budget sanity where relevant
+ -> Style Profile compatibility
+ -> owner PREVIEW / ACCEPT
+ -> lineage + identity + thumbnail + tags
+ -> ADMITTED CATALOGUE ITEM
+```
+
+Automated checks may reject obvious incompatibility but **owner visual acceptance remains final** for style coherence.
+
+An accepted result must:
+
+- be juego-def/project-owned derived output where derivation/generated content requires it;
+- retain source/generation lineage and selected production strategy;
+- receive semantic category/family metadata;
+- receive a stable thumbnail;
+- become placeable/movable like ordinary catalogue content;
+- survive rebuild;
+- be reusable in later requests;
+- not rewrite unrelated layout/content.
+
+Rejected candidates must not pollute the normal catalogue.
+
+#### D4.5 — Controlled variant generation
+
+Support bounded `VARIANT` / `GENERATE VARIANTS` where it materially improves production breadth.
+
+Variants must preserve declared invariants such as:
+
+- semantic family;
+- scale/footprint band unless explicitly varied;
+- compatible material/roof/opening grammar;
+- access/threshold intent;
+- project style profile.
+
+Variation may target dimensions that are explicitly allowed, e.g. facade rhythm, width band, balcony/detail choice, wear, palette, shop/no-shop treatment or secondary dressing.
+
+Generating six unrelated reinterpretations is not a valid variant workflow.
+
+#### Provider + tool neutrality
+
+D4 must exercise Director's provider-neutral request/proposal boundary before provider-specific translation. The proof may use the current preferred provider/operator; a second live provider is not required.
+
+UModeler X, Blender/operator workflows, procedural builders or external generation services may be used behind adapters for `DERIVE` or `GENERATE MISSING CONTENT`, but none is a D4 prerequisite or product authority.
+
+For requests that genuinely require mesh topology/shape changes, an optional geometry-editor route remains valid:
+
+```text
+selected semantic object
+ -> Director context + Style Profile + locks
+ -> coherent-content planner chooses DERIVE/GENERATE
+ -> optional geometry adapter/operator edits project-owned derived content
+ -> Director candidate preview
+ -> Admission Gate
+ -> ACCEPT
+ -> lineage + catalogue identity
+ -> affected rebuild / validation
+```
+
+#### Required D4 proof
+
+D4 PASS requires all of the following on real project content:
+
+- one `AI MODIFY SELECTED` bounded transaction with automatic context and explicit Preview/Accept or Discard;
+- one request where the planner visibly evaluates the `REUSE → RECOMBINE → DERIVE → GENERATE` order rather than jumping directly to generation;
+- at least one **RECOMBINE or DERIVE** result that remains coherent with accepted Style Profile/families;
+- at least one new or materially derived reusable candidate passing the Admission Gate and entering the catalogue;
+- evidence that the admitted result can be used again in a later placement/request;
+- provider-neutral request/proposal model retained;
 - unrelated locked content unchanged.
 
-The reusable piece/structure must:
+D4 does **not** require a general-purpose text-to-3D system, a second live AI provider or successful free-form generation of a whole building from scratch.
 
-- originate from an explicit owner request/selection;
-- pass the normal ENV intake/lineage/validation path;
-- receive a thumbnail/category;
-- appear in the visual catalogue;
-- be placeable/movable by the owner like ordinary content;
-- survive rebuild;
-- not rewrite unrelated layout/content.
+D4 fails if:
+
+- "CREATE WITH AI" defaults to unconstrained whole-object generation despite suitable existing content;
+- Style Profile is only an opaque prompt with no inspectable project-owned representation;
+- generated/derived candidates enter the catalogue without admission/owner acceptance;
+- content coherence depends on manual memory instead of explicit families/rules;
+- provider/tool-specific objects leak into canonical Director state;
+- every request creates a one-off asset rather than enriching reusable project vocabulary;
+- the system produces visually plausible individual pieces that do not belong to the same project language.
 
 ### D5 — SMART BUILDERS / BRUSHES
 
@@ -1169,6 +1284,9 @@ Retain under `Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` at minimum:
 - prior-art implementation note: which mechanisms were reimplemented, which MIT code (if any) was reused with attribution, and which sources remained reference-only;
 - portability note: Core-vs-juego-def adapter boundary and any project-specific types that remain intentionally outside Core;
 - AI provider note: neutral request/proposal contract, active provider/operator adapter, and proof that non-AI authoring has no provider dependency;
+- D4 Style Profile snapshot/source provenance;
+- D4 planner evidence showing REUSE/RECOMBINE/DERIVE/GENERATE disposition;
+- D4 Admission Gate evidence for admitted and at least one rejected/changed candidate where available;
 - owner production-trial checklist/result;
 - known limitations that are real product constraints rather than hidden unfinished basics.
 
@@ -1184,6 +1302,15 @@ At minimum test:
 - malformed/unsupported source fails closed;
 - Undo/Revert cannot leave half-written authority;
 - generated scene remains rebuildable from repository authority.
+
+### Coherent-content safety
+
+- Project Style Profile is inspectable/project-owned and derived from accepted project vocabulary rather than hidden prompt lore;
+- content planning considers REUSE then RECOMBINE then DERIVE before GENERATE;
+- rejected candidates cannot silently enter the normal catalogue;
+- generated/derived reusable content retains strategy + lineage + semantic family metadata;
+- owner visual acceptance remains authoritative for style coherence;
+- D4 does not require or imply a universal text-to-3D generator.
 
 ### Core portability / provider-neutrality safety
 
