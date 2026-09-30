@@ -138,6 +138,94 @@ When the adapter is unavailable, those geometry-specific actions are hidden/disa
 This integration deliberately prevents Director from growing into a full DCC/modeler. Director owns **what semantic object is being edited and how the result re-enters ENV**; UModeler X may own the bounded mesh-editing session.
 
 
+### Commercial extractability + project adapter boundary
+
+Director must remain architecturally extractable from juego-def so the same Core can later be packaged as a general Unity asset without carrying juego-def-specific authority, IDs, paths or production assumptions into the product layer.
+
+Binding separation:
+
+```text
+Director Core
+├── semantic selection
+├── catalogue / thumbnails
+├── placement / chains / areas
+├── preview / accept / undo
+├── context packet construction
+├── generic authoring commands
+├── provider-neutral AI request/response model
+└── extension interfaces
+      ├── IAuthoringBackend
+      ├── IAIProvider
+      ├── IGeometryEditAdapter
+      └── optional tool adapters
+
+Project integration
+└── JuegoDefEnvAdapter
+      ├── trace/spec/polish authority
+      ├── ENV catalogue/lineage
+      ├── rebuild/materialization
+      ├── route/access/lock semantics
+      └── juego-def-specific IDs and validators
+```
+
+Names may differ, but the dependency direction is binding: **juego-def depends on Director Core interfaces; Director Core must not depend on juego-def implementation types.**
+
+Requirements:
+
+- Core selection, placement, preview, catalogue and AI-context code must not require CASCO-specific classes, `trace.json` schemas, juego-def IDs or repository paths.
+- Juego-def-specific persistence/rebuild logic lives behind an authoring-backend/project adapter.
+- A generic Director package must be able to compile without juego-def source present.
+- Do not duplicate the ENV authority model inside Core merely to make it generic; the adapter translates generic authoring commands into the project's real authority.
+- Project adapters may expose richer project-specific semantics, but the generic interaction contracts remain stable.
+- Avoid premature framework generalization beyond the extension points actually exercised by juego-def. Extractability is a boundary requirement, not permission to build a universal engine.
+
+This is a commercial-separability guardrail, not a new D0/D1 deliverable.
+
+### AI provider neutrality
+
+Director's AI-facing contract must be **provider-agnostic**.
+
+The Core builds a neutral request from the current semantic selection and owner intent, conceptually equivalent to:
+
+```text
+DirectorRequest
+├── owner intent
+├── selected semantic identities
+├── bounds / transforms / dimensions
+├── nearby relevant semantics
+├── locks / immutable relationships
+├── allowed mutation scope
+├── catalogue / grammar candidates
+├── standardized visual captures when useful
+└── requested operation / response contract
+```
+
+The Core must not encode an OpenAI/Codex-specific prompt or API object as canonical product state.
+
+Providers/operators consume that neutral request through an adapter boundary, for example:
+
+```text
+IAIProvider
+├── OpenAI / Codex adapter
+├── Anthropic adapter
+├── Gemini adapter
+├── OpenAI-compatible/local adapter
+└── External CLI / MCP / manual-operator bridge
+```
+
+The list is illustrative, not a required provider matrix.
+
+Binding behavior:
+
+- D4 requires at least one working AI/operator path, not every provider.
+- Swapping providers must not alter semantic selection, mutation scope, locks, Preview/Accept/Discard, catalogue admission or canonical ENV authority.
+- Provider-specific credentials, SDKs and response formats stay outside Director Core.
+- No provider SDK may become mandatory for non-AI Director use.
+- The external/manual operator path remains valid so Director can function even when no embedded AI provider is configured.
+- Provider output must be normalized back into Director's proposal/command model before it can become preview or authority.
+- Provider failure, timeout or malformed output must fail closed: no canonical mutation.
+- AI provider support is an extension surface; commercial value must not depend on one vendor continuing to exist.
+
 ### Required implementation shape
 
 Do **not** implement D2-D5 as one giant `EnvDirectorWindow.cs`.
@@ -577,7 +665,7 @@ Routine placement from the catalogue should not require opening a modal form.
 
 This WP does **not** require embedding a paid LLM API into Unity.
 
-The Director may invoke Codex/the existing external AI operator through the simplest robust integration, or emit a structured request consumed by that operator. What is binding is the **human selection, spatial bounds, contextual evidence and mutation authority**.
+The Director may invoke the currently configured AI provider or existing external operator through the simplest robust adapter, or emit a structured provider-neutral request consumed externally. What is binding is the **human selection, spatial bounds, contextual evidence and mutation authority**; no single AI vendor is product authority.
 
 The intended UX is interactive: ordinary manipulation remains immediate; AI work runs as a separate request and must not freeze normal Scene View authoring while the proposal is being produced.
 
@@ -620,7 +708,7 @@ owner selects object / chain / area
  -> types request
  -> AI MODIFY SELECTED
  -> Director packages structure + semantics + locks + visual context
- -> Codex/operator proposes bounded change
+ -> configured AI provider/operator proposes bounded change
  -> affected content rebuilds into a preview candidate
  -> [ PREVIEW ] [ ACCEPT ] [ TRY ANOTHER ] [ DISCARD ]
  -> ACCEPT writes through canonical ENV authority
@@ -939,6 +1027,8 @@ AI proposal generation should be non-blocking from the owner's point of view: th
 
 At least one `AI MODIFY SELECTED` proof and at least one AI-created/adapted reusable piece/structure must be retained.
 
+D4 must exercise the provider-neutral boundary: the selected-scene context is assembled into Director's own request/proposal model before provider-specific translation. The proof may use the current preferred provider/operator, but core authoring semantics must not depend on that provider's SDK, prompt format or object model.
+
 UModeler X may accelerate geometry-heavy selected edits, but **D4 remains standalone-capable**: its required proof may be satisfied entirely through Director + ENV modular/assembly paths. Geometry-editor integration is an optional enhancement, never a hidden prerequisite.
 
 The selected-modification proof must show:
@@ -1077,6 +1167,8 @@ Retain under `Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` at minimum:
 - AI-created/adapted piece provenance + catalogue thumbnail + placement proof;
 - AI scope proof that unrelated/locked content remained unchanged;
 - prior-art implementation note: which mechanisms were reimplemented, which MIT code (if any) was reused with attribution, and which sources remained reference-only;
+- portability note: Core-vs-juego-def adapter boundary and any project-specific types that remain intentionally outside Core;
+- AI provider note: neutral request/proposal contract, active provider/operator adapter, and proof that non-AI authoring has no provider dependency;
 - owner production-trial checklist/result;
 - known limitations that are real product constraints rather than hidden unfinished basics.
 
@@ -1092,6 +1184,16 @@ At minimum test:
 - malformed/unsupported source fails closed;
 - Undo/Revert cannot leave half-written authority;
 - generated scene remains rebuildable from repository authority.
+
+### Core portability / provider-neutrality safety
+
+- Director Core compiles without juego-def project source/types present;
+- juego-def trace/spec/polish/rebuild knowledge is accessed through a project/authoring adapter rather than imported into Core;
+- AI context/request/proposal state is provider-neutral before any provider adapter translates it;
+- non-AI Director functionality works with no AI SDK/provider configured;
+- provider failure cannot mutate canonical project authority;
+- provider-specific SDKs/credentials remain optional integration concerns rather than Core dependencies;
+- adding a second provider should require an adapter, not edits throughout selection/catalogue/preview/persistence code.
 
 ### Optional-integration / commercial-separability safety
 
