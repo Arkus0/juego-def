@@ -49,7 +49,7 @@ ENV now consumes that accepted demand together with the accepted ASSET substrate
 | PROD-ASSET-00 ✅ | make lawful source corpus searchable/reproducible | shared catalogue/intake/validators | **PASS / accepted** — routine source discovery no longer needs path archaeology. |
 | M0 | validate camera/scale/reach/interaction | tiny gameplay fixture | walk + world/NPC interaction work. |
 | ENV Factory | manufacture city architecture/urban vocabulary repeatedly | reusable kit + assembly grammar + validation | normal new ENV unit is production, not R&D. |
-| ENV Director | let the owner build/expand the world with game-like direct manipulation | layout tools + thumbnail catalogue + ghost placement/snap + persistent edits + AI-supplied pieces | owner can draw/place/move/expand/rebuild/play without JSON/code/Inspector/prefab-path archaeology. |
+| ENV Director | let the owner build/expand the world with game-like direct manipulation | layout tools + direct prop dragging + stretchable railing/wall chains + thumbnail catalogue + ghost placement/snap + persistent edits + AI-supplied pieces | owner can fix a misplaced barrel or extend an abrupt railing in seconds, then draw/place/move/expand/rebuild/play without JSON/code/Inspector/prefab-path archaeology. |
 | CHAR Factory | manufacture ordinary civilians repeatedly | civilian/wardrobe factory | normal civilian is production, not bespoke repair. |
 | ANIM Factory ✅ | batch discover/import/retarget/use motions | animation catalogue + admitted motion library | **PASS / accepted** — normal compatible motion is routine to classify, retarget and admit; runtime multi-NPC use moves to ANIM-02. |
 | Dialogue/UI Factory | author contextual investigation conversations repeatedly | authoring + no-voice presentation factory | new dialogue is content work, not scene plumbing. |
@@ -80,7 +80,7 @@ Delivery order:
 
 1. **D0 — preserved vertical slice:** move one real trace node -> preview -> SAVE -> rebuild -> Undo/Revert. **Already-started D0 work remains valid.**
 2. **D1 — preserved Layout MVP:** nodes/vias, street width, plaza vertices, landmarks, elevation, SAVE/REVERT/REBUILD/PLAY HERE.
-3. **D2 — Visual Catalogue + Place/Modify:** thumbnails, human categories, drag/click placement, ghost, snap, valid/conflict feedback, move/rotate/duplicate/delete/LOCK, rebuild-safe persistence.
+3. **D2 — Visual Catalogue + Direct Manipulation:** thumbnails, drag/click placement, ghost/snap, plus **click a visible prop and drag it directly** and **drag endpoints of railings/walls to extend or shorten the semantic chain**; move/rotate/duplicate/delete/LOCK; rebuild-safe persistence.
 4. **D3 — Map Expansion:** visually extend streets/spaces and place structures into new playable area without editing raw trace/spec data.
 5. **D4 — AI Asset/Structure Forge:** CREATE WITH AI / VARIANT / REPLACE / EXPAND / MAKE ENTERABLE; admitted results get lineage + thumbnail and return to the catalogue.
 6. **D5 — Smart Builders/Brushes:** bounded wall/street/frontage/vegetation tools where they reduce repetitive clicks without taking composition authority.
