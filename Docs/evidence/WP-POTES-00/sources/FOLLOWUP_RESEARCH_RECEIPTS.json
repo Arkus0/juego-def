@@ -1,0 +1,44 @@
+[
+  {
+    "layer": 273,
+    "url": "https://geoservicios.cantabria.es/inspire/rest/services/Cartografia_Topografica/MapServer/273/query?f=json&where=1%3D1&geometry=367890%2C4779031%2C368055%2C4779236&geometryType=esriGeometryEnvelope&inSR=25830&outSR=25830&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&returnZ=true",
+    "retrieved_utc": "2026-09-30T21:11:57.571645+00:00",
+    "sha256": "c0aab76fb674a68c5dbf3f43546c23f93129f9147bfbb97b387dfbabb6aa674b",
+    "bytes": 26842,
+    "feature_count": 76,
+    "error": null
+  },
+  {
+    "layer": 277,
+    "url": "https://geoservicios.cantabria.es/inspire/rest/services/Cartografia_Topografica/MapServer/277/query?f=json&where=1%3D1&geometry=367890%2C4779031%2C368055%2C4779236&geometryType=esriGeometryEnvelope&inSR=25830&outSR=25830&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&returnZ=true",
+    "retrieved_utc": "2026-09-30T21:11:57.572062+00:00",
+    "sha256": "abca9112af8852233605613aaa51f869651ab1773fa23ea23c709bbf3927e676",
+    "bytes": 185306,
+    "feature_count": 128,
+    "error": null
+  },
+  {
+    "layer": 279,
+    "url": "https://geoservicios.cantabria.es/inspire/rest/services/Cartografia_Topografica/MapServer/279/query?f=json&where=1%3D1&geometry=367890%2C4779031%2C368055%2C4779236&geometryType=esriGeometryEnvelope&inSR=25830&outSR=25830&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&returnZ=true",
+    "retrieved_utc": "2026-09-30T21:11:57.572413+00:00",
+    "sha256": "516aab86d4bd60d99d942ac683311626fa101eb99a64ffee420f1547d93f3808",
+    "bytes": 1292,
+    "feature_count": 0,
+    "error": null
+  },
+  {
+    "layer": 280,
+    "url": "https://geoservicios.cantabria.es/inspire/rest/services/Cartografia_Topografica/MapServer/280/query?f=json&where=1%3D1&geometry=367890%2C4779031%2C368055%2C4779236&geometryType=esriGeometryEnvelope&inSR=25830&outSR=25830&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&returnZ=true",
+    "retrieved_utc": "2026-09-30T21:11:57.765987+00:00",
+    "sha256": "3066dd7de8304bba87dacafb5ecd7f1a1d64dc9c6c65bf28d4cd62429014ac9e",
+    "bytes": 114956,
+    "feature_count": 71,
+    "error": null
+  },
+  {
+    "url": "https://geoservicios.cantabria.es/inspire/rest/services/Cartografia_Topografica/MapServer/274/query?f=json&where=1%3D1&geometry=367890%2C4779031%2C368055%2C4779236&geometryType=esriGeometryEnvelope&inSR=25830&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CCota%2CSubtipo&returnGeometry=true&returnZ=true",
+    "retrieved_utc": "2026-09-30T21:11:13.921350+00:00",
+    "sha256": "aaf5301f7ffe865194ac016820c333468d34d43ea095dd85ece4cd7fa9cbcf85",
+    "bytes": 964
+  }
+]

@@ -1,0 +1,1653 @@
+{
+  "source_components": [
+    {
+      "source_body": "7992001UN6779S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 8.728471224970308,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "7992003UN6779S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 132.07107800147813,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "7994502UN6779S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 285.3067902477176,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8091001UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 117.92603700362085,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8091001UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 21.45796912393731,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8091002UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 152.4062840022312,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8091005UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 143.8811424935625,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092101UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 55.12319999982202,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092101UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 407.7508151257332,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092102UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 103.23809762341796,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092103UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 206.02274500159734,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092104UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 50.07202750251665,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092105UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 86.34430500117224,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092106UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 39.004016874586895,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092107UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 122.64233999879829,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092107UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 37.04989249975675,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092108UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 96.43468000118828,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092108UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 57.20639999885709,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092109UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 101.69141500195981,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092109UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 106.51911125127572,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092110UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 100.86401699931989,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092110UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 29.693999998884046,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092111UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 128.2280210014887,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092113UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 102.06090999703817,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092118UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 83.73374574841984,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092119UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 121.21408262206474,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092122UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 143.80800887661093,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8092124UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 84.38182112819442,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093001UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 454.45349750505625,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093001UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 164.13387037101026,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093001UN6789S/surface-3",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 65.26853000098994,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093001UN6789S/surface-4",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 39.31200000254158,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093001UN6789S/surface-5",
+      "pot_id": "POT-B001",
+      "selected": true,
+      "area_m2": 87.84098000025128,
+      "core_overlap_fraction": 0.9999999999999997,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093002UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 80.0874507539487,
+      "core_overlap_fraction": 5.0350976429816654e-06,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093003UN6789S/surface-1",
+      "pot_id": "POT-B002",
+      "selected": true,
+      "area_m2": 276.4307649955358,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093004UN6789S/surface-1",
+      "pot_id": "POT-B003",
+      "selected": true,
+      "area_m2": 37.88227987500828,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093005UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 105.4973029990003,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093006UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 39.694510623246764,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093401UN6789S/surface-1",
+      "pot_id": "POT-B004",
+      "selected": true,
+      "area_m2": 68.44564999984551,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093402UN6789S/surface-1",
+      "pot_id": "POT-B005",
+      "selected": true,
+      "area_m2": 35.08759999994606,
+      "core_overlap_fraction": 0.9999999999999998,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093403UN6789S/surface-1",
+      "pot_id": "POT-B006",
+      "selected": true,
+      "area_m2": 150.93471749927298,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093404UN6789S/surface-1",
+      "pot_id": "POT-B007",
+      "selected": true,
+      "area_m2": 111.30629474960827,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093405UN6789S/surface-1",
+      "pot_id": "POT-B008",
+      "selected": true,
+      "area_m2": 95.68365025021617,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093406UN6789S/surface-1",
+      "pot_id": "POT-B009",
+      "selected": true,
+      "area_m2": 68.85420249962127,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093407UN6789S/surface-1",
+      "pot_id": "POT-B010",
+      "selected": true,
+      "area_m2": 85.94455344505933,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093409UN6789S/surface-1",
+      "pot_id": "POT-B011",
+      "selected": true,
+      "area_m2": 43.73670000069875,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093410UN6789S/surface-1",
+      "pot_id": "POT-B012",
+      "selected": true,
+      "area_m2": 92.78137024955797,
+      "core_overlap_fraction": 0.9999999999999999,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093411UN6789S/surface-1",
+      "pot_id": "POT-B013",
+      "selected": true,
+      "area_m2": 22.240497124125376,
+      "core_overlap_fraction": 0.9999999999999999,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093412UN6789S/surface-1",
+      "pot_id": "POT-B014",
+      "selected": true,
+      "area_m2": 65.05385615603365,
+      "core_overlap_fraction": 0.9999999999999998,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093413UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 41.61953130852582,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093414UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 44.1944349999256,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093415UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 44.40860000204018,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093416UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 35.129007001418444,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093417UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 47.81917999760595,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093418UN6789S/surface-1",
+      "pot_id": "POT-B015",
+      "selected": true,
+      "area_m2": 92.29730000189603,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093419UN6789S/surface-1",
+      "pot_id": "POT-B016",
+      "selected": true,
+      "area_m2": 159.02700000080054,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8093420UN6789S/surface-1",
+      "pot_id": "POT-B017",
+      "selected": true,
+      "area_m2": 25.425231500884063,
+      "core_overlap_fraction": 0.9999999999999999,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094001UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 230.43584675041492,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094002UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 318.68617855644476,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094003UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 345.0627073458053,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094004UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 267.0495783451876,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094005UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 126.5942825000676,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094006UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 123.98790030060209,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094007UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 164.34068312435718,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094008UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 65.53737191428692,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094009UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 72.95642999899154,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094010UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 56.46166812510989,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094011UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 372.6805901293249,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094012UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 333.3146076306482,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094013UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 221.43621250334778,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094014UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 161.4454500020867,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094015UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 234.27999249815554,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094016UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 131.921050255468,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094017UN6789S/surface-1",
+      "pot_id": "POT-B018",
+      "selected": true,
+      "area_m2": 180.71982749500788,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8094018UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 69.14881574637369,
+      "core_overlap_fraction": 1.8784632970702373e-06,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8095602UN6789N/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 242.76032687344866,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8095603UN6789N/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 1064.0966101350832,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193001UN6789S/surface-1",
+      "pot_id": "POT-B019",
+      "selected": true,
+      "area_m2": 113.7974982522069,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193002UN6789S/surface-1",
+      "pot_id": "POT-B020",
+      "selected": true,
+      "area_m2": 145.09466634746556,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193003UN6789S/surface-1",
+      "pot_id": "POT-B021",
+      "selected": true,
+      "area_m2": 99.70248487619126,
+      "core_overlap_fraction": 0.9999999999999996,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193004UN6789S/surface-1",
+      "pot_id": "POT-B022",
+      "selected": true,
+      "area_m2": 67.29562969716842,
+      "core_overlap_fraction": 1.0000000000000004,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193005UN6789S/surface-1",
+      "pot_id": "POT-B023",
+      "selected": true,
+      "area_m2": 59.61740805523716,
+      "core_overlap_fraction": 0.9999999999999998,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193006UN6789S/surface-1",
+      "pot_id": "POT-B024",
+      "selected": true,
+      "area_m2": 65.89719275071002,
+      "core_overlap_fraction": 0.9999999999999998,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193007UN6789S/surface-1",
+      "pot_id": "POT-B025",
+      "selected": true,
+      "area_m2": 191.8808360011052,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193008UN6789S/surface-1",
+      "pot_id": "POT-B026",
+      "selected": true,
+      "area_m2": 172.0736800021114,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193009UN6789S/surface-1",
+      "pot_id": "POT-B027",
+      "selected": true,
+      "area_m2": 90.06425499985714,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193010UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 173.63435749551783,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193011UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 298.0492587482891,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193011UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 135.0377217526006,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193012UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 262.5455748760618,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193013UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 61.13871849738803,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193014UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 71.5186523524536,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193015UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 107.14561262647446,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193016UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 79.79033012459077,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193017UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 165.92843762169161,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193017UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 51.43178250128687,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193018UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 84.51562212224356,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193019UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 75.5188677530407,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193020UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 186.25117533752027,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193021UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 138.1887351089941,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193022UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 187.2167572605624,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193023UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 532.9431966796308,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193024UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 216.3178124924288,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193025UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 4.789367925412969,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193025UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 48.121103653415304,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193301UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 6.3987526249171145,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193302UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 101.7689339992893,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193303UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 86.6800961146083,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193401UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 79.22610500066422,
+      "core_overlap_fraction": 1.0228404243328652e-19,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193402UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 60.42979499876522,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193403UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 55.74247999776619,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193404UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 81.96105000070395,
+      "core_overlap_fraction": 3.0543339138932606e-17,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193405UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 114.09063299877232,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193406UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 26.27617789880554,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193407UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 88.93749306122419,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193408UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 69.88465186454697,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193409UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 168.0640870500357,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193410UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 88.38782249338435,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193411UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 94.08194837300454,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193412UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 75.00294887633488,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193413UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 119.91749690139389,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193414UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 26.7432215921683,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193415UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 26.66869985393086,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193416UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 39.43215396961538,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193417UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 78.50061793672052,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193418UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 73.98939089507512,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193419UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 132.67032737962361,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193420UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 175.1438176232599,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193421UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 317.91051512297895,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193422UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 60.85571778790735,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193423UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 68.18551346850018,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193424UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 86.70064398698361,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193601UN6789S/surface-1",
+      "pot_id": "POT-B028",
+      "selected": true,
+      "area_m2": 38.53814312754945,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193602UN6789S/surface-1",
+      "pot_id": "POT-B029",
+      "selected": true,
+      "area_m2": 91.59300775526448,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193603UN6789S/surface-1",
+      "pot_id": "POT-B030",
+      "selected": true,
+      "area_m2": 72.91047382283163,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193604UN6789S/surface-1",
+      "pot_id": "POT-B031",
+      "selected": true,
+      "area_m2": 85.58256262565055,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193605UN6789S/surface-1",
+      "pot_id": "POT-B032",
+      "selected": true,
+      "area_m2": 104.26299387492189,
+      "core_overlap_fraction": 0.9999999999999999,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193605UN6789S/surface-2",
+      "pot_id": "POT-B033",
+      "selected": true,
+      "area_m2": 18.10100000130513,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193605UN6789S/surface-3",
+      "pot_id": "POT-B034",
+      "selected": true,
+      "area_m2": 44.30569831748265,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193606UN6789S/surface-1",
+      "pot_id": "POT-B035",
+      "selected": true,
+      "area_m2": 83.47791762782578,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193608UN6789S/surface-1",
+      "pot_id": "POT-B036",
+      "selected": true,
+      "area_m2": 43.140783623207525,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193609UN6789S/surface-1",
+      "pot_id": "POT-B037",
+      "selected": true,
+      "area_m2": 29.60071525117325,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193610UN6789S/surface-1",
+      "pot_id": "POT-B038",
+      "selected": true,
+      "area_m2": 24.607870500091742,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193611UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 55.03079999847528,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193612UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 82.55052249923496,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193613UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 81.85491948824986,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193614UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 74.33839877707904,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193615UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 73.63099700449011,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193616UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 60.081026002540284,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193617UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 166.19649999681974,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193618UN6789S/surface-1",
+      "pot_id": "POT-B039",
+      "selected": true,
+      "area_m2": 182.18133456418732,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193619UN6789S/surface-1",
+      "pot_id": "POT-B040",
+      "selected": true,
+      "area_m2": 96.94869987687979,
+      "core_overlap_fraction": 0.9999999999999997,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193620UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 92.212188254741,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193801UN6789S/surface-1",
+      "pot_id": "POT-B041",
+      "selected": true,
+      "area_m2": 55.52108336661643,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193802UN6789S/surface-1",
+      "pot_id": "POT-B042",
+      "selected": true,
+      "area_m2": 165.5971981186728,
+      "core_overlap_fraction": 0.9999999999999998,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193803UN6789S/surface-1",
+      "pot_id": "POT-B043",
+      "selected": true,
+      "area_m2": 46.88538675307993,
+      "core_overlap_fraction": 0.9999999999999999,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193804UN6789S/surface-1",
+      "pot_id": "POT-B044",
+      "selected": true,
+      "area_m2": 140.61792274878184,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193805UN6789S/surface-1",
+      "pot_id": "POT-B045",
+      "selected": true,
+      "area_m2": 140.16809731345862,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193806UN6789S/surface-1",
+      "pot_id": "POT-B046",
+      "selected": true,
+      "area_m2": 87.80935024626582,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193807UN6789S/surface-1",
+      "pot_id": "POT-B047",
+      "selected": true,
+      "area_m2": 176.27256750125852,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193808UN6789S/surface-1",
+      "pot_id": "POT-B048",
+      "selected": true,
+      "area_m2": 195.52498249744252,
+      "core_overlap_fraction": 1.0000000000000004,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193809UN6789S/surface-1",
+      "pot_id": "POT-B049",
+      "selected": true,
+      "area_m2": 169.75196625431852,
+      "core_overlap_fraction": 0.9999999999999998,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193810UN6789S/surface-1",
+      "pot_id": "POT-B050",
+      "selected": true,
+      "area_m2": 185.4703075017564,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8193811UN6789S/surface-1",
+      "pot_id": "POT-B051",
+      "selected": true,
+      "area_m2": 83.01992512920384,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194101UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 315.7141571085276,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194102UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 347.8297851833038,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194103UN6789S/surface-1",
+      "pot_id": "POT-B052",
+      "selected": true,
+      "area_m2": 110.06408999570355,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194104UN6789S/surface-1",
+      "pot_id": "POT-B053",
+      "selected": true,
+      "area_m2": 49.22019857651479,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194105UN6789S/surface-1",
+      "pot_id": "POT-B054",
+      "selected": true,
+      "area_m2": 60.20030918731976,
+      "core_overlap_fraction": 1.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194106UN6789S/surface-1",
+      "pot_id": "POT-B055",
+      "selected": true,
+      "area_m2": 272.51028250471524,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194201UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 30.37278953606539,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194202UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 142.8952900770294,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194203UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 81.19026550005074,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194301UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 133.6984929114104,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194302UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 36.57395524792655,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194303UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 136.7373192491998,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194304UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 82.35065324849032,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194503UN6789S/surface-1",
+      "pot_id": "POT-B056",
+      "selected": true,
+      "area_m2": 30.946199999698393,
+      "core_overlap_fraction": 0.9999999999999999,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194701UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 119.547612498033,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194702UN6789S/surface-1",
+      "pot_id": "POT-B057",
+      "selected": true,
+      "area_m2": 206.126020247594,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8194703UN6789S/surface-1",
+      "pot_id": "POT-B058",
+      "selected": true,
+      "area_m2": 321.26544237554856,
+      "core_overlap_fraction": 1.0000000000000002,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8195202UN6789N/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 1960.0845278621182,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8195202UN6789N/surface-3",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 26.999646248091132,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8195601UN6789N/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 103.07989999758652,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8195806UN6789N/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 108.86857350393439,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8195806UN6789N/surface-3",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 70.54599999798816,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8292001UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 524.9166671394178,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8292603UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 78.72246550132238,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8292604UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 94.30620000432475,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293001UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 311.29253262411623,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293001UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 111.60544999835567,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293001UN6789S/surface-3",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 19.79813499927085,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293002UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 107.98359999960276,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293003UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 438.4994153819795,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293003UN6789S/surface-2",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 265.52892512462574,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293003UN6789S/surface-3",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 15.583090002043491,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8293004UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 145.63939999892182,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294001UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 115.38623237710257,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294002UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 155.68054999598613,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294003UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 158.48533499935127,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294004UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 161.47410762125955,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294005UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 161.18953000153715,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294501UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 471.87008249872605,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294502UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 250.30972012761117,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    },
+    {
+      "source_body": "8294504UN6789S/surface-1",
+      "pot_id": null,
+      "selected": false,
+      "area_m2": 156.30436262531856,
+      "core_overlap_fraction": 0.0,
+      "footprint_changed": false
+    }
+  ],
+  "no_interior_deletion": true,
+  "unresolved_identity": [
+    "8193301UN6789S is outside the primary perimeter: recent declined 6 m² record and older photo of a much larger building disagree. Do not import it as a separate invented narrow building."
+  ],
+  "numerical_sliver_areas_m2": [
+    2.706168622523819e-15,
+    6.132059746833239e-07,
+    7.552822641594681e-05
+  ]
+}

@@ -1,0 +1,1461 @@
+[
+  {
+    "file": "Addresses-feed.xml",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Addresses/ES.SDGC.AD.atom.xml",
+    "retrieved_utc": "2026-09-30T20:07:30.938810+00:00",
+    "sha256": "4342d37b6d5527eb7b8bebadc97966c90f1a041068ae9398b90183f2176898b9",
+    "bytes": 681783,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Last-Modified": "Fri, 28 Aug 2026 08:29:02 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"acdad647c736dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:34 GMT",
+      "Connection": "close",
+      "Content-Length": "681783"
+    }
+  },
+  {
+    "file": "Addresses-39.xml",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/addresses/39/ES.SDGC.ad.atom_39.xml",
+    "retrieved_utc": "2026-09-30T20:07:31.225816+00:00",
+    "sha256": "efada95a7b2de7c15f1ff8295505852b1d131a73f772fb97f9ebb5981206c739",
+    "bytes": 163595,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Last-Modified": "Fri, 21 Aug 2026 17:43:20 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"654a08e9431dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:34 GMT",
+      "Connection": "close",
+      "Content-Length": "163595"
+    }
+  },
+  {
+    "file": "Addresses-39055.zip",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Addresses/39/39055-POTES/A.ES.SDGC.AD.39055.zip",
+    "retrieved_utc": "2026-09-30T20:07:31.473946+00:00",
+    "sha256": "82c5de8246f02082b381b7772e67e86815b8d0814027a71119b02857e31239f9",
+    "bytes": 30287,
+    "headers": {
+      "Content-Type": "application/x-zip-compressed",
+      "Last-Modified": "Fri, 21 Aug 2026 17:32:27 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"98fa3699331dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:34 GMT",
+      "Connection": "close",
+      "Content-Length": "30287"
+    }
+  },
+  {
+    "file": "buildings-feed.xml",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/ES.SDGC.bu.atom.xml",
+    "retrieved_utc": "2026-09-30T20:07:31.605117+00:00",
+    "sha256": "6b60f42087114a090db59aebba2590102fe840ac205ec1203665d4b49c5e2996",
+    "bytes": 682565,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Last-Modified": "Fri, 28 Aug 2026 08:30:07 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"9bde6e6ec736dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:34 GMT",
+      "Connection": "close",
+      "Content-Length": "682565"
+    }
+  },
+  {
+    "file": "CadastralParcels-feed.xml",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/ES.SDGC.CP.atom.xml",
+    "retrieved_utc": "2026-09-30T20:07:31.943216+00:00",
+    "sha256": "5d571add41f638eaf536ac96531b9270d53b7e084495d0beb1e4bb069a179000",
+    "bytes": 685513,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Last-Modified": "Fri, 28 Aug 2026 08:29:39 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"8dbd4a5ec736dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:34 GMT",
+      "Connection": "close",
+      "Content-Length": "685513"
+    }
+  },
+  {
+    "file": "buildings-39.xml",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/39/ES.SDGC.bu.atom_39.xml",
+    "retrieved_utc": "2026-09-30T20:07:31.968802+00:00",
+    "sha256": "d005e22042cb670fb6f13d4b09bb67c605bfe37a02bd7d88d77013967c65441b",
+    "bytes": 180848,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Last-Modified": "Fri, 21 Aug 2026 18:42:40 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"fc9545d89c31dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:35 GMT",
+      "Connection": "close",
+      "Content-Length": "180848"
+    }
+  },
+  {
+    "file": "CadastralParcels-39.xml",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/39/ES.SDGC.CP.atom_39.xml",
+    "retrieved_utc": "2026-09-30T20:07:32.331841+00:00",
+    "sha256": "3516887f8fcf3b8fe2c0f871d3faec8eb198cec0236db056533634c7ff5edacb",
+    "bytes": 183160,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Last-Modified": "Fri, 21 Aug 2026 17:19:26 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"c0aa6f379131dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:35 GMT",
+      "Connection": "close",
+      "Content-Length": "183160"
+    }
+  },
+  {
+    "file": "buildings-39055.zip",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/39/39055-POTES/A.ES.SDGC.BU.39055.zip",
+    "retrieved_utc": "2026-09-30T20:07:32.937031+00:00",
+    "sha256": "86150da1d7f2fba184319316fa7de3406f739c68ec961c97fbc0ca18e0a1cd2f",
+    "bytes": 265509,
+    "headers": {
+      "Content-Type": "application/x-zip-compressed",
+      "Last-Modified": "Fri, 21 Aug 2026 18:15:31 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"cd4323d9931dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:35 GMT",
+      "Connection": "close",
+      "Content-Length": "265509"
+    }
+  },
+  {
+    "file": "mdt05.tif",
+    "url": "https://servicios.idee.es/wcs-inspire/mdt?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=Elevacion4258_5&SUBSET=Lat(43.1515,43.1552)&SUBSET=Long(-4.6260,-4.6208)&FORMAT=image/tiff",
+    "retrieved_utc": "2026-09-30T20:07:33.137950+00:00",
+    "sha256": "28f2e84bc470410841b668d629122ea9572305380cce902d62179f5afc967a45",
+    "bytes": 19302,
+    "headers": {
+      "Date": "Wed, 30 Sep 2026 20:07:36 GMT",
+      "Server": "Apache/2.4.6 (CentOS) mod_fcgid/2.3.9",
+      "Content-Description": "coverage data",
+      "Content-Transfer-Encoding": "binary",
+      "Content-ID": "coverage/out.tif",
+      "Content-Disposition": "INLINE; filename=out.tif",
+      "Cache-Control": "max-age=31536000",
+      "Expires": "Thu, 30 Sep 2027 20:07:36 GMT",
+      "Content-Type": "image/tiff",
+      "Access-Control-Allow-Origin": "*",
+      "Connection": "close",
+      "Transfer-Encoding": "chunked",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+    }
+  },
+  {
+    "file": "CadastralParcels-39055.zip",
+    "url": "https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/39/39055-POTES/A.ES.SDGC.CP.39055.zip",
+    "retrieved_utc": "2026-09-30T20:07:34.725028+00:00",
+    "sha256": "605e7c710fb0abe3bd0ae4a1e4383fbd24178700db99865f71cb2085bafd75ee",
+    "bytes": 478614,
+    "headers": {
+      "Content-Type": "application/x-zip-compressed",
+      "Last-Modified": "Fri, 21 Aug 2026 17:17:44 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"69c5a0fa9031dd1:0\"",
+      "Date": "Wed, 30 Sep 2026 20:07:37 GMT",
+      "Connection": "close",
+      "Content-Length": "478614"
+    }
+  },
+  {
+    "file": "pnoa-capabilities.xml",
+    "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&REQUEST=GetCapabilities",
+    "retrieved_utc": "2026-09-30T20:12:48.767506+00:00",
+    "sha256": "907f75b17d07c1ddc6f2dfcf2a04efa7c66de4b1ea7e46e0c2524a9dfdebad52",
+    "bytes": 27902,
+    "headers": {
+      "Content-Type": "text/xml",
+      "Content-Length": "27902",
+      "Connection": "close",
+      "Date": "Mon, 20 Jul 2026 08:46:26 GMT",
+      "Server": "Apache/2.4.6 (CentOS) mod_fcgid/2.3.9",
+      "Last-Modified": "Tue, 21 Apr 2026 07:38:57 GMT",
+      "ETag": "\"6cfe-64ff3820da4ec\"",
+      "Accept-Ranges": "bytes",
+      "Access-Control-Allow-Origin": "*",
+      "Content-Security-Policy": "frame-ancestors 'self' *.ign.es *.cnig.es *.arcgis.com;",
+      "X-Cache": "Hit from cloudfront",
+      "Via": "1.1 5503b376aca9bf91e3ec26dd70f6d940.cloudfront.net (CloudFront)",
+      "X-Amz-Cf-Pop": "MAD56-P5",
+      "X-Amz-Cf-Id": "sDFUXCcteiRW4K6Ch7otI9pOs69xHf5yj6ibLYw4vMaGjFrWvzC20w==",
+      "Age": "6261986"
+    }
+  },
+  {
+    "file": "catastro-license.pdf",
+    "url": "https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf",
+    "retrieved_utc": "2026-09-30T20:12:49.071739+00:00",
+    "sha256": "9265a9c05ad0cf5a4366c59a4b16168eda9cf792ec1279e2c52a53f3f622d652",
+    "bytes": 100483,
+    "headers": {
+      "Content-Type": "application/pdf;charset=ANSI",
+      "Last-Modified": "Thu, 22 Sep 2016 08:03:57 GMT",
+      "Accept-Ranges": "bytes",
+      "ETag": "\"80945edea714d21:0\"",
+      "Date": "Wed, 30 Sep 2026 20:12:52 GMT",
+      "Connection": "close",
+      "Content-Length": "100483"
+    }
+  },
+  {
+    "file": "facades/8193801UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193801UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:50.003544+00:00",
+    "sha256": "2a2235d6fe6c33a910b745148edab8aa2e411352ea28a327e2d9ac263725a747",
+    "bytes": 821472,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ncqggyka4ppdzfvx2ddxvwxo; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193801UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:52 GMT",
+      "Connection": "close",
+      "Content-Length": "821472"
+    }
+  },
+  {
+    "file": "facades/8193802UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193802UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:50.679456+00:00",
+    "sha256": "817c5d8650e6546e16d4449e49118aba209d9e9b793ce09113143ff82f87d5db",
+    "bytes": 319025,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=cttzjsruig0x0vmogq2o12jz; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193802UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:53 GMT",
+      "Connection": "close",
+      "Content-Length": "319025"
+    }
+  },
+  {
+    "file": "facades/8193803UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193803UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:51.280063+00:00",
+    "sha256": "17059a96ad97aabf2a3bbd46b732f282466e8af2ed09879eb09abe4a09d98aa8",
+    "bytes": 316397,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=2vt0tq5qhi1n5cith3hsu4uk; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193803UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:54 GMT",
+      "Connection": "close",
+      "Content-Length": "316397"
+    }
+  },
+  {
+    "file": "facades/8193804UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193804UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:52.479580+00:00",
+    "sha256": "0943a873ddbc7f9c063cbc7643e95b94e2052acda86bb7918c293c4294dca0c4",
+    "bytes": 323301,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=1v3cpmys2odziefwg3ussuqa; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193804UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:54 GMT",
+      "Connection": "close",
+      "Content-Length": "323301"
+    }
+  },
+  {
+    "file": "facades/8193805UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193805UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:53.069804+00:00",
+    "sha256": "5cf2a084c5c46a76c6279f222b720ce914bff4a2a699bcdaa3e7781f9ce30612",
+    "bytes": 320445,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=jvtitudz2gbvzeascfjzpouf; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193805UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:55 GMT",
+      "Connection": "close",
+      "Content-Length": "320445"
+    }
+  },
+  {
+    "file": "facades/8193806UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193806UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:53.913968+00:00",
+    "sha256": "64d40b11c6c5d15d75a66ec095e7760315565058cbf32c140c7898f4b7815f50",
+    "bytes": 264063,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=0yctyps3qaonotthj2lbx3rx; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193806UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:57 GMT",
+      "Connection": "close",
+      "Content-Length": "264063"
+    }
+  },
+  {
+    "file": "facades/8193807UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193807UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:55.045986+00:00",
+    "sha256": "79d58fd546e158291a94e17cd5de8183e1aa49cd61c3b009fd4004e56e166eb3",
+    "bytes": 410501,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=mycaxh1lga535tebegslcojq; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193807UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:57 GMT",
+      "Connection": "close",
+      "Content-Length": "410501"
+    }
+  },
+  {
+    "file": "facades/8193808UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193808UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:55.622879+00:00",
+    "sha256": "7f54ab56f47dc651681a33b46acac80834c8d4fb038e1e2eb5b6a97817a08b2c",
+    "bytes": 291165,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=iufvw2qzghdbcsni0ciab1sz; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193808UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:58 GMT",
+      "Connection": "close",
+      "Content-Length": "291165"
+    }
+  },
+  {
+    "file": "facades/8193809UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193809UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:56.281248+00:00",
+    "sha256": "7d3dbd4506a7194587acbf9624b72ebcaf3d9e381481b2a2f73b40712d1e8597",
+    "bytes": 538902,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=45r2avanouei22cmm5fwl0cv; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193809UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:12:59 GMT",
+      "Connection": "close",
+      "Content-Length": "538902"
+    }
+  },
+  {
+    "file": "facades/8193810UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193810UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:56.884186+00:00",
+    "sha256": "982b3a2b67268757397ac6eaba2d826e955fc633cc5f286efa68061190fc9f25",
+    "bytes": 216102,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=cjarxx2oixkmkmfsepezlkmv; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193810UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:00 GMT",
+      "Connection": "close",
+      "Content-Length": "216102"
+    }
+  },
+  {
+    "file": "facades/8093402UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093402UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:57.758734+00:00",
+    "sha256": "07675f30db1b7b5c8c0a2801f69cafaecb32bdf384373a7f1794b4501e78bd20",
+    "bytes": 315171,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=xg135xwofft5fdvfsfsyqdkx; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093402UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:00 GMT",
+      "Connection": "close",
+      "Content-Length": "315171"
+    }
+  },
+  {
+    "file": "facades/8093403UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093403UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:58.407906+00:00",
+    "sha256": "391a87c760302984b4c7ba93cbe121a91c376ff23c18c21dd5689b9f8216fff2",
+    "bytes": 272970,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=oxuvblcydhqu4cwwka1m3abr; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093403UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:01 GMT",
+      "Connection": "close",
+      "Content-Length": "272970"
+    }
+  },
+  {
+    "file": "facades/8094015UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8094015UN6789S",
+    "retrieved_utc": "2026-09-30T20:12:59.537874+00:00",
+    "sha256": "c76417533106f325a0474e2591effb25127877edce24e9845278ebd456c00579",
+    "bytes": 504876,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ple5gxo04jzcculc0hgrj5j3; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8094015UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:01 GMT",
+      "Connection": "close",
+      "Content-Length": "504876"
+    }
+  },
+  {
+    "file": "facades/8094016UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8094016UN6789S",
+    "retrieved_utc": "2026-09-30T20:13:00.396814+00:00",
+    "sha256": "6112b37e4875a1d39ab5d843a1af4334eec6bf9af25ca7b936b3a5a9e5952102",
+    "bytes": 261953,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=5e13lfvqbxkbgvzjvqig1zdf; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8094016UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:02 GMT",
+      "Connection": "close",
+      "Content-Length": "261953"
+    }
+  },
+  {
+    "file": "facades/8094017UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8094017UN6789S",
+    "retrieved_utc": "2026-09-30T20:13:01.787238+00:00",
+    "sha256": "953139ec15041bf6d2465c846d4c3f19f0d440b7e7ef46481e6a45f6d64528d9",
+    "bytes": 588680,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ie2zcxhrx5bkclyizzvaimax; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8094017UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:03 GMT",
+      "Connection": "close",
+      "Content-Length": "588680"
+    }
+  },
+  {
+    "file": "facades/8194106UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194106UN6789S",
+    "retrieved_utc": "2026-09-30T20:13:02.425069+00:00",
+    "sha256": "a8bbf959dc22aca2d98b03058051f8e969a4d47bf55ac475f40b0a0a0bb2ffa1",
+    "bytes": 291958,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=zy2qoux2mbm42y3xzk3e450u; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194106UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:13:05 GMT",
+      "Connection": "close",
+      "Content-Length": "291958"
+    }
+  },
+  {
+    "file": "osm.json",
+    "url": "https://overpass-api.de/api/interpreter",
+    "query_file": "osm-query.txt",
+    "retrieved_utc": "2026-09-30T20:13:02.425350+00:00",
+    "sha256": "3d0ce9d7d5f7a61f207d54d9030b6f654adc418776bae0eda0618c093699265b",
+    "bytes": 439043,
+    "timestamp_osm_base": "2026-09-30T20:08:35Z"
+  },
+  {
+    "file": "pnoa-core.jpg",
+    "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&SRS=EPSG%3A25830&BBOX=367865%2C4779010%2C368080%2C4779250&WIDTH=1720&HEIGHT=1920&FORMAT=image%2Fjpeg",
+    "retrieved_utc": "2026-09-30T20:18:01.419914+00:00",
+    "sha256": "4fd91b88ac69abb7b13f3c0161b182fb22cc27ffc3a82b0a4b9bc94829575aee",
+    "bytes": 613948
+  },
+  {
+    "file": "pnoa-info.html",
+    "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=OI.OrthoimageCoverage&QUERY_LAYERS=OI.OrthoimageCoverage&STYLES=&SRS=EPSG%3A25830&BBOX=367865%2C4779010%2C368080%2C4779250&WIDTH=1720&HEIGHT=1920&FORMAT=image%2Fjpeg&INFO_FORMAT=text%2Fhtml&X=850&Y=950",
+    "retrieved_utc": "2026-09-30T20:20:44.795277+00:00",
+    "sha256": "0dc3484dada94ad0e6b6a20b0ea63484d6c511a7b74060fc05660415bd4711a9",
+    "bytes": 408
+  },
+  {
+    "file": "pnoa-mosaic-info.html",
+    "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=OI.MosaicElement&QUERY_LAYERS=OI.MosaicElement&STYLES=&SRS=EPSG%3A25830&BBOX=367865%2C4779010%2C368080%2C4779250&WIDTH=1720&HEIGHT=1920&FORMAT=image%2Fjpeg&INFO_FORMAT=text%2Fhtml&X=850&Y=950",
+    "retrieved_utc": "2026-09-30T20:21:34.468842+00:00",
+    "sha256": "5445dd1c05aedce8b35e859acf92b740807e9d100149f8d21d8e49a35039597e",
+    "bytes": 578
+  },
+  {
+    "file": "facades/8093401UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093401UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:42.437708+00:00",
+    "sha256": "24744555c8b4af182b12e82b1e33ec6f0c2e16be7a4536729c33579299a640bd",
+    "bytes": 288452,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=p4fr0d3e2krpnlci3ixbpyra; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093401UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:45 GMT",
+      "Connection": "close",
+      "Content-Length": "288452"
+    }
+  },
+  {
+    "file": "facades/8093404UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093404UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:43.498376+00:00",
+    "sha256": "22e5519eacfb091c429e6c91ee2937a80d67a5ce159975cfa5c866e1fdb7c8bc",
+    "bytes": 331433,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=bdlqeowurwm1bdr4hw2sf1ak; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093404UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:46 GMT",
+      "Connection": "close",
+      "Content-Length": "331433"
+    }
+  },
+  {
+    "file": "facades/8093405UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093405UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:44.628278+00:00",
+    "sha256": "c76cd00eb8278496607952abd9b597bb9f992b77e5f65eb25546029798bbedac",
+    "bytes": 326157,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=fv0m5yudtrss2jdazji5nb50; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093405UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:47 GMT",
+      "Connection": "close",
+      "Content-Length": "326157"
+    }
+  },
+  {
+    "file": "facades/8093407UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093407UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:45.059275+00:00",
+    "sha256": "c65f7b9f76d26bea634b3f6f2243ee32174346fcc8911f91cf22109ccd1b741a",
+    "bytes": 43868,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=3bq435cp2y0xjuzd1ps2qbak; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093407UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:48 GMT",
+      "Connection": "close",
+      "Content-Length": "43868"
+    }
+  },
+  {
+    "file": "facades/8093409UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093409UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:45.623825+00:00",
+    "sha256": "9b73e94f1fdc4388c07e43803a6e8f5261d944f6b35364077f50d56dcbee2493",
+    "bytes": 221538,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=gmn30mbzytywljileykc5olv; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093409UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:48 GMT",
+      "Connection": "close",
+      "Content-Length": "221538"
+    }
+  },
+  {
+    "file": "facades/8193001UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193001UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:46.243856+00:00",
+    "sha256": "d0ef4cbf5297cec9c84fd9ab8c2ca79c78624b61174500377587eb73041ba36c",
+    "bytes": 313108,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=kf4vyayxibpmgsdrjghqdmd1; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193001UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:49 GMT",
+      "Connection": "close",
+      "Content-Length": "313108"
+    }
+  },
+  {
+    "file": "facades/8193002UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193002UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:46.996580+00:00",
+    "sha256": "fc25dbdaa94b9fd40fb87050048b8de838afbc82f68e7b267c3b619fb0f7b037",
+    "bytes": 211255,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=upoj4qtltmzffv1a10iqgdat; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193002UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:49 GMT",
+      "Connection": "close",
+      "Content-Length": "211255"
+    }
+  },
+  {
+    "file": "facades/8193003UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193003UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:48.175015+00:00",
+    "sha256": "e4d59cef052789a36bc52f011a74b8d5514d6c5c4fad1adc34763cd4a7bd296e",
+    "bytes": 333477,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=22numgmslqag3xppdbsuzhph; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193003UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:50 GMT",
+      "Connection": "close",
+      "Content-Length": "333477"
+    }
+  },
+  {
+    "file": "facades/8193004UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193004UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:48.769092+00:00",
+    "sha256": "8a3de32de12bd6294b78d54756f3595195102a0de1a0aa1bb86130ac9e7e1ca0",
+    "bytes": 297544,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=wk20bze20w4hmr3ugchqz4iw; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193004UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:51 GMT",
+      "Connection": "close",
+      "Content-Length": "297544"
+    }
+  },
+  {
+    "file": "facades/8193005UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193005UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:49.695623+00:00",
+    "sha256": "3c641ac1b3a41c19f0d2a746a78fa2f68512f5a45f75aa95ddadeae78032ea6a",
+    "bytes": 286974,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=0oqcgpcvtm42zihmoxezxx22; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193005UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:52 GMT",
+      "Connection": "close",
+      "Content-Length": "286974"
+    }
+  },
+  {
+    "file": "facades/8193006UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193006UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:50.694477+00:00",
+    "sha256": "b419d7e2569cc97bee479437926c6032ca6878e46c193a6e58c2c373fc958f59",
+    "bytes": 325437,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ztxzfty5tfkszhzdfu3ppgss; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193006UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:53 GMT",
+      "Connection": "close",
+      "Content-Length": "325437"
+    }
+  },
+  {
+    "file": "facades/8193007UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193007UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:51.349625+00:00",
+    "sha256": "27778eac0b5608adcb9108ffb23bf251562a4a6ee41c486c88c114f144e261fd",
+    "bytes": 331234,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=hynbjatlzshugksbllxacx0g; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193007UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:54 GMT",
+      "Connection": "close",
+      "Content-Length": "331234"
+    }
+  },
+  {
+    "file": "facades/8193008UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193008UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:52.001148+00:00",
+    "sha256": "aa461e5430872e8d37d06c5b917b588447d9d7f72a210c20bc3303a7227b9cd8",
+    "bytes": 467127,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=mehjsv24ukioprrv4wcyle3i; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193008UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:54 GMT",
+      "Connection": "close",
+      "Content-Length": "467127"
+    }
+  },
+  {
+    "file": "facades/8193009UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193009UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:53.045127+00:00",
+    "sha256": "bdd79528d9891741d90a125e2778d7977a6209fde2b460792d2252c151392a64",
+    "bytes": 372492,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=3g4taoepjo2mtidg3jvpltqz; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193009UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:55 GMT",
+      "Connection": "close",
+      "Content-Length": "372492"
+    }
+  },
+  {
+    "file": "facades/8193301UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193301UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:53.523184+00:00",
+    "sha256": "ec2dc4b3903c62c492c6997468ab0d40c97d39f5665e6dc3a8e48ef89fff1601",
+    "bytes": 109952,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ssgta1qfgydqeedkabde4yxc; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193301UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:56 GMT",
+      "Connection": "close",
+      "Content-Length": "109952"
+    }
+  },
+  {
+    "file": "facades/8193302UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193302UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:54.032686+00:00",
+    "sha256": "689f16d38e180803ffdf083a0cd94a7b194669cc3ce52acca31dc3130858b62c",
+    "bytes": 92541,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=fnwfyb2fyeh2kinqz5ttih3b; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193302UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:56 GMT",
+      "Connection": "close",
+      "Content-Length": "92541"
+    }
+  },
+  {
+    "file": "facades/8193303UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193303UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:54.814337+00:00",
+    "sha256": "471991a9c5ea112e50be6aa8c958c23dac149f539dadf660cc3c93431b61af4f",
+    "bytes": 251259,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=y4kfjbzphbprows0n5x24eza; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193303UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:57 GMT",
+      "Connection": "close",
+      "Content-Length": "251259"
+    }
+  },
+  {
+    "file": "facades/8193401UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193401UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:55.290789+00:00",
+    "sha256": "2f5e0035313c294ac23bd76f2a67d80ef066d3a6644cf2b4de16c2c9e35d752b",
+    "bytes": 261771,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=sfbefjuyofxf1yqtyvqelkjw; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193401UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:57 GMT",
+      "Connection": "close",
+      "Content-Length": "261771"
+    }
+  },
+  {
+    "file": "facades/8193402UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193402UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:55.817990+00:00",
+    "sha256": "bdc1b10b57be3c59dd2543b787ba262727d9112644eb19a75bd0f7d1377df281",
+    "bytes": 249739,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ad4wiyd13532rimf1oc4cw5f; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193402UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:59 GMT",
+      "Connection": "close",
+      "Content-Length": "249739"
+    }
+  },
+  {
+    "file": "facades/8193403UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193403UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:56.432289+00:00",
+    "sha256": "b635215cdcf5947cba611c11e8246360df1ec348fdc0b45335f018d2085dcf87",
+    "bytes": 284203,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ennsfa0xp0amyxfz51izcbko; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193403UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:24:59 GMT",
+      "Connection": "close",
+      "Content-Length": "284203"
+    }
+  },
+  {
+    "file": "facades/8193404UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193404UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:57.517563+00:00",
+    "sha256": "6bb987d605462f581f40e1d5fe0ad30391109b1f31ee6d936e912744f133ed09",
+    "bytes": 300203,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=zakbyllqiervqmqskwv1vmts; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193404UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:00 GMT",
+      "Connection": "close",
+      "Content-Length": "300203"
+    }
+  },
+  {
+    "file": "facades/8193405UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193405UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:58.214247+00:00",
+    "sha256": "edc30856b5768e8b9d3b0d5ac28f3cc98aa93cff323bae3bd25f22f6a5394025",
+    "bytes": 287405,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=mcfglqcyn5s3kwkb1ipbvwg4; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193405UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:01 GMT",
+      "Connection": "close",
+      "Content-Length": "287405"
+    }
+  },
+  {
+    "file": "facades/8193406UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193406UN6789S",
+    "retrieved_utc": "2026-09-30T20:24:59.251793+00:00",
+    "sha256": "35e9a532e38eb7a0d342b3ab9e4844cbb72d5504dc12d06af726a4ce10ae22b2",
+    "bytes": 324763,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=fl424rpeg24txxcjqit4aa33; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193406UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:01 GMT",
+      "Connection": "close",
+      "Content-Length": "324763"
+    }
+  },
+  {
+    "file": "facades/8193407UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193407UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:00.174145+00:00",
+    "sha256": "1c3e20457960319f14d87efed24e6da6ece5199568067ad8546167e1a918628e",
+    "bytes": 319307,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=fiopxsn5nyqhapkbfzjcicke; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193407UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:02 GMT",
+      "Connection": "close",
+      "Content-Length": "319307"
+    }
+  },
+  {
+    "file": "facades/8193601UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193601UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:01.031728+00:00",
+    "sha256": "f3c3240eff1443b27643887ef13d8e030b7b80d0362d2a452ecb33ec765ba2d6",
+    "bytes": 324612,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=24boze4yolldxyi5sye2dunl; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193601UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:03 GMT",
+      "Connection": "close",
+      "Content-Length": "324612"
+    }
+  },
+  {
+    "file": "facades/8193602UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193602UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:02.122970+00:00",
+    "sha256": "f6e9df72e83db3eff7cf630582a69da120eeb49b4f30602dd0d22f5bba91ec37",
+    "bytes": 379806,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=th4u54043032d2sejimlrt1b; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193602UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:04 GMT",
+      "Connection": "close",
+      "Content-Length": "379806"
+    }
+  },
+  {
+    "file": "facades/8193603UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193603UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:03.037304+00:00",
+    "sha256": "257a7909539b761555fc5f0e417e6b0fa5ba2e18cb09e35ee693e140f27e5440",
+    "bytes": 253089,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=stnho0pkv502e24mviysgc4w; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193603UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:05 GMT",
+      "Connection": "close",
+      "Content-Length": "253089"
+    }
+  },
+  {
+    "file": "facades/8193604UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193604UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:04.028874+00:00",
+    "sha256": "e1d5881270c0635e9f64eb65ba67f0cfdbae0bd89d407ac1649db6b6a97047a0",
+    "bytes": 306456,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=0ydaxnf4forn5ctd4sqxxi3u; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193604UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:06 GMT",
+      "Connection": "close",
+      "Content-Length": "306456"
+    }
+  },
+  {
+    "file": "facades/8193605UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193605UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:04.966796+00:00",
+    "sha256": "486de96f1aa9ffa25183ae7bedaf6764b0a9b04db6df1cd46dcbe74e4ca37dbe",
+    "bytes": 275247,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=1zxndltduwv5tlygmyv3hx23; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193605UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:07 GMT",
+      "Connection": "close",
+      "Content-Length": "275247"
+    }
+  },
+  {
+    "file": "facades/8193606UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193606UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:05.464194+00:00",
+    "sha256": "7cfa6ce70e67630b780c6d4ad280ddb8d440ed15f9d1ee2c2fa155e9a31847fe",
+    "bytes": 125878,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=gjarr45zgqfsb2exgsr4cq5p; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193606UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:08 GMT",
+      "Connection": "close",
+      "Content-Length": "125878"
+    }
+  },
+  {
+    "file": "facades/8193608UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193608UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:06.270586+00:00",
+    "sha256": "f3d0ecd6a33860fedfc21e54e6053d7afb30799a05ece63cdca16ec01950cdc7",
+    "bytes": 295355,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=qkrprti2lsrxo11lmhkipbj3; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193608UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:08 GMT",
+      "Connection": "close",
+      "Content-Length": "295355"
+    }
+  },
+  {
+    "file": "facades/8193609UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193609UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:07.250192+00:00",
+    "sha256": "f91825a3a48bfff7e06557f29c718f429f653ca088562da015f3db0bec4588a8",
+    "bytes": 301051,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=wobaeyjxt4gh4bchfcsw0jz5; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193609UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:10 GMT",
+      "Connection": "close",
+      "Content-Length": "301051"
+    }
+  },
+  {
+    "file": "facades/8193610UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193610UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:07.734062+00:00",
+    "sha256": "a657b48b2557028a1a85d618b6b4c932fbc8cba3ffd94ad9ed760d93ab81393c",
+    "bytes": 145517,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=4uvd2rnglpuf5hwcsfk3bmkn; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193610UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:11 GMT",
+      "Connection": "close",
+      "Content-Length": "145517"
+    }
+  },
+  {
+    "file": "facades/8193618UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193618UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:08.154703+00:00",
+    "sha256": "2137cbadd9718a5f9a68311794dce148e4ab7e41f3ceed9b4bd5ad5d0f2570ab",
+    "bytes": 64227,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=kfhalyawe1o0ss2gwwvqimnt; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193618UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:11 GMT",
+      "Connection": "close",
+      "Content-Length": "64227"
+    }
+  },
+  {
+    "file": "facades/8193619UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193619UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:08.991699+00:00",
+    "sha256": "7a8569865ba8a2258d51b0a657aea7a1351470b8d88d18f1f7f011a05146f1b6",
+    "bytes": 257772,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=0erv0b3bzcsdguyb4dhaptxs; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193619UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:12 GMT",
+      "Connection": "close",
+      "Content-Length": "257772"
+    }
+  },
+  {
+    "file": "facades/8193811UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8193811UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:09.247105+00:00",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "headers": {
+      "Cache-Control": "private",
+      "Set-Cookie": "ASP.NET_SessionId=2qumdbj1qvpeqxzy2qobm3nb; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8193811UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:12 GMT",
+      "Connection": "close",
+      "Content-Length": "0"
+    }
+  },
+  {
+    "file": "facades/8194103UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194103UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:09.907517+00:00",
+    "sha256": "5b3ee9ffe7021385808ad2f8e6260f1b49db8a9cb2a17f54d8a631edd306728b",
+    "bytes": 384177,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=pe2wlgd3z25j3xpsrxjaoqwx; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194103UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:13 GMT",
+      "Connection": "close",
+      "Content-Length": "384177"
+    }
+  },
+  {
+    "file": "facades/8194104UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194104UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:10.450976+00:00",
+    "sha256": "bf352c09d8da929cb558e9de0055f8a68fe32c611ed37e4e99073ea17720443e",
+    "bytes": 252121,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=zxc5gevklgs2lvlmgqwc1m12; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194104UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:13 GMT",
+      "Connection": "close",
+      "Content-Length": "252121"
+    }
+  },
+  {
+    "file": "facades/8194105UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194105UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:11.498438+00:00",
+    "sha256": "ad0b2fd07ca7db94036b0043948e71f5b8ad54104b3a0b9c34c212f40daaa35f",
+    "bytes": 315855,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=o4gchakj20t3zr55jbdogjom; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194105UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:14 GMT",
+      "Connection": "close",
+      "Content-Length": "315855"
+    }
+  },
+  {
+    "file": "facades/8194503UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194503UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:12.378084+00:00",
+    "sha256": "68b37a60ef96c1b4f3cc6fe38abd68a3ce84c390ddff373101901e606bd67b6e",
+    "bytes": 284546,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=axpvrmso0wjzeglqd1ca3cbz; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194503UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:15 GMT",
+      "Connection": "close",
+      "Content-Length": "284546"
+    }
+  },
+  {
+    "file": "facades/8194702UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194702UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:13.667089+00:00",
+    "sha256": "ace886af90ab18484664ad772e4f9fe9fb24cda77246a6ade5b7fc50f32aa8cb",
+    "bytes": 386361,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=zmwq4fydwnzpkmbzkvktwxoo; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194702UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:16 GMT",
+      "Connection": "close",
+      "Content-Length": "386361"
+    }
+  },
+  {
+    "file": "facades/8194703UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8194703UN6789S",
+    "retrieved_utc": "2026-09-30T20:25:14.802419+00:00",
+    "sha256": "4c848ece9b37871a03d5c867001cea006a8452ea7b943488c108d9292ef08c16",
+    "bytes": 359032,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=igzahhcupcfwgoldcxdasr4x; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8194703UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:25:17 GMT",
+      "Connection": "close",
+      "Content-Length": "359032"
+    }
+  },
+  {
+    "file": "facades/8093001UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093001UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:35.250511+00:00",
+    "sha256": "25c68882b807843861ad428939f326a28e44bb6290a7313c756d3bb675ca6cee",
+    "bytes": 356885,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=giny3uut1qr4qeaudu2t5afl; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093001UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:38 GMT",
+      "Connection": "close",
+      "Content-Length": "356885"
+    }
+  },
+  {
+    "file": "facades/8093003UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093003UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:36.317405+00:00",
+    "sha256": "b1187dbff4579d2386a8018952f2938c0935df966a9545dddca3365d49eefc11",
+    "bytes": 325545,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=w2pqltpksznijm02rodogiho; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093003UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:39 GMT",
+      "Connection": "close",
+      "Content-Length": "325545"
+    }
+  },
+  {
+    "file": "facades/8093004UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093004UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:36.982221+00:00",
+    "sha256": "372135de78aaaa4a2d05bdebc08c5377ec89e2fa4fbe50a9f7aa56ac06d11d82",
+    "bytes": 331727,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=ub2krtxnz4q25nlzpjw4skfv; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093004UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:40 GMT",
+      "Connection": "close",
+      "Content-Length": "331727"
+    }
+  },
+  {
+    "file": "facades/8093406UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093406UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:38.970373+00:00",
+    "sha256": "9210975933b5afd55f29b03c2badfa9d5f038c5207e3a4944e2912647beaf1c5",
+    "bytes": 294501,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=i1lqvq5mgitiv0j2n4xewflr; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093406UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:41 GMT",
+      "Connection": "close",
+      "Content-Length": "294501"
+    }
+  },
+  {
+    "file": "facades/8093410UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093410UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:40.034650+00:00",
+    "sha256": "7d90ac76a7e42b76f91129bd7570a7e6302673b6e846396109b0fe95c10b2db5",
+    "bytes": 306757,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=3c2tyyb4ha3dkf3z2wq2yk5c; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093410UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:42 GMT",
+      "Connection": "close",
+      "Content-Length": "306757"
+    }
+  },
+  {
+    "file": "facades/8093411UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093411UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:40.693649+00:00",
+    "sha256": "1e490335c59fc4db333614814cd6e013d879f5e4b2fb4c2e2398a8a4301ea2ba",
+    "bytes": 336027,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=mdpkowrdv0kcoqq1d2hutcfs; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093411UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:43 GMT",
+      "Connection": "close",
+      "Content-Length": "336027"
+    }
+  },
+  {
+    "file": "facades/8093412UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093412UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:41.314193+00:00",
+    "sha256": "18d12039b0ebe028a41f0c19485d5608c49b1f48c8f64dc94f8757d546b6fc9b",
+    "bytes": 279744,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=f51uw3vlsstqoksed3seyxla; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093412UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:44 GMT",
+      "Connection": "close",
+      "Content-Length": "279744"
+    }
+  },
+  {
+    "file": "facades/8093418UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093418UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:41.961274+00:00",
+    "sha256": "c041e1561df7c0a4b6787f27e2b9d881cd513e20f963eb674265548253cf0b2e",
+    "bytes": 305291,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=pvwlhk44vuq1oad3bxjdmewr; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093418UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:44 GMT",
+      "Connection": "close",
+      "Content-Length": "305291"
+    }
+  },
+  {
+    "file": "facades/8093419UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093419UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:42.532013+00:00",
+    "sha256": "bddc749dd096f61a5ae3cf6ee9d4cd9f04c5492e82b047f6410e159b9a8c2607",
+    "bytes": 288717,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=0lr4pivyeoxtikpz1bhcoit2; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093419UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:45 GMT",
+      "Connection": "close",
+      "Content-Length": "288717"
+    }
+  },
+  {
+    "file": "facades/8093420UN6789S.jpg",
+    "url": "https://ovc.catastro.meh.es/OVCServWeb/OVCWcfLibres/OVCFotoFachada.svc/RecuperarFotoFachadaGet?ReferenciaCatastral=8093420UN6789S",
+    "retrieved_utc": "2026-09-30T20:49:42.932953+00:00",
+    "sha256": "1df96fcb0f0327b47d97a5df1fe4bc4ad0badd4935628311f69240094bc75640",
+    "bytes": 31304,
+    "headers": {
+      "Cache-Control": "private",
+      "Content-Type": "image/jpeg",
+      "Set-Cookie": "ASP.NET_SessionId=kd1d4ytnpteen2tln2dnza4c; path=/; HttpOnly; SameSite=Lax",
+      "Content-Disposition": "filename=\"8093420UN6789SJPEG\"",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "Nosniff",
+      "Date": "Wed, 30 Sep 2026 20:49:45 GMT",
+      "Connection": "close",
+      "Content-Length": "31304"
+    }
+  }
+]

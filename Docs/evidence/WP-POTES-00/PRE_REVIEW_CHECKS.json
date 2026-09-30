@@ -1,0 +1,491 @@
+{
+  "status": "CHECKS_PASS_WP_NOT_READY",
+  "negative_checks": [
+    {
+      "case": "Genuine WIP has clean geometry but refuses full acceptance",
+      "passed": true,
+      "code": 2,
+      "detected_errors": []
+    },
+    {
+      "case": "0.75 metre shifted body is rejected even with matching transform",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Footprint changed POT-B001",
+        "Material footprint cut POT-B001",
+        "Building not wholly owned by sector POT-B001"
+      ]
+    },
+    {
+      "case": "Interior omission cannot hide behind target cardinality",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Sector membership not exact partition",
+        "Uncounted interior body 8093401UN6789S/surface-1"
+      ]
+    },
+    {
+      "case": "Matching sector lists cannot hide half-building ownership",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Building not wholly owned by sector POT-B007",
+        "First Slice outside Sector 01"
+      ]
+    },
+    {
+      "case": "A ready boolean cannot erase explicit exterior gaps",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Ready flag contradicts recorded blockers POT-B042",
+        "Ready flag contradicts UNKNOWN POT-B042:frontage_m",
+        "Ready flag contradicts UNKNOWN POT-B042:ground_threshold_elevation_m",
+        "Ready flag contradicts UNKNOWN POT-B042:visible_height_m",
+        "Ready flag contradicts UNKNOWN POT-B042:roof",
+        "Ready flag lacks registered opening observations POT-B042"
+      ]
+    },
+    {
+      "case": "Owner gate needs a recorded human decision",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Owner approval lacks direct human decision Exact Boundary Gate"
+      ]
+    }
+  ],
+  "local_link_errors": [],
+  "artifact_inventory": [
+    {
+      "file": "Docs/evidence/WP-POTES-00/BLOCKING_FACTS.md",
+      "canonical_bytes": 3278,
+      "sha256_lf_text_or_binary": "87db23309b4795c1ff5f0712f0c4a3a0d6ffc2ddc055fa737679b5c3895fac29"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/BUILDING_LEDGER.csv",
+      "canonical_bytes": 13159,
+      "sha256_lf_text_or_binary": "cf037eba45d308fe89773c39995b37be1cdfced5307b4c8b46adbad54fe8115e"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/BUILDING_LEDGER.json",
+      "canonical_bytes": 1148372,
+      "sha256_lf_text_or_binary": "65059a7700743221073fd336d206ce07249e80dcf2d4a42fe7ce6860d6dfb426",
+      "json_root": [
+        "schema_version",
+        "crs",
+        "origin_epsg25830",
+        "game_transform",
+        "buildings"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/buildings.geojson",
+      "canonical_bytes": 78995,
+      "sha256_lf_text_or_binary": "655e4dbec160da8907b035e03bfaa70453a0d97473552677f74e361a4c3a4d89",
+      "json_root": [
+        "type",
+        "features",
+        "coordinate_reference_system",
+        "warning"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/CORE_SELECTED.md",
+      "canonical_bytes": 7331,
+      "sha256_lf_text_or_binary": "57c8fe0fec48126eb1bf90c09cedff2def1f5ff9437ae359d4bb0777761f45d0"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/DEPENDENCY_CHECK.md",
+      "canonical_bytes": 3447,
+      "sha256_lf_text_or_binary": "29e1cf96469cdf932304ee0744d28c1219b901c38bcfdbf012d70bd347c4e1c3"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/ENV01_REUSE_MAP.md",
+      "canonical_bytes": 4152,
+      "sha256_lf_text_or_binary": "c42264c7dd7f11279e669e0dbde56c38c167458e9740a410635eae192e7ebcbf"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/FACADE_OBSERVATIONS.json",
+      "canonical_bytes": 11146,
+      "sha256_lf_text_or_binary": "bcbc158ceaa3c13759370452f356c50d94bc1ea2733a1af1efe36f9f250ce0d4",
+      "json_root": [
+        "8093401UN6789S",
+        "8093402UN6789S",
+        "8093403UN6789S",
+        "8093404UN6789S",
+        "8094017UN6789S",
+        "8193801UN6789S",
+        "8193802UN6789S",
+        "8193803UN6789S",
+        "8193804UN6789S",
+        "8193805UN6789S",
+        "8193806UN6789S",
+        "8193807UN6789S",
+        "8193808UN6789S",
+        "8193809UN6789S",
+        "8193810UN6789S",
+        "8193811UN6789S"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/FOLLOWUP_RESEARCH.md",
+      "canonical_bytes": 4073,
+      "sha256_lf_text_or_binary": "323cf2bdd421cb0c4ea41c73d9c826483ec4c040d487ba9de2ff2e5d8edd5c4d"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/ID_REGISTRY.json",
+      "canonical_bytes": 2439,
+      "sha256_lf_text_or_binary": "e87109a6282778e4ec2c1ef29b64929c782220a2ae5341d38140cb523631daab",
+      "json_root": [
+        "8093001UN6789S/surface-5",
+        "8093003UN6789S/surface-1",
+        "8093004UN6789S/surface-1",
+        "8093401UN6789S/surface-1",
+        "8093402UN6789S/surface-1",
+        "8093403UN6789S/surface-1",
+        "8093404UN6789S/surface-1",
+        "8093405UN6789S/surface-1",
+        "8093406UN6789S/surface-1",
+        "8093407UN6789S/surface-1",
+        "8093409UN6789S/surface-1",
+        "8093410UN6789S/surface-1",
+        "8093411UN6789S/surface-1",
+        "8093412UN6789S/surface-1",
+        "8093418UN6789S/surface-1",
+        "8093419UN6789S/surface-1",
+        "8093420UN6789S/surface-1",
+        "8094017UN6789S/surface-1",
+        "8193001UN6789S/surface-1",
+        "8193002UN6789S/surface-1",
+        "8193003UN6789S/surface-1",
+        "8193004UN6789S/surface-1",
+        "8193005UN6789S/surface-1",
+        "8193006UN6789S/surface-1",
+        "8193007UN6789S/surface-1",
+        "8193008UN6789S/surface-1",
+        "8193009UN6789S/surface-1",
+        "8193601UN6789S/surface-1",
+        "8193602UN6789S/surface-1",
+        "8193603UN6789S/surface-1",
+        "8193604UN6789S/surface-1",
+        "8193605UN6789S/surface-1",
+        "8193605UN6789S/surface-2",
+        "8193605UN6789S/surface-3",
+        "8193606UN6789S/surface-1",
+        "8193608UN6789S/surface-1",
+        "8193609UN6789S/surface-1",
+        "8193610UN6789S/surface-1",
+        "8193618UN6789S/surface-1",
+        "8193619UN6789S/surface-1",
+        "8193801UN6789S/surface-1",
+        "8193802UN6789S/surface-1",
+        "8193803UN6789S/surface-1",
+        "8193804UN6789S/surface-1",
+        "8193805UN6789S/surface-1",
+        "8193806UN6789S/surface-1",
+        "8193807UN6789S/surface-1",
+        "8193808UN6789S/surface-1",
+        "8193809UN6789S/surface-1",
+        "8193810UN6789S/surface-1",
+        "8193811UN6789S/surface-1",
+        "8194103UN6789S/surface-1",
+        "8194104UN6789S/surface-1",
+        "8194105UN6789S/surface-1",
+        "8194106UN6789S/surface-1",
+        "8194503UN6789S/surface-1",
+        "8194702UN6789S/surface-1",
+        "8194703UN6789S/surface-1"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/maps/perimeter.png",
+      "canonical_bytes": 231754,
+      "sha256_lf_text_or_binary": "52d1c9d853e23c93a18df87578c90e275ce34d4ef7f7b525d6a5184320e6c602"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/maps/pnoa_2023_reference.jpg",
+      "canonical_bytes": 613948,
+      "sha256_lf_text_or_binary": "4fd91b88ac69abb7b13f3c0161b182fb22cc27ffc3a82b0a4b9bc94829575aee"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/maps/pnoa_perimeter_overlay.jpg",
+      "canonical_bytes": 672210,
+      "sha256_lf_text_or_binary": "a6298581def33d5834557da1076ece0576ffa1f1c3dd6befff0d501322580a87"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/maps/sectorization.png",
+      "canonical_bytes": 233603,
+      "sha256_lf_text_or_binary": "402b73b085d716fa62450a050316847ece4e860e52b5fce2da06eb601556472a"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/MEMBERSHIP_AUDIT.json",
+      "canonical_bytes": 45217,
+      "sha256_lf_text_or_binary": "32bf15a273f800647abb553d357c87df95b986735910b91a2d222e4dc552d1f6",
+      "json_root": [
+        "source_components",
+        "no_interior_deletion",
+        "unresolved_identity",
+        "numerical_sliver_areas_m2"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/METRICS.json",
+      "canonical_bytes": 1427,
+      "sha256_lf_text_or_binary": "cf553dc0cb64efd4db98a93abbfa5acc6cc006dfd2e293ca7ffffe5e0ab895a7",
+      "json_root": [
+        "building_count",
+        "area_m2",
+        "bounds_local",
+        "dimensions_m",
+        "count_gt_100",
+        "count_gt_200",
+        "count_gt_400",
+        "footprint_area_min_median_max_m2",
+        "walkable_axis_length_m",
+        "network_components",
+        "largest_component_node_count",
+        "path_diameter_m",
+        "diameter_osm_endpoints",
+        "traversal_minutes_at_1_4_m_s",
+        "traversal_minutes_at_1_8_m_s",
+        "network_terrain_sample_range_m",
+        "closed_network_face_count",
+        "intersected_cadastral_parcel_count",
+        "full_cadastral_parcel_count",
+        "source_numerical_sliver_areas_m2",
+        "sector_counts",
+        "photo_receipts",
+        "production_ready_buildings",
+        "claim_limit"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/OWNER_GATES.json",
+      "canonical_bytes": 795,
+      "sha256_lf_text_or_binary": "5714004c8d3e69cf91b803fefb6d1006b62fe23d6ae9ba2eebf88aa4dedb1027",
+      "json_root": [
+        "gates",
+        "authorization_limit"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/potes_core.geojson",
+      "canonical_bytes": 20832,
+      "sha256_lf_text_or_binary": "f33b32bf5e34be75ae1f028121d96cf23bb2514481cc4744c93e90b165f406a5",
+      "json_root": [
+        "type",
+        "features",
+        "coordinate_reference_system",
+        "warning"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/README.md",
+      "canonical_bytes": 1321,
+      "sha256_lf_text_or_binary": "ee65eeebc003f51f62a3373b7d897a55d3e49076e0017a6ae4236acf6d555c7c"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/reference_decisions.json",
+      "canonical_bytes": 2404,
+      "sha256_lf_text_or_binary": "f4f20f5590e0d7e746c29b7079838cde206293e542030337124e62280ac28fee",
+      "json_root": [
+        "status",
+        "primary_initial_outer_polygon_local",
+        "local_origin_epsg25830",
+        "outer_boundary_adjustment",
+        "explicit_outer_members",
+        "membership_tolerance_m",
+        "note",
+        "exclusion_reason_8193301",
+        "whole_public_space_way_ids",
+        "outer_return_axis_way_ids",
+        "return_axis_guard_policy"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/REPEATABILITY.json",
+      "canonical_bytes": 104,
+      "sha256_lf_text_or_binary": "ad26ee01b07919c17a3c061faaec6f3c8e3374e57ca70334c8c9aa5ec4e222dc",
+      "json_root": [
+        "build_exit_code",
+        "artifact_count",
+        "changed_after_rebuild",
+        "repeatable"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/BUILDING_LEDGER.json",
+      "canonical_bytes": 290155,
+      "sha256_lf_text_or_binary": "700a23bfc7481ff3bf97c78c93be811d21c98e10ee70482c7bab8f85fb362f5b",
+      "json_root": [
+        "buildings"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/FIRST_SLICE.json",
+      "canonical_bytes": 380,
+      "sha256_lf_text_or_binary": "0c61d357981a51272097416f79c640a36d9d5889a59269e7e214d779db244858",
+      "json_root": [
+        "ids",
+        "status",
+        "geometry_scope"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/FIRST_SLICE.md",
+      "canonical_bytes": 1433,
+      "sha256_lf_text_or_binary": "9febf2a6f96415bbe90b26afff57bc4cd78ef314b0981fa3460da8089da702b9"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/REFERENCE_INDEX.md",
+      "canonical_bytes": 19317,
+      "sha256_lf_text_or_binary": "7a6fcdf1a0822668584ef9f4267ada6ad7d8a90adb0b34243696a283c4df0960"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/SECTOR_GEOMETRY.geojson",
+      "canonical_bytes": 8820,
+      "sha256_lf_text_or_binary": "ca488260c70a39ef31de9f94eb3fd31a3fa5c0ed6c61e73a3e02ca192d5182df",
+      "json_root": [
+        "type",
+        "features",
+        "coordinate_reference_system",
+        "warning"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/SECTOR_PACK.md",
+      "canonical_bytes": 6205,
+      "sha256_lf_text_or_binary": "53d53b027c55e1274ed2756935ad97cf855ea46aab3cd039d464883abe199ebb"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sector-01/STREET_PUBLIC_SPACE_LEDGER.json",
+      "canonical_bytes": 96321,
+      "sha256_lf_text_or_binary": "b239ac914fd569cd33060a2e661bbbcb7faf1e79af1ffc2645197dd21653bccf",
+      "json_root": [
+        "entries"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/SECTOR_PLAN.md",
+      "canonical_bytes": 3643,
+      "sha256_lf_text_or_binary": "643ad9b122766a0dbb43d090fa313833bcdf591f3e5126336448761a9625b1e0"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sectors.geojson",
+      "canonical_bytes": 48753,
+      "sha256_lf_text_or_binary": "2dbec42d223cb1ce92b99fba17edbcc859fe36c0bacfd41fff02b63443e71c9b",
+      "json_root": [
+        "type",
+        "features",
+        "coordinate_reference_system",
+        "warning"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/SECTORS.json",
+      "canonical_bytes": 60950,
+      "sha256_lf_text_or_binary": "a8c975b956a75a9d6ce2e614adaa9f1f95a2a589439e1a22d9a43d5dc626e88d",
+      "json_root": [
+        "sectors"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/SOURCE_LOCK.md",
+      "canonical_bytes": 8491,
+      "sha256_lf_text_or_binary": "8ff25ae00e5005ac84db7d059957012a4ef3825bea1ef3bc6a29447d1a88d0de"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sources/ACQUISITION.json",
+      "canonical_bytes": 64486,
+      "sha256_lf_text_or_binary": "23a59ccd2b41b2b15c48d62c16ff6a59cde122e57c5f8fe0a1358569d1eaac81",
+      "json_root": "array"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sources/FOLLOWUP_RESEARCH_RECEIPTS.json",
+      "canonical_bytes": 2685,
+      "sha256_lf_text_or_binary": "169f53b17b18709c45f46c1248870bf2d62e2b0c94164302c92744c5333f4b0a",
+      "json_root": "array"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sources/LOCAL_SOURCE_PRODUCT.json",
+      "canonical_bytes": 2094781,
+      "sha256_lf_text_or_binary": "34a32ec41bc44b9fe31eef340ac6041fa0d551d4e0069b20f7b0a5711fd61cf9",
+      "json_root": [
+        "origin_epsg25830",
+        "buildings",
+        "building_parts",
+        "parcels",
+        "addresses",
+        "ways",
+        "osm_buildings",
+        "elevation",
+        "photos",
+        "osm_base",
+        "transformation"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sources/OSM_QUERY.txt",
+      "canonical_bytes": 187,
+      "sha256_lf_text_or_binary": "7c9d16bd6209f9d15c5470767bc23f5d7d344d7b56c58cab24ca57efec63452b"
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sources/TOOL_VERSIONS.json",
+      "canonical_bytes": 183,
+      "sha256_lf_text_or_binary": "39bc511fd1815274cc270f6491a85f882198b57625c6bb3bd3f89792f135a364",
+      "json_root": [
+        "python",
+        "pyproj",
+        "proj",
+        "shapely",
+        "pillow"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/STREET_PUBLIC_SPACE_LEDGER.json",
+      "canonical_bytes": 209545,
+      "sha256_lf_text_or_binary": "94d3baafe7efa7decdb142bbdb7fd33259836beefb0847898c8ecbc274947cf2",
+      "json_root": [
+        "crs",
+        "origin_epsg25830",
+        "entries",
+        "unresolved_classes"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/streets.geojson",
+      "canonical_bytes": 37604,
+      "sha256_lf_text_or_binary": "e4c60163be1aa4cd0a15858196ef9827afdc573c33fa122ec5ab78ae1c1d0ac2",
+      "json_root": [
+        "type",
+        "features",
+        "coordinate_reference_system",
+        "warning"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/VALIDATION.json",
+      "canonical_bytes": 897,
+      "sha256_lf_text_or_binary": "4493ef023a5824b18b40144ac579063e1d1134683b4f348ed983212854c582a6",
+      "json_root": [
+        "geometry_integrity_errors",
+        "evidence_integrity_errors",
+        "sector_overlap_m2",
+        "first_slice_ids",
+        "first_slice_reference_ready_count",
+        "claim_blockers",
+        "ready_for_independent_review",
+        "no_unity_edits_required"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/WORKER_PRE_REVIEW.md",
+      "canonical_bytes": 5154,
+      "sha256_lf_text_or_binary": "306b6897ed7ccb850516c22eed42e39f0bca819c1844f23f18b1484b37eebc6e"
+    }
+  ],
+  "scope_limit": "These guards test geometry/evidence honesty, not complete exterior authority. No independent PASS."
+}
