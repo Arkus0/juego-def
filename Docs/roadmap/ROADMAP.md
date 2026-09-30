@@ -66,6 +66,7 @@ The current CASCO work shows that technically valid agent generation is not enou
 owner shapes layout
  -> owner chooses/places pieces from visual catalogue
  -> owner expands map where desired
+ -> owner can AI-MODIFY a selected object/area using automatic scene context
  -> AI/operator manufactures missing requested pieces/structures
  -> new content returns to the same catalogue
  -> owner places/moves/locks
@@ -82,14 +83,14 @@ Delivery order:
 2. **D1 — preserved Layout MVP:** nodes/vias, street width, plaza vertices, landmarks, elevation, SAVE/REVERT/REBUILD/PLAY HERE.
 3. **D2 — Visual Catalogue + Direct Manipulation:** thumbnails, drag/click placement, ghost/snap, plus **click a visible prop and drag it directly** and **drag endpoints of railings/walls to extend or shorten the semantic chain**; move/rotate/duplicate/delete/LOCK; rebuild-safe persistence.
 4. **D3 — Map Expansion:** visually extend streets/spaces and place structures into new playable area without editing raw trace/spec data.
-5. **D4 — AI Asset/Structure Forge:** CREATE WITH AI / VARIANT / REPLACE / EXPAND / MAKE ENTERABLE; admitted results get lineage + thumbnail and return to the catalogue.
+5. **D4 — Selection-context AI + Asset/Structure Forge:** AI MODIFY SELECTED packages the selected object's/area's authored identity, nearby semantics, locks, dimensions and standardized views for Codex/operator; proposals return as PREVIEW / ACCEPT / TRY ANOTHER / DISCARD. CREATE WITH AI / VARIANT / REPLACE / EXPAND / MAKE ENTERABLE remain bounded; admitted reusable results get lineage + thumbnail and return to the catalogue.
 6. **D5 — Smart Builders/Brushes:** bounded wall/street/frontage/vegetation tools where they reduce repetitive clicks without taking composition authority.
 7. **D6 — Fast QA/Play:** affected validation, local rebuild where safe, route/capture helpers and PLAY HERE.
 8. **D7 — Owner Production Proof:** real keeper work proving edit-existing + map-expansion + AI-supplied-content flows.
 
 D0/D1 are the foundation, not discarded prototypes. Do not pause or restart them because the later product target expanded.
 
-The core authority rule remains: **the owner decides where the world grows and what is kept; AI makes/adapts pieces inside explicit human intent.** Generated scenes remain rebuildable from upstream ENV authority; the Director must not become a second scene-state architecture.
+The core authority rule remains: **the owner decides where the world grows and what is kept; AI modifies/makes content only inside explicit human selection and intent.** Selecting something supplies context automatically; it does not grant authority over everything visible around it. Generated scenes remain rebuildable from upstream ENV authority; the Director must not become a second scene-state architecture.
 
 ## B0 target
 
