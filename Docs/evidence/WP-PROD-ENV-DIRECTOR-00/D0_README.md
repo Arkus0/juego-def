@@ -3,7 +3,10 @@
 Status: **IMPLEMENTED + VERIFIED END-TO-END ON THE REAL CASCO** (2026-09-30, branch `worker/prod-env-01`)
 Tool: `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvLayoutEditor.cs` — menu **JuegoDef > ENV > Layout Editor** (Editor-only)
 Repair history: candidate `b3bb466` received an independent **FAIL** (PR #10 review 5366116751:
-REBUILD was not transactional). Repaired and re-verified — see **`D0_REPAIR1.md`** in this folder.
+REBUILD was not transactional). Repaired and re-verified — see **`D0_REPAIR1.md`**. Repair-1
+candidate `062e1e2` then received a second independent **FAIL** (PR #16 review 5366743166: the OSM
+input was pinned only by path, so upstream drift could piggyback a rebuild). Repaired and
+re-verified — see **`D0_REPAIR2.md`**.
 
 ## What D0 is (contract) and what shipped
 
@@ -62,22 +65,31 @@ The district spec is not a pure function of the trace today: it carries accepted
 (e.g. `K15_1` east `tip_keep`, shortened `Obispo_Escalera` top) and was generated from an OSM
 extract that is intentionally not in the repo. Regenerating therefore shows (and asks before
 applying): (a) geometry spread, (b) stochastic re-rolls downstream of geometry changes
-(seed 1971 stream — observed 40–75 rows changing palette/seed for one node move), (c) OSM drift
-  (today's fetch has 2 plots more than the 2026-09-28 one). The diff always reports these classes;
+  (seed 1971 stream — observed 40–75 rows changing palette/seed for one node move), (c) OSM drift
+  — now **gated upstream by the pinned source**: REBUILD hashes the extract and refuses to run
+  unless it matches the adopted SHA-256, so drift can only enter through an explicit adoption
+  (see the pinned-source section and `D0_REPAIR2.md`). The diff always reports these classes;
   REBUILD proceeds only after explicit confirmation (or `AutoConfirm` for operator runs).
   All consents happen BEFORE the spec is promoted; from the promote on, the operation is
   transactional — a failed or interrupted rebuild restores spec and scene to exactly the pre-rebuild
   bytes (`TX rollback`), a completed one commits (`TX commit`). The spec snapshot of the previous
   authority is kept at `%LOCALAPPDATA%\JuegoDef\<id>_spec.prev.json` after a commit.
 
-## Pinned OSM extract (operator requirement)
+## Pinned OSM extract (identity, not path — repair 2)
 
-`REBUILD` needs the OSM extract path (EditorPrefs `JuegoDef.ENV.Layout.ENV01_Casco_District.OsmPath`;
-`elegir...` / `ruta por defecto` in the window footer). Current machine path:
-`%LOCALAPPDATA%\JuegoDef\ENV01_osm.json` (Overpass base 2026-09-30, fetched with the documented
-`python Tools/env_morphology.py fetch --bbox 43.1521,-4.6244,43.1541,-4.6222`). Reuse THE SAME file
-for every rebuild; per-district determinism depends on it. First adoption after a new fetch will
-re-roll stochastic assignments in rows (shown in the impact dialog).
+The OSM extract stays out of the repository (ODbL hygiene); what the repo carries is its **adopted
+content identity**: `Assets/JuegoDef/Env/Specs/districts/<id>.osm.json`
+(`{sha256, bytes, adoptedUtc, path}`). REBUILD hashes the configured extract (EditorPrefs path,
+`elegir...` / `ruta por defecto` in the window footer) and **refuses to run** unless the bytes
+match the adopted pin; the pin only ever changes through the explicit **«Adoptar OSM»** action
+(old→new hash confirmation). Current adopted source: sha256
+`d3e4220c819ee9f701a5f87dfb4fbde1c10414066743640da1867da172695a19` (210,703 B, Overpass base
+2026-09-30, fetched with the documented `python Tools/env_morphology.py fetch --bbox
+43.1521,-4.6244,43.1541,-4.6222`), at `%LOCALAPPDATA%\JuegoDef\ENV01_osm.json` on this machine.
+Every run logs the verified hash; every promote receipt carries it. Adopting a genuinely different
+extract re-rolls stochastic assignments in rows (shown in the impact dialog) — and the first pinned
+rebuild exposed that the previous committed spec had been generated from an older extract: the spec
+was re-baselined through the normal transactional path (see `D0_REPAIR2.md`, "Finding").
 
 ## Test artifacts / restore
 
@@ -124,15 +136,21 @@ drag handle); plaza disc height is a guide value (trace discs carry no y).
      (`EnvDistrict.Begin/BuildRows/Finish/DistrictSpecs`, `EnvPolish.RebuildRow/
      FixBlockedOpenings/SeatOnGround/Auto`) is byte-verified identical at HEAD, so the candidate
      tree compiles and behaves the same at the tool boundary.
-  4. The OSM extract path lives in EditorPrefs (machine-local, outside candidate bytes); a fresh
-     machine must run the documented fetch once (window footer → "ruta por defecto" prints it).
-  5. First REBUILD after adopting a new OSM extract re-rolls stochastic assignments in rows
-     (existing pipeline behaviour, seed 1971) — surfaced in the impact dialog, one-time per adoption.
+  4. The OSM extract **path** lives in EditorPrefs (machine-local convenience pointer) and the
+     extract **bytes** stay out of the repo by policy — but their adopted **identity** is committed
+     (`<id>.osm.json`). A fresh machine must run the documented fetch once and then adopt it
+     explicitly if the bytes differ from the pin (REBUILD says so; it never adopts silently).
+  5. First REBUILD after adopting a genuinely new OSM extract re-rolls stochastic assignments in
+     rows (existing pipeline behaviour, seed 1971) — surfaced in the impact dialog, one-time per
+     adoption, and now impossible to trigger by accident (refetch/overwrite alone is blocked).
 
 ## Candidate scope (frozen bytes)
 
-Exactly: `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvLayoutEditor.cs` (+ `.meta`) and
+Repair-2 candidate (over repair 1): `Unity/JuegoDef/Assets/JuegoDef/Editor/Env/EnvLayoutEditor.cs`
+(+ `.meta`), the pinned-source sidecar `Assets/JuegoDef/Env/Specs/districts/
+ENV01_Casco_District.osm.json` (+ `.meta`), the re-baselined district spec
+`ENV01_Casco_District.json` (documented in `D0_REPAIR2.md`, "Finding"), and
 `Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` (this README + `D0_scene_guides_JA_moved.png` +
-`D0_REPAIR1.md`). The working tree also carries unrelated uncommitted night-20260931 work; it is NOT
-part of this candidate. PRODUCT_SHA is recorded in the freeze report outside the repository bytes
-(any further commit would create a new candidate).
+`D0_REPAIR1.md` + `D0_REPAIR2.md`). The working tree also carries unrelated uncommitted
+night-20260931 work; it is NOT part of this candidate. PRODUCT_SHA is recorded in the freeze report
+outside the repository bytes (any further commit would create a new candidate).

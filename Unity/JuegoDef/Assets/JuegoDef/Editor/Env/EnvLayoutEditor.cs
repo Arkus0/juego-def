@@ -22,6 +22,8 @@ namespace JuegoDef.Env
     /// one, shows the impact, and rebuilds only the affected rows when that is provably safe (same row ids,
     /// ground/river/plazas/streets intact) or the whole district otherwise. REBUILD is transactional: all consents run
     /// before the spec is promoted, spec+scene are snapshotted, and any cancel/exception/reload rolls them back.
+    /// The OSM source is pinned by content identity (per-district SHA-256 sidecar, explicit «Adoptar OSM» action);
+    /// regeneration refuses to run on any mismatch with the adopted pin (repair 2, review 5366743166).
     /// Menu: JuegoDef &gt; ENV &gt; Layout Editor.
     /// Undo/Redo is real Unity Undo on a hidden ScriptableObject mirror of the editable points.
     /// </summary>
@@ -51,6 +53,10 @@ namespace JuegoDef.Env
         string OsmPrefsKey => $"JuegoDef.ENV.Layout.{districtId}.OsmPath";
         string OsmPath => EditorPrefs.GetString(OsmPrefsKey, "");
         string RepoRoot => Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", ".."));
+
+        // OSM hash cache for the UI (per path+size+mtime); the hard gate in LayoutRebuild.Start always re-hashes,
+        // so a stale cache can never let a mismatched rebuild through.
+        string osmShaCacheKey, osmShaCache;
 
         public bool Dirty
         {
@@ -214,8 +220,26 @@ namespace JuegoDef.Env
             EditorGUILayout.EndVertical();
         }
 
-        /// <summary>The pinned OSM extract the skeleton needs (real plot subdivision); it stays out of the repo, so the
-        /// editor remembers the path. The documented fetch step creates it: python Tools/env_morphology.py fetch.</summary>
+        /// <summary>SHA-256 of the configured OSM extract, cached per (path, size, mtime) so OnGUI stays cheap. The hard
+        /// gate in LayoutRebuild.Start never uses this cache — it re-hashes the file.</summary>
+        string OsmShaNow()
+        {
+            if (OsmPath == "" || !File.Exists(OsmPath)) return "";
+            var fi = new FileInfo(OsmPath);
+            var key = $"{OsmPath}|{fi.Length}|{fi.LastWriteTimeUtc.Ticks}";
+            if (osmShaCacheKey == key) return osmShaCache;
+            osmShaCacheKey = key;
+            osmShaCache = OsmPin.Sha256File(OsmPath);
+            return osmShaCache;
+        }
+
+        /// <summary>REBUILD is only offered when the extract exists AND its bytes match the adopted pin.</summary>
+        bool OsmPinnedReady => File.Exists(OsmPath) && OsmShaNow() != "" && OsmShaNow() == OsmPin.PinnedSha(districtId);
+
+        /// <summary>The OSM extract the skeleton needs (real plot subdivision); it stays out of the repo, so the editor
+        /// remembers the path. The path is only a convenience pointer: what REBUILD trusts is the adopted SHA-256 pin
+        /// (see OsmPin) — this row reports the pin state and offers the explicit adoption. The documented fetch step
+        /// creates the file: python Tools/env_morphology.py fetch.</summary>
         void DrawOsmRow()
         {
             EditorGUILayout.BeginHorizontal();
@@ -236,6 +260,34 @@ namespace JuegoDef.Env
                 Repaint();
             }
             EditorGUILayout.EndHorizontal();
+
+            var pinned = OsmPin.PinnedSha(districtId);
+            var actual = OsmShaNow();
+            EditorGUILayout.BeginHorizontal();
+            string pinState;
+            if (pinned == "") pinState = $"PIN: ✗ sin adoptar — REBUILD bloqueado ({districtId}.osm.json)";
+            else if (!ok) pinState = $"PIN {OsmPin.Short(pinned)}: ✗ falta el fichero OSM pineado";
+            else if (actual == pinned) pinState = $"PIN {OsmPin.Short(pinned)}: ✓ coincide con el fichero";
+            else pinState = $"PIN {OsmPin.Short(pinned)}: ✗ el fichero actual es {OsmPin.Short(actual)} — refetch/overwrite detectado";
+            EditorGUILayout.LabelField(new GUIContent(pinState, "Identidad adoptada del extracto OSM (SHA-256). REBUILD solo consume el contenido pineado."), EditorStyles.miniLabel);
+            using (new EditorGUI.DisabledScope(!ok))
+                if (GUILayout.Button(new GUIContent("Adoptar OSM", "Registra el SHA-256 del extracto ACTUAL como fuente pineada de este distrito. Explícito a propósito: un refetch que derivó nunca se consume en silencio."), EditorStyles.miniButton, GUILayout.Width(90)))
+                    AdoptOsm();
+            EditorGUILayout.EndHorizontal();
+        }
+
+        /// <summary>Explicit adoption of the OSM source: confirms the old/new identity transition, then records the new
+        /// pin next to the district spec. This is the ONLY way the pin ever changes (repair 2, review 5366743166).</summary>
+        void AdoptOsm()
+        {
+            var old = OsmPin.PinnedSha(districtId);
+            var neu = OsmPin.Sha256File(OsmPath);
+            var msg = old == ""
+                ? $"Adoptar este extracto como fuente pineada de {districtId}?\n\nsha256 {neu}\n{OsmPath}\n\nEl pin vive en {districtId}.osm.json junto a la spec; REBUILD solo aceptará este contenido."
+                : $"PIN actual      sha256 {OsmPin.Short(old)}\nfichero actual  sha256 {OsmPin.Short(neu)}\n\nAdoptar el contenido NUEVO como fuente pineada?\nAdopta solo si TÚ cambiaste el extracto a propósito — un refetch que derivó es exactamente lo que este gate existe para parar.";
+            if (!EditorUtility.DisplayDialog("Adoptar fuente OSM", msg, "ADOPTAR", "Cancelar")) return;
+            Debug.Log("JD_LAYOUT_REBUILD " + OsmPin.Adopt(districtId, OsmPath));
+            Repaint();
         }
 
         void DrawToolbar()
@@ -251,11 +303,12 @@ namespace JuegoDef.Env
                     RevertTrace();
             bool rebuilding = LayoutRebuild.phase != LayoutRebuild.Phase.None;
             GUI.backgroundColor = new Color(1f, 0.78f, 0.45f);
-            using (new EditorGUI.DisabledScope(Dirty || rebuilding || EditorApplication.isPlaying || OsmPath == "" || !File.Exists(OsmPath)))
+            using (new EditorGUI.DisabledScope(Dirty || rebuilding || EditorApplication.isPlaying || !OsmPinnedReady))
                 if (GUILayout.Button(new GUIContent(rebuilding ? "REBUILD..." : "REBUILD",
                         Dirty ? "Guarda el trace antes de reconstruir"
                         : rebuilding ? "Reconstrucción en curso"
                         : OsmPath == "" || !File.Exists(OsmPath) ? "Configura el extracto OSM (más abajo)"
+                        : !OsmPinnedReady ? "El OSM no está adoptado o cambió respecto al pin — adopta o restaura (más abajo)"
                         : "Regenera la spec con el pipeline y reconstruye el distrito"), GUILayout.Height(30), GUILayout.MinWidth(84)))
                     LayoutRebuild.Start(districtId, Application.dataPath);
             GUI.backgroundColor = new Color(0.6f, 0.8f, 1f);
@@ -874,6 +927,62 @@ namespace JuegoDef.Env
         }
     }
 
+    // -------------------------------------------------------------------- osm source pin
+
+    /// <summary>Pinned identity of the OSM extract that feeds REBUILD (repair 2, FAIL review 5366743166). A per-district
+    /// sidecar committed next to the district spec ({id}.osm.json) records the adopted SHA-256; LayoutRebuild.Start
+    /// hashes the configured file and refuses to run on any mismatch, so upstream drift (a refetch or an overwrite at
+    /// the same path) can never piggyback a trace edit. Identity is content, not path: same bytes at a new path is the
+    /// same source; different bytes at the same path is a new source and needs the explicit Adopt action. The raw
+    /// extract itself stays out of the repository (ODbL hygiene) — only its identity is committed.</summary>
+    public static class OsmPin
+    {
+        public static string SidecarPath(string id) => $"{EnvDistrict.DistrictSpecs}/{id}.osm.json";
+
+        /// <summary>SHA-256 of the file's raw bytes, lowercase hex.</summary>
+        public static string Sha256File(string path)
+        {
+            using var sha = System.Security.Cryptography.SHA256.Create();
+            using var fs = File.OpenRead(path);
+            var hash = sha.ComputeHash(fs);
+            var sb = new StringBuilder(hash.Length * 2);
+            foreach (var b in hash) sb.Append(b.ToString("x2"));
+            return sb.ToString();
+        }
+
+        /// <summary>The adopted sha256, "" when the district never adopted a source (REBUILD must refuse).</summary>
+        public static string PinnedSha(string id)
+        {
+            var p = SidecarPath(id);
+            if (!File.Exists(p)) return "";
+            try { return JObject.Parse(File.ReadAllText(p))?["sha256"]?.Value<string>() ?? ""; }
+            catch { return ""; }
+        }
+
+        /// <summary>The explicit adoption: records the current file's identity in the sidecar. The UI wraps this with an
+        /// old/new confirmation dialog; operator/MCP evidence runs may call it directly — the returned receipt line (also
+        /// logged) is the record of the identity transition.</summary>
+        public static string Adopt(string id, string osmPath)
+        {
+            var old = PinnedSha(id);
+            var sha = Sha256File(osmPath);
+            var pin = new JObject
+            {
+                ["sha256"] = sha,
+                ["bytes"] = new FileInfo(osmPath).Length,
+                ["adoptedUtc"] = System.DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"),
+                ["path"] = osmPath.Replace('\\', '/'),
+            };
+            File.WriteAllText(SidecarPath(id), pin.ToString(Formatting.Indented), new UTF8Encoding(false));
+            AssetDatabase.ImportAsset(SidecarPath(id));
+            var line = $"osm-adopt district={id} old={(old == "" ? "(none)" : Short(old))} new={sha} bytes={pin["bytes"]}";
+            Debug.Log("JD_LAYOUT_REBUILD " + line);
+            return line;
+        }
+
+        public static string Short(string sha) => sha.Length <= 16 ? sha : sha.Substring(0, 16) + "…";
+    }
+
     // -------------------------------------------------------------------- rebuild pipeline
 
     /// <summary>Frame-driven runner for REBUILD: regenerates the district spec with the existing skeleton tool, diffs
@@ -910,7 +1019,7 @@ namespace JuegoDef.Env
             EditorApplication.update += RecoverInterruptedTick;
         }
 
-        static string districtId, projectRoot, repoRoot, traceAbs, specAbs, candidatePath;
+        static string districtId, projectRoot, repoRoot, traceAbs, specAbs, candidatePath, osmShaUsed;
         static Process proc;
         static readonly StringBuilder stdout = new StringBuilder(), stderr = new StringBuilder();
         static JObject currentSpec, candidateSpec;
@@ -934,11 +1043,30 @@ namespace JuegoDef.Env
                 Status("falta el extracto OSM — elígeló con «elegir...» en la ventana");
                 return;
             }
+            // The source is pinned by CONTENT, not by path (repair 2, review 5366743166): hash the actual bytes and
+            // compare against the adopted pin before anything runs, so a refetch/overwrite at the same path can never
+            // enter a rebuild as silent upstream drift.
+            var pinnedSha = OsmPin.PinnedSha(id);
+            var osmSha = OsmPin.Sha256File(osm);
+            if (pinnedSha == "")
+            {
+                phase = Phase.Failed;
+                Status($"OSM sin adoptar: falta el pin {OsmPin.SidecarPath(id)} — usa «Adoptar OSM» en la ventana. Un REBUILD nunca adopta una fuente nueva por sí mismo.");
+                return;
+            }
+            if (osmSha != pinnedSha)
+            {
+                phase = Phase.Failed;
+                Status($"OSM CAMBIÓ respecto al pin — REBUILD bloqueado antes de regenerar nada:\n  pineado {OsmPin.Short(pinnedSha)}\n  actual  {OsmPin.Short(osmSha)}\nSi el cambio es intencionado (nuevo fetch), adopta la fuente con «Adoptar OSM»; si no, restaura el extracto pineado.");
+                return;
+            }
+            osmShaUsed = osmSha;
             candidatePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData),
                 "JuegoDef", id + "_spec_candidate.json");
             Directory.CreateDirectory(Path.GetDirectoryName(candidatePath));
             log.Clear();
             Status($"regenerando spec: python Tools/env_district_skeleton.py --trace {id}.trace.json");
+            Status($"fuente OSM verificada contra el pin: sha256:{osmSha} ✓ ({new FileInfo(osm).Length} bytes)");
             phase = Phase.Regen;
             progress = 0.02f;
             startedAt = EditorApplication.timeSinceStartup;
@@ -1221,6 +1349,7 @@ namespace JuegoDef.Env
             TxOpen(diff.RowsOnly);
             File.Copy(candidatePath, specAbs, true);
             AssetDatabase.ImportAsset($"{EnvDistrict.DistrictSpecs}/{districtId}.json");
+            Status($"spec promovida — fuente OSM sha256:{osmShaUsed}");
             currentSpec = candidateSpec;
             if (DebugFailAt == DebugFailPoint.AfterPromote) { DebugFailAt = DebugFailPoint.None; throw new System.InvalidOperationException("JD_LAYOUT_DEBUG_FAIL AfterPromote"); }
 
