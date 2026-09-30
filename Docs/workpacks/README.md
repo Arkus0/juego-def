@@ -9,7 +9,8 @@ This directory turns the roadmap into executable product/production contracts. T
 
 The separation is deliberate:
 
-- `CITY-URBAN-00` = **what town/block we need** — accepted;
+- `CITY-URBAN-00` = accepted topology/B0 baseline;
+- `CITY-URBAN-00R` = **current compact-city scale + semantic-building amendment**;
 - `PROD-ASSET-00` = **shared lawful production substrate** — accepted;
 - `PROD-ENV/CHAR/ANIM/...` = **how we industrialize the content needed to build it**;
 - `CITY-URBAN-01` = **physical keeper realization** of the first block with those factories.
@@ -61,8 +62,15 @@ BOOTSTRAP-UNITY-GC2 (PASS)
       +----> PROD-ASSET-00 (PASS) ----------+----> CHAR-01 -> CHAR-02 ----+
       |                                     +----> ANIM-01 -> ANIM-02 ----+
       |                                     |                              |
-      +----> CITY-URBAN-00 (PASS) -----------+----> ENV-01  -> ENV-02 -----+
-      |          what to build                                              |
+      +----> CITY-URBAN-00 (PASS) -----------+----> ENV-01 ----------------+
+      |          baseline                    |                              |
+      |                                      +----> CITY-URBAN-00R          |
+      |                                                 |                   |
+      |                                                 v                   |
+      |                                      CASCO-V2 semantic pilot        |
+      |                                                 |                   |
+      |                                                 v                   |
+      |                                               ENV-02 ----------------+
       +----> M0-00 ---------------------------------------------------------+
       |                                                                     |
       +----> DIALOGUE-01 -> UI-01 ------------------------------------------+
@@ -84,10 +92,12 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 | WP | Outcome | Depends on |
 | --- | --- | --- |
 | `WP-CITY-URBAN-00` ✅ | Five-zone topology + accepted B0 programme/route/elevation + factory-demand matrix | **PASS / accepted** |
+| `WP-CITY-URBAN-00R` | Compact semantic-city rebaseline; five identities, bounded scale, FacadeCell/SemanticBuilding/InteriorProgramme split | CITY-URBAN-00 + current ENV01 evidence |
+| `WP-PROD-ENV-CASCO-V2-00` | One retained CASCO micro-area rebuilt with fewer/larger semantic buildings, deliberate ground and real interiors | CITY-URBAN-00R + ENV01 reference + GC2 |
 | `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
-| `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory | ENV-01 |
+| `WP-PROD-ENV-02` | Multi-scene batch proof from ENV factory using compact semantic-city grammar | ENV-01 + CITY-URBAN-00R + CASCO-V2-00 |
 | `WP-PROD-CHAR-01` | Civilian/wardrobe production factory serving B0 role priorities | ASSET-00 |
 | `WP-PROD-CHAR-02` | Representative civilian batch from factory | CHAR-01 |
 | `WP-PROD-ANIM-01` | Animation intake/retarget/coverage factory serving B0 motion priorities | ASSET-00 |
@@ -99,6 +109,6 @@ BOOTSTRAP-UNITY-GC2 (PASS)
 
 ## Immediate sequence
 
-**Start `WP-PROD-ENV-01`, `WP-PROD-CHAR-01` and `WP-PROD-ANIM-01`.** Both shared foundations are now accepted.
+**Immediate product correction: execute `WP-CITY-URBAN-00R` and then `WP-PROD-ENV-CASCO-V2-00` before ENV-02 or new full-district breadth.**
 
-M0 and Dialogue may continue independently. ENV consumes accepted ASSET + CITY demand; CHAR and ANIM consume the accepted ASSET substrate and B0 role priorities.
+`WP-PROD-ENV-01`, CHAR, ANIM, M0, Dialogue and non-scale-dependent Director work may continue in parallel. The correction exists to stop the good ENV factory from industrializing the wrong physical city scale.
