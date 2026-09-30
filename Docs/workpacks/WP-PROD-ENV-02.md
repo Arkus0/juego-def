@@ -1,37 +1,38 @@
 # WP-PROD-ENV-02 — Environment Batch Production Proof
 
-Status: **READY AFTER ENV-01**  
+Status: **READY AFTER ENV-01 + ENV-DIRECTOR-00**  
 Class: PRODUCTION SCALE PROOF / ENVIRONMENT  
 Depends on: `WP-PROD-ENV-01` PASS + `WP-PROD-ENV-DIRECTOR-00` PASS  
 Blocks: `WP-CITY-URBAN-01`; authoring-path revisit
 
 ## Claim
 
-The ENV factory can now produce multiple distinct keeper-quality game spaces quickly enough that environment creation is a content-production problem, not a tooling problem.
+The ENV factory + ENV Director can now support **human-built environment production at scale**: the owner can edit existing space, expand the playable map and consume AI-made/adapted pieces through the same visual catalogue and rebuild/validation path, without falling back to prompt-by-prompt coordinate manipulation or Unity prefab/path archaeology.
 
 ## Required outputs
 
-Produce **three materially different bounded environment compositions** using the accepted factory, for example:
+Produce **three materially different keeper proofs**, each exercising a distinct Director use case:
 
-- dense Casco/Mercado street;
-- Muelle/working-port street or yard edge;
-- small enterable shop/bar/service threshold/interior composition.
+1. **EDIT EXISTING** — materially improve an existing bounded composition through direct layout/building/detail manipulation.
+2. **EXPAND MAP** — extend a real boundary into new connected playable space using Director layout + catalogue placement.
+3. **AI-SUPPLIED CONTENT** — request at least one missing asset/structure from AI/operator, admit it through ENV lineage/validation, expose it in the visual catalogue, place/modify it through the Director and retain it.
 
-They must reuse the same catalogue, modules, adaptation path, assembly grammar and validators. They may not be three cosmetic rearrangements of one prefab strip.
+The proofs may contribute to the same larger district if their boundaries/evidence remain independently reviewable. They must reuse the accepted ENV catalogue/modules/adaptation path/assembly grammar/validators rather than creating three bespoke pipelines.
 
 ## Required production loop
 
 For each composition:
 
-`brief -> owner direct blockout/composition in ENV Director -> lock important human decisions -> semantic asset discovery -> AI/factory assembly -> Play Mode -> automated route/collision probe -> owner correction in ENV Director -> gameplay captures -> owner review`
+`brief -> owner shapes/extends layout in ENV Director -> owner places existing catalogue pieces -> lock important decisions -> AI/operator manufactures only missing requested content -> new content enters catalogue -> owner places/modifies -> rebuild -> Play Mode -> automated route/collision/affected QA -> owner correction in ENV Director -> gameplay captures -> owner review`
 
-At least one composition must begin from a fresh brief and prove this complete human-directed loop without exact object/path instructions from the owner. The owner should express spatial intent through the Director rather than translating it into coordinates for the agent.
+At least one proof must begin from a fresh brief and prove the complete builder loop without exact object/path/coordinate instructions from the owner. Spatial intent is expressed through Director manipulation/selection; AI receives bounded manufacturing/adaptation requests rather than authority to compose the district.
 
 ## Batch economics evidence
 
 Record per composition:
 
 - owner manual interactions in the Director and any rescue outside it;
+- whether normal placement required Project-browser/prefab-path archaeology;
 - exact path/coordinate hints given to agents;
 - one-off scripts introduced;
 - time/effort class qualitatively (`LOW`, `MEDIUM`, `HIGH`);
@@ -42,14 +43,16 @@ The third composition should not require rebuilding the pipeline.
 
 ## Human-direction proof
 
-At least one fresh composition must preserve a clear authority split:
+Across the three proofs, preserve a clear authority split:
 
-- owner directly establishes or changes the important layout/composition decisions through `ENV Director`;
-- AI/operator generates/adapts content only inside the declared human intent and selection scope;
+- owner directly establishes/changes layout, placement and expansion decisions through `ENV Director`;
+- existing content is chosen/placed through the visual catalogue;
+- AI/operator generates/adapts missing content only inside declared human intent and selection scope;
+- AI-made reusable output returns to the catalogue rather than remaining a one-off hidden scene edit;
 - factory/procedural systems perform repeatable mechanical work;
 - owner can correct the result directly without reverting to JSON, Inspector-coordinate editing or prompt-by-prompt spatial translation.
 
-The proof must include at least one meaningful owner correction after the first AI/factory pass and show that the correction survives rebuild.
+The proofs must include at least one meaningful owner correction after AI/factory work and show that direct placement, map expansion and AI-supplied content all survive rebuild.
 
 ## Automated walkability proof
 
@@ -68,9 +71,11 @@ Owner must accept all three as:
 
 PASS when:
 
-- three materially distinct keeper compositions exist;
+- EDIT EXISTING, EXPAND MAP and AI-SUPPLIED CONTENT keeper proofs all exist;
 - all were produced through the ENV factory + ENV Director path rather than bespoke scene-specific pipelines;
-- at least one fresh composition proves the complete human-directed -> AI/factory-produced -> validated -> human-corrected loop;
+- catalogue placement works without routine prefab/path archaeology;
+- AI-supplied reusable content enters the same catalogue/placement path;
+- the complete human-build -> AI-supply -> rebuild/validate -> human-correct loop is proven;
 - route/collision validation passes or documented defects are repaired;
 - later builds show materially lower rediscovery/setup friction than the first;
 - owner accepts the environment quality/direction;
@@ -86,4 +91,4 @@ End with one recommendation:
 
 ## FAIL
 
-FAIL if only one composition reaches quality, factory/Director mechanisms are bypassed to make later scenes work, owner repeatedly has to repair spatial composition through prompts/coordinates instead of direct manipulation, AI actions overwrite locked/unselected human decisions, or each new scene still triggers foundational pipeline invention.
+FAIL if any of the three required use cases is missing, factory/Director mechanisms are bypassed, ordinary placement still requires prefab/path archaeology, map expansion still requires prompt/coordinate translation, AI-created pieces cannot re-enter the reusable catalogue, AI actions overwrite locked/unselected human decisions, or each new area still triggers foundational pipeline invention.
