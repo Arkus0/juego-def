@@ -1,6 +1,6 @@
 # Roadmap jugable
 
-Status: **ANIM-01 DONE / NEXT: ENV-01 + CHAR-01** — authoring path `BOUNDED_OPERATOR` (MCP for Unity), owner-confirmed
+Status: **ANIM-01 DONE / CURRENT: ENV-01 + ENV-DIRECTOR-00 + CHAR-01** — human-directed ENV authoring becomes the production path
 
 ## Immediate sequence
 
@@ -11,8 +11,8 @@ Status: **ANIM-01 DONE / NEXT: ENV-01 + CHAR-01** — authoring path `BOUNDED_OP
    - ~~`PROD-ASSET-00`~~ — **done / accepted**: searchable catalogue, lineage, deterministic intake, validators and B0 coverage/gaps;
    - ~~`CITY-URBAN-00`~~ — **done / accepted**: five-zone topology + final B0 Mercado–Muelle route/programme/elevation + factory-demand matrix.
 5. **M0 fixture + Dialogue in parallel** — small gameplay-integration fixture and dialogue-authoring factory; neither blocks the graphical factories.
-6. **Factories — CURRENT:** continue `ENV-01` and `CHAR-01`. ~~`ANIM-01`~~ is **done / accepted**: 254 clips catalogued, 45 sampled on two Humanoid targets and 19 motions admitted across five families, with contact/navigation gaps kept explicit.
-7. **Factory scale proofs** — `ENV-02` and `CHAR-02` follow their factories; `ANIM-02` consumes accepted ANIM-01 but waits for CHAR-01 so runtime vocabulary is proved on accepted civilians. UI follows Dialogue.
+6. **Factories + human authoring — CURRENT:** continue `ENV-01` and `CHAR-01`, and execute **`PROD-ENV-DIRECTOR-00` urgently**. Director gives the owner direct Scene View control of layout/buildings/details while AI/factory keep the repetitive production role. ~~`ANIM-01`~~ is **done / accepted**: 254 clips catalogued, 45 sampled on two Humanoid targets and 19 motions admitted across five families, with contact/navigation gaps kept explicit.
+7. **Factory scale proofs** — `ENV-02` requires both ENV-01 and ENV-DIRECTOR-00; it must prove a fresh **human-directed -> AI/factory-produced -> validated -> human-corrected** composition. `CHAR-02` follows CHAR-01; `ANIM-02` consumes accepted ANIM-01 but waits for CHAR-01. UI follows Dialogue.
 8. **B0 Keeper Block (`CITY-URBAN-01`)** — physical third-person realization of the accepted city brief using the factories.
 9. **Production Factory Gate (`PROD-LOOK-GATE`)** — fresh brief challenge proves content can now be produced without foundational pipeline work.
 10. **Content production at scale** — routines, investigation, jobs/minigames, chase, melee/confrontation, 20–30 minute slice, then district/population breadth.
@@ -25,6 +25,7 @@ The new production architecture has three distinct owners:
 
 - [`WP-CITY-URBAN-00`](../workpacks/WP-CITY-URBAN-00.md) = **what city / what first block / what spatial roles are needed**;
 - `PROD-ASSET/ENV/CHAR/ANIM/DIALOGUE/UI` = **how to manufacture those roles repeatedly**;
+- [`WP-PROD-ENV-DIRECTOR-00`](../workpacks/WP-PROD-ENV-DIRECTOR-00.md) = **how the owner directly authors high-value spatial/composition decisions without JSON/code/Inspector-coordinate work**;
 - [`WP-CITY-URBAN-01`](../workpacks/WP-CITY-URBAN-01.md) = **realize and tune the keeper block in actual third-person game space**.
 
 The useful historical CITY knowledge is distilled in [`../design/CITY_PRODUCTION_KNOWLEDGE.md`](../design/CITY_PRODUCTION_KNOWLEDGE.md). The first concrete production brief is [`../design/FIRST_KEEPER_BLOCK_B0.md`](../design/FIRST_KEEPER_BLOCK_B0.md).
@@ -48,6 +49,7 @@ ENV now consumes that accepted demand together with the accepted ASSET substrate
 | PROD-ASSET-00 ✅ | make lawful source corpus searchable/reproducible | shared catalogue/intake/validators | **PASS / accepted** — routine source discovery no longer needs path archaeology. |
 | M0 | validate camera/scale/reach/interaction | tiny gameplay fixture | walk + world/NPC interaction work. |
 | ENV Factory | manufacture city architecture/urban vocabulary repeatedly | reusable kit + assembly grammar + validation | normal new ENV unit is production, not R&D. |
+| ENV Director | move the high-value spatial/composition decisions back to the owner through direct Unity manipulation | simple Scene View editor + safe upstream persistence + bounded AI actions | owner can move/reshape/place/rebuild/play without normal JSON/code/Inspector-coordinate work. |
 | CHAR Factory | manufacture ordinary civilians repeatedly | civilian/wardrobe factory | normal civilian is production, not bespoke repair. |
 | ANIM Factory ✅ | batch discover/import/retarget/use motions | animation catalogue + admitted motion library | **PASS / accepted** — normal compatible motion is routine to classify, retarget and admit; runtime multi-NPC use moves to ANIM-02. |
 | Dialogue/UI Factory | author contextual investigation conversations repeatedly | authoring + no-voice presentation factory | new dialogue is content work, not scene plumbing. |
@@ -55,6 +57,35 @@ ENV now consumes that accepted demand together with the accepted ASSET substrate
 | CITY-URBAN-01 | realize B0 as keeper game space | first retained city block | owner says keep and extend. |
 | PROD-LOOK-GATE | fresh production challenge | production lock | new brief succeeds without foundational rework. |
 | Content production | make the game | living block → slice → districts | breadth grows on proven factories/systems. |
+
+## Human-directed ENV authoring
+
+The current CASCO work demonstrates that technical validity and repeated agent polish do not guarantee human spatial coherence. From `PROD-ENV-DIRECTOR-00` onward, the production loop is:
+
+```text
+CITY / content brief
+ -> owner direct blockout/composition in ENV Director
+ -> lock important human decisions
+ -> ENV factory + bounded AI/operator production
+ -> validators / route checks
+ -> owner third-person correction in ENV Director
+ -> keeper candidate
+```
+
+The Director must be deliberately easy to use. Normal operations do not require hand-editing JSON, writing code or entering transform coordinates in the Inspector.
+
+Delivery order is intentionally front-loaded:
+
+1. **D0 vertical slice:** move one real trace node -> save -> rebuild -> undo/revert.
+2. **D1 Layout MVP:** nodes/vias, street width, plaza vertices, landmarks, elevation, SAVE/REVERT/REBUILD/PLAY HERE.
+3. **D2 Buildings + detail:** persistent move/rotate/duplicate/delete/lock and semantic replace.
+4. **D3 Bounded AI actions:** VARIANT, REPLACE, EXPAND, GENERATE HERE, FILL AREA, MAKE ENTERABLE, POLISH SELECTED.
+5. **D4 QA loop:** affected validation, targeted rebuild where safe, route/capture shortcuts and before/after.
+6. **D5 production proof:** owner completes real keeper work faster and with less translation through an agent.
+
+Do not wait for D3-D5 before shipping D1 to the owner. The entire point is to get human spatial judgment into the loop immediately.
+
+AI remains a production multiplier, not autonomous spatial authority. Generated scenes stay rebuildable from upstream ENV authority; the Director must not become a second scene-state architecture.
 
 ## B0 target
 
