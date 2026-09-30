@@ -196,10 +196,12 @@ namespace JuegoDef.Env
             var so = new SerializedObject(ssao);
             void F(string prop, float v) { var sp = so.FindProperty("m_Settings." + prop); if (sp != null) sp.floatValue = v; }
             void I(string prop, int v) { var sp = so.FindProperty("m_Settings." + prop); if (sp != null) sp.intValue = v; }
-            F("Intensity", 1.8f);
+            // night2 D6 (owner-walk "ambiente plano sin oclusión en arranques, edificios flotan"): radius 0.55 gave
+            // wall-ground contact only; 1.4 m reads building-scale AO (corners, arches, eave-joins) without mud
+            F("Intensity", 1.5f);
             F("DirectLightingStrength", 0.35f);
-            F("Radius", 0.55f);
-            F("Falloff", 70f);
+            F("Radius", 1.4f);
+            F("Falloff", 80f);
             I("Samples", 1);          // medium
             I("BlurQuality", 0);      // high
             I("NormalSamples", 1);
