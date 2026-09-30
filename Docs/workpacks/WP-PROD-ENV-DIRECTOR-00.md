@@ -363,6 +363,7 @@ Keep the default command vocabulary small and stable.
 - **VARIANT**
 - **REPLACE**
 - **EXPAND**
+- **AI MODIFY SELECTED**
 - **CREATE WITH AI**
 - **GENERATE HERE**
 - **FILL AREA**
@@ -378,7 +379,59 @@ Routine placement from the catalogue should not require opening a modal form.
 
 This WP does **not** require embedding a paid LLM API into Unity.
 
-The Director may invoke the existing external AI/operator workflow through the simplest robust integration, or emit a structured request consumed by the active operator. What is binding is the **human selection, spatial bounds and mutation authority**.
+The Director may invoke Codex/the existing external AI operator through the simplest robust integration, or emit a structured request consumed by that operator. What is binding is the **human selection, spatial bounds, contextual evidence and mutation authority**.
+
+The intended UX is interactive: ordinary manipulation remains immediate; AI work runs as a separate request and must not freeze normal Scene View authoring while the proposal is being produced.
+
+### `AI MODIFY SELECTED` — primary natural-language interaction
+
+The owner selects one object, a semantic chain, or a bounded area in Scene View and writes a short natural-language request, for example:
+
+- "continua esta barandilla hasta el muro y termina con un pilar";
+- "convierte esta casa en una pension, manteniendo la planta baja";
+- "cierra este hueco con una casa estrecha de tienda abajo y vivienda arriba";
+- "haz que este rincon lea como entrada secundaria usada por vecinos".
+
+The Director automatically builds a **selection context packet** so the owner does not have to explain coordinates, object paths or local scene structure.
+
+At minimum the packet must include, where materially available:
+
+- exact selected authored identity/identities;
+- semantic role/type;
+- current transform, footprint/bounds and relevant dimensions;
+- authoritative upstream source/override controlling the selection;
+- nearby objects/structures inside a bounded relevance radius;
+- street/space/zone relationship;
+- access/threshold information;
+- ground/elevation/slope context;
+- relevant collision/clearance facts;
+- locked/immutable neighbours and relationships;
+- applicable ENV grammar/catalogue candidates;
+- explicit allowed mutation scope;
+- the owner's natural-language request;
+- visual context from a small standardized capture set when useful: gameplay/eye or oblique + top/plan, not an uncontrolled screenshot dump.
+
+The packet must be compact and selection-driven. Do not send the whole district/repository merely because it is available.
+
+The AI/operator may inspect further repository sources on demand, but the initial task boundary remains the selected object/area plus declared dependencies.
+
+Expected loop:
+
+```text
+owner selects object / chain / area
+ -> types request
+ -> AI MODIFY SELECTED
+ -> Director packages structure + semantics + locks + visual context
+ -> Codex/operator proposes bounded change
+ -> affected content rebuilds into a preview candidate
+ -> [ PREVIEW ] [ ACCEPT ] [ TRY ANOTHER ] [ DISCARD ]
+ -> ACCEPT writes through canonical ENV authority
+ -> affected validation / PLAY HERE
+```
+
+**PREVIEW must not silently become authority.** ACCEPT is the normal commit point for a material AI proposal. DISCARD leaves canonical content unchanged. TRY ANOTHER creates another proposal from the same owner intent/selection unless the owner edits it.
+
+The AI must not treat visible neighbouring content as editable merely because it appears in screenshots. Locks and explicit mutation scope take precedence.
 
 ### `CREATE WITH AI`
 
@@ -628,6 +681,7 @@ Make AI useful as a **supplier to the builder**.
 
 Add bounded:
 
+- **AI MODIFY SELECTED** with automatic structural + visual context packet;
 - CREATE WITH AI;
 - VARIANT;
 - REPLACE;
@@ -635,7 +689,23 @@ Add bounded:
 - GENERATE HERE;
 - MAKE ENTERABLE.
 
-At least one AI-created/adapted reusable piece/structure must:
+`AI MODIFY SELECTED` is the preferred path when the owner can point at the relevant world content and describe the desired result in natural language. It must support object, semantic-chain and bounded-area selections without requiring the owner to transcribe coordinates or hierarchy paths.
+
+AI proposal generation should be non-blocking from the owner's point of view: the Director remains usable while a request is outstanding, and completed proposals return to an explicit review/accept surface.
+
+At least one `AI MODIFY SELECTED` proof and at least one AI-created/adapted reusable piece/structure must be retained.
+
+The selected-modification proof must show:
+
+- object/area selected in Scene View;
+- short owner request in natural language;
+- automatically assembled context packet with locks/bounds;
+- proposal produced without owner-provided coordinates/object paths;
+- PREVIEW before authority;
+- ACCEPT or DISCARD semantics;
+- unrelated locked content unchanged.
+
+The reusable piece/structure must:
 
 - originate from an explicit owner request/selection;
 - pass the normal ENV intake/lineage/validation path;
@@ -708,15 +778,17 @@ Without opening JSON, writing code, using Inspector coordinates or searching pre
 11. lock an accepted element;
 12. extend playable map/layout at a real boundary;
 13. populate part of that expansion with catalogue content;
-14. request one bounded AI-created/adapted asset or structure;
-15. see that result enter the catalogue;
-16. place or replace with the AI-created result;
-17. SAVE and inspect a human-readable summary;
-18. rebuild;
-19. PLAY HERE in/near the edited or expanded area;
-20. validate the affected area;
-21. Undo or REVERT one change safely;
-22. close/reopen Unity and prove accepted edits persist.
+14. select an existing object/chain/area, describe a desired change in natural language and run AI MODIFY SELECTED without supplying coordinates or hierarchy paths;
+15. inspect the returned bounded PREVIEW and either ACCEPT or DISCARD it;
+16. request one bounded AI-created/adapted reusable asset or structure;
+17. see that result enter the catalogue;
+18. place or replace with the AI-created result;
+19. SAVE and inspect a human-readable summary;
+20. rebuild;
+21. PLAY HERE in/near the edited or expanded area;
+22. validate the affected area;
+23. Undo or REVERT one change safely;
+24. close/reopen Unity and prove accepted edits persist.
 
 The owner should be able to discover this workflow from the Director UI itself with minimal instruction.
 
@@ -752,6 +824,8 @@ Retain under `Docs/evidence/WP-PROD-ENV-DIRECTOR-00/` at minimum:
 - backup/revert/undo proof;
 - targeted vs full rebuild behavior;
 - persistence proof after Editor restart;
+- AI MODIFY SELECTED context-packet example with selection, owner request, locks/bounds and standardized captures;
+- PREVIEW -> ACCEPT and PREVIEW -> DISCARD evidence;
 - AI-created/adapted piece provenance + catalogue thumbnail + placement proof;
 - AI scope proof that unrelated/locked content remained unchanged;
 - owner production-trial checklist/result;
@@ -789,9 +863,15 @@ At minimum test:
 ### AI scope safety
 
 - AI request has explicit selection/bounds;
+- context packet identifies immutable/locked neighbours separately from editable selection;
+- standard visual captures do not implicitly broaden edit authority;
+- owner is not required to provide coordinates, hierarchy paths or prefab IDs for a selected-scene request;
+- PREVIEW does not mutate canonical authority before ACCEPT;
+- DISCARD leaves canonical data unchanged;
 - generated/adapted result records provenance/lineage;
 - AI-created content is independently placeable from the catalogue;
-- AI action does not gain implicit authority over district topology.
+- AI action does not gain implicit authority over district topology;
+- the editor remains usable while an AI proposal request is outstanding.
 
 ### Scale
 
@@ -817,7 +897,7 @@ PASS when all of the following are true:
 - supported modular railing/wall chains can be extended/shortened by dragging semantic endpoints, with module repetition/end treatment handled underneath;
 - placed and modified structures survive rebuild through canonical upstream authority;
 - D3 lets the owner expand real playable map space visually without autonomous topology invention;
-- D4 lets AI/operator manufacture/adapt at least one reusable requested piece/structure that enters the catalogue and can then be placed by the owner;
+- D4 proves AI MODIFY SELECTED with automatic structural/semantic/visual context, explicit PREVIEW/ACCEPT/DISCARD and no owner-supplied coordinates/paths, and lets AI/operator manufacture/adapt at least one reusable requested piece/structure that enters the catalogue and can then be placed by the owner;
 - AI actions remain bounded by human selection/intent and do not silently rewrite locked/unselected content;
 - D5, if implemented for PASS, reduces repetitive construction while leaving generated results editable;
 - D6 closes the loop through PLAY HERE and affected QA;
@@ -838,6 +918,8 @@ FAIL if any of the following survives:
 - owner edits/placements disappear on rebuild;
 - generated Unity scene becomes hidden authority;
 - map expansion still requires an agent to translate owner intent into coordinates;
+- AI MODIFY SELECTED still requires the owner to transcribe coordinates, hierarchy paths or prefab IDs that the Director could derive from selection;
+- AI proposal preview writes canonical state before explicit ACCEPT;
 - AI-created content cannot flow back into the same reusable catalogue/placement path;
 - AI commands can rewrite unselected/locked/global content without explicit scope;
 - the tool becomes an autonomous city generator rather than a human construction surface;
