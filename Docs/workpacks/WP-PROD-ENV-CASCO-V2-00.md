@@ -36,30 +36,29 @@ Before physical work:
 
 If reference reconstruction/source provisioning fails, report the exact dependency blocker. Do not change ENV01 or make a generator to bypass it. Formal ENV01 factory acceptance remains independent of this pilot; future ENV02 still requires it.
 
-## Selected block: K2, 23 existing plots
+## Selected pilot: Block 10 micro-area, 22 existing plots
 
-Use **all** non-wall plots with `row.block == 2` in `ENV01_Casco_District.json`, selected from the architecture reference. This is the plaza–Ribera–river block: public plaza frontage, everyday commercial/residential mix, houses along water, multiple heights and local grade. It exercises useful fronts and difficult rear/river access without needing a hero tower rebuild.
+The accepted PR #19 contract originally selected K2 / 23 bodies. That selection is superseded **only for the pilot boundary** by the explicit post-acceptance amendment documented in `Docs/evidence/WP-PROD-ENV-CASCO-V2-00/PILOT_SELECTION_AMENDMENT_BLOCK10.md`. All other accepted contract provisions remain unchanged.
 
-| Row | Selected plot IDs (not wall entries) |
-| --- | --- |
-| K2_0 | K2_0_0, K2_0_1, K2_0_2, K2_0_3 |
-| K2_1 | K2_1_0, K2_1_1 |
-| K2_2 | K2_2_0, K2_2_1 |
-| K2_5 | K2_5_0 |
-| K2_6 | K2_6_0, K2_6_1 |
-| K2_7 | K2_7_0, K2_7_1 |
-| K2_8 | K2_8_0 |
-| K2_9 | K2_9_0 |
-| K2_10 | K2_10_0, K2_10_1, K2_10_2, K2_10_3 |
-| K2_11 | K2_11_0 |
-| K2_13 | K2_13_0 |
-| K2_14 | K2_14_0, K2_14_1 |
+Use **all** non-wall plots from exactly these seven Block 10 rows in the pinned architecture reference:
 
-Freeze one block polygon from the existing street/plaza/river-facing boundaries, including its internal voids. Row IDs alone do not define non-overlapping property footprints: survey their geometry and resolve corner/back-to-back overlap before grouping. The count is **23 existing assembled bodies**, not 23 proved cadastral properties or interiors.
+| Row | Street | Selected plot IDs |
+| --- | --- | --- |
+| K10_3 | Callejon_Arco | K10_3_0, K10_3_1, K10_3_2, K10_3_3, K10_3_4 |
+| K10_4 | Calle_Alta_C | K10_4_0, K10_4_1, K10_4_2, K10_4_3 |
+| K10_5 | Calle_Alta_O | K10_5_0, K10_5_1, K10_5_2, K10_5_3 |
+| K10_6 | Cimavilla_Baja | K10_6_0, K10_6_1 |
+| K10_7 | Cimavilla_Baja | K10_7_0 |
+| K10_9 | Cantabra | K10_9_0 |
+| K10_10 | Cantabra | K10_10_0, K10_10_1, K10_10_2, K10_10_3, K10_10_4 |
 
-Target **6** semantic buildings, admissible 4–7 if programme/physical evidence warrants it. All selected visual bodies must receive an explicit preserve/adapt/absorb disposition. Build larger contiguous functional units; do not merely assign a parent ID over disconnected shells/old internal walls. One building may face street, plaza and water. No merge crosses a public street, river or unrelated private building. Preserve recognisable granularity even when an old plot is absorbed.
+This is a bounded coherent **micro-area of Block 10**, not the whole `block == 10` set. Full Block 10 has 27 bodies and remains outside the accepted ~15–25 pilot scale. The excluded northern/eastern spur rows are excluded as complete rows, not after per-plot convenience filtering.
 
-If a newer reference changes K2 outside the ~15–25 range or destroys its representativeness, stop that input substitution and amend the bounded selection with reason before implementation. Do not cherry-pick disconnected convenient plots or expand to another block.
+Freeze one pilot polygon from the existing street-facing/rear boundaries, including internal voids. Row IDs alone do not define non-overlapping property footprints: survey geometry and resolve corner/back-to-back overlap before grouping. The count is **22 existing assembled bodies**, not 22 proved cadastral properties or interiors.
+
+Target **6** semantic buildings, admissible 4–7 if programme/physical evidence warrants it. All selected visual bodies must receive an explicit preserve/adapt/absorb disposition. Build larger contiguous functional units; do not merely assign a parent ID over disconnected shells/old internal walls. No merge crosses a public street or unrelated private building. Preserve recognisable granularity even when an old plot is absorbed.
+
+If reconstructed ENV01 shows that the seven-row boundary is not spatially coherent, stop and amend the bounded selection with evidence before implementation. Do not shrink the boundary after seeing difficult plots and do not expand into the excluded spur without another explicit amendment.
 
 ## Allowed implementation
 
@@ -89,7 +88,7 @@ The block must include:
 3. **Social venue or equivalent:** bar, café, association/local vecinal or another defensible place to stay/converse, with occupied seating/activity and passage that can coexist.
 4. **One multistorey semantic building:** at least two playable floors connected by real usable stairs/landing; exterior may show more floors with honest limits.
 5. **One deeper programme:** at least three activity-bearing rooms/zones across the multistorey building, supporting one small access/search/return exercise. This demonstrates mission-capable space, not a final mission or universal deep interiors. It may combine housing/social/commerce where coherent.
-6. **Patio/rear/service space when morphology allows:** K2 must be surveyed for it. Prefer one useful court/rear access within the block. If physically impossible without losing preserved street/water character, record plan/section proof and a deliberate alternative service/rear arrangement. Omission without proof is FAIL; do not invent a tiny unused patio for the checklist.
+6. **Patio/rear/service space when morphology allows:** the Block 10 pilot boundary must be surveyed for it. Prefer one useful court/rear access within the block. If physically impossible without losing preserved street character, record plan/section proof and a deliberate alternative service/rear arrangement. Omission without proof is FAIL; do not invent a tiny unused patio for the checklist.
 
 At least **three distinct accessible programmes** (commerce, dwelling and social) operate, possibly in mixed buildings. At least **six useful rooms/activity zones** total, excluding corridors, stairs, vestibules, decorative rooms, simulated glass and duplicated activity markers. Each contributes a spatially distinguishable action/occupation. Some buildings must remain truthfully closed if that best serves the block; opening all is not an acceptance goal.
 
@@ -121,7 +120,7 @@ Runtime validates spatial utility only. Full routine persistence, city crowd cap
 
 Freeze capture manifest **before changing B**: world eye/target or player pose and GC2 shot state, FOV, resolution, lighting preset, exposure/render settings, source SHA/hash. Same manifest in A/B; no re-aiming to hide a damaged roof or using a different sun/sky.
 
-At least **8 paired viewpoints**, including plaza toward K2, Ribera forward/reverse, river-facing mass, two threshold/street gameplay views, roof/oblique overview and one rear/court view. Reuse applicable `ENV01_Casco_District.shots.json` views (notably S05 plaza/rio, S15 Ribera, C03 terraza and A03 tejados), plus fixed block-specific stations captured in both A and B. If an inherited shot does not show K2, retain it as control and add a suitable pair; it cannot stand in for block coverage. Include day + dusk/night pairs at ≥2 public viewpoints and the same third-person walkthrough path.
+At least **8 paired viewpoints** covering the Block 10 pilot: Calle Alta in both directions, Callejon Arco, the Cimavilla/Cantabra transition, two threshold/street gameplay views, roof/oblique overview and one rear/court/back-to-back view. Reuse applicable `ENV01_Casco_District.shots.json` views as controls where useful, plus fixed pilot-specific stations captured in both A and B. If an inherited shot does not show the pilot, retain it as control only; it cannot stand in for pilot coverage. Include day + dusk/night pairs at ≥2 public viewpoints and the same third-person walkthrough path.
 
 Baseline has no usable interior at a station? Capture the closed frontage/solid volume honestly, with absence recorded; do not fabricate a baseline room or compare interior renders taken from different places as matched views. Supplement with V2 interior occupation/views and dimensioned plans/sections.
 
@@ -140,7 +139,7 @@ Additionally require `A_V2 >= max(120 m², 2 * A_REF)` and `U_V2 >= max(6, 2 * U
 Under `Docs/evidence/WP-PROD-ENV-CASCO-V2-00/` retain:
 
 - dependency/reference manifest (ENV_REF_SHA, input/output/package/intake hashes, rebuild recipe, protected originals);
-- block polygon and all 23 old-plot dispositions → 4–7 semantic IDs → visual cells → interior programmes;
+- pilot polygon and all 22 old-plot dispositions → 4–7 semantic IDs → visual cells → interior programmes;
 - authored plans/sections, useful-area ledger, access graph, visual/playable-floor correspondence and programme reasons;
 - before/after exterior space partition and every-gap disposition, including patio/service feasibility;
 - separately reconstructible A/B product bytes and recipe, owned derivation lineage and relevant reuse disposition;
@@ -156,9 +155,9 @@ The recipe enables later learning/reuse. It is not a claim that every block or a
 
 **PASS** requires every mandatory criterion above, measured radical utility, Owner's explicit retained-character verdict and a fresh independent Reviewer with no surviving material falsifier at exact frozen candidate SHA. Owner visual acceptance and independent review are both required. Worker pre-review does not substitute for either.
 
-**FAIL** if any survives: legacy reference mutated/unreconstructible; scope beyond one block; 23 shells only renamed; disconnected semantic property; unowned/label-only gap; programme squeezed into default threshold boxes; no housing/social/deep/vertical proof; inaccessible fake room counted as useful; inadequate camera/NPC scale; any required route/access test fails; material visual-character regression; mismatch of comparison views/settings; private shortcut/water door/escape; huge generator/Director rewrite; no repeatable product bytes; more area/markers presented as utility while use fails.
+**FAIL** if any survives: legacy reference mutated/unreconstructible; scope beyond the amended pilot; 22 shells only renamed; disconnected semantic property; unowned/label-only gap; programme squeezed into default threshold boxes; no housing/social/deep/vertical proof; inaccessible fake room counted as useful; inadequate camera/NPC scale; any required route/access test fails; material visual-character regression; mismatch of comparison views/settings; private shortcut/water door/escape; huge generator/Director rewrite; no repeatable product bytes; more area/markers presented as utility while use fails.
 
-Plausible Reviewer falsifiers: counters are green but a hidden courtyard is inaccessible/unowned; routes cover street while interior stairs dead-end; NPCs work alone but block a normal doorway together; all 23 walls remain behind six semantic IDs; A/B lighting masks loss of historic grain; fake glass inflates area; upper windows falsely promise reachable floors; shared material changed legacy reference. Derive additional falsifiers before relying on Worker receipts.
+Plausible Reviewer falsifiers: counters are green but a hidden courtyard is inaccessible/unowned; routes cover street while interior stairs dead-end; NPCs work alone but block a normal doorway together; all 22 source bodies remain physically subdivided behind six semantic IDs; A/B lighting masks loss of historic grain; fake glass inflates area; upper windows falsely promise reachable floors; shared material changed legacy reference. Derive additional falsifiers before relying on Worker receipts.
 
 ## Definition of Done / freeze / handoff
 
