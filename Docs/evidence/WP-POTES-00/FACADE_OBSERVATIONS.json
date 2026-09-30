@@ -1,0 +1,68 @@
+{
+  "8093401UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8093401UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8093401UN6789S"], "confidence": "medium", "observations": "Corner volume: exposed timber grid over pale ochre render on two visible upper storeys; unequal wall planes; projecting eaves. Left return and right front have different opening rhythm. The visible facade is not a standard identical-bay row.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Principal entrance and complete ground storey are occluded", "Numerical opening centres on both corner facades", "Rear exposure/roof junction", "Street-to-threshold elevation"]
+  },
+  "8093402UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8093402UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8093402UN6789S"], "confidence": "medium", "observations": "Ochre rendered three-storey volume. Visible return has two narrow openings on each of two upper rows; stone ground base. Small roofed garden/gate wall in front obscures ground openings. Do not count the gate as the building's principal door without resolving the entrance.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Ground-floor/entrance occlusion", "Full exposed facade coverage and axes", "Roof/return junction and exact street elevations"]
+  },
+  "8093403UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8093403UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8093403UN6789S"], "confidence": "medium", "observations": "Front rendered ochre; two glazed balcony doors with iron guards on visible upper frontage; simple dark joinery. A lower projecting lean-to/canopy on the left belongs to a distinct source part. Street-facing shops and returns have different levels. Photograph includes adjacent 8093404 frontage to the right; do not extend its three axes onto this house.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Separate visible fronts by exact source-part boundary", "Ground opening count and centres", "Complete roof parts and level controls"]
+  },
+  "8093404UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8093404UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8093404UN6789S"], "confidence": "high", "observations": "Ochre three-storey front. Upper two storeys each show three glazed balcony-door axes. Top storey has one long shared iron balcony; middle storey has three individual guards. Ground has three visible glazed opening/door groups. Principal floor pattern may not be randomized to one balcony door per facade.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Metric opening centres/widths and visible height control", "Other exposed facades and complete ridge shape", "Street-to-threshold elevation"]
+  },
+  "8094017UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8094017UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8094017UN6789S"], "confidence": "high", "observations": "Low rubble-stone building by San Cayetano/El Sol; hipped red tile roof with deep eaves. Image shows an iron balcony/guard on the upper visible opening at the stepped approach, different exposed level at the left rear, and fixed stone stairs/landing. Partial ivy does not justify moving the opening."}],
+    "roof": {"value": {"type": "hipped", "ridge_orientation": null}, "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8094017UN6789S", "IGN-PNOA"], "confidence": "medium"},
+    "blocking_unknowns": ["All opening centres and exact stair levels", "Roof ridge vertices/height", "Other visible river/return facade coverage"]
+  },
+  "8193801UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193801UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193801UN6789S"], "confidence": "high", "observations": "Low stone shop next to San Cayetano bridge; large rectangular timber glazed opening facing the walk and a smaller dark opening to its left. Red tile roof, two principal roof planes. Stone steps run along the left. Photograph is taken from above/bridge level; the window is not a tall ordinary portal.", "opening_coordinates": null}],
+    "roof": {"value": {"type": "two principal tile planes", "ridge_orientation": null}, "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193801UN6789S", "IGN-PNOA"], "confidence": "medium"},
+    "blocking_unknowns": ["Entrance on bridge/street side and other exposed faces", "Metric opening locations", "Bridge/landing/threshold level controls"]
+  },
+  "8193802UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193802UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193802UN6789S"], "confidence": "high", "observations": "White riverfront compound mass, stone/dressed-stone opening surrounds. Upper floor includes a continuous timber glazed gallery; lower three visible levels have unequal rectangular opening groups. West/main volume and lower east return do not share one uniform height. One underground source floor is visibly exposed on river side. Preserve cadastral building parts rather than replacing it by a simple four-storey rectangle.", "opening_coordinates": null}],
+    "blocking_unknowns": ["San Cayetano street-facing rear/front and entrance coverage", "Individual opening centres on the river facade", "Compound ridge graph and gallery returns", "Walk-to-basement/upper-street level controls"]
+  },
+  "8193803UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193803UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193803UN6789S"], "confidence": "high", "observations": "White three-storey front. Stone ground base shows barred opening left, timber principal door near centre, small barred opening right. Middle and top rows each have three tall glazed door/window axes with individual iron guards. Timber frames and red tile eaves. Opening type of each tall glazed element must follow image, not a random one-balcony-per-front rule.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Metric centres/widths and floor heights", "Return/rear coverage and ridge topology", "Threshold and riverwalk level controls"]
+  },
+  "8193804UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193804UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193804UN6789S"], "confidence": "high", "observations": "Small stone volume at a sloping lane junction. Principal glazed timber door/shop window group below a timber gallery/flower balcony on the left front; exposed stone return has separate small window. Upper exterior level can appear as a second storey while the source records one above and one below; do not flatten adjacent street levels.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Metric positions and side opening count", "Roof ridge geometry and level relationship to both streets"]
+  },
+  "8193805UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193805UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193805UN6789S"], "confidence": "high", "observations": "White two-storey commercial front. Three upper windows visible, separate timber sills/frames and flower boxes. Ground shop opening/door group under a red tiled projecting canopy with timber supports. Left return extends round an irregular corner. Neighbour 8193806 stone facade is visible on right and must remain a separate body.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Complete principal shop-opening segmentation and metric centres", "Return/rear coverage", "Roof plan and street/threshold control"]
+  },
+  "8193806UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193806UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193806UN6789S"], "confidence": "medium", "observations": "Light stone/dressed-stone three-storey front in narrow Cántabra view, tall glazed upper openings with individual iron guards. Ground shopfront is partly hidden by awning and perspective. Photo shows timber-framed/rendered neighbour across/behind lane; do not transfer its framing to this building.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Photo does not show complete front opening count", "Metric centres, rear/return coverage and ridge graph", "Canopy ownership and threshold elevation"]
+  },
+  "8193807UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193807UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193807UN6789S"], "confidence": "medium", "observations": "Brick-clad upper front, unequal windows/solid bands, large timber-clad/glazed top band. Ground restaurant frontage beneath canopy; image catches stone neighbour to the right. Cadastral parts range from one to four above-ground storeys. The low river-side part is not to be raised to match the front.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Ground opening layout obscured", "Complete river-side/roof-part coverage", "Metric height/axis controls and level relationships"]
+  },
+  "8193808UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193808UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193808UN6789S"], "confidence": "high", "observations": "White upper front with repeated individual wrought-iron balconies on multiple floors; timber shutters and flower pots. Lower shop band and awning. Small horizontal opening appears beside right balcony axis. Different opening rhythm between storeys must be transcribed; source parts have one/three above and one/two below floors.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Full ground frontage, side/rear coverage and metric axes", "Compound roof parts/height and ground-level controls"]
+  },
+  "8193809UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193809UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193809UN6789S"], "confidence": "medium", "observations": "Very narrow commercial front: brick band, timber/glazed upper gallery, iron balcony guards and mixed upper windows. Ground restaurant door/window/sign group partly obscured by fixtures and perspective. Source parts vary from one to four above floors; do not repeat a single rectangular roof or balcony rule.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Full ground opening count and metric centres", "River-side elevation/compound roof graph", "Street-to-river level control"]
+  },
+  "8193810UN6789S": {
+    "facades": [{"view": "CAT-PHOTO:8193810UN6789S", "state": "VISUAL_ESTIMATE", "sources": ["CAT-PHOTO:8193810UN6789S"], "confidence": "high", "observations": "Pale rendered wide terminal river/road front. Three storeys visible on main face with unequal two-window groups and tall glazed gallery bands. Ground has shop/service openings with stone base. Lower annex on left and rounded/right return differ in massing. Main opening groups are not centered identical bays.", "opening_coordinates": null}],
+    "blocking_unknowns": ["Exact ground opening segmentation and metric axes", "Return facade/roof annex ownership and ridge shape", "Road/river/threshold elevation"]
+  },
+  "8193811UN6789S": {
+    "facades": [],
+    "blocking_unknowns": ["Cadastral facade endpoint returned an empty body; complete frontage reference missing", "Roof/massing/entrance and relationship to neighbouring 8193802", "Levels"]
+  }
+}

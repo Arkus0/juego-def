@@ -1,0 +1,19 @@
+{
+  "gates": [
+    {
+      "name": "Exact Boundary Gate",
+      "status": "PENDING",
+      "proposal": "58 unchanged exterior source bodies; 14886.5817 square metres; CORE_SELECTED.md and potes_core.geojson",
+      "human_decision": null,
+      "proposal_sha256": "1974b0e5ba29d0b7f3e272c1ec2e3188bb41c46879d6faef3fa46adf2c83d465"
+    },
+    {
+      "name": "Sectorization Gate",
+      "status": "PENDING",
+      "proposal": "Four sectors of 15/8/13/22 bodies; Sector 01 San Cayetano/Cantabra; 14-body First Slice",
+      "human_decision": null,
+      "proposal_sha256": "d70bd676e2440ede6c511b951f570ffbbdccc2ea2805ae6f9cd93bb431f424ee"
+    }
+  ],
+  "authorization_limit": "Only these two subjective product gates are requested. Approval does not authorize inventing UNKNOWN exterior facts."
+}

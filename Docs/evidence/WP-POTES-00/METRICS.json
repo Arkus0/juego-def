@@ -1,0 +1,53 @@
+{
+  "building_count": 58,
+  "area_m2": 14886.5817,
+  "bounds_local": [
+    -95.0,
+    -187.1503895316273,
+    68.90361090165297,
+    17.03861046861857
+  ],
+  "dimensions_m": [
+    163.9036,
+    204.189
+  ],
+  "count_gt_100": 22,
+  "count_gt_200": 4,
+  "count_gt_400": 0,
+  "footprint_area_min_median_max_m2": [
+    18.101,
+    88.9526175,
+    321.265442
+  ],
+  "walkable_axis_length_m": 1026.1549,
+  "network_components": 11,
+  "largest_component_node_count": 88,
+  "path_diameter_m": 367.7738,
+  "diameter_osm_endpoints": [
+    "clip:160579904:(33.71310871455353, -36.98192878533155):(30.245465118188225, -38.38865310379802)",
+    "clip:1563886624:(-24.590685735223815, 10.77540952898562):(-25.02075480389007, 5.3736801061982)"
+  ],
+  "traversal_minutes_at_1_4_m_s": 4.378,
+  "traversal_minutes_at_1_8_m_s": 3.405,
+  "network_terrain_sample_range_m": [
+    280.0,
+    307.157
+  ],
+  "closed_network_face_count": 3,
+  "intersected_cadastral_parcel_count": 63,
+  "full_cadastral_parcel_count": 53,
+  "source_numerical_sliver_areas_m2": [
+    2.706168622523819e-15,
+    6.132059746833239e-07,
+    7.552822641594681e-05
+  ],
+  "sector_counts": {
+    "POT-S01": 15,
+    "POT-S02": 8,
+    "POT-S03": 13,
+    "POT-S04": 22
+  },
+  "photo_receipts": 57,
+  "production_ready_buildings": 0,
+  "claim_limit": "Counts are unchanged source exterior components; source conflicts and completeness must be resolved before independent PASS."
+}

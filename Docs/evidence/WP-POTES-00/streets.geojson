@@ -1,0 +1,1777 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM27801324",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368002.5894041862,
+            4779139.712276815
+          ],
+          [
+            367995.10272826545,
+            4779132.813925312
+          ],
+          [
+            367995.49720171746,
+            4779126.729328401
+          ],
+          [
+            367952.7363983997,
+            4779111.1384326825
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM27801324",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02",
+          "POT-S01"
+        ],
+        "name": "Calle Cántabra"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM27801326",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367966.04702025274,
+            4779172.571929722
+          ],
+          [
+            367958.8212894265,
+            4779180.388778382
+          ],
+          [
+            367958.1524553847,
+            4779181.071786545
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM27801326",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle del Capitán Palacio"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-BR-OSM27801328",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367982.88724998554,
+            4779155.125517783
+          ],
+          [
+            367969.70837915374,
+            4779168.856986266
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-BR-OSM27801328",
+        "kind": "bridge_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de San Cayetano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-R-OSM37079954",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367891.8137597223,
+            4779139.142013799
+          ],
+          [
+            367904.51136356697,
+            4779135.059558471
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-R-OSM37079954",
+        "kind": "river_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": "Río Quiviesa"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-R-OSM37080033",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367904.51136356697,
+            4779135.059558471
+          ],
+          [
+            367926.51412300154,
+            4779138.876622694
+          ],
+          [
+            367943.9152390356,
+            4779142.383052253
+          ],
+          [
+            367968.5069863674,
+            4779153.4601571625
+          ],
+          [
+            367992.59108851315,
+            4779173.179346908
+          ],
+          [
+            368008.9118206294,
+            4779182.639407602
+          ],
+          [
+            368014.8713866509,
+            4779184.758989273
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-R-OSM37080033",
+        "kind": "river_axis",
+        "sectors": [
+          "POT-S02",
+          "POT-S01"
+        ],
+        "name": "Río Quiviesa"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160490846",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367901.7372615569,
+            4779143.001193412
+          ],
+          [
+            367902.211821841,
+            4779146.080456883
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160490846",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle del Sol"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-BR-OSM160490852",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367898.81576996006,
+            4779128.67093351
+          ],
+          [
+            367901.7372615569,
+            4779143.001193412
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-BR-OSM160490852",
+        "kind": "bridge_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": "Puente de San Cayetano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513610",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              367972.04884225567,
+              4779073.524578143
+            ],
+            [
+              367976.6909202003,
+              4779077.178508513
+            ],
+            [
+              367979.3273384826,
+              4779078.012056534
+            ]
+          ],
+          [
+            [
+              367987.4111243615,
+              4779083.571033874
+            ],
+            [
+              367992.13827876945,
+              4779088.566321955
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513610",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03",
+          "POT-S04"
+        ],
+        "name": "Calle de Cimavilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513617",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367957.680055319,
+            4779192.842552166
+          ],
+          [
+            367964.6678335714,
+            4779183.241669983
+          ],
+          [
+            367970.3648790781,
+            4779177.965238106
+          ],
+          [
+            367966.04702025274,
+            4779172.571929722
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513617",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de Cervantes"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513618",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367993.61160143715,
+            4779088.547498479
+          ],
+          [
+            367992.13827876945,
+            4779088.566321955
+          ],
+          [
+            367989.8743590347,
+            4779089.2656773515
+          ],
+          [
+            367974.4537834341,
+            4779092.264278711
+          ],
+          [
+            367967.6206303936,
+            4779093.485509572
+          ],
+          [
+            367960.99419469654,
+            4779094.880492547
+          ],
+          [
+            367956.04311879614,
+            4779101.297861699
+          ],
+          [
+            367952.7363983997,
+            4779111.1384326825
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513618",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01",
+          "POT-S03"
+        ],
+        "name": "Calle de Cimavilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513629",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367952.7363983997,
+            4779111.1384326825
+          ],
+          [
+            367949.33632349566,
+            4779118.681129007
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513629",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": "Calle de San Cayetano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513630",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              367949.33632349566,
+              4779118.681129007
+            ],
+            [
+              367939.43327615724,
+              4779115.529192946
+            ],
+            [
+              367928.4525918324,
+              4779108.398715876
+            ],
+            [
+              367923.053383394,
+              4779108.903384968
+            ],
+            [
+              367910.8829795957,
+              4779112.983381196
+            ],
+            [
+              367908.19282863307,
+              4779113.513278953
+            ],
+            [
+              367902.3914515886,
+              4779114.67012318
+            ],
+            [
+              367897.26718656527,
+              4779115.688233629
+            ]
+          ],
+          [
+            [
+              367897.0660838382,
+              4779116.632053303
+            ],
+            [
+              367898.81576996006,
+              4779128.67093351
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513630",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": "Calle de San Cayetano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513697",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367948.4010534207,
+            4779061.261889531
+          ],
+          [
+            367950.6119422943,
+            4779068.696522513
+          ],
+          [
+            367951.11044520664,
+            4779071.753104802
+          ],
+          [
+            367953.9717737057,
+            4779077.952322358
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513697",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S04"
+        ],
+        "name": "Calle de la Fuente de la Riega"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-BR-OSM160513701",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368014.73430691095,
+            4779186.952265112
+          ],
+          [
+            368013.6516533594,
+            4779190.502002299
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-BR-OSM160513701",
+        "kind": "bridge_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de Eduardo García de Enterría"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-ST-OSM160513705",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367976.147409403,
+            4779210.23760066
+          ],
+          [
+            367982.6016075782,
+            4779215.067342795
+          ],
+          [
+            367993.3467595709,
+            4779222.646849123
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-ST-OSM160513705",
+        "kind": "steps_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de la Independencia"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513706",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368020.5001151052,
+            4779171.794761641
+          ],
+          [
+            368020.2569875952,
+            4779172.076464537
+          ],
+          [
+            368019.44803729426,
+            4779173.460551508
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513706",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de la Independencia"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513708",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368013.6516533594,
+            4779190.502002299
+          ],
+          [
+            368004.10745988844,
+            4779199.141414387
+          ],
+          [
+            367993.1740891623,
+            4779192.34321119
+          ],
+          [
+            367989.122811807,
+            4779191.88849249
+          ],
+          [
+            367985.5949512764,
+            4779193.678876859
+          ],
+          [
+            367976.147409403,
+            4779210.23760066
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513708",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de la Independencia"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513714",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              367985.5043275105,
+              4779060.356042567
+            ],
+            [
+              367987.1443093518,
+              4779053.3346206695
+            ],
+            [
+              367988.3873912858,
+              4779051.812103194
+            ]
+          ],
+          [
+            [
+              367992.6781934712,
+              4779047.406237907
+            ],
+            [
+              367997.27757916856,
+              4779043.183979756
+            ],
+            [
+              368007.2185853906,
+              4779039.753400055
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513714",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S04"
+        ],
+        "name": "Calle de la Solana"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513728",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368053.810336073,
+            4779156.367321272
+          ],
+          [
+            368041.48437639815,
+            4779151.423374511
+          ],
+          [
+            368027.3588033519,
+            4779146.531171634
+          ],
+          [
+            368011.20069257927,
+            4779141.267340025
+          ],
+          [
+            368002.5894041862,
+            4779139.712276815
+          ],
+          [
+            367994.69755021477,
+            4779144.220227029
+          ],
+          [
+            367987.18083510775,
+            4779150.87617594
+          ],
+          [
+            367982.88724998554,
+            4779155.125517783
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513728",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02",
+          "POT-S01"
+        ],
+        "name": "Calle del Doctor Encinas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513729",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367928.4525918324,
+            4779108.398715876
+          ],
+          [
+            367925.6616771096,
+            4779099.120782968
+          ],
+          [
+            367922.86715122644,
+            4779091.753772506
+          ],
+          [
+            367919.70425467525,
+            4779083.427372917
+          ],
+          [
+            367916.2054027049,
+            4779074.974175987
+          ],
+          [
+            367923.0567249162,
+            4779061.261889531
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513729",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01",
+          "POT-S03",
+          "POT-S04"
+        ],
+        "name": "Calle del Llano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513731",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367900.0802686599,
+            4779146.261889531
+          ],
+          [
+            367902.211821841,
+            4779146.080456883
+          ],
+          [
+            367902.5609528857,
+            4779146.261889531
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513731",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle el Sol"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513734",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367916.2054027049,
+            4779074.974175987
+          ],
+          [
+            367908.764811356,
+            4779076.445414903
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513734",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03"
+        ],
+        "name": "Calle del Tullo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-ST-OSM160513747",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367948.3777525872,
+            4779120.421706345
+          ],
+          [
+            367946.2965984926,
+            4779122.99505499
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-ST-OSM160513747",
+        "kind": "steps_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513752",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367949.33632349566,
+            4779118.681129007
+          ],
+          [
+            367948.3777525872,
+            4779120.421706345
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513752",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160513761",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367946.2965984926,
+            4779122.99505499
+          ],
+          [
+            367941.0584509968,
+            4779129.706853608
+          ],
+          [
+            367927.4792841696,
+            4779120.282648252
+          ],
+          [
+            367910.8829795957,
+            4779112.983381196
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160513761",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": "Calle de San Cayetano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-R-OSM160513812",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              367903.9504516519,
+              4779085.783305423
+            ],
+            [
+              367903.93099379906,
+              4779085.855276166
+            ],
+            [
+              367903.69688593596,
+              4779091.72
+            ]
+          ],
+          [
+            [
+              367903.42493731127,
+              4779098.532686935
+            ],
+            [
+              367903.27414544567,
+              4779102.310230483
+            ],
+            [
+              367904.31210790086,
+              4779129.819691123
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-R-OSM160513812",
+        "kind": "river_axis",
+        "sectors": [
+          "POT-S01",
+          "POT-S04"
+        ],
+        "name": "Riega de la Tejera"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM160579904",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368015.39792050293,
+            4779179.873236427
+          ],
+          [
+            368010.94609915686,
+            4779178.0672592055
+          ],
+          [
+            367998.1475448231,
+            4779171.138558071
+          ],
+          [
+            367986.7911752303,
+            4779163.0820692945
+          ],
+          [
+            367971.4177391163,
+            4779151.304003838
+          ],
+          [
+            367960.96321622375,
+            4779145.296454876
+          ],
+          [
+            367951.2891687442,
+            4779140.529170662
+          ],
+          [
+            367940.4031422555,
+            4779137.018570483
+          ],
+          [
+            367926.383212946,
+            4779132.546688748
+          ],
+          [
+            367914.1089006417,
+            4779128.751988158
+          ],
+          [
+            367912.5570049769,
+            4779128.837639872
+          ],
+          [
+            367902.8318251574,
+            4779129.404023671
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM160579904",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02",
+          "POT-S01"
+        ],
+        "name": "Paseo del Río Deva"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-P-OSM329379237",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              367990.74215313484,
+              4779163.8164717425
+            ],
+            [
+              368002.9414255121,
+              4779170.878982465
+            ],
+            [
+              368013.6885263224,
+              4779176.458757028
+            ],
+            [
+              368019.4727427369,
+              4779166.0258257035
+            ],
+            [
+              368022.0093952967,
+              4779163.032616148
+            ],
+            [
+              368025.09714663215,
+              4779161.195233887
+            ],
+            [
+              368026.84766245657,
+              4779161.744478335
+            ],
+            [
+              368033.10063225054,
+              4779163.706419432
+            ],
+            [
+              368048.62759770645,
+              4779162.427870203
+            ],
+            [
+              368050.4555269866,
+              4779160.637132315
+            ],
+            [
+              368051.0403941644,
+              4779157.659537147
+            ],
+            [
+              368009.6462481045,
+              4779143.319417682
+            ],
+            [
+              368001.0867946389,
+              4779144.018599887
+            ],
+            [
+              367997.62992933404,
+              4779145.696504497
+            ],
+            [
+              367984.7334945557,
+              4779158.055985873
+            ],
+            [
+              367987.91274296166,
+              4779160.938391784
+            ],
+            [
+              367990.74215313484,
+              4779163.8164717425
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-P-OSM329379237",
+        "kind": "public_space",
+        "sectors": [
+          "POT-S02",
+          "POT-S01"
+        ],
+        "name": "Plaza Capitán Palacios"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-ST-OSM329379239",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368024.2598505826,
+            4779160.800407204
+          ],
+          [
+            368025.8254119585,
+            4779156.803938136
+          ],
+          [
+            368024.94566404144,
+            4779153.799179161
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-ST-OSM329379239",
+        "kind": "steps_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-ST-OSM329379240",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368018.4032076271,
+            4779151.9706978835
+          ],
+          [
+            368015.8340482557,
+            4779153.286989671
+          ],
+          [
+            368014.3915286735,
+            4779157.336624238
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-ST-OSM329379240",
+        "kind": "steps_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM329964876",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367967.45408679376,
+            4779092.866601319
+          ],
+          [
+            367964.06593075267,
+            4779089.699404837
+          ],
+          [
+            367958.80909696966,
+            4779084.12433362
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM329964876",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03"
+        ],
+        "name": "Calle de la Fuente de la Riega"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM329964890",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368004.10745988844,
+            4779199.141414387
+          ],
+          [
+            368007.9822422583,
+            4779203.499031833
+          ],
+          [
+            368010.77968375926,
+            4779207.666452258
+          ],
+          [
+            368012.16298586666,
+            4779211.472449353
+          ],
+          [
+            368011.5574588075,
+            4779215.061477369
+          ],
+          [
+            368009.53715183155,
+            4779218.255765339
+          ],
+          [
+            368006.8743613133,
+            4779221.87356355
+          ],
+          [
+            368001.69790305133,
+            4779227.150983317
+          ],
+          [
+            367999.883847495,
+            4779229.587608106
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM329964890",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de la Independencia"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM329964891",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367966.6067136363,
+            4779167.039605856
+          ],
+          [
+            367958.1524553847,
+            4779176.298684207
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM329964891",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM568565728",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367922.86715122644,
+            4779091.753772506
+          ],
+          [
+            367931.06072599953,
+            4779088.96187626
+          ],
+          [
+            367932.25223717693,
+            4779088.327738763
+          ],
+          [
+            367940.1822428133,
+            4779084.107827344
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM568565728",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03"
+        ],
+        "name": "Calle del Llano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM570760443",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367976.147409403,
+            4779210.23760066
+          ],
+          [
+            367969.7654990028,
+            4779221.375848548
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM570760443",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de la Independencia"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-R-OSM571012976",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367904.31210790086,
+            4779129.819691123
+          ],
+          [
+            367904.51136356697,
+            4779135.059558471
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-R-OSM571012976",
+        "kind": "river_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571012980",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367916.2054027049,
+            4779074.974175987
+          ],
+          [
+            367913.5647494575,
+            4779070.045497434
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571012980",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03",
+          "POT-S04"
+        ],
+        "name": "Calle del Llano"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571016447",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367906.8545721553,
+            4779083.521093427
+          ],
+          [
+            367906.6968522254,
+            4779079.202693744
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571016447",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571016448",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367907.0684047671,
+            4779098.737100628
+          ],
+          [
+            367906.8545721553,
+            4779083.521093427
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571016448",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571016450",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367908.19282863307,
+            4779113.513278953
+          ],
+          [
+            367907.09609826386,
+            4779102.68047232
+          ],
+          [
+            367907.0684047671,
+            4779098.737100628
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571016450",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01",
+          "POT-S03"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571037367",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            368006.49278886465,
+            4779033.627856183
+          ],
+          [
+            368007.4361664499,
+            4779039.638883707
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571037367",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S04"
+        ],
+        "name": "Calle de la Solana"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571037373",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367985.0569085674,
+            4779069.826956413
+          ],
+          [
+            367984.9095787498,
+            4779068.533960814
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571037373",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S04"
+        ],
+        "name": "Calle de la Solana"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571037376",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367957.6111279762,
+            4779082.747754173
+          ],
+          [
+            367958.80909696966,
+            4779084.12433362
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571037376",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03",
+          "POT-S04"
+        ],
+        "name": "Calle de la Fuente de la Riega"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571037377",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367953.9717737057,
+            4779077.952322358
+          ],
+          [
+            367957.6111279762,
+            4779082.747754173
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571037377",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S04"
+        ],
+        "name": "Calle de la Fuente de la Riega"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM571037379",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367967.6206303936,
+            4779093.485509572
+          ],
+          [
+            367967.45408679376,
+            4779092.866601319
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM571037379",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM574813660",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367932.25223717693,
+            4779088.327738763
+          ],
+          [
+            367930.7217042977,
+            4779079.869688707
+          ],
+          [
+            367933.9236261326,
+            4779077.207941169
+          ],
+          [
+            367933.6650793298,
+            4779061.261889531
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM574813660",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S03",
+          "POT-S04"
+        ],
+        "name": "Calle de la Fuente de la Riega"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM849931521",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367980.5683969351,
+            4779152.570829951
+          ],
+          [
+            367984.07502478606,
+            4779148.425620744
+          ],
+          [
+            367990.1935330271,
+            4779140.552500112
+          ],
+          [
+            367992.0194789844,
+            4779136.562084365
+          ],
+          [
+            367992.1095897255,
+            4779133.238567785
+          ],
+          [
+            367995.10272826545,
+            4779132.813925312
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM849931521",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02",
+          "POT-S01"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-BR-OSM849931522",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367980.5683969351,
+            4779152.570829951
+          ],
+          [
+            367966.6067136363,
+            4779167.039605856
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-BR-OSM849931522",
+        "kind": "bridge_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-ST-OSM1094537777",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367912.5570049769,
+            4779128.837639872
+          ],
+          [
+            367912.0232499338,
+            4779119.771448357
+          ],
+          [
+            367911.41272891784,
+            4779115.972697675
+          ],
+          [
+            367902.4551099448,
+            4779117.113000935
+          ],
+          [
+            367902.3914515886,
+            4779114.67012318
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-ST-OSM1094537777",
+        "kind": "steps_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM1094537778",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367995.49720171746,
+            4779126.729328401
+          ],
+          [
+            368002.36624022044,
+            4779129.45589058
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM1094537778",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S01"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM1354377656",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367956.7069317155,
+            4779193.219869151
+          ],
+          [
+            367957.680055319,
+            4779192.842552166
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM1354377656",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM1563886624",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367960.1317005808,
+            4779223.635569638
+          ],
+          [
+            367957.680055319,
+            4779192.842552166
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM1563886624",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle de Cervantes"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "POT-L-OSM1563886625",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            367969.70837915374,
+            4779168.856986266
+          ],
+          [
+            367966.04702025274,
+            4779172.571929722
+          ]
+        ]
+      },
+      "properties": {
+        "id": "POT-L-OSM1563886625",
+        "kind": "street_axis",
+        "sectors": [
+          "POT-S02"
+        ],
+        "name": "Calle del Capitán Palacio"
+      }
+    }
+  ],
+  "coordinate_reference_system": "EPSG:25830",
+  "warning": "Metric reference product, not RFC7946 longitude/latitude GeoJSON."
+}
