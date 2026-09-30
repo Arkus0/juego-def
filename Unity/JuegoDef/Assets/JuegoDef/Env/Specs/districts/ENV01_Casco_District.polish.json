@@ -1,5 +1,5 @@
 {
-  "comment": "Hand-authored micro-polish of the CASCO (EnvPolish). The district scene is generated, so every local correction lives here and survives a rebuild. 'plots': BuildingSpec field overrides by building id ('K4_0_2'). 'ops': object corrections on the built district, found by exact module name within r metres of a world point (near = x,y,z as built): remove | move (to = [x,z] on the ground or [x,y,z], or by = [dx,dy,dz]; optional yaw, scale) | place (module, at = [x,z] or [x,y,z], yaw, scale). Every entry says its inspection unit (Docs/evidence/WP-PROD-ENV-01/micro-polish/UNITS.md) and why, and marks its class: TECH (technical), SEM (makes no sense to a person). | night2-D7: removed 6 orphan ops whose targets no longer exist after the phase-3 rebuild (chair Cimavilla, 3 chalkboards, Espina_Nodo barrel, Calle_Alta_O bench); the Pasarela barrel op still hits and stays.",
+  "comment": "Hand-authored micro-polish of the CASCO (EnvPolish). The district scene is generated, so every local correction lives here and survives a rebuild. 'plots': BuildingSpec field overrides by building id ('K4_0_2'). 'ops': object corrections on the built district, found by exact module name within r metres of a world point (near = x,y,z as built): remove | move (to = [x,z] on the ground or [x,y,z], or by = [dx,dy,dz]; optional yaw, scale) | place (module, at = [x,z] or [x,y,z], yaw, scale). Every entry says its inspection unit (Docs/evidence/WP-PROD-ENV-01/micro-polish/UNITS.md) and why, and marks its class: TECH (technical), SEM (makes no sense to a person). | night2-D7: removed 6 orphan ops whose targets no longer exist after the phase-3 rebuild (chair Cimavilla, 3 chalkboards, Espina_Nodo barrel, Calle_Alta_O bench); the Pasarela barrel op still hits and stays. | night2 D5b: K14_3_1 palette override dropped - roof/joinery already differ from K14_3_0; the twin read was the triplet cornice, broken by K14_1_0 floors=4.",
   "plots": {
     "K11_0_1": {
       "unit": "ALLEY_J",
@@ -62,6 +62,12 @@
         "PB",
         "Pc"
       ]
+    },
+    "K14_1_0": {
+      "unit": "STREET_E",
+      "class": "SEM",
+      "floors": 4,
+      "why": "night2 D5b (night-1 debt): the mirador skyline read as 3 twin buildings - K14_1_0, K14_3_0, K14_3_1 stood with cornices within 3 cm (17.50/17.49/17.47 m). One floor up on this plain residential breaks the identical cornice line; the casona K14_3_0 stays as designed."
     }
   },
   "ops": [
