@@ -607,6 +607,23 @@ If this requires a new general authoring architecture, stop and simplify.
 
 **This revision does not change D0 and does not invalidate an implementation already in progress.**
 
+#### D0.1 — mandatory transactional REBUILD hotfix
+
+Owner decision after the first real D0 trial: **do not throw away the vertical slice or block forward UX work on this defect**, but do not pretend the safety proof is closed either. D0 may be used as a provisional foundation while this hotfix is tracked explicitly.
+
+The independent review of frozen D0 candidate `b3bb4665b1051f22d8aca956eb1729f6d1c1ce09` found that REBUILD can replace the authoritative generated district spec before all rebuild preconditions are known and before the scene rebuild succeeds. A later cancel/failure can therefore leave `trace/spec/scene` out of sync.
+
+The hotfix must close the **whole transaction class**, not only the observed dirty-scene case:
+
+- check all cancel-able preconditions before authoritative spec replacement;
+- keep regenerated spec staged until the operation can safely commit, where practical;
+- once authority changes, any cancel/exception/failure in AFFECTED or FULL rebuild must automatically restore the prior authoritative state;
+- REVERT/Undo semantics must remain unambiguous after failed/cancelled rebuilds;
+- retain evidence for at least one forced post-regeneration cancel/failure proving the prior coherent state is restored;
+- fresh review must re-test rebuild input identity/determinism as part of the repaired safety proof.
+
+This debt **does not count as D0 PASS**. Owner authorizes forward progress into D1 in parallel, but D0.1 must be closed before D1 is accepted as the first usable owner release and before Director persistence is relied on for production-scale editing.
+
 ### D1 — LAYOUT MVP — **PRESERVED / first usable owner release**
 
 Must include:
@@ -615,11 +632,12 @@ Must include:
 - node selection/move;
 - `via` point selection/move;
 - street selection + width edit;
+- selecting a street/segment must clearly highlight the whole affected piece and its controlling handles/nodes, so the owner knows what will move before dragging;
 - plaza vertex move;
 - landmark move/rotate;
 - explicit Y edit/vertical handle;
 - labels and width/polygon guides;
-- dirty state;
+- dirty state with an explicit visual distinction between **preview / saved authority / rebuilt scene**;
 - save summary;
 - backup + SAVE + REVERT;
 - REBUILD;
