@@ -15,6 +15,8 @@ from shapely.affinity import translate
 from shapely.geometry import Polygon, MultiPolygon, LineString, Point, box, mapping, shape
 from shapely.ops import unary_union, polygonize
 from PIL import Image, ImageDraw, ImageFont
+from potes_exterior import registered_observations
+from potes_lidar import build_controls, derive_controls, load_points
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'Docs/evidence/WP-POTES-00'
@@ -322,7 +324,7 @@ def build():
             adjacency=fact(adj,'DERIVED',['CAT-BU'],'medium','Coincident-edge candidate within 5 cm; openings in party walls must not be inferred.'),
             facade_edges=facades,
             cadastral_entrance_locators=fact(ad,'MEASURED',['CAT-AD'],'medium','Source Entrance locator, not door width/count. Locator may be shared by multiple bodies on the same reference.'),
-            facade_observations=obs.get('facades',[]),
+            facade_observations=list(obs.get('facades',[])),
             material_observations=obs.get('materials',unknown('No sufficient photographic observation logged.')),
             attached_elements=obs.get('attachments',unknown('No complete observation of galleries, fixed services, steps and gates.')),
             parcel_relationship=fact([p['key'] for p in data['parcels'] if shape(p['geometry']).intersection(g).area/g.area>.5],
@@ -333,6 +335,17 @@ def build():
             source_record_date=b['attrs']['beginLifespanVersion'],
             production_ready=False,
             blocking_unknowns=obs.get('blocking_unknowns',['Full visible facade coverage/opening coordinates; ridge topology/height; surveyed street-to-threshold relationship.'])))
+    transcription=read(OUT/'FACADE_TRANSCRIPTION.json')
+    for body in rows:
+        registered=registered_observations(body,transcription)
+        body['facade_observations'].extend(registered)
+        if registered:
+            body['frontage_m']=fact([dict(observation_id=o['id'],kind=o['registration']['kind'],
+                ring_edge_numbers=o['registration']['ring_edge_numbers'],
+                edge_chain_length_m=round(shape(o['registration']['geometry_local']).length,4),
+                coverage=o['coverage']) for o in registered], 'DERIVED',
+                list(dict.fromkeys(s for o in registered for s in o['sources'])), 'medium',
+                'Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey.')
     by_id={b['id']:b for b in rows}
     # Street-based seed partition. The polygon edges are batch controls, not invented world walls.
     seeds=[Polygon([(-200,100),(150,100),(150,-56),(17,-79),(5,-64),(-35,-74),(-200,-87)]),
@@ -488,6 +501,7 @@ def build():
     write(gate_path,gates)
     render_maps(core,rows,all_b,streets,geosectors,data)
     reference_index(rows, first)
+    build_controls()
     print(json.dumps(metrics,indent=2))
 
 def reference_index(rows, first):
@@ -528,6 +542,16 @@ def reference_index(rows, first):
             '  the ownership of every neighbouring facade visible in the picture.', '']
         for o in b['facade_observations']:
             lines += [f"Observation ({o['state']}, {o['confidence']}; source `{o['view']}`):", o['observations'], '']
+            if o.get('registration'):
+                reg=o['registration']; points=o['opening_coordinates']
+                lines += [f"Registered plane `{o['id']}`: **{reg['kind']}**, ring edges `{reg['ring_edge_numbers']}`; {len(points)} observed opening groups.",
+                    'Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).',
+                    'Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.',
+                    o['coverage'], '', '| Photo band | Observed groups | Count coverage |', '| --- | ---: | --- |']
+                for row in sorted(set(p['row'] for p in points)):
+                    group=[p for p in points if p['row']==row]
+                    lines.append(f"| {row} | {len(group)} | {group[0]['row_count_state']} |")
+                lines += ['']
         if not b['facade_observations']:
             lines += ['No usable individual photographic observation. The empty endpoint is',
                       'recorded rather than replaced by a fabricated facade.', '']
@@ -637,7 +661,26 @@ def check():
     if not 8<=len(first)<=15 or len(first)!=len(set(first)):errors.append('First Slice cardinality')
     if not set(first).issubset(set(next(s['members'] for s in sectors if s['id']=='POT-S01'))):errors.append('First Slice outside Sector 01')
     evidence_errors=[]
+    try:
+        points=load_points()
+        expected_lidar=derive_controls(ledger,first,points)
+        if expected_lidar!=read(OUT/'LIDAR_CONTROLS.json'):
+            evidence_errors.append('LiDAR controls differ from pinned point-source derivation')
+    except (ValueError,KeyError) as error:
+        evidence_errors.append('Invalid LiDAR evidence: '+str(error))
+    transcription=read(OUT/'FACADE_TRANSCRIPTION.json')
+    if len({o['id'] for o in transcription['facades']}) != len(transcription['facades']):
+        evidence_errors.append('Duplicate registered facade identity')
+    if any(o['building_id'] not in ids for o in transcription['facades']):
+        evidence_errors.append('Transcription refers to absent building')
     for b in ledger:
+        try:
+            expected=registered_observations(b,transcription)
+            actual=[o for o in b['facade_observations'] if o.get('registration')]
+            if json.dumps(actual,sort_keys=True)!=json.dumps(expected,sort_keys=True):
+                evidence_errors.append('Registered facade derivative differs from locked transcription '+b['id'])
+        except (ValueError,KeyError,StopIteration) as error:
+            evidence_errors.append('Invalid facade registration '+b['id']+': '+str(error))
         if b['production_ready']:
             if b['blocking_unknowns']:
                 evidence_errors.append('Ready flag contradicts recorded blockers '+b['id'])

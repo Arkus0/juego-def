@@ -2450,11 +2450,33 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B004-CIMAVILLA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              2
+            ],
+            "edge_chain_length_m": 7.4748,
+            "coverage": "Upper two bands partly visible; ground and principal entrance unresolved."
+          },
+          {
+            "observation_id": "POT-B004-CANTABRA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              1
+            ],
+            "edge_chain_length_m": 9.5009,
+            "coverage": "Partial upper return. Numerical plan stations UNKNOWN; ground and far endpoint unresolved."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8093401UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 293.0,
@@ -2690,6 +2712,390 @@
           "confidence": "medium",
           "observations": "Corner volume: exposed timber grid over pale ochre render on two visible upper storeys; unequal wall planes; projecting eaves. Left return and right front have different opening rhythm. The visible facade is not a standard identical-bay row.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B004-CIMAVILLA",
+          "view": "CAT-PHOTO:8093401UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8093401UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Three unequal opening groups in each visible upper band; the middle top group is tall and guarded. Ground is outside the usable frame.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              2
+            ],
+            "geometry_sha256": "74b898fa3c6a8d2266353930400898bd0a6cc54e4293e5b70b3bba71a560a18b",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -36.169455384719186,
+                  -101.90938953123987
+                ],
+                [
+                  -33.62945538474014,
+                  -108.93938953150064
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Timber corner shared with B006; right plane follows Cimavilla E02. Source start at north corner corresponds to image left.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U2-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.449,
+                0.128
+              ],
+              "station_fraction": 0.19,
+              "station_interval": [
+                0.13,
+                0.25
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                862.1,
+                138.2
+              ],
+              "center_local_xz": [
+                -35.6869,
+                -103.2451
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.776,
+                0.371
+              ],
+              "station_fraction": 0.84,
+              "station_interval": [
+                0.78,
+                0.9
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1489.9,
+                400.7
+              ],
+              "center_local_xz": [
+                -34.0359,
+                -107.8146
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-B-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.671,
+                0.326
+              ],
+              "station_fraction": 0.6,
+              "station_interval": [
+                0.54,
+                0.66
+              ],
+              "attachment": "individual iron guard",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2-B",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1288.3,
+                352.1
+              ],
+              "center_local_xz": [
+                -34.6455,
+                -106.1274
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.458,
+                0.524
+              ],
+              "station_fraction": 0.2,
+              "station_interval": [
+                0.14,
+                0.26
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                879.4,
+                565.9
+              ],
+              "center_local_xz": [
+                -35.6615,
+                -103.3154
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.689,
+                0.632
+              ],
+              "station_fraction": 0.62,
+              "station_interval": [
+                0.56,
+                0.68
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1322.9,
+                682.6
+              ],
+              "center_local_xz": [
+                -34.5947,
+                -106.268
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.816,
+                0.697
+              ],
+              "station_fraction": 0.85,
+              "station_interval": [
+                0.79,
+                0.91
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1566.7,
+                752.8
+              ],
+              "center_local_xz": [
+                -34.0105,
+                -107.8849
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Upper two bands partly visible; ground and principal entrance unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
+        },
+        {
+          "id": "POT-B004-CANTABRA",
+          "view": "CAT-PHOTO:8093401UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8093401UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Left plane has at least two guarded opening groups per upper band; its distant end is cropped/oblique. No station is solved from this photo.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              1
+            ],
+            "geometry_sha256": "74b898fa3c6a8d2266353930400898bd0a6cc54e4293e5b70b3bba71a560a18b",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -45.12945538474014,
+                  -105.06938953138888
+                ],
+                [
+                  -36.169455384719186,
+                  -101.90938953123987
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Corner topology and timber finish match north footprint E01; only image coordinates are transcribed.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U2-01",
+              "type": "guarded_tall_glazed_opening",
+              "image_center_fraction": [
+                0.069,
+                0.42
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                132.5,
+                453.6
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "guarded_tall_glazed_opening",
+              "image_center_fraction": [
+                0.208,
+                0.296
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                399.4,
+                319.7
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "guarded_tall_glazed_opening",
+              "image_center_fraction": [
+                0.055,
+                0.738
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                105.6,
+                797.0
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "guarded_tall_glazed_opening",
+              "image_center_fraction": [
+                0.161,
+                0.686
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                309.1,
+                740.9
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093401UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Partial upper return. Numerical plan stations UNKNOWN; ground and far endpoint unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -2914,11 +3320,33 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B005-CIMAVILLA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              4
+            ],
+            "edge_chain_length_m": 5.7306,
+            "coverage": "Partial street plane; station, full ground and upper coverage UNKNOWN."
+          },
+          {
+            "observation_id": "POT-B005-GARDEN-RETURN",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              5
+            ],
+            "edge_chain_length_m": 5.2598,
+            "coverage": "One partially occluded band only; ground remains hidden by garden wall."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8093402UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 293.657,
@@ -3152,8 +3580,260 @@
             "CAT-PHOTO:8093402UN6789S"
           ],
           "confidence": "medium",
-          "observations": "Ochre rendered three-storey volume. Visible return has two narrow openings on each of two upper rows; stone ground base. Small roofed garden/gate wall in front obscures ground openings. Do not count the gate as the building's principal door without resolving the entrance.",
+          "observations": "Ochre corner volume. Near garden return has one horizontal and one tall opening in the visible band. Oblique street plane has at least three tall upper groups and one partially visible commercial glazing group behind signs. Higher bands are cropped. Foreground gate is a separate wall opening, not established as the principal building door.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B005-CIMAVILLA",
+          "view": "CAT-PHOTO:8093402UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8093402UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "At least three tall upper groups on the oblique street plane and one ground commercial glazing group behind the sign. Higher/cropped bands cannot be replicated.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              4
+            ],
+            "geometry_sha256": "f14a4e078634fb7f978c2bd3edb23a9c64d9e5e1160655b216c3565c00bf0b22",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -33.62945538474014,
+                  -108.93938953150064
+                ],
+                [
+                  -31.499455384735484,
+                  -114.25938953086734
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Narrow east wall between B004 and corner to garden return. Endpoints and perspective insufficient for plan station.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U-01",
+              "type": "tall_glazed_opening",
+              "image_center_fraction": [
+                0.728,
+                0.209
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1397.8,
+                225.7
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093402UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U-02",
+              "type": "tall_glazed_opening",
+              "image_center_fraction": [
+                0.772,
+                0.273
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1482.2,
+                294.8
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093402UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U-03",
+              "type": "tall_glazed_opening",
+              "image_center_fraction": [
+                0.807,
+                0.326
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1549.4,
+                352.1
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093402UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "commercial_glazed_group",
+              "image_center_fraction": [
+                0.792,
+                0.589
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1520.6,
+                636.1
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093402UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Partial street plane; station, full ground and upper coverage UNKNOWN.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
+        },
+        {
+          "id": "POT-B005-GARDEN-RETURN",
+          "view": "CAT-PHOTO:8093402UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8093402UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Two differently proportioned openings behind branches. The large foreground gate belongs to a separate wall and is not the principal building door.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              5
+            ],
+            "geometry_sha256": "f14a4e078634fb7f978c2bd3edb23a9c64d9e5e1160655b216c3565c00bf0b22",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -31.499455384735484,
+                  -114.25938953086734
+                ],
+                [
+                  -35.529455384705216,
+                  -117.6393895316869
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Near rendered return follows E05 from east street corner (image right) toward west (image left).",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U-01",
+              "type": "horizontal_window",
+              "image_center_fraction": [
+                0.413,
+                0.281
+              ],
+              "station_fraction": 0.72,
+              "station_interval": [
+                0.66,
+                0.78
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                793.0,
+                303.5
+              ],
+              "center_local_xz": [
+                -34.4011,
+                -116.693
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093402UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U-T-01",
+              "type": "tall_window",
+              "image_center_fraction": [
+                0.569,
+                0.283
+              ],
+              "station_fraction": 0.27,
+              "station_interval": [
+                0.21,
+                0.33
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U-T",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1092.5,
+                305.6
+              ],
+              "center_local_xz": [
+                -32.5876,
+                -115.172
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093402UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "One partially occluded band only; ground remains hidden by garden wall.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -3425,11 +4105,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B006-UPPER-SOPORTAL",
+            "kind": "building_part",
+            "ring_edge_numbers": [
+              1
+            ],
+            "edge_chain_length_m": 10.0824,
+            "coverage": "Main upper wall; ground rear openings and return window position remain unresolved."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8093403UN6789S",
+          "CAT-BU-PART"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 293.579,
@@ -3826,8 +4519,147 @@
             "CAT-PHOTO:8093403UN6789S"
           ],
           "confidence": "medium",
-          "observations": "Front rendered ochre; two glazed balcony doors with iron guards on visible upper frontage; simple dark joinery. A lower projecting lean-to/canopy on the left belongs to a distinct source part. Street-facing shops and returns have different levels. Photograph includes adjacent 8093404 frontage to the right; do not extend its three axes onto this house.",
+          "observations": "Rendered upper wall has THREE tall guarded glazed openings above the soportal. It is recessed behind the projecting porch edge; register this wall to source part3, not the footprint outer porch line. Return has a separate closed shutter. Ground rear opening coverage is incomplete. Right-hand Casa Favila frontage belongs to B007.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B006-UPPER-SOPORTAL",
+          "view": "CAT-PHOTO:8093403UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8093403UN6789S",
+            "CAT-BU-PART"
+          ],
+          "confidence": "medium",
+          "observations": "Three tall guarded openings above the soportal, not two. Lower columns project outward from the registered upper wall. Return shutter excluded from this plane.",
+          "registration": {
+            "kind": "building_part",
+            "ring_edge_numbers": [
+              1
+            ],
+            "geometry_sha256": "2a0e6282508da7d1b5cb4480a937c5a85be069753cec0fc7345b93bc5c1310db",
+            "part_key": "8093403UN6789S_part3",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -52.60995538474526,
+                  -111.82938953116536
+                ],
+                [
+                  -45.12945538474014,
+                  -105.06938953138888
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "part3 E01 is the upper wall recessed behind outer porch part1 E01 / footprint E12. The shared B007 corner is image right.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.226,
+                0.54
+              ],
+              "station_fraction": 0.17,
+              "station_interval": [
+                0.11,
+                0.23
+              ],
+              "attachment": "individual iron guard",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                433.9,
+                583.2
+              ],
+              "center_local_xz": [
+                -51.3383,
+                -110.6802
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093403UN6789S",
+                "CAT-BU-PART"
+              ]
+            },
+            {
+              "id": "U-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.29,
+                0.458
+              ],
+              "station_fraction": 0.44,
+              "station_interval": [
+                0.38,
+                0.5
+              ],
+              "attachment": "individual iron guard",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                556.8,
+                494.6
+              ],
+              "center_local_xz": [
+                -49.3185,
+                -108.855
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093403UN6789S",
+                "CAT-BU-PART"
+              ]
+            },
+            {
+              "id": "U-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.376,
+                0.351
+              ],
+              "station_fraction": 0.78,
+              "station_interval": [
+                0.72,
+                0.84
+              ],
+              "attachment": "individual iron guard",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                721.9,
+                379.1
+              ],
+              "center_local_xz": [
+                -46.7752,
+                -106.5566
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093403UN6789S",
+                "CAT-BU-PART"
+              ]
+            }
+          ],
+          "coverage": "Main upper wall; ground rear openings and return window position remain unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -4100,11 +4932,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B007-CANTABRA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              2
+            ],
+            "edge_chain_length_m": 8.5202,
+            "coverage": "Upper rows complete within this street plane; ground lower edge and other exposed faces incomplete."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8093404UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 293.507,
@@ -4399,6 +5244,342 @@
           "confidence": "high",
           "observations": "Ochre three-storey front. Upper two storeys each show three glazed balcony-door axes. Top storey has one long shared iron balcony; middle storey has three individual guards. Ground has three visible glazed opening/door groups. Principal floor pattern may not be randomized to one balcony door per facade.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B007-CANTABRA",
+          "view": "CAT-PHOTO:8093404UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8093404UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Three axes in each upper band; one shared balcony on top, three guards beneath. Three ground opening groups visible, bottom edges cropped.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              2
+            ],
+            "geometry_sha256": "cf79c247d79e07dc25b976767bfbe35505631e96e356a14da9834835e77c8f93",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -57.40995538473362,
+                  -118.86888953112066
+                ],
+                [
+                  -52.60995538474526,
+                  -111.82938953116536
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "E02 from south-west corner (image right) toward junction with B006 (image left); irregular footprint and adjoining front disambiguate ownership.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U2-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.32,
+                0.174
+              ],
+              "station_fraction": 0.77,
+              "station_interval": [
+                0.71,
+                0.83
+              ],
+              "attachment": "one shared iron balcony",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                614.4,
+                187.9
+              ],
+              "center_local_xz": [
+                -53.714,
+                -113.4485
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.476,
+                0.179
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "one shared iron balcony",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                913.9,
+                193.3
+              ],
+              "center_local_xz": [
+                -55.01,
+                -115.3491
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.626,
+                0.192
+              ],
+              "station_fraction": 0.25,
+              "station_interval": [
+                0.19,
+                0.31
+              ],
+              "attachment": "one shared iron balcony",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1201.9,
+                207.4
+              ],
+              "center_local_xz": [
+                -56.21,
+                -117.109
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.316,
+                0.525
+              ],
+              "station_fraction": 0.78,
+              "station_interval": [
+                0.72,
+                0.84
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                606.7,
+                567.0
+              ],
+              "center_local_xz": [
+                -53.666,
+                -113.3781
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.479,
+                0.519
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                919.7,
+                560.5
+              ],
+              "center_local_xz": [
+                -55.01,
+                -115.3491
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.643,
+                0.529
+              ],
+              "station_fraction": 0.23,
+              "station_interval": [
+                0.17,
+                0.29
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1234.6,
+                571.3
+              ],
+              "center_local_xz": [
+                -56.306,
+                -117.2498
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "tall_glazed_opening",
+              "image_center_fraction": [
+                0.305,
+                0.898
+              ],
+              "station_fraction": 0.79,
+              "station_interval": [
+                0.73,
+                0.85
+              ],
+              "attachment": "central double entrance; side use not resolved",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                585.6,
+                969.8
+              ],
+              "center_local_xz": [
+                -53.618,
+                -113.3077
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-02",
+              "type": "tall_glazed_opening",
+              "image_center_fraction": [
+                0.479,
+                0.898
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "central double entrance; side use not resolved",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                919.7,
+                969.8
+              ],
+              "center_local_xz": [
+                -55.01,
+                -115.3491
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-03",
+              "type": "tall_glazed_opening",
+              "image_center_fraction": [
+                0.661,
+                0.898
+              ],
+              "station_fraction": 0.21,
+              "station_interval": [
+                0.15,
+                0.27
+              ],
+              "attachment": "central double entrance; side use not resolved",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1269.1,
+                969.8
+              ],
+              "center_local_xz": [
+                -56.402,
+                -117.3906
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8093404UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Upper rows complete within this street plane; ground lower edge and other exposed faces incomplete.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -27608,11 +28789,25 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B041-RIVER-WALK",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              1,
+              2
+            ],
+            "edge_chain_length_m": 7.8311,
+            "coverage": "East wall partial lower occlusion; entrance and opposite wall unresolved."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193801UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 284.717,
@@ -27927,6 +29122,116 @@
           "confidence": "high",
           "observations": "Low stone shop next to San Cayetano bridge; large rectangular timber glazed opening facing the walk and a smaller dark opening to its left. Red tile roof, two principal roof planes. Stone steps run along the left. Photograph is taken from above/bridge level; the window is not a tall ordinary portal.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B041-RIVER-WALK",
+          "view": "CAT-PHOTO:8193801UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193801UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Two east-facing timber window groups; small southern and larger northern group. The low roof in the foreground is not assigned to this body.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              1,
+              2
+            ],
+            "geometry_sha256": "ae9909c3625d285814a14d8cf1cab8b3bb5543e7c7b12ae26feedeaaaadc43c9",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -77.48935538472142,
+                  -92.50618953164667
+                ],
+                [
+                  -78.61995538475458,
+                  -99.88838953152299
+                ],
+                [
+                  -78.67025538469898,
+                  -100.2477395310998
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Long east face E01+E02 fronts the riverwalk; north endpoint is image right. South gable is visible beside stairs.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "G-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.585,
+                0.646
+              ],
+              "station_fraction": 0.7,
+              "station_interval": [
+                0.64,
+                0.76
+              ],
+              "attachment": "larger north group has timber balusters",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1497.6,
+                1240.3
+              ],
+              "center_local_xz": [
+                -78.3192,
+                -97.9248
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193801UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.721,
+                0.598
+              ],
+              "station_fraction": 0.3,
+              "station_interval": [
+                0.24,
+                0.36
+              ],
+              "attachment": "larger north group has timber balusters",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1845.8,
+                1148.2
+              ],
+              "center_local_xz": [
+                -77.845,
+                -94.8285
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193801UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "East wall partial lower occlusion; entrance and opposite wall unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -28221,11 +29526,27 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B042-RIVER",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              15,
+              1,
+              2,
+              3
+            ],
+            "edge_chain_length_m": 22.0501,
+            "coverage": "River main plane only. Small base vents, east return and San Cayetano street-facing wall not fully transcribed; annex ownership unresolved."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193802UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 282.257,
@@ -29025,8 +30346,722 @@
             "CAT-PHOTO:8193802UN6789S"
           ],
           "confidence": "high",
-          "observations": "White riverfront compound mass, stone/dressed-stone opening surrounds. Upper floor includes a continuous timber glazed gallery; lower three visible levels have unequal rectangular opening groups. West/main volume and lower east return do not share one uniform height. One underground source floor is visibly exposed on river side. Preserve cadastral building parts rather than replacing it by a simple four-storey rectangle.",
+          "observations": "White main riverfront mass shows five unequal opening groups in each of four exposed bands. Upper attachments are open timber balconies/solanas with discrete backing windows, not a continuous glazed gallery. Source parts are all three above-ground storeys; visible river exposure includes the below-street band. Lower east white annex is not assigned to this body until ownership is resolved. Compound roof and San Cayetano frontage remain incomplete.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B042-RIVER",
+          "view": "CAT-PHOTO:8193802UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193802UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Five unequal opening groups in four exposed river bands. Upper guards are OPEN timber balconies/solanas with discrete backing windows, not a continuous glazed gallery. Lower eastern white annex is not assigned to B042: all its locked parts have three above-ground floors.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              15,
+              1,
+              2,
+              3
+            ],
+            "geometry_sha256": "a79c5de5cb03c88cdc31da8be4b2cb41a8cbd4ca49145e3f11d57a254e498cae",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -62.685455384722445,
+                  -88.220389530994
+                ],
+                [
+                  -55.05345538473921,
+                  -85.0998895317316
+                ],
+                [
+                  -45.1904553847271,
+                  -81.0668895309791
+                ],
+                [
+                  -43.25145538471406,
+                  -80.27438953146338
+                ],
+                [
+                  -42.27545538474806,
+                  -79.87538953125477
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "River-facing near-collinear E15+E01+E02+E03 from west (image left) to east corner (image right); full main white river frontage and return corner match source shape.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U3-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.093,
+                0.325
+              ],
+              "station_fraction": 0.065,
+              "station_interval": [
+                0.005,
+                0.125
+              ],
+              "attachment": "left small and right long open timber balconies; windows behind guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U3",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                238.1,
+                624.0
+              ],
+              "center_local_xz": [
+                -61.3588,
+                -87.678
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U3-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.183,
+                0.309
+              ],
+              "station_fraction": 0.245,
+              "station_interval": [
+                0.185,
+                0.305
+              ],
+              "attachment": "left small and right long open timber balconies; windows behind guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U3",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                468.5,
+                593.3
+              ],
+              "center_local_xz": [
+                -57.685,
+                -86.1759
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U3-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.278,
+                0.3
+              ],
+              "station_fraction": 0.435,
+              "station_interval": [
+                0.375,
+                0.495
+              ],
+              "attachment": "left small and right long open timber balconies; windows behind guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U3",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                711.7,
+                576.0
+              ],
+              "center_local_xz": [
+                -53.8071,
+                -84.5903
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U3-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.404,
+                0.288
+              ],
+              "station_fraction": 0.66,
+              "station_interval": [
+                0.6,
+                0.72
+              ],
+              "attachment": "left small and right long open timber balconies; windows behind guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U3",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1034.2,
+                553.0
+              ],
+              "center_local_xz": [
+                -49.2149,
+                -82.7125
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U3-05",
+              "type": "window",
+              "image_center_fraction": [
+                0.526,
+                0.291
+              ],
+              "station_fraction": 0.88,
+              "station_interval": [
+                0.82,
+                0.94
+              ],
+              "attachment": "left small and right long open timber balconies; windows behind guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U3",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1346.6,
+                558.7
+              ],
+              "center_local_xz": [
+                -44.7248,
+                -80.8765
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.103,
+                0.422
+              ],
+              "station_fraction": 0.075,
+              "station_interval": [
+                0.015,
+                0.135
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                263.7,
+                810.2
+              ],
+              "center_local_xz": [
+                -61.1547,
+                -87.5945
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.187,
+                0.42
+              ],
+              "station_fraction": 0.25,
+              "station_interval": [
+                0.19,
+                0.31
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                478.7,
+                806.4
+              ],
+              "center_local_xz": [
+                -57.583,
+                -86.1341
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.279,
+                0.424
+              ],
+              "station_fraction": 0.44,
+              "station_interval": [
+                0.38,
+                0.5
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                714.2,
+                814.1
+              ],
+              "center_local_xz": [
+                -53.7051,
+                -84.5485
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.388,
+                0.425
+              ],
+              "station_fraction": 0.655,
+              "station_interval": [
+                0.595,
+                0.715
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                993.3,
+                816.0
+              ],
+              "center_local_xz": [
+                -49.317,
+                -82.7542
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-05",
+              "type": "window",
+              "image_center_fraction": [
+                0.508,
+                0.427
+              ],
+              "station_fraction": 0.88,
+              "station_interval": [
+                0.82,
+                0.94
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1300.5,
+                819.8
+              ],
+              "center_local_xz": [
+                -44.7248,
+                -80.8765
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.105,
+                0.522
+              ],
+              "station_fraction": 0.075,
+              "station_interval": [
+                0.015,
+                0.135
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                268.8,
+                1002.2
+              ],
+              "center_local_xz": [
+                -61.1547,
+                -87.5945
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.19,
+                0.523
+              ],
+              "station_fraction": 0.25,
+              "station_interval": [
+                0.19,
+                0.31
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                486.4,
+                1004.2
+              ],
+              "center_local_xz": [
+                -57.583,
+                -86.1341
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.282,
+                0.532
+              ],
+              "station_fraction": 0.44,
+              "station_interval": [
+                0.38,
+                0.5
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                721.9,
+                1021.4
+              ],
+              "center_local_xz": [
+                -53.7051,
+                -84.5485
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.393,
+                0.539
+              ],
+              "station_fraction": 0.655,
+              "station_interval": [
+                0.595,
+                0.715
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1006.1,
+                1034.9
+              ],
+              "center_local_xz": [
+                -49.317,
+                -82.7542
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-05",
+              "type": "window",
+              "image_center_fraction": [
+                0.509,
+                0.548
+              ],
+              "station_fraction": 0.88,
+              "station_interval": [
+                0.82,
+                0.94
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1303.0,
+                1052.2
+              ],
+              "center_local_xz": [
+                -44.7248,
+                -80.8765
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "R0-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.138,
+                0.628
+              ],
+              "station_fraction": 0.075,
+              "station_interval": [
+                0.015,
+                0.135
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "R0",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                353.3,
+                1205.8
+              ],
+              "center_local_xz": [
+                -61.1547,
+                -87.5945
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "R0-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.215,
+                0.643
+              ],
+              "station_fraction": 0.255,
+              "station_interval": [
+                0.195,
+                0.315
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "R0",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                550.4,
+                1234.6
+              ],
+              "center_local_xz": [
+                -57.4809,
+                -86.0924
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "R0-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.31,
+                0.657
+              ],
+              "station_fraction": 0.45,
+              "station_interval": [
+                0.39,
+                0.51
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "R0",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                793.6,
+                1261.4
+              ],
+              "center_local_xz": [
+                -53.501,
+                -84.4651
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "R0-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.408,
+                0.673
+              ],
+              "station_fraction": 0.67,
+              "station_interval": [
+                0.61,
+                0.73
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "R0",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1044.5,
+                1292.2
+              ],
+              "center_local_xz": [
+                -49.0108,
+                -82.629
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "R0-05",
+              "type": "window",
+              "image_center_fraction": [
+                0.522,
+                0.686
+              ],
+              "station_fraction": 0.895,
+              "station_interval": [
+                0.835,
+                0.955
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "R0",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1336.3,
+                1317.1
+              ],
+              "center_local_xz": [
+                -44.4186,
+                -80.7514
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193802UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "River main plane only. Small base vents, east return and San Cayetano street-facing wall not fully transcribed; annex ownership unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -29235,11 +31270,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B043-SOUTH",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              5
+            ],
+            "edge_chain_length_m": 8.0274,
+            "coverage": "Opening count complete on photographed south plane; other faces, metric heights and threshold incomplete."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193803UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 287.086,
@@ -29549,6 +31597,342 @@
           "confidence": "high",
           "observations": "White three-storey front. Stone ground base shows barred opening left, timber principal door near centre, small barred opening right. Middle and top rows each have three tall glazed door/window axes with individual iron guards. Timber frames and red tile eaves. Opening type of each tall glazed element must follow image, not a random one-balcony-per-front rule.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B043-SOUTH",
+          "view": "CAT-PHOTO:8193803UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193803UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Nine visible openings on the south front: six guarded tall glazed doors, two barred ground windows and central timber entrance. Side balcony is a separate return attachment.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              5
+            ],
+            "geometry_sha256": "c716d2a3abae6efa0431fd5e32031dd469d7f036a26b6c9cdde0fd1407760a25",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -56.5994553847122,
+                  -106.15538953151554
+                ],
+                [
+                  -64.59845538472291,
+                  -106.82988953124732
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "South E05 from east corner (image right) to west bridge-facing return (image left). Bridge context and two return corners identify front.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U2-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.328,
+                0.212
+              ],
+              "station_fraction": 0.79,
+              "station_interval": [
+                0.73,
+                0.85
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                839.7,
+                407.0
+              ],
+              "center_local_xz": [
+                -62.9187,
+                -106.6882
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.5,
+                0.207
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1280.0,
+                397.4
+              ],
+              "center_local_xz": [
+                -60.599,
+                -106.4926
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.695,
+                0.199
+              ],
+              "station_fraction": 0.2,
+              "station_interval": [
+                0.14,
+                0.26
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1779.2,
+                382.1
+              ],
+              "center_local_xz": [
+                -58.1993,
+                -106.2903
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.317,
+                0.493
+              ],
+              "station_fraction": 0.8,
+              "station_interval": [
+                0.74,
+                0.86
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                811.5,
+                946.6
+              ],
+              "center_local_xz": [
+                -62.9987,
+                -106.695
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.5,
+                0.487
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1280.0,
+                935.0
+              ],
+              "center_local_xz": [
+                -60.599,
+                -106.4926
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.704,
+                0.484
+              ],
+              "station_fraction": 0.19,
+              "station_interval": [
+                0.13,
+                0.25
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1802.2,
+                929.3
+              ],
+              "center_local_xz": [
+                -58.1193,
+                -106.2835
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-W-01",
+              "type": "barred_window",
+              "image_center_fraction": [
+                0.306,
+                0.79
+              ],
+              "station_fraction": 0.81,
+              "station_interval": [
+                0.75,
+                0.87
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-W",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                783.4,
+                1516.8
+              ],
+              "center_local_xz": [
+                -63.0786,
+                -106.7017
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-W-02",
+              "type": "barred_window",
+              "image_center_fraction": [
+                0.713,
+                0.792
+              ],
+              "station_fraction": 0.18,
+              "station_interval": [
+                0.12,
+                0.24
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-W",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1825.3,
+                1520.6
+              ],
+              "center_local_xz": [
+                -58.0393,
+                -106.2768
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-D-01",
+              "type": "principal_door",
+              "image_center_fraction": [
+                0.495,
+                0.847
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-D",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1267.2,
+                1626.2
+              ],
+              "center_local_xz": [
+                -60.599,
+                -106.4926
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193803UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Opening count complete on photographed south plane; other faces, metric heights and threshold incomplete.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -29789,11 +32173,35 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B044-JUNCTION-FRONT",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              8,
+              9
+            ],
+            "edge_chain_length_m": 7.1988,
+            "coverage": "Partial group count; flowers, vegetation and fence obscure edges."
+          },
+          {
+            "observation_id": "POT-B044-UPHILL-RETURN",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              6,
+              7
+            ],
+            "edge_chain_length_m": 15.6726,
+            "coverage": "Return openings visible but rear junction and roof levels incomplete."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193804UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 289.581,
@@ -30259,6 +32667,226 @@
           "confidence": "high",
           "observations": "Small stone volume at a sloping lane junction. Principal glazed timber door/shop window group below a timber gallery/flower balcony on the left front; exposed stone return has separate small window. Upper exterior level can appear as a second storey while the source records one above and one below; do not flatten adjacent street levels.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B044-JUNCTION-FRONT",
+          "view": "CAT-PHOTO:8193804UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193804UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "One visible compound opening group per exposed band; individual panes/door leaves are not independent wall openings.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              8,
+              9
+            ],
+            "geometry_sha256": "f424065fb94ddb02e5746b7eef93002d02d713ec9eb4c8022d97528ee0478a51",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -51.72945538471686,
+                  -104.8893895316869
+                ],
+                [
+                  -55.28995538473828,
+                  -100.86938953120261
+                ],
+                [
+                  -55.60995538474526,
+                  -99.06888953130692
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Short west-facing E08+E09 at lower lane junction; source southern corner is image right. Upper-floor exposure differs from uphill return.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U-01",
+              "type": "glazed_opening_group",
+              "image_center_fraction": [
+                0.338,
+                0.333
+              ],
+              "station_fraction": 0.49,
+              "station_interval": [
+                0.43,
+                0.55
+              ],
+              "attachment": "projecting timber balcony and flowers occlude segmentation",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                865.3,
+                639.4
+              ],
+              "center_local_xz": [
+                -54.0682,
+                -102.2488
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193804UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "commercial_door_window_group",
+              "image_center_fraction": [
+                0.383,
+                0.693
+              ],
+              "station_fraction": 0.44,
+              "station_interval": [
+                0.38,
+                0.5
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                980.5,
+                1330.6
+              ],
+              "center_local_xz": [
+                -53.8296,
+                -102.5182
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193804UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Partial group count; flowers, vegetation and fence obscure edges.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
+        },
+        {
+          "id": "POT-B044-UPHILL-RETURN",
+          "view": "CAT-PHOTO:8193804UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193804UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "One small high window and one farther uphill doorway on the long rubble-stone return.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              6,
+              7
+            ],
+            "geometry_sha256": "f424065fb94ddb02e5746b7eef93002d02d713ec9eb4c8022d97528ee0478a51",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -37.40945538470987,
+                  -98.54938953090459
+                ],
+                [
+                  -46.0094553847448,
+                  -102.02938953135163
+                ],
+                [
+                  -51.72945538471686,
+                  -104.8893895316869
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Long south wall E06+E07 faces sloping lane; E06 start is farther uphill (image right), E07 end near front (image left).",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.756,
+                0.423
+              ],
+              "station_fraction": 0.39,
+              "station_interval": [
+                0.33,
+                0.45
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1935.4,
+                812.2
+              ],
+              "center_local_xz": [
+                -43.0755,
+                -100.8421
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193804UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "door",
+              "image_center_fraction": [
+                0.854,
+                0.579
+              ],
+              "station_fraction": 0.13,
+              "station_interval": [
+                0.07,
+                0.19
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                2186.2,
+                1111.7
+              ],
+              "center_local_xz": [
+                -39.2981,
+                -99.3136
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193804UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Return openings visible but rear junction and roof levels incomplete.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -30538,11 +33166,27 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B045-LANE",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              9,
+              10,
+              11,
+              12
+            ],
+            "edge_chain_length_m": 13.2412,
+            "coverage": "Upper band count complete in view; full ground and farther small doorway ownership unresolved."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193805UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 286.179,
@@ -30920,8 +33564,260 @@
             "CAT-PHOTO:8193805UN6789S"
           ],
           "confidence": "high",
-          "observations": "White two-storey commercial front. Three upper windows visible, separate timber sills/frames and flower boxes. Ground shop opening/door group under a red tiled projecting canopy with timber supports. Left return extends round an irregular corner. Neighbour 8193806 stone facade is visible on right and must remain a separate body.",
+          "observations": "White lane frontage shows FOUR upper windows: two narrow farther uphill/riverward and two wide above the main timber shop. Two main commercial ground groups are visible under a red tiled canopy. Far small doorway and return ownership remain unresolved. Right stone/rendered B046 remains a separate body.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B045-LANE",
+          "view": "CAT-PHOTO:8193805UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193805UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "FOUR upper windows: two narrow farther uphill/riverward, two wide above the main timber shop. Two main ground groups are visible under canopy. Small far-left doorway is excluded pending body ownership.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              9,
+              10,
+              11,
+              12
+            ],
+            "geometry_sha256": "e0e9c6e9ae5941d1f900ce5d8e58e1b4e4e4aad5a906581dcb5e3e972482d41e",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -35.449455384747125,
+                  -97.62888953089714
+                ],
+                [
+                  -35.949455384747125,
+                  -97.0088895317167
+                ],
+                [
+                  -37.669455384719186,
+                  -94.84888953156769
+                ],
+                [
+                  -43.36945538473083,
+                  -87.6788895316422
+                ],
+                [
+                  -43.69545538473176,
+                  -87.26878953166306
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "West lane edge chain E09-E12 from south/B046 junction (image right) to northern river end (image left). The white wall and canopy terminate at stone B046.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.243,
+                0.408
+              ],
+              "station_fraction": 0.92,
+              "station_interval": [
+                0.86,
+                0.98
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                622.1,
+                783.4
+              ],
+              "center_local_xz": [
+                -43.0363,
+                -88.098
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193805UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.281,
+                0.355
+              ],
+              "station_fraction": 0.8,
+              "station_interval": [
+                0.74,
+                0.86
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                719.4,
+                681.6
+              ],
+              "center_local_xz": [
+                -42.0475,
+                -89.3418
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193805UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.415,
+                0.253
+              ],
+              "station_fraction": 0.51,
+              "station_interval": [
+                0.45,
+                0.57
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1062.4,
+                485.8
+              ],
+              "center_local_xz": [
+                -39.6579,
+                -92.3476
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193805UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.618,
+                0.134
+              ],
+              "station_fraction": 0.22,
+              "station_interval": [
+                0.16,
+                0.28
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1582.1,
+                257.3
+              ],
+              "center_local_xz": [
+                -37.2679,
+                -95.3531
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193805UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "shop_window",
+              "image_center_fraction": [
+                0.401,
+                0.696
+              ],
+              "station_fraction": 0.54,
+              "station_interval": [
+                0.48,
+                0.6
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1026.6,
+                1336.3
+              ],
+              "center_local_xz": [
+                -39.9051,
+                -92.0367
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193805UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-D-01",
+              "type": "shop_door_glazing_group",
+              "image_center_fraction": [
+                0.615,
+                0.744
+              ],
+              "station_fraction": 0.22,
+              "station_interval": [
+                0.16,
+                0.28
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-D",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1574.4,
+                1428.5
+              ],
+              "center_local_xz": [
+                -37.2679,
+                -95.3531
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193805UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Upper band count complete in view; full ground and farther small doorway ownership unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -31153,11 +34049,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B046-CANTABRA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              7
+            ],
+            "edge_chain_length_m": 9.1438,
+            "coverage": "U1 count complete; upper edge cropped and ground awning occlusion remain."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193806UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 290.703,
@@ -31395,8 +34304,233 @@
             "CAT-PHOTO:8193806UN6789S"
           ],
           "confidence": "medium",
-          "observations": "Light stone/dressed-stone three-storey front in narrow Cántabra view, tall glazed upper openings with individual iron guards. Ground shopfront is partly hidden by awning and perspective. Photo shows timber-framed/rendered neighbour across/behind lane; do not transfer its framing to this building.",
+          "observations": "Pale rendered three-storey street wall with dressed-stone surrounds. Three tall guarded groups in the fully visible upper band; higher band cropped. N10 ground entry is visible but shop is partly hidden by awning. Timber/ochre facade opposite is B004 and is not part of this building.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B046-CANTABRA",
+          "view": "CAT-PHOTO:8193806UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193806UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Rendered pale wall with dressed-stone surrounds. Three tall guarded U1 groups; U2 is cropped and two visible groups are retained without solved plan stations. Main ground N10 entry visible; shop behind awning unresolved. Opposite timber/ochre wall is B004.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              7
+            ],
+            "geometry_sha256": "d18922811fb3313e0cadf34359df72f484e6f58043295d6a4b9473420adc7b8f",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -23.228955384751316,
+                  -101.5593895316124
+                ],
+                [
+                  -31.779455384705216,
+                  -104.79938953090459
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Cántabra south face E07 from east B047 junction (image right) to west B045 corner (image left).",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U1-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.258,
+                0.58
+              ],
+              "station_fraction": 0.83,
+              "station_interval": [
+                0.77,
+                0.89
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                660.5,
+                1113.6
+              ],
+              "center_local_xz": [
+                -30.3259,
+                -104.2486
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193806UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.389,
+                0.474
+              ],
+              "station_fraction": 0.53,
+              "station_interval": [
+                0.47,
+                0.59
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                995.8,
+                910.1
+              ],
+              "center_local_xz": [
+                -27.7607,
+                -103.2766
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193806UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.658,
+                0.298
+              ],
+              "station_fraction": 0.19,
+              "station_interval": [
+                0.13,
+                0.25
+              ],
+              "attachment": "individual iron guards",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1684.5,
+                572.2
+              ],
+              "center_local_xz": [
+                -24.8536,
+                -102.175
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193806UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.293,
+                0.222
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                750.1,
+                426.2
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193806UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.41,
+                0.083
+              ],
+              "station_fraction": null,
+              "station_interval": null,
+              "attachment": null,
+              "position_state": "UNKNOWN",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1049.6,
+                159.4
+              ],
+              "center_local_xz": null,
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193806UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "entrance",
+              "image_center_fraction": [
+                0.67,
+                0.9
+              ],
+              "station_fraction": 0.16,
+              "station_interval": [
+                0.1,
+                0.22
+              ],
+              "attachment": "N10 lintel; bottom cropped",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1715.2,
+                1728.0
+              ],
+              "center_local_xz": [
+                -24.597,
+                -102.0778
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193806UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "U1 count complete; upper edge cropped and ground awning occlusion remain.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -31708,11 +34842,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B047-CANTABRA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              6
+            ],
+            "edge_chain_length_m": 7.7376,
+            "coverage": "U1 row observed; top band segmentation and full ground/river parts incomplete."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193807UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 288.203,
@@ -32189,6 +35336,243 @@
           "confidence": "medium",
           "observations": "Brick-clad upper front, unequal windows/solid bands, large timber-clad/glazed top band. Ground restaurant frontage beneath canopy; image catches stone neighbour to the right. Cadastral parts range from one to four above-ground storeys. The low river-side part is not to be raised to match the front.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B047-CANTABRA",
+          "view": "CAT-PHOTO:8193807UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193807UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Three shuttered windows in brick U1 band. One continuous top glazed band is visible but cropped; pane count not asserted. Left commercial group under awning and tall right entry are distinct.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              6
+            ],
+            "geometry_sha256": "7a2038ccef97273f46ddc93fe65bed423faa1565ee090d5a047eebc8415acab1",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -15.988955384702422,
+                  -98.82938953116536
+                ],
+                [
+                  -23.228955384751316,
+                  -101.5593895316124
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "South Cántabra E06: east boundary with B048 (image right) to west boundary with B046 (image left).",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U1-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.333,
+                0.49
+              ],
+              "station_fraction": 0.85,
+              "station_interval": [
+                0.79,
+                0.91
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                852.5,
+                940.8
+              ],
+              "center_local_xz": [
+                -22.143,
+                -101.1499
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193807UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.445,
+                0.388
+              ],
+              "station_fraction": 0.52,
+              "station_interval": [
+                0.46,
+                0.58
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1139.2,
+                745.0
+              ],
+              "center_local_xz": [
+                -19.7538,
+                -100.249
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193807UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.624,
+                0.244
+              ],
+              "station_fraction": 0.19,
+              "station_interval": [
+                0.13,
+                0.25
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1597.4,
+                468.5
+              ],
+              "center_local_xz": [
+                -17.3646,
+                -99.3481
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193807UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-01",
+              "type": "continuous_glazed_band",
+              "image_center_fraction": [
+                0.411,
+                0.168
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "band segmentation partly cropped",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1052.2,
+                322.6
+              ],
+              "center_local_xz": [
+                -19.609,
+                -100.1944
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193807UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "commercial_glazed_group",
+              "image_center_fraction": [
+                0.354,
+                0.872
+              ],
+              "station_fraction": 0.71,
+              "station_interval": [
+                0.65,
+                0.77
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                906.2,
+                1674.2
+              ],
+              "center_local_xz": [
+                -21.1294,
+                -100.7677
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193807UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-D-01",
+              "type": "residential_door",
+              "image_center_fraction": [
+                0.616,
+                0.839
+              ],
+              "station_fraction": 0.18,
+              "station_interval": [
+                0.12,
+                0.24
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-D",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1577.0,
+                1610.9
+              ],
+              "center_local_xz": [
+                -17.2922,
+                -99.3208
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193807UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "U1 row observed; top band segmentation and full ground/river parts incomplete.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -32501,11 +35885,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B048-CANTABRA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              7
+            ],
+            "edge_chain_length_m": 9.4499,
+            "coverage": "Six upper openings observed minimum; ground and all river-side parts incomplete."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193808UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 288.842,
@@ -32857,8 +36254,245 @@
             "CAT-PHOTO:8193808UN6789S"
           ],
           "confidence": "high",
-          "observations": "White upper front with repeated individual wrought-iron balconies on multiple floors; timber shutters and flower pots. Lower shop band and awning. Small horizontal opening appears beside right balcony axis. Different opening rhythm between storeys must be transcribed; source parts have one/three above and one/two below floors.",
+          "observations": "White upper front has at least three projecting iron balconies in each of two bands, with tall glazed doors, shutters and flowers. Ground wall hidden by awning. Black horizontal wall attachment at right is not a proven window. Ground, returns and compound roof coverage remain incomplete.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B048-CANTABRA",
+          "view": "CAT-PHOTO:8193808UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193808UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "At least three tall guarded groups per upper band, with clipped top/right and left boundaries. Black wall object at right is not a proven horizontal window. Lower commercial wall is hidden by awning.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              7
+            ],
+            "geometry_sha256": "cdaee4893d1d393bc4674bb76b6745aecf3de8ccc3823829177cc95670a1be0a",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -7.148955384735018,
+                  -95.48938953131437
+                ],
+                [
+                  -15.988955384702422,
+                  -98.82938953116536
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "South Cántabra E07 between brick B047 and brick B049; east end is image right.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U2-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.156,
+                0.43
+              ],
+              "station_fraction": 0.86,
+              "station_interval": [
+                0.8,
+                0.92
+              ],
+              "attachment": "individual projecting iron balconies",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                399.4,
+                825.6
+              ],
+              "center_local_xz": [
+                -14.7514,
+                -98.3618
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193808UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.33,
+                0.3
+              ],
+              "station_fraction": 0.54,
+              "station_interval": [
+                0.48,
+                0.6
+              ],
+              "attachment": "individual projecting iron balconies",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                844.8,
+                576.0
+              ],
+              "center_local_xz": [
+                -11.9226,
+                -97.293
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193808UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.59,
+                0.08
+              ],
+              "station_fraction": 0.2,
+              "station_interval": [
+                0.14,
+                0.26
+              ],
+              "attachment": "individual projecting iron balconies",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1510.4,
+                153.6
+              ],
+              "center_local_xz": [
+                -8.917,
+                -96.1574
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193808UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.104,
+                0.735
+              ],
+              "station_fraction": 0.87,
+              "station_interval": [
+                0.81,
+                0.93
+              ],
+              "attachment": "individual projecting iron balconies",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                266.2,
+                1411.2
+              ],
+              "center_local_xz": [
+                -14.8398,
+                -98.3952
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193808UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.28,
+                0.668
+              ],
+              "station_fraction": 0.54,
+              "station_interval": [
+                0.48,
+                0.6
+              ],
+              "attachment": "individual projecting iron balconies",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                716.8,
+                1282.6
+              ],
+              "center_local_xz": [
+                -11.9226,
+                -97.293
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193808UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "balcony_door",
+              "image_center_fraction": [
+                0.602,
+                0.45
+              ],
+              "station_fraction": 0.18,
+              "station_interval": [
+                0.12,
+                0.24
+              ],
+              "attachment": "individual projecting iron balconies",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1541.1,
+                864.0
+              ],
+              "center_local_xz": [
+                -8.7402,
+                -96.0906
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193808UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Six upper openings observed minimum; ground and all river-side parts incomplete.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -33218,11 +36852,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B049-CANTABRA",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              8
+            ],
+            "edge_chain_length_m": 6.6493,
+            "coverage": "U1 count complete; top glazing extent and ground right type/extent unresolved."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193809UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 289.779,
@@ -33640,8 +37287,212 @@
             "CAT-PHOTO:8193809UN6789S"
           ],
           "confidence": "medium",
-          "observations": "Very narrow commercial front: brick band, timber/glazed upper gallery, iron balcony guards and mixed upper windows. Ground restaurant door/window/sign group partly obscured by fixtures and perspective. Source parts vary from one to four above floors; do not repeat a single rectangular roof or balcony rule.",
+          "observations": "Brick upper row has two broad white-frame windows and a cropped timber glazed band above. Ground commercial entry/dark opening group partly hidden by boards. Iron balconies visible at left belong to B048, not this frontage. Different river-side parts retain their source floors.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B049-CANTABRA",
+          "view": "CAT-PHOTO:8193809UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193809UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Two broad white-frame windows in brick row. Upper timber glazing cropped. Ground left entrance and dark right group partly hidden by signs. Iron balconies visible to left belong to B048, not this front.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              8
+            ],
+            "geometry_sha256": "a8ba18ebea804e4a450fa6496ee94fe99b948ec0790fb2e4940b1736350c2ffe",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -0.92895538470475,
+                  -93.13888953160495
+                ],
+                [
+                  -7.148955384735018,
+                  -95.48938953131437
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "South Cántabra E08 from east B050 junction (image right) to west B048 junction (image left).",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U1-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.351,
+                0.326
+              ],
+              "station_fraction": 0.74,
+              "station_interval": [
+                0.68,
+                0.8
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                898.6,
+                625.9
+              ],
+              "center_local_xz": [
+                -5.5318,
+                -94.8783
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193809UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.52,
+                0.227
+              ],
+              "station_fraction": 0.27,
+              "station_interval": [
+                0.21,
+                0.33
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1331.2,
+                435.8
+              ],
+              "center_local_xz": [
+                -2.6084,
+                -93.7735
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193809UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-01",
+              "type": "timber_glazed_band",
+              "image_center_fraction": [
+                0.382,
+                0.072
+              ],
+              "station_fraction": 0.5,
+              "station_interval": [
+                0.44,
+                0.56
+              ],
+              "attachment": "top and pane segmentation cropped",
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                977.9,
+                138.2
+              ],
+              "center_local_xz": [
+                -4.039,
+                -94.3141
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193809UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "commercial_glazed_entry",
+              "image_center_fraction": [
+                0.349,
+                0.85
+              ],
+              "station_fraction": 0.73,
+              "station_interval": [
+                0.67,
+                0.79
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                893.4,
+                1632.0
+              ],
+              "center_local_xz": [
+                -5.4696,
+                -94.8548
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193809UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-R-01",
+              "type": "occluded_opening_group",
+              "image_center_fraction": [
+                0.54,
+                0.853
+              ],
+              "station_fraction": 0.25,
+              "station_interval": [
+                0.19,
+                0.31
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-R",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1382.4,
+                1637.8
+              ],
+              "center_local_xz": [
+                -2.484,
+                -93.7265
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193809UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "U1 count complete; top glazing extent and ground right type/extent unresolved.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {
@@ -33930,11 +37781,24 @@
         "method": "Minimum rotated rectangle; not frontage."
       },
       "frontage_m": {
-        "value": null,
-        "state": "UNKNOWN",
-        "sources": [],
-        "confidence": "none",
-        "method": "Must identify the referenced facade plane; oriented dimensions are not frontage."
+        "value": [
+          {
+            "observation_id": "POT-B050-ROAD",
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              3
+            ],
+            "edge_chain_length_m": 17.3294,
+            "coverage": "Main upper rows observed; ground under sign, lower edges and curved return remain incomplete."
+          }
+        ],
+        "state": "DERIVED",
+        "sources": [
+          "CAT-PHOTO:8193810UN6789S",
+          "CAT-BU"
+        ],
+        "confidence": "medium",
+        "method": "Lengths of photographically registered source wall chains, not an oriented rectangle or a complete exterior frontage survey."
       },
       "dem_centroid_m": {
         "value": 292.855,
@@ -34463,8 +38327,608 @@
             "CAT-PHOTO:8193810UN6789S"
           ],
           "confidence": "high",
-          "observations": "Pale rendered wide terminal river/road front. Three storeys visible on main face with unequal two-window groups and tall glazed gallery bands. Ground has shop/service openings with stone base. Lower annex on left and rounded/right return differ in massing. Main opening groups are not centered identical bays.",
+          "observations": "Main road frontage has six windows in each of two upper bands; two per row sit inside projecting metal/orange glazed bays. Ground left glazed entrance and four display groups are visible. Large pharmacy sign obscures another bay; no opening inferred behind it. Curved north return and Cántabra-side junction are separate planes.",
           "opening_coordinates": null
+        },
+        {
+          "id": "POT-B050-ROAD",
+          "view": "CAT-PHOTO:8193810UN6789S",
+          "state": "VISUAL_ESTIMATE",
+          "sources": [
+            "CAT-PHOTO:8193810UN6789S",
+            "CAT-BU"
+          ],
+          "confidence": "medium",
+          "observations": "Six windows in each main upper band; second and fifth are within projecting metal/orange glazed bays. Ground: left glazed entry plus four visible display groups. Large pharmacy sign obscures another bay; no opening is inferred behind it. Curved/right return excluded from this plane.",
+          "registration": {
+            "kind": "footprint",
+            "ring_edge_numbers": [
+              3
+            ],
+            "geometry_sha256": "453ba3a261cb43dac2283d58fd242de3f0104c5e61c65afbe4709838925a461b",
+            "geometry_local": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  -0.8579553847084753,
+                  -73.12888953089714
+                ],
+                [
+                  5.701544615265448,
+                  -89.1688895309344
+                ]
+              ]
+            },
+            "station_direction": "Start to end of the unchanged source edge chain",
+            "basis": "Main east road wall E03 from north (image right) to south (image left); rounded north return and Cántabra terminal corner distinguish plane.",
+            "state": "VISUAL_ESTIMATE"
+          },
+          "opening_coordinates": [
+            {
+              "id": "U2-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.19,
+                0.272
+              ],
+              "station_fraction": 0.91,
+              "station_interval": [
+                0.85,
+                0.97
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                486.4,
+                522.2
+              ],
+              "center_local_xz": [
+                5.1112,
+                -87.7253
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.268,
+                0.271
+              ],
+              "station_fraction": 0.8,
+              "station_interval": [
+                0.74,
+                0.86
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                686.1,
+                520.3
+              ],
+              "center_local_xz": [
+                4.3896,
+                -85.9609
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.396,
+                0.282
+              ],
+              "station_fraction": 0.61,
+              "station_interval": [
+                0.55,
+                0.67
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1013.8,
+                541.4
+              ],
+              "center_local_xz": [
+                3.1433,
+                -82.9133
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.533,
+                0.29
+              ],
+              "station_fraction": 0.42,
+              "station_interval": [
+                0.36,
+                0.48
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1364.5,
+                556.8
+              ],
+              "center_local_xz": [
+                1.897,
+                -79.8657
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-05",
+              "type": "window",
+              "image_center_fraction": [
+                0.663,
+                0.29
+              ],
+              "station_fraction": 0.23,
+              "station_interval": [
+                0.17,
+                0.29
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1697.3,
+                556.8
+              ],
+              "center_local_xz": [
+                0.6507,
+                -76.8181
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U2-06",
+              "type": "window",
+              "image_center_fraction": [
+                0.738,
+                0.29
+              ],
+              "station_fraction": 0.11,
+              "station_interval": [
+                0.05,
+                0.17
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U2",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1889.3,
+                556.8
+              ],
+              "center_local_xz": [
+                -0.1364,
+                -74.8933
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-01",
+              "type": "window",
+              "image_center_fraction": [
+                0.184,
+                0.424
+              ],
+              "station_fraction": 0.92,
+              "station_interval": [
+                0.86,
+                0.98
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                471.0,
+                814.1
+              ],
+              "center_local_xz": [
+                5.1768,
+                -87.8857
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-02",
+              "type": "window",
+              "image_center_fraction": [
+                0.267,
+                0.425
+              ],
+              "station_fraction": 0.8,
+              "station_interval": [
+                0.74,
+                0.86
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                683.5,
+                816.0
+              ],
+              "center_local_xz": [
+                4.3896,
+                -85.9609
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-03",
+              "type": "window",
+              "image_center_fraction": [
+                0.391,
+                0.433
+              ],
+              "station_fraction": 0.61,
+              "station_interval": [
+                0.55,
+                0.67
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1001.0,
+                831.4
+              ],
+              "center_local_xz": [
+                3.1433,
+                -82.9133
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-04",
+              "type": "window",
+              "image_center_fraction": [
+                0.532,
+                0.438
+              ],
+              "station_fraction": 0.42,
+              "station_interval": [
+                0.36,
+                0.48
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1361.9,
+                841.0
+              ],
+              "center_local_xz": [
+                1.897,
+                -79.8657
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-05",
+              "type": "window",
+              "image_center_fraction": [
+                0.663,
+                0.438
+              ],
+              "station_fraction": 0.23,
+              "station_interval": [
+                0.17,
+                0.29
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1697.3,
+                841.0
+              ],
+              "center_local_xz": [
+                0.6507,
+                -76.8181
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "U1-06",
+              "type": "window",
+              "image_center_fraction": [
+                0.741,
+                0.44
+              ],
+              "station_fraction": 0.11,
+              "station_interval": [
+                0.05,
+                0.17
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "U1",
+              "row_count_state": "OBSERVED_COMPLETE_ROW",
+              "image_center_px": [
+                1897.0,
+                844.8
+              ],
+              "center_local_xz": [
+                -0.1364,
+                -74.8933
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-01",
+              "type": "shop_entry",
+              "image_center_fraction": [
+                0.181,
+                0.589
+              ],
+              "station_fraction": 0.92,
+              "station_interval": [
+                0.86,
+                0.98
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                463.4,
+                1130.9
+              ],
+              "center_local_xz": [
+                5.1768,
+                -87.8857
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-W-01",
+              "type": "shop_display_window",
+              "image_center_fraction": [
+                0.266,
+                0.596
+              ],
+              "station_fraction": 0.8,
+              "station_interval": [
+                0.74,
+                0.86
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-W",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                681.0,
+                1144.3
+              ],
+              "center_local_xz": [
+                4.3896,
+                -85.9609
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-W-02",
+              "type": "shop_display_window",
+              "image_center_fraction": [
+                0.405,
+                0.608
+              ],
+              "station_fraction": 0.6,
+              "station_interval": [
+                0.54,
+                0.66
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-W",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1036.8,
+                1167.4
+              ],
+              "center_local_xz": [
+                3.0777,
+                -82.7529
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-W-03",
+              "type": "shop_display_window",
+              "image_center_fraction": [
+                0.507,
+                0.609
+              ],
+              "station_fraction": 0.43,
+              "station_interval": [
+                0.37,
+                0.49
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-W",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1297.9,
+                1169.3
+              ],
+              "center_local_xz": [
+                1.9626,
+                -80.0261
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            },
+            {
+              "id": "G-W-04",
+              "type": "shop_display_window",
+              "image_center_fraction": [
+                0.744,
+                0.615
+              ],
+              "station_fraction": 0.11,
+              "station_interval": [
+                0.05,
+                0.17
+              ],
+              "attachment": null,
+              "position_state": "VISUAL_ESTIMATE",
+              "row": "G-W",
+              "row_count_state": "OBSERVED_MINIMUM",
+              "image_center_px": [
+                1904.6,
+                1180.8
+              ],
+              "center_local_xz": [
+                -0.1364,
+                -74.8933
+              ],
+              "absolute_y_m": null,
+              "metric_width_m": null,
+              "state": "VISUAL_ESTIMATE",
+              "confidence": "medium",
+              "sources": [
+                "CAT-PHOTO:8193810UN6789S",
+                "CAT-BU"
+              ]
+            }
+          ],
+          "coverage": "Main upper rows observed; ground under sign, lower edges and curved return remain incomplete.",
+          "complete_exterior": false,
+          "position_method": "Manual approximate station ranges after face/adjacency registration; image centers retained. No equal-bay inference, solved camera or metric height claim."
         }
       ],
       "material_observations": {

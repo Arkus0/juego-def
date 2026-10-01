@@ -67,6 +67,24 @@ def false_gate(k,d):
         d['gates'][0]['human_decision']=None
 run_case('Owner gate needs a recorded human decision', false_gate, 'Owner approval lacks direct human decision')
 
+def opening_station(k,d):
+    if k=='FACADE_TRANSCRIPTION.json':d['facades'][0]['rows'][0]['openings'][0]['station_fraction']=1.2
+run_case('A numerical opening outside its wall chain is rejected', opening_station, 'Opening station outside registered source edges')
+
+def part_changed(k,d):
+    if k=='BUILDING_LEDGER.json':
+        part=next(b for b in d['buildings'] if b['id']=='POT-B006')['storey_parts']['value'][2]
+        part['geometry']['coordinates'][0][0][0]+=.75
+run_case('Recessed facade cannot silently move to a changed part boundary',part_changed,'Registered source plane geometry changed')
+
+def photo_changed(k,d):
+    if k=='FACADE_TRANSCRIPTION.json':d['facades'][0]['photo_sha256']='0'*64
+run_case('An unchanged photo URL cannot replace pinned transcription bytes',photo_changed,'Transcription photo identity changed')
+
+def lidar_changed(k,d):
+    if k=='LIDAR_CONTROLS.json':d['buildings'][0]['point_height_percentiles_m']['p50']+=2
+run_case('A fabricated height cannot hide in valid point-source evidence',lidar_changed,'LiDAR controls differ from pinned point-source derivation')
+
 # Consume every evidence artifact and audit all structured bytes, not just a small fixture.
 inventory=[]; link_errors=[]
 for path in sorted(reference.OUT.rglob('*')):

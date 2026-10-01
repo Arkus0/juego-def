@@ -23,7 +23,9 @@
       "code": 1,
       "detected_errors": [
         "Sector membership not exact partition",
-        "Uncounted interior body 8093401UN6789S/surface-1"
+        "Uncounted interior body 8093401UN6789S/surface-1",
+        "LiDAR controls differ from pinned point-source derivation",
+        "Transcription refers to absent building"
       ]
     },
     {
@@ -41,7 +43,6 @@
       "code": 1,
       "detected_errors": [
         "Ready flag contradicts recorded blockers POT-B042",
-        "Ready flag contradicts UNKNOWN POT-B042:frontage_m",
         "Ready flag contradicts UNKNOWN POT-B042:ground_threshold_elevation_m",
         "Ready flag contradicts UNKNOWN POT-B042:visible_height_m",
         "Ready flag contradicts UNKNOWN POT-B042:roof",
@@ -54,6 +55,38 @@
       "code": 1,
       "detected_errors": [
         "Owner approval lacks direct human decision Exact Boundary Gate"
+      ]
+    },
+    {
+      "case": "A numerical opening outside its wall chain is rejected",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Invalid facade registration POT-B004: Opening station outside registered source edges POT-B004-CIMAVILLA"
+      ]
+    },
+    {
+      "case": "Recessed facade cannot silently move to a changed part boundary",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Invalid facade registration POT-B006: Registered source plane geometry changed POT-B006-UPPER-SOPORTAL"
+      ]
+    },
+    {
+      "case": "An unchanged photo URL cannot replace pinned transcription bytes",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "Invalid facade registration POT-B004: Transcription photo identity changed POT-B004-CIMAVILLA"
+      ]
+    },
+    {
+      "case": "A fabricated height cannot hide in valid point-source evidence",
+      "passed": true,
+      "code": 1,
+      "detected_errors": [
+        "LiDAR controls differ from pinned point-source derivation"
       ]
     }
   ],
@@ -71,8 +104,8 @@
     },
     {
       "file": "Docs/evidence/WP-POTES-00/BUILDING_LEDGER.json",
-      "canonical_bytes": 1148372,
-      "sha256_lf_text_or_binary": "65059a7700743221073fd336d206ce07249e80dcf2d4a42fe7ce6860d6dfb426",
+      "canonical_bytes": 1291782,
+      "sha256_lf_text_or_binary": "e7e50c1143082dc3f69ae007792c4cde195ec4536b4dfcbf0ba89337c1b12667",
       "json_root": [
         "schema_version",
         "crs",
@@ -109,8 +142,8 @@
     },
     {
       "file": "Docs/evidence/WP-POTES-00/FACADE_OBSERVATIONS.json",
-      "canonical_bytes": 11146,
-      "sha256_lf_text_or_binary": "bcbc158ceaa3c13759370452f356c50d94bc1ea2733a1af1efe36f9f250ce0d4",
+      "canonical_bytes": 12981,
+      "sha256_lf_text_or_binary": "d782e54587192aa4150f8905e1d110474dd4d6dd22228c1acf224cead8d33c69",
       "json_root": [
         "8093401UN6789S",
         "8093402UN6789S",
@@ -128,6 +161,20 @@
         "8193809UN6789S",
         "8193810UN6789S",
         "8193811UN6789S"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/FACADE_TRANSCRIPTION.json",
+      "canonical_bytes": 70308,
+      "sha256_lf_text_or_binary": "892abe60d78c24e0f65f1187f7ee98a30702a92f792a9f67aba654bcc2e8afdb",
+      "json_root": [
+        "schema",
+        "status",
+        "epoch_warning",
+        "position_method",
+        "row_convention",
+        "complete_exterior",
+        "facades"
       ]
     },
     {
@@ -198,6 +245,19 @@
         "8194503UN6789S/surface-1",
         "8194702UN6789S/surface-1",
         "8194703UN6789S/surface-1"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/LIDAR_CONTROLS.json",
+      "canonical_bytes": 75401,
+      "sha256_lf_text_or_binary": "4b8ec563b085d6d32ce220ea3323f39cf4b1d990f26fb9b7a1376c0a82502f7e",
+      "json_root": [
+        "status",
+        "source_crop",
+        "attribution",
+        "buildings",
+        "public_class_point_counts",
+        "unresolved"
       ]
     },
     {
@@ -318,8 +378,8 @@
     },
     {
       "file": "Docs/evidence/WP-POTES-00/sector-01/BUILDING_LEDGER.json",
-      "canonical_bytes": 290155,
-      "sha256_lf_text_or_binary": "700a23bfc7481ff3bf97c78c93be811d21c98e10ee70482c7bab8f85fb362f5b",
+      "canonical_bytes": 433565,
+      "sha256_lf_text_or_binary": "1c77568651bffad3bbf7dac056cabbd4a8f806c3abc36c1661680e854bf7bf1f",
       "json_root": [
         "buildings"
       ]
@@ -341,8 +401,8 @@
     },
     {
       "file": "Docs/evidence/WP-POTES-00/sector-01/REFERENCE_INDEX.md",
-      "canonical_bytes": 19317,
-      "sha256_lf_text_or_binary": "7a6fcdf1a0822668584ef9f4267ada6ad7d8a90adb0b34243696a283c4df0960"
+      "canonical_bytes": 32795,
+      "sha256_lf_text_or_binary": "ef6aa616f6ca8db5a5c574f289369d26b6179708ed1fb669d53626f5de391f64"
     },
     {
       "file": "Docs/evidence/WP-POTES-00/sector-01/SECTOR_GEOMETRY.geojson",
@@ -410,6 +470,38 @@
       "json_root": "array"
     },
     {
+      "file": "Docs/evidence/WP-POTES-00/sources/LIDAR_ACQUISITION.json",
+      "canonical_bytes": 1586,
+      "sha256_lf_text_or_binary": "0b4590a2c48a88d42120150cfbbb863e91eba8298e56c6bce78f998ca688c32b",
+      "json_root": [
+        "source_id",
+        "disposition",
+        "catalog_url",
+        "acquired_utc",
+        "file",
+        "raw_bytes",
+        "raw_sha256",
+        "source_crs",
+        "heights",
+        "license_url",
+        "license",
+        "attribution",
+        "crop_bounds_metric",
+        "crop_file",
+        "crop_sha256",
+        "crop_point_count",
+        "crop_class_counts",
+        "crop_method",
+        "tools",
+        "regional_zip"
+      ]
+    },
+    {
+      "file": "Docs/evidence/WP-POTES-00/sources/LIDAR_S01.csv.gz",
+      "canonical_bytes": 238847,
+      "sha256_lf_text_or_binary": "ace0554c486f65a3618d863878e84a6a8b197e4fbef9e16fc29b84b1e2b1f78e"
+    },
+    {
       "file": "Docs/evidence/WP-POTES-00/sources/LOCAL_SOURCE_PRODUCT.json",
       "canonical_bytes": 2094781,
       "sha256_lf_text_or_binary": "34a32ec41bc44b9fe31eef340ac6041fa0d551d4e0069b20f7b0a5711fd61cf9",
@@ -468,8 +560,8 @@
     },
     {
       "file": "Docs/evidence/WP-POTES-00/VALIDATION.json",
-      "canonical_bytes": 897,
-      "sha256_lf_text_or_binary": "4493ef023a5824b18b40144ac579063e1d1134683b4f348ed983212854c582a6",
+      "canonical_bytes": 964,
+      "sha256_lf_text_or_binary": "3ce9728cf593fb1f8292a8f012fcff11c8bd668733ee35fbd625807cde86d1d4",
       "json_root": [
         "geometry_integrity_errors",
         "evidence_integrity_errors",

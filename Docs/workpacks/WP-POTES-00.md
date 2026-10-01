@@ -11,6 +11,26 @@ juego-def can replace the current authored/procedural CASCO spatial authority wi
 
 This WP does **not** rebuild the casco in Unity.
 
+### Owner clarification — 2026-10-01
+
+The Owner clarified during Worker continuation that the intended result is the
+structure for a **Dreamcast-style videogame map**, authored by the map Worker
+without procedural layout, rather than a Google Maps-like reconstruction product.
+The direct instruction and bounded implementation interpretation are recorded in
+`Docs/evidence/WP-POTES-00/OWNER_STRUCTURE_CLARIFICATION.md`.
+
+Consequently, source-backed visual estimates and explicit structural construction
+controls can close the handoff without a forensic survey of every facade detail,
+camera, threshold or stair riser. Preserve individual footprints, real connections,
+major massing/roof silhouette, playable levels, principal accesses and observed
+opening rhythms. Unseen physical facts remain UNKNOWN; missing details are not
+permission for random/procedural invention. A material gap must be resolved as a
+source control or an explicit bounded game-reconstruction instruction **in this
+WP**, not independent factual research assigned to the visual successor.
+
+This clarification changes the required reference detail, not the selected place,
+body count, perimeter, no-Unity scope or the two mandatory Owner gates.
+
 It fixes:
 
 - the exact real-world perimeter;

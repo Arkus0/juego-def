@@ -39,6 +39,33 @@ EXIF below is a file timestamp, not a certified survey date.
 Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093401UN6789S`):
 Corner volume: exposed timber grid over pale ochre render on two visible upper storeys; unequal wall planes; projecting eaves. Left return and right front have different opening rhythm. The visible facade is not a standard identical-bay row.
 
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093401UN6789S`):
+Three unequal opening groups in each visible upper band; the middle top group is tall and guarded. Ground is outside the usable frame.
+
+Registered plane `POT-B004-CIMAVILLA`: **footprint**, ring edges `[2]`; 6 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Upper two bands partly visible; ground and principal entrance unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| U1 | 3 | OBSERVED_MINIMUM |
+| U2 | 2 | OBSERVED_MINIMUM |
+| U2-B | 1 | OBSERVED_MINIMUM |
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093401UN6789S`):
+Left plane has at least two guarded opening groups per upper band; its distant end is cropped/oblique. No station is solved from this photo.
+
+Registered plane `POT-B004-CANTABRA`: **footprint**, ring edges `[1]`; 4 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Partial upper return. Numerical plan stations UNKNOWN; ground and far endpoint unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| U1 | 2 | OBSERVED_MINIMUM |
+| U2 | 2 | OBSERVED_MINIMUM |
+
 Blocking facts:
 
 - Principal entrance and complete ground storey are occluded.
@@ -56,7 +83,33 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093402UN6789S`):
-Ochre rendered three-storey volume. Visible return has two narrow openings on each of two upper rows; stone ground base. Small roofed garden/gate wall in front obscures ground openings. Do not count the gate as the building's principal door without resolving the entrance.
+Ochre corner volume. Near garden return has one horizontal and one tall opening in the visible band. Oblique street plane has at least three tall upper groups and one partially visible commercial glazing group behind signs. Higher bands are cropped. Foreground gate is a separate wall opening, not established as the principal building door.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093402UN6789S`):
+At least three tall upper groups on the oblique street plane and one ground commercial glazing group behind the sign. Higher/cropped bands cannot be replicated.
+
+Registered plane `POT-B005-CIMAVILLA`: **footprint**, ring edges `[4]`; 4 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Partial street plane; station, full ground and upper coverage UNKNOWN.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| U | 3 | OBSERVED_MINIMUM |
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093402UN6789S`):
+Two differently proportioned openings behind branches. The large foreground gate belongs to a separate wall and is not the principal building door.
+
+Registered plane `POT-B005-GARDEN-RETURN`: **footprint**, ring edges `[5]`; 2 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+One partially occluded band only; ground remains hidden by garden wall.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| U | 1 | OBSERVED_MINIMUM |
+| U-T | 1 | OBSERVED_MINIMUM |
 
 Blocking facts:
 
@@ -74,7 +127,19 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093403UN6789S`):
-Front rendered ochre; two glazed balcony doors with iron guards on visible upper frontage; simple dark joinery. A lower projecting lean-to/canopy on the left belongs to a distinct source part. Street-facing shops and returns have different levels. Photograph includes adjacent 8093404 frontage to the right; do not extend its three axes onto this house.
+Rendered upper wall has THREE tall guarded glazed openings above the soportal. It is recessed behind the projecting porch edge; register this wall to source part3, not the footprint outer porch line. Return has a separate closed shutter. Ground rear opening coverage is incomplete. Right-hand Casa Favila frontage belongs to B007.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093403UN6789S`):
+Three tall guarded openings above the soportal, not two. Lower columns project outward from the registered upper wall. Return shutter excluded from this plane.
+
+Registered plane `POT-B006-UPPER-SOPORTAL`: **building_part**, ring edges `[1]`; 3 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Main upper wall; ground rear openings and return window position remain unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| U | 3 | OBSERVED_MINIMUM |
 
 Blocking facts:
 
@@ -94,6 +159,20 @@ Blocking facts:
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8093404UN6789S`):
 Ochre three-storey front. Upper two storeys each show three glazed balcony-door axes. Top storey has one long shared iron balcony; middle storey has three individual guards. Ground has three visible glazed opening/door groups. Principal floor pattern may not be randomized to one balcony door per facade.
 
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8093404UN6789S`):
+Three axes in each upper band; one shared balcony on top, three guards beneath. Three ground opening groups visible, bottom edges cropped.
+
+Registered plane `POT-B007-CANTABRA`: **footprint**, ring edges `[2]`; 9 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Upper rows complete within this street plane; ground lower edge and other exposed faces incomplete.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 3 | OBSERVED_MINIMUM |
+| U1 | 3 | OBSERVED_COMPLETE_ROW |
+| U2 | 3 | OBSERVED_COMPLETE_ROW |
+
 Blocking facts:
 
 - Metric opening centres/widths and visible height control.
@@ -112,6 +191,18 @@ Blocking facts:
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193801UN6789S`):
 Low stone shop next to San Cayetano bridge; large rectangular timber glazed opening facing the walk and a smaller dark opening to its left. Red tile roof, two principal roof planes. Stone steps run along the left. Photograph is taken from above/bridge level; the window is not a tall ordinary portal.
 
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193801UN6789S`):
+Two east-facing timber window groups; small southern and larger northern group. The low roof in the foreground is not assigned to this body.
+
+Registered plane `POT-B041-RIVER-WALK`: **footprint**, ring edges `[1, 2]`; 2 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+East wall partial lower occlusion; entrance and opposite wall unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 2 | OBSERVED_MINIMUM |
+
 Blocking facts:
 
 - Entrance on bridge/street side and other exposed faces.
@@ -128,7 +219,22 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193802UN6789S`):
-White riverfront compound mass, stone/dressed-stone opening surrounds. Upper floor includes a continuous timber glazed gallery; lower three visible levels have unequal rectangular opening groups. West/main volume and lower east return do not share one uniform height. One underground source floor is visibly exposed on river side. Preserve cadastral building parts rather than replacing it by a simple four-storey rectangle.
+White main riverfront mass shows five unequal opening groups in each of four exposed bands. Upper attachments are open timber balconies/solanas with discrete backing windows, not a continuous glazed gallery. Source parts are all three above-ground storeys; visible river exposure includes the below-street band. Lower east white annex is not assigned to this body until ownership is resolved. Compound roof and San Cayetano frontage remain incomplete.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193802UN6789S`):
+Five unequal opening groups in four exposed river bands. Upper guards are OPEN timber balconies/solanas with discrete backing windows, not a continuous glazed gallery. Lower eastern white annex is not assigned to B042: all its locked parts have three above-ground floors.
+
+Registered plane `POT-B042-RIVER`: **footprint**, ring edges `[15, 1, 2, 3]`; 20 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+River main plane only. Small base vents, east return and San Cayetano street-facing wall not fully transcribed; annex ownership unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| R0 | 5 | OBSERVED_COMPLETE_ROW |
+| U1 | 5 | OBSERVED_COMPLETE_ROW |
+| U2 | 5 | OBSERVED_COMPLETE_ROW |
+| U3 | 5 | OBSERVED_COMPLETE_ROW |
 
 Blocking facts:
 
@@ -149,6 +255,21 @@ Blocking facts:
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193803UN6789S`):
 White three-storey front. Stone ground base shows barred opening left, timber principal door near centre, small barred opening right. Middle and top rows each have three tall glazed door/window axes with individual iron guards. Timber frames and red tile eaves. Opening type of each tall glazed element must follow image, not a random one-balcony-per-front rule.
 
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193803UN6789S`):
+Nine visible openings on the south front: six guarded tall glazed doors, two barred ground windows and central timber entrance. Side balcony is a separate return attachment.
+
+Registered plane `POT-B043-SOUTH`: **footprint**, ring edges `[5]`; 9 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Opening count complete on photographed south plane; other faces, metric heights and threshold incomplete.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G-D | 1 | OBSERVED_COMPLETE_ROW |
+| G-W | 2 | OBSERVED_COMPLETE_ROW |
+| U1 | 3 | OBSERVED_COMPLETE_ROW |
+| U2 | 3 | OBSERVED_COMPLETE_ROW |
+
 Blocking facts:
 
 - Metric centres/widths and floor heights.
@@ -167,6 +288,32 @@ Blocking facts:
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193804UN6789S`):
 Small stone volume at a sloping lane junction. Principal glazed timber door/shop window group below a timber gallery/flower balcony on the left front; exposed stone return has separate small window. Upper exterior level can appear as a second storey while the source records one above and one below; do not flatten adjacent street levels.
 
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193804UN6789S`):
+One visible compound opening group per exposed band; individual panes/door leaves are not independent wall openings.
+
+Registered plane `POT-B044-JUNCTION-FRONT`: **footprint**, ring edges `[8, 9]`; 2 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Partial group count; flowers, vegetation and fence obscure edges.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| U | 1 | OBSERVED_MINIMUM |
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193804UN6789S`):
+One small high window and one farther uphill doorway on the long rubble-stone return.
+
+Registered plane `POT-B044-UPHILL-RETURN`: **footprint**, ring edges `[6, 7]`; 2 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Return openings visible but rear junction and roof levels incomplete.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| U | 1 | OBSERVED_MINIMUM |
+
 Blocking facts:
 
 - Metric positions and side opening count.
@@ -182,7 +329,21 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193805UN6789S`):
-White two-storey commercial front. Three upper windows visible, separate timber sills/frames and flower boxes. Ground shop opening/door group under a red tiled projecting canopy with timber supports. Left return extends round an irregular corner. Neighbour 8193806 stone facade is visible on right and must remain a separate body.
+White lane frontage shows FOUR upper windows: two narrow farther uphill/riverward and two wide above the main timber shop. Two main commercial ground groups are visible under a red tiled canopy. Far small doorway and return ownership remain unresolved. Right stone/rendered B046 remains a separate body.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193805UN6789S`):
+FOUR upper windows: two narrow farther uphill/riverward, two wide above the main timber shop. Two main ground groups are visible under canopy. Small far-left doorway is excluded pending body ownership.
+
+Registered plane `POT-B045-LANE`: **footprint**, ring edges `[9, 10, 11, 12]`; 6 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Upper band count complete in view; full ground and farther small doorway ownership unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| G-D | 1 | OBSERVED_MINIMUM |
+| U | 4 | OBSERVED_COMPLETE_ROW |
 
 Blocking facts:
 
@@ -200,7 +361,21 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193806UN6789S`):
-Light stone/dressed-stone three-storey front in narrow Cántabra view, tall glazed upper openings with individual iron guards. Ground shopfront is partly hidden by awning and perspective. Photo shows timber-framed/rendered neighbour across/behind lane; do not transfer its framing to this building.
+Pale rendered three-storey street wall with dressed-stone surrounds. Three tall guarded groups in the fully visible upper band; higher band cropped. N10 ground entry is visible but shop is partly hidden by awning. Timber/ochre facade opposite is B004 and is not part of this building.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193806UN6789S`):
+Rendered pale wall with dressed-stone surrounds. Three tall guarded U1 groups; U2 is cropped and two visible groups are retained without solved plan stations. Main ground N10 entry visible; shop behind awning unresolved. Opposite timber/ochre wall is B004.
+
+Registered plane `POT-B046-CANTABRA`: **footprint**, ring edges `[7]`; 6 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+U1 count complete; upper edge cropped and ground awning occlusion remain.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| U1 | 3 | OBSERVED_COMPLETE_ROW |
+| U2 | 2 | OBSERVED_MINIMUM |
 
 Blocking facts:
 
@@ -220,6 +395,21 @@ Blocking facts:
 Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193807UN6789S`):
 Brick-clad upper front, unequal windows/solid bands, large timber-clad/glazed top band. Ground restaurant frontage beneath canopy; image catches stone neighbour to the right. Cadastral parts range from one to four above-ground storeys. The low river-side part is not to be raised to match the front.
 
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193807UN6789S`):
+Three shuttered windows in brick U1 band. One continuous top glazed band is visible but cropped; pane count not asserted. Left commercial group under awning and tall right entry are distinct.
+
+Registered plane `POT-B047-CANTABRA`: **footprint**, ring edges `[6]`; 6 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+U1 row observed; top band segmentation and full ground/river parts incomplete.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| G-D | 1 | OBSERVED_MINIMUM |
+| U1 | 3 | OBSERVED_COMPLETE_ROW |
+| U2 | 1 | OBSERVED_MINIMUM |
+
 Blocking facts:
 
 - Ground opening layout obscured.
@@ -236,7 +426,20 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193808UN6789S`):
-White upper front with repeated individual wrought-iron balconies on multiple floors; timber shutters and flower pots. Lower shop band and awning. Small horizontal opening appears beside right balcony axis. Different opening rhythm between storeys must be transcribed; source parts have one/three above and one/two below floors.
+White upper front has at least three projecting iron balconies in each of two bands, with tall glazed doors, shutters and flowers. Ground wall hidden by awning. Black horizontal wall attachment at right is not a proven window. Ground, returns and compound roof coverage remain incomplete.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193808UN6789S`):
+At least three tall guarded groups per upper band, with clipped top/right and left boundaries. Black wall object at right is not a proven horizontal window. Lower commercial wall is hidden by awning.
+
+Registered plane `POT-B048-CANTABRA`: **footprint**, ring edges `[7]`; 6 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Six upper openings observed minimum; ground and all river-side parts incomplete.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| U1 | 3 | OBSERVED_MINIMUM |
+| U2 | 3 | OBSERVED_MINIMUM |
 
 Blocking facts:
 
@@ -253,7 +456,22 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193809UN6789S`):
-Very narrow commercial front: brick band, timber/glazed upper gallery, iron balcony guards and mixed upper windows. Ground restaurant door/window/sign group partly obscured by fixtures and perspective. Source parts vary from one to four above floors; do not repeat a single rectangular roof or balcony rule.
+Brick upper row has two broad white-frame windows and a cropped timber glazed band above. Ground commercial entry/dark opening group partly hidden by boards. Iron balconies visible at left belong to B048, not this frontage. Different river-side parts retain their source floors.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193809UN6789S`):
+Two broad white-frame windows in brick row. Upper timber glazing cropped. Ground left entrance and dark right group partly hidden by signs. Iron balconies visible to left belong to B048, not this front.
+
+Registered plane `POT-B049-CANTABRA`: **footprint**, ring edges `[8]`; 5 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+U1 count complete; top glazing extent and ground right type/extent unresolved.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| G-R | 1 | OBSERVED_MINIMUM |
+| U1 | 2 | OBSERVED_COMPLETE_ROW |
+| U2 | 1 | OBSERVED_MINIMUM |
 
 Blocking facts:
 
@@ -271,7 +489,22 @@ Blocking facts:
   the ownership of every neighbouring facade visible in the picture.
 
 Observation (VISUAL_ESTIMATE, high; source `CAT-PHOTO:8193810UN6789S`):
-Pale rendered wide terminal river/road front. Three storeys visible on main face with unequal two-window groups and tall glazed gallery bands. Ground has shop/service openings with stone base. Lower annex on left and rounded/right return differ in massing. Main opening groups are not centered identical bays.
+Main road frontage has six windows in each of two upper bands; two per row sit inside projecting metal/orange glazed bays. Ground left glazed entrance and four display groups are visible. Large pharmacy sign obscures another bay; no opening inferred behind it. Curved north return and Cántabra-side junction are separate planes.
+
+Observation (VISUAL_ESTIMATE, medium; source `CAT-PHOTO:8193810UN6789S`):
+Six windows in each main upper band; second and fifth are within projecting metal/orange glazed bays. Ground: left glazed entry plus four visible display groups. Large pharmacy sign obscures another bay; no opening is inferred behind it. Curved/right return excluded from this plane.
+
+Registered plane `POT-B050-ROAD`: **footprint**, ring edges `[3]`; 17 observed opening groups.
+Coordinates and source/photo hashes: [`../FACADE_TRANSCRIPTION.json`](../FACADE_TRANSCRIPTION.json).
+Stations are visual estimates on the unchanged wall edge chain; unsolved stations stay UNKNOWN.
+Main upper rows observed; ground under sign, lower edges and curved return remain incomplete.
+
+| Photo band | Observed groups | Count coverage |
+| --- | ---: | --- |
+| G | 1 | OBSERVED_MINIMUM |
+| G-W | 4 | OBSERVED_MINIMUM |
+| U1 | 6 | OBSERVED_COMPLETE_ROW |
+| U2 | 6 | OBSERVED_COMPLETE_ROW |
 
 Blocking facts:
 
