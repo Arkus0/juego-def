@@ -30,17 +30,19 @@ MAST adapter or selected MAST-derived mechanics
 Unity scene preview/materialization
         |
         v
-ACCEPT
+ACCEPT -> Director-owned neutral placement result
         |
-        v
-existing D0/D1 authoritative commit -> rebuild -> same result
+        +--> existing placement-capable canonical class, only if D1 already has one
+        |
+        \--> isolated spike acceptance sink / replay fixture
+              (generic catalogue-object persistence remains D2)
 ```
 
 Binding rule:
 
 > **MAST may execute mechanics; it may never become world authority.**
 
-D0/D1 remain authoritative for semantic identity, canonical layout/state, SAVE/REVERT/REBUILD and project-specific persistence. MAST scene objects, grid state, palettes, assemblies or editor state cannot become a second canonical representation of the world.
+D0/D1 remain authoritative for the semantic identity, canonical layout/state, SAVE/REVERT/REBUILD and project-specific persistence they already own. This spike must not invent a new production placement schema to widen that authority. MAST scene objects, grid state, palettes, assemblies or editor state cannot become a second canonical representation of the world.
 
 ## Why this spike exists
 
@@ -137,17 +139,19 @@ Use **real admitted juego-def prefabs**, not only cubes or synthetic test object
 
 A synthetic primitive may be added as a diagnostic control but cannot satisfy the claim.
 
-### P1 — Reproducible install + clean compile
+### P1 — Reproducible provisioning / compatibility gate
 
 From the exact spike branch:
 
-- provision the pinned MAST revision reproducibly;
-- open/compile under the project's real Unity version;
-- produce no new unresolved compile errors;
-- identify required editor assemblies/package boundaries;
-- verify how removal/disable works.
+- provision or attempt to provision the pinned MAST revision reproducibly;
+- open/compile under the project's real Unity version when provisioning reaches that stage;
+- record any MAST-caused compile/provisioning blocker exactly;
+- identify required editor assemblies/package boundaries to the extent inspection/execution reaches them;
+- verify how removal/disable works when MAST was actually introduced into the isolated project.
 
-PASS signal: another Worker can reproduce the tool state from repository instructions + pinned dependency identity without manually reconstructing hidden local state.
+Positive-path signal: another Worker can reproduce a clean MAST-enabled tool state from repository instructions + pinned dependency identity without manually reconstructing hidden local state.
+
+A reproducible incompatibility or provisioning/compile failure may instead be a **decisive REJECT signal**. In that case, do not patch juego-def or overbuild compatibility shims merely to unlock later probes: preserve the failure evidence, mark causally unreachable downstream probes `N/A — REJECT gate at P1`, and continue only with the universal decision/evidence/handoff requirements.
 
 ### P2 — Programmatic placement path
 
@@ -187,28 +191,28 @@ Using real project geometry:
 
 Do not accept a rigid grid assumption that contradicts Director's semantic footprint/clearance model merely because MAST supports it. Record exactly which occupancy concepts are reusable and which must remain ours.
 
-### P5 — ACCEPT -> D0/D1 authority -> REBUILD persistence
+### P5 — ACCEPT -> Director-owned neutral result -> replay without MAST authority
 
-This is the decisive proof.
+This is the decisive **backend-suitability** proof. It must not create D2 product persistence merely to make the spike pass.
 
 1. request a placement through the candidate backend;
 2. preview it;
-3. ACCEPT through Director;
-4. persist the semantic/authoritative result using the existing D0/D1 transaction path;
-5. rebuild/reload through the normal project path;
-6. verify the same semantic object exists at the intended transform/relationship **without requiring MAST editor state as authority**.
+3. ACCEPT through Director and obtain a **Director-owned neutral placement result** containing only the minimum stable data needed to describe the accepted outcome (for example candidate identity + pose + bounded placement metadata), with no MAST editor/grid/palette state as authority;
+4. prove that result can be serialized/deserialized or otherwise replayed deterministically without MAST-owned hidden state;
+5. route the replay through **one of exactly two lawful sinks**:
+   - an already-existing placement-capable canonical D0/D1 class, **only if accepted D1 genuinely already owns that exact class and operation**; or
+   - an isolated test-only acceptance sink/fixture owned by this spike;
+6. reconstruct/materialize from that Director-owned result and verify the same prefab identity/pose/relationship outcome.
 
-Then exercise the existing reversible path:
+Then exercise the corresponding reversible test path: remove/revert the accepted fixture/result, replay/rebuild the test sink as applicable, and verify state returns coherently.
 
-- Undo/Revert/remove the accepted operation;
-- rebuild;
-- verify canonical and materialized state return coherently.
+**Forbidden for P5:** adding a new production catalogue-placement schema, production persistence path or generic object authority to D0/D1. Generic catalogue-object rebuild-safe persistence remains D2.
 
-A scene object that survives only because Unity serialized it directly is **FAIL for this proof** unless direct scene serialization is already the declared D0/D1 authority for that exact object class.
+A scene object that survives only because Unity serialized it directly is **FAIL for this proof** unless direct scene serialization is already the declared authority for that exact pre-existing object class.
 
 ### P6 — Direct manipulation compatibility
 
-On one placed real object, prove whether move/rotate/delete can reuse MAST mechanics while Director remains responsible for semantic selection and authoritative commit.
+On one real object materialized through the lawful P5 route (pre-existing canonical class or isolated spike fixture), prove whether move/rotate/delete can reuse MAST mechanics while Director remains responsible for semantic selection and the neutral result/commit boundary.
 
 The owner-facing pick must resolve to Director's semantic identity, not force the owner to reason about MAST internals, child meshes or foreign IDs.
 
@@ -300,11 +304,12 @@ Retain under `Docs/evidence/WP-PROD-ENV-DIRECTOR-MAST-00/`:
 
 - dependency manifest: D1 SHA, Unity version, MAST exact revision/license/provisioning;
 - source/API inspection notes with subsystem dispositions;
-- build/compile receipt and clean removal/fallback receipt;
-- selected real prefab identities and why they are representative;
-- P2–P8 step receipts;
-- captures for preview/cancel, valid/invalid occupancy and accepted/rebuilt result;
-- canonical before/after/revert state evidence for P5;
+- provisioning/build/compile receipt, including exact negative compatibility evidence when that is the REJECT gate;
+- clean removal/fallback receipt when MAST was introduced far enough for removal to be material;
+- selected real prefab identities and why they are representative, where execution reached real-prefab probes;
+- P2–P8 receipts for executed probes, and explicit `N/A — <causal REJECT reason>` entries for probes made unreachable by a decisive earlier falsifier;
+- captures for preview/cancel, valid/invalid occupancy and accepted/replayed result where those probes are reached;
+- neutral-result before/after/revert evidence for P5, including whether the lawful sink was a genuinely pre-existing D0/D1 canonical class or the isolated spike fixture;
 - assembly probe evidence;
 - capability decision matrix;
 - concise custom-glue inventory, including fragile/internal API use;
@@ -316,28 +321,42 @@ Evidence must distinguish MAST behavior from Director behavior. A green Director
 
 ## Acceptance / falsifiers
 
-**PASS** requires:
+Acceptance is **decision-conditional**. A well-evidenced decisive falsifier may terminate the positive integration chain as `REJECT`; the Worker must not keep implementing around a rejected dependency merely to manufacture green P2–P8 evidence.
 
-- exact dependency/license/provisioning identity;
-- clean isolated project compile;
-- real-project programmatic placement proof;
-- non-authoritative preview/cancel proof;
-- useful occupancy/validity result or a clearly evidenced rejection of that subsystem;
-- decisive ACCEPT -> existing D0/D1 authority -> REBUILD persistence proof;
-- reversible Undo/Revert path;
-- fallback/removal proof preserving D0/D1;
-- assembly probe;
-- complete capability matrix;
-- one explicit `USE / ADAPT / REJECT` disposition whose rationale matches the evidence;
-- bounded D2/D5 rewrite handoff;
+**PASS in every disposition (`USE` / `ADAPT` / `REJECT`) requires:**
+
+- exact D1 baseline identity plus exact MAST revision/license/provisioning route inspected or attempted;
+- evidence that the spike stayed isolated and did not change D0/D1 semantics or introduce production D2 persistence;
+- complete capability matrix, including explicit `N/A — <causal reason>` for any probe made unreachable by a decisive REJECT gate;
+- one explicit overall `USE / ADAPT / REJECT` disposition whose rationale matches the evidence;
+- bounded D2/D5 handoff that states what may be reused, what remains native, and what must not be duplicated;
 - frozen exact candidate SHA and fresh independent Reviewer with no surviving material falsifier.
+
+**Additional PASS requirements for `USE` or `ADAPT` to the extent those capabilities are claimed:**
+
+- clean isolated MAST-enabled project compile;
+- real-project Director-originated programmatic placement proof;
+- non-authoritative preview/cancel proof;
+- P5 neutral ACCEPT result replayed without MAST authority, using only a genuinely pre-existing placement-capable D0/D1 class or the isolated spike fixture;
+- reversible test path for the accepted neutral result;
+- fallback/removal proof preserving D0/D1;
+- occupancy/validity, direct-manipulation and assembly probes for each capability claimed as reusable/adaptable; unsupported capabilities may be `REFERENCE_ONLY` / `REJECT` with evidence rather than falsely implemented.
+
+**Additional PASS requirements for `REJECT`:**
+
+- at least one decisive, reproducible blocker or a documented accumulation of blockers sufficient to justify rejection (for example incompatible compile/provisioning, no usable programmatic path without brittle private/UI state, authority leakage, non-reproducible hidden state, or glue cost that defeats material reuse);
+- every skipped downstream probe is marked `N/A` with the exact causal blocker, rather than silently omitted;
+- D0/D1 baseline remains independently healthy and unchanged by the failed experiment;
+- any MAST bytes/state actually introduced are removable without making accepted D0/D1 work depend on them.
+
+A `REJECT` caused at P1/P2 is therefore a valid PASS for this **decision spike** even though later positive integration proofs are unreachable.
 
 **FAIL** if any survives:
 
 - placement works only by manually using MAST UI and cannot be subordinated to Director intent;
-- accepted result depends on MAST scene/editor state rather than D0/D1 authority;
+- any claimed accepted/replayed result depends on MAST scene/editor state rather than the Director-owned neutral result and its lawful sink;
 - cancel leaves durable hidden/scene/canonical mutations;
-- rebuild loses or duplicates accepted placement;
+- a claimed positive replay/rebuild loses or duplicates the accepted neutral placement result;
 - occupancy cache is demonstrably stale in ordinary edit/Undo cases claimed as supported;
 - integration requires brittle private API driving but is still labelled clean `USE`;
 - D0/D1 stop compiling or functioning when MAST is absent;
@@ -348,7 +367,7 @@ Evidence must distinguish MAST behavior from Director behavior. A green Director
 
 Plausible Reviewer falsifiers:
 
-- the "rebuild" merely reloads a scene already serialized with the object;
+- the claimed P5 replay/rebuild merely reloads a scene already serialized with the object instead of reconstructing from the Director-owned neutral result;
 - preview cancel deletes the visible ghost but leaves a MAST grid/palette/object record that later rematerializes;
 - test prefab has trivial bounds while architecture pieces fail occupancy;
 - code path secretly calls MAST EditorWindow state and breaks when the window is closed;
@@ -361,7 +380,7 @@ Reviewer must derive additional falsifiers before relying on Worker evidence.
 
 ## Definition of Done / handoff
 
-Complete implementation/evidence bytes; stop overlapping writers; commit; read exact 40-character `PRODUCT_SHA`; run the materially required Unity/rebuild/fallback checks on that candidate; perform strict Worker pre-review; freeze; fresh Reviewer attempts falsification.
+Complete implementation/evidence bytes; stop overlapping writers; commit; read exact 40-character `PRODUCT_SHA`; run the checks materially required by the chosen disposition (including explicit N/A reasons after a decisive REJECT gate); perform strict Worker pre-review; freeze; fresh Reviewer attempts falsification.
 
 After PASS:
 
