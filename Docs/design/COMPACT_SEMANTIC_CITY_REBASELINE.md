@@ -1,6 +1,6 @@
 # Compact Semantic City — arquitectura aceptada
 
-Status: **ACCEPTED / CITY-URBAN-00R BASELINE**
+Status: **ACCEPTED / CITY-URBAN-00R BASELINE — amended by Owner 2026-10-01 (Mapa F1 a escala Kamurocho, mayoría de interiores accesibles; ver la enmienda abajo y [`CITY_MASTER_PLAN_V1.md`](CITY_MASTER_PLAN_V1.md))**
 Date: 2026-09-30
 Owns: escala urbana, unidad semántica y espacio deliberado.
 Contracts: [`WP-CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md), después [`WP-PROD-ENV-CASCO-V2-00`](../workpacks/WP-PROD-ENV-CASCO-V2-00.md).
@@ -52,11 +52,23 @@ Una ciudad continua, compacta y trabajada; cinco **identidades** con fronteras b
 | Identidad y uso | 100% de SemanticBuildings | ledger por edificio, incluidas fachadas cerradas |
 | Espacio exterior deliberado | 100% del ámbito urbano particionado; 0 zonas residuales sin resolución | mapa de suelo + prueba funcional descrita abajo |
 | Interiores profundos | minoría: ≤20% de edificios de ciudad en el presupuesto inicial | programa multiespacio/vertical útil para misión o exploración; no reclasificar un pasillo como «shallow» para ocultar profundidad |
-| Accesibilidad | sin porcentaje mínimo ni obligación del 100% | cada apertura demuestra necesidad; cierre honesto y uso siguen siendo válidos |
+| Accesibilidad | ~~sin porcentaje mínimo ni obligación del 100%~~ → **enmienda 2026-10-01: objetivo 60 % de SemanticBuildings con interior recorrible, mínimo >50 %** | cada apertura demuestra necesidad y programa; cierre honesto y uso siguen siendo válidos para la minoría cerrada |
 
 Estos topes impiden escalar por comodidad del generador. Estar bajo ellos **no basta** para PASS. Se permite una ciudad menor, menos edificios o menos profundidad si satisface los usos. Rebasar un tope requiere una enmienda explícita del Owner con causa y presupuesto nuevo antes de producir amplitud; no se cumple una cifra rellenando casas o recortando etiquetas. Los tamaños muy desiguales se expresan en área y programa, no sólo renombrando cinco zonas iguales.
 
 La envolvente excluye mar abierto y paisaje distante ajeno al tejido urbano; un patio sin acceso, una franja decorativa entre casas o edificios visitables «scenic» siguen dentro del presupuesto. La continuidad no obliga a que las cinco identidades compartan la misma densidad.
+
+## Enmienda Owner 2026-10-01 — Mapa F1 escala Kamurocho e interiores accesibles
+
+Origen: encargo del Owner de dirección de level design de la ciudad completa (2026-10-01) y sus correcciones durante la planificación. Registrado por `WP-CITY-MASTER-00`; plano, datos y métricas en [`CITY_MASTER_PLAN_V1.md`](CITY_MASTER_PLAN_V1.md).
+
+1. **Escala del mapa.** La primera fase del mapa (**Mapa F1**) tiene escala Kamurocho (~0,12 km²) y debe poder crecer después hasta escala Isezaki Ijincho (~0,35–0,40 km²) por costuras con corredor y suelo reservados. La ciudad compacta de ~65.000 m² pasa a ser el **núcleo** de F1; un anillo F1 completa la escala **dentro de las mismas cinco identidades** (no hay sexto distrito).
+2. **Topes del Mapa F1** (sustituyen a los iniciales para F1; los iniciales quedan como historia): envolvente ≤150.000 m² (plan v1.2: 121.568) · red pública ≤3.600 m, incluidos los ejes exteriores públicos por horario (plan: 3.209) · edificios semánticos ≤240 (plan: 200), CASCO ≤50 (plan: 45) · vecinos funcionales ≤180 m (sin cambio) · extremo ≤900 m (plan: 759) · mayor/menor identidad ≥2 (sin cambio) · profundos ≤20 % (sin cambio).
+3. **Accesibilidad.** Objetivo **60 %** de SemanticBuildings con interior realmente recorrible (mínimo duro >50 %). Se cuentan edificios, no puertas ni estancias; un interior condicionado por horario o progreso cuenta si llega a recorrerse; una puerta permanentemente cerrada o una habitación simulada no cuentan. Programa antes que geometría y sin generadores automáticos de interiores siguen vigentes.
+4. **Interconexión.** Además de la red pública, cada identidad tiene al menos tres capas de conexión (traseras/patios de trabajo, interiores atravesables, azoteas y galerías, cota de agua, huertas y patios privados) con clase de acceso explícita. Ninguna capa satisface requisitos de conectividad pública ni crea atajos públicos gratuitos por propiedad privada.
+5. **Fases posteriores (F2…)**: cada una entra con su WP y una enmienda de presupuesto propia; el núcleo y el anillo F1 no se reconstruyen para crecer.
+
+Se mantienen sin cambio: gramática `FacadeCell != SemanticBuilding != InteriorProgramme`, 0 espacio residual, identidad/uso de todo edificio, U01–U07, B0 y sus roles, 70/20/10 como intención, GC2 como autoridad de interacción. El piloto `WP-PROD-ENV-CASCO-V2-00` queda **superseded**: sus criterios físicos pasan a `WP-CITY-B0-01`.
 
 ### Hipótesis global suficiente para comprobar viabilidad
 

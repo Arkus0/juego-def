@@ -1,6 +1,6 @@
 # WP-CITY-URBAN-01 — B0 Mercado–Muelle Keeper Realization
 
-Status: **READY AFTER COMPACT SEMANTIC PILOT + FACTORY BATCH PROOFS**
+Status: **READY AFTER COMPACT SEMANTIC PILOT + FACTORY BATCH PROOFS** — amended 2026-10-01: the spatial B0 is built by [`WP-CITY-B0-01`](WP-CITY-B0-01.md) (which absorbs the CASCO-V2 pilot); this WP remains the **content gate** on that B0 (factory civilians, investigation dialogue/UI, keeper verdict).
 Class: PRODUCT INTEGRATION / KEEPER GAME-SPACE REALIZATION  
 Depends on: `WP-CITY-URBAN-00` PASS + `WP-CITY-URBAN-00R` PASS + `WP-PROD-ENV-CASCO-V2-00` PASS + `WP-M0-00` PASS + `WP-PROD-ENV-02` PASS + `WP-PROD-CHAR-02` PASS + `WP-PROD-ANIM-02` PASS + `WP-PROD-UI-01` PASS
 Blocks: `WP-PROD-LOOK-GATE`

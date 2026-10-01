@@ -87,7 +87,7 @@ These are semantic families for the ENV factory, not a requirement for unique be
 
 ### Interiors and discovery
 
-Retain selective depth rather than universal interiors:
+Retain selective **depth** rather than universal deep interiors (amended 2026-10-01: a majority — target 60 % — of semantic buildings is walkable, deep programmes stay ≤20 %; see [`CITY_MASTER_PLAN_V1.md`](CITY_MASTER_PLAN_V1.md)):
 
 - public surface;
 - semi-private/private layers;

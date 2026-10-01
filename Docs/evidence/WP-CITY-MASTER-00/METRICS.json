@@ -1,0 +1,261 @@
+{
+ "version": "1.2",
+ "status": "planning metrics (not scene measurements)",
+ "zones_m2": {
+  "CASCO": 31526,
+  "MERCADO": 24620,
+  "MUELLE": 23316,
+  "TALLERES": 12654,
+  "VIVIENDAS": 29452
+ },
+ "envelope_m2": 121568,
+ "largest_to_smallest": 2.49,
+ "casco_share": 0.259,
+ "public_network_m": 2973,
+ "public_by_class_m": {
+  "bridge": 114,
+  "commercial": 231,
+  "main": 504,
+  "passage": 31,
+  "quay": 211,
+  "secondary": 1719,
+  "stair": 164
+ },
+ "grade_share": {
+  "comfortable": 0.808,
+  "perceptible": 0.136,
+  "strong": 0.055
+ },
+ "public_plus_conditional_exterior_m": 3209,
+ "conditional_exterior_in_cap": {
+  "K15 Callejón del Tinte por el patio de servicio del bar de misión": 51,
+  "K37 Patio del instituto (Barrio Alto ↔ Plaza del Instituto)": 45,
+  "K38 Grada del campo de fútbol → Huertas altas": 55,
+  "K40 Senda de las rocas bajo la punta (ensenada → varadero) con marea baja": 85
+ },
+ "interconnection_layer": {
+  "links": 41,
+  "walkable_m": 1959,
+  "by_layer_count_m": {
+   "garden": [
+    8,
+    532
+   ],
+   "interior": [
+    13,
+    480
+   ],
+   "openspace": [
+    1,
+    58
+   ],
+   "service": [
+    8,
+    430
+   ],
+   "upper": [
+    3,
+    110
+   ],
+   "water": [
+    8,
+    629
+   ]
+  },
+  "by_access_count": {
+   "CTL": 2,
+   "PROG": 7,
+   "PRV": 9,
+   "PUB": 1,
+   "PUB-H": 7,
+   "SRV": 15
+  },
+  "vertical_points": 10
+ },
+ "layers_by_zone": {
+  "CASCO": [
+   "street",
+   "garden",
+   "interior",
+   "service",
+   "water"
+  ],
+  "MERCADO": [
+   "street",
+   "garden",
+   "interior",
+   "service",
+   "upper",
+   "water"
+  ],
+  "MUELLE": [
+   "street",
+   "interior",
+   "openspace",
+   "service",
+   "water"
+  ],
+  "TALLERES": [
+   "street",
+   "garden",
+   "interior",
+   "service",
+   "water"
+  ],
+  "VIVIENDAS": [
+   "street",
+   "garden",
+   "interior",
+   "service",
+   "upper"
+  ]
+ },
+ "key_pairs": {
+  "L-P pensión → puerto": {
+   "public_m": 184,
+   "all_layers_m": 145,
+   "public_alternatives": 3,
+   "all_layer_alternatives": 4
+  },
+  "L-C3 pensión → Plaza Mayor": {
+   "public_m": 132,
+   "all_layers_m": 128,
+   "public_alternatives": 3,
+   "all_layer_alternatives": 4
+  },
+  "A-C1 mercado → Calle de los Vinos": {
+   "public_m": 41,
+   "all_layers_m": 41,
+   "public_alternatives": 3,
+   "all_layer_alternatives": 4
+  },
+  "S-O tienda → terraza El Muro": {
+   "public_m": 93,
+   "all_layers_m": 46,
+   "public_alternatives": 3,
+   "all_layer_alternatives": 3
+  },
+  "C1-C3 bar de misión → Plaza Mayor": {
+   "public_m": 56,
+   "all_layers_m": 56,
+   "public_alternatives": 3,
+   "all_layer_alternatives": 4
+  },
+  "C3-C5 Plaza Mayor → iglesia": {
+   "public_m": 46,
+   "all_layers_m": 46,
+   "public_alternatives": 4,
+   "all_layer_alternatives": 4
+  },
+  "P-T2 puerto → talleres": {
+   "public_m": 147,
+   "all_layers_m": 147,
+   "public_alternatives": 2,
+   "all_layer_alternatives": 4
+  },
+  "E2-T2 Cantón → talleres": {
+   "public_m": 238,
+   "all_layers_m": 100,
+   "public_alternatives": 2,
+   "all_layer_alternatives": 3
+  },
+  "V2-T1 Viviendas → Alto de la Cantera": {
+   "public_m": 100,
+   "all_layers_m": 99,
+   "public_alternatives": 2,
+   "all_layer_alternatives": 4
+  },
+  "V1-V4 casa-cuartel → terrazas altas": {
+   "public_m": 97,
+   "all_layers_m": 97,
+   "public_alternatives": 3,
+   "all_layer_alternatives": 3
+  },
+  "Q-SL muelle → varadero": {
+   "public_m": null,
+   "all_layers_m": 191,
+   "public_alternatives": 0,
+   "all_layer_alternatives": 3
+  },
+  "C7-C1 Calle del Río → Vinos": {
+   "public_m": 121,
+   "all_layers_m": 51,
+   "public_alternatives": 2,
+   "all_layer_alternatives": 4
+  }
+ },
+ "public_nodes": 43,
+ "public_edges": 57,
+ "independent_cycles": 15,
+ "connected": true,
+ "neighbour_routes_m": {
+  "CASCO-MERCADO (U03)": 97,
+  "MERCADO-MUELLE (U01/U02)": 142,
+  "CASCO-VIVIENDAS (U05)": 176,
+  "MERCADO-VIVIENDAS (U04)": 168,
+  "MUELLE-TALLERES (U06)": 147,
+  "TALLERES-VIVIENDAS (U07)": 147
+ },
+ "anchor_routes_m": {
+  "CASCO-MERCADO": 97,
+  "CASCO-MUELLE": 239,
+  "CASCO-TALLERES": 316,
+  "CASCO-VIVIENDAS": 176,
+  "MERCADO-MUELLE": 142,
+  "MERCADO-TALLERES": 288,
+  "MERCADO-VIVIENDAS": 168,
+  "MUELLE-TALLERES": 147,
+  "MUELLE-VIVIENDAS": 197,
+  "TALLERES-VIVIENDAS": 147
+ },
+ "extreme_route_m": {
+  "length": 759,
+  "between": [
+   "E7",
+   "W4"
+  ]
+ },
+ "buildings": {
+  "total": 200,
+  "by_zone": {
+   "CASCO": 45,
+   "MERCADO": 49,
+   "MUELLE": 29,
+   "TALLERES": 19,
+   "VIVIENDAS": 58
+  },
+  "by_interior": {
+   "LARGE": 15,
+   "MEDIUM": 40,
+   "SMALL": 65,
+   "CLOSED": 80
+  },
+  "accessible_by_zone": {
+   "CASCO": "28/45",
+   "MERCADO": "30/49",
+   "MUELLE": "17/29",
+   "TALLERES": "11/19",
+   "VIVIENDAS": "34/58"
+  }
+ },
+ "accessible_share": 0.6,
+ "deep_share": 0.075,
+ "checks": {
+  "envelope<=max": true,
+  "public_network<=max": true,
+  "public_plus_conditional_exterior<=max": true,
+  "every_zone_has>=3_extra_layers": true,
+  "key_pairs_gain_alternatives": true,
+  "buildings<=max": true,
+  "casco_buildings<=max": true,
+  "neighbours<=max": true,
+  "extreme<=max": true,
+  "largest>=2x_smallest": true,
+  "accessible>=target": true,
+  "accessible>hard_min": true,
+  "deep<=max": true,
+  "network_connected": true,
+  "unique_building_ids": true
+ },
+ "all_checks_pass": true
+}

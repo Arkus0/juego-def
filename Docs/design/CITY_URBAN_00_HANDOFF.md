@@ -101,7 +101,7 @@ Importance and spatial depth remain independent.
 | `L` lodging / return anchor | anchor | shallow/common now; deeper private layers may grow later | public entry + semi-private/private lodging layers | readable/playable now at required public/common surface |
 | `A` market court / activity | anchor | open public game-space | public; occupation must leave a clear route | playable now |
 | `S` everyday shop + witness | anchor | shallow playable | public customer room + distinct service threshold | playable now |
-| B01–B03 commercial rows | ordinary fabric | shell/frontage, selected shallow thresholds | public street; most interiors closed | readable now; selected openings playable |
+| B01–B03 commercial rows | ordinary fabric | shell/frontage + walkable shop interiors (amended 2026-10-01: majority accessible) | public street; service doors distinct | readable now; most shops playable per `WP-CITY-B0-01` |
 | `E` commercial corner / port reveal | supporting playable | open game-space | public junction | playable now |
 | `P` public port threshold | anchor/supporting | open public edge | public route beside but not through controlled work | playable now |
 | `Q` quay overlook | supporting playable | open public game-space | public, rail/boundary to water | playable now |
