@@ -77,6 +77,14 @@ Any Worker already implementing D0/D1 should continue. This revision must not fo
 
 Reopen D0/D1 only if implementation evidence shows they violate their existing safety/authority requirements.
 
+### MAST decision gate after D1 — accepted sequencing amendment 2026-09-30
+
+After D1 PASS, execute [`WP-PROD-ENV-DIRECTOR-MAST-00`](WP-PROD-ENV-DIRECTOR-MAST-00.md) **before implementing D2**.
+
+The spike must test MAST against real juego-def prefabs and the existing D0/D1 transaction/rebuild authority, then return exactly one evidenced disposition: `USE`, `ADAPT` or `REJECT`. A negative result is valid. The spike may not implement D2, migrate canonical ENV authority into MAST, or make MAST editor/grid/palette state a second source of truth.
+
+D0/D1 remain unchanged. D3 semantic map-growth authority also remains Director-owned regardless of the MAST result. The purpose of the gate is narrower: avoid reimplementing mechanical placement/preview/occupancy/assembly primitives in D2/D5 when a lawful, maintainable reuse path actually works.
+
 ## Implementation prior art — binding reuse posture
 
 D2-D5 must begin from proven Unity editor patterns rather than re-inventing basic Scene View tooling.
@@ -944,6 +952,10 @@ Must include:
 - real CASCO test.
 
 This remains the urgent production unlock. Do not delay it for catalogue, AI or expansion features.
+
+### D1.5 — MAST BACKEND DECISION GATE — **mandatory before D2 implementation**
+
+Execute [`WP-PROD-ENV-DIRECTOR-MAST-00`](WP-PROD-ENV-DIRECTOR-MAST-00.md) after D1 PASS. It is an isolated technology/reuse spike, not a builder milestone. It must decide `USE / ADAPT / REJECT` for MAST as a subordinate mechanical backend while preserving D0/D1 authority, fallback and rebuild persistence. Do not begin D2 implementation until this disposition is independently accepted.
 
 ### D2 — VISUAL CATALOGUE + PLACE/MODIFY — **mandatory builder release**
 

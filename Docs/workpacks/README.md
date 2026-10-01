@@ -63,7 +63,8 @@ M0 is only a small gameplay-integration fixture for player scale, camera, collis
 CITY-00 PASS + exact ENV01 reference -> CITY-00R -> CASCO-V2-00 pilot
 Bootstrap PASS + ASSET-00 PASS + exact ENV01 reference -> pilot
 ASSET-00 PASS + CITY-00 PASS -> ENV-01 (closure independent of pilot)
-Bootstrap PASS + CITY-00 PASS + active ENV trace/build -> DIRECTOR-00
+Bootstrap PASS + CITY-00 PASS + active ENV trace/build -> DIRECTOR-00 D0/D1
+DIRECTOR D1 PASS -> DIRECTOR-MAST-00 decision spike -> DIRECTOR D2+
 ENV-01 PASS + DIRECTOR-00 PASS + CITY-00R PASS + pilot PASS -> ENV-02
 
 ASSET-00 PASS -> CHAR-01 -> CHAR-02
@@ -89,6 +90,7 @@ pilot -- evidence only --> later Director semantic capability disposition
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
 | `WP-PROD-ENV-DIRECTOR-00` | Owner-facing visual world builder: layout + thumbnail catalogue + game-like placement + map expansion + AI-supplied reusable pieces | Bootstrap + CITY-URBAN-00 + ENV trace/build substrate; urgent parallel enabler |
+| `WP-PROD-ENV-DIRECTOR-MAST-00` | Bounded MAST backend decision spike: real-project proof + `USE / ADAPT / REJECT` before D2 | accepted Director D0/D1; blocks D2 implementation only |
 | `WP-PROD-ENV-02` | Multi-scene batch proof using human-directed production within compact semantic-city rules | ENV01 + ENV-DIRECTOR00 + CITY00R + CASCO-V2 pilot |
 | `WP-PROD-CHAR-01` | Civilian/wardrobe production factory serving B0 role priorities | ASSET-00 |
 | `WP-PROD-CHAR-02` | Representative civilian batch from factory | CHAR-01 |
@@ -103,4 +105,4 @@ pilot -- evidence only --> later Director semantic capability disposition
 
 **Execute the one-block CASCO-V2 pilot before new ENV scale.** CITY-URBAN-00R is accepted; reference reconstruction is the pilot's first material gate. ENV01 closure, CHAR01 and useful Director work remain independent; ANIM01 is complete. This documentation candidate does not authorize Unity implementation or modification of the shared ENV01 checkout.
 
-The first Director milestones remain deliberately small: D0/D1 direct Scene View layout manipulation with safe SAVE / REVERT / REBUILD / PLAY HERE. **Do not restart already-running D0/D1 work.** D2 then makes the tool a real builder with a thumbnail catalogue, semantic pick, ghost placement/snap, native Undo and direct manipulation; D3 adds map expansion; D4 adds the **Coherent Content Forge**: selection-context requests use a project Style Profile and prefer REUSE → RECOMBINE → DERIVE before generating missing content, with Admission Gate before reusable catalogue entry. D2-D5 must reuse proven Unity-editor patterns from inspected prior art rather than reinvent basic picking/placement/line/lasso/thumbnail mechanics, while respecting source licenses. UModeler X may be consumed through an **optional geometry-editor adapter** for advanced selected-object mesh edits, but Director must remain fully functional and commercially separable without it. ENV-02 waits for Director PASS. ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.
+The first Director milestones remain deliberately small: D0/D1 direct Scene View layout manipulation with safe SAVE / REVERT / REBUILD / PLAY HERE. **Do not restart already-running D0/D1 work.** After D1 PASS, execute [`WP-PROD-ENV-DIRECTOR-MAST-00`](WP-PROD-ENV-DIRECTOR-MAST-00.md) before implementing D2; it must return an evidenced `USE / ADAPT / REJECT` decision without changing D0/D1 authority. D2 then makes the tool a real builder with a thumbnail catalogue, semantic pick, ghost placement/snap, native Undo and direct manipulation; D3 adds map expansion; D4 adds the **Coherent Content Forge**: selection-context requests use a project Style Profile and prefer REUSE → RECOMBINE → DERIVE before generating missing content, with Admission Gate before reusable catalogue entry. D2-D5 must reuse proven Unity-editor patterns from inspected prior art rather than reinvent basic picking/placement/line/lasso/thumbnail mechanics, while respecting source licenses. UModeler X may be consumed through an **optional geometry-editor adapter** for advanced selected-object mesh edits, but Director must remain fully functional and commercially separable without it. ENV-02 waits for Director PASS. ANIM-02 must wait for CHAR-01 PASS so the runtime vocabulary is proved on accepted civilians rather than technical placeholder bodies. M0 and Dialogue may continue independently.
