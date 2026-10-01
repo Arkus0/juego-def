@@ -1,0 +1,9 @@
+regenerando spec: python Tools/env_district_skeleton.py --trace ENV01_Casco_District.trace.json
+fuente OSM verificada contra el pin: sha256:d3e4220c819ee9f701a5f87dfb4fbde1c10414066743640da1867da172695a19 ✓ (210703 bytes)
+impacto: suelo/calles/plazas/río/etc.: CAMBIAN (streets, garden, route, suelo:strip, suelo:lane, suelo:plaza, suelo:core, suelo:yard)
+filas: 12 cambian geometría · 0 re-tiran asignación (paleta/seed...)
+ruta: DISTRICT COMPLETO
+TX abierta: spec, escena y assets generados protegidos
+spec promovida — fuente OSM sha256:d3e4220c819ee9f701a5f87dfb4fbde1c10414066743640da1867da172695a19
+TX commit: inputs verificados, spec y escena guardadas
+JD_LAYOUT_REBUILD district completo (50 s)

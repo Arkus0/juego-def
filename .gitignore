@@ -47,3 +47,7 @@ Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity
 Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity.meta
 Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District/
 Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District.meta
+
+# Director local SAVE fallback and atomic replacement scratch (not a second authority).
+Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/*.trace.json.bak*
+Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/*.trace.json.director.tmp*

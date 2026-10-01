@@ -51,9 +51,9 @@
   },
   "nodes": {
     "E1": [
-      128,
-      -31.8,
-      2.0
+      128.25,
+      -31.8000031,
+      2.15
     ],
     "J_X": [
       76,
@@ -227,7 +227,8 @@
       "name": "spine east",
       "role": "main",
       "from": "E1",
-      "to": "J_X"
+      "to": "J_X",
+      "width": 6.35
     },
     {
       "id": "Espina_Plaza",
@@ -236,8 +237,9 @@
       "from": "J_X",
       "via": [
         [
-          74,
-          -58
+          74.1000061,
+          -57.8999939,
+          1.214733
         ]
       ],
       "to": "J_A",
@@ -702,8 +704,8 @@
       "y": 0.2,
       "poly": [
         [
-          3,
-          -62
+          3.0,
+          -62.1499939
         ],
         [
           0,
@@ -961,12 +963,19 @@
       "id": "Torre",
       "name": "singular tower closing the view along the spine (Demo C rule 7), town-hall tower of our town",
       "at": [
-        14.6,
-        -79.8
+        16.9889221,
+        -80.3985443,
+        0.513
       ],
       "unit": "U20_Landmark_Tower_4x4",
       "floors": 6,
-      "setback": -1.2
+      "setback": -1.2,
+      "anchorAt": [
+        14.6,
+        -79.8
+      ],
+      "placement": "direct",
+      "yaw": 82.84774
     },
     {
       "id": "Casona_Plazuela",

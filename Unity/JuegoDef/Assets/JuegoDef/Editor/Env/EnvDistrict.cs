@@ -46,6 +46,7 @@ namespace JuegoDef.Env
             spec = JObject.Parse(EnvKit.ReadText($"{DistrictSpecs}/{id}.json"));
             units = JObject.Parse(EnvKit.ReadText(EnvKit.Specs + "/units.json"))["units"].ToDictionary(u => (string)u["id"], u => (JObject)u);
         }
+        public static void ResetState() { spec = null; units = null; id = null; plazaPolys = null; }
         static string MeshFolder => $"{EnvKit.Derived}/District/{id}";
 
         [MenuItem("JuegoDef/ENV/7 Build District (CASCO)")]
@@ -64,7 +65,7 @@ namespace JuegoDef.Env
             EnvClearance.ClearCache();
             BuildingAssembler.ReloadGrammar();
             EnvBusiness.Reset();
-            EnvPolish.Auto.Clear();
+            EnvPolish.Auto.Clear(); EnvPolish.Reload();
             units = JObject.Parse(EnvKit.ReadText(EnvKit.Specs + "/units.json"))["units"].ToDictionary(u => (string)u["id"], u => (JObject)u);
             var stage = EnvPreview.NewStage(id, ground: false);
             Object.DestroyImmediate(stage.gameObject);
@@ -557,8 +558,9 @@ namespace JuegoDef.Env
             mesh.RecalculateTangents();
             mesh.RecalculateBounds();
             var path = $"{MeshFolder}/{name}.asset";
-            AssetDatabase.DeleteAsset(path);
-            AssetDatabase.CreateAsset(mesh, path);
+            var existing = AssetDatabase.LoadAssetAtPath<Mesh>(path);
+            if (existing) { EditorUtility.CopySerialized(mesh, existing); Object.DestroyImmediate(mesh); mesh = existing; EditorUtility.SetDirty(mesh); }
+            else AssetDatabase.CreateAsset(mesh, path);
             var go = new GameObject(name);
             go.transform.SetParent(parent, false);
             go.AddComponent<MeshFilter>().sharedMesh = mesh;
@@ -617,6 +619,7 @@ namespace JuegoDef.Env
                     var go = BuildingAssembler.Build(p.spec, frame);
                     go.transform.localPosition = new Vector3(p.x0, p.y, -p.setback);
                     if (Mathf.Abs(p.scale - 1f) > 0.001f) go.transform.localScale = new Vector3(p.scale, 1, 1);
+                    LayoutPlacement.Apply(go, plots[placed.IndexOf(p)], p.width);
                     if (river)
                     {
                         // the base reads as the same stretch of channel masonry the house stands on, not another wall
@@ -917,6 +920,8 @@ namespace JuegoDef.Env
             RiverPromenade(root);
             EnvPolish.ApplyOps(root);   // last hand-authored object-level corrections, before the rig collects lamps
 
+            LayoutPlacement.ApplyAll(root, spec); // explicit owner pose takes precedence over procedural/object polish
+
             // player at the river plaza
             var plaza = ((JArray)spec["plazas"]).Cast<JObject>().FirstOrDefault(pz => (string)pz["id"] == "Plaza_Rio");
             var spawn = new Vector3(100, 1, 100);
@@ -943,7 +948,7 @@ namespace JuegoDef.Env
             EnvLighting.BuildRig(root, db, water);
             EnvKit.EnsureFolder("Assets/JuegoDef/Scenes/ENV");
             var scenePath = $"Assets/JuegoDef/Scenes/ENV/{id}.unity";
-            EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(), scenePath);
+            if (!EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(), scenePath)) throw new System.IO.IOException("JD_DISTRICT_SAVE_FAILED " + scenePath);
             int objects = root.GetComponentsInChildren<Transform>(true).Length;
             return $"JD_DISTRICT_FINISH {id} -> {scenePath} objects={objects} riverWalls={wallPieces}";
         }
@@ -1119,8 +1124,9 @@ namespace JuegoDef.Env
             mesh.RecalculateNormals();
             mesh.RecalculateBounds();
             var path = $"{MeshFolder}/Backdrop_Range.asset";
-            AssetDatabase.DeleteAsset(path);
-            AssetDatabase.CreateAsset(mesh, path);
+            var existing = AssetDatabase.LoadAssetAtPath<Mesh>(path);
+            if (existing) { EditorUtility.CopySerialized(mesh, existing); Object.DestroyImmediate(mesh); mesh = existing; EditorUtility.SetDirty(mesh); }
+            else AssetDatabase.CreateAsset(mesh, path);
             var go = new GameObject("Backdrop_Range");
             go.transform.SetParent(g, false);
             go.AddComponent<MeshFilter>().sharedMesh = mesh;

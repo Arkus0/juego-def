@@ -203,7 +203,9 @@ def clean_block(poly, report, force=()):
 
 # ---------------------------------------------------------------- build
 
-def build(trace, doc, frame):
+def build(trace, doc, frame, authoring=None):
+    if authoring is not None:
+        authoring["_offset"] = trace["unityOffset"]
     rng = random.Random(1971)
     report = {"chamfers": 0, "dropped_plots": 0, "depth_reduced": 0, "rows": 0, "plots": 0, "fit_warnings": []}
     roles = trace["roles"]
@@ -384,8 +386,22 @@ def build(trace, doc, frame):
                     merged = True
                     break
         # 2 m kit bays, row fitted by one scale factor in 0.88-1.14
-        bays = [max(1, min(7, round((p["x1"] - p["x0"]) / 2))) for p in out]
-        for _ in range(12):
+        frontage = authoring.get("frontages", {}).get(f"K{e['block']}_{e['i']}") if authoring and f"K{e['block']}_{e['i']}" not in authoring.get("disabled", []) else None
+        if frontage:
+            import env_authoring
+            env_authoring.guard(authoring, e)
+            weights = frontage["bays"]
+            x = e["s0"]
+            out = []
+            for weight, saved in zip(weights, frontage["source"]):
+                width = U * weight / sum(weights)
+                source = dict(saved) if saved["real"] else None
+                out.append({"x0": x, "x1": x + width, "src": source})
+                x += width
+            bays = list(weights)
+        else:
+            bays = [max(1, min(7, round((p["x1"] - p["x0"]) / 2))) for p in out]
+        for _ in range(0 if frontage else 12):
             sc = U / (2 * sum(bays))
             if 0.88 <= sc <= 1.14:
                 break
@@ -477,7 +493,7 @@ def build(trace, doc, frame):
         return new
 
     for lm in trace.get("landmarks", []):
-        hit = nearest_plot(lm["at"])
+        hit = nearest_plot(lm.get("anchorAt", lm["at"])[:2])
         if not hit:
             report.setdefault("landmark_misses", []).append(lm["id"])
             continue
@@ -613,7 +629,25 @@ def build(trace, doc, frame):
     # heights, palettes, eras, basements
     for e in edges:
         keep = [p for p in e["plots"] if not p.get("drop")]
+        if authoring:
+            import env_authoring
+            e["plots"] = keep
+            env_authoring.apply_plots(authoring, e)
+            keep = e["plots"]
+            for p in keep:
+                if not p.get("wall"):
+                    p["fp"] = footprint(e, p, p["depth"])
         e["plots"] = keep
+        for p in keep:
+            lm = next((lm for lm in trace.get("landmarks", []) if lm.get("id") == p.get("landmark") and lm.get("placement") == "direct"), None)
+            if lm is not None:
+                at = lm["at"]
+                if len(at) != 3 or not all(math.isfinite(float(v)) for v in at) or not math.isfinite(float(lm.get("yaw", 0))):
+                    raise ValueError("ENV_DIRECT_PLACEMENT_INVALID " + lm["id"])
+                yaw = math.radians(lm.get("yaw", 0)); right = np.array([math.cos(yaw), -math.sin(yaw)]); back = np.array([-math.sin(yaw), -math.cos(yaw)])
+                front = np.array(at[:2]); half = p["w"] / 2
+                p["fp"] = Polygon([front-right*half, front+right*half, front+right*half+back*p["depth"], front-right*half+back*p["depth"]])
+                p["directPlacement"] = {"at":[round(at[0]+ox,3),round(at[2],3),round(at[1]+oy,3)], "yaw":lm.get("yaw",0)}
         if not keep:
             continue
         report["rows"] += 1
@@ -631,7 +665,7 @@ def build(trace, doc, frame):
             report["plots"] += 1
             mid = a + u * (p["x0"] + p["w"] / 2) + nin * p["setback"]
             front = a + u * (p["x0"] + p["w"] / 2) - nin * 0.8
-            y = float(T([front])[0])
+            y = p["directPlacement"]["at"][1] if "directPlacement" in p else float(T([front])[0])
             corners = np.array(p["fp"].exterior.coords[:4])
             ground = T(np.vstack([corners, [a + u * p["x0"] - nin * 0.5, a + u * (p["x0"] + p["w"]) - nin * 0.5]]))
             base = y - float(ground.min())
@@ -881,6 +915,9 @@ def build(trace, doc, frame):
     }
     geo = {"D": D, "C": C, "S": street_space, "blocks": blocks, "edges": edges, "streets": streets, "plazas": plazas,
            "stairs": stair_polys, "deck": deck, "parapets": parapets, "T": T}
+    if authoring:
+        import env_authoring
+        env_authoring.finish(authoring, spec, T)
     return spec, geo, per_street
 
 
@@ -977,7 +1014,9 @@ def main():
     trace = json.load(open(a.trace, encoding="utf-8"))
     doc = json.load(open(a.osm, encoding="utf-8"))
     frame = Frame(*trace["reference"]["origin"])
-    spec, geo, per_street = build(trace, doc, frame)
+    import env_authoring
+    authoring = env_authoring.load(a.trace)
+    spec, geo, per_street = build(trace, doc, frame, authoring)
     drops = spec["report"].pop("drops", [])
     json.dump(spec, open(a.out, "w", encoding="utf-8"), separators=(",", ":"), ensure_ascii=False)
     spec["report"]["drops"] = drops

@@ -1,0 +1,30 @@
+JD_LAYOUT_REBUILD regenerando spec: python Tools/env_district_skeleton.py --trace ENV01_Casco_District.trace.json
+JD_LAYOUT_REBUILD fuente OSM verificada contra el pin: sha256:d3e4220c819ee9f701a5f87dfb4fbde1c10414066743640da1867da172695a19 ✓ (210703 bytes)
+JD_LAYOUT_REBUILD impacto: suelo/calles/plazas/río/etc.: intactos
+JD_LAYOUT_REBUILD TX abierta: spec, escena y assets generados protegidos
+JD_LAYOUT_REBUILD spec promovida — fuente OSM sha256:d3e4220c819ee9f701a5f87dfb4fbde1c10414066743640da1867da172695a19
+JD_DISTRICT_BEGIN ENV01_Casco_District ground tris=16420 rows=164
+JD_DISTRICT_ROWS 0..7 buildings=6 walls=5 ms=139
+JD_DISTRICT_ROWS 8..15 buildings=15 walls=4 ms=202
+JD_DISTRICT_ROWS 16..23 buildings=13 walls=0 ms=148
+JD_DISTRICT_ROWS 24..31 buildings=12 walls=2 ms=97
+JD_DISTRICT_ROWS 32..39 buildings=20 walls=0 ms=200
+JD_DISTRICT_ROWS 40..47 buildings=15 walls=0 ms=198
+JD_DISTRICT_ROWS 48..55 buildings=7 walls=4 ms=45
+JD_DISTRICT_ROWS 56..63 buildings=20 walls=1 ms=197
+JD_DISTRICT_ROWS 64..71 buildings=16 walls=0 ms=140
+JD_DISTRICT_ROWS 72..79 buildings=20 walls=0 ms=147
+JD_DISTRICT_ROWS 80..87 buildings=11 walls=3 ms=91
+JD_DISTRICT_ROWS 88..95 buildings=24 walls=0 ms=178
+JD_DISTRICT_ROWS 96..103 buildings=13 walls=0 ms=106
+JD_DISTRICT_ROWS 104..111 buildings=16 walls=2 ms=133
+JD_DISTRICT_ROWS 112..119 buildings=14 walls=1 ms=91
+JD_DISTRICT_ROWS 120..127 buildings=17 walls=4 ms=215
+JD_DISTRICT_ROWS 128..135 buildings=16 walls=0 ms=108
+JD_DISTRICT_ROWS 136..143 buildings=19 walls=0 ms=110
+JD_DISTRICT_ROWS 144..151 buildings=21 walls=0 ms=143
+JD_DISTRICT_ROWS 152..159 buildings=11 walls=7 ms=104
+JD_DISTRICT_ROWS 160..163 buildings=5 walls=2 ms=41
+JD_DISTRICT_FINISH ENV01_Casco_District -> Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity objects=72585 riverWalls=92
+JD_LAYOUT_REBUILD TX commit: inputs verificados, spec y escena guardadas
+JD_LAYOUT_REBUILD JD_LAYOUT_REBUILD district completo (53 s)
