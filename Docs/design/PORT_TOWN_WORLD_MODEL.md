@@ -46,6 +46,8 @@ Nightlife is a **city layer**, not a sixth dedicated district. Casco is primary;
 
 ### Compact semantic city amendment
 
+**Amended 2026-10-01:** the map's first phase (Mapa F1) is Kamurocho-scale (~0.12 km²) with reserved growth towards Ijincho scale, still five identities; about **60 % of semantic buildings have walkable interiors** (hard minimum >50 %); the city is interconnected beyond its main streets through service, interior, roof, water-level and garden layers. See [`CITY_MASTER_PLAN_V1.md`](CITY_MASTER_PLAN_V1.md) and the amendment in [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md). The paragraph below is historical where it says "selective" accessibility.
+
 Owner direction: **FacadeCell != SemanticBuilding != InteriorProgramme**. Several narrow historical facade bodies may belong to one larger functional building. Every semantic building has identity/use; selective accessible interiors exist for a reason, and a minority supports deeper programmes. Visual storeys and playable floors may differ. No space between/around buildings may remain a procedural leftover: it needs a defensible street, passage, court, garden, terrace, service, loading, river-edge, grade or setback function, or is absorbed/redesigned.
 
 ~90–130 semantic buildings town-wide and ~30–40 in CASCO, often 2–4 visual bodies per building, are **starting directions, without minimum quotas**. The accepted quantitative guardrails, counting rules, preserve/reopen ledger and dependency change live once in [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md), accepted through `WP-CITY-URBAN-00R`. No complete ENV01 conversion is authorized here.

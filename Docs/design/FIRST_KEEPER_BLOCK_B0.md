@@ -108,7 +108,7 @@ Exact curves, slopes, facade placement and junction shaping are resolved during 
 - shop public room is a shallow useful interior/threshold; service access remains distinct;
 - lodging may have deeper private/common layering later but must read as a believable return anchor;
 - public port edge remains physically/readably separate from controlled yard/work areas;
-- not every facade opens; every semantic building has identity/use, including closed fabric; several FacadeCells may belong to one mixed-use building;
+- not every facade opens, but (amended 2026-10-01) a majority of B0's semantic buildings have walkable interiors in three scales; every semantic building has identity/use, including closed fabric; several FacadeCells may belong to one mixed-use building. B0 is realized by [`WP-CITY-B0-01`](../workpacks/WP-CITY-B0-01.md) inside the Mapa F1 plan [`CITY_MASTER_PLAN_V1.md`](CITY_MASTER_PLAN_V1.md);
 - shallow shop/witness is a useful programme, not a fixed cubicle size: occupation, camera, access and service determine its dimensions; visual and playable floors may differ;
 - every exterior gap/rear/setback has deliberate function or is absorbed/redesigned, under the compact-city amendment;
 - an interior cannot be used to fake a public shortcut that does not exist in the street graph;

@@ -1,0 +1,5527 @@
+{
+ "schema": "juego-def.city-plan/1",
+ "version": "1.2",
+ "date": "2026-10-01",
+ "status": "PLANNING RECORD — no es autoridad espacial. Tras WP-CITY-SKELETON-00 la autoridad es la escena Unity authored; las métricas se re-miden desde la escena.",
+ "frame": {
+  "units": "m",
+  "x": "oeste→este",
+  "z": "sur→norte (dársena al sur)",
+  "y": "cota sobre la lámina de agua",
+  "envelopeRule": "incluye cauce del río, calles, patios, huertas, muelles y ribera; excluye la lámina de la dársena"
+ },
+ "mapPhase": {
+  "id": "F1",
+  "scale": "Kamurocho (~0,12 km²)",
+  "growthTarget": "Ijincho (~0,35–0,40 km²) por costuras Y1–Y5",
+  "owner": "2026-10-01"
+ },
+ "budgets": {
+  "envelopeMaxM2": 150000,
+  "publicNetworkMaxM": 3600,
+  "semanticBuildingsMax": 240,
+  "cascoBuildingsMax": 50,
+  "neighbourRouteMaxM": 180,
+  "extremeRouteMaxM": 900,
+  "largestToSmallestMin": 2.0,
+  "accessibleTarget": 0.6,
+  "accessibleHardMin": 0.5,
+  "deepMax": 0.2,
+  "previousCity00R": {
+   "envelopeMaxM2": 70000,
+   "publicNetworkMaxM": 1800,
+   "semanticBuildingsMax": 130,
+   "cascoBuildingsMax": 40,
+   "extremeRouteMaxM": 700
+  }
+ },
+ "gradeClasses": {
+  "comfortable": "<=5%",
+  "perceptible": "5-10%",
+  "strong": ">10% o escaleras",
+  "intent": "70/20/10"
+ },
+ "datums": {
+  "water": 0,
+  "quay": "2.5-3",
+  "b0Terrace": 4.5,
+  "b0Commercial": "5.5-6.5",
+  "canton": 8,
+  "cascoLow": "7.5-9.5",
+  "plazaMayor": 10.5,
+  "cascoHigh": "12-12.5",
+  "viviendas": "10-14",
+  "talleres": "3-8",
+  "riverInCasco": "4-6 entre muros de 3 m"
+ },
+ "anchors": {
+  "CASCO": "C3",
+  "MERCADO": "A",
+  "MUELLE": "P",
+  "TALLERES": "T2",
+  "VIVIENDAS": "V2"
+ },
+ "neighbourRelations": [
+  [
+   "CASCO",
+   "MERCADO",
+   "U03"
+  ],
+  [
+   "MERCADO",
+   "MUELLE",
+   "U01/U02"
+  ],
+  [
+   "CASCO",
+   "VIVIENDAS",
+   "U05"
+  ],
+  [
+   "MERCADO",
+   "VIVIENDAS",
+   "U04"
+  ],
+  [
+   "MUELLE",
+   "TALLERES",
+   "U06"
+  ],
+  [
+   "TALLERES",
+   "VIVIENDAS",
+   "U07"
+  ]
+ ],
+ "zones": [
+  {
+   "id": "CASCO",
+   "polygons": [
+    [
+     [
+      14,
+      82
+     ],
+     [
+      26,
+      92
+     ],
+     [
+      60,
+      94
+     ],
+     [
+      100,
+      94
+     ],
+     [
+      136,
+      100
+     ],
+     [
+      150,
+      128
+     ],
+     [
+      142,
+      166
+     ],
+     [
+      140,
+      208
+     ],
+     [
+      90,
+      220
+     ],
+     [
+      40,
+      214
+     ],
+     [
+      12,
+      198
+     ],
+     [
+      -30,
+      182
+     ],
+     [
+      -34,
+      128
+     ],
+     [
+      4,
+      120
+     ]
+    ],
+    [
+     [
+      -30,
+      182
+     ],
+     [
+      12,
+      198
+     ],
+     [
+      40,
+      214
+     ],
+     [
+      90,
+      220
+     ],
+     [
+      110,
+      228
+     ],
+     [
+      100,
+      290
+     ],
+     [
+      40,
+      300
+     ],
+     [
+      -20,
+      296
+     ],
+     [
+      -44,
+      250
+     ],
+     [
+      -40,
+      200
+     ]
+    ]
+   ],
+   "targetBuildings": 35,
+   "datum": "6.5–12.5",
+   "character": "casco elevado sobre el espolón: cívico/familiar, nightlife principal en la franja baja (Calle de los Vinos), Plaza Mayor, iglesia, río encajonado y Puente Viejo; morfología Potes/Liébana como alma, no calco"
+  },
+  {
+   "id": "MERCADO",
+   "polygons": [
+    [
+     [
+      14,
+      30
+     ],
+     [
+      60,
+      38
+     ],
+     [
+      124,
+      40
+     ],
+     [
+      160,
+      64
+     ],
+     [
+      220,
+      62
+     ],
+     [
+      236,
+      100
+     ],
+     [
+      214,
+      124
+     ],
+     [
+      150,
+      128
+     ],
+     [
+      136,
+      100
+     ],
+     [
+      100,
+      94
+     ],
+     [
+      60,
+      94
+     ],
+     [
+      26,
+      92
+     ],
+     [
+      14,
+      82
+     ]
+    ],
+    [
+     [
+      -124,
+      24
+     ],
+     [
+      4,
+      24
+     ],
+     [
+      4,
+      118
+     ],
+     [
+      -34,
+      128
+     ],
+     [
+      -60,
+      124
+     ],
+     [
+      -124,
+      100
+     ]
+    ]
+   ],
+   "targetBuildings": 25,
+   "datum": "4.5–8",
+   "character": "banqueta media entre casco y puerto: B0, mercado de abastos, comercio diario, pensión, hotel, Cantón"
+  },
+  {
+   "id": "MUELLE",
+   "polygons": [
+    [
+     [
+      14,
+      0
+     ],
+     [
+      250,
+      0
+     ],
+     [
+      250,
+      32
+     ],
+     [
+      220,
+      62
+     ],
+     [
+      160,
+      64
+     ],
+     [
+      124,
+      40
+     ],
+     [
+      60,
+      38
+     ],
+     [
+      14,
+      30
+     ]
+    ],
+    [
+     [
+      84,
+      -4
+     ],
+     [
+      84,
+      -56
+     ],
+     [
+      98,
+      -56
+     ],
+     [
+      98,
+      -4
+     ]
+    ],
+    [
+     [
+      138,
+      0
+     ],
+     [
+      138,
+      -34
+     ],
+     [
+      182,
+      -34
+     ],
+     [
+      182,
+      0
+     ]
+    ],
+    [
+     [
+      -124,
+      -12
+     ],
+     [
+      4,
+      -12
+     ],
+     [
+      4,
+      24
+     ],
+     [
+      -124,
+      24
+     ]
+    ],
+    [
+     [
+      300,
+      0
+     ],
+     [
+      310,
+      46
+     ],
+     [
+      340,
+      52
+     ],
+     [
+      370,
+      40
+     ],
+     [
+      396,
+      -10
+     ],
+     [
+      390,
+      -34
+     ],
+     [
+      350,
+      -20
+     ],
+     [
+      320,
+      -12
+     ],
+     [
+      300,
+      -8
+     ]
+    ]
+   ],
+   "targetBuildings": 15,
+   "datum": "2.5–3",
+   "character": "borde de agua de trabajo: paseo público P–Q, lonja/cofradía con muelle propio, almacenes, patio controlado, muelle de armadores, espigón"
+  },
+  {
+   "id": "TALLERES",
+   "polygons": [
+    [
+     [
+      250,
+      0
+     ],
+     [
+      300,
+      0
+     ],
+     [
+      310,
+      46
+     ],
+     [
+      298,
+      126
+     ],
+     [
+      250,
+      130
+     ],
+     [
+      236,
+      100
+     ],
+     [
+      220,
+      62
+     ],
+     [
+      250,
+      32
+     ]
+    ],
+    [
+     [
+      298,
+      126
+     ],
+     [
+      310,
+      46
+     ],
+     [
+      340,
+      52
+     ],
+     [
+      352,
+      120
+     ],
+     [
+      330,
+      150
+     ],
+     [
+      300,
+      150
+     ]
+    ]
+   ],
+   "targetBuildings": 10,
+   "datum": "3–8",
+   "character": "reparación y servicio: astillero/varadero, taller mecánico, La Nave (nightlife alternativa), rampas de vehículos"
+  },
+  {
+   "id": "VIVIENDAS",
+   "polygons": [
+    [
+     [
+      150,
+      128
+     ],
+     [
+      214,
+      124
+     ],
+     [
+      236,
+      100
+     ],
+     [
+      250,
+      130
+     ],
+     [
+      270,
+      176
+     ],
+     [
+      250,
+      220
+     ],
+     [
+      200,
+      232
+     ],
+     [
+      140,
+      208
+     ],
+     [
+      142,
+      166
+     ]
+    ],
+    [
+     [
+      140,
+      208
+     ],
+     [
+      200,
+      232
+     ],
+     [
+      250,
+      220
+     ],
+     [
+      270,
+      176
+     ],
+     [
+      300,
+      190
+     ],
+     [
+      310,
+      250
+     ],
+     [
+      280,
+      310
+     ],
+     [
+      200,
+      318
+     ],
+     [
+      130,
+      300
+     ],
+     [
+      110,
+      228
+     ]
+    ]
+   ],
+   "targetBuildings": 20,
+   "datum": "10–14",
+   "character": "ladera en terrazas curvas con huertas: fuente/lavadero, casa-cuartel, hogar vecinal, frontón; contraste tranquilo"
+  }
+ ],
+ "river": {
+  "polygon": [
+   [
+    4,
+    0
+   ],
+   [
+    14,
+    0
+   ],
+   [
+    12,
+    120
+   ],
+   [
+    9,
+    200
+   ],
+   [
+    6,
+    250
+   ],
+   [
+    0,
+    300
+   ],
+   [
+    -6,
+    334
+   ],
+   [
+    -14,
+    334
+   ],
+   [
+    -8,
+    300
+   ],
+   [
+    -2,
+    250
+   ],
+   [
+    1,
+    200
+   ],
+   [
+    4,
+    120
+   ]
+  ],
+  "width": "6-10",
+  "note": "encajonado; desemboca en la dársena junto al Puente de la Ría"
+ },
+ "nodes": [
+  {
+   "id": "W0",
+   "x": 14,
+   "z": 12,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Cabeza este del Puente de la Ría — llegada (arrival_w)"
+  },
+  {
+   "id": "Q",
+   "x": 96,
+   "z": 14,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Mirador del muelle, barandilla al agua (B0 Q)"
+  },
+  {
+   "id": "P",
+   "x": 150,
+   "z": 18,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Umbral público del puerto, frente de la lonja (B0 P)",
+   "anchorOf": "MUELLE"
+  },
+  {
+   "id": "M4",
+   "x": 200,
+   "z": 44,
+   "y": 3.0,
+   "zone": "MUELLE",
+   "role": "Puerta del patio portuario controlado"
+  },
+  {
+   "id": "M5",
+   "x": 244,
+   "z": 44,
+   "y": 3.0,
+   "zone": "TALLERES",
+   "role": "Cruce del varadero"
+  },
+  {
+   "id": "SL",
+   "x": 274,
+   "z": 14,
+   "y": 2.5,
+   "zone": "TALLERES",
+   "role": "Varadero / grada del astillero (servicio)"
+  },
+  {
+   "id": "L",
+   "x": 38,
+   "z": 70,
+   "y": 5.5,
+   "zone": "MERCADO",
+   "role": "Puerta de la pensión (B0 L)"
+  },
+  {
+   "id": "A",
+   "x": 78,
+   "z": 76,
+   "y": 6.0,
+   "zone": "MERCADO",
+   "role": "Plaza del mercado (B0 A)",
+   "anchorOf": "MERCADO"
+  },
+  {
+   "id": "S",
+   "x": 114,
+   "z": 74,
+   "y": 6.5,
+   "zone": "MERCADO",
+   "role": "Tienda-testigo (B0 S)"
+  },
+  {
+   "id": "E",
+   "x": 152,
+   "z": 68,
+   "y": 6.5,
+   "zone": "MERCADO",
+   "role": "Esquina del hotel, revelación del puerto (B0 E)"
+  },
+  {
+   "id": "O",
+   "x": 112,
+   "z": 46,
+   "y": 4.5,
+   "zone": "MERCADO",
+   "role": "Rellano de observación en la terraza El Muro (B0 O)"
+  },
+  {
+   "id": "V",
+   "x": 70,
+   "z": 50,
+   "y": 4.5,
+   "zone": "MERCADO",
+   "role": "Rellano tranquilo escalonado (B0 V)"
+  },
+  {
+   "id": "E2",
+   "x": 178,
+   "z": 98,
+   "y": 8.0,
+   "zone": "MERCADO",
+   "role": "El Cantón (plazuela comercial norte)"
+  },
+  {
+   "id": "C7",
+   "x": 28,
+   "z": 102,
+   "y": 6.5,
+   "zone": "CASCO",
+   "role": "Calle del Río, tramo sur"
+  },
+  {
+   "id": "C1",
+   "x": 72,
+   "z": 108,
+   "y": 7.5,
+   "zone": "CASCO",
+   "role": "Pie de la Rúa Mayor / Calle de los Vinos"
+  },
+  {
+   "id": "C2",
+   "x": 124,
+   "z": 106,
+   "y": 9.5,
+   "zone": "CASCO",
+   "role": "La Atalaya (mirador sobre el puerto)"
+  },
+  {
+   "id": "C9",
+   "x": 74,
+   "z": 132,
+   "y": 9.0,
+   "zone": "CASCO",
+   "role": "Rúa Mayor, tramo medio"
+  },
+  {
+   "id": "C3",
+   "x": 64,
+   "z": 156,
+   "y": 10.5,
+   "zone": "CASCO",
+   "role": "Plaza Mayor",
+   "anchorOf": "CASCO"
+  },
+  {
+   "id": "C8",
+   "x": 104,
+   "z": 140,
+   "y": 10.0,
+   "zone": "CASCO",
+   "role": "Cruce de la Atalaya"
+  },
+  {
+   "id": "C4",
+   "x": 22,
+   "z": 142,
+   "y": 8.5,
+   "zone": "CASCO",
+   "role": "Cabeza del Puente Viejo"
+  },
+  {
+   "id": "W1",
+   "x": 0,
+   "z": 144,
+   "y": 8.5,
+   "zone": "CASCO",
+   "role": "Orilla oeste: molino (costura X2)"
+  },
+  {
+   "id": "C5",
+   "x": 100,
+   "z": 178,
+   "y": 12.0,
+   "zone": "CASCO",
+   "role": "Plaza de la Iglesia"
+  },
+  {
+   "id": "C6",
+   "x": 128,
+   "z": 190,
+   "y": 12.5,
+   "zone": "CASCO",
+   "role": "Ronda Alta, salida este"
+  },
+  {
+   "id": "V1",
+   "x": 154,
+   "z": 132,
+   "y": 10.0,
+   "zone": "VIVIENDAS",
+   "role": "Entrada de Viviendas / casa-cuartel"
+  },
+  {
+   "id": "V2",
+   "x": 188,
+   "z": 154,
+   "y": 11.5,
+   "zone": "VIVIENDAS",
+   "role": "Plazuela de la Fuente",
+   "anchorOf": "VIVIENDAS"
+  },
+  {
+   "id": "V3",
+   "x": 236,
+   "z": 146,
+   "y": 10.0,
+   "zone": "VIVIENDAS",
+   "role": "Lavadero / bajada a Talleres"
+  },
+  {
+   "id": "V4",
+   "x": 168,
+   "z": 192,
+   "y": 13.5,
+   "zone": "VIVIENDAS",
+   "role": "Terrazas altas (costura X3)"
+  },
+  {
+   "id": "T1",
+   "x": 256,
+   "z": 116,
+   "y": 8.0,
+   "zone": "TALLERES",
+   "role": "Alto de la Cantera"
+  },
+  {
+   "id": "T2",
+   "x": 260,
+   "z": 76,
+   "y": 5.0,
+   "zone": "TALLERES",
+   "role": "Patio de talleres",
+   "anchorOf": "TALLERES"
+  },
+  {
+   "id": "QJ",
+   "x": 91,
+   "z": -44,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Punta del espigón (espacio abierto; costura X5)"
+  },
+  {
+   "id": "Y1",
+   "x": 192,
+   "z": 10,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Muelle de carga del patio portuario (CTL, sólo servicio)"
+  },
+  {
+   "id": "F1",
+   "x": 216,
+   "z": 78,
+   "y": 6.0,
+   "zone": "MERCADO",
+   "role": "Patio de la Fábrica (carga trasera Mercado–Talleres, sólo servicio)"
+  },
+  {
+   "id": "H6",
+   "x": 232,
+   "z": 214,
+   "y": 15.0,
+   "zone": "VIVIENDAS",
+   "role": "Huertas altas (senda privada, sólo servicio)"
+  },
+  {
+   "id": "W2",
+   "x": -14,
+   "z": 14,
+   "y": 2.8,
+   "zone": "MERCADO",
+   "role": "Cabeza oeste del Puente de la Ría (Arrabal)"
+  },
+  {
+   "id": "W3",
+   "x": -50,
+   "z": 62,
+   "y": 5.0,
+   "zone": "MERCADO",
+   "role": "Plaza de la Estación de autobuses (llegada)"
+  },
+  {
+   "id": "W4",
+   "x": -96,
+   "z": 58,
+   "y": 6.0,
+   "zone": "MERCADO",
+   "role": "Calle del Cine / cine-bingo"
+  },
+  {
+   "id": "W5",
+   "x": -56,
+   "z": 10,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Paseo de la Ría: cetárea y club de remo"
+  },
+  {
+   "id": "W6",
+   "x": -104,
+   "z": 4,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Playa de la Ría (costura Y1)"
+  },
+  {
+   "id": "W7",
+   "x": -36,
+   "z": 112,
+   "y": 8.0,
+   "zone": "MERCADO",
+   "role": "Alto de la Cuesta de la Estación"
+  },
+  {
+   "id": "VM1",
+   "x": 24,
+   "z": 236,
+   "y": 11.0,
+   "zone": "CASCO",
+   "role": "Plazuela del Lavadero del río"
+  },
+  {
+   "id": "VM2",
+   "x": -22,
+   "z": 272,
+   "y": 13.0,
+   "zone": "CASCO",
+   "role": "Molino de arriba, orilla oeste (costura Y2)"
+  },
+  {
+   "id": "VM3",
+   "x": 78,
+   "z": 262,
+   "y": 14.5,
+   "zone": "CASCO",
+   "role": "Ermita del Alto (mirador del valle)"
+  },
+  {
+   "id": "A1",
+   "x": 186,
+   "z": 248,
+   "y": 15.5,
+   "zone": "VIVIENDAS",
+   "role": "Plaza del Instituto"
+  },
+  {
+   "id": "A2",
+   "x": 252,
+   "z": 262,
+   "y": 16.5,
+   "zone": "VIVIENDAS",
+   "role": "Campo de fútbol municipal (costura Y3)"
+  },
+  {
+   "id": "A3",
+   "x": 146,
+   "z": 286,
+   "y": 18.0,
+   "zone": "VIVIENDAS",
+   "role": "Barrio Alto (bloques de los 70)"
+  },
+  {
+   "id": "E5",
+   "x": 328,
+   "z": 82,
+   "y": 6.0,
+   "zone": "TALLERES",
+   "role": "Puerta de la Conservera"
+  },
+  {
+   "id": "E6",
+   "x": 352,
+   "z": 8,
+   "y": 2.5,
+   "zone": "MUELLE",
+   "role": "Ensenada del este"
+  },
+  {
+   "id": "E7",
+   "x": 384,
+   "z": -24,
+   "y": 6.0,
+   "zone": "MUELLE",
+   "role": "Faro de la punta (costura Y4)"
+  }
+ ],
+ "edges": [
+  {
+   "id": "R01",
+   "a": "W0",
+   "b": "L",
+   "name": "Calle de la Ría",
+   "class": "secondary",
+   "width": 4.5,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": "arrival_w"
+  },
+  {
+   "id": "B01",
+   "a": "L",
+   "b": "A",
+   "name": "Calle del Comercio (B01 L–A)",
+   "class": "commercial",
+   "width": 6.0,
+   "curvature": 1.08,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B02",
+   "a": "A",
+   "b": "S",
+   "name": "Calle del Comercio (B02 A–S)",
+   "class": "commercial",
+   "width": 7.0,
+   "curvature": 1.05,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B03",
+   "a": "S",
+   "b": "E",
+   "name": "Calle del Comercio (B03 S–E)",
+   "class": "commercial",
+   "width": 7.0,
+   "curvature": 1.08,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B04",
+   "a": "E",
+   "b": "P",
+   "name": "Bajada del Puerto (B04 E–P)",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.25,
+   "access": "PUB",
+   "relations": "B0;U01"
+  },
+  {
+   "id": "B05",
+   "a": "P",
+   "b": "Q",
+   "name": "Paseo del Muelle (B05 P–Q)",
+   "class": "quay",
+   "width": 4.5,
+   "curvature": 1.04,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B06",
+   "a": "Q",
+   "b": "O",
+   "name": "Escalera del Muro (B06 Q–O)",
+   "class": "stair",
+   "width": 2.5,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": "B0;U02"
+  },
+  {
+   "id": "B07",
+   "a": "O",
+   "b": "E",
+   "name": "Calleja de la Terraza (B07 O–E)",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B08",
+   "a": "O",
+   "b": "V",
+   "name": "Terraza El Muro (B08 O–V)",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.05,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B09",
+   "a": "V",
+   "b": "A",
+   "name": "Escalinata del Mercado (B09 V–A)",
+   "class": "stair",
+   "width": 2.5,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "B10",
+   "a": "L",
+   "b": "V",
+   "name": "Calleja de la Pensión (B10 L–V)",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": "B0"
+  },
+  {
+   "id": "C01",
+   "a": "A",
+   "b": "C1",
+   "name": "Cuesta del Mercado",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.25,
+   "access": "PUB",
+   "relations": "U03;casco_n"
+  },
+  {
+   "id": "C02",
+   "a": "C1",
+   "b": "C2",
+   "name": "Calle de los Vinos",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C03",
+   "a": "C2",
+   "b": "S",
+   "name": "Escalera de la Atalaya",
+   "class": "stair",
+   "width": 2.5,
+   "curvature": 1.2,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C04",
+   "a": "L",
+   "b": "C7",
+   "name": "Calle del Río (sur)",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C05",
+   "a": "C7",
+   "b": "C4",
+   "name": "Calle del Río (norte)",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C06",
+   "a": "C4",
+   "b": "C3",
+   "name": "Cuesta del Puente Viejo",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C07",
+   "a": "C4",
+   "b": "W1",
+   "name": "Puente Viejo",
+   "class": "bridge",
+   "width": 3.5,
+   "curvature": 1.0,
+   "access": "PUB",
+   "relations": "X2"
+  },
+  {
+   "id": "C08",
+   "a": "C1",
+   "b": "C9",
+   "name": "Rúa Mayor (baja)",
+   "class": "main",
+   "width": 5.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C09",
+   "a": "C9",
+   "b": "C3",
+   "name": "Rúa Mayor (alta)",
+   "class": "main",
+   "width": 5.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C10",
+   "a": "C2",
+   "b": "C8",
+   "name": "Calle de la Atalaya",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C11",
+   "a": "C8",
+   "b": "C5",
+   "name": "Calle de la Iglesia",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C12",
+   "a": "C3",
+   "b": "C5",
+   "name": "Calle Real",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C13",
+   "a": "C5",
+   "b": "C6",
+   "name": "Ronda Alta",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "C14",
+   "a": "C9",
+   "b": "C8",
+   "name": "Pasadizo de la Atalaya (paso cubierto bajo la casa del pasadizo)",
+   "class": "passage",
+   "width": 3.0,
+   "curvature": 1.0,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "N01",
+   "a": "E",
+   "b": "E2",
+   "name": "Calle Nueva",
+   "class": "commercial",
+   "width": 7.0,
+   "curvature": 1.08,
+   "access": "PUB",
+   "relations": "U04;homes_ne"
+  },
+  {
+   "id": "N02",
+   "a": "E2",
+   "b": "V1",
+   "name": "Calle Nueva (alta)",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": "U04"
+  },
+  {
+   "id": "N03",
+   "a": "C2",
+   "b": "V1",
+   "name": "Calle de San Roque",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "H01",
+   "a": "C6",
+   "b": "V4",
+   "name": "Camino Alto",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": "U05"
+  },
+  {
+   "id": "H02",
+   "a": "V1",
+   "b": "V2",
+   "name": "Calle de la Fuente",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "H03",
+   "a": "V2",
+   "b": "V3",
+   "name": "Calle del Lavadero",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "H04",
+   "a": "V2",
+   "b": "V4",
+   "name": "Escalerilla de las Huertas",
+   "class": "stair",
+   "width": 2.5,
+   "curvature": 1.2,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "H05",
+   "a": "V4",
+   "b": "V3",
+   "name": "Ronda de las Terrazas",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.2,
+   "access": "PUB",
+   "relations": "X3"
+  },
+  {
+   "id": "T01",
+   "a": "V3",
+   "b": "T1",
+   "name": "Rampa de la Cantera",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.3,
+   "access": "PUB",
+   "relations": "U07"
+  },
+  {
+   "id": "T02",
+   "a": "T1",
+   "b": "T2",
+   "name": "Rampa de Talleres",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "T03",
+   "a": "T2",
+   "b": "M5",
+   "name": "Rampa del Varadero",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": "X4"
+  },
+  {
+   "id": "U01",
+   "a": "P",
+   "b": "M4",
+   "name": "Calle del Muelle",
+   "class": "quay",
+   "width": 5.0,
+   "curvature": 1.05,
+   "access": "PUB",
+   "relations": "U06;quay_e"
+  },
+  {
+   "id": "U02",
+   "a": "M4",
+   "b": "M5",
+   "name": "Calle de los Almacenes",
+   "class": "secondary",
+   "width": 5.0,
+   "curvature": 1.05,
+   "access": "PUB",
+   "relations": "U06"
+  },
+  {
+   "id": "R02",
+   "a": "W0",
+   "b": "W2",
+   "name": "Puente de la Ría",
+   "class": "bridge",
+   "width": 5.0,
+   "curvature": 1.0,
+   "access": "PUB",
+   "relations": "X1→F1"
+  },
+  {
+   "id": "R03",
+   "a": "W2",
+   "b": "W3",
+   "name": "Calle de la Estación",
+   "class": "commercial",
+   "width": 6.0,
+   "curvature": 1.08,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "R04",
+   "a": "W3",
+   "b": "W4",
+   "name": "Calle del Cine",
+   "class": "secondary",
+   "width": 4.5,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "R05",
+   "a": "W2",
+   "b": "W5",
+   "name": "Paseo de la Ría",
+   "class": "quay",
+   "width": 5.0,
+   "curvature": 1.05,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "R06",
+   "a": "W5",
+   "b": "W6",
+   "name": "Paseo de la Playa",
+   "class": "quay",
+   "width": 4.5,
+   "curvature": 1.05,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "R07",
+   "a": "W4",
+   "b": "W6",
+   "name": "Bajada de la Playa",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "R08",
+   "a": "W3",
+   "b": "W7",
+   "name": "Cuesta de la Estación",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "R09",
+   "a": "W7",
+   "b": "W1",
+   "name": "Carretera vieja del valle",
+   "class": "secondary",
+   "width": 5.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": "X2→F1"
+  },
+  {
+   "id": "N04",
+   "a": "C3",
+   "b": "VM1",
+   "name": "Calle de los Molinos",
+   "class": "secondary",
+   "width": 4.0,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "N05",
+   "a": "VM1",
+   "b": "VM2",
+   "name": "Puente de los Molinos",
+   "class": "bridge",
+   "width": 3.5,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "N06",
+   "a": "VM1",
+   "b": "VM3",
+   "name": "Cuesta de la Ermita",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "N07",
+   "a": "VM3",
+   "b": "C5",
+   "name": "Camino de la Ermita",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "A01",
+   "a": "V4",
+   "b": "A1",
+   "name": "Calle del Instituto",
+   "class": "secondary",
+   "width": 5.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": "X3→F1"
+  },
+  {
+   "id": "A02",
+   "a": "A1",
+   "b": "A2",
+   "name": "Avenida del Campo",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.08,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "A03",
+   "a": "A1",
+   "b": "A3",
+   "name": "Calle de los Bloques",
+   "class": "secondary",
+   "width": 5.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "A04",
+   "a": "A3",
+   "b": "VM3",
+   "name": "Camino del Alto",
+   "class": "secondary",
+   "width": 3.5,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "E01",
+   "a": "T2",
+   "b": "E5",
+   "name": "Calle de la Conservera",
+   "class": "main",
+   "width": 6.0,
+   "curvature": 1.1,
+   "access": "PUB",
+   "relations": "X4→F1"
+  },
+  {
+   "id": "E02",
+   "a": "E5",
+   "b": "E6",
+   "name": "Bajada de la Ensenada",
+   "class": "secondary",
+   "width": 4.5,
+   "curvature": 1.12,
+   "access": "PUB",
+   "relations": ""
+  },
+  {
+   "id": "E03",
+   "a": "E6",
+   "b": "E7",
+   "name": "Senda del Faro",
+   "class": "secondary",
+   "width": 3.0,
+   "curvature": 1.15,
+   "access": "PUB",
+   "relations": ""
+  }
+ ],
+ "layerLinks": [
+  {
+   "id": "K01",
+   "name": "Patio trasero de la pensión → Calleja de la Pensión",
+   "layer": "garden",
+   "a": "L",
+   "b": "B10@0.5",
+   "access": "PRV",
+   "condition": "llave de huésped",
+   "uses": "salir sin ser visto; huida; volver a casa por detrás",
+   "width": 1.2,
+   "length": 22,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K02",
+   "name": "Mercado de abastos (dos cotas: plaza ↔ terraza)",
+   "layer": "interior",
+   "a": "A",
+   "b": "V",
+   "access": "PUB-H",
+   "condition": "7–14 h",
+   "uses": "seguimiento entre puestos; atajo temporal; conversación",
+   "width": 3.0,
+   "length": 30,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K03",
+   "name": "Almacén de la tienda S → terraza El Muro",
+   "layer": "interior",
+   "a": "S",
+   "b": "B08@0.5",
+   "access": "SRV",
+   "condition": "confianza de la tendera",
+   "uses": "salida discreta; observar la terraza",
+   "width": 1.2,
+   "length": 24,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K04",
+   "name": "Cocina y escalera de servicio del hotel → calleja de la terraza",
+   "layer": "interior",
+   "a": "E",
+   "b": "B07@0.6",
+   "access": "SRV",
+   "condition": "personal; jugador por trabajo o permiso",
+   "uses": "seguir a empleados; entrar sin pasar por recepción",
+   "width": 1.2,
+   "length": 26,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K05",
+   "name": "Azoteas del Comercio (hotel ↔ tienda S, sobre el lado sur)",
+   "layer": "upper",
+   "a": "E",
+   "b": "S",
+   "access": "PROG",
+   "condition": "llave de azotea tras ayudar a la tendera",
+   "uses": "observar Calle del Comercio, terraza y muelle; huida en persecución",
+   "width": 2.0,
+   "length": 45,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K06",
+   "name": "Pasaje de las Bóvedas bajo El Muro (muelle ↔ carga del mercado)",
+   "layer": "service",
+   "a": "Q",
+   "b": "V",
+   "access": "SRV",
+   "condition": "porteadores del mercado por la mañana",
+   "uses": "llevar cajas; seguir a un porteador; subir sin la escalera",
+   "width": 2.5,
+   "length": 46,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K07",
+   "name": "Muelle de armadores (dársena de bajura)",
+   "layer": "water",
+   "a": "W0",
+   "b": "Q",
+   "access": "SRV",
+   "condition": "pescadores; jugador por trabajo",
+   "uses": "trabajo; conversación con armadores; ruta de agua oeste",
+   "width": 5.0,
+   "length": 84,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K08",
+   "name": "Lonja: galería → sala de clasificación → muelle de la lonja",
+   "layer": "interior",
+   "a": "P",
+   "b": "Y1",
+   "access": "SRV",
+   "condition": "trabajo de descarga (galería PUB-H al alba)",
+   "uses": "trabajo; observar la subasta; ruta de trabajadores",
+   "width": 3.0,
+   "length": 50,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K09",
+   "name": "Patio portuario (carga y descarga)",
+   "layer": "service",
+   "a": "M4",
+   "b": "Y1",
+   "access": "CTL",
+   "condition": "operarios y camiones; jugador por trabajo",
+   "uses": "trabajo; pelea nocturna controlada",
+   "width": 6.0,
+   "length": 38,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K10",
+   "name": "Puerta trasera del almacén → varadero por el borde del agua",
+   "layer": "water",
+   "a": "Y1",
+   "b": "SL",
+   "access": "PROG",
+   "condition": "tras un trabajo para el capataz",
+   "uses": "loop Muelle–Talleres por el agua; huida",
+   "width": 2.5,
+   "length": 85,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K11",
+   "name": "Lancha de armadores a través de la dársena",
+   "layer": "water",
+   "a": "Q",
+   "b": "SL",
+   "access": "PROG",
+   "condition": "préstamo de lancha (amarres preparados; mecánica no implementada)",
+   "uses": "ruta por mar; seguimiento desde el agua",
+   "width": 0,
+   "length": 170,
+   "walkable": false,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K12",
+   "name": "Acceso al varadero",
+   "layer": "service",
+   "a": "M5",
+   "b": "SL",
+   "access": "SRV",
+   "condition": "astillero; trabajo o permiso",
+   "uses": "trabajo; reparación",
+   "width": 5.0,
+   "length": 45,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K13",
+   "name": "Callejón y Patio de la Fábrica (carga trasera Mercado–Talleres)",
+   "layer": "service",
+   "a": "E2",
+   "b": "T2",
+   "access": "SRV",
+   "condition": "repartidores y operarios",
+   "uses": "atajo laboral; seguir a un repartidor",
+   "width": 4.0,
+   "length": 100,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K14",
+   "name": "Cadena de patios de Talleres (taller → serrería → La Nave)",
+   "layer": "service",
+   "a": "T2",
+   "b": "T1",
+   "access": "SRV/PUB-H",
+   "condition": "SRV de día; La Nave PUB-H de noche",
+   "uses": "trabajo; reunión marginal; pelea",
+   "width": 4.0,
+   "length": 50,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K15",
+   "name": "Callejón del Tinte por el patio de servicio del bar de misión",
+   "layer": "service",
+   "a": "C7",
+   "b": "C1",
+   "access": "PUB-H",
+   "condition": "abierto en horario del bar; fuera de horario SRV",
+   "uses": "persecución; fumar y hablar; pelea",
+   "width": 2.5,
+   "length": 51,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K16",
+   "name": "Panadería: Rúa Mayor → obrador → patio a la Calle del Río",
+   "layer": "interior",
+   "a": "C08@0.5",
+   "b": "C05@0.3",
+   "access": "SRV",
+   "condition": "06:00–07:00, sale el panadero",
+   "uses": "seguir una rutina; atajo; reparto",
+   "width": 1.2,
+   "length": 40,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K17",
+   "name": "Bodega del bar de misión → Calle del Río",
+   "layer": "interior",
+   "a": "C02@0.15",
+   "b": "C7",
+   "access": "PROG",
+   "condition": "tras una misión del bar",
+   "uses": "loop Vinos–bar–río; huida",
+   "width": 1.2,
+   "length": 45,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K18",
+   "name": "Archivo del ayuntamiento → Calle Real",
+   "layer": "interior",
+   "a": "C3",
+   "b": "C12@0.4",
+   "access": "SRV",
+   "condition": "funcionarios; jugador con permiso",
+   "uses": "investigación; salida trasera",
+   "width": 1.2,
+   "length": 25,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K19",
+   "name": "Huertas de la Ribera (bajo la Calle del Río, junto al cauce)",
+   "layer": "garden",
+   "a": "C04@0.5",
+   "b": "C05@0.7",
+   "access": "PRV",
+   "condition": "puertas de huerta de los vecinos",
+   "uses": "seguir sin ser visto; escuchar; cota del agua",
+   "width": 1.5,
+   "length": 45,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K20",
+   "name": "Canal del molino bajo el Puente Viejo",
+   "layer": "water",
+   "a": "W1",
+   "b": "C05@0.8",
+   "access": "PROG",
+   "condition": "tras recuperar la llave del molino",
+   "uses": "refugio; ruta de agua del casco",
+   "width": 1.2,
+   "length": 30,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K21",
+   "name": "Patio de la casa del maestro (Calle de la Atalaya ↔ Rúa Mayor)",
+   "layer": "garden",
+   "a": "C10@0.5",
+   "b": "C09@0.5",
+   "access": "PRV",
+   "condition": "invitación del maestro",
+   "uses": "entrenamiento; atajo aprendido; conversación",
+   "width": 2.0,
+   "length": 35,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K22",
+   "name": "Casa de Cultura de fachada a fachada (Plaza Mayor ↔ Calle de la Iglesia)",
+   "layer": "interior",
+   "a": "C3",
+   "b": "C11@0.5",
+   "access": "PUB-H",
+   "condition": "horario de biblioteca",
+   "uses": "investigación; atajo cívico; ensayos por la tarde",
+   "width": 2.0,
+   "length": 30,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K23",
+   "name": "Coro de la iglesia → casa rectoral → Calle Real",
+   "layer": "interior",
+   "a": "C5",
+   "b": "C12@0.7",
+   "access": "PRV/PROG",
+   "condition": "sacristán",
+   "uses": "archivo parroquial; salida oculta",
+   "width": 1.2,
+   "length": 30,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K24",
+   "name": "Casa-cuartel: mostrador → patio de vehículos → portón a la Calle de la Fuente",
+   "layer": "interior",
+   "a": "V1",
+   "b": "H02@0.4",
+   "access": "CTL",
+   "condition": "guardias; jugador con permiso o citación",
+   "uses": "declaración; observar detenidos; salida de vehículos",
+   "width": 3.0,
+   "length": 40,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K25",
+   "name": "Escaleras privadas entre terrazas (Calle de la Fuente ↔ Ronda)",
+   "layer": "garden",
+   "a": "H02@0.7",
+   "b": "H05@0.4",
+   "access": "PRV",
+   "condition": "vecinos; invitación",
+   "uses": "atajo vecinal; observar el patio de la casa-cuartel",
+   "width": 1.2,
+   "length": 30,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K26",
+   "name": "Hogar vecinal de la plazuela a la terraza trasera",
+   "layer": "interior",
+   "a": "V2",
+   "b": "H03@0.5",
+   "access": "PUB-H",
+   "condition": "horario del Hogar",
+   "uses": "rumores; testigos mayores; atajo",
+   "width": 1.5,
+   "length": 25,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K27",
+   "name": "Senda de las Huertas altas → Talleres",
+   "layer": "garden",
+   "a": "V4",
+   "b": "T1",
+   "access": "PRV",
+   "condition": "vecinos con huerta; invitación",
+   "uses": "ruta oculta Viviendas–Talleres; observar el puerto desde arriba",
+   "width": 1.2,
+   "length": 170,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K29",
+   "name": "Corredor de galerías común de las casas en terraza (Ronda ↔ Calle del Lavadero)",
+   "layer": "upper",
+   "a": "H05@0.6",
+   "b": "H03@0.3",
+   "access": "PRV",
+   "condition": "vecinos; invitación",
+   "uses": "observar la plazuela y el frontón desde arriba; atajo vecinal",
+   "width": 1.5,
+   "length": 35,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K30",
+   "name": "Callejón de la leña (traseras de la Calle de la Fuente)",
+   "layer": "service",
+   "a": "N02@0.8",
+   "b": "V2",
+   "access": "SRV/PRV",
+   "condition": "butanero y vecinos",
+   "uses": "seguir a un vecino; reparto de butano; entrar por detrás",
+   "width": 2.0,
+   "length": 50,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K28",
+   "name": "Espigón (muelle chico)",
+   "layer": "openspace",
+   "a": "Q",
+   "b": "QJ",
+   "access": "PUB",
+   "condition": "público; sin salida",
+   "uses": "pesca; mirar el agua; embarcadero X5",
+   "width": 4.0,
+   "length": 58,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K31",
+   "name": "Andenes de la estación → cocheras → Calle del Cine",
+   "layer": "service",
+   "a": "W3",
+   "b": "W4",
+   "access": "SRV",
+   "condition": "conductores y mecánicos",
+   "uses": "seguir a un conductor; llegadas y salidas de autobús",
+   "width": 3.0,
+   "length": 50,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K32",
+   "name": "Cine-bingo: sala → cabina de proyección → callejón trasero al paseo",
+   "layer": "interior",
+   "a": "W4",
+   "b": "R06@0.5",
+   "access": "SRV/PROG",
+   "condition": "personal; tras una misión del bingo",
+   "uses": "trastienda del juego; huida; observar la sala",
+   "width": 1.2,
+   "length": 55,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K33",
+   "name": "Cetárea: viveros → rampa → Paseo de la Ría",
+   "layer": "water",
+   "a": "W5",
+   "b": "R05@0.5",
+   "access": "SRV",
+   "condition": "mariscadores",
+   "uses": "trabajo; escuchar a los mariscadores",
+   "width": 2.0,
+   "length": 25,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K34",
+   "name": "Club de remo: traineras por la dársena hasta el muelle",
+   "layer": "water",
+   "a": "W5",
+   "b": "Q",
+   "access": "PROG",
+   "condition": "socio del club (mecánica de remo no implementada)",
+   "uses": "minijuego de remo; ruta por agua",
+   "width": 0,
+   "length": 110,
+   "walkable": false,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K35",
+   "name": "Senda de las huertas de la ribera oeste (Puente Viejo → molino de arriba)",
+   "layer": "garden",
+   "a": "W1",
+   "b": "VM2",
+   "access": "PRV",
+   "condition": "hortelanos; invitación",
+   "uses": "seguir sin ser visto por el valle; cota del río",
+   "width": 1.2,
+   "length": 130,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K36",
+   "name": "Canal de los molinos bajo el Puente de los Molinos",
+   "layer": "water",
+   "a": "VM2",
+   "b": "VM1",
+   "access": "PROG",
+   "condition": "llave del molino de arriba",
+   "uses": "refugio; ruta de agua del valle",
+   "width": 1.2,
+   "length": 40,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K37",
+   "name": "Patio del instituto (Barrio Alto ↔ Plaza del Instituto)",
+   "layer": "garden",
+   "a": "A3",
+   "b": "A1",
+   "access": "PUB-H",
+   "condition": "horario escolar",
+   "uses": "seguir a estudiantes; atajo; peleas de recreo",
+   "width": 3.0,
+   "length": 45,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K38",
+   "name": "Grada del campo de fútbol → Huertas altas",
+   "layer": "garden",
+   "a": "A2",
+   "b": "H6",
+   "access": "PUB-H",
+   "condition": "días de partido y tardes",
+   "uses": "rumores en la grada; ruta oculta hacia las huertas",
+   "width": 2.0,
+   "length": 55,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K39",
+   "name": "Conservera: nave → cocederos → muelle de la conservera → ensenada",
+   "layer": "interior",
+   "a": "E5",
+   "b": "E6",
+   "access": "SRV/PROG",
+   "condition": "turno de la conservera; tras una misión",
+   "uses": "trabajo; descubrir la nave cerrada; huida al mar",
+   "width": 3.0,
+   "length": 60,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K40",
+   "name": "Senda de las rocas bajo la punta (ensenada → varadero) con marea baja",
+   "layer": "water",
+   "a": "E6",
+   "b": "SL",
+   "access": "PUB-H",
+   "condition": "marea baja",
+   "uses": "loop costero Talleres–Muelle; pesca; seguimiento",
+   "width": 2.0,
+   "length": 85,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "K41",
+   "name": "Azoteas y tendederos de los bloques de los 70",
+   "layer": "upper",
+   "a": "A03@0.5",
+   "b": "A3",
+   "access": "PRV",
+   "condition": "vecinos del bloque",
+   "uses": "observar el instituto y el campo; atajo vecinal",
+   "width": 2.0,
+   "length": 30,
+   "walkable": true,
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  }
+ ],
+ "verticalPoints": [
+  {
+   "id": "VX1",
+   "name": "Torre de la iglesia",
+   "node": "C5",
+   "access": "PROG vía sacristán",
+   "view": "vista de todo el pueblo, la dársena y la bocana"
+  },
+  {
+   "id": "VX2",
+   "name": "Galería acristalada del hotel",
+   "node": "E",
+   "access": "cliente / permiso",
+   "view": "vigilar muelle, lonja y llegada por mar"
+  },
+  {
+   "id": "VX3",
+   "name": "Balcón del salón de plenos",
+   "node": "C3",
+   "access": "PUB-H",
+   "view": "observar la Plaza Mayor y sus cinco salidas"
+  },
+  {
+   "id": "VX4",
+   "name": "Entreplanta-oficina del almacén portuario",
+   "node": "M4",
+   "access": "SRV",
+   "view": "vigilar el patio portuario"
+  },
+  {
+   "id": "VX5",
+   "name": "La Atalaya",
+   "node": "C2",
+   "access": "PUB",
+   "view": "dársena, Puente de la Ría y llegadas"
+  },
+  {
+   "id": "VX6",
+   "name": "Terraza El Muro",
+   "node": "O",
+   "access": "PUB",
+   "view": "Calle del Comercio por detrás y muelle a la vez"
+  },
+  {
+   "id": "VX7",
+   "name": "Altillo del astillero",
+   "node": "SL",
+   "access": "SRV",
+   "view": "varadero y costa este"
+  },
+  {
+   "id": "VX8",
+   "name": "Faro de la punta",
+   "node": "E7",
+   "access": "PROG (farero)",
+   "view": "bocana, costa este y llegada por mar"
+  },
+  {
+   "id": "VX9",
+   "name": "Ermita del Alto",
+   "node": "VM3",
+   "access": "PUB",
+   "view": "valle de los molinos y todo el casco"
+  },
+  {
+   "id": "VX10",
+   "name": "Azotea de los bloques",
+   "node": "A3",
+   "access": "PRV",
+   "view": "instituto, campo y puerto a lo lejos"
+  }
+ ],
+ "openSpaces": [
+  {
+   "id": "OS01",
+   "node": "A",
+   "name": "Plaza del mercado",
+   "size": [
+    24,
+    18
+   ],
+   "use": "puestos por la mañana, juego y partidas por la tarde, terraza del café por la noche; combate nocturno sin puestos",
+   "access": "PUB"
+  },
+  {
+   "id": "OS02",
+   "node": "C3",
+   "name": "Plaza Mayor",
+   "size": [
+    26,
+    20
+   ],
+   "use": "cívica: ayuntamiento, fiestas, conversación; balcón de plenos",
+   "access": "PUB"
+  },
+  {
+   "id": "OS03",
+   "node": "C2",
+   "name": "La Atalaya",
+   "size": [
+    14,
+    12
+   ],
+   "use": "mirador sobre la dársena y el puente de llegada; fotografía; observar llegadas",
+   "access": "PUB"
+  },
+  {
+   "id": "OS04",
+   "node": "C5",
+   "name": "Plaza de la Iglesia",
+   "size": [
+    18,
+    14
+   ],
+   "use": "escalones de la iglesia, salida de misa, sombra",
+   "access": "PUB"
+  },
+  {
+   "id": "OS05",
+   "node": "E2",
+   "name": "El Cantón",
+   "size": [
+    16,
+    12
+   ],
+   "use": "plazuela comercial norte: Correos, caja, recreativo",
+   "access": "PUB"
+  },
+  {
+   "id": "OS06",
+   "node": "V2",
+   "name": "Plazuela de la Fuente",
+   "size": [
+    14,
+    12
+   ],
+   "use": "fuente y lavadero, terraza del Hogar, vida de barrio",
+   "access": "PUB"
+  },
+  {
+   "id": "OS07",
+   "node": "P",
+   "name": "Explanada de la lonja",
+   "size": [
+    20,
+    14
+   ],
+   "use": "subasta al alba (galería PUB-H), descarga; combate nocturno controlado",
+   "access": "PUB/CTL"
+  },
+  {
+   "id": "OS08",
+   "node": "QJ",
+   "name": "Espigón (muelle chico)",
+   "size": [
+    8,
+    52
+   ],
+   "use": "pesca, mirar el agua, embarcadero X5; espacio abierto sin salida",
+   "access": "PUB"
+  },
+  {
+   "id": "OS09",
+   "node": "T2",
+   "name": "Patio de talleres",
+   "size": [
+    16,
+    18
+   ],
+   "use": "trabajo de día, reunión marginal de noche; combate",
+   "access": "PUB/SRV"
+  },
+  {
+   "id": "OS10",
+   "node": "V3",
+   "name": "Frontón",
+   "size": [
+    30,
+    12
+   ],
+   "use": "pelota, entrenamiento con maestro, sparring",
+   "access": "PUB"
+  },
+  {
+   "id": "OS11",
+   "node": "O",
+   "name": "Terraza El Muro",
+   "size": [
+    48,
+    6
+   ],
+   "use": "ruta elevada lineal con pretil sobre el muelle; observación y seguimiento",
+   "access": "PUB"
+  },
+  {
+   "id": "OS12",
+   "node": "C1",
+   "name": "Patio de servicio del bar de misión",
+   "size": [
+    10,
+    12
+   ],
+   "use": "carga del bar, fumar, pelea; paso PUB-H del Callejón del Tinte",
+   "access": "PUB-H/SRV"
+  },
+  {
+   "id": "OS13",
+   "node": "W3",
+   "name": "Plaza de la Estación",
+   "size": [
+    26,
+    18
+   ],
+   "use": "llegadas y salidas de autobús; taxis; esperar con equipaje",
+   "access": "PUB"
+  },
+  {
+   "id": "OS14",
+   "node": "W6",
+   "name": "Playa de la Ría",
+   "size": [
+    40,
+    14
+   ],
+   "use": "bañistas en verano, mariscadores en marea baja",
+   "access": "PUB"
+  },
+  {
+   "id": "OS15",
+   "node": "A2",
+   "name": "Campo de fútbol municipal",
+   "size": [
+    90,
+    55
+   ],
+   "use": "partidos, entrenamientos; grada; peleas entre aficiones",
+   "access": "PUB-H"
+  },
+  {
+   "id": "OS16",
+   "node": "VM1",
+   "name": "Plazuela del Lavadero del río",
+   "size": [
+    14,
+    12
+   ],
+   "use": "lavadero, conversación, ropa tendida",
+   "access": "PUB"
+  },
+  {
+   "id": "OS17",
+   "node": "E6",
+   "name": "Ensenada del este",
+   "size": [
+    30,
+    16
+   ],
+   "use": "barcas varadas, pesca, merendero",
+   "access": "PUB"
+  }
+ ],
+ "absorbedSeams": [
+  {
+   "id": "X1",
+   "from": "W0",
+   "stub": [
+    -36,
+    12
+   ],
+   "became": "Carretera de la costa oeste: parada de autobuses/estación, arrabal, playa",
+   "note": "curva con muro y marquesina; tráfico de llegada — absorbida por el anillo F1 (ya no es borde)"
+  },
+  {
+   "id": "X2",
+   "from": "W1",
+   "stub": [
+    -14,
+    236
+   ],
+   "became": "Valle río arriba: molinos, huertas, cementerio, carretera del interior",
+   "note": "camino entre muros de huerta que gira tras el molino — absorbida por el anillo F1 (ya no es borde)"
+  },
+  {
+   "id": "X3",
+   "from": "V4",
+   "stub": [
+    206,
+    240
+   ],
+   "became": "Afueras altas: colegio/instituto, campo de fútbol, carretera nacional",
+   "note": "portilla de huertas y talud con escalera cortada por obras — absorbida por el anillo F1 (ya no es borde)"
+  },
+  {
+   "id": "X4",
+   "from": "T2",
+   "stub": [
+    314,
+    62
+   ],
+   "became": "Costa este: ensenada, conservera, faro, playa",
+   "note": "portón cerrado de la conservera / frente de cantera — absorbida por el anillo F1 (ya no es borde)"
+  }
+ ],
+ "seams": [
+  {
+   "id": "Y1",
+   "from": "W6",
+   "stub": [
+    -150,
+    0
+   ],
+   "future": "Costa oeste: carretera, estación de tren, barrio de la playa grande",
+   "closureToday": "curva de la carretera con quitamiedos y señal de salida",
+   "corridorWidth": 6.0
+  },
+  {
+   "id": "Y2",
+   "from": "VM2",
+   "stub": [
+    -40,
+    322
+   ],
+   "future": "Valle arriba: polígono de huertas, cementerio, aserradero",
+   "closureToday": "camino entre muros que se pierde valle arriba",
+   "corridorWidth": 4.0
+  },
+  {
+   "id": "Y3",
+   "from": "A2",
+   "stub": [
+    270,
+    332
+   ],
+   "future": "Norte: carretera nacional, polígono industrial, gasolinera",
+   "closureToday": "rotonda en obras y vallas",
+   "corridorWidth": 6.0
+  },
+  {
+   "id": "Y4",
+   "from": "E7",
+   "stub": [
+    420,
+    -30
+   ],
+   "future": "Este: playa grande, camping, acantilados",
+   "closureToday": "senda cortada por desprendimiento",
+   "corridorWidth": 3.0
+  },
+  {
+   "id": "Y5",
+   "from": "QJ",
+   "stub": [
+    86,
+    -60
+   ],
+   "future": "Otra orilla: barrio de pescadores y astillero grande (lancha/ferry)",
+   "closureToday": "embarcadero sin servicio",
+   "corridorWidth": 3.0
+  }
+ ],
+ "buildings": [
+  {
+   "id": "M01",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Pensión (ancla de retorno)",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "L",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB recepción; PRV habitaciones; SRV cocina/lavadero; PRV patio→Calleja de la Pensión",
+   "note": "2 plantas jugables; habitación del protagonista; salida trasera de huésped"
+  },
+  {
+   "id": "M02",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Mercado de abastos",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "A",
+   "facadeCells": 3,
+   "visualFloors": 2,
+   "access": "PUB-H 7–14 h (dos cotas: plaza A / terraza V); SRV cámaras y muelle de carga",
+   "note": "atajo interior autorizado sólo en horario; nunca requisito de conectividad"
+  },
+  {
+   "id": "M03",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Tienda-testigo (ultramarinos)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "S",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB tienda; SRV almacén a la terraza El Muro",
+   "note": "testigo; conexión autorizada cuando la tendera confía"
+  },
+  {
+   "id": "M04",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Café-bar del mercado",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "A",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB sala y terraza; SRV cocina",
+   "note": "vida social de la plaza"
+  },
+  {
+   "id": "M05",
+   "zone": "MERCADO",
+   "sector": "S1/S2",
+   "name": "Hotel",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "E",
+   "facadeCells": 4,
+   "visualFloors": 4,
+   "access": "PUB vestíbulo/bar/comedor; PRV habitaciones; SRV cocina/escalera de servicio a la bajada",
+   "note": "exterior y vestíbulo en S1; resto del interior en S2; galería acristalada al puerto"
+  },
+  {
+   "id": "M06",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Kiosco de prensa",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "M07",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Casa de la terraza",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV (invitación)",
+   "note": "entrada a cota de la terraza"
+  },
+  {
+   "id": "M08",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Ferretería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "M09",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Carnicería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "L",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "M10",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Frutería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "S",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "M11",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Droguería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "S",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "M12",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Peluquería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "E",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "M13",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Viviendas sobre el comercio (lado norte B01)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "L",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PRV cerrado",
+   "note": "vecinos sin función de misión"
+  },
+  {
+   "id": "M14",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Local en traspaso + viviendas",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "S",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": "escaparate vacío 'se traspasa'"
+  },
+  {
+   "id": "M15",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Viviendas de la Calleja de la Pensión",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PRV cerrado",
+   "note": ""
+  },
+  {
+   "id": "M16",
+   "zone": "MERCADO",
+   "sector": "S1",
+   "name": "Almacén del mercado (mayoristas)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "SRV cerrado",
+   "note": "carga en la terraza; abre en fases futuras si hace falta"
+  },
+  {
+   "id": "M17",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Foto Estudio (laboratorio)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB tienda; SRV laboratorio",
+   "note": "revelado de la fotografía de la víctima"
+  },
+  {
+   "id": "M18",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Salón recreativo",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E2",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": "minijuego arcade"
+  },
+  {
+   "id": "M19",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Correos",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E2",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H; SRV clasificación",
+   "note": "apartados de correos, investigación"
+  },
+  {
+   "id": "M20",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Caja de ahorros",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E2",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB-H; CTL despachos",
+   "note": ""
+  },
+  {
+   "id": "M21",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Viviendas de la Calle Nueva",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E2",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "M22",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Oficinas cerradas (antigua naviera)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "M23",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Viviendas del Cantón",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E2",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "M24",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Casa con bajo en obras",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E2",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "M25",
+   "zone": "MERCADO",
+   "sector": "S2",
+   "name": "Viviendas de la Calle Nueva alta",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V1",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "U01",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Lonja + Cofradía de pescadores",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "P",
+   "facadeCells": 3,
+   "visualFloors": 2,
+   "access": "PUB-H galería de subasta al alba; SRV sala de clasificación; CTL cámara; PUB-H oficinas de la cofradía",
+   "note": "archivo de ventas y barcos"
+  },
+  {
+   "id": "U02",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Almacén portuario / frigorífico",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "M4",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "SRV; CTL muelle de carga; PROG puerta trasera a Talleres",
+   "note": "entreplanta con vista al patio"
+  },
+  {
+   "id": "U03",
+   "zone": "MUELLE",
+   "sector": "S1",
+   "name": "Bar del puerto",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "P",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB desde las 5:00; SRV almacén",
+   "note": "pescadores y operarios"
+  },
+  {
+   "id": "U04",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Oficina del puerto",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H mostrador; CTL despachos",
+   "note": "registros de entradas de barcos"
+  },
+  {
+   "id": "U05",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Nave de redes de armadores",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "Q",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "SRV",
+   "note": "muelle de armadores"
+  },
+  {
+   "id": "U06",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Caseta de aparejos 1",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "Q",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "SRV/PRV",
+   "note": ""
+  },
+  {
+   "id": "U07",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Caseta de aparejos 2",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "Q",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "SRV/PRV",
+   "note": ""
+  },
+  {
+   "id": "U08",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Efectos navales",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB",
+   "note": ""
+  },
+  {
+   "id": "U09",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Despacho de hielo",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "U10",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Nave de la fábrica de hielo (maquinaria)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado/CTL",
+   "note": ""
+  },
+  {
+   "id": "U11",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Almacén de cajas de la cooperativa",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado/CTL",
+   "note": ""
+  },
+  {
+   "id": "U12",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Garita y báscula del puerto",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado/CTL",
+   "note": ""
+  },
+  {
+   "id": "U13",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Antigua conservera (en venta)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado/CTL",
+   "note": ""
+  },
+  {
+   "id": "U14",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Viviendas de pescadores de la Calle del Muelle",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado/CTL",
+   "note": ""
+  },
+  {
+   "id": "U15",
+   "zone": "MUELLE",
+   "sector": "S2",
+   "name": "Almacén de armador",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "M4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado/CTL",
+   "note": ""
+  },
+  {
+   "id": "T01",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Astillero de ribera + varadero",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "SL",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "SRV; PROG desde el almacén portuario",
+   "note": "barco en grada, carpintería, altillo"
+  },
+  {
+   "id": "T02",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Taller mecánico",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "T2",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H recepción; SRV foso y patio",
+   "note": "patio = espacio de combate"
+  },
+  {
+   "id": "T03",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "La Nave (bar alternativo + local de ensayo)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "T2",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H noche; PRV local de ensayo",
+   "note": "nightlife secundaria"
+  },
+  {
+   "id": "T04",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Almacén de materiales / serrería",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "T1",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H; SRV patio",
+   "note": ""
+  },
+  {
+   "id": "T05",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Casa de comidas",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "T1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": "comida barata hasta tarde"
+  },
+  {
+   "id": "T06",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Cerrajería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "T2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": "copias de llaves (pista)"
+  },
+  {
+   "id": "T07",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Nave de transportes",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "T2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "T08",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Desguace (oficina cerrada)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "T2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "T09",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Viviendas obreras",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "T2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "T10",
+   "zone": "TALLERES",
+   "sector": "S6",
+   "name": "Cooperativa cerrada",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "T2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V01",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Comandancia / casa-cuartel de la Guardia Civil",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "V1",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB mostrador y espera; CTL oficinas, calabozo, archivo, armero, patio de vehículos; PRV viviendas de guardias por la Calle de la Fuente",
+   "note": "patio visible desde la Escalerilla"
+  },
+  {
+   "id": "V02",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Hogar del pensionista / Asociación vecinal",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "V2",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H (centro de día → partidas → asamblea)",
+   "note": "cambio de uso por horas"
+  },
+  {
+   "id": "V03",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Tienda de barrio",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "V2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "V04",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa de familia (personaje A)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "V3",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PRV invitación",
+   "note": "varias estancias"
+  },
+  {
+   "id": "V05",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Frontón + vestuarios",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "V3",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB",
+   "note": "entrenamiento y sparring"
+  },
+  {
+   "id": "V06",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa visitable 1",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "V07",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa visitable 2",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "V08",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa visitable 3",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "V09",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa visitable 4",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "V10",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa visitable 5",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "V11",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Quiosco-mercería de barrio",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "V2",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "V12",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casas baratas de los años 60 (bloque)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V13",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Chalé indiano cerrado",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V14",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casas en terraza 1",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V15",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casas en terraza 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V16",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casas en terraza 3",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V17",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa con huerta",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V18",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa de la Ronda",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V19",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Casa del Camino Alto",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "V20",
+   "zone": "VIVIENDAS",
+   "sector": "S5",
+   "name": "Viviendas de la Calle de la Fuente",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "V1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C01",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Ayuntamiento",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "C3",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB-H registro/padrón; CTL oficinas y alcaldía; SRV archivo por la Calle Real; PUB-H salón de plenos con balcón",
+   "note": "padrón y licencias para investigar"
+  },
+  {
+   "id": "C02",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Bar de misión (taberna)",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "C1",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB-H sala/barra/billar; SRV cocina y trastienda; PROG bodega→Calle del Río; PRV piso del dueño",
+   "note": "patio de servicio = espacio de pelea"
+  },
+  {
+   "id": "C03",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Casa de Cultura (antiguo casino)",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "C3",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB-H biblioteca/hemeroteca; PUB-H salón (ensayos por la tarde); SRV conserjería",
+   "note": "hemeroteca 1999–2003"
+  },
+  {
+   "id": "C04",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Iglesia parroquial",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "C5",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H nave; SRV sacristía y archivo; PROG torre-mirador vía sacristán",
+   "note": ""
+  },
+  {
+   "id": "C05",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Pub nocturno",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C1",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB-H noche",
+   "note": ""
+  },
+  {
+   "id": "C06",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Mesón",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C9",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB-H; SRV cocina",
+   "note": ""
+  },
+  {
+   "id": "C07",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Farmacia con rebotica",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H; SRV rebotica",
+   "note": ""
+  },
+  {
+   "id": "C08",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Panadería con obrador",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C1",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB-H; SRV obrador→Callejón del Tinte (06:00)",
+   "note": "seguir al panadero"
+  },
+  {
+   "id": "C09",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Gestoría / notaría",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H; CTL despacho",
+   "note": ""
+  },
+  {
+   "id": "C10",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Casa del maestro (patio de entrenamiento)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C8",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PRV invitación; patio de entrenamiento",
+   "note": ""
+  },
+  {
+   "id": "C11",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Piso de la víctima",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "C4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PROG (llave)",
+   "note": "escena de investigación"
+  },
+  {
+   "id": "C12",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Molino viejo (orilla oeste)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PROG/PRV",
+   "note": "refugio; costura X2"
+  },
+  {
+   "id": "C13",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Estanco",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "C14",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Barbería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C9",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "C15",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Mercería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C9",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "C16",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Papelería-librería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "C17",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Zapatero",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C8",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "C18",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Casa visitable del Río",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C7",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "C19",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Casa visitable de la Rúa",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C9",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "C20",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Casa visitable de la Atalaya",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "C21",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Casa visitable de la Ronda",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "C6",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "C22",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Casona deshabitada (posible apertura futura)",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C3",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C23",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Bodega de vinos cerrada",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C1",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C24",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Local en alquiler",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C1",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C25",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Palacete cerrado",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C5",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C26",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Casa rectoral",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C5",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C27",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Viviendas de la Rúa 1",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C9",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C28",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Viviendas de la Rúa 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C9",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C29",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Viviendas del Río 1",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C7",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C30",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Viviendas del Río 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C4",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C31",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Viviendas de la Calle Real",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C3",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C32",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Viviendas de la Atalaya",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C8",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C33",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Viviendas de la Ronda Alta",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C6",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C34",
+   "zone": "CASCO",
+   "sector": "S4",
+   "name": "Casas de la Calle de la Iglesia",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C8",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "C35",
+   "zone": "CASCO",
+   "sector": "S3",
+   "name": "Casa sobre el pasadizo",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "C9",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW01",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Cine-Bingo (antiguo cine reconvertido)",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "W4",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB-H sala de bingo y bar; SRV cabina de proyección y oficina; PROG almacén trasero",
+   "note": "juego, deudas, trastienda; interior grande de misión"
+  },
+  {
+   "id": "MW02",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Estación de autobuses",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W3",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "PUB taquilla, sala de espera y cantina; SRV cocheras",
+   "note": "llegadas: quién entra y sale del pueblo"
+  },
+  {
+   "id": "MW03",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Hostal de la Estación",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W3",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PUB recepción; PRV habitaciones",
+   "note": "tercer alojamiento: viajantes de paso"
+  },
+  {
+   "id": "MW04",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Bar-cafetería de la estación",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB desde las 6:00",
+   "note": "conductores y viajeros"
+  },
+  {
+   "id": "MW05",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Taller y gasolinera de la carretera",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W7",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "PUB-H; SRV foso",
+   "note": "coches de forasteros"
+  },
+  {
+   "id": "MW06",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Videoclub",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": "1999–2003; registro de alquileres"
+  },
+  {
+   "id": "MW07",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Locutorio y agencia de viajes",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": "llamadas y billetes: pistas"
+  },
+  {
+   "id": "MW08",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Tienda de electrodomésticos",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "MW09",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Kiosco de loterías",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W3",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "MW10",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Farmacia de la Estación",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W4",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "MW11",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Casa de comidas de la carretera",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W7",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "MW12",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Panadería de la Ría",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "MW13",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Casa visitable del Arrabal",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W4",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "MW14",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Antigua fonda (abandonada)",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W2",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "PROG",
+   "note": "explorable tras una pista; cerrada al público"
+  },
+  {
+   "id": "MW15",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Bloque con bajos comerciales de la estación",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W3",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW16",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Viviendas de la Calle del Cine",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W4",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW17",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Almacén de la cooperativa agrícola",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W7",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW18",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Casa de la carretera",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W7",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW19",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Viviendas de la Cuesta 1",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W7",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW20",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Viviendas de la Cuesta 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W3",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW21",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Nave de transportes del Arrabal",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W7",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW22",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Casa de la Playa",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W6",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW23",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Viviendas del Paseo 1",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W5",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "MW24",
+   "zone": "MERCADO",
+   "sector": "S7",
+   "name": "Viviendas del Paseo 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W2",
+   "facadeCells": 2,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "UW01",
+   "zone": "MUELLE",
+   "sector": "S7",
+   "name": "Cetárea de mariscos",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W5",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "PUB-H venta; SRV viveros",
+   "note": "trabajo y marisco furtivo"
+  },
+  {
+   "id": "UW02",
+   "zone": "MUELLE",
+   "sector": "S7",
+   "name": "Club de remo (traineras)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "W5",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PUB-H; SRV rampa",
+   "note": "entrenamiento y regatas"
+  },
+  {
+   "id": "UW03",
+   "zone": "MUELLE",
+   "sector": "S7",
+   "name": "Caseta de salvamento",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H verano",
+   "note": ""
+  },
+  {
+   "id": "UW04",
+   "zone": "MUELLE",
+   "sector": "S7",
+   "name": "Chiringuito de la playa",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "W6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H verano",
+   "note": ""
+  },
+  {
+   "id": "UW05",
+   "zone": "MUELLE",
+   "sector": "S7",
+   "name": "Almacén de la cetárea",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W5",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "cerrado/SRV",
+   "note": ""
+  },
+  {
+   "id": "UW06",
+   "zone": "MUELLE",
+   "sector": "S7",
+   "name": "Caseta de bombeo de agua de mar",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "W5",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "UE01",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Faro y casa del farero",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E7",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PROG torre; PRV vivienda del farero",
+   "note": "mirador de la bocana"
+  },
+  {
+   "id": "UE02",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Merendero de la ensenada",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "UE03",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Caseta de redes del este",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "SRV/PRV",
+   "note": ""
+  },
+  {
+   "id": "UE04",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Antigua lonja (abandonada)",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E6",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "PROG",
+   "note": "espacio de misión abandonado"
+  },
+  {
+   "id": "UE05",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Almacén de redes del este",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "UE06",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Caseta de prácticos",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "UE07",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Nave de cajas vacías",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "UE08",
+   "zone": "MUELLE",
+   "sector": "S8",
+   "name": "Casa auxiliar del faro",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "TE01",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Conservera (fábrica de conservas)",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "E5",
+   "facadeCells": 3,
+   "visualFloors": 2,
+   "access": "SRV nave y cocederos (turnos); PUB-H despacho de venta; PROG muelle propio",
+   "note": "interior grande de misión: trabajo, contrabando, huida al mar"
+  },
+  {
+   "id": "TE02",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Desguace y chatarrería",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "E5",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "PUB-H; SRV patio",
+   "note": "patio de combate y piezas"
+  },
+  {
+   "id": "TE03",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Taller de motos",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "E5",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "TE04",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Almacén de butano",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "E5",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "SRV",
+   "note": "reparto de bombonas"
+  },
+  {
+   "id": "TE05",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Carpintería de ribera del este",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "E6",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "TE06",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Nave de la conservera cerrada",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E5",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "TE07",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Cooperativa de transportes",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E5",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "TE08",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Viviendas obreras del este",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E5",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "TE09",
+   "zone": "TALLERES",
+   "sector": "S8",
+   "name": "Garaje cerrado",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "E5",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "CN01",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Molino de arriba",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "VM2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PROG/PRV",
+   "note": "canal y refugio"
+  },
+  {
+   "id": "CN02",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Ermita del Alto",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "VM3",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": "romería; mirador del valle"
+  },
+  {
+   "id": "CN03",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Lavadero cubierto del río",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB",
+   "note": "conversación de lavanderas"
+  },
+  {
+   "id": "CN04",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Casa del molinero",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "VM2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "CN05",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Casa visitable del Lavadero",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "CN06",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Bar de los Molinos",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": "bar de pescadores de río y jubilados"
+  },
+  {
+   "id": "CN07",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Casa visitable de ribera",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "CN08",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Fábrica de luz vieja",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "CN09",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Casa de ribera 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "CN10",
+   "zone": "CASCO",
+   "sector": "S9",
+   "name": "Casa de ribera 3",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "VM1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN01",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Instituto",
+   "scale": "G",
+   "interior": "LARGE",
+   "nearNode": "A1",
+   "facadeCells": 3,
+   "visualFloors": 3,
+   "access": "PUB-H horario escolar; CTL despachos y archivo; PROG gimnasio de noche",
+   "note": "interior grande de misión: estudiantes, archivo, gimnasio"
+  },
+  {
+   "id": "VN02",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Vestuarios y bar del campo de fútbol",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN03",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Bar del Barrio Alto",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN04",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Ultramarinos del Barrio Alto",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN05",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Chalé del indiano",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "A1",
+   "facadeCells": 2,
+   "visualFloors": 2,
+   "access": "PRV/PROG",
+   "note": "familia con dinero; jardín"
+  },
+  {
+   "id": "VN06",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Pabellón municipal y club de boxeo",
+   "scale": "M",
+   "interior": "MEDIUM",
+   "nearNode": "A2",
+   "facadeCells": 2,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": "entrenamiento y sparring"
+  },
+  {
+   "id": "VN07",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Peluquería del Alto",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN08",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Piso de estudiante en los bloques",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 4,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN09",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 6",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN10",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 7",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN11",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 8",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN12",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 9",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN13",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 10",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN14",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 11",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN15",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 12",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN16",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 13",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN17",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Quiosco del campo",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN18",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Taller de bicis",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN19",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Academia de repaso",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN20",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Guardería",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 1,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN21",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Estanco del Alto",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN22",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Mercería del Alto",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PUB-H",
+   "note": ""
+  },
+  {
+   "id": "VN23",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa visitable 14",
+   "scale": "P",
+   "interior": "SMALL",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 2,
+   "access": "PRV invitación",
+   "note": ""
+  },
+  {
+   "id": "VN24",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Bloque de los 70 A",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN25",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Bloque de los 70 B",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN26",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Bloque de los 70 C",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN27",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casas baratas 1",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN28",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casas baratas 2",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN29",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casas baratas 3",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN30",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casas baratas 4",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN31",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casas baratas 5",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A3",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN32",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casas baratas 6",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN33",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Chalé cerrado",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN34",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Chalé en venta",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN35",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Depósito de agua",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN36",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Viviendas de la Avenida del Campo",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A2",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN37",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Viviendas de la Calle del Instituto",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  },
+  {
+   "id": "VN38",
+   "zone": "VIVIENDAS",
+   "sector": "S10",
+   "name": "Casa del conserje",
+   "scale": "C",
+   "interior": "CLOSED",
+   "nearNode": "A1",
+   "facadeCells": 1,
+   "visualFloors": 3,
+   "access": "cerrado",
+   "note": ""
+  }
+ ],
+ "opportunities": [
+  {
+   "id": "OP01",
+   "zone": "CASCO/MERCADO",
+   "type": "Acceso de servicio descubierto siguiendo una rutina",
+   "what": "el panadero sale a las 06:00 por el obrador al Callejón del Tinte y lleva pan al mercado",
+   "perception": "puerta del obrador abierta al amanecer; seguir al panadero",
+   "condition": "horario 06:00–07:00",
+   "utility": "atajo y punto de escucha junto al bar",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP02",
+   "zone": "VIVIENDAS",
+   "type": "Patio parcialmente visible desde otro nivel",
+   "what": "patio de vehículos de la casa-cuartel",
+   "perception": "desde la Escalerilla de las Huertas se ve por encima del muro",
+   "condition": "siempre visible; acceso CTL",
+   "utility": "observar llegadas de vehículos y detenidos",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP03",
+   "zone": "MERCADO",
+   "type": "Espacio que cambia de uso por la tarde",
+   "what": "plaza del mercado: puestos → juego/partidas → terraza nocturna",
+   "perception": "mobiliario y gente distintos por franja",
+   "condition": "horario",
+   "utility": "encuentros y conversaciones distintos según hora",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP04",
+   "zone": "VIVIENDAS",
+   "type": "Espacio que cambia de uso",
+   "what": "Hogar vecinal: centro de día → partidas → asamblea",
+   "perception": "rótulos y gente distintos",
+   "condition": "horario",
+   "utility": "rumores y testigos mayores",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP05",
+   "zone": "CASCO",
+   "type": "Negocio con trastienda relevante",
+   "what": "trastienda del bar de misión (partidas)",
+   "perception": "puerta tras la barra, ruido",
+   "condition": "confianza/progreso",
+   "utility": "información y conflicto",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP06",
+   "zone": "MERCADO",
+   "type": "Negocio con trastienda relevante",
+   "what": "laboratorio del Foto Estudio",
+   "perception": "luz roja tras la cortina",
+   "condition": "permiso del fotógrafo",
+   "utility": "pista fotográfica",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP07",
+   "zone": "CASCO",
+   "type": "Mirador desde el que observar una llegada",
+   "what": "La Atalaya sobre la bocana y el puente de llegada",
+   "perception": "vista abierta tras subir la Escalera de la Atalaya",
+   "condition": "público",
+   "utility": "ver quién llega en autobús o barco",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP08",
+   "zone": "MERCADO",
+   "type": "Mirador desde el que observar una llegada",
+   "what": "galería del hotel sobre la dársena",
+   "perception": "acristalada, visible desde el muelle",
+   "condition": "cliente/permiso",
+   "utility": "vigilar el muelle y la lonja",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP09",
+   "zone": "MUELLE/TALLERES",
+   "type": "Acceso que abre un loop tras una misión",
+   "what": "puerta trasera del almacén portuario al varadero",
+   "perception": "portón con cadena visible desde el patio",
+   "condition": "PROG (tras trabajo para el capataz)",
+   "utility": "loop por el agua Muelle–Talleres",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP10",
+   "zone": "CASCO",
+   "type": "Acceso que abre un loop tras una misión",
+   "what": "bodega del bar de misión a la Calle del Río",
+   "perception": "puerta de bodega con reja al río",
+   "condition": "PROG",
+   "utility": "loop Vinos–bar–río; huida",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP11",
+   "zone": "MERCADO",
+   "type": "Conexión interior autorizada",
+   "what": "mercado de abastos entre plaza A y terraza V",
+   "perception": "dos puertas a cotas distintas",
+   "condition": "PUB-H 7–14 h",
+   "utility": "atajo temporal en seguimiento/persecución",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP12",
+   "zone": "MERCADO",
+   "type": "Conexión interior autorizada",
+   "what": "almacén de la tienda S a la terraza El Muro",
+   "perception": "puerta de carga en la terraza",
+   "condition": "SRV por confianza de la tendera",
+   "utility": "salida discreta",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP13",
+   "zone": "CASCO",
+   "type": "Mirador con acceso condicionado",
+   "what": "torre de la iglesia",
+   "perception": "campanario visible desde todo el casco",
+   "condition": "PROG vía sacristán",
+   "utility": "vista de todo el pueblo",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP14",
+   "zone": "MERCADO",
+   "type": "Salida secreta del ancla de retorno",
+   "what": "patio trasero de la pensión a la Calleja de la Pensión",
+   "perception": "puerta del patio con la llave del huésped",
+   "condition": "PRV huésped",
+   "utility": "salir sin ser visto por la calle principal",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  },
+  {
+   "id": "OP15",
+   "zone": "TALLERES",
+   "type": "Espacio que cambia de uso por la noche",
+   "what": "La Nave: almacén de día, bar y local de ensayo de noche",
+   "perception": "persianas, música, motos fuera",
+   "condition": "horario",
+   "utility": "nightlife alternativa y contactos marginales",
+   "status": "SPATIALLY_PREPARED_PLANNED"
+  }
+ ],
+ "activitySpaces": [
+  {
+   "id": "AC01",
+   "type": "combate",
+   "name": "patio de servicio del bar de misión",
+   "node": "C1",
+   "size": [
+    10,
+    12
+   ],
+   "support": "carga, fumar, cubos; dos entradas",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC02",
+   "type": "combate",
+   "name": "plaza del mercado de noche",
+   "node": "A",
+   "size": [
+    24,
+    18
+   ],
+   "support": "puestos plegados; bancos y fuente como obstáculos",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC03",
+   "type": "combate",
+   "name": "explanada lonja/almacén de noche",
+   "node": "P",
+   "size": [
+    20,
+    14
+   ],
+   "support": "palés, cajas, carretilla; CTL",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC04",
+   "type": "combate",
+   "name": "patio del taller mecánico",
+   "node": "T2",
+   "size": [
+    16,
+    18
+   ],
+   "support": "coches, bidones, foso",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC05",
+   "type": "combate/entrenamiento",
+   "name": "frontón",
+   "node": "V3",
+   "size": [
+    30,
+    12
+   ],
+   "support": "pared de juego, gradas",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC06",
+   "type": "combate",
+   "name": "espigón",
+   "node": "QJ",
+   "size": [
+    8,
+    52
+   ],
+   "support": "estrecho, pretiles y bolardos",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC07",
+   "type": "trabajo",
+   "name": "descarga de cajas muelle→lonja",
+   "node": "P",
+   "size": [
+    20,
+    10
+   ],
+   "support": "operarios, carretilla, zona de espera",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC08",
+   "type": "trabajo",
+   "name": "reparto panadería/mercado→casco/viviendas",
+   "node": "C1",
+   "size": [
+    0,
+    0
+   ],
+   "support": "ruta, no superficie",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC09",
+   "type": "minijuego",
+   "name": "dardos y billar",
+   "node": "C1",
+   "size": [
+    8,
+    6
+   ],
+   "support": "dentro del bar de misión",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC10",
+   "type": "minijuego",
+   "name": "recreativo",
+   "node": "E2",
+   "size": [
+    8,
+    10
+   ],
+   "support": "dentro del salón recreativo",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC11",
+   "type": "minijuego",
+   "name": "pesca",
+   "node": "QJ",
+   "size": [
+    8,
+    12
+   ],
+   "support": "punta del espigón",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC12",
+   "type": "minijuego",
+   "name": "fotografía",
+   "node": "C2",
+   "size": [
+    14,
+    12
+   ],
+   "support": "Atalaya / Foto Estudio",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC13",
+   "type": "minijuego",
+   "name": "pelota",
+   "node": "V3",
+   "size": [
+    30,
+    12
+   ],
+   "support": "frontón",
+   "status": "PLANNED"
+  },
+  {
+   "id": "AC14",
+   "type": "trabajo",
+   "name": "reparación de barcos",
+   "node": "SL",
+   "size": [
+    20,
+    14
+   ],
+   "support": "astillero/varadero",
+   "status": "PLANNED"
+  }
+ ],
+ "accessClasses": {
+  "PUB": "público",
+  "PUB-H": "público por horario",
+  "SRV": "laboral/servicio (trabajo o permiso)",
+  "PRV": "privado (invitación o llave)",
+  "CTL": "controlado (patio portuario, interior casa-cuartel)",
+  "PROG": "se abre tras misión/progreso",
+  "SCN": "costura escénica no transitable"
+ }
+}
