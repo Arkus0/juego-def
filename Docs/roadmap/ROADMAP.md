@@ -1,6 +1,15 @@
 # Roadmap jugable
 
-Status: **CITY-URBAN-00R ACCEPTED / NEXT: CASCO-V2 PILOT** — ENV01 closure, Director D0/D1 and other useful lane work remain independent
+Status: **CITY MASTER PLAN (Mapa F1, escala Kamurocho) / NEXT: WP-CITY-SKELETON-00 → WP-CITY-B0-01** — ENV01 closure, Director D0/D1 and other useful lane work remain independent
+
+## City sequence — Owner direction 2026-10-01
+
+The Owner commissioned the whole city as a level-design/world-design production. [`CITY_MASTER_PLAN_V1.md`](../design/CITY_MASTER_PLAN_V1.md) (`WP-CITY-MASTER-00`) defines **Mapa F1** at Kamurocho scale (~0.12 km², 200 semantic buildings, 60 % walkable interiors, Sapienza-style interconnection layers) with reserved growth towards Ijincho scale. Order:
+
+1. `WP-CITY-MASTER-00` — plan, data, metrics, amendments (docs).
+2. `WP-CITY-SKELETON-00` — Fase 0: the whole Mapa F1 as walkable, persistent blockout in authored Unity scenes; budgets re-measured from the scene.
+3. `WP-CITY-B0-01` — Fase 1: B0 Mercado–Muelle as a finished sector + interior kit v1 (absorbs the CASCO-V2 pilot, now superseded).
+4. Sector WPs S2…S10, then city integration. `CITY-URBAN-01` stays as the content gate on B0; ENV01 is a donor, not converted in place.
 
 ## Immediate sequence
 

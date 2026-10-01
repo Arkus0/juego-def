@@ -84,8 +84,11 @@ pilot -- evidence only --> later Director semantic capability disposition
 | WP | Outcome | Depends on |
 | --- | --- | --- |
 | `WP-CITY-URBAN-00` ✅ | Five-zone topology + accepted B0 programme/route/elevation + factory-demand matrix | **PASS / accepted** |
-| `WP-CITY-URBAN-00R` ✅ | Compact scale + separate cells/buildings/programmes + zero residual space | **PASS / accepted** |
-| `WP-PROD-ENV-CASCO-V2-00` | One K2 semantic block pilot; radical utility with retained ENV01 character | CITY00R PASS + bootstrap/ASSET PASS + reproducible exact ENV01 reference |
+| `WP-CITY-URBAN-00R` ✅ | Compact scale + separate cells/buildings/programmes + zero residual space | **PASS / accepted** (budgets amended 2026-10-01 for Mapa F1) |
+| `WP-CITY-MASTER-00` | Mapa F1 master plan (Kamurocho scale), interconnection layers, 200-building ledger, accessibility amendment, sector plan | CITY00 + CITY00R |
+| `WP-CITY-SKELETON-00` | Fase 0: whole Mapa F1 walkable blockout, budgets re-measured from the scene | CITY-MASTER-00 + bootstrap + ENV kit (ENV chain) |
+| `WP-CITY-B0-01` | Fase 1: B0 Mercado–Muelle finished sector + interior kit v1 (absorbs CASCO-V2 pilot) | CITY-SKELETON-00 |
+| ~~`WP-PROD-ENV-CASCO-V2-00`~~ | **Superseded 2026-10-01** by `WP-CITY-B0-01` | — |
 | `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
@@ -102,6 +105,8 @@ pilot -- evidence only --> later Director semantic capability disposition
 | `WP-PROD-LOOK-GATE` | Prove factories ready for content-scale production | CITY-URBAN-01 |
 
 ## Immediate sequence
+
+**Owner direction 2026-10-01:** execute `WP-CITY-SKELETON-00` (Mapa F1 blockout) and then `WP-CITY-B0-01`; see [`../design/CITY_MASTER_PLAN_V1.md`](../design/CITY_MASTER_PLAN_V1.md). The CASCO-V2 pilot paragraph below is historical.
 
 **Execute the one-block CASCO-V2 pilot before new ENV scale.** CITY-URBAN-00R is accepted; reference reconstruction is the pilot's first material gate. ENV01 closure, CHAR01 and useful Director work remain independent; ANIM01 is complete. This documentation candidate does not authorize Unity implementation or modification of the shared ENV01 checkout.
 

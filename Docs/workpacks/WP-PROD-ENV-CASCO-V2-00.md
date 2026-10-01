@@ -1,6 +1,6 @@
 # WP-PROD-ENV-CASCO-V2-00 — Semantic Block Pilot
 
-Status: **CONTRACT ACCEPTED / NEXT PHYSICAL PILOT / REFERENCE RECONSTRUCTION IS FIRST GATE**
+Status: **SUPERSEDED 2026-10-01 by Owner decision — its physical criteria are absorbed by [`WP-CITY-B0-01`](WP-CITY-B0-01.md); ENV01 becomes donor, not converted in place (see [`CITY_MASTER_PLAN_V1.md`](../design/CITY_MASTER_PLAN_V1.md)). Kept for history; do not execute.**
 Class: BOUNDED PRODUCT / ENV REALIZATION EXPERIMENT
 Depends on: `WP-CITY-URBAN-00R` PASS + bootstrap Unity/GC2 PASS + `WP-PROD-ASSET-00` PASS + exact reproducible ENV01 reference snapshot.
 Consumes: active ENV01 factory/catalogue/derived path; current Director only if useful and safe.
