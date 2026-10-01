@@ -1,0 +1,7 @@
+{
+  "phase": "Failed",
+  "status": "FALLO: Input cambió durante REBUILD: ENV01_Casco_District.authoring.json\n  at JuegoDef.Env.LayoutRebuild.VerifyInputs (System.Boolean promoted) [0x00076] in C:\\Users\\Usuario\\.codex\\worktrees\\env-director-d1\\Juego Def\\Unity\\JuegoDef\\Assets\\JuegoDef\\Editor\\Env\\EnvLayoutRebuild.cs:231 \r\n  at JuegoDef.Env.LayoutRebuild.OnRegenDone () [0x00000] in C:\\Users\\Usuario\\.codex\\worktrees\\env-director-d1\\Juego Def\\Unity\\JuegoDef\\Assets\\JuegoDef\\Editor\\Env\\EnvLayoutRebuild.cs:324 \r\n  at JuegoDef.Env.LayoutRebuild.Tick () [0x000c4] in C:\\Users\\Usuario\\.codex\\worktrees\\env-director-d1\\Juego Def\\Unity\\JuegoDef\\Assets\\JuegoDef\\Editor\\Env\\EnvLayoutRebuild.cs:284 ",
+  "pending": false,
+  "specUnchanged": true,
+  "sceneUnchanged": true
+}
