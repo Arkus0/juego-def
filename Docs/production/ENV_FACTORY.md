@@ -30,6 +30,19 @@ CITY/B0 brief ─► request units by outcome (units.json / district trace)
 
 Not a city generator: buildings, streets and edges are assembled from a vocabulary; composition stays an authored act.
 
+## ENV01 authored authority — accepted 2026-10-01
+
+`WP-ENV01-AUTHORED-01` changes the authority model for the existing CASCO instance without deleting the reusable ENV factory. The current production level is now:
+
+- `Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity` — **authoritative persistent Unity scene**, committed through Git LFS;
+- `Assets/JuegoDef/Authored/ENV01/` — frozen static snapshot of the generated ENV assets that the level owns;
+- `ENV01_REFERENCE.unity` — comparison/reference copy of the pre-migration hierarchy;
+- legacy trace/spec/builders — provenance and reusable factory inputs only; they **must not regenerate or replace ENV01_AUTHORED**.
+
+For ENV01, ordinary spatial production is now direct Unity authoring: move/reorganize existing objects, consolidate buildings deliberately, improve facades/interiors/props and save the scene. The accepted migration proved persistence across scene reopen, domain reload, editor restart and Play Mode, while preserving the full renderer/collider/light population. Legacy rebuild entry points are guarded while the authored/reference scene is loaded.
+
+This is an ENV01 authority decision, not a rejection of the ENV factory for new vocabulary or future districts. New reusable modules can still be produced through the factory and then deliberately admitted into an authored level.
+
 ## Where things live
 
 | What | Path |
@@ -40,7 +53,7 @@ Not a city generator: buildings, streets and edges are assembled from a vocabula
 | Route probe (dev runtime) | `Unity/JuegoDef/Assets/JuegoDef/Runtime/Dev/JDRouteProbe.cs` |
 | Blender derivation recipes | `Tools/blender/env_derive.py` (reads the vault `.blend`, never writes it) |
 | Owned outputs (with lineage) | `Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/{Meshes,Modules,Materials,Textures,Units}` |
-| District scenes (generated, not committed) | `Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/` |
+| District scenes | `Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/`; **ENV01_AUTHORED is committed/LFS and authoritative**. Legacy generated scenes remain factory outputs only. |
 | District specs (authored trace + generated spec) | `Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/` |
 | District tools | `Tools/env_morphology.py` (street study), `Tools/env_district.py` (district metrics, IGN DEM), `Tools/env_district_skeleton.py` (trace → spec), `Tools/env_textures.py` (painted tileable textures) |
 | Composition rules | [`ENV_COMPOSITION_RULES.md`](ENV_COMPOSITION_RULES.md) |
@@ -79,10 +92,9 @@ python Tools/env_district.py measure --osm ... --dem ... --origin <lat,lon> --bo
 python Tools/env_district_skeleton.py --trace Unity/JuegoDef/Assets/JuegoDef/Env/Specs/districts/<id>.trace.json --osm ... --out .../<id>.json --plan plan.png --metrics metrics.json
 ```
 
-Then `JuegoDef > ENV > 7 Build District (CASCO)` (or `EnvDistrict.Begin(id)`, `BuildRows(from, count)`…, `Finish()`
-from the operator). The generated scene (~95 MB), its ground meshes and baked probes are not committed; rebuild them
-from the spec. Review from the fixed viewpoints: `EnvShots.Capture(id, folder)` (`<id>.shots.json`) and
-`python Tools/env_sheet.py grid|pairs` for contact sheets and before/after pairs.
+For a **new/legacy generated district**, `JuegoDef > ENV > 7 Build District` (or `EnvDistrict.Begin(id)`, `BuildRows(from, count)`…, `Finish()`) remains the factory path.
+
+For the accepted CASCO instance **ENV01**, do not use that path to continue production. Open `ENV01_AUTHORED.unity` and edit the persistent scene directly. Its generated inputs are frozen provenance, not rebuild authority. The migration guards intentionally reject legacy Begin/BuildRows/Finish/RebuildRow/ApplyOps/NewStage/BuildRig paths while authored/reference is loaded. Review from product-relevant third-person views and use the accepted ENV01 evidence as the preservation baseline.
 
 ## Vocabulary
 
