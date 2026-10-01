@@ -1,0 +1,11 @@
+{
+  "allBlocked": true,
+  "checks": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ]
+}

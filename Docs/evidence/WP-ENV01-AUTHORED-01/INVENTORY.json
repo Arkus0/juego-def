@@ -1,0 +1,4859 @@
+{
+  "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity",
+  "entries": [
+    {
+      "id": "ENV01_AUTHORED",
+      "kind": "AuthoredScene",
+      "source": "ENV01_Casco_District",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 72701,
+      "renderers": 29176,
+      "colliders": 21102
+    },
+    {
+      "id": "BLDG_K0_1_0",
+      "kind": "Building",
+      "source": "K0_1_0",
+      "position": [
+        92.697,
+        0.012,
+        216.263
+      ],
+      "objects": 226,
+      "renderers": 98,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K0_6_0",
+      "kind": "Building",
+      "source": "K0_6_0",
+      "position": [
+        111.237,
+        0.3,
+        228.597
+      ],
+      "objects": 277,
+      "renderers": 111,
+      "colliders": 78
+    },
+    {
+      "id": "BLDG_K0_6_1",
+      "kind": "Building",
+      "source": "K0_6_1",
+      "position": [
+        103.263855,
+        0.3,
+        219.775528
+      ],
+      "objects": 205,
+      "renderers": 94,
+      "colliders": 64
+    },
+    {
+      "id": "BLDG_K1_4_0",
+      "kind": "Building",
+      "source": "K1_4_0",
+      "position": [
+        19.771,
+        -1.933,
+        226.476
+      ],
+      "objects": 176,
+      "renderers": 72,
+      "colliders": 52
+    },
+    {
+      "id": "BLDG_K1_5_0",
+      "kind": "Building",
+      "source": "K1_5_0",
+      "position": [
+        15.307,
+        -2.249,
+        232.614
+      ],
+      "objects": 109,
+      "renderers": 41,
+      "colliders": 27
+    },
+    {
+      "id": "BLDG_K1_7_0",
+      "kind": "Building",
+      "source": "K1_7_0",
+      "position": [
+        39.998,
+        -2.037,
+        236.0
+      ],
+      "objects": 220,
+      "renderers": 101,
+      "colliders": 73
+    },
+    {
+      "id": "BLDG_K1_7_1",
+      "kind": "Building",
+      "source": "K1_7_1",
+      "position": [
+        39.2185555,
+        -1.72,
+        229.30365
+      ],
+      "objects": 214,
+      "renderers": 82,
+      "colliders": 58
+    },
+    {
+      "id": "BLDG_K2_7_0",
+      "kind": "Building",
+      "source": "K2_7_0",
+      "position": [
+        114.0,
+        0.2,
+        183.0
+      ],
+      "objects": 203,
+      "renderers": 82,
+      "colliders": 67
+    },
+    {
+      "id": "BLDG_K2_7_1",
+      "kind": "Building",
+      "source": "K2_7_1",
+      "position": [
+        107.333015,
+        0.2,
+        187.000244
+      ],
+      "objects": 191,
+      "renderers": 70,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K2_11_0",
+      "kind": "Building",
+      "source": "K2_11_0",
+      "position": [
+        119.05,
+        0.192,
+        223.868
+      ],
+      "objects": 275,
+      "renderers": 112,
+      "colliders": 90
+    },
+    {
+      "id": "BLDG_K3_0_0",
+      "kind": "Building",
+      "source": "K3_0_0",
+      "position": [
+        58.872,
+        -1.826,
+        236.0
+      ],
+      "objects": 243,
+      "renderers": 114,
+      "colliders": 97
+    },
+    {
+      "id": "BLDG_K3_0_1",
+      "kind": "Building",
+      "source": "K3_0_1",
+      "position": [
+        60.6148758,
+        -1.404,
+        227.695648
+      ],
+      "objects": 271,
+      "renderers": 129,
+      "colliders": 97
+    },
+    {
+      "id": "BLDG_K3_0_2",
+      "kind": "Building",
+      "source": "K3_0_2",
+      "position": [
+        64.61326,
+        -0.982,
+        220.211456
+      ],
+      "objects": 328,
+      "renderers": 131,
+      "colliders": 83
+    },
+    {
+      "id": "BLDG_K3_1_0",
+      "kind": "Building",
+      "source": "K3_1_0",
+      "position": [
+        67.484,
+        -0.634,
+        212.318
+      ],
+      "objects": 220,
+      "renderers": 103,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K3_9_0",
+      "kind": "Building",
+      "source": "K3_9_0",
+      "position": [
+        55.659,
+        -0.114,
+        195.312
+      ],
+      "objects": 121,
+      "renderers": 47,
+      "colliders": 34
+    },
+    {
+      "id": "BLDG_K3_11_0",
+      "kind": "Building",
+      "source": "K3_11_0",
+      "position": [
+        48.468,
+        -0.817,
+        205.376
+      ],
+      "objects": 213,
+      "renderers": 82,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K3_12_0",
+      "kind": "Building",
+      "source": "K3_12_0",
+      "position": [
+        43.028,
+        -1.35,
+        212.629
+      ],
+      "objects": 267,
+      "renderers": 109,
+      "colliders": 80
+    },
+    {
+      "id": "BLDG_K3_12_1",
+      "kind": "Building",
+      "source": "K3_12_1",
+      "position": [
+        43.0709572,
+        -1.752,
+        223.268433
+      ],
+      "objects": 230,
+      "renderers": 90,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K3_12_2",
+      "kind": "Building",
+      "source": "K3_12_2",
+      "position": [
+        43.73621,
+        -2.053,
+        229.626251
+      ],
+      "objects": 232,
+      "renderers": 89,
+      "colliders": 64
+    },
+    {
+      "id": "BLDG_K5_2_0",
+      "kind": "Building",
+      "source": "K5_2_0",
+      "position": [
+        31.0452652,
+        0.0,
+        199.0354
+      ],
+      "objects": 114,
+      "renderers": 43,
+      "colliders": 32
+    },
+    {
+      "id": "BLDG_K5_3_0",
+      "kind": "Building",
+      "source": "K5_3_0",
+      "position": [
+        28.67,
+        0.0,
+        196.363
+      ],
+      "objects": 133,
+      "renderers": 55,
+      "colliders": 41
+    },
+    {
+      "id": "BLDG_K5_3_1",
+      "kind": "Building",
+      "source": "K5_3_1",
+      "position": [
+        25.5439224,
+        0.0,
+        193.71788
+      ],
+      "objects": 225,
+      "renderers": 106,
+      "colliders": 84
+    },
+    {
+      "id": "BLDG_K5_4_0",
+      "kind": "Building",
+      "source": "K5_4_0",
+      "position": [
+        16.164,
+        0.0,
+        185.782
+      ],
+      "objects": 297,
+      "renderers": 124,
+      "colliders": 90
+    },
+    {
+      "id": "BLDG_K6_0_0",
+      "kind": "Building",
+      "source": "K6_0_0",
+      "position": [
+        0.33,
+        0.0,
+        179.129
+      ],
+      "objects": 150,
+      "renderers": 63,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K6_0_1",
+      "kind": "Building",
+      "source": "K6_0_1",
+      "position": [
+        8.109783,
+        0.0,
+        180.501938
+      ],
+      "objects": 239,
+      "renderers": 94,
+      "colliders": 74
+    },
+    {
+      "id": "BLDG_K6_2_0",
+      "kind": "Building",
+      "source": "K6_2_0",
+      "position": [
+        31.33,
+        0.0,
+        193.637
+      ],
+      "objects": 152,
+      "renderers": 55,
+      "colliders": 38
+    },
+    {
+      "id": "BLDG_K6_4_0",
+      "kind": "Building",
+      "source": "K6_4_0",
+      "position": [
+        47.75,
+        0.18,
+        192.13
+      ],
+      "objects": 164,
+      "renderers": 60,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K6_8_0",
+      "kind": "Building",
+      "source": "K6_8_0",
+      "position": [
+        54.525,
+        0.2,
+        185.218
+      ],
+      "objects": 188,
+      "renderers": 68,
+      "colliders": 55
+    },
+    {
+      "id": "BLDG_K7_0_0",
+      "kind": "Building",
+      "source": "K7_0_0",
+      "position": [
+        196.0,
+        5.0,
+        163.726
+      ],
+      "objects": 173,
+      "renderers": 66,
+      "colliders": 55
+    },
+    {
+      "id": "BLDG_K7_0_1",
+      "kind": "Building",
+      "source": "K7_0_1",
+      "position": [
+        192.518524,
+        5.0,
+        161.521011
+      ],
+      "objects": 196,
+      "renderers": 81,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K7_1_0",
+      "kind": "Building",
+      "source": "K7_1_0",
+      "position": [
+        183.814,
+        4.79,
+        156.008
+      ],
+      "objects": 123,
+      "renderers": 47,
+      "colliders": 32
+    },
+    {
+      "id": "BLDG_K7_1_1",
+      "kind": "Building",
+      "source": "K7_1_1",
+      "position": [
+        177.390259,
+        4.458,
+        155.472656
+      ],
+      "objects": 215,
+      "renderers": 79,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K8_7_0",
+      "kind": "Building",
+      "source": "K8_7_0",
+      "position": [
+        38.427,
+        1.016,
+        136.842
+      ],
+      "objects": 175,
+      "renderers": 72,
+      "colliders": 46
+    },
+    {
+      "id": "BLDG_K8_8_0",
+      "kind": "Building",
+      "source": "K8_8_0",
+      "position": [
+        32.03,
+        1.07,
+        134.67
+      ],
+      "objects": 132,
+      "renderers": 50,
+      "colliders": 32
+    },
+    {
+      "id": "BLDG_K8_10_0",
+      "kind": "Building",
+      "source": "K8_10_0",
+      "position": [
+        14.116,
+        1.227,
+        130.008
+      ],
+      "objects": 216,
+      "renderers": 86,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K8_10_1",
+      "kind": "Building",
+      "source": "K8_10_1",
+      "position": [
+        6.04904175,
+        1.28,
+        131.042343
+      ],
+      "objects": 164,
+      "renderers": 63,
+      "colliders": 39
+    },
+    {
+      "id": "BLDG_K8_15_0",
+      "kind": "Building",
+      "source": "K8_15_0",
+      "position": [
+        63.03,
+        0.2,
+        176.146
+      ],
+      "objects": 125,
+      "renderers": 44,
+      "colliders": 33
+    },
+    {
+      "id": "BLDG_K9_2_0",
+      "kind": "Building",
+      "source": "K9_2_0",
+      "position": [
+        149.379959,
+        2.752,
+        168.680939
+      ],
+      "objects": 244,
+      "renderers": 101,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K9_2_1",
+      "kind": "Building",
+      "source": "K9_2_1",
+      "position": [
+        152.280518,
+        3.207,
+        161.3261
+      ],
+      "objects": 269,
+      "renderers": 103,
+      "colliders": 77
+    },
+    {
+      "id": "BLDG_K9_8_0",
+      "kind": "Building",
+      "source": "K9_8_0",
+      "position": [
+        127.364,
+        4.426,
+        116.462
+      ],
+      "objects": 199,
+      "renderers": 78,
+      "colliders": 48
+    },
+    {
+      "id": "BLDG_K9_9_0",
+      "kind": "Building",
+      "source": "K9_9_0",
+      "position": [
+        124.72,
+        4.406,
+        119.386
+      ],
+      "objects": 227,
+      "renderers": 105,
+      "colliders": 83
+    },
+    {
+      "id": "BLDG_K10_0_0",
+      "kind": "Building",
+      "source": "K10_0_0",
+      "position": [
+        86.61,
+        0.413,
+        155.359
+      ],
+      "objects": 120,
+      "renderers": 43,
+      "colliders": 32
+    },
+    {
+      "id": "BLDG_K10_2_0",
+      "kind": "Building",
+      "source": "K10_2_0",
+      "position": [
+        109.294,
+        0.777,
+        163.143
+      ],
+      "objects": 181,
+      "renderers": 70,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K10_4_0",
+      "kind": "Building",
+      "source": "K10_4_0",
+      "position": [
+        104.865,
+        3.872,
+        111.556
+      ],
+      "objects": 234,
+      "renderers": 111,
+      "colliders": 93
+    },
+    {
+      "id": "BLDG_K10_4_1",
+      "kind": "Building",
+      "source": "K10_4_1",
+      "position": [
+        96.9758148,
+        3.642,
+        111.054192
+      ],
+      "objects": 293,
+      "renderers": 113,
+      "colliders": 85
+    },
+    {
+      "id": "BLDG_K10_4_2",
+      "kind": "Building",
+      "source": "K10_4_2",
+      "position": [
+        89.07631,
+        3.452,
+        111.35231
+      ],
+      "objects": 257,
+      "renderers": 93,
+      "colliders": 77
+    },
+    {
+      "id": "BLDG_K10_4_3",
+      "kind": "Building",
+      "source": "K10_4_3",
+      "position": [
+        83.15481,
+        3.27,
+        111.275917
+      ],
+      "objects": 162,
+      "renderers": 72,
+      "colliders": 54
+    },
+    {
+      "id": "BLDG_K10_6_0",
+      "kind": "Building",
+      "source": "K10_6_0",
+      "position": [
+        52.798,
+        3.263,
+        116.317
+      ],
+      "objects": 229,
+      "renderers": 90,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K10_6_1",
+      "kind": "Building",
+      "source": "K10_6_1",
+      "position": [
+        47.7008362,
+        2.569,
+        119.290337
+      ],
+      "objects": 182,
+      "renderers": 73,
+      "colliders": 48
+    },
+    {
+      "id": "BLDG_K10_11_0",
+      "kind": "Building",
+      "source": "K10_11_0",
+      "position": [
+        82.522,
+        0.48,
+        149.226
+      ],
+      "objects": 226,
+      "renderers": 90,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K11_1_0",
+      "kind": "Building",
+      "source": "K11_1_0",
+      "position": [
+        15.832,
+        1.138,
+        126.827
+      ],
+      "objects": 253,
+      "renderers": 108,
+      "colliders": 75
+    },
+    {
+      "id": "BLDG_K11_4_0",
+      "kind": "Building",
+      "source": "K11_4_0",
+      "position": [
+        34.728,
+        1.263,
+        126.188
+      ],
+      "objects": 162,
+      "renderers": 58,
+      "colliders": 40
+    },
+    {
+      "id": "BLDG_K11_5_0",
+      "kind": "Building",
+      "source": "K11_5_0",
+      "position": [
+        37.663,
+        1.907,
+        125.511
+      ],
+      "objects": 163,
+      "renderers": 62,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K11_10_0",
+      "kind": "Building",
+      "source": "K11_10_0",
+      "position": [
+        27.673,
+        6.163,
+        71.787
+      ],
+      "objects": 133,
+      "renderers": 47,
+      "colliders": 39
+    },
+    {
+      "id": "BLDG_K11_11_0",
+      "kind": "Building",
+      "source": "K11_11_0",
+      "position": [
+        23.877,
+        5.589,
+        71.964
+      ],
+      "objects": 206,
+      "renderers": 82,
+      "colliders": 52
+    },
+    {
+      "id": "BLDG_K11_11_1",
+      "kind": "Building",
+      "source": "K11_11_1",
+      "position": [
+        21.50933,
+        4.899,
+        82.14836
+      ],
+      "objects": 191,
+      "renderers": 83,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K11_11_2",
+      "kind": "Building",
+      "source": "K11_11_2",
+      "position": [
+        19.31917,
+        4.358,
+        88.04039
+      ],
+      "objects": 252,
+      "renderers": 100,
+      "colliders": 75
+    },
+    {
+      "id": "BLDG_K11_11_3",
+      "kind": "Building",
+      "source": "K11_11_3",
+      "position": [
+        16.4701843,
+        3.754,
+        98.08933
+      ],
+      "objects": 205,
+      "renderers": 91,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K12_3_0",
+      "kind": "Building",
+      "source": "K12_3_0",
+      "position": [
+        79.4124,
+        6.189,
+        95.26397
+      ],
+      "objects": 187,
+      "renderers": 75,
+      "colliders": 52
+    },
+    {
+      "id": "BLDG_K13_0_0",
+      "kind": "Building",
+      "source": "K13_0_0",
+      "position": [
+        127.279,
+        4.569,
+        108.402
+      ],
+      "objects": 134,
+      "renderers": 51,
+      "colliders": 29
+    },
+    {
+      "id": "BLDG_K13_4_0",
+      "kind": "Building",
+      "source": "K13_4_0",
+      "position": [
+        186.364,
+        5.0,
+        152.142
+      ],
+      "objects": 210,
+      "renderers": 97,
+      "colliders": 78
+    },
+    {
+      "id": "BLDG_K13_5_0",
+      "kind": "Building",
+      "source": "K13_5_0",
+      "position": [
+        192.669,
+        5.0,
+        156.154
+      ],
+      "objects": 128,
+      "renderers": 54,
+      "colliders": 37
+    },
+    {
+      "id": "BLDG_K13_8_1",
+      "kind": "Building",
+      "source": "K13_8_1",
+      "position": [
+        176.257217,
+        10.128,
+        45.7645226
+      ],
+      "objects": 308,
+      "renderers": 149,
+      "colliders": 112
+    },
+    {
+      "id": "BLDG_K13_8_3",
+      "kind": "Building",
+      "source": "K13_8_3",
+      "position": [
+        152.549957,
+        7.68,
+        76.0830841
+      ],
+      "objects": 314,
+      "renderers": 154,
+      "colliders": 118
+    },
+    {
+      "id": "BLDG_K14_5_0",
+      "kind": "Building",
+      "source": "K14_5_0",
+      "position": [
+        142.926,
+        10.251,
+        49.461
+      ],
+      "objects": 147,
+      "renderers": 58,
+      "colliders": 46
+    },
+    {
+      "id": "BLDG_K14_6_0",
+      "kind": "Building",
+      "source": "K14_6_0",
+      "position": [
+        134.773,
+        10.4,
+        44.875
+      ],
+      "objects": 143,
+      "renderers": 52,
+      "colliders": 38
+    },
+    {
+      "id": "BLDG_K14_7_0",
+      "kind": "Building",
+      "source": "K14_7_0",
+      "position": [
+        134.0,
+        10.4,
+        47.0
+      ],
+      "objects": 198,
+      "renderers": 79,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K14_7_1",
+      "kind": "Building",
+      "source": "K14_7_1",
+      "position": [
+        128.347382,
+        10.4,
+        46.1924934
+      ],
+      "objects": 201,
+      "renderers": 81,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K15_0_0",
+      "kind": "Building",
+      "source": "K15_0_0",
+      "position": [
+        53.202,
+        3.587,
+        111.683
+      ],
+      "objects": 224,
+      "renderers": 89,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K15_0_1",
+      "kind": "Building",
+      "source": "K15_0_1",
+      "position": [
+        63.4293,
+        3.409,
+        109.566521
+      ],
+      "objects": 236,
+      "renderers": 89,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K15_1_0",
+      "kind": "Building",
+      "source": "K15_1_0",
+      "position": [
+        69.565,
+        3.301,
+        108.297
+      ],
+      "objects": 125,
+      "renderers": 46,
+      "colliders": 33
+    },
+    {
+      "id": "BLDG_K15_3_0",
+      "kind": "Building",
+      "source": "K15_3_0",
+      "position": [
+        67.289,
+        3.821,
+        100.785
+      ],
+      "objects": 161,
+      "renderers": 65,
+      "colliders": 46
+    },
+    {
+      "id": "BLDG_K15_3_1",
+      "kind": "Building",
+      "source": "K15_3_1",
+      "position": [
+        68.49556,
+        5.383,
+        95.35545
+      ],
+      "objects": 173,
+      "renderers": 66,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K15_9_0",
+      "kind": "Building",
+      "source": "K15_9_0",
+      "position": [
+        120.377,
+        10.368,
+        40.309
+      ],
+      "objects": 127,
+      "renderers": 48,
+      "colliders": 32
+    },
+    {
+      "id": "BLDG_K15_10_0",
+      "kind": "Building",
+      "source": "K15_10_0",
+      "position": [
+        120.702,
+        10.064,
+        36.523
+      ],
+      "objects": 223,
+      "renderers": 90,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K15_10_1",
+      "kind": "Building",
+      "source": "K15_10_1",
+      "position": [
+        114.046455,
+        9.831,
+        32.19686
+      ],
+      "objects": 146,
+      "renderers": 65,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K15_13_0",
+      "kind": "Building",
+      "source": "K15_13_0",
+      "position": [
+        29.30616,
+        6.128,
+        66.64183
+      ],
+      "objects": 214,
+      "renderers": 84,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K15_13_1",
+      "kind": "Building",
+      "source": "K15_13_1",
+      "position": [
+        31.9500961,
+        5.7,
+        73.6924
+      ],
+      "objects": 129,
+      "renderers": 48,
+      "colliders": 33
+    },
+    {
+      "id": "BLDG_K15_13_2",
+      "kind": "Building",
+      "source": "K15_13_2",
+      "position": [
+        34.39566,
+        5.272,
+        76.79633
+      ],
+      "objects": 259,
+      "renderers": 123,
+      "colliders": 103
+    },
+    {
+      "id": "BLDG_K15_13_3",
+      "kind": "Building",
+      "source": "K15_13_3",
+      "position": [
+        35.9163475,
+        4.701,
+        84.26918
+      ],
+      "objects": 285,
+      "renderers": 113,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K15_14_0",
+      "kind": "Building",
+      "source": "K15_14_0",
+      "position": [
+        38.56,
+        4.141,
+        91.32
+      ],
+      "objects": 180,
+      "renderers": 69,
+      "colliders": 39
+    },
+    {
+      "id": "BLDG_K15_15_0",
+      "kind": "Building",
+      "source": "K15_15_0",
+      "position": [
+        41.473,
+        3.867,
+        97.145
+      ],
+      "objects": 135,
+      "renderers": 52,
+      "colliders": 38
+    },
+    {
+      "id": "BLDG_K16_1_0",
+      "kind": "Building",
+      "source": "K16_1_0",
+      "position": [
+        0.0,
+        1.278,
+        128.182
+      ],
+      "objects": 190,
+      "renderers": 72,
+      "colliders": 45
+    },
+    {
+      "id": "BLDG_K16_2_0",
+      "kind": "Building",
+      "source": "K16_2_0",
+      "position": [
+        11.724,
+        1.9,
+        126.507
+      ],
+      "objects": 259,
+      "renderers": 105,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K16_2_1",
+      "kind": "Building",
+      "source": "K16_2_1",
+      "position": [
+        10.33613,
+        2.949,
+        118.179871
+      ],
+      "objects": 292,
+      "renderers": 115,
+      "colliders": 91
+    },
+    {
+      "id": "BLDG_K16_4_1",
+      "kind": "Building",
+      "source": "K16_4_1",
+      "position": [
+        36.4375153,
+        7.56,
+        51.56856
+      ],
+      "objects": 298,
+      "renderers": 144,
+      "colliders": 115
+    },
+    {
+      "id": "BLDG_K16_4_3",
+      "kind": "Building",
+      "source": "K16_4_3",
+      "position": [
+        75.65976,
+        8.871,
+        30.1445
+      ],
+      "objects": 328,
+      "renderers": 161,
+      "colliders": 120
+    },
+    {
+      "id": "BLDG_K16_9_0",
+      "kind": "Building",
+      "source": "K16_9_0",
+      "position": [
+        138.0,
+        10.4,
+        36.0
+      ],
+      "objects": 329,
+      "renderers": 129,
+      "colliders": 86
+    },
+    {
+      "id": "BLDG_K16_12_1",
+      "kind": "Building",
+      "source": "K16_12_1",
+      "position": [
+        167.561523,
+        10.128,
+        51.6732254
+      ],
+      "objects": 310,
+      "renderers": 151,
+      "colliders": 116
+    },
+    {
+      "id": "BLDG_K0_2_0",
+      "kind": "Building",
+      "source": "K0_2_0",
+      "position": [
+        77.105,
+        -0.6,
+        214.035
+      ],
+      "objects": 145,
+      "renderers": 56,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K0_3_0",
+      "kind": "Building",
+      "source": "K0_3_0",
+      "position": [
+        70.516,
+        -1.041,
+        215.682
+      ],
+      "objects": 224,
+      "renderers": 87,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K0_3_1",
+      "kind": "Building",
+      "source": "K0_3_1",
+      "position": [
+        69.23926,
+        -1.366,
+        222.119247
+      ],
+      "objects": 258,
+      "renderers": 98,
+      "colliders": 79
+    },
+    {
+      "id": "BLDG_K1_3_3",
+      "kind": "Building",
+      "source": "K1_3_3",
+      "position": [
+        35.4066353,
+        -0.712,
+        212.599243
+      ],
+      "objects": 232,
+      "renderers": 87,
+      "colliders": 75
+    },
+    {
+      "id": "BLDG_K1_3_4",
+      "kind": "Building",
+      "source": "K1_3_4",
+      "position": [
+        29.4906158,
+        -1.202,
+        218.490463
+      ],
+      "objects": 299,
+      "renderers": 117,
+      "colliders": 85
+    },
+    {
+      "id": "BLDG_K1_3_5",
+      "kind": "Building",
+      "source": "K1_3_5",
+      "position": [
+        22.7285652,
+        -1.569,
+        223.53067
+      ],
+      "objects": 184,
+      "renderers": 69,
+      "colliders": 40
+    },
+    {
+      "id": "BLDG_K2_0_0",
+      "kind": "Building",
+      "source": "K2_0_0",
+      "position": [
+        170.529,
+        -1.32,
+        221.705
+      ],
+      "objects": 212,
+      "renderers": 79,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K2_0_1",
+      "kind": "Building",
+      "source": "K2_0_1",
+      "position": [
+        164.564758,
+        -1.013,
+        218.47438
+      ],
+      "objects": 206,
+      "renderers": 82,
+      "colliders": 60
+    },
+    {
+      "id": "BLDG_K2_0_2",
+      "kind": "Building",
+      "source": "K2_0_2",
+      "position": [
+        158.59964,
+        -0.706,
+        215.243286
+      ],
+      "objects": 224,
+      "renderers": 85,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K2_0_3",
+      "kind": "Building",
+      "source": "K2_0_3",
+      "position": [
+        152.635391,
+        -0.399,
+        212.012665
+      ],
+      "objects": 196,
+      "renderers": 76,
+      "colliders": 57
+    },
+    {
+      "id": "BLDG_K2_2_0",
+      "kind": "Building",
+      "source": "K2_2_0",
+      "position": [
+        135.716,
+        0.528,
+        197.827
+      ],
+      "objects": 201,
+      "renderers": 77,
+      "colliders": 64
+    },
+    {
+      "id": "BLDG_K2_2_1",
+      "kind": "Building",
+      "source": "K2_2_1",
+      "position": [
+        136.493011,
+        0.819,
+        189.280243
+      ],
+      "objects": 107,
+      "renderers": 39,
+      "colliders": 27
+    },
+    {
+      "id": "BLDG_K2_8_0",
+      "kind": "Building",
+      "source": "K2_8_0",
+      "position": [
+        104.0,
+        0.2,
+        189.0
+      ],
+      "objects": 356,
+      "renderers": 133,
+      "colliders": 113
+    },
+    {
+      "id": "BLDG_K2_9_0",
+      "kind": "Building",
+      "source": "K2_9_0",
+      "position": [
+        101.0,
+        0.2,
+        200.0
+      ],
+      "objects": 213,
+      "renderers": 78,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K2_10_0",
+      "kind": "Building",
+      "source": "K2_10_0",
+      "position": [
+        100.836617,
+        0.3,
+        205.056412
+      ],
+      "objects": 181,
+      "renderers": 80,
+      "colliders": 64
+    },
+    {
+      "id": "BLDG_K2_10_1",
+      "kind": "Building",
+      "source": "K2_10_1",
+      "position": [
+        105.390015,
+        0.3,
+        209.759262
+      ],
+      "objects": 116,
+      "renderers": 51,
+      "colliders": 36
+    },
+    {
+      "id": "BLDG_K2_10_2",
+      "kind": "Building",
+      "source": "K2_10_2",
+      "position": [
+        109.943405,
+        0.3,
+        214.4621
+      ],
+      "objects": 196,
+      "renderers": 87,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K2_10_3",
+      "kind": "Building",
+      "source": "K2_10_3",
+      "position": [
+        114.496796,
+        0.3,
+        219.164932
+      ],
+      "objects": 179,
+      "renderers": 65,
+      "colliders": 54
+    },
+    {
+      "id": "BLDG_K2_13_0",
+      "kind": "Building",
+      "source": "K2_13_0",
+      "position": [
+        177.001,
+        -2.204,
+        236.0
+      ],
+      "objects": 166,
+      "renderers": 59,
+      "colliders": 46
+    },
+    {
+      "id": "BLDG_K2_14_0",
+      "kind": "Building",
+      "source": "K2_14_0",
+      "position": [
+        178.701,
+        -1.979,
+        232.601
+      ],
+      "objects": 121,
+      "renderers": 51,
+      "colliders": 36
+    },
+    {
+      "id": "BLDG_K2_14_1",
+      "kind": "Building",
+      "source": "K2_14_1",
+      "position": [
+        174.615,
+        -1.671,
+        227.153
+      ],
+      "objects": 151,
+      "renderers": 66,
+      "colliders": 45
+    },
+    {
+      "id": "BLDG_K3_5_0",
+      "kind": "Building",
+      "source": "K3_5_0",
+      "position": [
+        89.651,
+        0.211,
+        206.597
+      ],
+      "objects": 136,
+      "renderers": 60,
+      "colliders": 45
+    },
+    {
+      "id": "BLDG_K3_5_1",
+      "kind": "Building",
+      "source": "K3_5_1",
+      "position": [
+        84.32575,
+        0.063,
+        203.38295
+      ],
+      "objects": 231,
+      "renderers": 105,
+      "colliders": 83
+    },
+    {
+      "id": "BLDG_K3_5_2",
+      "kind": "Building",
+      "source": "K3_5_2",
+      "position": [
+        79.00051,
+        -0.088,
+        200.168884
+      ],
+      "objects": 130,
+      "renderers": 56,
+      "colliders": 40
+    },
+    {
+      "id": "BLDG_K3_6_0",
+      "kind": "Building",
+      "source": "K3_6_0",
+      "position": [
+        73.675,
+        0.063,
+        196.955
+      ],
+      "objects": 197,
+      "renderers": 77,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K3_6_1",
+      "kind": "Building",
+      "source": "K3_6_1",
+      "position": [
+        67.62885,
+        0.195,
+        191.8362
+      ],
+      "objects": 189,
+      "renderers": 73,
+      "colliders": 45
+    },
+    {
+      "id": "BLDG_K3_10_0",
+      "kind": "Building",
+      "source": "K3_10_0",
+      "position": [
+        56.126,
+        -0.201,
+        198.812
+      ],
+      "objects": 132,
+      "renderers": 52,
+      "colliders": 42
+    },
+    {
+      "id": "BLDG_K3_10_1",
+      "kind": "Building",
+      "source": "K3_10_1",
+      "position": [
+        53.06315,
+        -0.44,
+        201.437286
+      ],
+      "objects": 158,
+      "renderers": 70,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K4_0_0",
+      "kind": "Building",
+      "source": "K4_0_0",
+      "position": [
+        196.0,
+        1.994,
+        209.645
+      ],
+      "objects": 243,
+      "renderers": 94,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K4_0_1",
+      "kind": "Building",
+      "source": "K4_0_1",
+      "position": [
+        192.509918,
+        1.9,
+        207.965866
+      ],
+      "objects": 328,
+      "renderers": 127,
+      "colliders": 99
+    },
+    {
+      "id": "BLDG_K4_0_2",
+      "kind": "Building",
+      "source": "K4_0_2",
+      "position": [
+        183.9586,
+        1.766,
+        203.407791
+      ],
+      "objects": 323,
+      "renderers": 119,
+      "colliders": 95
+    },
+    {
+      "id": "BLDG_K4_0_3",
+      "kind": "Building",
+      "source": "K4_0_3",
+      "position": [
+        175.233871,
+        1.632,
+        199.210159
+      ],
+      "objects": 298,
+      "renderers": 112,
+      "colliders": 85
+    },
+    {
+      "id": "BLDG_K4_0_4",
+      "kind": "Building",
+      "source": "K4_0_4",
+      "position": [
+        166.509125,
+        1.498,
+        195.012527
+      ],
+      "objects": 228,
+      "renderers": 90,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K4_0_5",
+      "kind": "Building",
+      "source": "K4_0_5",
+      "position": [
+        157.7844,
+        1.377,
+        190.8149
+      ],
+      "objects": 212,
+      "renderers": 82,
+      "colliders": 66
+    },
+    {
+      "id": "BLDG_K4_0_6",
+      "kind": "Building",
+      "source": "K4_0_6",
+      "position": [
+        150.631714,
+        1.248,
+        187.8175
+      ],
+      "objects": 242,
+      "renderers": 94,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K4_1_0",
+      "kind": "Building",
+      "source": "K4_1_0",
+      "position": [
+        143.652,
+        1.029,
+        184.459
+      ],
+      "objects": 163,
+      "renderers": 70,
+      "colliders": 52
+    },
+    {
+      "id": "BLDG_K4_3_0",
+      "kind": "Building",
+      "source": "K4_3_0",
+      "position": [
+        140.284,
+        0.044,
+        196.173
+      ],
+      "objects": 254,
+      "renderers": 102,
+      "colliders": 74
+    },
+    {
+      "id": "BLDG_K4_4_0",
+      "kind": "Building",
+      "source": "K4_4_0",
+      "position": [
+        149.329,
+        -0.496,
+        205.218
+      ],
+      "objects": 234,
+      "renderers": 96,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K4_4_1",
+      "kind": "Building",
+      "source": "K4_4_1",
+      "position": [
+        157.95134,
+        -0.94,
+        209.888412
+      ],
+      "objects": 306,
+      "renderers": 123,
+      "colliders": 85
+    },
+    {
+      "id": "BLDG_K4_4_2",
+      "kind": "Building",
+      "source": "K4_4_2",
+      "position": [
+        166.572815,
+        -1.339,
+        214.558365
+      ],
+      "objects": 290,
+      "renderers": 108,
+      "colliders": 87
+    },
+    {
+      "id": "BLDG_K5_1_0",
+      "kind": "Building",
+      "source": "K5_1_0",
+      "position": [
+        16.229,
+        -1.463,
+        223.524
+      ],
+      "objects": 193,
+      "renderers": 80,
+      "colliders": 53
+    },
+    {
+      "id": "BLDG_K5_1_1",
+      "kind": "Building",
+      "source": "K5_1_1",
+      "position": [
+        22.0229626,
+        -1.029,
+        217.3787
+      ],
+      "objects": 190,
+      "renderers": 74,
+      "colliders": 52
+    },
+    {
+      "id": "BLDG_K5_1_2",
+      "kind": "Building",
+      "source": "K5_1_2",
+      "position": [
+        26.3680916,
+        -0.595,
+        212.770065
+      ],
+      "objects": 264,
+      "renderers": 102,
+      "colliders": 82
+    },
+    {
+      "id": "BLDG_K5_1_3",
+      "kind": "Building",
+      "source": "K5_1_3",
+      "position": [
+        32.162056,
+        -0.18,
+        206.624741
+      ],
+      "objects": 219,
+      "renderers": 82,
+      "colliders": 66
+    },
+    {
+      "id": "BLDG_K6_3_0",
+      "kind": "Building",
+      "source": "K6_3_0",
+      "position": [
+        37.782,
+        0.046,
+        200.894
+      ],
+      "objects": 249,
+      "renderers": 97,
+      "colliders": 74
+    },
+    {
+      "id": "BLDG_K6_3_1",
+      "kind": "Building",
+      "source": "K6_3_1",
+      "position": [
+        42.7665825,
+        0.118,
+        196.5118
+      ],
+      "objects": 170,
+      "renderers": 69,
+      "colliders": 46
+    },
+    {
+      "id": "BLDG_K6_10_0",
+      "kind": "Building",
+      "source": "K6_10_0",
+      "position": [
+        50.149,
+        0.2,
+        177.021
+      ],
+      "objects": 211,
+      "renderers": 85,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K6_10_1",
+      "kind": "Building",
+      "source": "K6_10_1",
+      "position": [
+        41.1488724,
+        0.145,
+        172.813614
+      ],
+      "objects": 172,
+      "renderers": 80,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K6_10_2",
+      "kind": "Building",
+      "source": "K6_10_2",
+      "position": [
+        33.9487762,
+        0.0,
+        169.447723
+      ],
+      "objects": 169,
+      "renderers": 67,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K6_11_0",
+      "kind": "Building",
+      "source": "K6_11_0",
+      "position": [
+        26.749,
+        0.0,
+        166.083
+      ],
+      "objects": 176,
+      "renderers": 70,
+      "colliders": 43
+    },
+    {
+      "id": "BLDG_K6_11_1",
+      "kind": "Building",
+      "source": "K6_11_1",
+      "position": [
+        20.0615349,
+        0.0,
+        165.284225
+      ],
+      "objects": 147,
+      "renderers": 55,
+      "colliders": 41
+    },
+    {
+      "id": "BLDG_K6_11_2",
+      "kind": "Building",
+      "source": "K6_11_2",
+      "position": [
+        13.3750629,
+        0.0,
+        164.485565
+      ],
+      "objects": 227,
+      "renderers": 90,
+      "colliders": 73
+    },
+    {
+      "id": "BLDG_K6_11_3",
+      "kind": "Building",
+      "source": "K6_11_3",
+      "position": [
+        6.68759727,
+        0.0,
+        163.6868
+      ],
+      "objects": 144,
+      "renderers": 57,
+      "colliders": 37
+    },
+    {
+      "id": "BLDG_K7_6_1",
+      "kind": "Building",
+      "source": "K7_6_1",
+      "position": [
+        153.207565,
+        1.355,
+        180.784286
+      ],
+      "objects": 220,
+      "renderers": 82,
+      "colliders": 65
+    },
+    {
+      "id": "BLDG_K7_6_2",
+      "kind": "Building",
+      "source": "K7_6_2",
+      "position": [
+        158.662979,
+        1.439,
+        183.443481
+      ],
+      "objects": 281,
+      "renderers": 109,
+      "colliders": 82
+    },
+    {
+      "id": "BLDG_K7_6_3",
+      "kind": "Building",
+      "source": "K7_6_3",
+      "position": [
+        164.206909,
+        1.565,
+        185.923325
+      ],
+      "objects": 408,
+      "renderers": 201,
+      "colliders": 162
+    },
+    {
+      "id": "BLDG_K7_6_4",
+      "kind": "Building",
+      "source": "K7_6_4",
+      "position": [
+        174.591949,
+        1.705,
+        192.320374
+      ],
+      "objects": 293,
+      "renderers": 116,
+      "colliders": 91
+    },
+    {
+      "id": "BLDG_K7_6_5",
+      "kind": "Building",
+      "source": "K7_6_5",
+      "position": [
+        181.865814,
+        1.79,
+        195.865952
+      ],
+      "objects": 175,
+      "renderers": 68,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K7_6_6",
+      "kind": "Building",
+      "source": "K7_6_6",
+      "position": [
+        185.503662,
+        1.874,
+        197.639175
+      ],
+      "objects": 291,
+      "renderers": 113,
+      "colliders": 78
+    },
+    {
+      "id": "BLDG_K7_7_0",
+      "kind": "Building",
+      "source": "K7_7_0",
+      "position": [
+        192.778,
+        1.953,
+        201.184
+      ],
+      "objects": 219,
+      "renderers": 81,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K8_1_0",
+      "kind": "Building",
+      "source": "K8_1_0",
+      "position": [
+        63.769,
+        0.2,
+        174.19
+      ],
+      "objects": 227,
+      "renderers": 90,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K8_1_1",
+      "kind": "Building",
+      "source": "K8_1_1",
+      "position": [
+        67.46655,
+        0.245,
+        169.411072
+      ],
+      "objects": 263,
+      "renderers": 99,
+      "colliders": 74
+    },
+    {
+      "id": "BLDG_K8_1_2",
+      "kind": "Building",
+      "source": "K8_1_2",
+      "position": [
+        72.7327957,
+        0.289,
+        166.4485
+      ],
+      "objects": 230,
+      "renderers": 90,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K8_5_0",
+      "kind": "Building",
+      "source": "K8_5_0",
+      "position": [
+        79.478,
+        0.538,
+        152.774
+      ],
+      "objects": 203,
+      "renderers": 76,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K8_5_1",
+      "kind": "Building",
+      "source": "K8_5_1",
+      "position": [
+        76.03885,
+        0.6,
+        150.733246
+      ],
+      "objects": 210,
+      "renderers": 83,
+      "colliders": 64
+    },
+    {
+      "id": "BLDG_K8_5_2",
+      "kind": "Building",
+      "source": "K8_5_2",
+      "position": [
+        68.8240662,
+        0.672,
+        147.377533
+      ],
+      "objects": 266,
+      "renderers": 102,
+      "colliders": 79
+    },
+    {
+      "id": "BLDG_K8_5_3",
+      "kind": "Building",
+      "source": "K8_5_3",
+      "position": [
+        63.41366,
+        0.754,
+        144.861069
+      ],
+      "objects": 207,
+      "renderers": 78,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K8_5_4",
+      "kind": "Building",
+      "source": "K8_5_4",
+      "position": [
+        54.3945,
+        0.846,
+        140.6661
+      ],
+      "objects": 301,
+      "renderers": 142,
+      "colliders": 113
+    },
+    {
+      "id": "BLDG_K8_5_5",
+      "kind": "Building",
+      "source": "K8_5_5",
+      "position": [
+        47.0110321,
+        0.918,
+        137.6731
+      ],
+      "objects": 211,
+      "renderers": 85,
+      "colliders": 55
+    },
+    {
+      "id": "BLDG_K8_6_0",
+      "kind": "Building",
+      "source": "K8_6_0",
+      "position": [
+        41.601,
+        0.981,
+        135.156
+      ],
+      "objects": 173,
+      "renderers": 68,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K8_9_0",
+      "kind": "Building",
+      "source": "K8_9_0",
+      "position": [
+        27.891,
+        1.105,
+        135.912
+      ],
+      "objects": 221,
+      "renderers": 89,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K8_9_1",
+      "kind": "Building",
+      "source": "K8_9_1",
+      "position": [
+        21.0038414,
+        1.166,
+        132.960373
+      ],
+      "objects": 214,
+      "renderers": 86,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K8_12_0",
+      "kind": "Building",
+      "source": "K8_12_0",
+      "position": [
+        0.0,
+        0.896,
+        153.824
+      ],
+      "objects": 146,
+      "renderers": 59,
+      "colliders": 42
+    },
+    {
+      "id": "BLDG_K8_12_1",
+      "kind": "Building",
+      "source": "K8_12_1",
+      "position": [
+        5.524436,
+        0.879,
+        154.502945
+      ],
+      "objects": 283,
+      "renderers": 105,
+      "colliders": 75
+    },
+    {
+      "id": "BLDG_K8_12_2",
+      "kind": "Building",
+      "source": "K8_12_2",
+      "position": [
+        12.89002,
+        0.855,
+        155.408157
+      ],
+      "objects": 261,
+      "renderers": 98,
+      "colliders": 72
+    },
+    {
+      "id": "BLDG_K8_12_3",
+      "kind": "Building",
+      "source": "K8_12_3",
+      "position": [
+        20.2556038,
+        0.784,
+        156.313385
+      ],
+      "objects": 310,
+      "renderers": 121,
+      "colliders": 96
+    },
+    {
+      "id": "BLDG_K8_13_0",
+      "kind": "Building",
+      "source": "K8_13_0",
+      "position": [
+        29.463,
+        0.781,
+        157.444
+      ],
+      "objects": 163,
+      "renderers": 67,
+      "colliders": 48
+    },
+    {
+      "id": "BLDG_K8_13_1",
+      "kind": "Building",
+      "source": "K8_13_1",
+      "position": [
+        34.90545,
+        0.484,
+        159.9864
+      ],
+      "objects": 302,
+      "renderers": 119,
+      "colliders": 94
+    },
+    {
+      "id": "BLDG_K8_13_2",
+      "kind": "Building",
+      "source": "K8_13_2",
+      "position": [
+        42.1608429,
+        0.2,
+        163.3757
+      ],
+      "objects": 173,
+      "renderers": 68,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K8_13_3",
+      "kind": "Building",
+      "source": "K8_13_3",
+      "position": [
+        49.41714,
+        0.2,
+        166.765411
+      ],
+      "objects": 250,
+      "renderers": 89,
+      "colliders": 78
+    },
+    {
+      "id": "BLDG_K9_0_0",
+      "kind": "Building",
+      "source": "K9_0_0",
+      "position": [
+        116.274,
+        0.752,
+        165.203
+      ],
+      "objects": 249,
+      "renderers": 100,
+      "colliders": 74
+    },
+    {
+      "id": "BLDG_K9_0_1",
+      "kind": "Building",
+      "source": "K9_0_1",
+      "position": [
+        124.907143,
+        0.91,
+        167.687408
+      ],
+      "objects": 228,
+      "renderers": 85,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K9_0_2",
+      "kind": "Building",
+      "source": "K9_0_2",
+      "position": [
+        133.057358,
+        0.986,
+        171.270355
+      ],
+      "objects": 211,
+      "renderers": 80,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K9_0_3",
+      "kind": "Building",
+      "source": "K9_0_3",
+      "position": [
+        138.686844,
+        1.191,
+        175.056
+      ],
+      "objects": 206,
+      "renderers": 79,
+      "colliders": 46
+    },
+    {
+      "id": "BLDG_K9_1_0",
+      "kind": "Building",
+      "source": "K9_1_0",
+      "position": [
+        142.762,
+        1.547,
+        176.848
+      ],
+      "objects": 162,
+      "renderers": 57,
+      "colliders": 49
+    },
+    {
+      "id": "BLDG_K9_3_0",
+      "kind": "Building",
+      "source": "K9_3_0",
+      "position": [
+        155.545,
+        3.478,
+        154.136
+      ],
+      "objects": 154,
+      "renderers": 63,
+      "colliders": 49
+    },
+    {
+      "id": "BLDG_K9_3_1",
+      "kind": "Building",
+      "source": "K9_3_1",
+      "position": [
+        161.32724,
+        3.816,
+        153.051819
+      ],
+      "objects": 226,
+      "renderers": 103,
+      "colliders": 77
+    },
+    {
+      "id": "BLDG_K9_6_0",
+      "kind": "Building",
+      "source": "K9_6_0",
+      "position": [
+        145.773,
+        4.572,
+        123.974
+      ],
+      "objects": 186,
+      "renderers": 79,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K9_6_1",
+      "kind": "Building",
+      "source": "K9_6_1",
+      "position": [
+        136.074554,
+        4.506,
+        119.730934
+      ],
+      "objects": 308,
+      "renderers": 116,
+      "colliders": 76
+    },
+    {
+      "id": "BLDG_K9_10_0",
+      "kind": "Building",
+      "source": "K9_10_0",
+      "position": [
+        119.492,
+        4.156,
+        120.249
+      ],
+      "objects": 317,
+      "renderers": 118,
+      "colliders": 86
+    },
+    {
+      "id": "BLDG_K9_11_0",
+      "kind": "Building",
+      "source": "K9_11_0",
+      "position": [
+        115.05,
+        4.26,
+        117.066
+      ],
+      "objects": 232,
+      "renderers": 86,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K9_13_0",
+      "kind": "Building",
+      "source": "K9_13_0",
+      "position": [
+        110.704231,
+        1.386,
+        132.0112
+      ],
+      "objects": 283,
+      "renderers": 111,
+      "colliders": 81
+    },
+    {
+      "id": "BLDG_K9_13_1",
+      "kind": "Building",
+      "source": "K9_13_1",
+      "position": [
+        111.921547,
+        1.218,
+        139.835068
+      ],
+      "objects": 257,
+      "renderers": 100,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K9_13_2",
+      "kind": "Building",
+      "source": "K9_13_2",
+      "position": [
+        113.139015,
+        1.072,
+        147.659912
+      ],
+      "objects": 221,
+      "renderers": 87,
+      "colliders": 53
+    },
+    {
+      "id": "BLDG_K9_13_3",
+      "kind": "Building",
+      "source": "K9_13_3",
+      "position": [
+        114.447327,
+        0.968,
+        153.466812
+      ],
+      "objects": 207,
+      "renderers": 78,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K9_13_4",
+      "kind": "Building",
+      "source": "K9_13_4",
+      "position": [
+        115.055984,
+        0.839,
+        157.378754
+      ],
+      "objects": 184,
+      "renderers": 73,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K10_1_0",
+      "kind": "Building",
+      "source": "K10_1_0",
+      "position": [
+        89.189,
+        0.471,
+        157.255
+      ],
+      "objects": 311,
+      "renderers": 142,
+      "colliders": 99
+    },
+    {
+      "id": "BLDG_K10_1_1",
+      "kind": "Building",
+      "source": "K10_1_1",
+      "position": [
+        101.252342,
+        0.586,
+        160.787811
+      ],
+      "objects": 177,
+      "renderers": 69,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K10_3_0",
+      "kind": "Building",
+      "source": "K10_3_0",
+      "position": [
+        111.39138,
+        1.138,
+        152.758163
+      ],
+      "objects": 255,
+      "renderers": 102,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K10_3_1",
+      "kind": "Building",
+      "source": "K10_3_1",
+      "position": [
+        109.9374,
+        1.326,
+        142.97258
+      ],
+      "objects": 232,
+      "renderers": 91,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K10_3_2",
+      "kind": "Building",
+      "source": "K10_3_2",
+      "position": [
+        108.774132,
+        1.496,
+        135.143539
+      ],
+      "objects": 251,
+      "renderers": 99,
+      "colliders": 79
+    },
+    {
+      "id": "BLDG_K10_3_3",
+      "kind": "Building",
+      "source": "K10_3_3",
+      "position": [
+        106.720787,
+        1.817,
+        127.447739
+      ],
+      "objects": 246,
+      "renderers": 93,
+      "colliders": 72
+    },
+    {
+      "id": "BLDG_K10_3_4",
+      "kind": "Building",
+      "source": "K10_3_4",
+      "position": [
+        106.342941,
+        2.564,
+        121.502716
+      ],
+      "objects": 142,
+      "renderers": 55,
+      "colliders": 40
+    },
+    {
+      "id": "BLDG_K10_5_0",
+      "kind": "Building",
+      "source": "K10_5_0",
+      "position": [
+        77.234,
+        3.232,
+        111.2
+      ],
+      "objects": 105,
+      "renderers": 39,
+      "colliders": 28
+    },
+    {
+      "id": "BLDG_K10_5_1",
+      "kind": "Building",
+      "source": "K10_5_1",
+      "position": [
+        73.16135,
+        3.351,
+        112.052879
+      ],
+      "objects": 268,
+      "renderers": 101,
+      "colliders": 66
+    },
+    {
+      "id": "BLDG_K10_5_2",
+      "kind": "Building",
+      "source": "K10_5_2",
+      "position": [
+        67.05187,
+        3.523,
+        113.3323
+      ],
+      "objects": 227,
+      "renderers": 87,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K10_5_3",
+      "kind": "Building",
+      "source": "K10_5_3",
+      "position": [
+        56.8707237,
+        3.686,
+        115.464394
+      ],
+      "objects": 160,
+      "renderers": 58,
+      "colliders": 49
+    },
+    {
+      "id": "BLDG_K10_9_0",
+      "kind": "Building",
+      "source": "K10_9_0",
+      "position": [
+        42.933,
+        1.039,
+        128.567
+      ],
+      "objects": 139,
+      "renderers": 47,
+      "colliders": 41
+    },
+    {
+      "id": "BLDG_K10_10_0",
+      "kind": "Building",
+      "source": "K10_10_0",
+      "position": [
+        43.498,
+        0.878,
+        131.076
+      ],
+      "objects": 389,
+      "renderers": 164,
+      "colliders": 130
+    },
+    {
+      "id": "BLDG_K10_10_1",
+      "kind": "Building",
+      "source": "K10_10_1",
+      "position": [
+        56.42072,
+        0.757,
+        135.763123
+      ],
+      "objects": 362,
+      "renderers": 146,
+      "colliders": 101
+    },
+    {
+      "id": "BLDG_K10_10_2",
+      "kind": "Building",
+      "source": "K10_10_2",
+      "position": [
+        65.29027,
+        0.666,
+        139.888489
+      ],
+      "objects": 259,
+      "renderers": 95,
+      "colliders": 77
+    },
+    {
+      "id": "BLDG_K10_10_3",
+      "kind": "Building",
+      "source": "K10_10_3",
+      "position": [
+        72.38536,
+        0.606,
+        143.188522
+      ],
+      "objects": 165,
+      "renderers": 61,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K10_10_4",
+      "kind": "Building",
+      "source": "K10_10_4",
+      "position": [
+        75.4272842,
+        0.545,
+        145.926819
+      ],
+      "objects": 278,
+      "renderers": 104,
+      "colliders": 87
+    },
+    {
+      "id": "BLDG_K11_0_0",
+      "kind": "Building",
+      "source": "K11_0_0",
+      "position": [
+        13.052,
+        3.002,
+        110.147
+      ],
+      "objects": 172,
+      "renderers": 66,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K11_0_1",
+      "kind": "Building",
+      "source": "K11_0_1",
+      "position": [
+        13.9787254,
+        2.555,
+        115.707306
+      ],
+      "objects": 234,
+      "renderers": 110,
+      "colliders": 85
+    },
+    {
+      "id": "BLDG_K11_2_0",
+      "kind": "Building",
+      "source": "K11_2_0",
+      "position": [
+        28.109,
+        1.063,
+        132.088
+      ],
+      "objects": 173,
+      "renderers": 65,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K11_7_0",
+      "kind": "Building",
+      "source": "K11_7_0",
+      "position": [
+        47.4559021,
+        3.797,
+        110.380775
+      ],
+      "objects": 264,
+      "renderers": 103,
+      "colliders": 75
+    },
+    {
+      "id": "BLDG_K11_8_0",
+      "kind": "Building",
+      "source": "K11_8_0",
+      "position": [
+        42.654,
+        3.875,
+        105.046
+      ],
+      "objects": 287,
+      "renderers": 111,
+      "colliders": 80
+    },
+    {
+      "id": "BLDG_K11_9_0",
+      "kind": "Building",
+      "source": "K11_9_0",
+      "position": [
+        37.643,
+        4.239,
+        97.529
+      ],
+      "objects": 255,
+      "renderers": 95,
+      "colliders": 69
+    },
+    {
+      "id": "BLDG_K11_9_1",
+      "kind": "Building",
+      "source": "K11_9_1",
+      "position": [
+        34.2234726,
+        4.644,
+        92.0223
+      ],
+      "objects": 151,
+      "renderers": 66,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K11_9_2",
+      "kind": "Building",
+      "source": "K11_9_2",
+      "position": [
+        34.1816826,
+        4.966,
+        87.4841
+      ],
+      "objects": 181,
+      "renderers": 68,
+      "colliders": 53
+    },
+    {
+      "id": "BLDG_K11_9_3",
+      "kind": "Building",
+      "source": "K11_9_3",
+      "position": [
+        32.27488,
+        5.288,
+        83.6682
+      ],
+      "objects": 117,
+      "renderers": 42,
+      "colliders": 32
+    },
+    {
+      "id": "BLDG_K12_5_0",
+      "kind": "Building",
+      "source": "K12_5_0",
+      "position": [
+        74.7562943,
+        3.25,
+        103.765984
+      ],
+      "objects": 199,
+      "renderers": 76,
+      "colliders": 48
+    },
+    {
+      "id": "BLDG_K14_0_0",
+      "kind": "Building",
+      "source": "K14_0_0",
+      "position": [
+        92.15,
+        6.164,
+        94.451
+      ],
+      "objects": 252,
+      "renderers": 96,
+      "colliders": 66
+    },
+    {
+      "id": "BLDG_K14_0_1",
+      "kind": "Building",
+      "source": "K14_0_1",
+      "position": [
+        97.16775,
+        5.764,
+        97.40706
+      ],
+      "objects": 193,
+      "renderers": 79,
+      "colliders": 57
+    },
+    {
+      "id": "BLDG_K14_0_2",
+      "kind": "Building",
+      "source": "K14_0_2",
+      "position": [
+        104.096893,
+        5.269,
+        100.87159
+      ],
+      "objects": 234,
+      "renderers": 109,
+      "colliders": 89
+    },
+    {
+      "id": "BLDG_K14_0_3",
+      "kind": "Building",
+      "source": "K14_0_3",
+      "position": [
+        111.204926,
+        4.924,
+        103.978348
+      ],
+      "objects": 178,
+      "renderers": 68,
+      "colliders": 51
+    },
+    {
+      "id": "BLDG_K14_1_0",
+      "kind": "Building",
+      "source": "K14_1_0",
+      "position": [
+        116.402,
+        4.604,
+        106.577
+      ],
+      "objects": 194,
+      "renderers": 85,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K14_2_0",
+      "kind": "Building",
+      "source": "K14_2_0",
+      "position": [
+        120.021,
+        4.631,
+        105.064
+      ],
+      "objects": 165,
+      "renderers": 63,
+      "colliders": 41
+    },
+    {
+      "id": "BLDG_K14_4_0",
+      "kind": "Building",
+      "source": "K14_4_0",
+      "position": [
+        153.950027,
+        10.113,
+        59.836525
+      ],
+      "objects": 180,
+      "renderers": 75,
+      "colliders": 57
+    },
+    {
+      "id": "BLDG_K14_4_1",
+      "kind": "Building",
+      "source": "K14_4_1",
+      "position": [
+        148.438263,
+        10.186,
+        54.6490173
+      ],
+      "objects": 205,
+      "renderers": 84,
+      "colliders": 57
+    },
+    {
+      "id": "BLDG_K14_8_0",
+      "kind": "Building",
+      "source": "K14_8_0",
+      "position": [
+        118.927,
+        10.275,
+        44.847
+      ],
+      "objects": 119,
+      "renderers": 42,
+      "colliders": 31
+    },
+    {
+      "id": "BLDG_K14_9_0",
+      "kind": "Building",
+      "source": "K14_9_0",
+      "position": [
+        114.959,
+        10.145,
+        46.547
+      ],
+      "objects": 139,
+      "renderers": 49,
+      "colliders": 39
+    },
+    {
+      "id": "BLDG_K14_9_1",
+      "kind": "Building",
+      "source": "K14_9_1",
+      "position": [
+        111.685707,
+        10.067,
+        49.3293
+      ],
+      "objects": 205,
+      "renderers": 87,
+      "colliders": 57
+    },
+    {
+      "id": "BLDG_K14_9_2",
+      "kind": "Building",
+      "source": "K14_9_2",
+      "position": [
+        106.516716,
+        9.989,
+        53.1979752
+      ],
+      "objects": 186,
+      "renderers": 66,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K14_9_3",
+      "kind": "Building",
+      "source": "K14_9_3",
+      "position": [
+        103.826309,
+        9.912,
+        56.66602
+      ],
+      "objects": 252,
+      "renderers": 101,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K14_9_4",
+      "kind": "Building",
+      "source": "K14_9_4",
+      "position": [
+        98.59256,
+        9.83,
+        60.4585
+      ],
+      "objects": 223,
+      "renderers": 84,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K14_12_0",
+      "kind": "Building",
+      "source": "K14_12_0",
+      "position": [
+        72.7,
+        6.86,
+        81.401
+      ],
+      "objects": 142,
+      "renderers": 56,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K14_12_1",
+      "kind": "Building",
+      "source": "K14_12_1",
+      "position": [
+        72.7,
+        6.478,
+        85.447
+      ],
+      "objects": 114,
+      "renderers": 45,
+      "colliders": 31
+    },
+    {
+      "id": "BLDG_K15_4_0",
+      "kind": "Building",
+      "source": "K15_4_0",
+      "position": [
+        69.3,
+        6.388,
+        91.735
+      ],
+      "objects": 192,
+      "renderers": 73,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K15_4_1",
+      "kind": "Building",
+      "source": "K15_4_1",
+      "position": [
+        69.3,
+        6.912,
+        85.053
+      ],
+      "objects": 128,
+      "renderers": 48,
+      "colliders": 34
+    },
+    {
+      "id": "BLDG_K15_5_0",
+      "kind": "Building",
+      "source": "K15_5_0",
+      "position": [
+        69.3,
+        7.301,
+        80.599
+      ],
+      "objects": 206,
+      "renderers": 82,
+      "colliders": 65
+    },
+    {
+      "id": "BLDG_K15_5_1",
+      "kind": "Building",
+      "source": "K15_5_1",
+      "position": [
+        72.01636,
+        7.831,
+        75.16624
+      ],
+      "objects": 143,
+      "renderers": 55,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K15_6_0",
+      "kind": "Building",
+      "source": "K15_6_0",
+      "position": [
+        74.733,
+        8.235,
+        69.733
+      ],
+      "objects": 194,
+      "renderers": 84,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K15_6_1",
+      "kind": "Building",
+      "source": "K15_6_1",
+      "position": [
+        79.09156,
+        8.792,
+        66.2121048
+      ],
+      "objects": 217,
+      "renderers": 84,
+      "colliders": 66
+    },
+    {
+      "id": "BLDG_K15_6_2",
+      "kind": "Building",
+      "source": "K15_6_2",
+      "position": [
+        86.15397,
+        9.44,
+        64.02258
+      ],
+      "objects": 178,
+      "renderers": 74,
+      "colliders": 55
+    },
+    {
+      "id": "BLDG_K15_7_0",
+      "kind": "Building",
+      "source": "K15_7_0",
+      "position": [
+        92.681,
+        9.842,
+        60.759
+      ],
+      "objects": 145,
+      "renderers": 64,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K15_7_1",
+      "kind": "Building",
+      "source": "K15_7_1",
+      "position": [
+        98.02981,
+        9.942,
+        56.73748
+      ],
+      "objects": 200,
+      "renderers": 75,
+      "colliders": 55
+    },
+    {
+      "id": "BLDG_K15_7_2",
+      "kind": "Building",
+      "source": "K15_7_2",
+      "position": [
+        103.120323,
+        10.039,
+        52.4105377
+      ],
+      "objects": 200,
+      "renderers": 82,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K15_7_3",
+      "kind": "Building",
+      "source": "K15_7_3",
+      "position": [
+        107.951019,
+        10.135,
+        47.7794647
+      ],
+      "objects": 232,
+      "renderers": 90,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K15_11_0",
+      "kind": "Building",
+      "source": "K15_11_0",
+      "position": [
+        107.392,
+        9.567,
+        27.871
+      ],
+      "objects": 191,
+      "renderers": 71,
+      "colliders": 54
+    },
+    {
+      "id": "BLDG_K15_11_1",
+      "kind": "Building",
+      "source": "K15_11_1",
+      "position": [
+        99.3960648,
+        9.303,
+        27.4501534
+      ],
+      "objects": 205,
+      "renderers": 79,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K15_12_0",
+      "kind": "Building",
+      "source": "K15_12_0",
+      "position": [
+        89.401,
+        9.037,
+        26.924
+      ],
+      "objects": 185,
+      "renderers": 75,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K15_12_1",
+      "kind": "Building",
+      "source": "K15_12_1",
+      "position": [
+        84.64285,
+        8.799,
+        30.89317
+      ],
+      "objects": 223,
+      "renderers": 105,
+      "colliders": 79
+    },
+    {
+      "id": "BLDG_K15_12_2",
+      "kind": "Building",
+      "source": "K15_12_2",
+      "position": [
+        75.41705,
+        8.532,
+        35.1395874
+      ],
+      "objects": 314,
+      "renderers": 130,
+      "colliders": 81
+    },
+    {
+      "id": "BLDG_K15_12_3",
+      "kind": "Building",
+      "source": "K15_12_3",
+      "position": [
+        68.54458,
+        8.291,
+        39.4669724
+      ],
+      "objects": 227,
+      "renderers": 92,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K15_12_4",
+      "kind": "Building",
+      "source": "K15_12_4",
+      "position": [
+        61.43311,
+        8.053,
+        43.35517
+      ],
+      "objects": 252,
+      "renderers": 100,
+      "colliders": 66
+    },
+    {
+      "id": "BLDG_K15_12_5",
+      "kind": "Building",
+      "source": "K15_12_5",
+      "position": [
+        54.3207626,
+        7.815,
+        47.24385
+      ],
+      "objects": 215,
+      "renderers": 85,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K15_12_6",
+      "kind": "Building",
+      "source": "K15_12_6",
+      "position": [
+        47.2084236,
+        7.547,
+        51.13253
+      ],
+      "objects": 181,
+      "renderers": 76,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K15_12_7",
+      "kind": "Building",
+      "source": "K15_12_7",
+      "position": [
+        37.8387,
+        7.22,
+        55.1157227
+      ],
+      "objects": 384,
+      "renderers": 156,
+      "colliders": 92
+    },
+    {
+      "id": "BLDG_K15_16_0",
+      "kind": "Building",
+      "source": "K15_16_0",
+      "position": [
+        45.346,
+        3.81,
+        102.954
+      ],
+      "objects": 205,
+      "renderers": 82,
+      "colliders": 56
+    },
+    {
+      "id": "BLDG_K15_16_1",
+      "kind": "Building",
+      "source": "K15_16_1",
+      "position": [
+        47.964325,
+        3.751,
+        105.863258
+      ],
+      "objects": 190,
+      "renderers": 72,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K16_3_0",
+      "kind": "Building",
+      "source": "K16_3_0",
+      "position": [
+        8.948,
+        3.644,
+        109.853
+      ],
+      "objects": 242,
+      "renderers": 100,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K16_3_1",
+      "kind": "Building",
+      "source": "K16_3_1",
+      "position": [
+        12.0747356,
+        4.127,
+        100.14212
+      ],
+      "objects": 161,
+      "renderers": 67,
+      "colliders": 52
+    },
+    {
+      "id": "BLDG_K16_3_2",
+      "kind": "Building",
+      "source": "K16_3_2",
+      "position": [
+        14.2678585,
+        4.61,
+        92.28755
+      ],
+      "objects": 240,
+      "renderers": 97,
+      "colliders": 64
+    },
+    {
+      "id": "BLDG_K16_3_3",
+      "kind": "Building",
+      "source": "K16_3_3",
+      "position": [
+        17.0093288,
+        5.375,
+        82.4691
+      ],
+      "objects": 267,
+      "renderers": 108,
+      "colliders": 76
+    },
+    {
+      "id": "BLDG_K16_3_4",
+      "kind": "Building",
+      "source": "K16_3_4",
+      "position": [
+        19.2027225,
+        5.964,
+        74.61357
+      ],
+      "objects": 162,
+      "renderers": 65,
+      "colliders": 36
+    },
+    {
+      "id": "BLDG_K16_3_5",
+      "kind": "Building",
+      "source": "K16_3_5",
+      "position": [
+        20.4622326,
+        6.671,
+        68.61531
+      ],
+      "objects": 299,
+      "renderers": 119,
+      "colliders": 81
+    },
+    {
+      "id": "BLDG_K16_10_0",
+      "kind": "Building",
+      "source": "K16_10_0",
+      "position": [
+        141.3375,
+        10.242,
+        44.4370651
+      ],
+      "objects": 169,
+      "renderers": 62,
+      "colliders": 42
+    },
+    {
+      "id": "BLDG_K16_11_0",
+      "kind": "Building",
+      "source": "K16_11_0",
+      "position": [
+        145.074,
+        10.185,
+        46.539
+      ],
+      "objects": 192,
+      "renderers": 76,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K16_11_1",
+      "kind": "Building",
+      "source": "K16_11_1",
+      "position": [
+        151.335083,
+        10.102,
+        52.4317436
+      ],
+      "objects": 226,
+      "renderers": 84,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K11_6_0",
+      "kind": "Building",
+      "source": "K11_6_0",
+      "position": [
+        39.395,
+        2.307,
+        119.736
+      ],
+      "objects": 180,
+      "renderers": 65,
+      "colliders": 53
+    },
+    {
+      "id": "BLDG_K11_6_1",
+      "kind": "Building",
+      "source": "K11_6_1",
+      "position": [
+        43.19851,
+        2.769,
+        117.980377
+      ],
+      "objects": 186,
+      "renderers": 73,
+      "colliders": 60
+    },
+    {
+      "id": "BLDG_K12_0_0",
+      "kind": "Building",
+      "source": "K12_0_0",
+      "position": [
+        77.453,
+        3.345,
+        106.8
+      ],
+      "objects": 271,
+      "renderers": 106,
+      "colliders": 78
+    },
+    {
+      "id": "BLDG_K12_0_1",
+      "kind": "Building",
+      "source": "K12_0_1",
+      "position": [
+        87.775,
+        3.668,
+        107.2001
+      ],
+      "objects": 257,
+      "renderers": 109,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K13_1_0",
+      "kind": "Building",
+      "source": "K13_1_0",
+      "position": [
+        128.483,
+        4.474,
+        112.0
+      ],
+      "objects": 123,
+      "renderers": 52,
+      "colliders": 41
+    },
+    {
+      "id": "BLDG_K4_5_0",
+      "kind": "Building",
+      "source": "K4_5_0",
+      "position": [
+        173.471,
+        -1.701,
+        218.295
+      ],
+      "objects": 392,
+      "renderers": 157,
+      "colliders": 108
+    },
+    {
+      "id": "BLDG_K4_5_1",
+      "kind": "Building",
+      "source": "K4_5_1",
+      "position": [
+        179.506989,
+        -2.202,
+        226.343
+      ],
+      "objects": 286,
+      "renderers": 117,
+      "colliders": 80
+    },
+    {
+      "id": "BLDG_K7_2_0",
+      "kind": "Building",
+      "source": "K7_2_0",
+      "position": [
+        173.108,
+        4.077,
+        155.116
+      ],
+      "objects": 260,
+      "renderers": 100,
+      "colliders": 79
+    },
+    {
+      "id": "BLDG_K7_2_1",
+      "kind": "Building",
+      "source": "K7_2_1",
+      "position": [
+        165.781677,
+        3.648,
+        156.4897
+      ],
+      "objects": 224,
+      "renderers": 82,
+      "colliders": 59
+    },
+    {
+      "id": "BLDG_K9_5_1",
+      "kind": "Building",
+      "source": "K9_5_1",
+      "position": [
+        172.8452,
+        4.864,
+        146.771133
+      ],
+      "objects": 253,
+      "renderers": 96,
+      "colliders": 65
+    },
+    {
+      "id": "BLDG_K9_5_2",
+      "kind": "Building",
+      "source": "K9_5_2",
+      "position": [
+        167.431183,
+        4.81,
+        142.211914
+      ],
+      "objects": 153,
+      "renderers": 59,
+      "colliders": 38
+    },
+    {
+      "id": "BLDG_K9_5_3",
+      "kind": "Building",
+      "source": "K9_5_3",
+      "position": [
+        162.016388,
+        4.755,
+        137.652054
+      ],
+      "objects": 274,
+      "renderers": 103,
+      "colliders": 89
+    },
+    {
+      "id": "BLDG_K9_5_4",
+      "kind": "Building",
+      "source": "K9_5_4",
+      "position": [
+        156.602371,
+        4.7,
+        133.09285
+      ],
+      "objects": 172,
+      "renderers": 69,
+      "colliders": 43
+    },
+    {
+      "id": "BLDG_K9_5_5",
+      "kind": "Building",
+      "source": "K9_5_5",
+      "position": [
+        151.187592,
+        4.645,
+        128.53299
+      ],
+      "objects": 204,
+      "renderers": 81,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K14_3_1",
+      "kind": "Building",
+      "source": "K14_3_1",
+      "position": [
+        127.958595,
+        5.469,
+        100.959641
+      ],
+      "objects": 232,
+      "renderers": 108,
+      "colliders": 86
+    },
+    {
+      "id": "BLDG_K14_3_2",
+      "kind": "Building",
+      "source": "K14_3_2",
+      "position": [
+        133.279236,
+        5.962,
+        95.11312
+      ],
+      "objects": 222,
+      "renderers": 87,
+      "colliders": 63
+    },
+    {
+      "id": "BLDG_K14_3_3",
+      "kind": "Building",
+      "source": "K14_3_3",
+      "position": [
+        138.044556,
+        6.395,
+        88.68228
+      ],
+      "objects": 295,
+      "renderers": 112,
+      "colliders": 85
+    },
+    {
+      "id": "BLDG_K14_3_4",
+      "kind": "Building",
+      "source": "K14_3_4",
+      "position": [
+        141.464325,
+        7.222,
+        83.7318039
+      ],
+      "objects": 309,
+      "renderers": 124,
+      "colliders": 87
+    },
+    {
+      "id": "BLDG_K14_3_5",
+      "kind": "Building",
+      "source": "K14_3_5",
+      "position": [
+        146.539368,
+        8.162,
+        77.5541
+      ],
+      "objects": 288,
+      "renderers": 113,
+      "colliders": 75
+    },
+    {
+      "id": "BLDG_K14_3_6",
+      "kind": "Building",
+      "source": "K14_3_6",
+      "position": [
+        152.000748,
+        9.804,
+        71.69379
+      ],
+      "objects": 318,
+      "renderers": 126,
+      "colliders": 82
+    },
+    {
+      "id": "BLDG_K2_1_0",
+      "kind": "Building",
+      "source": "K2_1_0",
+      "position": [
+        146.671,
+        -0.187,
+        208.782
+      ],
+      "objects": 175,
+      "renderers": 75,
+      "colliders": 65
+    },
+    {
+      "id": "BLDG_K2_1_1",
+      "kind": "Building",
+      "source": "K2_1_1",
+      "position": [
+        143.932373,
+        0.164,
+        206.043365
+      ],
+      "objects": 226,
+      "renderers": 100,
+      "colliders": 83
+    },
+    {
+      "id": "BLDG_K2_5_0",
+      "kind": "Building",
+      "source": "K2_5_0",
+      "position": [
+        132.636,
+        0.2,
+        179.455
+      ],
+      "objects": 201,
+      "renderers": 72,
+      "colliders": 53
+    },
+    {
+      "id": "BLDG_K2_6_0",
+      "kind": "Building",
+      "source": "K2_6_0",
+      "position": [
+        128.0,
+        0.2,
+        181.0
+      ],
+      "objects": 242,
+      "renderers": 88,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K2_6_1",
+      "kind": "Building",
+      "source": "K2_6_1",
+      "position": [
+        121.999916,
+        0.2,
+        181.857147
+      ],
+      "objects": 218,
+      "renderers": 100,
+      "colliders": 83
+    },
+    {
+      "id": "BLDG_K5_0_0",
+      "kind": "Building",
+      "source": "K5_0_0",
+      "position": [
+        7.156,
+        -2.372,
+        236.0
+      ],
+      "objects": 242,
+      "renderers": 93,
+      "colliders": 71
+    },
+    {
+      "id": "BLDG_K5_0_1",
+      "kind": "Building",
+      "source": "K5_0_1",
+      "position": [
+        11.6925449,
+        -1.919,
+        229.7622
+      ],
+      "objects": 245,
+      "renderers": 100,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K6_1_0",
+      "kind": "Building",
+      "source": "K6_1_0",
+      "position": [
+        17.836,
+        0.0,
+        182.218
+      ],
+      "objects": 249,
+      "renderers": 121,
+      "colliders": 93
+    },
+    {
+      "id": "BLDG_K6_1_1",
+      "kind": "Building",
+      "source": "K6_1_1",
+      "position": [
+        26.8325386,
+        0.0,
+        189.8304
+      ],
+      "objects": 184,
+      "renderers": 83,
+      "colliders": 70
+    },
+    {
+      "id": "BLDG_K7_3_0",
+      "kind": "Building",
+      "source": "K7_3_0",
+      "position": [
+        158.455,
+        3.104,
+        157.864
+      ],
+      "objects": 343,
+      "renderers": 135,
+      "colliders": 89
+    },
+    {
+      "id": "BLDG_K7_3_1",
+      "kind": "Building",
+      "source": "K7_3_1",
+      "position": [
+        155.935074,
+        2.694,
+        164.546173
+      ],
+      "objects": 290,
+      "renderers": 139,
+      "colliders": 121
+    },
+    {
+      "id": "BLDG_K7_3_2",
+      "kind": "Building",
+      "source": "K7_3_2",
+      "position": [
+        152.506058,
+        2.259,
+        170.811737
+      ],
+      "objects": 297,
+      "renderers": 112,
+      "colliders": 81
+    },
+    {
+      "id": "BLDG_K8_2_0",
+      "kind": "Building",
+      "source": "K8_2_0",
+      "position": [
+        77.214,
+        0.336,
+        162.578
+      ],
+      "objects": 226,
+      "renderers": 81,
+      "colliders": 62
+    },
+    {
+      "id": "BLDG_K10_7_0",
+      "kind": "Building",
+      "source": "K10_7_0",
+      "position": [
+        42.605,
+        1.824,
+        122.264
+      ],
+      "objects": 153,
+      "renderers": 54,
+      "colliders": 37
+    },
+    {
+      "id": "BLDG_K13_2_0",
+      "kind": "Building",
+      "source": "K13_2_0",
+      "position": [
+        131.745,
+        4.517,
+        112.815
+      ],
+      "objects": 231,
+      "renderers": 98,
+      "colliders": 68
+    },
+    {
+      "id": "BLDG_K13_2_1",
+      "kind": "Building",
+      "source": "K13_2_1",
+      "position": [
+        140.902,
+        4.587,
+        116.82119
+      ],
+      "objects": 314,
+      "renderers": 117,
+      "colliders": 81
+    },
+    {
+      "id": "BLDG_K13_3_0",
+      "kind": "Building",
+      "source": "K13_3_0",
+      "position": [
+        148.227,
+        4.637,
+        120.026
+      ],
+      "objects": 180,
+      "renderers": 66,
+      "colliders": 54
+    },
+    {
+      "id": "BLDG_K13_3_1",
+      "kind": "Building",
+      "source": "K13_3_1",
+      "position": [
+        152.993912,
+        4.693,
+        124.040276
+      ],
+      "objects": 246,
+      "renderers": 99,
+      "colliders": 76
+    },
+    {
+      "id": "BLDG_K13_3_2",
+      "kind": "Building",
+      "source": "K13_3_2",
+      "position": [
+        160.123276,
+        4.749,
+        128.475174
+      ],
+      "objects": 210,
+      "renderers": 85,
+      "colliders": 61
+    },
+    {
+      "id": "BLDG_K13_3_3",
+      "kind": "Building",
+      "source": "K13_3_3",
+      "position": [
+        164.890182,
+        4.798,
+        132.489456
+      ],
+      "objects": 139,
+      "renderers": 60,
+      "colliders": 47
+    },
+    {
+      "id": "BLDG_K13_3_4",
+      "kind": "Building",
+      "source": "K13_3_4",
+      "position": [
+        169.657852,
+        4.846,
+        136.504364
+      ],
+      "objects": 161,
+      "renderers": 60,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K13_3_5",
+      "kind": "Building",
+      "source": "K13_3_5",
+      "position": [
+        174.424774,
+        4.894,
+        140.518646
+      ],
+      "objects": 207,
+      "renderers": 77,
+      "colliders": 57
+    },
+    {
+      "id": "BLDG_K13_3_6",
+      "kind": "Building",
+      "source": "K13_3_6",
+      "position": [
+        178.418716,
+        4.932,
+        145.4508
+      ],
+      "objects": 176,
+      "renderers": 68,
+      "colliders": 54
+    },
+    {
+      "id": "BLDG_K13_3_7",
+      "kind": "Building",
+      "source": "K13_3_7",
+      "position": [
+        183.186386,
+        4.978,
+        149.465729
+      ],
+      "objects": 215,
+      "renderers": 82,
+      "colliders": 54
+    },
+    {
+      "id": "BLDG_K14_10_0",
+      "kind": "Building",
+      "source": "K14_10_0",
+      "position": [
+        95.319,
+        9.519,
+        63.241
+      ],
+      "objects": 284,
+      "renderers": 111,
+      "colliders": 88
+    },
+    {
+      "id": "BLDG_K14_10_1",
+      "kind": "Building",
+      "source": "K14_10_1",
+      "position": [
+        88.0982742,
+        8.623,
+        66.851326
+      ],
+      "objects": 232,
+      "renderers": 90,
+      "colliders": 76
+    },
+    {
+      "id": "BLDG_K14_13_0",
+      "kind": "Building",
+      "source": "K14_13_0",
+      "position": [
+        72.7,
+        6.2,
+        89.494
+      ],
+      "objects": 163,
+      "renderers": 63,
+      "colliders": 44
+    },
+    {
+      "id": "BLDG_K14_13_1",
+      "kind": "Building",
+      "source": "K14_13_1",
+      "position": [
+        79.48011,
+        6.2,
+        89.9834442
+      ],
+      "objects": 162,
+      "renderers": 59,
+      "colliders": 50
+    },
+    {
+      "id": "BLDG_K14_13_2",
+      "kind": "Building",
+      "source": "K14_13_2",
+      "position": [
+        83.50566,
+        6.2,
+        92.2476349
+      ],
+      "objects": 225,
+      "renderers": 87,
+      "colliders": 65
+    },
+    {
+      "id": "STRUCT_Obispo_Escalera",
+      "kind": "Structure",
+      "source": "Obispo_Escalera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 3,
+      "renderers": 2,
+      "colliders": 2
+    },
+    {
+      "id": "STRUCT_Arco_Escalera",
+      "kind": "Structure",
+      "source": "Arco_Escalera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 3,
+      "renderers": 2,
+      "colliders": 2
+    },
+    {
+      "id": "STRUCT_Solana_Escalera",
+      "kind": "Structure",
+      "source": "Solana_Escalera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 3,
+      "renderers": 2,
+      "colliders": 2
+    },
+    {
+      "id": "STREET_Espina_E",
+      "kind": "StreetReference",
+      "source": "Espina_E",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Espina_Plaza",
+      "kind": "StreetReference",
+      "source": "Espina_Plaza",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Espina_Nodo",
+      "kind": "StreetReference",
+      "source": "Espina_Nodo",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Subida_Puente",
+      "kind": "StreetReference",
+      "source": "Subida_Puente",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Puente_Piedra",
+      "kind": "StreetReference",
+      "source": "Puente_Piedra",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Cantabra",
+      "kind": "StreetReference",
+      "source": "Cantabra",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Callejon_Oeste",
+      "kind": "StreetReference",
+      "source": "Callejon_Oeste",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Callejon_Oeste_Salida",
+      "kind": "StreetReference",
+      "source": "Callejon_Oeste_Salida",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Cimavilla_Baja",
+      "kind": "StreetReference",
+      "source": "Cimavilla_Baja",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Calle_Alta_O",
+      "kind": "StreetReference",
+      "source": "Calle_Alta_O",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Calle_Alta_C",
+      "kind": "StreetReference",
+      "source": "Calle_Alta_C",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Calle_Alta_C2",
+      "kind": "StreetReference",
+      "source": "Calle_Alta_C2",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Calle_Alta_E",
+      "kind": "StreetReference",
+      "source": "Calle_Alta_E",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Calle_Alta_Salida",
+      "kind": "StreetReference",
+      "source": "Calle_Alta_Salida",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Obispo_Escalera",
+      "kind": "StreetReference",
+      "source": "Obispo_Escalera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Obispo_Bajo",
+      "kind": "StreetReference",
+      "source": "Obispo_Bajo",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Callejon_Arco",
+      "kind": "StreetReference",
+      "source": "Callejon_Arco",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Arco_Escalera",
+      "kind": "StreetReference",
+      "source": "Arco_Escalera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Ribera",
+      "kind": "StreetReference",
+      "source": "Ribera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 7,
+      "renderers": 6,
+      "colliders": 6
+    },
+    {
+      "id": "STREET_Capitan",
+      "kind": "StreetReference",
+      "source": "Capitan",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Capitan_Salida",
+      "kind": "StreetReference",
+      "source": "Capitan_Salida",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_El_Sol",
+      "kind": "StreetReference",
+      "source": "El_Sol",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Cervantes",
+      "kind": "StreetReference",
+      "source": "Cervantes",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Pasarela",
+      "kind": "StreetReference",
+      "source": "Pasarela",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Independencia",
+      "kind": "StreetReference",
+      "source": "Independencia",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Solana_Acceso",
+      "kind": "StreetReference",
+      "source": "Solana_Acceso",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Solana_Escalera",
+      "kind": "StreetReference",
+      "source": "Solana_Escalera",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Solana_Terraza",
+      "kind": "StreetReference",
+      "source": "Solana_Terraza",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Solana_Bajada",
+      "kind": "StreetReference",
+      "source": "Solana_Bajada",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Solana_Baja",
+      "kind": "StreetReference",
+      "source": "Solana_Baja",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Subida_Mirador",
+      "kind": "StreetReference",
+      "source": "Subida_Mirador",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Ronda_Mirador",
+      "kind": "StreetReference",
+      "source": "Ronda_Mirador",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_San_Pedro",
+      "kind": "StreetReference",
+      "source": "San_Pedro",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_San_Pedro_Salida",
+      "kind": "StreetReference",
+      "source": "San_Pedro_Salida",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 4,
+      "renderers": 3,
+      "colliders": 3
+    },
+    {
+      "id": "STREET_Ronda_Huertas",
+      "kind": "StreetReference",
+      "source": "Ronda_Huertas",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Llano",
+      "kind": "StreetReference",
+      "source": "Llano",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Fuente",
+      "kind": "StreetReference",
+      "source": "Fuente",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "STREET_Fuente_Baja",
+      "kind": "StreetReference",
+      "source": "Fuente_Baja",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "SPACE_Plaza_Rio",
+      "kind": "OpenSpace",
+      "source": "Plaza_Rio",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 54,
+      "renderers": 24,
+      "colliders": 19
+    },
+    {
+      "id": "SPACE_Plazuela_Fuente",
+      "kind": "OpenSpace",
+      "source": "Plazuela_Fuente",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 8,
+      "renderers": 3,
+      "colliders": 2
+    },
+    {
+      "id": "SPACE_Mirador",
+      "kind": "OpenSpace",
+      "source": "Mirador",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 8,
+      "renderers": 3,
+      "colliders": 2
+    },
+    {
+      "id": "SPACE_Cabeza_Puente",
+      "kind": "OpenSpace",
+      "source": "Cabeza_Puente",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "SPACE_Plazuela_Oeste",
+      "kind": "OpenSpace",
+      "source": "Plazuela_Oeste",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 0,
+      "colliders": 0
+    },
+    {
+      "id": "PROP_ManualPersistenceProbe",
+      "kind": "Prop",
+      "source": "ENV_Manhole@183.779,1.817,200.367",
+      "position": [
+        183.778763,
+        1.81681514,
+        200.36731
+      ],
+      "objects": 2,
+      "renderers": 1,
+      "colliders": 0
+    },
+    {
+      "id": "BLDG_K8_3_0",
+      "kind": "LandmarkBuilding",
+      "source": "K8_3_0",
+      "position": [
+        82.65211,
+        0.413,
+        160.1656
+      ],
+      "objects": 231,
+      "renderers": 101,
+      "colliders": 77
+    },
+    {
+      "id": "BLDG_K14_3_0",
+      "kind": "LandmarkBuilding",
+      "source": "K14_3_0",
+      "position": [
+        124.089,
+        5.036,
+        105.67
+      ],
+      "objects": 158,
+      "renderers": 68,
+      "colliders": 49
+    },
+    {
+      "id": "WATER_River",
+      "kind": "River",
+      "source": "River",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 790,
+      "renderers": 409,
+      "colliders": 147
+    },
+    {
+      "id": "STRUCT_Puente_Piedra",
+      "kind": "Structure",
+      "source": "Puente_Piedra",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 40,
+      "renderers": 20,
+      "colliders": 20
+    },
+    {
+      "id": "STRUCT_Pasarela",
+      "kind": "Structure",
+      "source": "Pasarela",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 40,
+      "renderers": 20,
+      "colliders": 20
+    },
+    {
+      "id": "STRUCT_ENV_River_Stairs",
+      "kind": "Structure",
+      "source": "ENV_River_Stairs",
+      "position": [
+        87.657,
+        0.2,
+        194.889
+      ],
+      "objects": 2,
+      "renderers": 1,
+      "colliders": 1
+    },
+    {
+      "id": "STRUCT_Backdrop_Hills",
+      "kind": "Structure",
+      "source": "Backdrop_Hills",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 1,
+      "colliders": 0
+    },
+    {
+      "id": "STRUCT_Cabana_0",
+      "kind": "Structure",
+      "source": "Cabana_0",
+      "position": [
+        303.756653,
+        6.051526,
+        94.96207
+      ],
+      "objects": 91,
+      "renderers": 38,
+      "colliders": 38
+    },
+    {
+      "id": "STRUCT_Cabana_1",
+      "kind": "Structure",
+      "source": "Cabana_1",
+      "position": [
+        -17.9326172,
+        1.68923366,
+        -64.36012
+      ],
+      "objects": 91,
+      "renderers": 38,
+      "colliders": 38
+    },
+    {
+      "id": "STRUCT_Cabana_5",
+      "kind": "Structure",
+      "source": "Cabana_5",
+      "position": [
+        -7.87519836,
+        -1.35,
+        44.22554
+      ],
+      "objects": 91,
+      "renderers": 38,
+      "colliders": 38
+    },
+    {
+      "id": "STRUCT_Cabana_6",
+      "kind": "Structure",
+      "source": "Cabana_6",
+      "position": [
+        101.539558,
+        0.2659276,
+        -46.2073059
+      ],
+      "objects": 80,
+      "renderers": 32,
+      "colliders": 32
+    },
+    {
+      "id": "STRUCT_Backdrop_Range",
+      "kind": "Structure",
+      "source": "Backdrop_Range",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 1,
+      "colliders": 0
+    },
+    {
+      "id": "STRUCT_Backdrop_Sea",
+      "kind": "Structure",
+      "source": "Backdrop_Sea",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": 1,
+      "renderers": 1,
+      "colliders": 0
+    }
+  ],
+  "buildingGroups": 311,
+  "streets": 38,
+  "openSpaces": 5,
+  "approximateProps": 782,
+  "vegetationRoots": 652,
+  "environmentPrefabInstances": 0,
+  "groups": [
+    {
+      "name": "Buildings",
+      "objects": 67358
+    },
+    {
+      "name": "Streets",
+      "objects": 114
+    },
+    {
+      "name": "OpenSpaces",
+      "objects": 74
+    },
+    {
+      "name": "Props",
+      "objects": 272
+    },
+    {
+      "name": "Vegetation",
+      "objects": 1959
+    },
+    {
+      "name": "Landmarks",
+      "objects": 390
+    },
+    {
+      "name": "RiverWater",
+      "objects": 818
+    },
+    {
+      "name": "GameplayHelpers",
+      "objects": 100
+    },
+    {
+      "name": "MiscLegacy",
+      "objects": 1615
+    }
+  ]
+}

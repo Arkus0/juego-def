@@ -215,6 +215,7 @@ namespace JuegoDef.Env
         /// level for the weathering shader. Leaves the scene on the day preset.</summary>
         public static JDLightingRig BuildRig(Transform root, Bounds district, float waterLevel)
         {
+            EnvAuthoredGuard.RequireLegacyScene();
             Apply("day");
             var sun = Sun();
             var vol = Object.FindObjectsByType<Volume>(FindObjectsSortMode.None).First(v => v.isGlobal);

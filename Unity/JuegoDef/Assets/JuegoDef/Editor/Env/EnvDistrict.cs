@@ -38,6 +38,7 @@ namespace JuegoDef.Env
         /// the open scene (its root object) and reload the spec and the unit library.</summary>
         static void EnsureSpec()
         {
+            EnvAuthoredGuard.RequireLegacyScene();
             if (spec != null && units != null && id != null) return;
             if (id == null)
                 id = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects()
@@ -58,6 +59,7 @@ namespace JuegoDef.Env
 
         public static string Begin(string districtId)
         {
+            EnvAuthoredGuard.RequireLegacyScene();
             id = districtId;
             spec = JObject.Parse(EnvKit.ReadText($"{DistrictSpecs}/{id}.json"));
             EnvKit.ClearCache();

@@ -1,0 +1,4095 @@
+{
+  "count": 342,
+  "candidates": [
+    {
+      "candidate": "GAME_CAND_K0_3_00_2",
+      "buildings": [
+        "BLDG_K0_3_0",
+        "BLDG_K0_3_1"
+      ],
+      "street": "Independencia",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K0_6_00_2",
+      "buildings": [
+        "BLDG_K0_6_0",
+        "BLDG_K0_6_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K1_3_03_2",
+      "buildings": [
+        "BLDG_K1_3_3",
+        "BLDG_K1_3_4"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K1_3_04_2",
+      "buildings": [
+        "BLDG_K1_3_4",
+        "BLDG_K1_3_5"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K1_3_03_3",
+      "buildings": [
+        "BLDG_K1_3_3",
+        "BLDG_K1_3_4",
+        "BLDG_K1_3_5"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K1_7_00_2",
+      "buildings": [
+        "BLDG_K1_7_0",
+        "BLDG_K1_7_1"
+      ],
+      "street": "Cervantes",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_0_00_2",
+      "buildings": [
+        "BLDG_K2_0_0",
+        "BLDG_K2_0_1"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_0_01_2",
+      "buildings": [
+        "BLDG_K2_0_1",
+        "BLDG_K2_0_2"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_0_02_2",
+      "buildings": [
+        "BLDG_K2_0_2",
+        "BLDG_K2_0_3"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_0_00_3",
+      "buildings": [
+        "BLDG_K2_0_0",
+        "BLDG_K2_0_1",
+        "BLDG_K2_0_2"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_0_01_3",
+      "buildings": [
+        "BLDG_K2_0_1",
+        "BLDG_K2_0_2",
+        "BLDG_K2_0_3"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_0_00_4",
+      "buildings": [
+        "BLDG_K2_0_0",
+        "BLDG_K2_0_1",
+        "BLDG_K2_0_2",
+        "BLDG_K2_0_3"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_1_00_2",
+      "buildings": [
+        "BLDG_K2_1_0",
+        "BLDG_K2_1_1"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_2_00_2",
+      "buildings": [
+        "BLDG_K2_2_0",
+        "BLDG_K2_2_1"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_6_00_2",
+      "buildings": [
+        "BLDG_K2_6_0",
+        "BLDG_K2_6_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_7_00_2",
+      "buildings": [
+        "BLDG_K2_7_0",
+        "BLDG_K2_7_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_10_00_2",
+      "buildings": [
+        "BLDG_K2_10_0",
+        "BLDG_K2_10_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_10_01_2",
+      "buildings": [
+        "BLDG_K2_10_1",
+        "BLDG_K2_10_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_10_02_2",
+      "buildings": [
+        "BLDG_K2_10_2",
+        "BLDG_K2_10_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_10_00_3",
+      "buildings": [
+        "BLDG_K2_10_0",
+        "BLDG_K2_10_1",
+        "BLDG_K2_10_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_10_01_3",
+      "buildings": [
+        "BLDG_K2_10_1",
+        "BLDG_K2_10_2",
+        "BLDG_K2_10_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_10_00_4",
+      "buildings": [
+        "BLDG_K2_10_0",
+        "BLDG_K2_10_1",
+        "BLDG_K2_10_2",
+        "BLDG_K2_10_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K2_14_00_2",
+      "buildings": [
+        "BLDG_K2_14_0",
+        "BLDG_K2_14_1"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_0_00_2",
+      "buildings": [
+        "BLDG_K3_0_0",
+        "BLDG_K3_0_1"
+      ],
+      "street": "Independencia",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_0_01_2",
+      "buildings": [
+        "BLDG_K3_0_1",
+        "BLDG_K3_0_2"
+      ],
+      "street": "Independencia",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_0_00_3",
+      "buildings": [
+        "BLDG_K3_0_0",
+        "BLDG_K3_0_1",
+        "BLDG_K3_0_2"
+      ],
+      "street": "Independencia",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_5_00_2",
+      "buildings": [
+        "BLDG_K3_5_0",
+        "BLDG_K3_5_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_5_01_2",
+      "buildings": [
+        "BLDG_K3_5_1",
+        "BLDG_K3_5_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_5_00_3",
+      "buildings": [
+        "BLDG_K3_5_0",
+        "BLDG_K3_5_1",
+        "BLDG_K3_5_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_6_00_2",
+      "buildings": [
+        "BLDG_K3_6_0",
+        "BLDG_K3_6_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_10_00_2",
+      "buildings": [
+        "BLDG_K3_10_0",
+        "BLDG_K3_10_1"
+      ],
+      "street": "Cervantes",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_12_00_2",
+      "buildings": [
+        "BLDG_K3_12_0",
+        "BLDG_K3_12_1"
+      ],
+      "street": "Cervantes",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_12_01_2",
+      "buildings": [
+        "BLDG_K3_12_1",
+        "BLDG_K3_12_2"
+      ],
+      "street": "Cervantes",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K3_12_00_3",
+      "buildings": [
+        "BLDG_K3_12_0",
+        "BLDG_K3_12_1",
+        "BLDG_K3_12_2"
+      ],
+      "street": "Cervantes",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_00_2",
+      "buildings": [
+        "BLDG_K4_0_0",
+        "BLDG_K4_0_1"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_01_2",
+      "buildings": [
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_02_2",
+      "buildings": [
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_03_2",
+      "buildings": [
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_04_2",
+      "buildings": [
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_05_2",
+      "buildings": [
+        "BLDG_K4_0_5",
+        "BLDG_K4_0_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_00_3",
+      "buildings": [
+        "BLDG_K4_0_0",
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_01_3",
+      "buildings": [
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_02_3",
+      "buildings": [
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_03_3",
+      "buildings": [
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_04_3",
+      "buildings": [
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5",
+        "BLDG_K4_0_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_00_4",
+      "buildings": [
+        "BLDG_K4_0_0",
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_01_4",
+      "buildings": [
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_02_4",
+      "buildings": [
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_03_4",
+      "buildings": [
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5",
+        "BLDG_K4_0_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_00_5",
+      "buildings": [
+        "BLDG_K4_0_0",
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_01_5",
+      "buildings": [
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_02_5",
+      "buildings": [
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5",
+        "BLDG_K4_0_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_00_6",
+      "buildings": [
+        "BLDG_K4_0_0",
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_0_01_6",
+      "buildings": [
+        "BLDG_K4_0_1",
+        "BLDG_K4_0_2",
+        "BLDG_K4_0_3",
+        "BLDG_K4_0_4",
+        "BLDG_K4_0_5",
+        "BLDG_K4_0_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_4_00_2",
+      "buildings": [
+        "BLDG_K4_4_0",
+        "BLDG_K4_4_1"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_4_01_2",
+      "buildings": [
+        "BLDG_K4_4_1",
+        "BLDG_K4_4_2"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_4_00_3",
+      "buildings": [
+        "BLDG_K4_4_0",
+        "BLDG_K4_4_1",
+        "BLDG_K4_4_2"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K4_5_00_2",
+      "buildings": [
+        "BLDG_K4_5_0",
+        "BLDG_K4_5_1"
+      ],
+      "street": "Ribera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_0_00_2",
+      "buildings": [
+        "BLDG_K5_0_0",
+        "BLDG_K5_0_1"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_1_00_2",
+      "buildings": [
+        "BLDG_K5_1_0",
+        "BLDG_K5_1_1"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_1_01_2",
+      "buildings": [
+        "BLDG_K5_1_1",
+        "BLDG_K5_1_2"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_1_02_2",
+      "buildings": [
+        "BLDG_K5_1_2",
+        "BLDG_K5_1_3"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_1_00_3",
+      "buildings": [
+        "BLDG_K5_1_0",
+        "BLDG_K5_1_1",
+        "BLDG_K5_1_2"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_1_01_3",
+      "buildings": [
+        "BLDG_K5_1_1",
+        "BLDG_K5_1_2",
+        "BLDG_K5_1_3"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_1_00_4",
+      "buildings": [
+        "BLDG_K5_1_0",
+        "BLDG_K5_1_1",
+        "BLDG_K5_1_2",
+        "BLDG_K5_1_3"
+      ],
+      "street": "Capitan_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K5_3_00_2",
+      "buildings": [
+        "BLDG_K5_3_0",
+        "BLDG_K5_3_1"
+      ],
+      "street": "El_Sol",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_0_00_2",
+      "buildings": [
+        "BLDG_K6_0_0",
+        "BLDG_K6_0_1"
+      ],
+      "street": "El_Sol",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_1_00_2",
+      "buildings": [
+        "BLDG_K6_1_0",
+        "BLDG_K6_1_1"
+      ],
+      "street": "El_Sol",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_3_00_2",
+      "buildings": [
+        "BLDG_K6_3_0",
+        "BLDG_K6_3_1"
+      ],
+      "street": "Capitan",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_10_00_2",
+      "buildings": [
+        "BLDG_K6_10_0",
+        "BLDG_K6_10_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_10_01_2",
+      "buildings": [
+        "BLDG_K6_10_1",
+        "BLDG_K6_10_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_10_00_3",
+      "buildings": [
+        "BLDG_K6_10_0",
+        "BLDG_K6_10_1",
+        "BLDG_K6_10_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_11_00_2",
+      "buildings": [
+        "BLDG_K6_11_0",
+        "BLDG_K6_11_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_11_01_2",
+      "buildings": [
+        "BLDG_K6_11_1",
+        "BLDG_K6_11_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_11_02_2",
+      "buildings": [
+        "BLDG_K6_11_2",
+        "BLDG_K6_11_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_11_00_3",
+      "buildings": [
+        "BLDG_K6_11_0",
+        "BLDG_K6_11_1",
+        "BLDG_K6_11_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_11_01_3",
+      "buildings": [
+        "BLDG_K6_11_1",
+        "BLDG_K6_11_2",
+        "BLDG_K6_11_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K6_11_00_4",
+      "buildings": [
+        "BLDG_K6_11_0",
+        "BLDG_K6_11_1",
+        "BLDG_K6_11_2",
+        "BLDG_K6_11_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_0_00_2",
+      "buildings": [
+        "BLDG_K7_0_0",
+        "BLDG_K7_0_1"
+      ],
+      "street": "Calle_Alta_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_1_00_2",
+      "buildings": [
+        "BLDG_K7_1_0",
+        "BLDG_K7_1_1"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_2_00_2",
+      "buildings": [
+        "BLDG_K7_2_0",
+        "BLDG_K7_2_1"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_3_00_2",
+      "buildings": [
+        "BLDG_K7_3_0",
+        "BLDG_K7_3_1"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_3_01_2",
+      "buildings": [
+        "BLDG_K7_3_1",
+        "BLDG_K7_3_2"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_3_00_3",
+      "buildings": [
+        "BLDG_K7_3_0",
+        "BLDG_K7_3_1",
+        "BLDG_K7_3_2"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_01_2",
+      "buildings": [
+        "BLDG_K7_6_1",
+        "BLDG_K7_6_2"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_02_2",
+      "buildings": [
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_03_2",
+      "buildings": [
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_04_2",
+      "buildings": [
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_05_2",
+      "buildings": [
+        "BLDG_K7_6_5",
+        "BLDG_K7_6_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_01_3",
+      "buildings": [
+        "BLDG_K7_6_1",
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_02_3",
+      "buildings": [
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_03_3",
+      "buildings": [
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_04_3",
+      "buildings": [
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5",
+        "BLDG_K7_6_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_01_4",
+      "buildings": [
+        "BLDG_K7_6_1",
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_02_4",
+      "buildings": [
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_03_4",
+      "buildings": [
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5",
+        "BLDG_K7_6_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_01_5",
+      "buildings": [
+        "BLDG_K7_6_1",
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_02_5",
+      "buildings": [
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5",
+        "BLDG_K7_6_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K7_6_01_6",
+      "buildings": [
+        "BLDG_K7_6_1",
+        "BLDG_K7_6_2",
+        "BLDG_K7_6_3",
+        "BLDG_K7_6_4",
+        "BLDG_K7_6_5",
+        "BLDG_K7_6_6"
+      ],
+      "street": "Espina_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_1_00_2",
+      "buildings": [
+        "BLDG_K8_1_0",
+        "BLDG_K8_1_1"
+      ],
+      "street": "Subida_Puente",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_1_01_2",
+      "buildings": [
+        "BLDG_K8_1_1",
+        "BLDG_K8_1_2"
+      ],
+      "street": "Subida_Puente",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_1_00_3",
+      "buildings": [
+        "BLDG_K8_1_0",
+        "BLDG_K8_1_1",
+        "BLDG_K8_1_2"
+      ],
+      "street": "Subida_Puente",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_00_2",
+      "buildings": [
+        "BLDG_K8_5_0",
+        "BLDG_K8_5_1"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_01_2",
+      "buildings": [
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_02_2",
+      "buildings": [
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_03_2",
+      "buildings": [
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_04_2",
+      "buildings": [
+        "BLDG_K8_5_4",
+        "BLDG_K8_5_5"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_00_3",
+      "buildings": [
+        "BLDG_K8_5_0",
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_01_3",
+      "buildings": [
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_02_3",
+      "buildings": [
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_03_3",
+      "buildings": [
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4",
+        "BLDG_K8_5_5"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_00_4",
+      "buildings": [
+        "BLDG_K8_5_0",
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_01_4",
+      "buildings": [
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_02_4",
+      "buildings": [
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4",
+        "BLDG_K8_5_5"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_00_5",
+      "buildings": [
+        "BLDG_K8_5_0",
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_01_5",
+      "buildings": [
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4",
+        "BLDG_K8_5_5"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_5_00_6",
+      "buildings": [
+        "BLDG_K8_5_0",
+        "BLDG_K8_5_1",
+        "BLDG_K8_5_2",
+        "BLDG_K8_5_3",
+        "BLDG_K8_5_4",
+        "BLDG_K8_5_5"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_9_00_2",
+      "buildings": [
+        "BLDG_K8_9_0",
+        "BLDG_K8_9_1"
+      ],
+      "street": "Callejon_Oeste",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_10_00_2",
+      "buildings": [
+        "BLDG_K8_10_0",
+        "BLDG_K8_10_1"
+      ],
+      "street": "Callejon_Oeste_Salida",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_12_00_2",
+      "buildings": [
+        "BLDG_K8_12_0",
+        "BLDG_K8_12_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_12_01_2",
+      "buildings": [
+        "BLDG_K8_12_1",
+        "BLDG_K8_12_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_12_02_2",
+      "buildings": [
+        "BLDG_K8_12_2",
+        "BLDG_K8_12_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_12_00_3",
+      "buildings": [
+        "BLDG_K8_12_0",
+        "BLDG_K8_12_1",
+        "BLDG_K8_12_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_12_01_3",
+      "buildings": [
+        "BLDG_K8_12_1",
+        "BLDG_K8_12_2",
+        "BLDG_K8_12_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_12_00_4",
+      "buildings": [
+        "BLDG_K8_12_0",
+        "BLDG_K8_12_1",
+        "BLDG_K8_12_2",
+        "BLDG_K8_12_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_13_00_2",
+      "buildings": [
+        "BLDG_K8_13_0",
+        "BLDG_K8_13_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_13_01_2",
+      "buildings": [
+        "BLDG_K8_13_1",
+        "BLDG_K8_13_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_13_02_2",
+      "buildings": [
+        "BLDG_K8_13_2",
+        "BLDG_K8_13_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_13_00_3",
+      "buildings": [
+        "BLDG_K8_13_0",
+        "BLDG_K8_13_1",
+        "BLDG_K8_13_2"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_13_01_3",
+      "buildings": [
+        "BLDG_K8_13_1",
+        "BLDG_K8_13_2",
+        "BLDG_K8_13_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K8_13_00_4",
+      "buildings": [
+        "BLDG_K8_13_0",
+        "BLDG_K8_13_1",
+        "BLDG_K8_13_2",
+        "BLDG_K8_13_3"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_0_00_2",
+      "buildings": [
+        "BLDG_K9_0_0",
+        "BLDG_K9_0_1"
+      ],
+      "street": "Espina_Plaza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_0_01_2",
+      "buildings": [
+        "BLDG_K9_0_1",
+        "BLDG_K9_0_2"
+      ],
+      "street": "Espina_Plaza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_0_02_2",
+      "buildings": [
+        "BLDG_K9_0_2",
+        "BLDG_K9_0_3"
+      ],
+      "street": "Espina_Plaza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_0_00_3",
+      "buildings": [
+        "BLDG_K9_0_0",
+        "BLDG_K9_0_1",
+        "BLDG_K9_0_2"
+      ],
+      "street": "Espina_Plaza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_0_01_3",
+      "buildings": [
+        "BLDG_K9_0_1",
+        "BLDG_K9_0_2",
+        "BLDG_K9_0_3"
+      ],
+      "street": "Espina_Plaza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_0_00_4",
+      "buildings": [
+        "BLDG_K9_0_0",
+        "BLDG_K9_0_1",
+        "BLDG_K9_0_2",
+        "BLDG_K9_0_3"
+      ],
+      "street": "Espina_Plaza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_2_00_2",
+      "buildings": [
+        "BLDG_K9_2_0",
+        "BLDG_K9_2_1"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_3_00_2",
+      "buildings": [
+        "BLDG_K9_3_0",
+        "BLDG_K9_3_1"
+      ],
+      "street": "Obispo_Bajo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_01_2",
+      "buildings": [
+        "BLDG_K9_5_1",
+        "BLDG_K9_5_2"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_02_2",
+      "buildings": [
+        "BLDG_K9_5_2",
+        "BLDG_K9_5_3"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_03_2",
+      "buildings": [
+        "BLDG_K9_5_3",
+        "BLDG_K9_5_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_04_2",
+      "buildings": [
+        "BLDG_K9_5_4",
+        "BLDG_K9_5_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_01_3",
+      "buildings": [
+        "BLDG_K9_5_1",
+        "BLDG_K9_5_2",
+        "BLDG_K9_5_3"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_02_3",
+      "buildings": [
+        "BLDG_K9_5_2",
+        "BLDG_K9_5_3",
+        "BLDG_K9_5_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_03_3",
+      "buildings": [
+        "BLDG_K9_5_3",
+        "BLDG_K9_5_4",
+        "BLDG_K9_5_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_01_4",
+      "buildings": [
+        "BLDG_K9_5_1",
+        "BLDG_K9_5_2",
+        "BLDG_K9_5_3",
+        "BLDG_K9_5_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_02_4",
+      "buildings": [
+        "BLDG_K9_5_2",
+        "BLDG_K9_5_3",
+        "BLDG_K9_5_4",
+        "BLDG_K9_5_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_5_01_5",
+      "buildings": [
+        "BLDG_K9_5_1",
+        "BLDG_K9_5_2",
+        "BLDG_K9_5_3",
+        "BLDG_K9_5_4",
+        "BLDG_K9_5_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_6_00_2",
+      "buildings": [
+        "BLDG_K9_6_0",
+        "BLDG_K9_6_1"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_00_2",
+      "buildings": [
+        "BLDG_K9_13_0",
+        "BLDG_K9_13_1"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_01_2",
+      "buildings": [
+        "BLDG_K9_13_1",
+        "BLDG_K9_13_2"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_02_2",
+      "buildings": [
+        "BLDG_K9_13_2",
+        "BLDG_K9_13_3"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_03_2",
+      "buildings": [
+        "BLDG_K9_13_3",
+        "BLDG_K9_13_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_00_3",
+      "buildings": [
+        "BLDG_K9_13_0",
+        "BLDG_K9_13_1",
+        "BLDG_K9_13_2"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_01_3",
+      "buildings": [
+        "BLDG_K9_13_1",
+        "BLDG_K9_13_2",
+        "BLDG_K9_13_3"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_02_3",
+      "buildings": [
+        "BLDG_K9_13_2",
+        "BLDG_K9_13_3",
+        "BLDG_K9_13_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_00_4",
+      "buildings": [
+        "BLDG_K9_13_0",
+        "BLDG_K9_13_1",
+        "BLDG_K9_13_2",
+        "BLDG_K9_13_3"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_01_4",
+      "buildings": [
+        "BLDG_K9_13_1",
+        "BLDG_K9_13_2",
+        "BLDG_K9_13_3",
+        "BLDG_K9_13_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K9_13_00_5",
+      "buildings": [
+        "BLDG_K9_13_0",
+        "BLDG_K9_13_1",
+        "BLDG_K9_13_2",
+        "BLDG_K9_13_3",
+        "BLDG_K9_13_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_1_00_2",
+      "buildings": [
+        "BLDG_K10_1_0",
+        "BLDG_K10_1_1"
+      ],
+      "street": "Espina_Nodo",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_00_2",
+      "buildings": [
+        "BLDG_K10_3_0",
+        "BLDG_K10_3_1"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_01_2",
+      "buildings": [
+        "BLDG_K10_3_1",
+        "BLDG_K10_3_2"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_02_2",
+      "buildings": [
+        "BLDG_K10_3_2",
+        "BLDG_K10_3_3"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_03_2",
+      "buildings": [
+        "BLDG_K10_3_3",
+        "BLDG_K10_3_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_00_3",
+      "buildings": [
+        "BLDG_K10_3_0",
+        "BLDG_K10_3_1",
+        "BLDG_K10_3_2"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_01_3",
+      "buildings": [
+        "BLDG_K10_3_1",
+        "BLDG_K10_3_2",
+        "BLDG_K10_3_3"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_02_3",
+      "buildings": [
+        "BLDG_K10_3_2",
+        "BLDG_K10_3_3",
+        "BLDG_K10_3_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_00_4",
+      "buildings": [
+        "BLDG_K10_3_0",
+        "BLDG_K10_3_1",
+        "BLDG_K10_3_2",
+        "BLDG_K10_3_3"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_01_4",
+      "buildings": [
+        "BLDG_K10_3_1",
+        "BLDG_K10_3_2",
+        "BLDG_K10_3_3",
+        "BLDG_K10_3_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_3_00_5",
+      "buildings": [
+        "BLDG_K10_3_0",
+        "BLDG_K10_3_1",
+        "BLDG_K10_3_2",
+        "BLDG_K10_3_3",
+        "BLDG_K10_3_4"
+      ],
+      "street": "Callejon_Arco",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_4_00_2",
+      "buildings": [
+        "BLDG_K10_4_0",
+        "BLDG_K10_4_1"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_4_01_2",
+      "buildings": [
+        "BLDG_K10_4_1",
+        "BLDG_K10_4_2"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_4_02_2",
+      "buildings": [
+        "BLDG_K10_4_2",
+        "BLDG_K10_4_3"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_4_00_3",
+      "buildings": [
+        "BLDG_K10_4_0",
+        "BLDG_K10_4_1",
+        "BLDG_K10_4_2"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_4_01_3",
+      "buildings": [
+        "BLDG_K10_4_1",
+        "BLDG_K10_4_2",
+        "BLDG_K10_4_3"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_4_00_4",
+      "buildings": [
+        "BLDG_K10_4_0",
+        "BLDG_K10_4_1",
+        "BLDG_K10_4_2",
+        "BLDG_K10_4_3"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_5_00_2",
+      "buildings": [
+        "BLDG_K10_5_0",
+        "BLDG_K10_5_1"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_5_01_2",
+      "buildings": [
+        "BLDG_K10_5_1",
+        "BLDG_K10_5_2"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_5_02_2",
+      "buildings": [
+        "BLDG_K10_5_2",
+        "BLDG_K10_5_3"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_5_00_3",
+      "buildings": [
+        "BLDG_K10_5_0",
+        "BLDG_K10_5_1",
+        "BLDG_K10_5_2"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_5_01_3",
+      "buildings": [
+        "BLDG_K10_5_1",
+        "BLDG_K10_5_2",
+        "BLDG_K10_5_3"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_5_00_4",
+      "buildings": [
+        "BLDG_K10_5_0",
+        "BLDG_K10_5_1",
+        "BLDG_K10_5_2",
+        "BLDG_K10_5_3"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_6_00_2",
+      "buildings": [
+        "BLDG_K10_6_0",
+        "BLDG_K10_6_1"
+      ],
+      "street": "Cimavilla_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_00_2",
+      "buildings": [
+        "BLDG_K10_10_0",
+        "BLDG_K10_10_1"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_01_2",
+      "buildings": [
+        "BLDG_K10_10_1",
+        "BLDG_K10_10_2"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_02_2",
+      "buildings": [
+        "BLDG_K10_10_2",
+        "BLDG_K10_10_3"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_03_2",
+      "buildings": [
+        "BLDG_K10_10_3",
+        "BLDG_K10_10_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_00_3",
+      "buildings": [
+        "BLDG_K10_10_0",
+        "BLDG_K10_10_1",
+        "BLDG_K10_10_2"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_01_3",
+      "buildings": [
+        "BLDG_K10_10_1",
+        "BLDG_K10_10_2",
+        "BLDG_K10_10_3"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_02_3",
+      "buildings": [
+        "BLDG_K10_10_2",
+        "BLDG_K10_10_3",
+        "BLDG_K10_10_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_00_4",
+      "buildings": [
+        "BLDG_K10_10_0",
+        "BLDG_K10_10_1",
+        "BLDG_K10_10_2",
+        "BLDG_K10_10_3"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_01_4",
+      "buildings": [
+        "BLDG_K10_10_1",
+        "BLDG_K10_10_2",
+        "BLDG_K10_10_3",
+        "BLDG_K10_10_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K10_10_00_5",
+      "buildings": [
+        "BLDG_K10_10_0",
+        "BLDG_K10_10_1",
+        "BLDG_K10_10_2",
+        "BLDG_K10_10_3",
+        "BLDG_K10_10_4"
+      ],
+      "street": "Cantabra",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_0_00_2",
+      "buildings": [
+        "BLDG_K11_0_0",
+        "BLDG_K11_0_1"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_6_00_2",
+      "buildings": [
+        "BLDG_K11_6_0",
+        "BLDG_K11_6_1"
+      ],
+      "street": "Cimavilla_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_9_00_2",
+      "buildings": [
+        "BLDG_K11_9_0",
+        "BLDG_K11_9_1"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_9_01_2",
+      "buildings": [
+        "BLDG_K11_9_1",
+        "BLDG_K11_9_2"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_9_02_2",
+      "buildings": [
+        "BLDG_K11_9_2",
+        "BLDG_K11_9_3"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_9_00_3",
+      "buildings": [
+        "BLDG_K11_9_0",
+        "BLDG_K11_9_1",
+        "BLDG_K11_9_2"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_9_01_3",
+      "buildings": [
+        "BLDG_K11_9_1",
+        "BLDG_K11_9_2",
+        "BLDG_K11_9_3"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_9_00_4",
+      "buildings": [
+        "BLDG_K11_9_0",
+        "BLDG_K11_9_1",
+        "BLDG_K11_9_2",
+        "BLDG_K11_9_3"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_11_00_2",
+      "buildings": [
+        "BLDG_K11_11_0",
+        "BLDG_K11_11_1"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_11_01_2",
+      "buildings": [
+        "BLDG_K11_11_1",
+        "BLDG_K11_11_2"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_11_02_2",
+      "buildings": [
+        "BLDG_K11_11_2",
+        "BLDG_K11_11_3"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_11_00_3",
+      "buildings": [
+        "BLDG_K11_11_0",
+        "BLDG_K11_11_1",
+        "BLDG_K11_11_2"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_11_01_3",
+      "buildings": [
+        "BLDG_K11_11_1",
+        "BLDG_K11_11_2",
+        "BLDG_K11_11_3"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K11_11_00_4",
+      "buildings": [
+        "BLDG_K11_11_0",
+        "BLDG_K11_11_1",
+        "BLDG_K11_11_2",
+        "BLDG_K11_11_3"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K12_0_00_2",
+      "buildings": [
+        "BLDG_K12_0_0",
+        "BLDG_K12_0_1"
+      ],
+      "street": "Calle_Alta_C",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_2_00_2",
+      "buildings": [
+        "BLDG_K13_2_0",
+        "BLDG_K13_2_1"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_00_2",
+      "buildings": [
+        "BLDG_K13_3_0",
+        "BLDG_K13_3_1"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_01_2",
+      "buildings": [
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_02_2",
+      "buildings": [
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_03_2",
+      "buildings": [
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_04_2",
+      "buildings": [
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_05_2",
+      "buildings": [
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_06_2",
+      "buildings": [
+        "BLDG_K13_3_6",
+        "BLDG_K13_3_7"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_00_3",
+      "buildings": [
+        "BLDG_K13_3_0",
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_01_3",
+      "buildings": [
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_02_3",
+      "buildings": [
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_03_3",
+      "buildings": [
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_04_3",
+      "buildings": [
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_05_3",
+      "buildings": [
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6",
+        "BLDG_K13_3_7"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_00_4",
+      "buildings": [
+        "BLDG_K13_3_0",
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_01_4",
+      "buildings": [
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_02_4",
+      "buildings": [
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_03_4",
+      "buildings": [
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_04_4",
+      "buildings": [
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6",
+        "BLDG_K13_3_7"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_00_5",
+      "buildings": [
+        "BLDG_K13_3_0",
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_01_5",
+      "buildings": [
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_02_5",
+      "buildings": [
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_03_5",
+      "buildings": [
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6",
+        "BLDG_K13_3_7"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_00_6",
+      "buildings": [
+        "BLDG_K13_3_0",
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_01_6",
+      "buildings": [
+        "BLDG_K13_3_1",
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K13_3_02_6",
+      "buildings": [
+        "BLDG_K13_3_2",
+        "BLDG_K13_3_3",
+        "BLDG_K13_3_4",
+        "BLDG_K13_3_5",
+        "BLDG_K13_3_6",
+        "BLDG_K13_3_7"
+      ],
+      "street": "Calle_Alta_E",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_0_00_2",
+      "buildings": [
+        "BLDG_K14_0_0",
+        "BLDG_K14_0_1"
+      ],
+      "street": "Solana_Bajada",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_0_01_2",
+      "buildings": [
+        "BLDG_K14_0_1",
+        "BLDG_K14_0_2"
+      ],
+      "street": "Solana_Bajada",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_0_02_2",
+      "buildings": [
+        "BLDG_K14_0_2",
+        "BLDG_K14_0_3"
+      ],
+      "street": "Solana_Bajada",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_0_00_3",
+      "buildings": [
+        "BLDG_K14_0_0",
+        "BLDG_K14_0_1",
+        "BLDG_K14_0_2"
+      ],
+      "street": "Solana_Bajada",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_0_01_3",
+      "buildings": [
+        "BLDG_K14_0_1",
+        "BLDG_K14_0_2",
+        "BLDG_K14_0_3"
+      ],
+      "street": "Solana_Bajada",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_0_00_4",
+      "buildings": [
+        "BLDG_K14_0_0",
+        "BLDG_K14_0_1",
+        "BLDG_K14_0_2",
+        "BLDG_K14_0_3"
+      ],
+      "street": "Solana_Bajada",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_00_2",
+      "buildings": [
+        "BLDG_K14_3_0",
+        "BLDG_K14_3_1"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [
+        "K14_3_0"
+      ],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_01_2",
+      "buildings": [
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_02_2",
+      "buildings": [
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_03_2",
+      "buildings": [
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_04_2",
+      "buildings": [
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_05_2",
+      "buildings": [
+        "BLDG_K14_3_5",
+        "BLDG_K14_3_6"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_00_3",
+      "buildings": [
+        "BLDG_K14_3_0",
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [
+        "K14_3_0"
+      ],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_01_3",
+      "buildings": [
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_02_3",
+      "buildings": [
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_03_3",
+      "buildings": [
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_04_3",
+      "buildings": [
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5",
+        "BLDG_K14_3_6"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_00_4",
+      "buildings": [
+        "BLDG_K14_3_0",
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [
+        "K14_3_0"
+      ],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_01_4",
+      "buildings": [
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_02_4",
+      "buildings": [
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_03_4",
+      "buildings": [
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5",
+        "BLDG_K14_3_6"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_00_5",
+      "buildings": [
+        "BLDG_K14_3_0",
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [
+        "K14_3_0"
+      ],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_01_5",
+      "buildings": [
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_02_5",
+      "buildings": [
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5",
+        "BLDG_K14_3_6"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_00_6",
+      "buildings": [
+        "BLDG_K14_3_0",
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [
+        "K14_3_0"
+      ],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_3_01_6",
+      "buildings": [
+        "BLDG_K14_3_1",
+        "BLDG_K14_3_2",
+        "BLDG_K14_3_3",
+        "BLDG_K14_3_4",
+        "BLDG_K14_3_5",
+        "BLDG_K14_3_6"
+      ],
+      "street": "San_Pedro",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_4_00_2",
+      "buildings": [
+        "BLDG_K14_4_0",
+        "BLDG_K14_4_1"
+      ],
+      "street": "Ronda_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_7_00_2",
+      "buildings": [
+        "BLDG_K14_7_0",
+        "BLDG_K14_7_1"
+      ],
+      "street": null,
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_00_2",
+      "buildings": [
+        "BLDG_K14_9_0",
+        "BLDG_K14_9_1"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_01_2",
+      "buildings": [
+        "BLDG_K14_9_1",
+        "BLDG_K14_9_2"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_02_2",
+      "buildings": [
+        "BLDG_K14_9_2",
+        "BLDG_K14_9_3"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_03_2",
+      "buildings": [
+        "BLDG_K14_9_3",
+        "BLDG_K14_9_4"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_00_3",
+      "buildings": [
+        "BLDG_K14_9_0",
+        "BLDG_K14_9_1",
+        "BLDG_K14_9_2"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_01_3",
+      "buildings": [
+        "BLDG_K14_9_1",
+        "BLDG_K14_9_2",
+        "BLDG_K14_9_3"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_02_3",
+      "buildings": [
+        "BLDG_K14_9_2",
+        "BLDG_K14_9_3",
+        "BLDG_K14_9_4"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_00_4",
+      "buildings": [
+        "BLDG_K14_9_0",
+        "BLDG_K14_9_1",
+        "BLDG_K14_9_2",
+        "BLDG_K14_9_3"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_01_4",
+      "buildings": [
+        "BLDG_K14_9_1",
+        "BLDG_K14_9_2",
+        "BLDG_K14_9_3",
+        "BLDG_K14_9_4"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_9_00_5",
+      "buildings": [
+        "BLDG_K14_9_0",
+        "BLDG_K14_9_1",
+        "BLDG_K14_9_2",
+        "BLDG_K14_9_3",
+        "BLDG_K14_9_4"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_10_00_2",
+      "buildings": [
+        "BLDG_K14_10_0",
+        "BLDG_K14_10_1"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_12_00_2",
+      "buildings": [
+        "BLDG_K14_12_0",
+        "BLDG_K14_12_1"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_13_00_2",
+      "buildings": [
+        "BLDG_K14_13_0",
+        "BLDG_K14_13_1"
+      ],
+      "street": "Solana_Terraza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_13_01_2",
+      "buildings": [
+        "BLDG_K14_13_1",
+        "BLDG_K14_13_2"
+      ],
+      "street": "Solana_Terraza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K14_13_00_3",
+      "buildings": [
+        "BLDG_K14_13_0",
+        "BLDG_K14_13_1",
+        "BLDG_K14_13_2"
+      ],
+      "street": "Solana_Terraza",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_0_00_2",
+      "buildings": [
+        "BLDG_K15_0_0",
+        "BLDG_K15_0_1"
+      ],
+      "street": "Calle_Alta_O",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_3_00_2",
+      "buildings": [
+        "BLDG_K15_3_0",
+        "BLDG_K15_3_1"
+      ],
+      "street": "Solana_Escalera",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_4_00_2",
+      "buildings": [
+        "BLDG_K15_4_0",
+        "BLDG_K15_4_1"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_5_00_2",
+      "buildings": [
+        "BLDG_K15_5_0",
+        "BLDG_K15_5_1"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_6_00_2",
+      "buildings": [
+        "BLDG_K15_6_0",
+        "BLDG_K15_6_1"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_6_01_2",
+      "buildings": [
+        "BLDG_K15_6_1",
+        "BLDG_K15_6_2"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_6_00_3",
+      "buildings": [
+        "BLDG_K15_6_0",
+        "BLDG_K15_6_1",
+        "BLDG_K15_6_2"
+      ],
+      "street": "Solana_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_7_00_2",
+      "buildings": [
+        "BLDG_K15_7_0",
+        "BLDG_K15_7_1"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_7_01_2",
+      "buildings": [
+        "BLDG_K15_7_1",
+        "BLDG_K15_7_2"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_7_02_2",
+      "buildings": [
+        "BLDG_K15_7_2",
+        "BLDG_K15_7_3"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_7_00_3",
+      "buildings": [
+        "BLDG_K15_7_0",
+        "BLDG_K15_7_1",
+        "BLDG_K15_7_2"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_7_01_3",
+      "buildings": [
+        "BLDG_K15_7_1",
+        "BLDG_K15_7_2",
+        "BLDG_K15_7_3"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_7_00_4",
+      "buildings": [
+        "BLDG_K15_7_0",
+        "BLDG_K15_7_1",
+        "BLDG_K15_7_2",
+        "BLDG_K15_7_3"
+      ],
+      "street": "Subida_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_10_00_2",
+      "buildings": [
+        "BLDG_K15_10_0",
+        "BLDG_K15_10_1"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_11_00_2",
+      "buildings": [
+        "BLDG_K15_11_0",
+        "BLDG_K15_11_1"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_00_2",
+      "buildings": [
+        "BLDG_K15_12_0",
+        "BLDG_K15_12_1"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_01_2",
+      "buildings": [
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_02_2",
+      "buildings": [
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_03_2",
+      "buildings": [
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_04_2",
+      "buildings": [
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_05_2",
+      "buildings": [
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_06_2",
+      "buildings": [
+        "BLDG_K15_12_6",
+        "BLDG_K15_12_7"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_00_3",
+      "buildings": [
+        "BLDG_K15_12_0",
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_01_3",
+      "buildings": [
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_02_3",
+      "buildings": [
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_03_3",
+      "buildings": [
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_04_3",
+      "buildings": [
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_05_3",
+      "buildings": [
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6",
+        "BLDG_K15_12_7"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_00_4",
+      "buildings": [
+        "BLDG_K15_12_0",
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_01_4",
+      "buildings": [
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_02_4",
+      "buildings": [
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_03_4",
+      "buildings": [
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_04_4",
+      "buildings": [
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6",
+        "BLDG_K15_12_7"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_00_5",
+      "buildings": [
+        "BLDG_K15_12_0",
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_01_5",
+      "buildings": [
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_02_5",
+      "buildings": [
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_03_5",
+      "buildings": [
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6",
+        "BLDG_K15_12_7"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_00_6",
+      "buildings": [
+        "BLDG_K15_12_0",
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_01_6",
+      "buildings": [
+        "BLDG_K15_12_1",
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_12_02_6",
+      "buildings": [
+        "BLDG_K15_12_2",
+        "BLDG_K15_12_3",
+        "BLDG_K15_12_4",
+        "BLDG_K15_12_5",
+        "BLDG_K15_12_6",
+        "BLDG_K15_12_7"
+      ],
+      "street": "Ronda_Huertas",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_13_00_2",
+      "buildings": [
+        "BLDG_K15_13_0",
+        "BLDG_K15_13_1"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_13_01_2",
+      "buildings": [
+        "BLDG_K15_13_1",
+        "BLDG_K15_13_2"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_13_02_2",
+      "buildings": [
+        "BLDG_K15_13_2",
+        "BLDG_K15_13_3"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_13_00_3",
+      "buildings": [
+        "BLDG_K15_13_0",
+        "BLDG_K15_13_1",
+        "BLDG_K15_13_2"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_13_01_3",
+      "buildings": [
+        "BLDG_K15_13_1",
+        "BLDG_K15_13_2",
+        "BLDG_K15_13_3"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_13_00_4",
+      "buildings": [
+        "BLDG_K15_13_0",
+        "BLDG_K15_13_1",
+        "BLDG_K15_13_2",
+        "BLDG_K15_13_3"
+      ],
+      "street": "Fuente_Baja",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K15_16_00_2",
+      "buildings": [
+        "BLDG_K15_16_0",
+        "BLDG_K15_16_1"
+      ],
+      "street": "Fuente",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_2_00_2",
+      "buildings": [
+        "BLDG_K16_2_0",
+        "BLDG_K16_2_1"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_00_2",
+      "buildings": [
+        "BLDG_K16_3_0",
+        "BLDG_K16_3_1"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_01_2",
+      "buildings": [
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_02_2",
+      "buildings": [
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_03_2",
+      "buildings": [
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_04_2",
+      "buildings": [
+        "BLDG_K16_3_4",
+        "BLDG_K16_3_5"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_00_3",
+      "buildings": [
+        "BLDG_K16_3_0",
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_01_3",
+      "buildings": [
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_02_3",
+      "buildings": [
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_03_3",
+      "buildings": [
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4",
+        "BLDG_K16_3_5"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_00_4",
+      "buildings": [
+        "BLDG_K16_3_0",
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_01_4",
+      "buildings": [
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_02_4",
+      "buildings": [
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4",
+        "BLDG_K16_3_5"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_00_5",
+      "buildings": [
+        "BLDG_K16_3_0",
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_01_5",
+      "buildings": [
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4",
+        "BLDG_K16_3_5"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_3_00_6",
+      "buildings": [
+        "BLDG_K16_3_0",
+        "BLDG_K16_3_1",
+        "BLDG_K16_3_2",
+        "BLDG_K16_3_3",
+        "BLDG_K16_3_4",
+        "BLDG_K16_3_5"
+      ],
+      "street": "Llano",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    },
+    {
+      "candidate": "GAME_CAND_K16_11_00_2",
+      "buildings": [
+        "BLDG_K16_11_0",
+        "BLDG_K16_11_1"
+      ],
+      "street": "Ronda_Mirador",
+      "observedEnvelopeMaxGapXZ_m": 0.0,
+      "landmarks": [],
+      "method": "Existing same-row proposal; all IDs resolved to native scene groups; XZ rendered AABB distance is a proximity heuristic, not semantic ownership or exact wall contact."
+    }
+  ],
+  "unresolved": [],
+  "over_1m": []
+}

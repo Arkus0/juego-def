@@ -13,6 +13,7 @@ namespace JuegoDef.Env
     {
         public static Transform NewStage(string rootName = "Stage", bool ground = true)
         {
+            EnvAuthoredGuard.RequireLegacyScene();
             EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
             Lighting();
             if (ground)
