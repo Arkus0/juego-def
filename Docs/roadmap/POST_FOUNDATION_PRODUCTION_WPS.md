@@ -10,7 +10,7 @@ juego-def has completed the two complementary foundations required before enviro
 1. **production substrate** — searchable lawful assets, existing-pipeline reuse, lineage and validators (`PROD-ASSET-00`) — **accepted**;
 2. **product demand** — actual port-town/B0 spatial programme and factory-demand matrix (`CITY-URBAN-00`) — **accepted**.
 
-Both are now complete. ENV-01, CHAR-01 and ANIM-01 are dependency-valid next work.
+Both foundations are complete. `ANIM-01` is also **accepted**; `ENV-01` and `CHAR-01` remain the current graphical factory work, while `ANIM-02` waits for the accepted civilian output from CHAR-01.
 
 The separation is:
 
@@ -40,13 +40,16 @@ The goal is **existing solution -> adapt -> minimal missing glue**.
    - ~~`WP-PROD-ASSET-00`~~ — **PASS / accepted**: shared asset catalogue/intake/lineage/validation;
    - ~~`WP-CITY-URBAN-00`~~ — **PASS / accepted**: five-zone topology + accepted B0 route/programme/elevation + production-demand matrix.
 2. Current graphical factory work:
-   - `ENV-01` may begin because ASSET-00 + CITY-URBAN-00 are both accepted;
-   - `CHAR-01` and `ANIM-01` may begin, prioritising B0 roles.
+   - `ENV-01` — current; consumes accepted ASSET-00 + CITY-URBAN-00;
+   - `CHAR-01` — current; consumes accepted ASSET-00 and B0 civilian priorities;
+   - ~~`ANIM-01`~~ — **PASS / accepted**: repeatable UAL intake/retarget/admission factory with 19 admitted motions and explicit gaps.
 3. Parallel integration/content infrastructure:
    - `WP-M0-00` — small gameplay fixture when useful;
    - `WP-PROD-DIALOGUE-01` may progress independently.
 4. Scale proofs:
-   - `ENV-02`, `CHAR-02`, `ANIM-02`.
+   - `ENV-02` after ENV-01 + ENV-DIRECTOR-00 + CITY-URBAN-00R + CASCO-V2-00 pilot; the compact-city sequence/guards live in [`ROADMAP.md`](ROADMAP.md), not this superseded overview;
+   - `CHAR-02` after CHAR-01;
+   - `ANIM-02` after accepted ANIM-01 + CHAR-01; only CHAR-01 remains blocking.
 5. `UI-01` follows Dialogue.
 6. `CITY-URBAN-01` realizes accepted B0 using M0 integration truth + accepted factories.
 7. `PROD-LOOK-GATE` runs a fresh-production challenge.
@@ -90,7 +93,7 @@ Use the shared Quaternius humanoid/wardrobe ecosystem and audited character pipe
 
 ### ANIM
 
-Use real UAL/shared-rig/import research to batch admit and map locomotion, conversation, ambient, work/interaction and bounded action-support vocabulary relevant to B0.
+`ANIM-01` is accepted: 254 clips are catalogued, 45 were sampled in Play Mode on two Humanoid bodies, 19 motions are admitted across five families, and contact/navigation/final-civilian constraints remain explicit instead of being silently promoted. `ANIM-02` now owns reusable runtime vocabulary and multi-NPC batch proof once CHAR-01 supplies accepted civilian prefabs.
 
 ### DIALOGUE/UI
 

@@ -1,0 +1,6 @@
+1: ual1:walk_formal_loop | 10%, 45%, 80%; male blue, female orange
+2: ual1:walk_loop | 10%, 45%, 80%; male blue, female orange
+3: ual2:chest_open | 10%, 45%, 80%; male blue, female orange
+4: ual2:consume | 10%, 45%, 80%; male blue, female orange
+5: ual2:hit_knockback | 10%, 45%, 80%; male blue, female orange
+6: ual2:idle_foldarms_loop | 10%, 45%, 80%; male blue, female orange

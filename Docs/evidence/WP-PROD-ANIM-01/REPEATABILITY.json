@@ -1,0 +1,144 @@
+{
+  "initialBatch": {
+    "runtimeReportSha256": "14253105bd213db914c432a67ab737f7923356791415047094e6fcb937042880",
+    "sampled": 44,
+    "targetEvaluations": 88,
+    "clipIds": [
+      "ual1:a_tpose",
+      "ual1:counter_angry",
+      "ual1:counter_give",
+      "ual1:counter_idle_loop",
+      "ual1:counter_show",
+      "ual1:drink",
+      "ual1:fixing_kneeling",
+      "ual1:groundsit_idle_loop",
+      "ual1:hit_chest",
+      "ual1:hit_head",
+      "ual1:hit_shoulder_l",
+      "ual1:hit_shoulder_r",
+      "ual1:idle_lookaround_loop",
+      "ual1:idle_loop",
+      "ual1:idle_talking_loop",
+      "ual1:idle_tired_loop",
+      "ual1:interact",
+      "ual1:jog_fwd_loop",
+      "ual1:pickup_kneeling",
+      "ual1:pickup_table",
+      "ual1:push_loop",
+      "ual1:sitting_enter",
+      "ual1:sitting_exit",
+      "ual1:sitting_idle_loop",
+      "ual1:sitting_nodding_loop",
+      "ual1:sitting_talking_loop",
+      "ual1:sprint_loop",
+      "ual1:turn90_l",
+      "ual1:turn90_r",
+      "ual1:walk_formal_loop",
+      "ual1:walk_loop",
+      "ual2:chest_open",
+      "ual2:consume",
+      "ual2:hit_knockback",
+      "ual2:idle_foldarms_loop",
+      "ual2:idle_no_loop",
+      "ual2:idle_rail_call",
+      "ual2:idle_rail_loop",
+      "ual2:surprise",
+      "ual2:turn180_l",
+      "ual2:turn180_r",
+      "ual2:walk_carry_loop",
+      "ual2:walk_fwd_loop",
+      "ual2:yes"
+    ],
+    "measurementSha256": "789d970d5ecd0c134ae645d556f9549e8377f48b6148dde261b7fca72cc86208"
+  },
+  "nextClip": "ual1:hit_stomach",
+  "change": "Add one existing ASSET-00 source ID to anim_policy.json; no FBX, skeleton, import preset or per-clip Inspector edit.",
+  "expandedBatch": {
+    "runtimeReportSha256": "b55a48068b288c9a84c966557dd55d8f51f0da9f8ddf6bc10c1b418ae2734d78",
+    "sampled": 45,
+    "targetEvaluations": 90,
+    "unchangedPriorMeasurements": true,
+    "nextClipResult": {
+      "id": "ual1:hit_stomach",
+      "sourceSha256": "0556d52f6bce01c0982b3548ee3cdfa1b8270977507001f62cbdfcc405570842",
+      "localId": "1602580721735414331",
+      "humanMotion": true,
+      "loop": false,
+      "sampled": true,
+      "length": 0.6666666865348816,
+      "frameRate": 30.0,
+      "issues": [],
+      "targets": [
+        {
+          "id": "base:regular_male_fullbody",
+          "avatarName": "Regular_Male_FullBodyAvatar",
+          "sourceSha256": "911b580144a40bc055948782ba721c90af919daa53f4ee33503a6ef8d70aea81",
+          "validAvatar": true,
+          "humanScale": 1.0465649366378784,
+          "bodyHeight": 1.5133001804351807,
+          "rootDrift": 0.0,
+          "rootRotationDrift": 0.0,
+          "loopPoseError": 0.5564091205596924,
+          "motionRange": 0.5564091205596924,
+          "footTravel": 0.030152874067425728,
+          "footFloorMinimum": 0.0726214051246643,
+          "estimatedGaitSpeed": 0.06884156912565231,
+          "maxMeshExtent": 2.209071159362793,
+          "forwardDot": 0.9013913869857788,
+          "samples": 61,
+          "issues": []
+        },
+        {
+          "id": "base:regular_female_fullbody",
+          "avatarName": "Regular_Female_FullBodyAvatar",
+          "sourceSha256": "6cf6fc8a16b45bae8e6ac2a9a8342f286a0b8c249c094b95f90fe52809ec6645",
+          "validAvatar": true,
+          "humanScale": 1.0189112424850464,
+          "bodyHeight": 1.4788998365402222,
+          "rootDrift": 0.0,
+          "rootRotationDrift": 0.0,
+          "loopPoseError": 0.25890567898750305,
+          "motionRange": 0.38483670353889465,
+          "footTravel": 0.012825335375964642,
+          "footFloorMinimum": 0.05178958177566528,
+          "estimatedGaitSpeed": 0.03027927689254284,
+          "maxMeshExtent": 2.128965377807617,
+          "forwardDot": 0.7472555041313171,
+          "samples": 61,
+          "issues": []
+        }
+      ],
+      "captures": [
+        "captures/batch-03.png"
+      ]
+    }
+  },
+  "finalCleanImport": {
+    "runtimeReportSha256": "4fe718ed422ee80dd5545f71eee368092a0449e91744dc2f0a6aef19940a7cc8",
+    "reset": "Four task-owned source .meta files reset to ASSET-00 deterministic GUID-only intake state; source bytes and accepted catalogue unchanged. Unity reimported and factory reconstructed settings.",
+    "sampled": 45,
+    "targetEvaluations": 90,
+    "allPriorClipIdsPreserved": true,
+    "allPriorMeasurementsPreserved": true,
+    "imports": [
+      {
+        "path": "Assets/ThirdParty/Quaternius/UAL1/UAL1.fbx",
+        "metaSha256": "71ff84b0f0d072bc18631c7d08d2c250c5e57f26c9839ec8a59a2d413d890b48"
+      },
+      {
+        "path": "Assets/ThirdParty/Quaternius/UAL2/UAL2.fbx",
+        "metaSha256": "811396608845488e3026f7298603d235f0ac0be3017547d5a920b4c3373cd54b"
+      },
+      {
+        "path": "Assets/ThirdParty/Quaternius/BaseCharacters/Base Characters/Exports/Unity/Regular_Male_FullBody.fbx",
+        "metaSha256": "7edacad19e9c9723a9cb288db68d0b983719bf50fa07fe880ffa2930d6dc8c69"
+      },
+      {
+        "path": "Assets/ThirdParty/Quaternius/BaseCharacters/Base Characters/Exports/Unity/Regular_Female_FullBody.fbx",
+        "metaSha256": "6585c8a1139c3232e27e240ae08738cf5e8db77b33c2c29757e10c74f4cf6191"
+      }
+    ],
+    "initialBatchMeasurementSha256": "789d970d5ecd0c134ae645d556f9549e8377f48b6148dde261b7fca72cc86208"
+  },
+  "measurementDigestAlgorithm": "SHA-256 of UTF-8 JSON sorted by clip id, rows {id,targets} for initialBatch.clipIds; sort_keys=True, separators=(comma,colon)."
+}

@@ -1,9 +1,11 @@
 # WP-PROD-ANIM-02 — Runtime Animation Vocabulary + Batch Proof
 
-Status: **READY AFTER ANIM-01 + CHAR-01**  
+Status: **BLOCKED ON CHAR-01 / ANIM-01 ACCEPTED**  
 Class: PRODUCTION SCALE PROOF / RUNTIME ANIMATION  
 Depends on: `WP-PROD-ANIM-01` PASS + `WP-PROD-CHAR-01` PASS  
 Blocks: `WP-CITY-URBAN-01`
+
+ANIM-01 is accepted via PR #9. This WP must not begin its multi-NPC runtime proof until CHAR-01 provides the accepted civilian family.
 
 ## Claim
 
@@ -19,74 +21,41 @@ Provide reusable mappings for at least:
 - one reaction family;
 - one work/object/activity family where admitted coverage exists.
 
-The mapping may use GC2 Instructions/Actions, Animator/StateMachine assets, small local adapters, or a combination. Choose the simplest reusable path.
-
 ## Batch proof
 
-Use at least **6 different accepted civilian variants** from CHAR-01/CHAR-02 as available and exercise the shared vocabulary in one or more Play Mode fixtures.
+Use the accepted CHAR-01 civilian factory output and ANIM-01 admissions to prove the same runtime path on multiple materially different civilians. Do not hand-author a bespoke Animator Controller per NPC.
 
-Demonstrate:
+At minimum demonstrate:
 
-1. all selected civilians can use shared idle/ambient behavior without per-character graph duplication;
-2. at least 4 can perform conversation gestures/listen/talk transitions;
-3. at least 3 can perform one reaction or work/activity motion;
-4. changing an admitted clip or semantic mapping can update multiple NPCs without rewiring each prefab;
-5. at least one retarget/runtime edge case is repaired/rejected transparently.
-
-## Production interface
-
-The desired factory interface is semantic, e.g.:
-
-- `AMBIENT_IDLE`;
-- `TALK_NEUTRAL`;
-- `LISTEN_NEUTRAL`;
-- `GESTURE_POINT`;
-- `REACTION_SURPRISED`;
-- `WORK_CARRY` / another admitted work role.
-
-Exact implementation may differ, but downstream scene/NPC work should request a production role rather than know arbitrary clip paths.
-
-## GC2 boundary
-
-Prefer GC2-native animation/presentation surfaces when they simplify invocation. A tiny local adapter is acceptable where necessary. Do not introduce a second general gameplay framework.
+1. several civilians can share the runtime vocabulary;
+2. admitted motions resolve by semantic role rather than scene-specific clip wiring;
+3. body/wardrobe incompatibility is surfaced rather than silently ignored;
+4. locomotion/facing ownership is explicit;
+5. contact-dependent motions remain bounded unless a real object/placement contract is supplied.
 
 ## Validation
 
-Cheaply surface:
-
-- missing semantic mapping;
-- invalid/unsupported avatar;
-- missing Animator/runtime dependency;
-- obvious transition lock/stuck pose;
-- failed return to locomotion/idle;
-- clip incompatible with one civilian family.
+Retain cheap checks for missing semantic mappings, missing clips, incompatible body admission, duplicate/ambiguous vocabulary keys and obvious runtime setup errors.
 
 ## Evidence
 
 Retain under `Docs/evidence/WP-PROD-ANIM-02/`:
 
-- semantic runtime vocabulary/mapping;
-- fixture paths;
-- batch proof on 6+ civilians;
-- shared-update/replacement proof;
-- edge-case record;
-- known deferred gameplay-specific gaps.
+- runtime vocabulary/mapping definition;
+- representative multi-NPC runtime captures/observations;
+- batch inventory of civilians × motions actually exercised;
+- incompatible/failure case;
+- any bounded contact-placement convention introduced;
+- Worker pre-review.
 
 ## PASS
 
-PASS when:
-
-- shared vocabulary works across 6+ civilians without bespoke graph setup;
-- ordinary conversation/ambient/reaction-or-work needs are reusable;
-- semantic mapping hides raw clip-path plumbing from scene authors;
-- replacing/extending an admitted motion is a factory operation rather than NPC-by-NPC surgery;
-- no systemic transition/retarget blocker remains for ordinary NPC production;
-- adding more ambient/conversation/work animation breadth is now mainly content production.
+PASS when the accepted animation factory can feed multiple accepted civilian prefabs through one reusable runtime vocabulary and adding another normal NPC does not require bespoke Animator surgery.
 
 ## FAIL
 
-FAIL if each NPC needs bespoke Animator logic, semantic roles cannot be reused, runtime transitions are fragile, or the factory intake does not translate into scalable scene use.
+FAIL if ANIM-02 rebuilds the intake factory, silently broadens ANIM-01 admissions, hand-wires every NPC separately, assumes final civilian compatibility without CHAR evidence, or expands into a universal cinematic/combat system.
 
-## Non-goals
+## Handoff
 
-No combat animation graph, cinematic sequencer, facial animation lock, root-motion chase system or complete future activity library.
+`WP-CITY-URBAN-01` consumes the proven runtime vocabulary while composing the first retained B0 block.

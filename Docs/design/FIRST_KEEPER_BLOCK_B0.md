@@ -3,6 +3,8 @@
 Status: **CURRENT PRODUCT / PRODUCTION DEMAND BASELINE**  
 Date: 2026-09-28
 
+Compact-city amendment accepted 2026-09-30: [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md), through `WP-CITY-URBAN-00R`. B0 remains Mercado–Muelle; its anchors, routes, access and port/elevation roles below are preserved. CASCO-V2 is a preceding programme/scale experiment, not B0 integration acceptance. Illustrative coordinates and frontage rows do not determine separate buildings or justify growing the city to fit the old diagram.
+
 ## Purpose
 
 This document migrates the useful **what to build** knowledge from Juego2 CITY into juego-def without importing the old inland pilot, H1/H2F lifecycle or historical CITY governance.
@@ -19,7 +21,7 @@ The executable `WP-CITY-URBAN-00` in juego-def is a **local reconciliation/produ
 
 ### Migrated as product truth / design input
 
-- final setting: large fictional northern-Spain working port town, late 1990s / early 2000s;
+- final setting: fictional northern-Spain working port town, late 1990s / early 2000s; compact playable scale under the current Owner direction;
 - five production zones: MERCADO, MUELLE, CASCO, VIVIENDAS, TALLERES;
 - first keeper urban block: **B0 Mercado–Muelle** unless new local evidence materially overturns it;
 - compact density, recurring social routes, ordinary places and working waterfront;
@@ -106,7 +108,9 @@ Exact curves, slopes, facade placement and junction shaping are resolved during 
 - shop public room is a shallow useful interior/threshold; service access remains distinct;
 - lodging may have deeper private/common layering later but must read as a believable return anchor;
 - public port edge remains physically/readably separate from controlled yard/work areas;
-- not every facade opens; ordinary closed frontage is necessary for density;
+- not every facade opens; every semantic building has identity/use, including closed fabric; several FacadeCells may belong to one mixed-use building;
+- shallow shop/witness is a useful programme, not a fixed cubicle size: occupation, camera, access and service determine its dimensions; visual and playable floors may differ;
+- every exterior gap/rear/setback has deliberate function or is absorbed/redesigned, under the compact-city amendment;
 - an interior cannot be used to fake a public shortcut that does not exist in the street graph;
 - thresholds must be spatially readable before interaction UI is invoked.
 

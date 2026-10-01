@@ -1,9 +1,11 @@
 # WP-PROD-ANIM-01 — Animation Intake + Retarget Factory
 
-Status: **READY AFTER ASSET-00**  
+Status: **PASS / ACCEPTED 2026-09-28**  
 Class: PRODUCTION FACTORY / ANIMATION ASSETS  
 Depends on: `WP-PROD-ASSET-00` PASS  
 Blocks: `WP-PROD-ANIM-02`
+
+Accepted implementation: PR #9, reviewed `PRODUCT_SHA` `4750aa8ee7ab200143fc938230a4131b78e0ec1d`, merged as `2e81c9e31e1803656fd986aacc21b184a99d5d2d`.
 
 ## Claim
 
@@ -124,4 +126,4 @@ FAIL if the output is only a prose/file list, B0 motion demand is ignored, every
 
 ## Handoff
 
-`WP-PROD-ANIM-02` consumes this factory plus the accepted civilian factory to prove reusable runtime vocabulary and batch use across multiple NPCs.
+`WP-PROD-ANIM-02` consumes this accepted factory plus the accepted civilian factory to prove reusable runtime vocabulary and batch use across multiple NPCs.

@@ -4,6 +4,12 @@ Status: **WORKER CANDIDATE / PRODUCT HANDOFF**
 Date: 2026-09-28  
 Source WP: `Docs/workpacks/WP-CITY-URBAN-00.md`
 
+## Bounded scale amendment — accepted 2026-09-30
+
+[`WP-CITY-URBAN-00R`](../workpacks/WP-CITY-URBAN-00R.md) reopens only scale, plot-to-building ownership, interior programme/floors and residual-space policy. The accepted binding amendment is [`COMPACT_SEMANTIC_CITY_REBASELINE.md`](COMPACT_SEMANTIC_CITY_REBASELINE.md). Five zones mean unequal functional identities in one compact continuous town. The tables/edges/B0 roles below remain preserved accepted intent; their lengths/footprints are budgeted during rebaseline, not multiplied into five ENV01-sized maps. Final exact geometry stays physical authoring.
+
+The CASCO V2 block is a prior spatial experiment, not a replacement for B0 Mercado–Muelle. ENV01 factory/visual-reference closure remains independent. After CITY-00R acceptance, future ENV02/B0 production consumes `FacadeCell != SemanticBuilding != InteriorProgramme`, programme-first interiors and zero unintentional exterior space; shallow pieces remain useful for tasks that fit them.
+
 ## Decision
 
 Retain the accepted Juego2 CITY-URBAN-00 product/design result and reconcile it to current juego-def truth.
@@ -121,7 +127,7 @@ These statuses describe **current production coverage**, not design completeness
 | quay / public working-water edge + railings | `FACTORY_REQUIRED` | working port, not leisure marina; truthful water boundary |
 | port / market / shop / street props | `FACTORY_REQUIRED` | activity/readability after structural composition works |
 | ordinary closed frontage | `FACTORY_REQUIRED` | density without every door opening |
-| shallow interior / threshold pieces | `FACTORY_REQUIRED` | shop/witness and selected useful thresholds |
+| shallow interior / threshold pieces | `FACTORY_REQUIRED` | shop/witness and selected useful thresholds; a piece is vocabulary, not the universal complete interior programme |
 | signage mounting / utilities / street furniture | `FACTORY_REQUIRED` | late-1990s/early-2000s ordinary town identity |
 | damp northern material/palette families | `FACTORY_REQUIRED` | coherent Atlantic identity across reused sources |
 | blocked/scenic continuation for future seams | `PROXY_ALLOWED_FOR_INTEGRATION` | temporary honest blockers/continuation are allowed before keeper finalization; dressed greybox is not keeper output |
@@ -210,4 +216,4 @@ These are not missing CITY-URBAN-00 truths. They require asset, keeper-space, ru
 
 CHAR/ANIM/DIALOGUE/UI may consume the role priorities immediately as product demand, while their own WPs remain authoritative for how the content is manufactured.
 
-`CITY-URBAN-01` may tune local keeper geometry aggressively where useful, but must reopen this planning owner if it needs a material change to route connectivity, access class, anchor programme, controlled-port boundary, expansion seam or major elevation concept.
+`CITY-URBAN-01` may tune local keeper geometry aggressively where useful, but must amend the current CITY handoff (including CITY-00R once accepted) if it needs a material change to route connectivity, access class, anchor programme, controlled-port boundary, expansion seam, major elevation concept or compact scale budget.

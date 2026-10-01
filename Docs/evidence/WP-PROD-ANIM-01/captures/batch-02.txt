@@ -1,0 +1,6 @@
+1: ual1:fixing_kneeling | 10%, 45%, 80%; male blue, female orange
+2: ual1:groundsit_idle_loop | 10%, 45%, 80%; male blue, female orange
+3: ual1:hit_chest | 10%, 45%, 80%; male blue, female orange
+4: ual1:hit_head | 10%, 45%, 80%; male blue, female orange
+5: ual1:hit_shoulder_l | 10%, 45%, 80%; male blue, female orange
+6: ual1:hit_shoulder_r | 10%, 45%, 80%; male blue, female orange

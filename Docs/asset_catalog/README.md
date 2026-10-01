@@ -42,4 +42,8 @@ Unity `Assets/ThirdParty/Quaternius/` is local intake state and is excluded from
 
 ## Scope and gaps
 
+### Animation admission layer
+
+`Docs/asset_catalog/animations.json` is the ANIM-01 semantic/admission layer over the unchanged source candidates. Use `python Tools/anim_catalog.py search --status ADMIT --family conversation_acting` or `--query muelle` for motion discovery. `ADMIT` is bounded to the measured body family and recorded constraints; contact-dependent or unreviewed clips remain `ADAPT`, and missing capabilities are explicit `GAP` entries. See [ANIM_FACTORY.md](../production/ANIM_FACTORY.md) for intake, native Unity presets, batch Play Mode retarget checks, preview and the next-clip workflow.
+
 The catalogue intentionally indexes Unity prefabs and FBX exports as semantic candidates, not duplicate OBJ/glTF forms, all textures as standalone candidates, or irrelevant source-project editor files. **Not being a semantic candidate does not exclude a copied file from provenance:** all installed source bytes are covered by the pack intake identity. New assets from a covered family enter by re-running `build`; new families need a source/license row and a bounded semantic rule. See the WP evidence for B0 coverage and current missing waterfront, urban shopfront and civilian/work motion roles.
