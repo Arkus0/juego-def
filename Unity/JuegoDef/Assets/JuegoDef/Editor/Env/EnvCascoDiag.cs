@@ -312,7 +312,7 @@ namespace JuegoDef.Env
                 var n = new Vector3(-dir.z, 0, dir.x) * (width * 0.5f);
                 left.Add(pts[i] + n); right.Add(pts[i] - n);
             }
-            var poly = left.Concat(right.Reverse()).ToArray();
+            var poly = left.Concat(Enumerable.Reverse(right)).ToArray();
             if (IsConvex(poly)) { FillConvex(poly, c); return; }
             Handles.color = c; Handles.color = new Color(c.r, c.g, c.b, 0.9f);
             Handles.DrawAAPolyLine(2f, CloseLoop(poly));
@@ -339,7 +339,10 @@ namespace JuegoDef.Env
             _layerDeliberate = EditorGUILayout.Toggle("Deliberate urban space", _layerDeliberate);
             _labels = EditorGUILayout.Toggle("Labels", _labels);
             _alpha = EditorGUILayout.Slider("Fill alpha", _alpha, 0.05f, 0.6f);
-            EditorGUILayout.MinMaxSlider("Candidate size", ref _candMin, ref _candMax, 2, 6);
+            float candidateMin = _candMin, candidateMax = _candMax;
+            EditorGUILayout.MinMaxSlider("Candidate size", ref candidateMin, ref candidateMax, 2, 6);
+            _candMin = Mathf.RoundToInt(candidateMin);
+            _candMax = Mathf.RoundToInt(candidateMax);
             _onlyDeficientCands = EditorGUILayout.Toggle(
                 "Only candidates with red (below-minimum) members", _onlyDeficientCands);
 

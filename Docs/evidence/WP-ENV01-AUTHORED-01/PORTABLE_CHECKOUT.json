@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "original_local_available": false,
+  "checks": 45,
+  "authored_scene_bytes": 133550498,
+  "reference_scene_bytes": 118929900,
+  "authored_scene_sha256": "0df3a45a7c8bbeb2c8cef5066deff6a7f58ad888ed2d66461b4204806ee0d55e",
+  "reference_scene_sha256": "74a08c588590d2da7934410542024027f2d400e8ee6ac17ef2888193b16d83a5",
+  "method": "git checkout-index export of staged files; LFS smudge and Git EOL conversion; validator runs without ignored original or local untracked files"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "PROP_ManualPersistenceProbe",
+  "original": [
+    183.778763,
+    1.81681514,
+    200.36731
+  ],
+  "expected": [
+    183.903763,
+    1.81681514,
+    200.36731
+  ],
+  "operation": "world X +0.125m; saved before scene reopen/domain reload/editor restart/Play"
+}

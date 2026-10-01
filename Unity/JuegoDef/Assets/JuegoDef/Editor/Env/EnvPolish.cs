@@ -232,6 +232,7 @@ namespace JuegoDef.Env
         /// <summary>Rebuilds one row exactly as a full build would (stateful passes replayed in a dry run first) and swaps it in.</summary>
         public static string RebuildRow(string rowId)
         {
+            EnvAuthoredGuard.RequireLegacyScene();
             Reload();
             var spec = JObject.Parse(EnvKit.ReadText($"{EnvDistrict.DistrictSpecs}/ENV01_Casco_District.json"));
             var rows = (JArray)spec["rows"];
@@ -279,6 +280,7 @@ namespace JuegoDef.Env
         /// <summary>Object-level corrections on the built district; the "Polish" group (placed objects) is recreated each run.</summary>
         public static string ApplyOps(Transform root)
         {
+            EnvAuthoredGuard.RequireLegacyScene();
             Reload();
             var old = root.Find("Polish");
             if (old != null) Object.DestroyImmediate(old.gameObject);

@@ -1,0 +1,55 @@
+{
+  "stage": "AUTHORED_FINAL",
+  "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity",
+  "objects": 72701,
+  "renderers": 29176,
+  "colliders": 21102,
+  "lights": 93,
+  "rendererDigest": "f41adb61ab3690159f9b700cbf1b8898431fb272372b26f123194a6e7c05f919",
+  "colliderDigest": "8ffb208878871b0710be837babe1e553a01cce1cf96ff053ff483cbde5ebe7c4",
+  "lightDigest": "4f6c8c457addcf38641e85ab90d068a904b504df3222f3033f22552644c7d2df",
+  "missingReferences": [],
+  "missingMeshes": 0,
+  "missingMaterials": 0,
+  "temporaryMeshes": 0,
+  "duplicateIds": [],
+  "scripts": [
+    {
+      "type": "JuegoDef.Env.JDSpatialIdentity",
+      "count": 370
+    },
+    {
+      "type": "JuegoDef.Dev.JDRouteProbe",
+      "count": 1
+    },
+    {
+      "type": "GameCreator.Runtime.Characters.Character",
+      "count": 1
+    },
+    {
+      "type": "UnityEngine.EventSystems.PhysicsRaycaster",
+      "count": 1
+    },
+    {
+      "type": "GameCreator.Runtime.Cameras.MainCamera",
+      "count": 1
+    },
+    {
+      "type": "UnityEngine.Rendering.Universal.UniversalAdditionalCameraData",
+      "count": 1
+    },
+    {
+      "type": "GameCreator.Runtime.Cameras.ShotCamera",
+      "count": 1
+    },
+    {
+      "type": "JuegoDef.Env.JDLightingRig",
+      "count": 1
+    },
+    {
+      "type": "UnityEngine.Rendering.Volume",
+      "count": 1
+    }
+  ],
+  "identities": 370
+}

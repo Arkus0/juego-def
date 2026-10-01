@@ -1,0 +1,90 @@
+{
+  "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity",
+  "objects": 72652,
+  "renderers": 29176,
+  "colliders": 21102,
+  "scripts": [
+    {
+      "type": "JuegoDef.Dev.JDRouteProbe",
+      "enabled": true,
+      "active": false
+    },
+    {
+      "type": "JuegoDef.Env.JDLightingRig",
+      "enabled": true,
+      "active": true
+    }
+  ],
+  "groups": [
+    {
+      "name": "Ground",
+      "children": 59,
+      "objects": 60
+    },
+    {
+      "name": "PavingOverlays",
+      "children": 4,
+      "objects": 5
+    },
+    {
+      "name": "Rows",
+      "children": 164,
+      "objects": 67746
+    },
+    {
+      "name": "River",
+      "children": 121,
+      "objects": 790
+    },
+    {
+      "name": "Dressing",
+      "children": 218,
+      "objects": 668
+    },
+    {
+      "name": "Backdrop",
+      "children": 1023,
+      "objects": 2825
+    },
+    {
+      "name": "Stairs",
+      "children": 3,
+      "objects": 10
+    },
+    {
+      "name": "Plazas",
+      "children": 5,
+      "objects": 73
+    },
+    {
+      "name": "StreetFurniture",
+      "children": 86,
+      "objects": 173
+    },
+    {
+      "name": "HeroCables",
+      "children": 9,
+      "objects": 19
+    },
+    {
+      "name": "RiverPromenade",
+      "children": 10,
+      "objects": 27
+    },
+    {
+      "name": "Polish",
+      "children": 2,
+      "objects": 59
+    },
+    {
+      "name": "RouteProbe",
+      "children": 0,
+      "objects": 1
+    },
+    {
+      "name": "LightingRig",
+      "children": 2,
+      "objects": 95
+    }
+  ]
+}
