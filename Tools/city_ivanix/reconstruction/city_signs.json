@@ -1,0 +1,506 @@
+{
+ "M0186_00": {
+  "category": "ayuntamiento",
+  "name": "Casa Consistorial",
+  "bg": "#E9E2D0",
+  "fg": "#3A2A1A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_AYTO_fascia.png",
+  "goods": null
+ },
+ "R0025": {
+  "category": "pension",
+  "name": "Pensión Rosi",
+  "bg": "#F3E9D2",
+  "fg": "#7B2E1F",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_PENSION_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_P_PENSION_blade.png",
+  "goods": null
+ },
+ "R0126": {
+  "category": "hotel",
+  "name": "Hotel Miramar",
+  "bg": "#13294B",
+  "fg": "#F2D27A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_HOTEL_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_P_HOTEL_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_P_HOTEL_awning.png",
+  "goods": null
+ },
+ "R0224": {
+  "category": "cuartel",
+  "name": "Casa Cuartel",
+  "bg": "#F1EFEA",
+  "fg": "#1F5A2E",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_COMANDANCIA_fascia.png",
+  "goods": null
+ },
+ "R0185": {
+  "category": "bar",
+  "name": "Bar El Puerto",
+  "bg": "#1F5A3A",
+  "fg": "#F2E6C8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_BAR_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_P_BAR_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_P_BAR_awning.png",
+  "goods": "terraza"
+ },
+ "R0068": {
+  "category": "mercado",
+  "name": "Mercado de Abastos",
+  "bg": "#7A1F1F",
+  "fg": "#F7E9C9",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_MERCADO_fascia.png",
+  "goods": null
+ },
+ "R0034": {
+  "category": "cultura",
+  "name": "Casa de Cultura",
+  "bg": "#E9E2D0",
+  "fg": "#1F3A5A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_CULTURA_fascia.png",
+  "goods": null
+ },
+ "R0171": {
+  "category": "hogar",
+  "name": "Hogar del Pensionista",
+  "bg": "#2E5E3A",
+  "fg": "#F5ECD0",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_HOGAR_fascia.png",
+  "goods": null
+ },
+ "R0167": {
+  "category": "almacen",
+  "name": "Almacenes del Puerto",
+  "bg": "#3B3F44",
+  "fg": "#F2C12E",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_P_ALMACEN_fascia.png",
+  "goods": null
+ },
+ "R0013": {
+  "category": "sidreria",
+  "name": "Sidrería El Llagar",
+  "bg": "#2F5D1F",
+  "fg": "#F5E9B8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0013_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0013_blade.png",
+  "goods": "barriles"
+ },
+ "R0043": {
+  "category": "bar",
+  "name": "Bar El Puerto",
+  "bg": "#1F5A3A",
+  "fg": "#F2E6C8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0043_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0043_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0043_awning.png",
+  "goods": "terraza"
+ },
+ "R0056": {
+  "category": "bar",
+  "name": "Bar Casa Tino",
+  "bg": "#8E2A22",
+  "fg": "#F7E7C4",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0056_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0056_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0056_awning.png",
+  "goods": "terraza"
+ },
+ "R0058": {
+  "category": "panaderia",
+  "name": "Panadería La Espiga",
+  "bg": "#F1DDAE",
+  "fg": "#6B3A1E",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0058_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0058_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0058_awning.png",
+  "goods": "pan"
+ },
+ "R0072": {
+  "category": "peluqueria",
+  "name": "Peluquería Loli",
+  "bg": "#C2185B",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0072_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0072_blade.png",
+  "goods": null
+ },
+ "R0077": {
+  "category": "ultramarinos",
+  "name": "Ultramarinos Remedios",
+  "bg": "#B23A2A",
+  "fg": "#FFF3D6",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0077_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0077_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0077_awning.png",
+  "goods": "cajas"
+ },
+ "R0085": {
+  "category": "sidreria",
+  "name": "Sidrería La Pomarada",
+  "bg": "#2F5D1F",
+  "fg": "#F5E9B8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0085_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0085_blade.png",
+  "goods": "barriles"
+ },
+ "R0086": {
+  "category": "moda",
+  "name": "Modas Carmen",
+  "bg": "#6E1E3A",
+  "fg": "#F6E2EA",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0086_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0086_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0086_awning.png",
+  "goods": "caballete"
+ },
+ "R0104": {
+  "category": "fruteria",
+  "name": "Frutas Maribel",
+  "bg": "#E07B1A",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0104_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0104_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0104_awning.png",
+  "goods": "fruta"
+ },
+ "R0107": {
+  "category": "seguros",
+  "name": "Seguros Díaz",
+  "bg": "#37474F",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0107_fascia.png",
+  "goods": null
+ },
+ "R0112": {
+  "category": "ferreteria",
+  "name": "Ferretería Gutiérrez",
+  "bg": "#F2C12E",
+  "fg": "#1A1A1A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0112_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0112_blade.png",
+  "goods": "ferreteria"
+ },
+ "R0115": {
+  "category": "ultramarinos",
+  "name": "Coloniales Herrera",
+  "bg": "#244B2B",
+  "fg": "#F6E7B6",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0115_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0115_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0115_awning.png",
+  "goods": "cajas"
+ },
+ "R0117": {
+  "category": "bar",
+  "name": "Bar La Ribera",
+  "bg": "#1E3A6E",
+  "fg": "#F4EBD2",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0117_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0117_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0117_awning.png",
+  "goods": "terraza"
+ },
+ "R0122": {
+  "category": "peluqueria",
+  "name": "Barbería Toño",
+  "bg": "#263238",
+  "fg": "#F5F5F5",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0122_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0122_blade.png",
+  "goods": null
+ },
+ "R0135": {
+  "category": "panaderia",
+  "name": "Horno San Roque",
+  "bg": "#7A3B1F",
+  "fg": "#F8E3B5",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_awning.png",
+  "goods": "pan"
+ },
+ "R0138": {
+  "category": "seguros",
+  "name": "Inmobiliaria del Puerto",
+  "bg": "#37474F",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0138_fascia.png",
+  "goods": null
+ },
+ "R0139": {
+  "category": "electro",
+  "name": "Electrodomésticos Hnos. Saiz",
+  "bg": "#C62828",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0139_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0139_blade.png",
+  "goods": "caballete"
+ },
+ "R0152": {
+  "category": "sidreria",
+  "name": "Sidrería Casa Bustamante",
+  "bg": "#2F5D1F",
+  "fg": "#F5E9B8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0152_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0152_blade.png",
+  "goods": "barriles"
+ },
+ "R0162": {
+  "category": "ultramarinos",
+  "name": "Alimentación La Plaza",
+  "bg": "#B23A2A",
+  "fg": "#FFF3D6",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0162_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0162_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0162_awning.png",
+  "goods": "cajas"
+ },
+ "R0189": {
+  "category": "bar",
+  "name": "Bodega Los Arcos",
+  "bg": "#1F5A3A",
+  "fg": "#F2E6C8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0189_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0189_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0189_awning.png",
+  "goods": "terraza"
+ },
+ "R0209": {
+  "category": "bar",
+  "name": "Bar Chelo",
+  "bg": "#8E2A22",
+  "fg": "#F7E7C4",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0209_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0209_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0209_awning.png",
+  "goods": "terraza"
+ },
+ "R0217": {
+  "category": "seguros",
+  "name": "Gestoría Rivas",
+  "bg": "#37474F",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0217_fascia.png",
+  "goods": null
+ },
+ "R0221": {
+  "category": "caja",
+  "name": "Caja Cantábrica",
+  "bg": "#0E4C92",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_blade.png",
+  "goods": null
+ },
+ "R0222": {
+  "category": "bar",
+  "name": "Taberna El Pescador",
+  "bg": "#1E3A6E",
+  "fg": "#F4EBD2",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0222_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0222_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0222_awning.png",
+  "goods": "terraza"
+ },
+ "M0015_00": {
+  "category": "seguros",
+  "name": "Gestoría Abascal",
+  "bg": "#37474F",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0015_00_fascia.png",
+  "goods": null
+ },
+ "M0153_01": {
+  "category": "farmacia",
+  "name": "Farmacia Mier",
+  "bg": "#F4F4F0",
+  "fg": "#0F7A3A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0153_01_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0153_01_blade.png",
+  "goods": null
+ },
+ "M0160_00": {
+  "category": "panaderia",
+  "name": "Confitería La Dulce",
+  "bg": "#F1DDAE",
+  "fg": "#6B3A1E",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0160_00_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0160_00_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0160_00_awning.png",
+  "goods": "pan"
+ },
+ "M0170_00": {
+  "category": "panaderia",
+  "name": "Panadería Abascal",
+  "bg": "#7A3B1F",
+  "fg": "#F8E3B5",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0170_00_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0170_00_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0170_00_awning.png",
+  "goods": "pan"
+ },
+ "M0184_01": {
+  "category": "panaderia",
+  "name": "Panadería Arce",
+  "bg": "#F1DDAE",
+  "fg": "#6B3A1E",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0184_01_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0184_01_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0184_01_awning.png",
+  "goods": "pan"
+ },
+ "M0229_01": {
+  "category": "ultramarinos",
+  "name": "Ultramarinos Herrera",
+  "bg": "#244B2B",
+  "fg": "#F6E7B6",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0229_01_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0229_01_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0229_01_awning.png",
+  "goods": "cajas"
+ },
+ "M0281_00": {
+  "category": "bar",
+  "name": "Bar Avenida",
+  "bg": "#1F5A3A",
+  "fg": "#F2E6C8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0281_00_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0281_00_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0281_00_awning.png",
+  "goods": "terraza"
+ },
+ "R0013_1": {
+  "category": "panaderia",
+  "name": "Panadería Arce",
+  "bg": "#7A3B1F",
+  "fg": "#F8E3B5",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0013_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0013_1_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0013_1_awning.png",
+  "goods": "pan"
+ },
+ "R0072_1": {
+  "category": "videoclub",
+  "name": "Videoclub Estrella",
+  "bg": "#1A1446",
+  "fg": "#FFD400",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0072_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0072_1_blade.png",
+  "goods": "caballete"
+ },
+ "R0076_1": {
+  "category": "ultramarinos",
+  "name": "Ultramarinos Sobrado",
+  "bg": "#B23A2A",
+  "fg": "#FFF3D6",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0076_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0076_1_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0076_1_awning.png",
+  "goods": "cajas"
+ },
+ "R0132_1": {
+  "category": "optica",
+  "name": "Óptica Norte",
+  "bg": "#00838F",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0132_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0132_1_blade.png",
+  "goods": null
+ },
+ "R0132_2": {
+  "category": "pescaderia",
+  "name": "Pescados Hnos. Ruiz",
+  "bg": "#1C5D99",
+  "fg": "#FFFFFF",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0132_2_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0132_2_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0132_2_awning.png",
+  "goods": "pescado"
+ },
+ "R0135_1": {
+  "category": "estanco",
+  "name": "Estanco nº 1",
+  "bg": "#6A3B1C",
+  "fg": "#F2C230",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_1_blade.png",
+  "goods": null
+ },
+ "R0135_2": {
+  "category": "sidreria",
+  "name": "Sidrería Casa Velarde",
+  "bg": "#2F5D1F",
+  "fg": "#F5E9B8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_2_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0135_2_blade.png",
+  "goods": "barriles"
+ },
+ "R0137_1": {
+  "category": "moda",
+  "name": "Mercería La Aguja",
+  "bg": "#1F1F1F",
+  "fg": "#E8C77A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0137_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0137_1_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0137_1_awning.png",
+  "goods": "caballete"
+ },
+ "R0161_1": {
+  "category": "farmacia",
+  "name": "Farmacia de la Plaza",
+  "bg": "#F4F4F0",
+  "fg": "#0F7A3A",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0161_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0161_1_blade.png",
+  "goods": null
+ },
+ "R0161_2": {
+  "category": "ultramarinos",
+  "name": "Ultramarinos Mier",
+  "bg": "#244B2B",
+  "fg": "#F6E7B6",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0161_2_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0161_2_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0161_2_awning.png",
+  "goods": "cajas"
+ },
+ "R0199_1": {
+  "category": "bar",
+  "name": "Café Bar Moderno",
+  "bg": "#8E2A22",
+  "fg": "#F7E7C4",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0199_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0199_1_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0199_1_awning.png",
+  "goods": "terraza"
+ },
+ "R0221_1": {
+  "category": "fruteria",
+  "name": "Frutería La Huerta",
+  "bg": "#3E8E2E",
+  "fg": "#FFF6D8",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_1_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_1_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_1_awning.png",
+  "goods": "fruta"
+ },
+ "R0221_2": {
+  "category": "cafe",
+  "name": "Café Central",
+  "bg": "#4A2C1E",
+  "fg": "#F3D9A4",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_2_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_2_blade.png",
+  "awning": "Assets/JuegoDef/City/Signs/SIGN_SHOP_R0221_2_awning.png",
+  "goods": "terraza"
+ },
+ "M0183_03_2": {
+  "category": "estanco",
+  "name": "Expendeduría nº 2",
+  "bg": "#6A3B1C",
+  "fg": "#F2C230",
+  "fascia": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0183_03_2_fascia.png",
+  "blade": "Assets/JuegoDef/City/Signs/SIGN_SHOP_M0183_03_2_blade.png",
+  "goods": null
+ }
+}

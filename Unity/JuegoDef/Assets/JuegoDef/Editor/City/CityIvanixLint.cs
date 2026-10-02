@@ -73,15 +73,20 @@ namespace JuegoDef.City
                     if (!touch0 || !touch1) Add("TAPIA_FREE_END", run, touch0 ? e1 : e0, touch0 || touch1 ? "one end loose" : "free-standing");
                 }
             // 3) props inside houses or floating
+            CityEntities.IndexBuildings(buildingsRoot ? buildingsRoot.transform : null);
             if (propsRoot)
                 foreach (Transform group in propsRoot.transform)
                 foreach (Transform prop in group)
                 {
+                    if (group.name == "AMARRAS") continue;          // mooring lines hang between a boat and a bollard
                     var rs = prop.GetComponentsInChildren<Renderer>();
                     if (rs.Length == 0) continue;
                     var b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds);
-                    var hits = Physics.OverlapBox(b.center, b.extents * 0.8f, Quaternion.identity).Where(buildingCols.Contains).ToList();
+                    // the entity's own volume (trees: trunk and crown heart), the same definition the placement used
+                    var lb = CityEntities.LocalBox(prop.gameObject);
+                    var hits = Physics.OverlapBox(prop.TransformPoint(lb.center + Vector3.up * 0.11f), Vector3.Scale(lb.extents - new Vector3(0.03f, 0.11f, 0.03f), prop.lossyScale), prop.rotation).Where(buildingCols.Contains).ToList();
                     if (hits.Count > 0) Add("PROP_IN_BUILDING", prop, prop.position, $"{group.name}: {Bld(hits[0]).name}");
+                    if (CityEntities.InsidePlan(prop.gameObject, out var host)) Add("PROP_IN_BUILDING_PLAN", prop, prop.position, $"{group.name}: {host}");
                     if (group.name != "PUERTO" && !Physics.Raycast(prop.position + Vector3.up * 0.3f, Vector3.down, 0.8f))
                         Add("PROP_FLOATING", prop, prop.position, group.name);
                 }

@@ -1,0 +1,71 @@
+{
+  "placed": 317,
+  "mooring_lines": 6,
+  "shifted": 20,
+  "rejected": 6,
+  "on_building": 0,
+  "no_ground": 0,
+  "rejected_by": {
+    "ARBOLADO:CITY_Tree_Magnolio": 1,
+    "ARBOLADO:CITY_Tree_Platano": 2,
+    "TERRAZAS:CITY_Terrace_Set": 1,
+    "ALMACEN:ENV_Box_Cardboard": 1,
+    "CONTENEDORES:ENV_Recycling_Bins": 1
+  },
+  "rejected_at": [
+    {
+      "m": "CITY_Tree_Magnolio",
+      "g": "ARBOLADO",
+      "p": [
+        -194.54,
+        -15.44
+      ],
+      "blocker": "level"
+    },
+    {
+      "m": "CITY_Tree_Platano",
+      "g": "ARBOLADO",
+      "p": [
+        48.85,
+        71.38
+      ],
+      "blocker": "PASEO_MURALLA/MURO"
+    },
+    {
+      "m": "CITY_Tree_Platano",
+      "g": "ARBOLADO",
+      "p": [
+        63.33,
+        -57.5
+      ],
+      "blocker": "PASEO_MURALLA/MURO"
+    },
+    {
+      "m": "CITY_Terrace_Set",
+      "g": "TERRAZAS",
+      "p": [
+        61.35,
+        -66.46
+      ],
+      "blocker": "PASEO_MURALLA/MURO"
+    },
+    {
+      "m": "ENV_Box_Cardboard",
+      "g": "ALMACEN",
+      "p": [
+        120.13,
+        -67.75
+      ],
+      "blocker": "ALMACEN/ENV_Prop_Crate_Metal"
+    },
+    {
+      "m": "ENV_Recycling_Bins",
+      "g": "CONTENEDORES",
+      "p": [
+        -8.0,
+        -37.27
+      ],
+      "blocker": "plan"
+    }
+  ]
+}

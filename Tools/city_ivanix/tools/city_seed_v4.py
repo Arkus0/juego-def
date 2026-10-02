@@ -679,6 +679,7 @@ def main():
                      "seed": stable(b["id"]) % 100000, "sx": sx, "sz": sz}
         b["W"], b["D"] = round(b["W"], 2), round(b["D"], 2)
         b["tramo"] = b.get("line")
+        b["street"] = LINES[b["line"]]["street"] if b.get("line") is not None else None
 
     # ---- orientation coherence along the tramos (owner metric: neighbours within 20-40 m differ by <= 5-15 deg)
     diffs, curve_ok = [], 0
@@ -789,6 +790,46 @@ def main():
         D = b.get("D", sp["depth"] * sp.get("sz", 1.0))
         o = np.array([mx, mz]) - xd * W / 2
         return Polygon([o, o + xd * W, o + xd * W - n * D, o - n * D])
+
+    # ---- ground-floor commerce (owner: "que parezca una ciudad medio real"; Shenmue: every shopfront sells something):
+    # most ground floors on the main streets and the squares are shops, a few on the side streets; names, colours and
+    # what they put out come from businesses.py. Programme buildings carry their own sign.
+    from businesses import CATEGORIES, MAIN_MIX, SIDE_MIX, PROGRAMME_SIGNS, SURNAMES, PREFIX
+    MAIN_STREETS = {"MAYOR", "MUELLE", "PLAZA_MAYOR", "LEVANTE", "PONIENTE", "ALTA", "IGLESIA", "LEVANTE_SUR", "FINCA"}
+    used_names = {}
+
+    def pick(mix, key):
+        tot = sum(w for _, w in mix)
+        r_ = (stable(key) % 10000) / 10000 * tot
+        for cat_, w in mix:
+            if r_ < w:
+                return cat_
+            r_ -= w
+        return mix[-1][0]
+
+    shops = 0
+    for b in buildings:
+        if b["semantic_id"] in PROGRAMME_SIGNS and b.get("main"):
+            cat_, name_ = PROGRAMME_SIGNS[b["semantic_id"]]
+            b["business"] = {"id": b["semantic_id"], "category": cat_, "name": name_}
+            continue
+        if b["class"] == "QUEST" or not b.get("door") or not b.get("main", True) or b["kind"] in ("alta", "huertas"):
+            continue
+        main_st = b.get("street") in MAIN_STREETS
+        roll = (stable("shop" + b["id"]) % 1000) / 1000
+        if roll > (0.78 if main_st else 0.12):
+            continue
+        cat_ = pick(MAIN_MIX if main_st else SIDE_MIX, b["id"])
+        names = CATEGORIES[cat_]["names"]
+        k = used_names.get(cat_, 0)
+        used_names[cat_] = k + 1
+        name_ = names[k] if k < len(names) else f"{PREFIX[cat_]} {SURNAMES[(stable(b['id']) + k) % len(SURNAMES)]}"
+        b["business"] = {"id": f"SHOP_{b['id']}", "category": cat_, "name": name_, "color": k % len(CATEGORIES[cat_]["colors"])}
+        b["spec"]["type"] = "mixed_commercial"
+        if b["class"] == "AMBIENT":
+            b["class"] = "SECONDARY"      # a shop is a public interior
+        shops += 1
+    print("shops on ground floors:", shops, "| programme signs:", sum(1 for b in buildings if "business" in b) - shops)
 
     church = next((b for b in buildings if b["semantic_id"] == "P_IGLESIA" and b["main"]), None)
     if church:
