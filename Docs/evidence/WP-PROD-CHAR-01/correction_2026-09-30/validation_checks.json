@@ -1,0 +1,26 @@
+{
+  "unity": "6000.3.24f1",
+  "graphics": "Direct3D12",
+  "shaderSupported": true,
+  "editorErrors": 0,
+  "playModeFinal": false,
+  "blenderBatch": 15,
+  "repeatedSemanticModels": 15,
+  "runtimeSamples": 180,
+  "runtimeInputs": 606,
+  "captures": 60,
+  "densePoseSamples": 1080,
+  "protectedRootLegFootCurves": 1575,
+  "negativeCases": 48,
+  "catalogCandidates": 796,
+  "problems": [],
+  "verification": [
+    "char_audit.py verify",
+    "CharValidation.Verify",
+    "CharValidation.Rebuild",
+    "CharacterQualityRun.Safety",
+    "CharReview.PoseSweep",
+    "asset_catalog.py validate"
+  ],
+  "gitDiffCheckNote": "Pre-existing blank EOF in char_shapes.py and Unity-serialized empty YAML value fields remain; no generated prefab text normalization was applied."
+}

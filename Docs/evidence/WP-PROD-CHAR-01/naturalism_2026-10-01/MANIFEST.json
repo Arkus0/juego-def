@@ -1,0 +1,1277 @@
+{
+  "schemaVersion": 1,
+  "variants": [
+    "market-worker",
+    "dock-worker",
+    "older-resident",
+    "younger-resident",
+    "office-worker",
+    "everyday-pedestrian",
+    "waiter-veteran",
+    "fishmonger",
+    "mechanic",
+    "shopkeeper",
+    "elder-woman",
+    "student",
+    "local-fan",
+    "bruiser",
+    "eccentric"
+  ],
+  "kind": "Worker readiness evidence; independent review and Owner art acceptance pending",
+  "runtimeReport": {
+    "path": "Docs/evidence/WP-PROD-CHAR-01/unity_runtime_validation.json",
+    "sha256": "f0991a9d74c3e8ebd4e6c2e931864973682ca80bc7c00282ccb85f5474ec959b"
+  },
+  "buildInventory": {
+    "path": "Docs/evidence/WP-PROD-CHAR-01/build_inventory.json",
+    "sha256": "c62ace340937e2ce2f63e29bdd8981661defe60f7860bf63916ab368f543855d"
+  },
+  "capturingTools": [
+    {
+      "path": "Tools/CharNaturalismRun.cs",
+      "sha256": "249779649969f495c22c7f5067335d5142f2c923dd820cf3ed82807cb5e2cde3"
+    },
+    {
+      "path": "Tools/CharNaturalismSafety.cs",
+      "sha256": "94e57c1c3ff843ddb08a7fe83927e6ab1df4e2a0057ae9b334b7ad5c03b088cd"
+    },
+    {
+      "path": "Tools/CharEnvRun.cs",
+      "sha256": "dae1d8863d33a70b71ebf51e90a0e6f2318c9abad2a2612d37c21eca260b097e"
+    },
+    {
+      "path": "Tools/CharLivingRun.cs",
+      "sha256": "306f8302f50f3d5109a946040a8fa0b53e213f010795e58f940ddaa6cdfe9e29"
+    },
+    {
+      "path": "Tools/char_evidence.py",
+      "sha256": "81d230b15d4828b9844037c7b70eb4460c77ec9a7627b4fd1ea63f6ebb85f011"
+    },
+    {
+      "path": "Tools/char_human_sources.py",
+      "sha256": "61420755e5c6a9256c8f4d084413ef29814eea4e0d911e647eb35e632ccba637"
+    },
+    {
+      "path": "Tools/char_human_textures.py",
+      "sha256": "cbbdc7ac6bee686a49fcf0213a65fdbf8b1bdc45dca7e200817a993e1b7269f9"
+    },
+    {
+      "path": "Tools/char_human.py",
+      "sha256": "995a99592e42f07608bca671d8f77ef8f7f9da01d60740be7e7a0cea7e0ac3cb"
+    },
+    {
+      "path": "Tools/char_build.py",
+      "sha256": "beea11ba8f21566be81b0f969bae626881406119c4b48fed1aa9e5a7be564946"
+    },
+    {
+      "path": "Tools/char_manifest.py",
+      "sha256": "c70499b3c69ef493cd645c4d1f9f92f0c8df17fa1a3d7381422e095c53d6a53f"
+    }
+  ],
+  "masters": [
+    {
+      "path": "Art/Characters/Naturalism/bruiser.blend",
+      "sha256": "fdbd4734f0a02f17e5e416e847bfbc235a18dbbc594fec2e4560b7dc7a795f39"
+    },
+    {
+      "path": "Art/Characters/Naturalism/dock-worker.blend",
+      "sha256": "dfd258e26afc41c0fda3e766b01d51ec8421992d5af5c1db7cae5c51448bc1f1"
+    },
+    {
+      "path": "Art/Characters/Naturalism/eccentric.blend",
+      "sha256": "fcffc73e334c19ef5c39b736bd700c71c7d30bcce9c4a957893a165b9adcd2dc"
+    },
+    {
+      "path": "Art/Characters/Naturalism/elder-woman.blend",
+      "sha256": "5f73bf7430600a35cbf281382e6b224057941e98485eb209017021830dc2d45a"
+    },
+    {
+      "path": "Art/Characters/Naturalism/everyday-pedestrian.blend",
+      "sha256": "fff69487eb148ff7a1d8d48ecbfe10c7f9033e5f8cd1e559a178b1c5088666a8"
+    },
+    {
+      "path": "Art/Characters/Naturalism/fishmonger.blend",
+      "sha256": "b7f11eca8c255b82b39f0886c05ff2e127872501f7f126afd0c62259d977d781"
+    },
+    {
+      "path": "Art/Characters/Naturalism/local-fan.blend",
+      "sha256": "07e550409833499d41c321200f1daebc817f95caacd4fddee7f0460c581dde11"
+    },
+    {
+      "path": "Art/Characters/Naturalism/market-worker.blend",
+      "sha256": "0f684626ab5a7b35d3241ad50dab0dfe7438fb86f2ba356f79fd2429a9ef692a"
+    },
+    {
+      "path": "Art/Characters/Naturalism/mechanic.blend",
+      "sha256": "850593c034d4eaa045940c337bebc2103f35aacc7ff8ea963cd10ef01d3701a4"
+    },
+    {
+      "path": "Art/Characters/Naturalism/office-worker.blend",
+      "sha256": "8b2e915210859dd720494d487f2bb6a75a9fc0cb50579c27918a2bac651c81f5"
+    },
+    {
+      "path": "Art/Characters/Naturalism/older-resident.blend",
+      "sha256": "bc2f88ddc0745eb2e2cdea65c4f0aafe1db3e90ecff842740e6a13e2675888d0"
+    },
+    {
+      "path": "Art/Characters/Naturalism/shopkeeper.blend",
+      "sha256": "579fba76ed0f86b9831b291aee7369fc7c8b7800fc5fdf21b9fe5a6de3d5c0e8"
+    },
+    {
+      "path": "Art/Characters/Naturalism/student.blend",
+      "sha256": "745870df100af8edc871350f512b150b65843956472969304d58ae63d48102f7"
+    },
+    {
+      "path": "Art/Characters/Naturalism/waiter-veteran.blend",
+      "sha256": "d91fce555946efe4011dfbeb040b659e293b16104b1be63f8cb6fd2727f00e34"
+    },
+    {
+      "path": "Art/Characters/Naturalism/younger-resident.blend",
+      "sha256": "dd524f4f0bc4699b8c7b670124107341a111909f3bb215292446294e12c5a500"
+    }
+  ],
+  "anatomicalHeadMasters": [
+    {
+      "path": "Art/Characters/HumanHeads/bruiser.blend",
+      "sha256": "e27b99f44948f2448cf64b7f08a9d8afbdd9aec0693676f858a044b70465e27a"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/dock-worker.blend",
+      "sha256": "7c6f2d833cda1717af46522d8ff11ab8690a38d4ecbe5164555dba8dfe6bfc70"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/eccentric.blend",
+      "sha256": "90a801ad0f7f49d5127dae6f5ca08012575a456e46f82747c3e1ede0cc9f3007"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/elder-woman.blend",
+      "sha256": "1188fb26cca4197056179029b1692d090bf6cfc6b57e7ddc92526efdb982f6c5"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/everyday-pedestrian.blend",
+      "sha256": "0d1a4553833365ebabbd9fe4507000b53af5257fb25b29f116017a2bac7794a6"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/fishmonger.blend",
+      "sha256": "d934f2ff74bb5562b3a9b5d0f75f1682d77a9c87a1317dfd56bcaa10d075a7b7"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/local-fan.blend",
+      "sha256": "db2631198cf8280896d43a7fdc216d29e0851402cbb9cc524697371e2102684d"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/market-worker.blend",
+      "sha256": "8b8a8f8812b532007def2d006af997694e3be9e43efb04329e6f2e956b27b48e"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/mechanic.blend",
+      "sha256": "236bb4fd15e4efc352024e693bb0735075ab2ab00bc33693d77645a2a4fe89e8"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/office-worker.blend",
+      "sha256": "8a3fcbc705feb2aba6bd11623b9365edae6e23da3fe348619fdb697dfa5a01c7"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/older-resident.blend",
+      "sha256": "f88ed8f18b719eadf7986eb48e414d1328f44bee86ce6a517a35d1b0f32555a9"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/shopkeeper.blend",
+      "sha256": "69d933bc1b0e05511a9edc1b450a1931b7c76ddc05e7124ca368c6e1febf3512"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/student.blend",
+      "sha256": "95a8dcdaf7d571ef2399723f4a0343c75ef0f3ddf9d73cba334df8b095e12e3b"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/waiter-veteran.blend",
+      "sha256": "4e8470475aa8eb4896a956f8804e5013c791038d6db5591b902056de0e1975ea"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/younger-resident.blend",
+      "sha256": "806ca6e05d724e15c8b5d60707c8351eecd0c63995a7e1d9002157bf6551b2d6"
+    }
+  ],
+  "anatomicalHeadManifest": {
+    "path": "Art/Characters/HumanHeads/source_manifest.json",
+    "sha256": "b5b46c917e81047246f688f6921eb52d5d5e152f680259eeda94bc11d15d1ebe"
+  },
+  "cc0Admission": {
+    "path": "Art/Characters/HumanSources/admission.json",
+    "sha256": "88e918015a0c8bdef561cabed04d15c80270d273e9992b5638daf783dde517d7"
+  },
+  "files": [
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/BASELINE_IDENTITY.json",
+      "sha256": "0e454e46ad3e93093bff47904114f0aa66ea47a60e730efcc656915bec9bc630"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparativa_seis.jpg",
+      "sha256": "450b23fac7dec7528920906db03179408559e20db25d031705bf41ff71ee30c8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_bruiser.png",
+      "sha256": "bc95aa4d4aa99bd78afbe870695f813c795f427064f0217b58f20bc62073089e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_dock-worker.png",
+      "sha256": "bb3a064c038e4af6f8299dc1c9376ad8878ece15f06d4d618ac78ac729911c07"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_eccentric.png",
+      "sha256": "23c15404da63b3ca859cc28db58dad6b10d2d13e3f7118d748887a0810eaee14"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_elder-woman.png",
+      "sha256": "1543801d3a294ab8685b3aff9dd239e281ab6fc1a0cb46c1722b87b4f190c1c2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_everyday-pedestrian.png",
+      "sha256": "c7ed2bfa92dcb54ffec898f2f0d6480616bfdc5d031d41338200d54c33092178"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_fishmonger.png",
+      "sha256": "88686256737449bd21eedc793f13a896f21170ad4dc55a49f45ef449d42f294f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_local-fan.png",
+      "sha256": "a8a45786b50b241c59b0be053da39a633718018c1f66c5c1f82d2e1a6de8e73d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_market-worker.png",
+      "sha256": "f4d100fb6ebd1c15f80048153dfddc1d536f9a1bf83dbf8cf66372d6b28fa653"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_mechanic.png",
+      "sha256": "269f8f852dbc240110ca14334f9dfa01e46c952c84e0ace167e212e265bd3ae1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_office-worker.png",
+      "sha256": "bc1b1fda199ab9113dc1902ee02baa175534a7cc298b0ad4086390b9f986e4ce"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_older-resident.png",
+      "sha256": "a756c78ebf11f834ee6c61a70aad4ef40760e87c16e1094f442afcacbc65dfa1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_shopkeeper.png",
+      "sha256": "a17948d8d8b252795604ad1db920a0d32746a4569a819ed5a8305c4691a9142b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_student.png",
+      "sha256": "f2dfa047e8d272c87cce12b09c7f247e06a660053cc2593cfb932931d040c5ee"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_waiter-veteran.png",
+      "sha256": "be04ab3b8c662a6643488be1c2734d48e392549a97da703589e2633f4503767c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_bare_younger-resident.png",
+      "sha256": "fd76df6f98692effb826619267f5de9a9c34f01012bd732e3f4d3536fdc53094"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_bruiser_0.png",
+      "sha256": "fe3b587680c6bbf411fcbc3e46cd9904b6a64dcc1d1ca814a18acf88803a9da8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_bruiser_45.png",
+      "sha256": "845d8bb597d952147f2688d2ab6201921eb507767d6bd1075beafe1143632436"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_bruiser_90.png",
+      "sha256": "9228172ed10d93253104f98c26059b8eab09b09ea5a2c2730e559d47e6a5b2dc"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_dock-worker_0.png",
+      "sha256": "98bcb0c08856e339fac5bb69e592316ba2ba9ab18ce53f7dab6ccb0195ce36ed"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_dock-worker_45.png",
+      "sha256": "c3c0de67a9ed9eb33e474086571414e1b30fd8ec0f0fd906c46c39539e2134be"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_dock-worker_90.png",
+      "sha256": "9d9bea60176656e24bbf8defd38d2b1cd0d269518842097dda8c5958b5fe1518"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_eccentric_0.png",
+      "sha256": "953665f49ba0a1ea997ac7deead30b15d1ed738e950566c93a27317fd7fd2589"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_eccentric_45.png",
+      "sha256": "83b03ed7960c47afa6028d0054495016948f0fbd634cc38d12da8f6454d48a0f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_eccentric_90.png",
+      "sha256": "aa582d9abbfda97bd2a3e36773d993116cf5686c8a61dc07f66f62f26fd050c2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_elder-woman_0.png",
+      "sha256": "f4a1f87d1aa70bb2459b398f15780800ae14493b7eb8f7568fd68e02d1deea81"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_elder-woman_45.png",
+      "sha256": "f66ed126ec9cf0c40bb29f2e943f77cd13b65b883095d50b6a491276f613cea7"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_elder-woman_90.png",
+      "sha256": "011551896dc229cb0d3d705d4a471fbb912673a47cf733baf1e476a300227cc8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_everyday-pedestrian_0.png",
+      "sha256": "1be7b17398f903020603340c00401f779e6317daf01bbbbc339f5ac03c1e6a67"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_everyday-pedestrian_45.png",
+      "sha256": "2170ddac9b2b4964c98bfaa3b13aa96a5615adaf4dbd13b086a7c0cfeaaaa575"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_everyday-pedestrian_90.png",
+      "sha256": "ef23e83c1cc18557af4ec7fde9a515f6b08e10a7db868fcf3c82b5c9152270cd"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_fishmonger_0.png",
+      "sha256": "9def07278d4fed7474ac7b8d3e2ba15b829c71d38bcbac81bc01bf5cd18b436b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_fishmonger_45.png",
+      "sha256": "9b435e398edc51798ddeca091460bc46a6d91eac2c38bc484669c06d88f071f2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_fishmonger_90.png",
+      "sha256": "9fd4e30fe8366c4fe3f59dbbffc9d64af53479ae659b7ef5e84cdb35f1ccf64a"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_local-fan_0.png",
+      "sha256": "bfc320e2ee495f2c5f6062ef210bd61e3e96bdecf36910faa846a445a2fc1156"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_local-fan_45.png",
+      "sha256": "34ecf5add696724f35a29b057c5284a31583f5a1a2e132d4e939c815863451c7"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_local-fan_90.png",
+      "sha256": "e3f89de9a06f00d95f45f65de1e30de48530b5694995dca69df0f20f14ec361c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_market-worker_0.png",
+      "sha256": "e6157e52b00fa26d2ab3ba89a727644ef61306b34c2d0af1fc31618befc780d4"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_market-worker_45.png",
+      "sha256": "ca6879897f861eab795b3ccda0fab382fc0dcbcd37fb749fb14247849b790ecb"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_market-worker_90.png",
+      "sha256": "37d1a58f632723c3975bd3cdca5153021b9449f5d45d1265f64b5bc3c7bd8851"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_mechanic_0.png",
+      "sha256": "5c0cd88a25481462bfd7972330d61795bd040f566b28c57dce7b261e9c3730bc"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_mechanic_45.png",
+      "sha256": "200c1f33b807a723e523bb23e0d9b8ae8af7f70823cfa1094b9d98958fc86092"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_mechanic_90.png",
+      "sha256": "b04d74ce1db5da96583b5fb0df525f7240ad2d04a3fb3b5e4555ff3342223193"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_office-worker_0.png",
+      "sha256": "90fbe749ccc8009bfb866ae38d2330e9f97a9af379f239da9e61b9b0d6e58996"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_office-worker_45.png",
+      "sha256": "fda3fc7365e16bd417ad6f8d21d1232d0bb7c6620a9f279c83a95eee6ae44810"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_office-worker_90.png",
+      "sha256": "ea22e918fb58bc0a9ad326e04dc9e84935ec0764484c31324c0f9ec4cadd845f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_older-resident_0.png",
+      "sha256": "1f859b1ed46a6ca641d98551ca094122c47c3ea481c439d2995cc27001460ff9"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_older-resident_45.png",
+      "sha256": "6f83ec28865c4d72a25738c73b93c18d5d599a9d6457e7b133e29f8779ffbb4f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_older-resident_90.png",
+      "sha256": "99d60c024c5a2969ecb94c5407ae624e5311676232b33ec8248f69507d585236"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_shopkeeper_0.png",
+      "sha256": "50feaf947327ecc603ade9f7bf7bc141300acefd0c7d6c3a83ff87c3fdb8d9e0"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_shopkeeper_45.png",
+      "sha256": "561aa19fae6efd253ae138e1ccbe7ff0938c47428d03f39c67dabaa371ebdb7f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_shopkeeper_90.png",
+      "sha256": "7e8cabee4e03534f5787c565362b6863aa9d421c7bddec98fef23f63c71ce212"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_student_0.png",
+      "sha256": "6859b2ff0d675a739f9238ab16f68e277c4bb6f96b170b928df060c9ca4908e5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_student_45.png",
+      "sha256": "19b8d427929db8154c0b62d12ac567e7aee53317a719f1b3de993d0a6eb5b607"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_student_90.png",
+      "sha256": "b5cb77dce3c3bb3a778a935ecdea13f6b30ab6c39769f5b79381ca5cb4037aab"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_waiter-veteran_0.png",
+      "sha256": "0114f2a6eee3314b517ab8338ebe975965bac91aa12e946ef793573a34fc6f6a"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_waiter-veteran_45.png",
+      "sha256": "2510d67d7da65da4eec7314727fc06a566d16f7ea32f3d407e816da57d67223f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_waiter-veteran_90.png",
+      "sha256": "89c9c72dbfbcaecb2f9709e2e5cb05bcd0db69e4593d54edb45b68e61e8ed414"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_younger-resident_0.png",
+      "sha256": "f15e89112cfeb727ad8c93042f7ee7eb418495bbe8b3e9b7cba6a496e91dbf70"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_younger-resident_45.png",
+      "sha256": "5102a23708b61e2a36e3be7dcc58afc1742383b664dc3467288f12b438b7291a"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_face_younger-resident_90.png",
+      "sha256": "bd8bb2caccb890b127bad30567e75ca3fc4026c6d60eb8d4d6e951e0b9b15254"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_group_0.png",
+      "sha256": "924629b1f6e9b8dd17120e3c3a1e2020289ab30048a1e4e6b4860be3eff50812"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_group_0_silhouette.png",
+      "sha256": "a37c159468afafa64841c1dcbc1131cd5772e9b06b660eeff7dcb9c126991d0f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_group_1.png",
+      "sha256": "a2d59043070b688de43ad2b19089bd2260ab629c854406ab22f45b42668a7359"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_group_1_silhouette.png",
+      "sha256": "b0ef3901ebdbeb244aa096de29f762bb6af34cc1f8c1ffc46b846902f1625f1d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_group_2.png",
+      "sha256": "ee1872666794aeb3eea0a668568ba348c8fd596d4238ab94193fadbb1aecaf5e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_after/after_group_2_silhouette.png",
+      "sha256": "a32ff13992dba33ad2ecb8abc98e6a01dee86d72ddeb6699a53538a32286dc1d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_bruiser.png",
+      "sha256": "5f47a45efe1d70bc2a6aac6fe8b3f9e00aac3b6bba8ed326ecaeb4194c7dabde"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_dock-worker.png",
+      "sha256": "97034c99feb5184ebc0827d00b52b679ca1e4aec947bc37c0852439abdd6afe0"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_eccentric.png",
+      "sha256": "4de9ef0b78f2dfce334ec81b5691367c8386c780ed0b754482725ae66cdfecef"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_elder-woman.png",
+      "sha256": "61d837467f6679e0ed7ac45bcc8625d880d3b076d8a6726055e5a37b12823b6b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_everyday-pedestrian.png",
+      "sha256": "0b5cdf81d8473c3cdff38b566f9265b60ce13bac261728bd2336cf8cddcc4538"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_fishmonger.png",
+      "sha256": "d8a41f97662de55c7c639c1e99327dfde57f4500980368436dbeaf5b4722fd40"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_local-fan.png",
+      "sha256": "eeadcad28d1c6caef79feb8f67df11d5472983b3f3caae14b8f714c3a01cc718"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_market-worker.png",
+      "sha256": "8851336307d485f340771a1dd4c0f19905d13caaa96d2e53faba87d9040b00f5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_mechanic.png",
+      "sha256": "e1065c68d674c7450fe1696aaf5b576121bddec089b08d187ebf25bb617a1918"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_office-worker.png",
+      "sha256": "122b6896a28acde6d48f1d83ce23bfee0be7116e274b23bbbb61c7d53aaec00b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_older-resident.png",
+      "sha256": "04c5e3639f7cfebc7978c82499a5420532e2d47c3cb51dcc59f3b23ccab3d7aa"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_shopkeeper.png",
+      "sha256": "072cfa49c6eebcaeff443bcfd31814a5eef13ff85a562d5a34c968ca0918e55c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_student.png",
+      "sha256": "b7659fc2fa3c71d3c10e9083ca41108f0e49ade67956a06e1ad418f852ccae5c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_waiter-veteran.png",
+      "sha256": "a10ed85bcc3b46e7853aa8966dcb4e0b6a92bfe99f373fbd340cac3a43401517"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_bare_younger-resident.png",
+      "sha256": "ef449e9aa2ca610229c9d99d4362f5c09d91915421bf5c68884343f30ebd6c10"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_bruiser_0.png",
+      "sha256": "be8fe1f3010bc0cb2a065848929cddcd1399fa3aaab59ae1ab5841596250b6d5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_bruiser_45.png",
+      "sha256": "b70474625f24fd04f364401539dbded406cf8675bd175c360bcbb20b747bd534"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_bruiser_90.png",
+      "sha256": "98a9390f6fd4378854056f358eda21536806b66b1948b453de9fe1be0e0e3c5b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_dock-worker_0.png",
+      "sha256": "27a69ba3538148a819d13613127a9e90e3e4e1a034a875006a3c1935b8fdb09e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_dock-worker_45.png",
+      "sha256": "3b7366a5e226646a30f95ca35fb695762520eec7388aaff1f4aedf4f5510024c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_dock-worker_90.png",
+      "sha256": "2bf3324df3740f3e4b31c3df966dc4dda41c29ffb32d59be9066e12ab1a0397e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_eccentric_0.png",
+      "sha256": "1db7f13e2013c2f3231dc680c5452e0cc5ff706c538c3c7f6830a0b49476aa05"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_eccentric_45.png",
+      "sha256": "78f53a584eb4ee16b52acba96b980eecba14325070d97aeff439401cc0025124"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_eccentric_90.png",
+      "sha256": "22a489e5c6affc564277ad590ed36ee9c261bb7c23e315e296f601f22126cb90"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_elder-woman_0.png",
+      "sha256": "4aade563fe570afbe6e521757a3c09214873d8335ecbceabe3dd606d1648c8f5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_elder-woman_45.png",
+      "sha256": "eecbadcd78056ce1d53f1318a806624bd113d0423e8e7ca050c304ab3b2d1916"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_elder-woman_90.png",
+      "sha256": "8a40beeebed550815ff498a601250a4cc25585c1cc1f872657de02c3637f73dd"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_everyday-pedestrian_0.png",
+      "sha256": "aacd7e08d78cdf131045eb663a5a3f70bb34d50c7058eebd074a389931f23074"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_everyday-pedestrian_45.png",
+      "sha256": "be917d067772e1d6f25b1d4d33ea1e088a5cc58186e848907fc1576668983945"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_everyday-pedestrian_90.png",
+      "sha256": "fdd3e4bb680c726d3ac7c38bc51df05f049c41d291dc69379af464cb20421ec1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_fishmonger_0.png",
+      "sha256": "02629f4948e243abb4bc82f56ae2029ec6a2d69bd85c3b537bc1d6904eedc2e5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_fishmonger_45.png",
+      "sha256": "4d2fddf6a3d09d33f78e3fdc24ba1980dcdfa53ca63fd0c596e3c7cdc9aad057"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_fishmonger_90.png",
+      "sha256": "6792e39241d7e23e3a172c09cce3429a1cee15244d37cee65a411a04eead0d48"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_local-fan_0.png",
+      "sha256": "769d4a1722147df7aa66178e91f72692718e8ca71184076b293b1419ab464511"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_local-fan_45.png",
+      "sha256": "979b37151abc295e948f72846539d868bc2e92570d3e7df6b31781ed31454337"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_local-fan_90.png",
+      "sha256": "5e94b8ffeeec5790a0143e549814a9b776678c860ce5c4502f690412b9909496"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_market-worker_0.png",
+      "sha256": "6b62e85b2de78158c8271ad69ac9906377b28bcf4408c797fcbb9e7337ac70f5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_market-worker_45.png",
+      "sha256": "4c3a4c83ae51673f02bc3f727d4d12a94163a26a583fade2571cf48c25be4a7f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_market-worker_90.png",
+      "sha256": "5e46db47cf17b294f96f2aaca3aa0c10ca77a54b4038bc5685d40bd8eafea0a7"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_mechanic_0.png",
+      "sha256": "cb70cb501d503b6fb09da336ac2c08af07ceeb6ce45cd208aeaacd09e1547323"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_mechanic_45.png",
+      "sha256": "e2fdca99303973ec09b871d15032225aed23f0a06d4cf8d8c62c77829fa8bdd8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_mechanic_90.png",
+      "sha256": "ae18a63d08c70ee7b75c5343a9f7748ebb5efc71bda50ff9deb11f0ce6733ecb"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_office-worker_0.png",
+      "sha256": "8d82023e764443dc35b4d1c8a1b440949384c580d2887f7ebb9d06689ecebded"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_office-worker_45.png",
+      "sha256": "427b83b91cb4106addcfd98fcb7abac955ad4febed0024d94ba27c98706cb09e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_office-worker_90.png",
+      "sha256": "851508f357a6ad7132a3d475057d6bdef1759034d9f4bc3ea1eb256e8778a6d4"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_older-resident_0.png",
+      "sha256": "aceafc169e58772d8de0778871e62095b83be2fd32e34200608ddaa1d771c567"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_older-resident_45.png",
+      "sha256": "97ee58730cc4a93486edbdcb78d050240d677c3387edbc5394c8e6bb18f3152b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_older-resident_90.png",
+      "sha256": "230ad155afbc85693124179334090a6c85e419519a946da5441c0b507e08afc4"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_shopkeeper_0.png",
+      "sha256": "040eab36de0cc5dd3d808596299ac75ded3e60a9dc715e671987143ee2bf05dc"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_shopkeeper_45.png",
+      "sha256": "c17421901c94a28c5962f1f285122c119759d7423935961ec41c5f09fb447c25"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_shopkeeper_90.png",
+      "sha256": "5dbf44f10b81101ed33c100b39b68184c819f0c16373e1c8313989585e565392"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_student_0.png",
+      "sha256": "e9139598ac037bcc0a505a818b7ba5c63d1cdf9f2d26787cbcebb985fb50acad"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_student_45.png",
+      "sha256": "80c56ded33d880d1fea92aa390df36cd5347306b3702e7d749e434630dd6a488"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_student_90.png",
+      "sha256": "8814b45fdf2155848c0aa918ebc106da1080ee9588f735e4950cf1cbc60ce905"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_waiter-veteran_0.png",
+      "sha256": "59d5f4ac01206824156c938fe9d2ed4467aca6ea15e2d3bcdf2da5c705ead4fb"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_waiter-veteran_45.png",
+      "sha256": "80e5c1a840f34f41bb9661a0e96dd044e5d5e891aeed29ac104e3777d296e80a"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_waiter-veteran_90.png",
+      "sha256": "ece432d70cf71039e76368b1265022ac96ae59608cd899babcfe32aeca67ebd3"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_younger-resident_0.png",
+      "sha256": "ce54b777ffb2db65ddd9539da124cd59d60020b45f62f4bb961e2a8c95649e99"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_younger-resident_45.png",
+      "sha256": "a7e28bd0bd69e894e8d64f29dc00dafc54c5271fb4d240f9e72c3b1878ad76a8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_face_younger-resident_90.png",
+      "sha256": "cbf5c854f40c2d8be6e1f96dc05e102e66ebcd55e41a1e330dfcd5d087c62786"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_group_0.png",
+      "sha256": "ac2f90c173dcaf403c9265c20f04afe08ac9ee8e346ca52ca2cc3f786d17304b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_group_0_silhouette.png",
+      "sha256": "7485ef9de4a98af6d4434452aa5ca403a5c1e7795594bc5d59a27e39d5096cd2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_group_1.png",
+      "sha256": "0a7eb90aa26d9646a98113c6c2ce1db464c9fbd9a2faa6dbbc2fdc63d3d0d9b3"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_group_1_silhouette.png",
+      "sha256": "9b9d4c38642fa9927e3e8fd19b8315c0a3dc7d3c33ca2a282d06b9e087386f39"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_group_2.png",
+      "sha256": "4a1179cc5f35bceba9496b4819205d4ca2ab65c0819a5fbbe4508a5b6712936d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/comparison_before/before_group_2_silhouette.png",
+      "sha256": "7a1851b3159989fef7b6488d807260d8bd7a14c6362388df30a5c7cfb2f7bacd"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/arco_conversation_everyday-pedestrian.png",
+      "sha256": "cd95deefcf649f27ab749c8286afb98b781c34c7f78e5e1eb7e19468c412afc9"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/arco_conversation_fishmonger.png",
+      "sha256": "46edbafd0fc520a3772c674100a0c3e4de9683ce58905699d5289fdc823da301"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/arco_conversation_mechanic.png",
+      "sha256": "a77c099b472e91557e35316f59a9f6d25016307dfe7f21df3095e2fdad1fe17d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/arco_conversation_shopkeeper.png",
+      "sha256": "86a7acaa4bab8b2cd26132251e57d067cd41cb448266545f75c3c0a41db74093"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/arco_conversation_waiter-veteran.png",
+      "sha256": "77f84faec15ce52518370fa717c65cedb1cd70191514b38b2d298ab15396e1f1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/arco_player_55fov.png",
+      "sha256": "a0fd5ad6b92664dec4ede3ed8e2e031bec622c51f52c4abfe0a53448c03bdfb8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/CALIBRATION_IDENTITY.json",
+      "sha256": "9fe41aa6feb49659910a217d3e7014012c411125e14abe4067c0950714a09fc3"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/ENV01CharacterReview.unity.txt.gz",
+      "sha256": "b895131f0040dce1665b6ec198fbbb99dde0913dbdac23735e70b7cfb1c6b716"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/ENV_ATTENTION.json",
+      "sha256": "cb18b754a4ffe88b429a9667098b9af742e715abcabd9cf856f95e5d6952618e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/ENV_CAPTURES.json",
+      "sha256": "1c9d5bf7e53e0dd311af1cdad25c91c05eaad6aa7ec9341e6b7cbebf98cfd76f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/ENV_SOURCE_MANIFEST.json",
+      "sha256": "bbbbb12c8f670e759b7d05214f08e6bf977c6230df19ba310467014eda5181af"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/plaza_conversation_dock-worker.png",
+      "sha256": "e57f77cae85cf940029ad724a78d5686f7e7fcff49f64cb38bb88dc79e67195f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/plaza_conversation_market-worker.png",
+      "sha256": "5767e915007dc3129c9c2e08f41ccf8c156fdfc925ee273b9d7f4292fdf019f7"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/plaza_conversation_office-worker.png",
+      "sha256": "bdc6adc9a5904d8cf24bdedb85f1e419f5fdcd5527399de2bbd11c9b3d472fa1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/plaza_conversation_older-resident.png",
+      "sha256": "9efad2ea55f830e0dfa1539007ed4f77518b52f8da3f1d6d837eebd69a9423a6"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/plaza_conversation_younger-resident.png",
+      "sha256": "41ba2b085a0ec7e08f40b10072bc8cafeb71a63143b19d3223a7a35f24b7ec65"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/plaza_player_55fov.png",
+      "sha256": "2ab68cfe1c461cbafe86dca576eb7628a25698192b7020af47f8a00868611a13"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/workshop_conversation_bruiser.png",
+      "sha256": "90befc06c1ee6a81d7d9fa0535bed68a79c16fa45a2d2d542e240571175f8909"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/workshop_conversation_eccentric.png",
+      "sha256": "74138113e639a8168e9b4ccdf5cf847ecc016057ae59eb67e65601a555bad771"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/workshop_conversation_elder-woman.png",
+      "sha256": "663a9d71ac1fc7387c47e0022eb4d1f032a582a62cdb88367ee5028e1b91a425"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/workshop_conversation_local-fan.png",
+      "sha256": "fea646ebd6d564b0a4844553197525c152cd3009367e331f43868468214965ac"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/workshop_conversation_student.png",
+      "sha256": "0249cf191bed65721bb452962744418e5bcac7cae6c60d5f0284554a45a4b73b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/workshop_player_55fov.png",
+      "sha256": "b4661f2e8954fccb3ca8849a9564832b2636ada589d50f2d2403deebf190e052"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Idle_front_overview.jpg",
+      "sha256": "5b7ed53ac35b6729d854d4683882192870d948fd607c421d9993505fc667a798"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Idle_rear_overview.jpg",
+      "sha256": "41adc63308ab3a8eae7ecc23d301b6a2f4cd509421ee0603807b331fed348cdb"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Idle_side_overview.jpg",
+      "sha256": "25315dc58476bd30f6bba6f6ee38b3b1dbefbe1f4e98bb020d7c49df81df18d0"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Talking_front_overview.jpg",
+      "sha256": "af8ab4cff663a920038e7662e55d6f048627092175bacb18218d6412477c3558"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Talking_rear_overview.jpg",
+      "sha256": "dc55722e1452e4472c4e2a8a9ad2e760865dc29ef048e9d6cfcd411930e2994f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Talking_side_overview.jpg",
+      "sha256": "4b3b803b6bdbd11becf8a7026cceab3f2ec5fc3db9189601b72e4e1432bd6523"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Walk_front_overview.jpg",
+      "sha256": "e6c52f36eed448c007baf9b06afbc733b4553c6ec4f7f5c7fa4214b6e6aa9a52"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Walk_rear_overview.jpg",
+      "sha256": "77517043f5ca949c96cd1e248480d6c8b41fadded3338ec3b503a03ecd8e735b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/fit_Walk_side_overview.jpg",
+      "sha256": "dfa40187e429c12b6cd661c58b5c64941faba81274b4e6741a7ac727a23c8eb2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/GEOMETRY_OBSERVATIONS.json",
+      "sha256": "6a8e9354e24b42c95b05476ae309393cf671b1850943ae2b840a68371ef64f68"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_000.png",
+      "sha256": "07b9017f0f3d659da82b2b7a878d7f8677197f413ec3742075276dfb1e870f6a"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_001.png",
+      "sha256": "9b31ffaf15b27d0a397d6af3097cd067da608a1df733908a4d99f47cb5a8dfab"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_002.png",
+      "sha256": "7a64989d9f4cd9365dd056928e7e9ccfa986a556a5daabe678d5595371700b46"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_003.png",
+      "sha256": "f4bbe27b0bb11a0a6c18a25b2d85a8b45812808ebab0447c8c33c83487ada51b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_004.png",
+      "sha256": "514b4b4b56a1c33a222d93eaafda54c3c9ab76ceb8a278ec4b0f16e27a75bd2e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_005.png",
+      "sha256": "bc37f0f8a52133018ae8e24e1dda19be291ece0b46d720c35cbc992fc3bb5922"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_006.png",
+      "sha256": "ff844b6463e11d5dab9b589101bae81e612392df322087be79314059fd349e15"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_007.png",
+      "sha256": "e5abae987d615a9359cd2e7a4fd1692de3a388568013701be2503f415092751d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_008.png",
+      "sha256": "0c8debfd453257e18eb3e28056baed2ef50331a5a55dcc24f99676d614a6e533"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_009.png",
+      "sha256": "d848e9ff59089ddb9d4e94aef23a0764064002955f59b3522fe77a9cb8b90389"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_010.png",
+      "sha256": "fb1dd3f526589e7c406f0a0520d5affe25657ed8168cbec30b929b82e23c4593"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_011.png",
+      "sha256": "f8d09de40ae3be4a604a24ab46b464a9e018c97333d7458b99c28c21d0563f39"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_012.png",
+      "sha256": "094b677e5f84470340b13a09aac7d5b7db9de4f23c76f3833a98ca55386b88f4"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_013.png",
+      "sha256": "3428f907962ebd82bfb8ceded8393b48eede62b56fcce4c03412f81234cadc93"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_014.png",
+      "sha256": "0011d24dad2fe79802f77a63fd1346fb8db820d385c62df97e481a79a703476d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_015.png",
+      "sha256": "c044fc84bd034ea68962e8ce901f532607ad9b3e5ad8be0f370018f4440603b6"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_016.png",
+      "sha256": "1b6ebe274e4c51531dd23cc13182cecbfb34e1dd5e7c11300e06ea6bacdc5393"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_017.png",
+      "sha256": "91e28a86c431a291661482d817376a88cbfa8bbfee295b8c9a62085d2fd758d8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_018.png",
+      "sha256": "00036d8830398a2eb5891ffe73e915bed96d3f5eb1f3b6f4e0107df77ab34e0d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_019.png",
+      "sha256": "6b0d0704aaf5015928bb5ae7059d7019bd3a2bf645050071f3cd369108fa35a6"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_020.png",
+      "sha256": "3501249cc55959ef85f4b91aa0990b4a9813f458d2a1fe6efee5fc1e616aaaee"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_021.png",
+      "sha256": "4b2e9079fca85f521a6d8e4fd263763d1107728cfbec21eedacc9877e8e9c434"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_022.png",
+      "sha256": "e866df7a8ca6ad0c10a8cfbb778b2963c0b77e77049065881916f776703f90cd"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_023.png",
+      "sha256": "aac5e1b362beee24b7fda8f784af13d771ca270a2b0aba4f4596f900b255654e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_024.png",
+      "sha256": "486a5594826cefe6f08ace4339295a2c91b991554d70106512ac2b71962dbf15"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_025.png",
+      "sha256": "62a58389201d90ddfd1e74807e18e3cbda46981eca947a177dcd763e62d239cc"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_026.png",
+      "sha256": "1912afd925b4244a7359e86c568ab56a7ca7900e6c0344d2f8842ca018bdd54d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_027.png",
+      "sha256": "af187de0207c8fb1dfeb0500f02a16d0bd0021ef68cb8398aef25aa3558982c1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_028.png",
+      "sha256": "18c341aaad42b80c13a6736901e54e1c275fcde478677fd75696a26c84f9e02d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_029.png",
+      "sha256": "5f3b3af0ff16daa0b8486c042cc339982a14fb36f174aa0dac2acfcb93b8b379"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_030.png",
+      "sha256": "4dfe8d1749ce21c5d13e782a9254df6e0c3490acd7db31c40cf11c96e38e7f51"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_031.png",
+      "sha256": "b8210ee22c35d97d72f49cc8948e3d66b6c881287c75c701ec35acdc75462229"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_032.png",
+      "sha256": "b495f7387c329dd6a1ebd440359a80e4c4b0c9da70dd63ca14a97dcae94e8b5e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_033.png",
+      "sha256": "55b2e75f7798b775706991738d15dac3fc5dc682d205d9bae251325f0a3740dc"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_034.png",
+      "sha256": "315826f5ae5e40560c80a3945cfe6ed8cecf63bfb101c6a240c6dff3d96150e7"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_035.png",
+      "sha256": "8b5136cf48bb9f562bb811ca8de4f65c9172ca72a9d61b7cec507f83591544a3"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_036.png",
+      "sha256": "e1f9dcf369b97af977979138153a3c9668ddc9a6ca888a430a74d71c1c4a46bf"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_037.png",
+      "sha256": "ff20f8f1dfde5f5947e8bc0fb26c9e406636077fa27e1f2e7cd45fd4f724b596"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_038.png",
+      "sha256": "181542b5dfe4a7fbdd8969bf1812425889e74cac081722abacd8bc5f06f756e3"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_039.png",
+      "sha256": "89124356ed3d7caa1a8ac7c8702dd77d12ea35d0a189ca54bd2bfc3d03a164e5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_040.png",
+      "sha256": "af0ad4e50d7a425e7c46c73d00efed0756e8c3e6a5d312061ce548205178e71f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_041.png",
+      "sha256": "95af1ec559e726c7477aac51901ac4155f703d57e99aea5f9927ec3cfedc181f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_042.png",
+      "sha256": "5aa8de22cd1d0e4a11f782284a9a1d4cfb79a6c5ae864e23df47fa3d599c7c52"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_043.png",
+      "sha256": "07ee73ed05419eeb7d3dd70498b1183158d07e3491f6bcaf40c89a2391e1b310"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_044.png",
+      "sha256": "ad81c11618e2dec4354f674de5e28d6b9ff7ab0a493a7805a322e73a5710cb6d"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_045.png",
+      "sha256": "4deebdc7079538fcd1858faa7a5c0b42cc3e057c32f20c19445908f75181eacd"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_046.png",
+      "sha256": "e7fd10fe6fd6f36a8840cf3b207e0c3936a724e3994895701202925af5cd61fc"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_047.png",
+      "sha256": "a0a102e520de10548ff4c88a26e688ac4996aab080285e4346046ffb0da0031b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_048.png",
+      "sha256": "ff4c22fd379f0f358b3a794651ec61b3cee8c5f45bd4770f2e0b79bb7a2cde77"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_049.png",
+      "sha256": "38ddc074d656b897b75b40acff9323df991d495651acf206a23a28988f575aa2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_050.png",
+      "sha256": "71acdb0c0f58831f67dfe155a9408e37d33e6bccacf5d5a13d4bc5f786b37d25"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_051.png",
+      "sha256": "ae028c38e8d198972d714d3bcb23b94418c8a35c3335b25a01706e2bc024f4c5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_052.png",
+      "sha256": "8b2da734d2c6d301b40caf44a636384a613206fbdf1abbe40c1e9e46b0fc933c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_053.png",
+      "sha256": "333f546a4607a76f9e0d0bbd53e104f9903ee0acaccf282592cce3ec54b77627"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_054.png",
+      "sha256": "93eb34f5cfd2863885c1aad33a80e6365f1760332012da23b2ba86d2e44ff677"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_055.png",
+      "sha256": "5687be741ed98b4674e6028a0515e4f37a1203af79a9e29e7e7ad646a4aa447a"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_056.png",
+      "sha256": "67e7d8aa5349848f26116ef3bb4c6b05fd9561d49734505795df328e7d83c87c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_057.png",
+      "sha256": "f4e3dd529f3244245339a2f65a0a4d92f93b8efdbee62942733fd974b17b605c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_058.png",
+      "sha256": "982526f98a4dfb636ae1bbc9c33591581c8e892179f59516026758554d7131ba"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_059.png",
+      "sha256": "da91dfc7c74891fe539407e432417785eea003a3249541564307c505f1aa21ae"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_060.png",
+      "sha256": "82606245a17abe6f56c32f3288411deb5d774d7572a16df45fa64fd68695f8e9"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_061.png",
+      "sha256": "74984e3e596be553149edd18206bb66a10be561c295491bba841e7e689161cb5"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_062.png",
+      "sha256": "e860d273e2c7ee983742902aa6d646dc3d13e1bef193da43d29a0a3b682880a2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_063.png",
+      "sha256": "361fcfbeadf509c75a4cd8008a2404556844faaed26c310a97addb0f6e54511c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_064.png",
+      "sha256": "41f15202b3aca21153bd86663ca49d4e644ce523c884400e6589618e83b75a57"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_065.png",
+      "sha256": "15bbb9010bdcc814b5c97f744073a5bf3f9bec6a8fb95cd064e8f1310ae3d610"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_066.png",
+      "sha256": "449c0428601c707094bf2941d0afe8205dbb6157da676a187b3841f9cec82a9f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_067.png",
+      "sha256": "8a7931237467e336f55db3dafaba1cff882b4e2255e541c27dae52ea2a6323be"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_068.png",
+      "sha256": "d5801b0a54551a44ca3301ec907c82e0f23a91fa8c26edaaed1e2a3d09567b49"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_069.png",
+      "sha256": "756f171a10706b4fb11bbc60b78ede0dae4d75a19629f800378ac41562daa349"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_070.png",
+      "sha256": "dfa0172aeef60c02add2e89e04715bc34f0fdc899486499145aba383134dcd3b"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_071.png",
+      "sha256": "95a63d25467a7439404b5a38f9e91d015689552027a58750565f8575ea3d9595"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_072.png",
+      "sha256": "ff5e41146c97404c2e2c6c1407fd298c26d33d029b1fb2aba06bad2c1a7bac89"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_073.png",
+      "sha256": "0b39e954273c596079ebf393d4acec6dc813382aed6812cb429c34699670f034"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_074.png",
+      "sha256": "0f829caae26568475de67c3b8960408af2574bc2ebd92f5cae6b2a4180435b63"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_075.png",
+      "sha256": "bbfd6d146f8073fc6538b7682dc396f888ad3e7dd7def996ca728f1cb195a9be"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_076.png",
+      "sha256": "b9edf513de1720474db43b898ae72172202f0931429623c09162fd5df4438249"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_077.png",
+      "sha256": "21b9c3361059a84a7fa59b6ed814c8bf36b1baec96330e19c3a720bf785824ba"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_078.png",
+      "sha256": "c0d38388f67fc36c5b0791528b73d995d65a6921d78b32448c6085fb9e7ed680"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_079.png",
+      "sha256": "ac0677a0b4cdfac78d3d0f8418fc983d117eaa77f76df9c13475620cc8ab96d9"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_080.png",
+      "sha256": "9eed8ea88f9de008a9364e00efa9a33f37a963159ef8c32513469ac76e871e7f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_081.png",
+      "sha256": "36473f8bd3426251624f3882bd4c4358c4cef27b4a078130434f672ed46defc1"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_082.png",
+      "sha256": "221a8c2f081240e5fb8ce02fd7bab67157118fc5b0aceaf4a88a48d19648456e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_083.png",
+      "sha256": "9d1b44f4468e81390787a38f134e2bcc9db9b6d151364f9f602cfe5b3b49f7c3"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_084.png",
+      "sha256": "3822ba88ba8af8ad982339769adea8e06824cc8baab28f52b895af71218316d8"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_085.png",
+      "sha256": "a71809466e319e585c41786ee60b7b056c3391e06362ffa1e462fc5362c16871"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_086.png",
+      "sha256": "078bc59a5fb0730e949e91db23ef5335d13368118c7002f26be1f35d1f303137"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_087.png",
+      "sha256": "88ad969a7c3c4b20cee9c94a49a3d601a01c334379435871d0312a46cd4f7c47"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_088.png",
+      "sha256": "4b8bbfe5e2ffe54ec18ac1cdbcade8f60f4b1a1923a2ccd5311060a7c7ce2c23"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_089.png",
+      "sha256": "44f72f92e179705dfd69b9889e8b4b2c073c9bfce125742cf6b80d780ec8707c"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_090.png",
+      "sha256": "91c43abe8d35ebe16b80469f9663e8bd1bb58648a20348847edc274492209fb2"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_091.png",
+      "sha256": "9c214b4dd7c2aaeb819426a35a60ad9a9cc81eb8479a8c13d94fbf1bde1b39a0"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_092.png",
+      "sha256": "bf567b8a54d78c761da871458e7c4a1ed5d534ba36585bd3d181443beed63a57"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_093.png",
+      "sha256": "fcc4095070f87848046456ad2ab9fbf03bb14ef0b48deb4e4fedfce9b00abe6f"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/frames/frame_094.png",
+      "sha256": "b6e505b502020d9b1435358c7a414d13d81075f94c81d2c981aedfcf324f0f3e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/LIVING_AUDIT.json",
+      "sha256": "6b8b590f299f2543e8de66398b2c64c300ed54324a61a09e69c3f6d90458927e"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/LIVING_LIVE.json",
+      "sha256": "45f4607543f2e4b3e6c9bd77314bc661368121c67cdb4f6e17e3a79c9afa8a75"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/living/waiter_idle.gif",
+      "sha256": "16aa93d644717dd47702a2f8db55159e1bea2fc5705aa1582ca0aab5bfd12f30"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/NEXT_COVERED_RECIPE.json",
+      "sha256": "5a09f096da5220c74bce8830ef6bc55e7ab3c316e2d4710033513f538ad2a526"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/quince_rostros.jpg",
+      "sha256": "098966529c6cec188ed3c75ea3f6e7ee47baa09901717246f5849e6ea4559cdd"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/SAFETY.json",
+      "sha256": "61337a85b4c67771c21dc45fbe046d861bb82c3525fc564e89e0e50d2778df3f"
+    }
+  ]
+}

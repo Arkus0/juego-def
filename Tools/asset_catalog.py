@@ -1,7 +1,8 @@
 """B0-focused inventory and intake for the admitted Quaternius vault corpus.
 
-Only metadata is committed. Source bytes stay in C:/Juego2-Assets or in ignored
-Unity/Assets/ThirdParty/Quaternius copies. Python standard library only.
+Quaternius source bytes stay in the read-only vault or ignored Unity copies.
+The bounded CHAR anatomical-head admission also retains its CC0 subset in
+Art/Characters/HumanSources. Python standard library only.
 """
 
 from __future__ import annotations
@@ -285,6 +286,36 @@ def entry(pack: str, name: str, source: str, import_path: str, sha: str, *, guid
     return item
 
 
+def admitted_human_sources() -> tuple[dict | None, list[dict]]:
+    """Consume CHAR's hash-bound CC0 source subset; never modify the vault."""
+    path = REPO / "Art/Characters/HumanSources/admission.json"
+    if not path.exists():
+        return None, []
+    admission = json.loads(path.read_text(encoding="utf-8"))
+    if admission.get("license") != "CC0-1.0":
+        raise ValueError("Unadmitted human-source license")
+    license_path = "Art/Characters/HumanSources/LICENSE.ASSETS.md"
+    info = {"provider": "MakeHuman Community", "version": admission["mpfbCommit"],
+            "licenseKind": "CC0-1.0", "license": license_path, "lanes": ["CHAR"],
+            "sourceRoot": "repository", "admissionManifest": path.relative_to(REPO).as_posix(),
+            "admissionSha256": digest(path), "systemPackSha256": admission["systemPackSha256"]}
+    items = []
+    for receipt in admission["admitted"]:
+        source = REPO / receipt["path"]
+        if not source.is_file() or digest(source) != receipt["sha256"]:
+            raise ValueError("Changed admitted human source: " + receipt["path"])
+        if source.suffix not in (".obj", ".png", ".mhclo", ".mhmat", ".gz"):
+            continue
+        relative = source.relative_to(REPO / "Art/Characters/HumanSources").as_posix()
+        items.append({"id": "makehuman:" + relative, "name": source.stem, "pack": "makehuman",
+            "type": "character", "lanes": ["CHAR"], "tags": ["human_anatomy", "head_source"],
+            "b0Roles": ["civilian_base"], "reuse": "ADAPTABLE", "admission": "CHAR-01 bounded head",
+            "sourceRoot": "repository", "sourcePath": receipt["path"], "sourceSha256": receipt["sha256"],
+            "licensePath": license_path, "importPath": None, "importNotes": ["External MPFB authoring; consume the retained head masters, not a new Unity rig."],
+            "incompatibilities": ["Full-body/other-rig adoption is outside CHAR-01."], "derivedIds": []})
+    return info, items
+
+
 def build(vault: Path) -> dict:
     for pack, info in PACKS.items():
         license_path = vault / info["license"]
@@ -345,6 +376,10 @@ def build(vault: Path) -> dict:
             item["clipName"] = clip
             item["importNotes"] = ["Humanoid retarget, axis conversion and loop settings require ANIM lane validation."]
             items.append(item)
+    human_info, human_items = admitted_human_sources()
+    if human_info:
+        source_packs["makehuman"] = human_info
+        items.extend(human_items)
     ids = [item["id"] for item in items]
     if len(ids) != len(set(ids)):
         duplicates = [k for k, n in Counter(ids).items() if n > 1]
@@ -501,7 +536,8 @@ def validate(vault: Path, catalog: dict) -> list[str]:
         if item["id"] in ids:
             problems.append(f"duplicate id: {item['id']}")
         ids.add(item["id"])
-        source = vault / item["sourcePath"]
+        source_root = REPO if item.get("sourceRoot") == "repository" else vault
+        source = source_root / item["sourcePath"]
         if not source.is_file():
             problems.append(f"missing source: {item['id']}")
         elif item["pack"] != "medieval":
@@ -510,7 +546,7 @@ def validate(vault: Path, catalog: dict) -> list[str]:
                 source_hashes[key] = digest(source)
             if source_hashes[key] != item["sourceSha256"]:
                 problems.append(f"source changed: {item['id']}")
-        if not (vault / item["licensePath"]).is_file():
+        if not (source_root / item["licensePath"]).is_file():
             problems.append(f"missing license: {item['id']}")
         if item["pack"] == "medieval" and not item.get("unityGuid"):
             problems.append(f"missing native GUID: {item['id']}")

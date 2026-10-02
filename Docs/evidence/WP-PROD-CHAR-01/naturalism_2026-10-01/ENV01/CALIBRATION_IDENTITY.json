@@ -1,0 +1,3648 @@
+{
+  "snapshot": "C:\\Juego Def Auditorias\\CHAR_NATURALISM_2026-10-01\\ENV01Review",
+  "source": "effective ENV worktree bytes at copy time; unmerged calibration",
+  "sceneFixture": {
+    "path": "Docs/evidence/WP-PROD-CHAR-01/naturalism_2026-10-01/ENV01/ENV01CharacterReview.unity.txt.gz",
+    "sha256": "b895131f0040dce1665b6ec198fbbb99dde0913dbdac23735e70b7cfb1c6b716",
+    "compression": "gzip",
+    "decompressedSha256": "de47e0e1ca3f1a3aebd6e1b7e26b501e8e5b6c2863324335cdc2510c8a40a4c9",
+    "decompressedBytes": 120119288
+  },
+  "unchangedSceneAndRenderingInputs": [
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_DefaultVolumeProfile.asset",
+      "sha256": "a1376f937da791876ae5cbf5ca89a2e9f5efce06b2ac81cc3ac15c9cbbcb4676"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_DefaultVolumeProfile.asset.meta",
+      "sha256": "62dec7b49e49a00c271e1e12e2830481aa347e3aa933bd9783ef1b144d7125ba"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_Renderer.asset",
+      "sha256": "9b08bde9ec00988d0d0dd8e118f9d77ea46171ac7289a632258015d765059c0d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_Renderer.asset.meta",
+      "sha256": "fe2ee5a0f4b0881ff8d94e026ca4c76810cd7de5155f3a01a25ba2001e133e2e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_URP.asset",
+      "sha256": "1657e8b19d9d32913c5ce6b8d7604a12cb1085cf705213d3be675bdcf3fe6850"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_URP.asset.meta",
+      "sha256": "c9bf3404a55e54c51f9a9af23578c9c694fd0aabcfccd3e3a03f93d4a20678ac"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_URPGlobalSettings.asset",
+      "sha256": "4e6a1b41ec24333958a17fbfe4718d5023580d5d74e1b3634454d9f8313359c3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Rendering/JD_URPGlobalSettings.asset.meta",
+      "sha256": "fbb4ab17557bd16bb99cb4f4b3f076c06c81a82f8931f16bdba67c188660652f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity",
+      "sha256": "999a1e09920f98b3e19e7578b418072dbc40e426f4e7ea778961acde9734704d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity.meta",
+      "sha256": "5950a8a6a54e0a555306df07a68b069e289718796595c9b0373878b383011d66"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity",
+      "sha256": "41e2cefdc4c3d0bbce7d95e7cd269b5c0d81e9f38697decda7d3567d78aa54b8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity.meta",
+      "sha256": "fe6fc03ea5bf123f37550419babf822092a63538dd321fba9acc6dce7a02c9a7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_REFERENCE.unity",
+      "sha256": "74a08c588590d2da7934410542024027f2d400e8ee6ac17ef2888193b16d83a5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_REFERENCE.unity.meta",
+      "sha256": "4b71652e1ed13e2364edec7256943ecc3682303ee28f627ba3e57255c9a6af6e"
+    },
+    {
+      "path": "Unity/JuegoDef/ProjectSettings/GraphicsSettings.asset",
+      "sha256": "485cc119974770842d67e10c47e885a398525c62389f329ab0e3b2704af64572"
+    },
+    {
+      "path": "Unity/JuegoDef/ProjectSettings/QualitySettings.asset",
+      "sha256": "d571174bad21787ea4c564536d379e8334c0e410455561b6595b885424c58eb4"
+    }
+  ],
+  "characterOverlay": [
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/CivilianFitPreview.controller",
+      "sha256": "0bdfd3ddd09571d8b49f62feb61870c76457bee92e2f35ffc337f628f29297bd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/CivilianFitPreview.controller.meta",
+      "sha256": "ce115a451b4f2ee3067a99293a33848d768b01654c56d1ce3c16fa768721b529"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/FitGround.mat",
+      "sha256": "141ce3dc8bf72d3bc7fcad77e7077f4dcede7b75fd380d63c1b4982e40e92c57"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/FitGround.mat.meta",
+      "sha256": "da8d9baf74c632ffb24e4d2ffade4946ac495ef078300827a1665ad4039d28f7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/NpcPresentation.cs",
+      "sha256": "22efdc0ef508746e3696967b133abcc20210889df0598c86b6efaf0c74f43d57"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/NpcPresentation.cs.meta",
+      "sha256": "58bfd219b48537b88e4cae3f0da27f084b369c95ac4c9e3a14fdd7bf2e86b16a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkin.shader",
+      "sha256": "2048d5c347485192d50c5695e0accfbeb6136a096523adac31f34500548d8ccb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkin.shader.meta",
+      "sha256": "62c79e398920e9e26ca2a632878f64866600c1ad6317800dedfeeb8c56288d8e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkinInput.hlsl",
+      "sha256": "9c677ca815c92693624dfb2a7b3352a1ba18f6512281544d8b1d5baf0cb31717"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkinInput.hlsl.meta",
+      "sha256": "1866dac869cdef2685e21cb1efe31748c78544c2ceab171637f7f026a86002c0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/UNITY_LICENSE.md",
+      "sha256": "4be520a425e06c8de56fa8aee1ce957cfe610406456278172a2d18b7c388c2cf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/UNITY_LICENSE.md.meta",
+      "sha256": "d2f167e77278b2f72f086c86b6942c0b495af1e0159190c1837eebb59837f458"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders.meta",
+      "sha256": "556e50fcaf1051123230f41791f915d4abae2ea684d4c16b965636d8f78be19a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble.png",
+      "sha256": "74dd125bdf720564e8c9ca2f7cdc591e14906bf4aac28ad65dd8f168de449890"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble.png.meta",
+      "sha256": "833a78212db9d5ea7b3415a0811ded3398c726b8de4a6f9a4c8cc169bd827ccc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble_N.png",
+      "sha256": "c83404f085e638cb7a6b2d63ac2361e9268bd848092dc821407799eb9bd0bc75"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble_N.png.meta",
+      "sha256": "2d6209cd37a985f9e4b27a8988c448d4db9d7ef451c423f1acc4351aa9fcc57c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Plaster.png",
+      "sha256": "edb301cae07a6fbb9847e2fed8de045886d6d1382ef88a1a967a2696f7a01d6a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Plaster.png.meta",
+      "sha256": "54dc03755fd020cc94cea4749c3011bb5e5a5c0a72a4edceea7a3d3362d692a4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage.meta",
+      "sha256": "954d542dd06feccea8d16bfd95793cde3961e0d3902eb3ba253af83a02c93482"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas.png",
+      "sha256": "e706f97db4e44d9e0b2f219952192f3f3b7db7eb98def06c7e40d24abf719fa9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas.png.meta",
+      "sha256": "9a7a666fc57d45a4a353dee8afce9fe2b13d4357e07207fa70af478f74406089"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas_N.png",
+      "sha256": "a70f679c5adb33022b32247db9b479fc53ce3661fca369dc09304570fcc5ee44"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas_N.png.meta",
+      "sha256": "496825d36eaf415a963ebce6603cb8d213113b419ddb16f55970650250c77336"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth.png",
+      "sha256": "db68f6e4b33a05f934f25fba9b240563695ef48875b61573289e09f90789d687"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth.png.meta",
+      "sha256": "18859eaa15976dba5b12c3b085f91b8f43248f40a1733252167826045d7e1e8d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth_N.png",
+      "sha256": "8bb205e636c5fa294b8288ec02e6fc8fd4c99967b02b1f280c1e42484819b740"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth_N.png.meta",
+      "sha256": "5f8beb9b21e94ae8c2437198f1b73fce79aa838ef2c89cb862b788f52b1ecc16"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim.png",
+      "sha256": "ba81355791c46aac5bc92beedc05c1ae4e63779eeca7a946cda57590e3261495"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim.png.meta",
+      "sha256": "a3388808cd77fcae60c323371ddb26df501cd8c04318db0addbf176d7eb2adb4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim_N.png",
+      "sha256": "0a4e784d5a1cb2c9f7f1d4f993c4eef32ca65afe3ff5f7a5d63ed79eb883718a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim_N.png.meta",
+      "sha256": "f5296a37767bf8dfb3fb5460ceda176facd166c99ecfa6eaebdbaa5b836f63b0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Hair.png",
+      "sha256": "5f9d32dd65f548fadeb1acf29862174c2c7f965dcec8349eea6ef8f4c8a82c25"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Hair.png.meta",
+      "sha256": "f698a7e76c786f21c2a4c4e52ffbf4c49b2e7d9e0fbba17e4275d17d24363caa"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Hair_N.png",
+      "sha256": "2c837d130222d13110100b5897c84d9ab6b241c02a82fe8970eeb3f442460bde"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Hair_N.png.meta",
+      "sha256": "38f1d9fd4d7a1654a308733f4367345f317c75b78ff3d90ad8e73571ef732734"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit.png",
+      "sha256": "b8ed7375602fa24cd1de39a760f95fd8a1b45a2a10101ee88d884db7a4879c15"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit.png.meta",
+      "sha256": "826bf805ab115d0658afe9b5487e289b9775bc01c18c871849e8346af7633f2f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit_N.png",
+      "sha256": "f2bc70d5ba1a00b7a466e06930e487a271fb68b0160fd0d732906ef0cfa9a237"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit_N.png.meta",
+      "sha256": "761e1639feb4cfa9ec11de5c9caf0b7d36011811c8bcc6ef7aa97c88c9018ca9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather.png",
+      "sha256": "e281bd6d36c8e1f55120ae99b8ba170785b33f7f0227b9aa53e26302e55a56f8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather.png.meta",
+      "sha256": "f70909fca5fa1f9741695e2f0d2b581b1a72273cde74e93b9ff850ff157c73b4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather_N.png",
+      "sha256": "cc474e64946cb49e5f60db7de5d15d4fb1ca4ed16d04642757b54c7e4f651cef"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather_N.png.meta",
+      "sha256": "74a79c5393c557fa64981541a2a8e50aa887b219e2b8a37054cad2d29005ec94"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures.meta",
+      "sha256": "1c75606c2dc01b1f8c3004e5fa9bbaebf32b3d8d31c3316e3f0fe528cfc463e2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-accent.mat",
+      "sha256": "197e3ffd9448096d4e035e6b90f2f04eb33c636cc0b13b4a6864e061a00dbf23"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-accent.mat.meta",
+      "sha256": "72d7133d8842fe1fd0ca0a039d5c7c8f972cfaebc83e21f4b925da6f363c2d27"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-beard.mat",
+      "sha256": "b643a8f77566c594c0586dfbb4d7223915f1a4aa53dfe2f4b2707502cf511bda"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-beard.mat.meta",
+      "sha256": "815492b5c6d199d7c8383a9f9b0c65f3361c39e66d9ea5b004fd18e40bc63306"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-bottom.mat",
+      "sha256": "0425103f15193925154b57cf3b0f5cf619a1586160670ad324ddd589554c03b3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-bottom.mat.meta",
+      "sha256": "401ce7d4b362c7145b311b63be310899494c46a6578ff257eab442e61e2479b6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-eyes.mat",
+      "sha256": "5d60d3a9c41375094cc540c926db78574565ea71ba26536734bbeb95984ceeb9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-eyes.mat.meta",
+      "sha256": "5a58831d4a8051f6664ae973b9553f41b064599e9a47cfba7d4a088edd50cc15"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-hair.mat",
+      "sha256": "d9cfdd778458ef2c49b9d8c9b2914b6bdc618c5ac65e4f9d2a9398e4dcddf445"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-hair.mat.meta",
+      "sha256": "56943b8b962c1c7debbc43a81ef79cde53a96e06f2c8339f62f9fb30fb02986b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-brow.mat",
+      "sha256": "ebacb2e905ea83dc16d84daff4d8c52b88dc8dfa29ae4d965b5e7bcdc0a000e7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-brow.mat.meta",
+      "sha256": "572bc4082720d811abc0ae86de3142e83a003e035f047e577dd5f389674f0a7e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-eye.mat",
+      "sha256": "493b5c10aaf72413c4038e1ceb41752f29d8d7e82f3a0066c6d86c7245ac9462"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-eye.mat.meta",
+      "sha256": "ee2cb469073a43ede137bd3a6f213358bb4f03cdfbe17ed762045f51edf05f8b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-facial.mat",
+      "sha256": "be3d21b22413fc5b5ab3b6389b0e8ca047e2176b895953d5f268c8457bdd1669"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-facial.mat.meta",
+      "sha256": "8ac66aa021525087f796d0cde4cd4da8370fbf1a27c441c9867c3345a83e8455"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-hair.mat",
+      "sha256": "360bc109adc6d455c5a1da4f115251baddb45dff9fed2b4bec9ef708f002aa7d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-hair.mat.meta",
+      "sha256": "298386c5ecd6da57e21baab34f528932fe4b89a775164d72a0ed2302030a2612"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-skin.mat",
+      "sha256": "783304b6432de116b877b3841a0f54fd10a14e4b8ae195889ddd0288e8683fc3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-human-skin.mat.meta",
+      "sha256": "85dc0c99d51ebd0d5dd6f0dc145a6ab430fbef8e1a28b4791f7ab993b2ddc10a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-shoes.mat",
+      "sha256": "e2cd4c21959d1d5e1edf1fe3e9121f311b46dc23013f2b6b042948322b8fddeb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-shoes.mat.meta",
+      "sha256": "051d66ddeb72d624d9bc21381aa0ae24a560b12a7b5dc91294b2c75b683ceed7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-skin.mat",
+      "sha256": "684aa1851df6cd822ed83d4724683ae28da9b0013d0a852c38a715122b0828d9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-skin.mat.meta",
+      "sha256": "a0ec7efea662964c4ecbbc2948fc35e97f59419b8252565ff443e18fac3a7a16"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-top.mat",
+      "sha256": "5099795e25a7794d0749443b01d2f1ccec5460e51e2c7984684c87df0f4641c0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-top.mat.meta",
+      "sha256": "599dfb5c31e65a240d32171e5ff793d03fff080f6fddf0d4a59b9e6ea286d4ad"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-trim.mat",
+      "sha256": "efaf20ffa89f47aebdc0b80a2d53e8288bd9ecb118aa9e25ca68e8d5f88c4a7d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-trim.mat.meta",
+      "sha256": "0ba34b784a8c488ab2f26ef47c9bce46dae2d037020f9fd3f804884cf0a07dfa"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-accent.mat",
+      "sha256": "5f95990f0fc6897591c3f63b98735b33862df8da52b2d895e1136e82c7fd6db1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-accent.mat.meta",
+      "sha256": "f64c043a9a5ee9ad93478522ef6e43b8a77fa4a4f612d1193406ef6068650c7c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-bottom.mat",
+      "sha256": "d16a07eb15623091380a9b7354f9727f40efc525be025290e59d95b005f2ac1b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-bottom.mat.meta",
+      "sha256": "28742125fff287f4a4e5eb4b14ed664b7fb596f7fe8aa278a46be19c89ea8a13"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-eyes.mat",
+      "sha256": "fe2fb3fbe8506dabfdce19fd6d677fdbf754690fff3fc681a7a2e9dc36188e61"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-eyes.mat.meta",
+      "sha256": "42b9cb77129d4f1b58be021ffd9dd5ffb1d5567fc87efa64f95953090261c539"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-hair.mat",
+      "sha256": "0d78f952ae89d8f113e12187e42b8337a0c7e8d7d29e77cc029e3cdd2338bd71"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-hair.mat.meta",
+      "sha256": "535b46723f0f516d2c609b6bfe43319f36ca0730b340c0ace0fa503ff90102f5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-brow.mat",
+      "sha256": "3df544a03fe3d74b7836ded153101e45ce32a66c27b11d2c5543d547681711ba"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-brow.mat.meta",
+      "sha256": "af87edd61b6f359331aec72a0cc44e4a876a89eb5fa0b1416c15ade2cad86da6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-eye.mat",
+      "sha256": "87a8771d685f16eeb8fa2f5ac4ef49c0af4816bb663f800be7f55471cccd9326"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-eye.mat.meta",
+      "sha256": "417f5736cf3844410164d2d7cbbe21aabcfec917d7b6ed856bc4043270a73443"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-hair.mat",
+      "sha256": "734fd8395b4eb91e7fe1e5b50a8af209e5dffa6f8e8098e2ffbb11064a530243"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-hair.mat.meta",
+      "sha256": "cc9d65e62f66d565986b9e4dac2ed9177aae582f301a4074684aa9aabae23f63"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-skin.mat",
+      "sha256": "25c87a4a32ccf6d1989e5bf24e48b0129c9a2d2477fece3ff4fd7374f108ba9b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-human-skin.mat.meta",
+      "sha256": "c25cae2af5946551e47b31a84924c87b47ed6aa7a68bd0998d041b76e3989727"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-shoes.mat",
+      "sha256": "ea48ceb58ed6bbfd11ef4fc9b01a7d49c3979da85dc662373e4604c5b8d7c922"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-shoes.mat.meta",
+      "sha256": "d543de8cbc8c90193975381557715b448f47e1c2199be3b2d2d3893ea7283fdb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-skin.mat",
+      "sha256": "d0e0f4c665bff17b89117d8d5bd2fa87962630b4b8e1bc9c57b602dc95561d6f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-skin.mat.meta",
+      "sha256": "ab7c753792981cb6f796b8535be6f97fd780e5d799ba9d2eae945ba1eb3db912"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-top.mat",
+      "sha256": "09e80e5beb81281298f60d508ec11166888f37c5aaa8e7a2a7a0ded013501703"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-top.mat.meta",
+      "sha256": "daa55f9c0cf2daa4ece49ce1eb460f2f815eb3d119d7e7311d23e1ec5c4a83b7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-trim.mat",
+      "sha256": "265ea34b65d213e68f0ed70c25c92ff7758b557d28b9bfc117de310decfca209"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-trim.mat.meta",
+      "sha256": "8e2f714cb2a4725ecd678088b46536fac754c1a5e3f78b18571763be0406dea3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-accent.mat",
+      "sha256": "1cf770150d8042dcee2e5962dd346745a05111403a98afb82cc4c627ad3c3633"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-accent.mat.meta",
+      "sha256": "6d2e076451db22c838323dfcc46fcc31c0b3c94bedde693935a167c44d70dd0c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-bottom.mat",
+      "sha256": "3544e442dccf1f1e6f52e6ec61aa17f1793d74a302893893fa94b7bcdf5cc7c1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-bottom.mat.meta",
+      "sha256": "8c8c55b77765983248ce50a13f23e04dc83698c51c874f64d1eb9a4eab9edd16"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-cap.mat",
+      "sha256": "744b3ca60ebc3d12697b45e6509e14d731db2e5a301270fc6bd27cd16dd2df1a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-cap.mat.meta",
+      "sha256": "d34b8fc0a81820efa7da74850762f6ddb583aa1a4d6b2ae30a15bd517b108942"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-eyes.mat",
+      "sha256": "0ff052f2bbe169fca3e5031c9e369229619cc2cc45b3c711cdbe511773f44f14"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-eyes.mat.meta",
+      "sha256": "c7e2c8475d0d0963e209e277949dbc6d8f7790ddf6064907cd15f52f7da7ab24"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-hair.mat",
+      "sha256": "bdb7c411e335d913659d917e77cd857e212f466a970b7b342e5b06aeedb7bdc0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-hair.mat.meta",
+      "sha256": "33af34e0a93247dcbcbc6482f40df1bb83d4f1333c317c2e11f7ecd7b083a7a2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-brow.mat",
+      "sha256": "f11f6f2ff4e47e6f744f4b9b4169a9bfed1a988449fbbc6d0f5d7b00b3c00f83"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-brow.mat.meta",
+      "sha256": "ab2f8c2eeb9e4aa12f36268144a6a9fc7a57c8393a9fe4d9efe3a6a8c2944421"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-eye.mat",
+      "sha256": "866313681779f65f2bd24a28c2837e486b0dd414884dc90ffdbc8d0f9d1cae60"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-eye.mat.meta",
+      "sha256": "278d989d521cf7291e626f85e1da270f4adfa1a78c2d48c78ff3affab4442f53"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-hair.mat",
+      "sha256": "be5759fee52d6604c3d2dab6e4046a3075093a3492205e74e27dd3f2b628e4c2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-hair.mat.meta",
+      "sha256": "2f60edd178fc4edfdaef41d359a27b3174cdc1235760bb047f2fe4936ec42e03"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-lash.mat",
+      "sha256": "17a68cfdfb3402e1c95824b4273b9e06e73aa6a867cbd4264cb3af2e618fbdb5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-lash.mat.meta",
+      "sha256": "157ed6f343b04664541da57d158d62fe58719c14524485274085cfa9f5ca6187"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-skin.mat",
+      "sha256": "4119637f8d7ac437e9a640f19ec51b72444f9190b91b32a8637fa6391a46eb9f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-human-skin.mat.meta",
+      "sha256": "44bd5ca8a75df65cca2cefd71bf8970a5477a49e9eeba32c1cc108a9c9c54e56"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-shoes.mat",
+      "sha256": "4c3d22e65be5fa767459542e8f648c20dd8e9f8bde1803278f69c3ec08ab5e01"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-shoes.mat.meta",
+      "sha256": "a219fdc0b7452b5c3b563ea7e5d4bba30486cb7409100b020a2bd3d27d2af820"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-skin.mat",
+      "sha256": "fbf7a25d2fc5bd432b09a2b2cd868ff2ac94e357f1e5722670e61ed4ea2fdd88"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-skin.mat.meta",
+      "sha256": "a9d2fd7f2ab4fd904ee7b547808adb5fc1dfa5e33a0ebc3e0a51e34e181e8843"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-top.mat",
+      "sha256": "d2b3c7c1feda7260ddfa56374a19c7bb6cdd18cca67080a6c98857251456c315"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-top.mat.meta",
+      "sha256": "a7311087b001d4af57d73f1df5752c205ad8ca0ad91c947f785d814333d784b0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-trim.mat",
+      "sha256": "6d6d56e9cb8f207aff1471c45e5f6b9ba7e220508b12e371661780a712b573ba"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-trim.mat.meta",
+      "sha256": "f200ae731dfc808854bfbb0e9ec54eca7e3b147f2c8772ca477df74451e2317c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-accent.mat",
+      "sha256": "175b0802810c3b1ccee5db2462aa4a287d4419889ce3ef1ad141724b0e564ed4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-accent.mat.meta",
+      "sha256": "f7823fba26bf624ccfb105b020dc25ba21be9df56e082bd3f261c274478ab2ab"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-beard.mat",
+      "sha256": "925f0f68b80db24871484a44394865460e767015dd89f59e32986cebd0e4d37d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-beard.mat.meta",
+      "sha256": "63cd2941504d18264599be97fec77703d6cb1df4aef60d76e07487f292e424a6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-bottom.mat",
+      "sha256": "5265fdd356d2555a53f996ee17c773721429856ff69c8c492a970e39c64bd820"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-bottom.mat.meta",
+      "sha256": "e15abc36282366843f4ca0eb24b755132d80ba31230e0523c22df611a511bcce"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-cap.mat",
+      "sha256": "23827036269ab2eb240fa928d29c25fafb9db7ef47deab1fea3b1fa64f555c30"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-cap.mat.meta",
+      "sha256": "85c81fcf4feaad4b3cbde06ed92ff0d98209ebd38353a6a79b6f5aa12d748436"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-detail.mat",
+      "sha256": "c777bca6167dc1321619297007f06c1c4d3170c6d7d7657886819ee7815cbb44"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-detail.mat.meta",
+      "sha256": "7820ed33fc84f5fd5a4fa5616000d311baf909e19e3c0467809d3c5ac81067bb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-eyes.mat",
+      "sha256": "215f368955b336b8200546eaf28dda0dc57de3e369886489dd777838efc1f30a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-eyes.mat.meta",
+      "sha256": "e67d7180751b6c74ea9379da0bb9b67be555a248773f488dbfa20bc154b45ea7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-hair.mat",
+      "sha256": "19e96a2491d110348e6d9bc719961b791377e04f0b41af39cfd33e0ce2b4da5b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-hair.mat.meta",
+      "sha256": "b53a723db11f456f832bd5011e63a8aea2a17882b4fd54e61fc0963e5da5d846"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-brow.mat",
+      "sha256": "948ffbc4c963325e9ffc988ac263030989026ab07d26c463c16710e54981c057"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-brow.mat.meta",
+      "sha256": "4b1d6ec88dd1dc18f21d514a26818063feeba176135f76086d97b25a4de9baa7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-eye.mat",
+      "sha256": "d737925fd7369fc9ac39078b4a2d8103afa24fa99c51206b18692c9a6c5fa296"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-eye.mat.meta",
+      "sha256": "46a0915482401c087efb11ad3b686c6271bdad92ff0c9564767fb425f384e687"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-facial.mat",
+      "sha256": "ac67e389c29b9d6001da43209ad36fdaffabe0a3d63266f3cd0f86dfa3053480"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-facial.mat.meta",
+      "sha256": "67a5ede9d3dc143b81d1c1a5ddf004dd81f17f8fd37e14664af8cb059e162b08"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-hair.mat",
+      "sha256": "7413bc848e99247c4b8d9696dd2aeff0b8684a83b7bec5d458a72cb857517fb0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-hair.mat.meta",
+      "sha256": "722cf7010267196a3210a3152e74d594fc7e6983d654dcb1c68c1aafed242297"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-skin.mat",
+      "sha256": "2fb180573dca798416f8c2a009722dabfb03460ccb04cd452b70912b61dd2827"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-human-skin.mat.meta",
+      "sha256": "fb6b749c9ee8546dda31209064c7a6843209e9dc400172aac5163ba0edecd45b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-shoes.mat",
+      "sha256": "91e535e0ca2b5aac864e68932fe69ff7cc1d8c76d673ff8252adf82636ffd9d6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-shoes.mat.meta",
+      "sha256": "bdebc4d0ad70687ac40a162d32966f28ef1168e3a56b7a38cebe9d131f1b8e80"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-skin.mat",
+      "sha256": "0e363f5e0f4e36140d8af4ee99159c6fe2d79a4806124c1422c453021f9f5a28"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-skin.mat.meta",
+      "sha256": "dc927cfab211d8b7408b0ead14554727d50ae55957606440f65cfda6ec2dce88"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-top.mat",
+      "sha256": "458dc27e6fa42118bb86d7dab2daaf85947ba0668319c3add2b38f49fd65944a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-top.mat.meta",
+      "sha256": "83fd34856b92fcc10c0d1617ef93b69505eda8c85337edb94a327fdaca00a42d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-trim.mat",
+      "sha256": "86efdb8138d8279fdfcc66a57986f246ecd168d29ace24db170a0a5c861cf0ec"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-trim.mat.meta",
+      "sha256": "01ba0cf11240e9b969f14425528bdc06bde94cfa78c7f89d767f1138442915fe"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-accent.mat",
+      "sha256": "f6584c37e1c492728e5f39ba7c6c32871fcca4b5eb12cc08d94d09105e726677"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-accent.mat.meta",
+      "sha256": "7f134aa9f33e3ebaa8e3e44b4fd3b2ee9ccd7254281555523f25f291e38f0938"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-bottom.mat",
+      "sha256": "6ddcc1de97506662645196331bd1fb044395e6d36ae9fe44f7861b1654050cf5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-bottom.mat.meta",
+      "sha256": "daaaae559dadb309bec3a3df7e1d8b5625944e078c95954f351c7e97bffef360"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-eyes.mat",
+      "sha256": "99e3bc9a00c611d081bf68d66218991fed5c71528976389fa2511930923f9928"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-eyes.mat.meta",
+      "sha256": "fd0f9c28f3ff08010e09f59ed1cfa1cf066a4644f60a866b56c5a57bbfa16ae3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hair.mat",
+      "sha256": "47548f3340ebdb71abccd7aeee6acf7f3119273aff79e693b130815e0f5e97d4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hair.mat.meta",
+      "sha256": "a2d3cbe40176eb8ac92560715e49759496aa010e2d3b993364a03dbb6b153d9d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hem.mat",
+      "sha256": "3d4bb83874bee7e3e82944e341a22091ef377ef56fbf4ba28385e3ab31043b31"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hem.mat.meta",
+      "sha256": "db3991fb43e154f359bed8058c9739e34315ae24726e382a11540a771d494035"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-brow.mat",
+      "sha256": "6a0548351a4a289a762f29dd30491ad2bc15e4f988a6fee3ade9dc895504afe7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-brow.mat.meta",
+      "sha256": "06cc0aca0bdc0a760e2db2ae7eb39d040f4cf039b9f379c5c9a53fba142e637c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-eye.mat",
+      "sha256": "49b15ae03a59484bed4c3f4c7c79b2ac809fb6cbeecbcaffd9183a023346b189"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-eye.mat.meta",
+      "sha256": "3bad15fefac52804823a7216829a9f1fdacbece36532597c7b7defe43b103456"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-hair.mat",
+      "sha256": "e716144e39014f59c19f1fc731759ab365b881dc2fdd7428dc61fce48d4d975f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-hair.mat.meta",
+      "sha256": "a70463cd7deb2ae94d043c2260462bc3248baf526d9f0e147911cab45d5a1cfa"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-skin.mat",
+      "sha256": "c2954b865668745ba60e9765830128a045e6612312327d498883c8069ec6a03a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-human-skin.mat.meta",
+      "sha256": "0d5087a66e91fdfce480ee0044d1ccb146ef6de7a4f96aa177d11b7e5ed6ad7b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-shoes.mat",
+      "sha256": "9bde8053ba0c2ae8aa7b81501ae11d2ac30d1b881543f5c728e47ee797a62446"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-shoes.mat.meta",
+      "sha256": "34c4ef70b5464a025d3692a16d46cd652ab2148ead717a3091f80f04d3ca0908"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-skin.mat",
+      "sha256": "8237951c2f5d97a12052bf1835476b28c3172a29ca575ac117f18852bb081885"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-skin.mat.meta",
+      "sha256": "51813b596d2eb4345255c311612f915120f73eaf6ae777c138b04fff38d63542"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-top.mat",
+      "sha256": "96093040bf56cca01b2098cc53a2fa764f7f3fc65f85ad22d69845dd62cc797a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-top.mat.meta",
+      "sha256": "b2764ce6743c9bc6e140773bef511ca3df55fb7be98fae29c4a9202be9c2cc00"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-trim.mat",
+      "sha256": "446c2401724828df49148d10e3c4d22a77bea76cdceb0302a688eaf2a6120449"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-trim.mat.meta",
+      "sha256": "6be1740ee1cddbea03aa42637fc98f2a55f5a16cefcba821ee7aa00478ea2902"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-bottom.mat",
+      "sha256": "c574005e2baec0d3df2a404f90da9316d464b4a08ebb9acf8581a91812bbf307"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-bottom.mat.meta",
+      "sha256": "7c73b45a8e78188979e57cddc91a8cfc0202718c7283d0bf89f8196be1ba72c5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-eyes.mat",
+      "sha256": "962aa75dea3de449e515a4513c9785f2634dea4fc85e506b686f65f89da3a134"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-eyes.mat.meta",
+      "sha256": "1ce03efeed2662b5cff99f07b22b6fc078bab79caab699549c360e549b2ddb60"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hair.mat",
+      "sha256": "0e4a85be178a0cce74b32845021be5fe85e39817daf96f08f179c30556a50cf5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hair.mat.meta",
+      "sha256": "5eee43c97e84fab6957bb3e190e9e0ccb2b1478435d59e5b4d999d652e7f7b69"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hem.mat",
+      "sha256": "c87652aa8f1a45da0467a12704455c8b8e555283b69a9daf8758acf104b2c559"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hem.mat.meta",
+      "sha256": "55aca9bb83dc575c62e66e2159e8f2faba29cfb36a8f59e0c3f5c59b7d1ed669"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-brow.mat",
+      "sha256": "f28e0b91b1d51afde43b5971f97c2e66955e5add9a0cfeb8a4f4ae6a2be43bcc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-brow.mat.meta",
+      "sha256": "f4f4b066801d7a6ca482385bb70daa33155f952d67c77cb97438eb252e057ff8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-eye.mat",
+      "sha256": "538a91747f3b444d89b6a65f2a67da32031c8a0256707eb91136fadb1b6c5eeb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-eye.mat.meta",
+      "sha256": "19719cd77c5361c8e7f88337538c1cb9b1b566b219fa20dc71b2d61567986b94"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-hair.mat",
+      "sha256": "c9d3509850eefe934c73afc5d442e3eb8e9f7bf44693520206683ad0decdc168"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-hair.mat.meta",
+      "sha256": "efbaf2c4fffcc8ffc0183add01be90e3c771411072458a84e7aee8490a4aba66"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-skin.mat",
+      "sha256": "d2e45b4bd1ee8497cd3c549f43cc0fbae07e408fdee7a0afc48a925ffee5b8f5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-human-skin.mat.meta",
+      "sha256": "bb903fdb532a52d58a330db49c21b3cc38540997721b6e4a49a689691c931796"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-shoes.mat",
+      "sha256": "6e4eb7d738f6e31fe21ef738868b56d1d43ca640d9724193173657536302bd52"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-shoes.mat.meta",
+      "sha256": "a3d41d29b846592fc1d3d669a65e49787384021dad0803879eef2403519e50a4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-skin.mat",
+      "sha256": "1c8d87d4f8f444044b9aa5c106f759b31137aec58f677f3f0f0660b871df1d5b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-skin.mat.meta",
+      "sha256": "74afcea1ce960356ec21200042a17a14ef11b0245beff287d41e789a16784116"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-top.mat",
+      "sha256": "fb881e62adcd47715627661634fb5f98b4a5f55ef142935356a56f16f3390eca"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-top.mat.meta",
+      "sha256": "1a927a37ff065cb3747bd9b00cf3328de9c65cb77a31ef0088c0236ef748234e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-trim.mat",
+      "sha256": "2992a821ca2f10d4f6402a7944b917a555774a5fb4a526e35b37592e2ec42a27"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-trim.mat.meta",
+      "sha256": "971de95cde2e165bea96bb279b804134035f370e087192f2cb6d67b03fdea835"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-accent.mat",
+      "sha256": "d36f8435f23fcaad9011ecd29835d2f2144214f7e7328be395c0b66b83369f6f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-accent.mat.meta",
+      "sha256": "61acaf7677c3c7df0127bc01c89cc6090dfdbe852d80d2437d737b2a3ba875a4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-beard.mat",
+      "sha256": "2f32a5ce957470b158ec426186430f7800c829caee9e5f53b13a4bb8176708a8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-beard.mat.meta",
+      "sha256": "0042e8bb0616ab4e9988fe1659e4c99bf697be09ce5f4f9fc2f5356600e212b6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-bottom.mat",
+      "sha256": "f34f98634dd1809fb86b920b40c8b68e9bd5cb737762b2164b35114fa0c16b8e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-bottom.mat.meta",
+      "sha256": "84aa16d4bb7d1cacf14fc990d7d1d111822118abb579d1baf30ebe734836fb51"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-eyes.mat",
+      "sha256": "53bb11908f84caf25371219bc64656e035270cea4e7c327e55b5bbbbe89fac7e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-eyes.mat.meta",
+      "sha256": "4f08115a3ad0850fbfc4373bf4b8e9a104b115f998327174e1aaa7584b947ee5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-hair.mat",
+      "sha256": "9b2ab491c407e72d0a29335d39d0c535dc97b394ec9163f1e303b08b10bbb3dd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-hair.mat.meta",
+      "sha256": "3469dc8bdd0d5a8290b18118aff0e1547a4198ddf9fdf904909164a0fb590d8b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-brow.mat",
+      "sha256": "e9e25629359f5acc3f2d85a0b09c95a90e723207be994c2a5ab718025e2fa111"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-brow.mat.meta",
+      "sha256": "b0fbef22e8d4991b76439ea2c48a435b7e074f897666f62e63ecaf566ce90769"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-eye.mat",
+      "sha256": "cae7bc363165b53128c2baef34b4332b019f9a4292320205cfd13aee91e27321"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-eye.mat.meta",
+      "sha256": "a3651a3ab84a387efd81efaf7e606a4c1aa153a2ffd8e872fafc881ab42ef85a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-facial.mat",
+      "sha256": "23d1cbb5f1ff1f7707dcdf6c7f3efd1a300753ee02f539d0f325a09cbe566ee5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-facial.mat.meta",
+      "sha256": "6d4d5d12a734d0445e53a50ba2a66d0dff525f0aa95ce8e7584010e425e39686"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-hair.mat",
+      "sha256": "fa2b4160ab9311b1fea6b61f6a4e7d9c1211c735fb7eab20c841feaacf4dd9cb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-hair.mat.meta",
+      "sha256": "dd5907ae6f948907ca22a4c04fd5636d2319ad1e52c9c66b9bd25cada555dae8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-skin.mat",
+      "sha256": "368319e708509dba86ada2dd2b74648fb5ccf588aee5a524864112fd664ad42f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-human-skin.mat.meta",
+      "sha256": "404c7790c26fddaf1686a1d2f6f98cf58cad06e41b54879500748e49d2d74de8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-shoes.mat",
+      "sha256": "4958cd0172ee9e5fca90a52060e77d7bc0cb2d147311c11760a46f426ea81221"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-shoes.mat.meta",
+      "sha256": "a3cd8de433c385689a2e87e2d2ef48dc2ff8cacb59179e503fc3cb9f57241333"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-skin.mat",
+      "sha256": "6adea5b80db54b283c1e29540ce77f6f6487773277633b9b5e467440ff891115"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-skin.mat.meta",
+      "sha256": "bdae7d281cc86ca72d1e656145792c9f5888622b7679dc0e6b80e1c9c70bce6c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-top.mat",
+      "sha256": "63ac95ea75aa6e09ee41285e611beb912fc8f6eecf4d50b7e5dffb91946f2ad8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-top.mat.meta",
+      "sha256": "b8c50ec79ca6b18fd28d694cc82d939907471ca009295d4bb59e8af951ae4203"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-trim.mat",
+      "sha256": "4c90dae87562980821a9757910fefe572b9a78557cd8c3a3df707a53a48a271f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-trim.mat.meta",
+      "sha256": "9fcd6c43e6b44a3c8e9164cda1561b8755b24dca4aa1bba42e9b2ad0d3a01406"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-apron.mat",
+      "sha256": "b9271ca8d62e7485a4f3b54ccef1acf13b296636b5336e91f750739dca5a40f5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-apron.mat.meta",
+      "sha256": "7c79666d30eb3b55e163e379fa20596e4504d10774b8d5131e42b92018e3933a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-beard.mat",
+      "sha256": "660d10ac469f4cb090c88044369b4a1a8e32618b7769431cff9ff51722278eb3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-beard.mat.meta",
+      "sha256": "c08ed408b39bc42e95f81de88c498471f5693987a05860643e406570a22c6815"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-bottom.mat",
+      "sha256": "e1847d3e2dd46bfd7138af79d46594720cdb1b31ea2d6ca01799ca715f7e1388"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-bottom.mat.meta",
+      "sha256": "3922a8b25a3ee0485d23a50c6096890d0031600aa30a09be0915d81448c14e31"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-cap.mat",
+      "sha256": "eebd69bd2f9ed91b06b55b39631a2ec1f25f572a4e30d49669adec40f45db066"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-cap.mat.meta",
+      "sha256": "ba74f912493d8686c3311b235384664a659e46fa7a4eeb47cdf14d866d2f9633"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-eyes.mat",
+      "sha256": "8b7585a5b9da199de433df691ab3f4759b2ded370f4980651b50d226e4719b28"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-eyes.mat.meta",
+      "sha256": "35bfc08616f0991607cd75839b8f0e0edaa7721844113dfb2190370aa8a13298"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-hair.mat",
+      "sha256": "9e11e6ca2fff1af2dc1e1b44965335ddf2447e65540dcf44f2278ac8613b4423"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-hair.mat.meta",
+      "sha256": "b0d392b49a2a59a66ebe958bfcefb19d00a05278247dd432d51b2c6ce63e8f63"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-brow.mat",
+      "sha256": "33e9a7de95cb5576736c5d9675787e3bc670b02e6c957a69d884b3a7185eae24"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-brow.mat.meta",
+      "sha256": "d2de2f71db8201e62b01e02c50bb9378524247a5eff54230736b2caf660ca2ff"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-eye.mat",
+      "sha256": "ab9d6fc2bcaff55c3f3ad50e4d1477bd55f4b3eb6d7278e44eeae01fbdf245bf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-eye.mat.meta",
+      "sha256": "ea3f9de22f1c428db8f0bba39b80af7e1e2f64e3a460944799ff1daf2f792e89"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-facial.mat",
+      "sha256": "487dfc744c170d3c099f252fe36469dd54386eb4392223ad20adadf6dd3a5018"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-facial.mat.meta",
+      "sha256": "4f7dcf6da27c60a9e29f52f7b8ba65b6e2f33c744b95644b4123fdd2b217f815"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-hair.mat",
+      "sha256": "ee0b5f4958884372d82ece510d44d7e42db27a9ceb8149626c4c0da636244001"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-hair.mat.meta",
+      "sha256": "4912490780b60b74849348b1a6dd952cc3108d8d2b04c77af524d6597900da55"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-skin.mat",
+      "sha256": "5cc035e77a675829276cb9abdd032ec0c1a4fa667b12c2148e76c9ef5bfccd98"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-human-skin.mat.meta",
+      "sha256": "3659d6b9a924028d39d68397070df891962ed0474dd24430d7dd8d63468ab7cc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-shoes.mat",
+      "sha256": "404dc757dee0a36c37a1a67dffb823f899004ba32dbb9486f9d6bde51cfb9657"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-shoes.mat.meta",
+      "sha256": "1189270cd7b9136cf0d0c1eaa8146b75d70d0d4178c540b77edacde6fb0349b8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-skin.mat",
+      "sha256": "046dc93e4c7202252756e38ecbcc0a1f9e60071b2582b3bc5a44be7b1e3563f8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-skin.mat.meta",
+      "sha256": "698a35a3beb872c5ae3d1faa132209c32890abfb86d83958e2b302186317436c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-top.mat",
+      "sha256": "83bf2419a1be4c2cff73e90bcc4b41334ca21453636858d5212b6176c6532375"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-top.mat.meta",
+      "sha256": "11bb0f8456bcbf796fee5537f228eea7b2a8829746750cc81bf3901b70e3d2be"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-trim.mat",
+      "sha256": "1621106ceb92c08035afeb395561c432982ff1245274663eea175cc8fdd1320e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-trim.mat.meta",
+      "sha256": "e1fc9ac8202921ada4c3b04aa90b707d78021a3335300442babaf79d2457e595"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-accent.mat",
+      "sha256": "0bd28f94072570149f56a89cad4a4fcb930ed1809c61edf6e550f3133c4dab84"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-accent.mat.meta",
+      "sha256": "e6cbdd75ea6f7e0da7e9fbb773fd4900404f30ea2fea114fe4d250a1136953f3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-bottom.mat",
+      "sha256": "0d155906654bd90d28e73854b3969256e7f9814fec03ec5647ce1c3abfe46e6b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-bottom.mat.meta",
+      "sha256": "f75b75be5925d297b3af880e484990303aeb8e7655e7872094e387a773faeae1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-eyes.mat",
+      "sha256": "d133fd23ef86d92c3944df68cd31dd2ae320d18e7f56a3ea21eb9c486da4e48d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-eyes.mat.meta",
+      "sha256": "e97a6349489ad6da68196432ab4e7b4db4a23a2ddf240970619553ce709746e7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-hair.mat",
+      "sha256": "4d80ef663e258e6edf98ed7135d60b39e22f7323f28b08df399b57c062816edf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-hair.mat.meta",
+      "sha256": "cc1dabf3f277555f230518c92fb1fa50875ca62f4bffcccea614ea121ae8fb2f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-brow.mat",
+      "sha256": "0a07b3ce51aba4b102e2cf9716e9bb7ef1ca41a10fc95a9deeab9d5088b21841"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-brow.mat.meta",
+      "sha256": "c6268a9689153d1ca5e88e0d0c8f2a09aa8c0b9653b2924e2234e154f8409f8f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-eye.mat",
+      "sha256": "f0c856e2306d3bd7e698015e0d6397e1039228a4ed121f8754ef3bc4ab1bb4f0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-eye.mat.meta",
+      "sha256": "bda54880c4ad3b40bfe653b20d0c7c59606f5480fb7d166b44a055d99b76ef4d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-hair.mat",
+      "sha256": "b23e1b6d510fb8a5aefae52028aec38af8816a3115ca704cb26ed4f7287c9276"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-hair.mat.meta",
+      "sha256": "8d8c42a0efd4047c864a91d8c62a53f52ca456b8078f44c1cb137178b9c80985"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-lash.mat",
+      "sha256": "91c7ec11fb6214e7287b8a5e14e6027a8a054ba30f5bca3ae19a71880c40bc14"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-lash.mat.meta",
+      "sha256": "7440c74352c12e4016d0856254801a1784a14103e07ee740b7c9f78a3e6448ed"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-skin.mat",
+      "sha256": "864a6ff2d0c18e00b73bc3fcc2169c3ff36d84d0924d494003d4e257b22cc916"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-human-skin.mat.meta",
+      "sha256": "5e6772d362aafc5786d4a6ad6217bf63f73d0285fe69a135eb99dac6b994530c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-shoes.mat",
+      "sha256": "c14575f649c9e9eab6b48d7fb05de4c4d630a48092b3f908885595d0d23aacb2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-shoes.mat.meta",
+      "sha256": "4dfca562f433ac7d232cd5830fbd9400f1184a460c85dcab8897ff87dee1fa48"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-skin.mat",
+      "sha256": "f4e214ce30332d18371ac763f4a5b73776c7b180ece11e4037745cd338568870"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-skin.mat.meta",
+      "sha256": "69e331719dd32419cb7910e0fe168c14bc69e27638c587ba681b590150698353"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-top.mat",
+      "sha256": "1ac5d1cd3ec0aa07b0f5fcd21e4f88e71409e23f9b700b9d40a6f9bce14ccdbf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-top.mat.meta",
+      "sha256": "ec8041dffef828a5f3bd71449cee0cba98f3a7c94f010e8766588fc2a3b8b339"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-trim.mat",
+      "sha256": "007107e42481257ee6faafae1029dd501e3697aed80be30e3092596833c1fd28"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-trim.mat.meta",
+      "sha256": "274cd798ebb47e316ea4d9c422e45fe39bb5a494017ba6e5793d7a7919f9e3c8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-accent.mat",
+      "sha256": "8540cc485f3cad998225ab3a7a22e9e01d691386529f6143b5b312c0be143dfc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-accent.mat.meta",
+      "sha256": "763f5812e5dd658e9025d38f9210b2edb8e12b0a6b3bc06aca65e0402f0f6e3c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-bottom.mat",
+      "sha256": "48ba975f3265202a680cea46bf7ff7086d2372ecaad6e0b4a86aea44976236b3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-bottom.mat.meta",
+      "sha256": "76889bffa14520bcddbe47c9e35bc5c849bffea5867f2b642dc8d046821ecb00"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-cap.mat",
+      "sha256": "76437b0cc155b6b76f066428e49a9a81ba90cd3eaefe012d2d7407efbfb35a56"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-cap.mat.meta",
+      "sha256": "011829e7bcd52c53bc5951a8d3e466fed9db44344b861607db408a8738ba3ccc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-eyes.mat",
+      "sha256": "9ddec398cbb5b45b2e7b219c1502aecb9fb28c7105daab3ffecb4495078f10fb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-eyes.mat.meta",
+      "sha256": "ecb9adc9867f91c3c6518b00a12d322f17caaa4fe033992d4dc754cf2ecd604e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-hair.mat",
+      "sha256": "86945df5dcfc13b4172dede04439af24795a9d71869865b3633b8e6c54fb4427"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-hair.mat.meta",
+      "sha256": "f99415dd185020d24995112b49539dafffd72e9eab8bb4e5de94a0f331b69c5f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-brow.mat",
+      "sha256": "7907b04917432c58ab49f17e5f689833453c2a590f1db8938c13afb84b0f77ce"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-brow.mat.meta",
+      "sha256": "62e4d30b9965af7060b067d904d8f4f80e1841b2c31c2c7cac83fb3c666ac4e6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-eye.mat",
+      "sha256": "873a7e52532d9b0ce22310e537b5a449b68c558040c37920f11391318294a3a5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-eye.mat.meta",
+      "sha256": "18d9fc2a293cc7e38dc7a5ee2df6208fa2ce1e5babbf19a01891c59ad31a3535"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-hair.mat",
+      "sha256": "89078c2c7b2f32b761b4b6403f133dc72e4ae080f49f20eb4c81ae030c840a53"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-hair.mat.meta",
+      "sha256": "5f70ae8496ff7c1aafad3d01e357d8428a912d9af5936db3ee6497ec696f9c4d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-skin.mat",
+      "sha256": "a52c78d9b11649c38d4d0657fbd7f20295bc136146373c1275e5dc663738d63d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-human-skin.mat.meta",
+      "sha256": "1e95b442c12a0531bcbada4524495fb835ed18a3f221afef1a52314b45a2b609"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-shoes.mat",
+      "sha256": "6c1c893580c5a71af059c7e0c3cfb4a4dc480deb6057356e4fb155f365b35eb8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-shoes.mat.meta",
+      "sha256": "52f7b9b91db46a5a9f54ddf23cfd87d3fc06be691f8089a12161bf162df6e818"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-skin.mat",
+      "sha256": "3a1e94fcbf9601164d9d83dd15c488b8cf033d0bf09342c89c4477c821afc1e0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-skin.mat.meta",
+      "sha256": "9b1a710156fff646ce6cde9e556a0735c163ad4d38e4448826efe147a319bc21"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-top.mat",
+      "sha256": "11da1255e874edecda7bf78621b545f4847386109c40ebc4f21a391d822af948"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-top.mat.meta",
+      "sha256": "0bc91e435d4d458ee6744db420b83b48a9a5305b0e86ed2ca04481ffd3c143ea"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-trim.mat",
+      "sha256": "d13d95d62ef9d7b793f49b0dbc8516707ee0d43617905a6b3186865e76fdea49"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-trim.mat.meta",
+      "sha256": "fd675247ff836731fbaad89c0030a1a292799b6b17d083465ada4fe999bd8fc6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-accent.mat",
+      "sha256": "70e25e195745e6274322f78980a1f9a6a8ee393c51bd2565cf71e92c59e2d26e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-accent.mat.meta",
+      "sha256": "a95b18152e41f12d74bd3be6d2162e8ba3ec5f1d2a1463d52ad9422f58737aa8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-bottom.mat",
+      "sha256": "bcbfb64e34212b9698e844da63636a9f957e640e9bc539897f525079899f70d8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-bottom.mat.meta",
+      "sha256": "d4e2987078ccf7212e06bac5acd088be58a6027bdeb89cf3ff875e1c35f89cbd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-eyes.mat",
+      "sha256": "cac163b8c6af9aee4fd532a64b3437856098058831877e997758daa3fcf7faeb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-eyes.mat.meta",
+      "sha256": "2b14041063201ffd6b4784686ce38660495daa5e9540ab42df33de5bd8a1eb04"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-hair.mat",
+      "sha256": "eb77c03f800d67af98a87302ed32721e62dda8dc375c54879c41065644eda86a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-hair.mat.meta",
+      "sha256": "49870dc10cfcc89c1832ab9c3b6431bebad07b690c69f3c2a0726b2a65e9c37b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-brow.mat",
+      "sha256": "ccd3da00ddfb685dcb8e754d7d631ebbe0473f9ad9ba8d51067bd300ce8a4256"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-brow.mat.meta",
+      "sha256": "f8ba271f3d04280f4c02360bbc23b025887f3119de830c264e8855b2d61a871a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-eye.mat",
+      "sha256": "fe47d776861001d2b9f089a169af70ce3862512c9f372cc0419e66500918f188"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-eye.mat.meta",
+      "sha256": "4f6a03d5852e532e9264dbf5ce3e8928a1ea879dda42b7e532611bfd592f360a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-hair.mat",
+      "sha256": "07ba4ae5812a39d9da6a51cab1d19c353cc6fe720e8e6f850b02ffc91920d925"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-hair.mat.meta",
+      "sha256": "1d5682623fb9e85cd612c73f51db4846ed9aa667b54fd0a4111941bfc06b292b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-skin.mat",
+      "sha256": "4bfac2a6c35c2aa9425fc99626af9a368b01bfd5693d71720cfc26eb856d43cd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-human-skin.mat.meta",
+      "sha256": "009e1b57874a8643f75064649fb585bf1857bcd4eb6fe93b9645ac57efe3bcf2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-shoes.mat",
+      "sha256": "9da98e273f1831bc9a764cb2b19d8911a81ac2a3edaee629819f4ce05fd2bdc7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-shoes.mat.meta",
+      "sha256": "e044283415401ae1e09d990c84f0cb509f4af81f9c38a4799461250109782cbb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-skin.mat",
+      "sha256": "a8733a1aef040b469c6159f733edf5876bb63079d28425a53129040e148e70ac"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-skin.mat.meta",
+      "sha256": "7700cb14f3dd883dcfb6d218380a3e80778d3263c533ab0caf6585fd1e6c568b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-top.mat",
+      "sha256": "faa844e5c63862000bdc38773467adf08e69f6b63a4c8e566352deae815eb00c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-top.mat.meta",
+      "sha256": "7db4f65265515229af3b282cce4d01ffd0e82237a9c38347e314e907ea82d1e1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-trim.mat",
+      "sha256": "592684937eb517fc07f0355e991d2a4469118a644450c76d8b915be2e058218c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-trim.mat.meta",
+      "sha256": "aa54ebfaf068ffe4b0151f5c8a8775719661899302ab6d82c58444887f9f7f93"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-accent.mat",
+      "sha256": "eda462ca20fa963e6a22eb800f93e95cb913538ce75796afaec015915bc9228f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-accent.mat.meta",
+      "sha256": "a262af032eb57591ba83ea522265dab4af1230cff947a539f6cbad2b8b005f8d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-bottom.mat",
+      "sha256": "3d8fc0399328ca3e3c198211156ecefef954975386709ded8ee30a18fc89d472"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-bottom.mat.meta",
+      "sha256": "d1f303f883ea317f2c41fa056ef64d80d2c5024ebc8f24da5c560296a87439dc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-eyes.mat",
+      "sha256": "5a3c6d387564c7371b70a83aed3378099647ee4745b78740318f5439926913f4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-eyes.mat.meta",
+      "sha256": "a015af0487756387b4c129dee46cb54f6de5c302e3f5fbc7c79f0e9a132a5ce9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-hair.mat",
+      "sha256": "f943262d010bc4ba8443bd7dd24c8ea2e021a1556f912ed2f8b8dafeef73e822"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-hair.mat.meta",
+      "sha256": "08210eb5355de92b5f971fbe9cddec34340bb09ae39a961b0ab1fa88ec978853"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-brow.mat",
+      "sha256": "f9b9f68ce59b793a47d77245fbd6f88e57b5aea28a732d2e63ae583f6c35c09c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-brow.mat.meta",
+      "sha256": "4bd19d608dbb5e096235636c6b9996af84dc111458964839ac36f3c858ecbcff"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-eye.mat",
+      "sha256": "9562eb5c46e25b2096dda4f5a256071cbd58c034e79039d2cc7e8201e2ba5d97"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-eye.mat.meta",
+      "sha256": "adf363f0e0746203271354ff76c77b26f8505c05de22e0f145ca3832c9aee4b7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-hair.mat",
+      "sha256": "b9aaea75b55e1f6c74bbf3e09a39f20e5fa43d0ba9c640779e4a2ba87a711ba3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-hair.mat.meta",
+      "sha256": "86c1c47545f04f2d7fe05822b6a8613883bdc26c26a05cb2a2fda29b5e0ed711"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-skin.mat",
+      "sha256": "51e59627498b52e829225761b2f5e681dfde3350e2e9d97f408031c42a40319b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-human-skin.mat.meta",
+      "sha256": "1ab7e5476bfb368d8c1fc8610e3f53ae1f33e39358d1e48b040b8356e6f81ba4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-shoes.mat",
+      "sha256": "b21e140565ff31603a55010da82ff88c4afd0084ee998f8d5356fedfa94d9949"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-shoes.mat.meta",
+      "sha256": "0dafc385814e9063605fdaace0e581a49601af5aa6e1ff8db1828b5e8ea13e8f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-skin.mat",
+      "sha256": "209b0d6fb163974d435b2a1a23b9980f253ede617b3fba4ed10c9999108437d3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-skin.mat.meta",
+      "sha256": "2a96acdd967da2c79cfa073d1266d318ff9f310b85455872f365aa785f00c50d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-top.mat",
+      "sha256": "627231c6de315ff31f15f18ee42c66364906ef228f65dc871e002a1081e7525b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-top.mat.meta",
+      "sha256": "26d61b4baff0d3bd8bcd24048403ed1df2654b2b17fdddc28d0d2f60ae2dfb0d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-trim.mat",
+      "sha256": "3d9e441f8356de5bd199a5de0a7a8f2b3a4cfc3b0955b9f4944cf0f00575b6bc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-trim.mat.meta",
+      "sha256": "a2219fe6853b7b42283b08745420769d3bc37aec586b5a01c3f7aaf676e93c97"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/reflective.mat",
+      "sha256": "8b7178a373c24859e4a403a906a901ed4abc9420380dac4d3143e4e625276a55"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/reflective.mat.meta",
+      "sha256": "f12f9039654dbb5138b6980ee5c1aca1ec60f7a8457cab24d13296f59fc092ae"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-accent.mat",
+      "sha256": "8904a8cea9ee7442d8d220dd164b291870e26364165791741f315a04a23938b9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-accent.mat.meta",
+      "sha256": "5b63a2ee2e04a667b76a2931a345d5b4cb11be486a4165b2a2a2fbddfeee6fd7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-bottom.mat",
+      "sha256": "46a67ba5551b336427ef97fda86f53825c13aa3c4d980d497fa9f2c77e445c00"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-bottom.mat.meta",
+      "sha256": "856558a151c03063196bbd4ddf90422db7055b47671281e7863c4aab62819a4d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-detail.mat",
+      "sha256": "83dbfb3ae8ed0b27935e1a8f67d98ca6b6bea4615c378542b3d4b2ed8602501e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-detail.mat.meta",
+      "sha256": "06dcd87efaac0a518f8f280270937fbcc7b022dec5507364abc90f3605033388"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-eyes.mat",
+      "sha256": "9027f343668a0ac3159671fcecb03bead61acbdb1936fcb3ab53c91d0d721338"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-eyes.mat.meta",
+      "sha256": "a62feb54a2596f3eda0a1edc5a584a620676704e83820c634e9f8c2be45aea92"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-hair.mat",
+      "sha256": "3abb016a9578cc816e35c37d3e7b85d14e3403021f437c5c3a6a1a5cbd54892a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-hair.mat.meta",
+      "sha256": "013507eeff25b19cf02180ffe68ac9c7318f6f6cf345e93d2f0bfd327dd7472c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-brow.mat",
+      "sha256": "9575ade71a24ba1f5593e4c1dea22181b1d833fdf90d0d625d1fc18ac8ec9702"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-brow.mat.meta",
+      "sha256": "3f2d9e495e972c6141edddf740dc0a712d267754713c3bc1bfba90e66a7694d7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-eye.mat",
+      "sha256": "6558b7c897ec975052fdb970d10a921546cf8f9635ce7492d4cc2f2d606e6da6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-eye.mat.meta",
+      "sha256": "e9e69b20ef2dd296b67d67f912d0a39fbd73790d90873d37113f7f9bd942693c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-hair.mat",
+      "sha256": "b4eee5957aa23fffd471b5ab6423f0af3c70b2ebbd6701bc6122fe75df0013a1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-hair.mat.meta",
+      "sha256": "4478f227d44d5bb092178b9a904985c76750c83dfb2d8db00d358399ad406e1c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-skin.mat",
+      "sha256": "eb949dbcf2cbbc3447658c58071f8296b93ca1fdf4a1a59bd7d834d357e1498d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-human-skin.mat.meta",
+      "sha256": "372660f3c61b408ddff2a41a5c92fbd75fc4bb02ecde17446f33abc235f25ab4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-shoes.mat",
+      "sha256": "1204ed5fddbea0d940886fdbef1d0fafa77ea74de63bfa5a58c83f95e42ca5bc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-shoes.mat.meta",
+      "sha256": "50e6736f43e1f87c6172ad1a3fd76bc762233da4367251355011aa21e8155fd2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-skin.mat",
+      "sha256": "22f432f75e666f9428527913116a619409c221771e7afc3b00dbb5e5dca9fc83"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-skin.mat.meta",
+      "sha256": "b45997baa29d5a999dc3187eb8d241ed7adb821e4f6b2a91e944e03333bedf40"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-top.mat",
+      "sha256": "b88cae19fea32cfaa848d3decb01027b84569fcf4a5cc5de3f001e5e669264e7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-top.mat.meta",
+      "sha256": "87753b3199d15f4fe49a5a28a102eddd72be3fe58141edb4b6df177dddd507de"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/sole.mat",
+      "sha256": "3dcfa78c3ee57d80d2062d3e3ae49382c3d34fe3e6d7cdda9ccb002cc9e7f8cd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/sole.mat.meta",
+      "sha256": "d147a549666ce3580b6fb6a467721a85cb4e0d6811e1ff37657f045994adfc1c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-accent.mat",
+      "sha256": "37a9bb7f78e523774162e6cdeb77e63b9a6dac8f58a41c35b0387dad98f9e2d3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-accent.mat.meta",
+      "sha256": "b53a305cbab11a357478988930feadb0ad97c373a0e843af28758ef7344000f6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-bottom.mat",
+      "sha256": "4537b5ecbf33c8fec92a37256685f735fe75927d4b3c420fa35de5fe3cdea70a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-bottom.mat.meta",
+      "sha256": "7f8eb37ef8b59fba046582b969e9b8cd1d440983cc115abbcb588fafb466d8fb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-detail.mat",
+      "sha256": "d9b47858b2314e3f64751492ee1204e7473f4c042e3a3a516ca16ef16595f950"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-detail.mat.meta",
+      "sha256": "cf2491fcfc78a07640a732a8d7dc9f756a4d14f5314962f8c2c7906e0b3bfa1c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-eyes.mat",
+      "sha256": "7541c2556b8abb49c78ab055e53b7d37eb35a3f7ca043336845c9e40c9f1ae9d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-eyes.mat.meta",
+      "sha256": "8032956b7245796ea1d7f5407d13609d5d5faf6f6a1df7ca7ca0d27dcd649612"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-hair.mat",
+      "sha256": "786c288bcfc3e59af7adfb4868ce346d0479f683b435441e874bc8cfd64c2e17"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-hair.mat.meta",
+      "sha256": "95349cba2045e721be440217f0d2bcd5b37ade5bd5113bc963fa67d896798cbb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-brow.mat",
+      "sha256": "438a662c97d12d68f735e6c2ef65ae990495c46aa4fc15dcc472e983dafe1aa5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-brow.mat.meta",
+      "sha256": "ea9afcfc4f0b40f16afd95bf3d531c872c3765fb8806f785b86ab3dca81bc1e9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-eye.mat",
+      "sha256": "cbf3a02cd445d739e932053b56d19bc1c2429b7739b55294222d550b08e9b7d4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-eye.mat.meta",
+      "sha256": "6838863ec725668391289c2ed82faa69eabdae7d865c4defbaa207465b9709e3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-hair.mat",
+      "sha256": "c236db6d851d41be5e0d52208e1fc3b33b9410dd06ef58e2b61ca4e9b96c1503"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-hair.mat.meta",
+      "sha256": "f45fe90ef209e31be578a6224a12b49a2b8436718f8ec0decdc95974b97bc783"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-skin.mat",
+      "sha256": "0baa8e3ade21febedd0a8c39247aff38c14cb8210115927d9333e8b563a46ff5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-human-skin.mat.meta",
+      "sha256": "4ed6d579f4db9ca2b613f52f302f691c1500cad063b498e4f0f2eff9611e7191"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-shoes.mat",
+      "sha256": "b15299f9dd8cf0e837c43320e47006a43f8c5f033ac522d0d0cf15c6fe2bd3b3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-shoes.mat.meta",
+      "sha256": "834cc5ccb7dd142445a4b9b2fe2dcd6f6305b526fe1eaae9d8ede4d290894992"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-skin.mat",
+      "sha256": "3e509d797fc3b250f47ce238e27b1943775c9c52329a73cb4485eb7108896670"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-skin.mat.meta",
+      "sha256": "9e31bd2abc016703a3946214264219c1b4698740097253f56f65a89e51d2a8d4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-top.mat",
+      "sha256": "abbac751411cc481a7264d599af671b6e5b5c0a14e526b62b2ffab0f89ba4b3e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-top.mat.meta",
+      "sha256": "cda7cdcb836736bcee1c3120aa483c0a9a9a9218227a4371172e55f3309de1cf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-trim.mat",
+      "sha256": "a6c6139b9d0ed3718b54f5961d00c3ed1f49792946633589f3995371b93009e9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-trim.mat.meta",
+      "sha256": "38a3ac48253ef6a618d3d91cb4c2510b49734097046eaea9168b1e458bc287f5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-accent.mat",
+      "sha256": "cd1f1adf6db9fddbda084ec96cedc33c44cc277812b4514dbd2e198887120cd9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-accent.mat.meta",
+      "sha256": "5b766e641cea65bc715e10be4092d4d63dacf234a0fbb61c8324c834fb719591"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-beard.mat",
+      "sha256": "c01a45ea2a60105d718f9252632c25c3cea286810a0cce0c466c348a262bdb56"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-beard.mat.meta",
+      "sha256": "73e4cc1fd06a2fff3313ff2fd45dd673cec712553f402e56b4b6918efc6fa4bf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-bottom.mat",
+      "sha256": "86a7815be1eb49b72e115f07e11a600f5aab40a65eb052264f089b3573541d5d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-bottom.mat.meta",
+      "sha256": "2922fbc394c143a80a9e8d688589e48826aead80f2cf5d3cdee636bc526ef4b1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-detail.mat",
+      "sha256": "662cb81815727ebcf465e59e164629031f2a0739caf685ec11619eb36bb3c8ff"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-detail.mat.meta",
+      "sha256": "46dd5806cd328ff626ff7d51d6b6fb29c26c1b27dd32f7321b40488f2fee5d3f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-eyes.mat",
+      "sha256": "f93cc9e189054c054a043350f1f5b661b1ca384f2391905a30b5b32fe9f9c1fb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-eyes.mat.meta",
+      "sha256": "eeba7a2d126e82b39d2ac4b34d925b5d5bc988884e5258f7fd7123da5dae07f1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-hair.mat",
+      "sha256": "51220d377034795ec07d3ff7846d0cea2696b4a3b77017e1b8e08aca7b1577af"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-hair.mat.meta",
+      "sha256": "404bdf1ea625610fa50032cd7985b15c2922df22360189ec08d48d0c764176cc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-brow.mat",
+      "sha256": "07cfd01d9817fcf9aa987c8698f70f5539df49321807339d92020d6eb1977d38"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-brow.mat.meta",
+      "sha256": "872fe9fdd02d48460fcaceaccab7796ce5e750daf9688f6f7360122349e7adb1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-eye.mat",
+      "sha256": "a4b7b66b148870f8679920c65bc6bce73735f1ea4b1220c76d5c8355d351fe27"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-eye.mat.meta",
+      "sha256": "db0878d60216841e02070d4cf8b9f9722b5bb043f32da2342a8871010913853c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-facial.mat",
+      "sha256": "3c2dac12b85d30c1ae7b84e6700af1b7e20548a7d0c66711168aa2fa0f9b321f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-facial.mat.meta",
+      "sha256": "ad7737e720b678a55ab9047e9c218a71df32fb8e3aa382d19ec65347b71cdc82"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-hair.mat",
+      "sha256": "e8460922db5a01d528630a94ece6e0b14ce014f0e92445b4b8dc481aaa4d5348"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-hair.mat.meta",
+      "sha256": "d46aa1f4f264a43a53883d03c95388cc798e1ff1ef4e70f4307d113dcb961eb1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-skin.mat",
+      "sha256": "ab69e0eb4368f771adb84f609d11f8479b170be2524d1d285708d8922f37a161"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-human-skin.mat.meta",
+      "sha256": "82fb7899149c4cffcf7f85f88a87f0521ebf9adb4ca8267aef4173e8f4dd010e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-outer.mat",
+      "sha256": "14888fb97c3067e1f844603aa531c51cc17d1f302bd75706ea669652bd021587"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-outer.mat.meta",
+      "sha256": "154eeaf8b00bb901e91f8ea7800cad26422e4f6c1fec852209c0b28104c3d9e7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-shoes.mat",
+      "sha256": "44b6a994a20b3566ceaa583de3bcb655c64f587d02b3cfdda8db18f3da0d83e8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-shoes.mat.meta",
+      "sha256": "ed59346e3375329d514718309a528764fa15b65779afb27694cadd695e449e7c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-skin.mat",
+      "sha256": "96bb4cdfb7386485118187147b1a4cb3559cd8f4508c1712d77a3553d142b39c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-skin.mat.meta",
+      "sha256": "7084503f9f9bda3f6a90832da3df6729a7bd81ce09f89e382bd9b6d837ef04aa"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-top.mat",
+      "sha256": "f1c31a7699f9997f4844a64847b7687ca5d9df0d8994c5a3ae1c8bebf4df8b5f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-top.mat.meta",
+      "sha256": "c0498744227307540012f56f6be4e1ba4ebd9bb33d071391c7b5bbb3c6ce37d2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-trim.mat",
+      "sha256": "b9cb080c26f1c7b840780ce6906baf641d443078f7f29b7f56b140e8e5cd5c48"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-trim.mat.meta",
+      "sha256": "bf49063950919e4f18bebf58ebaed11acfdfeef7ee16666931a5c5f9188b2298"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials.meta",
+      "sha256": "92a229d4040a908da80cf55a4e04beb192ac120996b1f2f11b38ff0ba3f5a67c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/bruiser.fbx",
+      "sha256": "70b542b2e640a096a969fca0eab52a93bda671f2a42cc38c4fcca59a5fc52f56"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/bruiser.fbx.meta",
+      "sha256": "f7c31ea075d4734150bafe8fed80222bfaba1298d396cb15231a08e449552723"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/dock-worker.fbx",
+      "sha256": "85101a0c7044add51fe95877fa993941119f95bf6d7513597e91f4b1424cabe2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/dock-worker.fbx.meta",
+      "sha256": "0aa2f00f73aa30c10e00efec1db730c0621cd2b5c7a8cababa05e9038a3bc870"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/eccentric.fbx",
+      "sha256": "9b4d34af3331a7400e4a11b5b7f8f34280241f8e5bae3e197a04d358ca762e3b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/eccentric.fbx.meta",
+      "sha256": "dc85014c4d66a3dcd91036b404fabc9f03b2ea906e1af9e21ae7bd0f0e23ea36"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/elder-woman.fbx",
+      "sha256": "45b381baf3381eb45ba08e0ef78382b70ba7217bae7823e28841e407c426107f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/elder-woman.fbx.meta",
+      "sha256": "c6055a5b0f6d900dea4c7fdba8a45403b630faf393c4d2ca6f2f9e6ea4aa67b0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/everyday-pedestrian.fbx",
+      "sha256": "a63ef9db1ee96a4179e2d03ef27c79e53018458e7d01e5aa00cb03ba8c6bcca1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/everyday-pedestrian.fbx.meta",
+      "sha256": "67bb75c999793e7897e30075998a5e22a87022012c3f4f4a0b23c3f7935b086b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/fishmonger.fbx",
+      "sha256": "1459cc01a5d4dc81b3f07b53a6bea9bff5620a2162992e902e48586c69008f64"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/fishmonger.fbx.meta",
+      "sha256": "94c09f8295e09a09669d1520aedd82cb4a93e83286e162d461e710bac60021bf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/local-fan.fbx",
+      "sha256": "464bf8deebdd2c39b537edc1f7e0a23757f5548f5c74778312d5f800cb5ba481"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/local-fan.fbx.meta",
+      "sha256": "c2fdd59053348891df1044142df40e23d7aa935e96a632a1926931a6b8d3d4e7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/market-worker.fbx",
+      "sha256": "bc659ee5ecc94ab09f4bf0a69bf2ca3edbeded334de30d8ec7d2f5c4ca2d39a4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/market-worker.fbx.meta",
+      "sha256": "18b17d5df19dd1de61fdf359fc73ec0fb4c9efbe96f22c3f64a379613117bf62"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/mechanic.fbx",
+      "sha256": "edcdff11c06b1329ea7257361851a79c59275d1464caedcb0dc1c1ae33cc3e5c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/mechanic.fbx.meta",
+      "sha256": "f585ba2bfc5238b5a235cd484c34dda256e1d7f75746b8800c1d530157275d92"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/office-worker.fbx",
+      "sha256": "9370fb30aec356898b3c5d19cc280d247e013f54b34b03217a800f59fda473a5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/office-worker.fbx.meta",
+      "sha256": "37279e8951a62c5d58181f58899ff95e1deb235487aa5d74cb57d1f4a81715bd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/older-resident.fbx",
+      "sha256": "004abf64040397cd45ee0284be5c520b887863018fc715689b2d4c422874618e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/older-resident.fbx.meta",
+      "sha256": "eb215c292229106258f726cb1b4c0d1eab2f82e68d66867522efe7cdd3ec75aa"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/shopkeeper.fbx",
+      "sha256": "3eb92e5d9131d9d9de3da42346f688a9ea7df088d963079b89f1e8a5b5f73b66"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/shopkeeper.fbx.meta",
+      "sha256": "81a90ff387b38b5689672a71014918e91b206b0dd617ba5aeae491041c9d055c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/student.fbx",
+      "sha256": "283daf65219242944206df72385b5889ca95b93462980e41c84e179b92e2a691"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/student.fbx.meta",
+      "sha256": "55889a25a1e254d38716f98cbb1a9db59bb4126f61deb709640ac76f15ca1910"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/waiter-veteran.fbx",
+      "sha256": "17e879329b5a253ebc9e97ad5cc99e1652ee86983ac5814bff9b374ce475b315"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/waiter-veteran.fbx.meta",
+      "sha256": "bcdd07bc1ab25d10b04b6a3d3a0bb070ccf0aeee0c6a8b55836f70f524e90b0a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/younger-resident.fbx",
+      "sha256": "4e742893139c8c21bddf5b93f8070e68cfef415dd00d9ac6318d9bdd0a2d4d99"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/younger-resident.fbx.meta",
+      "sha256": "c149464688a399542c8964a28e985ba9e8450f12e13106b904951dd30c89e4f9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models.meta",
+      "sha256": "491ca8de715efd9d92dbc25bbe1d5cd16e36fa13a40aca2de24c578b6db55f84"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser.overrideController",
+      "sha256": "98afdb86564b3e674a330fe2c373a08b5f857505c4b814e7911cbb12522e4a3a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser.overrideController.meta",
+      "sha256": "be4b9bdfc5a83a659d3bc54cc6356a139ecafdf6db2f56b435b0056f5c8cf81a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Idle.anim",
+      "sha256": "36dc1ed49be8a1e0b60299f1cd5bc6569f956b1f1bc9126cc1dededc268bbeea"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Idle.anim.meta",
+      "sha256": "a7fd27b019bf2213541b23061821e959dd177684ee2eb2c21c228f61403cf9e2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Talking.anim",
+      "sha256": "760a32192e1d9749cf4e8122b9ac1a87ec51a8ee76c66c1ada3b843867cf7c0b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Talking.anim.meta",
+      "sha256": "ad8ed949285935504ca8affc2c1c8a256ba10a953504e8e38e0f668149cef8a6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Walk.anim",
+      "sha256": "048450670b61b7ad7e395ec053345b231f82839539cefdbf2f68101e6ef0f8da"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Walk.anim.meta",
+      "sha256": "d3f5adb9234e4dc11c6ef5b67c74905f4f39e3a189e1f619b081f7dad56c6e7a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker.overrideController",
+      "sha256": "d08bd99d1c67d0a6741053761dfb19c943d6fe4e1af1834d40fe60de2ef3a7e1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker.overrideController.meta",
+      "sha256": "489f430944df7ac1914c1af79683185e7fed995f6460c533b704acd4549fc4b0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Idle.anim",
+      "sha256": "b8add4a3b949169272b9281e7f925d30006fe0cd5a3f339662ab998a3cbe9457"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Idle.anim.meta",
+      "sha256": "b60614c3ba4a87af02a6e6bb416b010f21ee631ac96292d6056193f1db4529ad"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Talking.anim",
+      "sha256": "353e2a46e6542e0379feb88bbb92dd15aaa5c3e8be6bb36dd6d47b503eb047b2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Talking.anim.meta",
+      "sha256": "9d7da25575c256b30dd60ca234f10069c2bf0fb0b0e0078194d0b311fd52cbc4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Walk.anim",
+      "sha256": "43989ecb340314b6fdb1131cef4e42ed5d748272fd01a9b80169976a58d1154e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Walk.anim.meta",
+      "sha256": "ca2475c35c507017e90e79f57c59e9d32be2cc86a8951958e27c5aec09824413"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric.overrideController",
+      "sha256": "8f08bc7defe85cdafb11c33023d4f7b61ba1c237b2c6fc5ffba966a72035ea7a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric.overrideController.meta",
+      "sha256": "3d8ca2341c7658ccbf0a3b4ccdcc8e3d4b62fd06b76e3e74f7531dcbc40e7490"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Idle.anim",
+      "sha256": "9a591f5cdb548151b15de7f9faf82f98295a056cb8da643f78713e5174b254d3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Idle.anim.meta",
+      "sha256": "5b30dcb540d5fa8eecbd2110fb863ef74133768700e38dc39700229cf770550f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Talking.anim",
+      "sha256": "15d0d219b54bfc59351acafa6d63ecefa4be3ef67dd5619b5724d54797f0b135"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Talking.anim.meta",
+      "sha256": "4781e1b82ab0821d7aab1df2e4e53b68c55a703f5813847a3cffef359f77fff8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Walk.anim",
+      "sha256": "2fbdbbd57537bdc670c5bd7c58847ef6ceb25b135e78bd89fd55ab8ff4656355"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Walk.anim.meta",
+      "sha256": "293fb2d7c1476ee8d66bc9751f700a6cf21f15956d360cfd9a929d6113e40e67"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman.overrideController",
+      "sha256": "71225ee43e32a8bac6090e3debd261ca9e4d74004a7d7c678e489946f4adacbf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman.overrideController.meta",
+      "sha256": "cabc7ac51904768bb3d6849511b315a2ea951b1c97bb600889596cf78c421c26"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Idle.anim",
+      "sha256": "b4eb63d9ebe4ebf9ec064908fa0508e64b50d3e526fd9846a2386e6e6f9bbae1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Idle.anim.meta",
+      "sha256": "c2ae79200957795b1274f2a88ef690b90bff98e96f7bc47dd5819c00ee6ce74f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Talking.anim",
+      "sha256": "8341ba3922abdc0649fa94655b22a774a3ca559fd03ddc85d2e2fb91841616f1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Talking.anim.meta",
+      "sha256": "a4c077360f8729e954de7e28a6b797da3aff73cb546f7beea1228d4469dc438b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Walk.anim",
+      "sha256": "725f7549cd8db41b4cfbc011a398f7d8ce56da42c96054ef05fbdd55c4ad40f2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Walk.anim.meta",
+      "sha256": "263e4c2c3abe5aa675729ec42204dae17dcb380cdf02f325f86f31eac5388529"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian.overrideController",
+      "sha256": "5d0cad55a1b5f41161116dcbe6a184aae765e929cdae5853e8be1d355c6aa703"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian.overrideController.meta",
+      "sha256": "a6e89a47f53a256be787a1067e43065fd56d79b08ce81cd3e6d50887a10ed17d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Idle.anim",
+      "sha256": "021cc83ea0fb70a5e1822c63788b46fb68312ac88976018cd903bd31c1156d21"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Idle.anim.meta",
+      "sha256": "617e111bb0a33011262379940d0763ae43cc10f8bc77825d69f54735f75e5a91"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Talking.anim",
+      "sha256": "0518d0f17dbb9faf62010c758625e9698a6f1eea4835661f877e5f53a640cbc5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Talking.anim.meta",
+      "sha256": "a1e3adc9228e3d58af8f08437eb1f341c6bac8f9dd6561bc73693c9e2c25b419"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Walk.anim",
+      "sha256": "03c9547503fbc8230a7a66c4ac5bb6fa81e1685f6b1740167e050d53b8e3b0ee"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Walk.anim.meta",
+      "sha256": "631721af9d8a2697a8aa5fe8414765a4e29f39d8ee1eb642950abb573971715f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger.overrideController",
+      "sha256": "a4900ec07b6a41360aff06112438c456a9c7221531cc134a0e80c039ee8a2ff8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger.overrideController.meta",
+      "sha256": "53b6324e68b04198fc24d915e448ea02925002cf0fe41d5c67eec59e2772dde0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Idle.anim",
+      "sha256": "a469a2a0147765fa06981d70ed6bcc61e9fe64803977be62d007d608d06325d5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Idle.anim.meta",
+      "sha256": "24df073a528fef47cf614a9883385985c4738287d0f4adfe0ecf108759c31241"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Talking.anim",
+      "sha256": "d7345214a6f06d933194646a2fe35c586d2b5b91b371ca2eec786b5a0a348cb2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Talking.anim.meta",
+      "sha256": "599776518dc8e2b3d75c7bcc60214ca4e906648c852508e4a32c7d20534f9894"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Walk.anim",
+      "sha256": "221331bdd262c11c1b05dce631fc566ce426c22707efbda1a5be3ba84de1fff0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Walk.anim.meta",
+      "sha256": "404711c9b95bca5e7740b8aa50147219b5bc1dbfcf3f382c34aac302003ce6f5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan.overrideController",
+      "sha256": "5672649b8690aaddb5c2aad11ed017e0ec3ef19017a679adaf76cd3d28d99611"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan.overrideController.meta",
+      "sha256": "c665df88b30fc137cb33f40520be0973cc94bd88421fe48d7a9d006d69bfb18f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Idle.anim",
+      "sha256": "b7f6e0712ec5e346c0a5c38909ae3b426cb586c58c0f615dcc25a9974d82e5ab"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Idle.anim.meta",
+      "sha256": "5be5516d11c823a76277a36096d8da90279fa037b282d7ad6f32e1c2232e5aee"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Talking.anim",
+      "sha256": "0011e1900f445f0afda1d20ccff2cb9077a4bc8d668773ffc19a50774c912227"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Talking.anim.meta",
+      "sha256": "ebe014a3e4fcc3879473c5fcb3a27c069040cc961211e8cdc7f3f628928837b1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Walk.anim",
+      "sha256": "df98b554c321d4f43510202fcb35654d2f2023562dc74bb4ce6fc9913f4dad68"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Walk.anim.meta",
+      "sha256": "b37ebd473924147825a69e156a97c10eaa0886322a4beba5d80a26edf4eabea0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker.overrideController",
+      "sha256": "324666f28d6e3a294c38f6272514ed860c688e480903eefb76c2fbfa6eaf16cf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker.overrideController.meta",
+      "sha256": "5b6a9150e6e2555f76d50609a26f2e0cfcfe51122063bf88bfea36021c60aff4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Idle.anim",
+      "sha256": "7f425e61dddb2d6f18db81b11bdfad6913f86affc02d3c77a4af0230a9efd72a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Idle.anim.meta",
+      "sha256": "5e5665f8df2236eb5e3c6b8b7824875a2b4a38b3827391c4fbd9cfab8e5f44e5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Talking.anim",
+      "sha256": "e7da2027b4d761171dcf1cf916336b9a5239a3b586c18b783c543c428d37ffd8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Talking.anim.meta",
+      "sha256": "aa3e622f0919818ee8eedf5c11458376cdd07a3e9eb69d2e6f819e85fcdd2a89"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Walk.anim",
+      "sha256": "e09b23f4d7d3b0e843d6d51e50724d71653431725abe74a0ca01e9db9fb200d9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Walk.anim.meta",
+      "sha256": "0920582081e59994aeaa04f220c63dfc1349fbb5350ff412365c40fc367e6946"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic.overrideController",
+      "sha256": "d5877c6e88b53f82863de68f3dfce85185b04323137aaac5098a4bbfe38d0af4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic.overrideController.meta",
+      "sha256": "13c318520f2150a30a9ee84d0e33465a1d25f6fffb23e06a094def9d9143e721"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Idle.anim",
+      "sha256": "f389dfebd20a7c0f7792966650f9f0d3dbab220161917f621c689f556624d0e8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Idle.anim.meta",
+      "sha256": "211a32b37b031826f02cdf4148f2ae9717bac9485de90341261717049f83ba9c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Talking.anim",
+      "sha256": "9229fddd9c8e6f5a6eb1d10c04f9cd39a2bbb9815267a142ee4c5d6ff0010399"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Talking.anim.meta",
+      "sha256": "9ed343167353a1516a86a30c02d3cdb62f1798aab3efdf426f1c311c1c5eaf33"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Walk.anim",
+      "sha256": "7dc89196d500186e164848db85b10b4ec41256f5c283805bc9867120eca1afb8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Walk.anim.meta",
+      "sha256": "3747602ec148324981c2281bb96ea611b58bd62b581ab6a6c09a95d6f23f0283"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker.overrideController",
+      "sha256": "e347f163fdacbc744e2aaa7d576380ff93c70e0718a714245ed4b5d78a01ddaf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker.overrideController.meta",
+      "sha256": "e348ab3f5ea4acad4371fa6b2620cae69df4949ff9966f0a3c2272759c1c090b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Idle.anim",
+      "sha256": "32e412eb0dcbb598e4abfe01882e83d9c80fa2bfdca61fab6448fab48057dc94"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Idle.anim.meta",
+      "sha256": "376f4cc1277412adeb321a74aa05e710509ed33ce553b36d98b783752b87f03f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Talking.anim",
+      "sha256": "a0e787c34bf4f6f2ec84906810ca02e398f1d44ee6f898762ce30b1f5148b376"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Talking.anim.meta",
+      "sha256": "72655bb10d88d23251b0d54a4cbebdd22379f77e9afcd098c5ab9f8e1e550e23"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Walk.anim",
+      "sha256": "054a8617cb303dacb3107a72a1700c5b47851051cb2d0e70fe7ff23c30bc4a18"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Walk.anim.meta",
+      "sha256": "1b19ab5c57099850181c8961fa52af1a002a8075b1e498b5fd561c77459980e8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident.overrideController",
+      "sha256": "8cf6bd0a0103d641b6807b3c1e6c160d63b9a63042b46bd24215ff14f1b9c533"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident.overrideController.meta",
+      "sha256": "ea21a7d0f3539de1487476fcbd7d082b43261af589142d39383b42e74d327013"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Idle.anim",
+      "sha256": "ef35641303828d3927b5b0e9dc4e44db98b50d9f82393f8f76abbb77d67e2b80"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Idle.anim.meta",
+      "sha256": "bd0fc125471b44005321c63631d46e012ab04ffc8f35ac45dd77287d9f5e6d40"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Talking.anim",
+      "sha256": "532953a8d5e4dc78fd7c8c5a189788518687bce2ec4fd6d94ed778728ddc8f14"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Talking.anim.meta",
+      "sha256": "b496efe27e9e7451f5424f8db5c7cd02b45391b8c4379411c0dca6c1f06db593"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Walk.anim",
+      "sha256": "973d0d5c76d5967cef97ae9b304aa46971d5d8c605d394bf9a394a087f1fef6a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Walk.anim.meta",
+      "sha256": "864578c0c70361debe25468b29eb1c3249ee3ae5f245f7d82c9612083c572a7e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper.overrideController",
+      "sha256": "03f83eeddaac6648e0c9ef4998034092e309dc1375e91a398e11aa3428a2dbf3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper.overrideController.meta",
+      "sha256": "116b3847cdb6294efbdf4bc015d9dfca451420e65a304deb46188d0838b5ff8c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Idle.anim",
+      "sha256": "8e5ee4e88db70a61c61342cf57bf61ec9214bebd62ca413d9bf77b546d165d91"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Idle.anim.meta",
+      "sha256": "e8a88db11ce8bbc5cb8a4d006390b8ed16f3146005029eeb13a8ee9dfcaeb180"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Talking.anim",
+      "sha256": "307ab25d7a66ab251425df2d75a6686b2b4c111e2658a0bfff036b89c10ee07e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Talking.anim.meta",
+      "sha256": "ae5ec5ee7f02bad86f2dd7549680b0f973674c98e09898dff375e2639647d40c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Walk.anim",
+      "sha256": "6af50a828719a18f08e0bba77a219ce0377b219dd6b2dc5f431f59a58ebae82f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Walk.anim.meta",
+      "sha256": "d7251bdcdc0c0fd048be1d44ec3fd5da629dd6a9e200c604dea74b635c27b0b2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student.overrideController",
+      "sha256": "d897e26252520859f323ea43c3d96191d669117ce5bf27b71c416e86ba1187e1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student.overrideController.meta",
+      "sha256": "d81402c449269550f61c2d48c5376e79423278ad3cbfa6336eb5872c8a511a3c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Idle.anim",
+      "sha256": "0a9829277a8571fdd448f24a7ed5dabdb78057e41a29c7f69a63170281480b2c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Idle.anim.meta",
+      "sha256": "f64420a4bd868a8610c8b4180162c6fcb48d8ab8f42238db2eaa1a5a3a947498"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Talking.anim",
+      "sha256": "272338bfaa2717f6976180062f5c68edf0cefd405142d28680f17f467d2e7a6e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Talking.anim.meta",
+      "sha256": "d15b6e758aee4ea85bc72b31fa0e7e1872d00725a50d2db5a945c3a02b2da15b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Walk.anim",
+      "sha256": "258db2f53e889616f4fc49d99fbe91dea5974d805758524709d338ea4d9b0710"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Walk.anim.meta",
+      "sha256": "8d1ab73754a926f90e49e0b7be0af137dca9c3ee9c518146dcd9c3fe0c5f81a2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran.overrideController",
+      "sha256": "d11a80378e08adcdbc585255fe04a02afeba988d1a47a4708cd18996a051586b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran.overrideController.meta",
+      "sha256": "69c3a72558245016c287018e7539d0dcb82e761ba24c66410c2293ab8c8d1fa6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Idle.anim",
+      "sha256": "da2d702e6dd240ac532b60adfbd6ea83ac350e03f432a2026bc6af843ba37422"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Idle.anim.meta",
+      "sha256": "86c173e87cfd6280bb19bd49c1866bf27f16343978163de9038ad8c0a404e19a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Talking.anim",
+      "sha256": "e3b00e43b7c2aeede21b93861f9751633366055bb585633032f9cd8451530a1e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Talking.anim.meta",
+      "sha256": "ed1627ce2a6e96f82006b7b5dc8078463905732304e8b2828a68b8025a7c6558"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Walk.anim",
+      "sha256": "a8c0a2090bb2409b5099b88b2ad17fe1e1a13c115aef0a577ef82a18a303a7fa"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Walk.anim.meta",
+      "sha256": "2e54c0cbba50e8091a5948dbaf66e7f2a83d4306f73ee57fbdca0f0bd2cc2fd7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident.overrideController",
+      "sha256": "8534996fa30732dd95f24e6cc762df2889458fc719496b673aa298bee1001430"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident.overrideController.meta",
+      "sha256": "7652cd0b1149efcfef7aff28380133eea18cd56c229b8d51b7ff30a8a960e928"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Idle.anim",
+      "sha256": "66d7a4d933a87f8ba7e90ead74127b139c6a1366d7f2caa78d945f736a3a1675"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Idle.anim.meta",
+      "sha256": "8cf650d49abc7de2ecaceb77d5d81c45c8eae4e845dad0ec42f447bdf925ae50"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Talking.anim",
+      "sha256": "3195409454f4c38af9b36dffd8de26644fb39b05fa58b0ed0215313a8a6d9e56"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Talking.anim.meta",
+      "sha256": "a988425490c2eb9d9c47d579fdc252cc2b33ace992d6e68f03e2e0ddeb98c791"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Walk.anim",
+      "sha256": "bb78672999ab8452f3badd513ed2e397c011a258639e1e2e460659da160d5ee2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Walk.anim.meta",
+      "sha256": "c427df5276fb73fe55ca5b998e174f7b27ecd8c55a71187c4e5aefb28d92b369"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_counter_idle_loop.anim",
+      "sha256": "c1bf41f4d0e7f0d4e500e37b8727e56d652e398b537e499532d328871b613dbf"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_counter_idle_loop.anim.meta",
+      "sha256": "22b773bfedeb49f269c5517ed7f10048adfc54c06ca539a0cf2104940136dee1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_lookaround_loop.anim",
+      "sha256": "b9a658d4b02c38e544c13d7c5bc99d3eb956ae266bb9d9dbf357a8b09e52df14"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_lookaround_loop.anim.meta",
+      "sha256": "310d2eb81095d1bd9c0fb97bb9412e244e1d6888e107be323283fd90be2c4907"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_loop.anim",
+      "sha256": "6630f96a3cedcec80d44261195e189c4206b6a5360086208c3c1978002670e98"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_loop.anim.meta",
+      "sha256": "58fb13682b7d934790d2b7d076ce69a90c9391b54814786fec3f74cd45be9eee"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_talking_loop.anim",
+      "sha256": "254500b21072c8559f689153db2dc52decc0917afe5e5cb95304f182974e1662"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_talking_loop.anim.meta",
+      "sha256": "013241a0ac6647d56d8be205ae005acc4a9e4812ef9d11f5c88af7f43efd4c9f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_tired_loop.anim",
+      "sha256": "5cd8fe72849c09fd122e716384fabad44c4112649b45a6a09889e5cc7ac119e0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_tired_loop.anim.meta",
+      "sha256": "782b8e8036eabe640d4ad59fbe44b7d8564878f06994d35202abb6fd2ee4fdc7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_formal_loop.anim",
+      "sha256": "a4b23eeaace1fd45fa2f1202c845b4db341cebfbcc61fa4bd35b8d544653f9bb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_formal_loop.anim.meta",
+      "sha256": "23cf620593fcb36d779c583de99601f57ea15e5e6c98854375cc6a71244a4283"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_loop.anim",
+      "sha256": "d18a8e03f876268e331d984e0c083fc103e5235aecce4d02a99241ffbe72a326"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_loop.anim.meta",
+      "sha256": "0c0853929aed6b5dcf377238e5e13bf113b82c32a0b1c069f753d94a900d9699"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_foldarms_loop.anim",
+      "sha256": "847003d9fb2d51d589bd5b558e3dd13196e35ffde56c2dfd6fd0026b88a38ea2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_foldarms_loop.anim.meta",
+      "sha256": "17cadfce15f3ebdc5ca52bfd1153b687316f9bae89f029bcceedc0aec5ac3bad"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_talkingphone_loop.anim",
+      "sha256": "7f7500dfc8e50ffbf5f4f87ed8f1b5df2183bbba203235d212f6c4bb1dce6cfb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_talkingphone_loop.anim.meta",
+      "sha256": "32435ddbe1016eb01870ca08be916ef8eb3497bb1d0bf50ddb8957054d2038f5"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion.meta",
+      "sha256": "b0449226d6195588146bb817353821e5a89df89d7a4f7603ac1cefe83dd5310b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/bruiser.prefab",
+      "sha256": "6566ce2e86dcda3afcb183f66fa4f88e9a14dd715ef369793777ac00a285ab32"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/bruiser.prefab.meta",
+      "sha256": "a5a4e307ae4156e3c158a572cf2bfa2e9339f8a764dcbc49f0aa362b09731846"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/dock-worker.prefab",
+      "sha256": "860b77cad733f41979e399c78b31d3f657beafe6253b48fe8ab69bfa00ebac05"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/dock-worker.prefab.meta",
+      "sha256": "4e78dc82e0620dda963ad2a684b2e3841b99882745712911173dea1dbc6f0d1f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/eccentric.prefab",
+      "sha256": "a1d8e30abd139f9c7d8d0265ed934db5f68efcab70102162f6ac256b9c05a0a2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/eccentric.prefab.meta",
+      "sha256": "052b9b9ddff7fdcd5d391e31413b189337da91918f4be5b44fcab95e04fa5977"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/elder-woman.prefab",
+      "sha256": "4f8c2dbfc877a3821f806ce4addab0952eeacd6248218ee97660be7a223810bd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/elder-woman.prefab.meta",
+      "sha256": "d45afaaba405e72496a423a071a3b53b65ccd4874c408162b982298cff74261b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/everyday-pedestrian.prefab",
+      "sha256": "386255cfb6991bcc5ccc16184b1dd461c171f6f402266cf1d7a1942644481406"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/everyday-pedestrian.prefab.meta",
+      "sha256": "632b2b2e8ea6989223c9f988c96e4f24294cb8cf2b7005da6c21a45680458dc2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/fishmonger.prefab",
+      "sha256": "c0452187b2323281c25e0381a07b81a7229ca4f385c6736f1d21599be7f61985"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/fishmonger.prefab.meta",
+      "sha256": "ffc76f54a7061094adb23253da4ec6cebaeb36b9a2f0f865878f1ae3b5624a37"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/local-fan.prefab",
+      "sha256": "03d8855ec42e6858456531e69afbe43c847c609210abb712a60f0eb880f0c302"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/local-fan.prefab.meta",
+      "sha256": "0d2d5ec08f7ad761ad21ddd9cd672ca5976ef42c97e36d91e215cc769f458169"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/market-worker.prefab",
+      "sha256": "202aaebff324e802e50449764d7a11ae2169704630ec8888b4c6c15e5348ed1f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/market-worker.prefab.meta",
+      "sha256": "0602ac8ad58e7cbc915d495f61cc9689ec2d448ec529573f01162e6636d10ac7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/mechanic.prefab",
+      "sha256": "9ae6c73fab210e983f645005e12a6ee30927438ea45308719b337ef2a977ad2d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/mechanic.prefab.meta",
+      "sha256": "effc34ee5c65523a8d5f95a909783daa40af089aa5a4f84cf6d26f74d6be2010"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/office-worker.prefab",
+      "sha256": "49ccb07ed33eaa76169a90e30cf8b22019b2a8b01daba31d6f136e27bcfe88fd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/office-worker.prefab.meta",
+      "sha256": "efcdb08904fab3acb7a71ab5d0e58cc496834875bf6408a02f5f20ba9019876a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/older-resident.prefab",
+      "sha256": "fc7847f8295120351bfa8f3ce7a94209ee0af3da89e2affe20a49e9cc912553e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/older-resident.prefab.meta",
+      "sha256": "9d6c6cae515a5f5503269171be1a1b215bb162a054196934d7aca16a2827d635"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/shopkeeper.prefab",
+      "sha256": "c59996e4fe71e4f5d6f52253fd262c4cdc8210e25da51677645bd64e31949c1f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/shopkeeper.prefab.meta",
+      "sha256": "911f9f4c54b7e29f386e26f0baa331f313e9fc052fbb132e9249f5dacbcc4123"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/student.prefab",
+      "sha256": "94b3ff4c222430efbe9f780d221bdefea7c9d6d2ca2de0266ad99790494238f6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/student.prefab.meta",
+      "sha256": "e75ed979f176e600045b2d8ee29d520a9c1c405107728fdc9f6c9cdddd7cad16"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/waiter-veteran.prefab",
+      "sha256": "dd42034ab371527ba8cb72807718b746f0e2a415d85b9d9d018a1b6abafa33e8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/waiter-veteran.prefab.meta",
+      "sha256": "928d08126a4f89495feae74bc5727bd4e8f0b4767e3ea5d24407f4f7e56912a8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/younger-resident.prefab",
+      "sha256": "2a59f054e965a8090068ae2b3f8f33ca339009b984ce209e059c63bf65c7e48f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/younger-resident.prefab.meta",
+      "sha256": "9db1b0e2dcec1fe4fb47b64c23a12d80d654045ecf5f73152fc45a02c396b386"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs.meta",
+      "sha256": "4727a6711f3394fc20aa7d558231d314d4e71b266112f43aa4623b81ed122bd0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_blue.png",
+      "sha256": "30688236cd2a8df9cc0e274939d9bf1cbe61afc7e34a1531f3afdeb7e0335a2b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_blue.png.meta",
+      "sha256": "c32601135d553918de3fc97da53e6efc1d0110b97157e441c371424e493e7921"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_brown.png",
+      "sha256": "490f280ced2d1c52373b5eba489e257cfc4f5f8804b47c167333905d8709ad19"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_brown.png.meta",
+      "sha256": "6235c6df1e6dc9f454212b1b2460a1ae0e62d31ce8f41ffe378b3263c1d25fad"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_green.png",
+      "sha256": "304e68e4837a0a42acfad867ced86e7f0f56cc4c1aa6c0b66fd36cd1c6e4085a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_green.png.meta",
+      "sha256": "0281e3e5bf978b86978200de8d4101da7e12dfd85e5d0e659ee5a159c31db950"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_grey.png",
+      "sha256": "f93310013bc5ad5167c6e69684cd7b143d112f6b56c498e35ebab4ca6f8c05a2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_grey.png.meta",
+      "sha256": "234ebb4ba35283980cc79b7194ab2784eddf33ffb8fa169999056ffe4d112129"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_bruiser.png",
+      "sha256": "b2beb476dc282f9b572776e37d50311fb99103c6218299200b452ac6148991b4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_bruiser.png.meta",
+      "sha256": "56df49b283d66b902cdd7ae00bcffbee7294b98cec885f862a47b4deb6c97022"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_dock-worker.png",
+      "sha256": "e3f0ae6e0ebb2f98bc6402881647a5a0a1dfb827b5d14981c49d4516b491fa3d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_dock-worker.png.meta",
+      "sha256": "75ce2fb91c999847157ad093be932974125cf314616fd45761d54d00bd9cca25"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_eccentric.png",
+      "sha256": "032748d4c836a54eb23e80f1c47f559d023fe3b3aeacf0bdad461f808758a665"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_eccentric.png.meta",
+      "sha256": "e5e4d98baa8aaef1979a06ba74440a9be96ed6dee8eab8755c36f4e6050883bb"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_elder-woman.png",
+      "sha256": "0c17c70abb1ab5071560fc93a0db49f95a50e7b0384806420cfe7f9132aa8b9c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_elder-woman.png.meta",
+      "sha256": "19edf2fd000045efe9a529a184dff9765948604539b6efb8b4931636c30d2631"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_everyday-pedestrian.png",
+      "sha256": "1e43460c82563ad4bad5b5502210418ac1c8445608db7a7db18174bccfe21a86"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_everyday-pedestrian.png.meta",
+      "sha256": "9301b83808118d2914fbbefec6f36dc8996a5640db74579d833df21295b1b5df"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_fishmonger.png",
+      "sha256": "269a3111ab0d60ff4466e8bd8353d298a6b4e5ceedf45ff631e82346c41ee046"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_fishmonger.png.meta",
+      "sha256": "6c621c62adde69470a667f27c9d736cd145828b06ad1afd32c24bf3bd4dbe2ec"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_local-fan.png",
+      "sha256": "2e6e15ae97ffd44a5e4c0954c4a5b157f565c91f2b41cd9b52bb74feccdfa3e8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_local-fan.png.meta",
+      "sha256": "837fa7de21e40f98be916df589cdcac753985ab7f5a99834edf41cc3dc4e6c35"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_market-worker.png",
+      "sha256": "150cb663b8b4ccb744601b8a3dd90ce8ae099df43a6ee00670c58db8c8314d3e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_market-worker.png.meta",
+      "sha256": "e0e9a145a7b4b8f4f3448f2c31eb0678e6511f0e74f87740fdeefd5f6a227683"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_mechanic.png",
+      "sha256": "ce01402b21dc55f0af18413d6cf9f05154d81acc32ec90ab791363eac5b0b3db"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_mechanic.png.meta",
+      "sha256": "f70fcd4d3f50f9366d5e152f522fd9ebd8f1921cbfc423dda9c9ac1ee3788497"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_office-worker.png",
+      "sha256": "7108c49ea77bea32a41945aebf614eeeb32eb2737727a4defe4b1951a4888a4b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_office-worker.png.meta",
+      "sha256": "c8bc056bd6c7a8d7e44c047ad5d0be68090d0d1d67dbb4a958e389e80ff12114"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_older-resident.png",
+      "sha256": "07367a4ec449d160e0a5dba57fb71d5698f09b40a82812bc72c8896082c15098"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_older-resident.png.meta",
+      "sha256": "4a6f68d1d75c740a5917277e61fb7bc114423bdb827f08e3579f61fc1f754d8e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_shopkeeper.png",
+      "sha256": "191d7c76b9243d7cf7f67e243a782309f6a8170a172b8f44567bb7ab2dfd574f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_shopkeeper.png.meta",
+      "sha256": "1279ac95041bb89fbfb63393826b426c80bfa14589bc6c67de7a3e8e9c503e71"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_student.png",
+      "sha256": "c2213cee9dae18c1d622321364ea05d85809cbfa2e2a8dc14fc8701816882b73"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_student.png.meta",
+      "sha256": "6ef5cd6d20e3ecb4363eb15189badaf3d5b226c4553e59339b98820109628ada"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_waiter-veteran.png",
+      "sha256": "c896c9ca96ae55ce3f6cd7e3e7e760c5f8b5e78537f920b16465da76e69df18f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_waiter-veteran.png.meta",
+      "sha256": "0ef5c7e83401ea569ad4769930e817be9324a064d588033c40dcb93300e6d526"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_younger-resident.png",
+      "sha256": "f95d211a1f75d39de55f9a8699be1fc560be2297954d394174e8cc899e5ba259"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_AO_younger-resident.png.meta",
+      "sha256": "4aa13908f7ff82fa06727e2979f3add1a694a24d0ca80112094b22b07f330e48"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Brow_female.png",
+      "sha256": "8a436f31510508e6d1ec2ebc89b11ad2c03f321378894259a77c47d5071965d0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Brow_female.png.meta",
+      "sha256": "bbf2a026e0b8ef2ff88849ea7e85b0b8b9f051323e4f9bd4073882633aff1596"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Brow_male.png",
+      "sha256": "35f301404b079947dde8a1e789ef797e67caa41146c672fc9d333a3c6c514dae"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Brow_male.png.meta",
+      "sha256": "da8b9a88e99f467b0d34776250e0f3d48a81feb3d45e54fadd6ae62b3793f9d4"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_blue.png",
+      "sha256": "09ed3fe7f31b0bcdd0d4aa7703ed32cd5dce18f94f8350a9a3f8d1dc85165521"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_blue.png.meta",
+      "sha256": "c75b822183af4bf6fbfa6cceaa3d4e055619b2472448836a74edd28c9942d4dd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_brown.png",
+      "sha256": "bd71cd3fbe9a0eadf31febedac519fa1f34f05850d5bc11771a4a0d128af8b6d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_brown.png.meta",
+      "sha256": "2b977d880acf86598a8f66b6a01c449aa279a5a52c635c5f8d2bbb10db4aa053"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_green.png",
+      "sha256": "e9b61696fd1671a2ccd247f765b9adb3f6440148ce6d94766bb884181c3db10d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_green.png.meta",
+      "sha256": "a190279de15ef236c4948ea5a61ac17513bd332afb2de148c663190552c9fab2"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_grey.png",
+      "sha256": "864d7b0a3ee75da1d2558b59e87996d1e10f4dd0905bd7938de6b7abb994d141"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Eye_grey.png.meta",
+      "sha256": "1533459f75efe5ad8efef787cd75cc26a4f621b7aeb581559b4776ef2dd5ad6d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Facial_standard.png",
+      "sha256": "7c08f1dca30da0af464ff012587f716d38195b4ba74ed56261f6c050ac1c4dc0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Facial_standard.png.meta",
+      "sha256": "dfb9d80e4df09513e2bd9066e23c5080b028b5a5ca01ba3746497ea7c68215bc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_bob01.png",
+      "sha256": "6117cff0105c696c187b90c549dd81694d01f879ea9278109f18adfad46a3f68"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_bob01.png.meta",
+      "sha256": "334394d1b62b98efe0c2559f0e1c9f74e269f61fd563f75799589cf91062968a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_bob02.png",
+      "sha256": "29c94c2c989652074a99220ea1846a52023f1ee0f71cb34754ab92a21e9f3637"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_bob02.png.meta",
+      "sha256": "8211791a0adab9f87e4b7fb2ba1bccd80b55f8b25f70575c090d97f24cb4185f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_ponytail01.png",
+      "sha256": "6d782a0f0fab10263ce1cf95564ababdda9b7bfc6ce6808306fdfe588b07e640"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_ponytail01.png.meta",
+      "sha256": "301f8a19f5c68852189fb364663072ace7f072320c7737620a6784bc048b4970"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short01.png",
+      "sha256": "f64fd328ea0e7a9314003afa5445721ceaa2ea25c955a44ce71497542ea25577"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short01.png.meta",
+      "sha256": "93f6c1f0141454568220e7eb2dccc035ad1f5987ccb4408e4960456139846792"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short02.png",
+      "sha256": "320cb3de0c4242f737f66712fb0bea0c1fee3df44a2ad7e7278db94fd3c9dbca"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short02.png.meta",
+      "sha256": "74f10c84c98b7c57ea1d30bdfd5e7e961bf4999013ebd464520e9fb1aa4b464e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short03.png",
+      "sha256": "112e51a578fd3c868a044c58c09dc95c17d58cc9fb2612d1551fc07d611e909b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short03.png.meta",
+      "sha256": "bcdfda578b3d42dff8c035c7b902d5736c23f0b41e7d4a39d936fa8215afab35"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short04.png",
+      "sha256": "a955484b7daf5a4bc0739561dfa3cc674aab9baa1f46beb5e06196681d587650"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Hair_short04.png.meta",
+      "sha256": "3cc607d8578de2dd878badb02ba53817339f222c49e8d63f5cc75054c3f30185"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Lash_standard.png",
+      "sha256": "596ee01c301bb53002523e9a93be4592ffc2dc29f8d68863048a196a1b06c080"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Lash_standard.png.meta",
+      "sha256": "236a9c9b027b1d8cb87a63ff5ee3d949e4a444d137bbaf07dd9d85692b977a79"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_middleage_caucasian_female.png",
+      "sha256": "c59f815149882cef556ccd8b572a67b3a9be17a7dd814177f308fdf914675002"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_middleage_caucasian_female.png.meta",
+      "sha256": "13ea2dae55eebe07b9af963712cbc01c2b2e0daf502155c8ab7446753868c0fc"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_middleage_caucasian_male.png",
+      "sha256": "8acf35a7ac74d8092163269862fa8c199710ccfafa7dd298a93597b1cdc4931f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_middleage_caucasian_male.png.meta",
+      "sha256": "a76834c083cf3eb25d5d1a9750477be2f898a037bdd697956e48524abbb6c362"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_old_caucasian_female.png",
+      "sha256": "b82c93348d19280fec4c2c02fc65f094e3f215b9c6a712b0ea27d22d1ec16f73"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_old_caucasian_female.png.meta",
+      "sha256": "e3f6277a6b13295cec4122aedd16789423fca2d641117f3ac01feffbbd556915"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_old_caucasian_male.png",
+      "sha256": "87e6db9b1fdeea62582a5a66fb943851772a7093403ed6c3e12a8c74308faf6f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_old_caucasian_male.png.meta",
+      "sha256": "c5493149774dd4f712bb82cbd8db3667b10d53e6c2dc8fc1fa961706ddb8032e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_young_caucasian_female.png",
+      "sha256": "b5b490c61c2217831fdc3eb1773555d60286456b46dd142d1afa1c2e577332d8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_young_caucasian_female.png.meta",
+      "sha256": "c564d42b609661ba976844aea900ae251c00039baf913b43e43942618ba18e0e"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_young_caucasian_male.png",
+      "sha256": "2192ea769b05f8124bd7969aadca3b85eb205ed11d68092c22c2908abbbce8e8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_Skin_young_caucasian_male.png.meta",
+      "sha256": "8ef248dbcef94b049798dfe20ba4feae440f8d1fce528a8f50cf1ca57d0a534b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_middleage_caucasian_female.png",
+      "sha256": "807ea2155edd79508871d964a867e431f73e7255589af1f14520beda5ea405ca"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_middleage_caucasian_female.png.meta",
+      "sha256": "b0e2ddb8feef9e12db9ec918db41f993a37403a886ea00131aa44954b4fda689"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_middleage_caucasian_male.png",
+      "sha256": "0656189136b21f940e39eaad3aa5a2400f404bde3a4bad1d9352934545004a20"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_middleage_caucasian_male.png.meta",
+      "sha256": "3f71ce08c644679c2118e7a427cb756eb4d9d78d89de3978a3df7eb0d4b0fac0"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_old_caucasian_female.png",
+      "sha256": "a517a5428b16bef0476e1413802011953bc6354ae94a5d2e95bd460bd055af0a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_old_caucasian_female.png.meta",
+      "sha256": "8a8ceba18a068fa9ae3bd363cb8c42263cb3fa559b93b79aa0057d42c6b97f64"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_old_caucasian_male.png",
+      "sha256": "7dcdc85d09e7800585b9e01b22dc4b46e5e61788cb9b6b20ea3caa834d62c608"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_old_caucasian_male.png.meta",
+      "sha256": "f7a529b185d8ff2406d37390da15923cea8e79d4239b0836f1bdcae5a4b2db45"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_young_caucasian_female.png",
+      "sha256": "c3199aa2d3e376462f567b430749537426a187a7cc55b69103e222a7c33d8d7b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_young_caucasian_female.png.meta",
+      "sha256": "6ba7a46a5db3dd717614cb12d6f4c8d81bed73287d6a6f3aa7dc0f54add137d9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_young_caucasian_male.png",
+      "sha256": "d18a53c198e622886c73903e151c1b7f1ae970f699b242d976b0783e078d56ce"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Human_SkinControl_young_caucasian_male.png.meta",
+      "sha256": "586d9a45f86e2af0332171bea7a416224fa40ea5fcbaaadecabb0d39bc19a61b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female.jpg",
+      "sha256": "e419a54b6e839ea133fe8e3dcfafbf5cb930d02af156645b55fb4fceb766b389"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female.jpg.meta",
+      "sha256": "2544f762d41e36bb1f6abe198451d79837e68dacaa0a03cc3dec2c404540e358"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_mature.jpg",
+      "sha256": "8cd88203d43ef4e71e920f53ca8f19a424e445724af17c54eae756789ad1b798"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_mature.jpg.meta",
+      "sha256": "d0e4b87713b0c8f29548354a8c8eca6becc70dfff153b4292321cc766eadb19d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_natural.jpg",
+      "sha256": "c4d46ec7aeb2188fa3bf0d37b14d77105157906df546e2ac9e6f5cec00af592f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_natural.jpg.meta",
+      "sha256": "63c2f02d35dd5a49d738f8b643c194c3c2fdf197532746e619f803b3502f3736"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_older.jpg",
+      "sha256": "d75f926612c68d3634e67a9d13acfea690be808f1f82369eaa78f3bc5b59601a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_older.jpg.meta",
+      "sha256": "9f094192d0cf065bd71033d483de549483d40f7b7af9a8a4aca80785c023a583"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male.jpg",
+      "sha256": "eeb0404ed6ad0ee99a312d1cc4118fbbb5fedb8e57d907c08e93cb703d0255c9"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male.jpg.meta",
+      "sha256": "ccf8c8ebb137d0347ec2829fbd7bdd299cc239f155859571ff900609b9dd85a7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_clean.jpg",
+      "sha256": "a1f70b971b7c8c82e570f0f024a40d77c8994f97b673747f6fca550d3b764183"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_clean.jpg.meta",
+      "sha256": "c8ffb381aa0477281abca9e0aa8ec1eeb81c5419d5f0a7d699f40f256039633a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_mature.jpg",
+      "sha256": "6886fe281a8c1817dbd37e831a1f50f158c3388388ad1ec6ae059b69b1999492"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_mature.jpg.meta",
+      "sha256": "ac89e520f13a00d2ce7f77f2a30d55790c6edfdf77d4d833e6c1010298acf270"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_older.jpg",
+      "sha256": "ebda30e34339eca1066971eec79229aaf6fa4096c4c6e7b6f7d3218fed49adba"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_older.jpg.meta",
+      "sha256": "681ab609244ff495d64b12a0709d1cfc7bf4e05aadb0932fe70ac93b11beb7f8"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female.jpg",
+      "sha256": "4da1fcdba758faae5dc911ae0b36fee98f1795e65bb57b66079d8485dcdc9982"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female.jpg.meta",
+      "sha256": "2f36a2c51d04d80cefc619509566169a9b79ddebba8cf77e5adf5da8659d8a59"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_mature.jpg",
+      "sha256": "34c8d2f70014bc5bdedca8e851b160a38968e7a2569e780e84ad45b2415f1e56"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_mature.jpg.meta",
+      "sha256": "2dd401e295f4177c82016b249f0a4c3922d71f051e900689ce1fbdbbee0eb674"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_natural.jpg",
+      "sha256": "7bd5e5a07df3fcb4abe62b2559ee5cd4949d5e1ee2152e17251accc07c7b2d8f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_natural.jpg.meta",
+      "sha256": "53d258ff774adb6c87f51bf6fecb843ce8f2315218931a8ead283e6c6d126244"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_older.jpg",
+      "sha256": "bee993d9fad3709a616be2720a68ce6c39832cdbb997c854762941cffb89222b"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_older.jpg.meta",
+      "sha256": "a731348dea19d8044cfb7a0131e01d446b96e3693d776a9520772f0e13d3ba77"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male.jpg",
+      "sha256": "b081877261e89e7126629581c1fa528867fe314bef9e4d76a830dbca8770483c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male.jpg.meta",
+      "sha256": "21e8491d732602eb9a19701c9cc37522d4025ebccb8bb506fdad91c17533ed93"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_clean.jpg",
+      "sha256": "eda15dc7cca4395414b051ee785405929010236b160e21b39f50beac5d440cbd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_clean.jpg.meta",
+      "sha256": "6d38ead506c3e025cab9b5e70cdb34c26ce9d4076b048190d5977de1895e4083"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_mature.jpg",
+      "sha256": "06401e66b1fab6ee77677847ee1d32434cc81edcbec70e771318e5784e0d0ff1"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_mature.jpg.meta",
+      "sha256": "46683d027e1aedf00ad89e59b9277f942fae1da14f896d4a88f3c6e9e44befdd"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_older.jpg",
+      "sha256": "b55114d668dc56d839ab460d182d971c92e6cf19d17ce37c7de8e7e9fab95ec7"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_older.jpg.meta",
+      "sha256": "c84bd61f7ba772d16974925b03260a65044fcec7badd9ba4ec61a1580b090e87"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures.meta",
+      "sha256": "5ca372ba79d0630088560b52c485ff6aae8da26d39235aa0794e9f628570786c"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharFactory.cs",
+      "sha256": "d9329a00333f9a9f6c07ed808884592f99359ecd29b976e1cbeede245dd34aa3"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharFactory.cs.meta",
+      "sha256": "e057365ef2a86c2fc078eb19327deca3c3f153651fd9417fc2c7282f12233017"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharPosture.cs",
+      "sha256": "673fcb6bd38e3255450bd83e101008f4e12fde336ce2c1bd22000ffff8c0e512"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharPosture.cs.meta",
+      "sha256": "d60af363fd0bf5260f3cf233efb5e4425c62993f78be757278979dee9cf67d91"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharReview.cs",
+      "sha256": "97a66ab8220aa6384ed68a06ca784189ebb8a4bf4d03f0125833b6d8baaf718f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharReview.cs.meta",
+      "sha256": "b31de2341ed341da313e7814e57b5efd6bb10316fd1033357a3f51fba6d17c4d"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharValidation.cs",
+      "sha256": "27a198077a9d91cae8cff407f594d3859e351557f352c48cd9504a8d8be1215f"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharValidation.cs.meta",
+      "sha256": "e5a1a45992e3fea59c0523a74e00818fe730a230c99c71491c54e3541713d2af"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Animation/AnimationFactory.cs",
+      "sha256": "ac49e7dd0945ced09a28c22031e09c38ec6f508f2aa6bdd7d33bd6f7fffc5b4a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Animation/AnimationFactory.cs.meta",
+      "sha256": "5417715299ff226c97383b723396fb81151a6078e5b016d40319b167d45234f6"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Animation/AnimationPreview.cs",
+      "sha256": "aa46f786f3ce83e579c2c6fa3989c85188f3d5f898fa21048aaee41c54c2227a"
+    },
+    {
+      "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Animation/AnimationPreview.cs.meta",
+      "sha256": "dc913ece73d9cb8c90b808364121519a691374f19e19dc2f55adcdc963447b5b"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/bruiser.blend",
+      "sha256": "e27b99f44948f2448cf64b7f08a9d8afbdd9aec0693676f858a044b70465e27a"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/dock-worker.blend",
+      "sha256": "7c6f2d833cda1717af46522d8ff11ab8690a38d4ecbe5164555dba8dfe6bfc70"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/eccentric.blend",
+      "sha256": "90a801ad0f7f49d5127dae6f5ca08012575a456e46f82747c3e1ede0cc9f3007"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/elder-woman.blend",
+      "sha256": "1188fb26cca4197056179029b1692d090bf6cfc6b57e7ddc92526efdb982f6c5"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/everyday-pedestrian.blend",
+      "sha256": "0d1a4553833365ebabbd9fe4507000b53af5257fb25b29f116017a2bac7794a6"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/fishmonger.blend",
+      "sha256": "d934f2ff74bb5562b3a9b5d0f75f1682d77a9c87a1317dfd56bcaa10d075a7b7"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/local-fan.blend",
+      "sha256": "db2631198cf8280896d43a7fdc216d29e0851402cbb9cc524697371e2102684d"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/market-worker.blend",
+      "sha256": "8b8a8f8812b532007def2d006af997694e3be9e43efb04329e6f2e956b27b48e"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/mechanic.blend",
+      "sha256": "236bb4fd15e4efc352024e693bb0735075ab2ab00bc33693d77645a2a4fe89e8"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/bruiser.png",
+      "sha256": "b2beb476dc282f9b572776e37d50311fb99103c6218299200b452ac6148991b4"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/dock-worker.png",
+      "sha256": "e3f0ae6e0ebb2f98bc6402881647a5a0a1dfb827b5d14981c49d4516b491fa3d"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/eccentric.png",
+      "sha256": "032748d4c836a54eb23e80f1c47f559d023fe3b3aeacf0bdad461f808758a665"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/elder-woman.png",
+      "sha256": "0c17c70abb1ab5071560fc93a0db49f95a50e7b0384806420cfe7f9132aa8b9c"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/everyday-pedestrian.png",
+      "sha256": "1e43460c82563ad4bad5b5502210418ac1c8445608db7a7db18174bccfe21a86"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/fishmonger.png",
+      "sha256": "269a3111ab0d60ff4466e8bd8353d298a6b4e5ceedf45ff631e82346c41ee046"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/local-fan.png",
+      "sha256": "2e6e15ae97ffd44a5e4c0954c4a5b157f565c91f2b41cd9b52bb74feccdfa3e8"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/market-worker.png",
+      "sha256": "150cb663b8b4ccb744601b8a3dd90ce8ae099df43a6ee00670c58db8c8314d3e"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/mechanic.png",
+      "sha256": "ce01402b21dc55f0af18413d6cf9f05154d81acc32ec90ab791363eac5b0b3db"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/office-worker.png",
+      "sha256": "7108c49ea77bea32a41945aebf614eeeb32eb2737727a4defe4b1951a4888a4b"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/older-resident.png",
+      "sha256": "07367a4ec449d160e0a5dba57fb71d5698f09b40a82812bc72c8896082c15098"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/shopkeeper.png",
+      "sha256": "191d7c76b9243d7cf7f67e243a782309f6a8170a172b8f44567bb7ab2dfd574f"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/student.png",
+      "sha256": "c2213cee9dae18c1d622321364ea05d85809cbfa2e2a8dc14fc8701816882b73"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/waiter-veteran.png",
+      "sha256": "c896c9ca96ae55ce3f6cd7e3e7e760c5f8b5e78537f920b16465da76e69df18f"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/younger-resident.png",
+      "sha256": "f95d211a1f75d39de55f9a8699be1fc560be2297954d394174e8cc899e5ba259"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/office-worker.blend",
+      "sha256": "8a3fcbc705feb2aba6bd11623b9365edae6e23da3fe348619fdb697dfa5a01c7"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/older-resident.blend",
+      "sha256": "f88ed8f18b719eadf7986eb48e414d1328f44bee86ce6a517a35d1b0f32555a9"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/shopkeeper.blend",
+      "sha256": "69d933bc1b0e05511a9edc1b450a1931b7c76ddc05e7124ca368c6e1febf3512"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/source_manifest.json",
+      "sha256": "b5b46c917e81047246f688f6921eb52d5d5e152f680259eeda94bc11d15d1ebe"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/student.blend",
+      "sha256": "95a8dcdaf7d571ef2399723f4a0343c75ef0f3ddf9d73cba334df8b095e12e3b"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/waiter-veteran.blend",
+      "sha256": "4e8470475aa8eb4896a956f8804e5013c791038d6db5591b902056de0e1975ea"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/younger-resident.blend",
+      "sha256": "806ca6e05d724e15c8b5d60707c8351eecd0c63995a7e1d9002157bf6551b2d6"
+    },
+    {
+      "path": "Art/Characters/HumanSources/admission.json",
+      "sha256": "88e918015a0c8bdef561cabed04d15c80270d273e9992b5638daf783dde517d7"
+    },
+    {
+      "path": "Art/Characters/HumanSources/hm08.obj",
+      "sha256": "bea00279464133e86b634220cd2774ebf3b470de280d11222a6b2269e4a8d950"
+    },
+    {
+      "path": "Art/Characters/HumanSources/LICENSE.ASSETS.md",
+      "sha256": "5f3ab0cf6f7ebe92efe4b83213131c617d308d164eeefd5da230373640b0c226"
+    },
+    {
+      "path": "Art/Characters/HumanSources/LICENSE.md",
+      "sha256": "5279d29b31202bc7bdafd01b64321548cf3b210ef58c08eb49050981feadabf9"
+    },
+    {
+      "path": "Art/Characters/HumanSources/mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+      "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+    },
+    {
+      "path": "Art/Characters/HumanSources/mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+      "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow001/eyebrow001.mhclo",
+      "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow001/eyebrow001.mhmat",
+      "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow001/eyebrow001.obj",
+      "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow001/eyebrow001.png",
+      "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow002/eyebrow002.mhclo",
+      "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow002/eyebrow002.mhmat",
+      "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow002/eyebrow002.obj",
+      "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyebrows/eyebrow002/eyebrow002.png",
+      "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyelashes/eyelashes01/eyelashes01.mhclo",
+      "sha256": "5a86b29c15649273d723084954b7fa7bf199112571d4f58539b46734d397ee6b"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyelashes/eyelashes01/eyelashes01.mhmat",
+      "sha256": "8029c99d94f3d87a1e81825fad6b90eec773ae6955a5b2592222ef237377e190"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyelashes/eyelashes01/eyelashes01.obj",
+      "sha256": "f78f5b93fea1946fcae103d32c4f082dd9612a1ec2e7e2f90b03ebe59b0baf20"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyelashes/eyelashes01/eyelashes01.png",
+      "sha256": "4b69c0fff2648874460e9caf80c31413c444218a5c50afebc425aeaa65484a35"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/high-poly/high-poly.mhclo",
+      "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/high-poly/high-poly.obj",
+      "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/low-poly/low-poly.mhclo",
+      "sha256": "68582e28e9176cba7cfcf35208f671b6201b8d1bc95c32decff61a3160ec34d8"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/low-poly/low-poly.obj",
+      "sha256": "783fe1e6331162c876520b4c2bed7a8ca06354ca15497e8ebd68bb1b59f4d3de"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/blue.mhmat",
+      "sha256": "bd9cab4d2f6ca54df6253c1adfbb1c82e0ee61057361d95449ade06a1b5669c4"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/blue_eye.png",
+      "sha256": "572ddc93ab3e177100619ec7c00b2574540cfb382805afc2e450788117f6140c"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/brown.mhmat",
+      "sha256": "4abad93ce50541c08127721e77bce035640c9f16bed16cd0f5524b1cd5908465"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/brown_eye.png",
+      "sha256": "4659691c7295ad6206c78b003e5fd0e5f91dcd53032fa914a229bb48cabe424b"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/green.mhmat",
+      "sha256": "b3b512120d9f87f91cd34879ac17ad9f26eb6a250d92be52df8b19df5cc90113"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/green_eye.png",
+      "sha256": "b9864ac4f4fa484b24e18f6aba030d70dbc8820cbbacfbe63a974c76772c2009"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/grey.mhmat",
+      "sha256": "65c536157ef0550b2f8461a9526c726707533dc7cfe8a65abb9b9db0b4e6b25e"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/eyes/materials/grey_eye.png",
+      "sha256": "ecb05613126036a3d017880fabbd570501c5f14032c186462d8f6e2d719f6c4f"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob01/bob01.mhclo",
+      "sha256": "a295b11ab6c7808afa1e01d0c79fb595bbbd7885f65252766486c9fcf6d158c5"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob01/bob01.mhmat",
+      "sha256": "9c3015044a832fb9a72a5d2f28218914ebfbdf6725cfd237cc53a3d95f054e3b"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob01/bob01.obj",
+      "sha256": "d7fb73806f47ee37ba3c37bcfadff40a91ba99635d08c3e02d94b4acbf97c231"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob01/bob01_diffuse.png",
+      "sha256": "2b38bc7a028e06e8e633accb7fe2dd1b2bacbb9d32463df73f39f82e63ef9009"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob02/bob02.mhclo",
+      "sha256": "a48dcf87c6a618f9c6e90fcb00eed07cd59ab024d8d994606fa1b070da515b96"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob02/bob02.mhmat",
+      "sha256": "32c1712308159f4f5b3775a633352070245bf1ea8b6f837ab4f4ba82b5e9fccd"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob02/bob02.obj",
+      "sha256": "30d44038836d786364eb4134a9259cf93ca0c707f883861b0135ebfb149caa08"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/bob02/bob02_diffuse.png",
+      "sha256": "38c88e6f71631356591f09b1f17a1bb5a99c3bb095b1a29003f1dc3d3e839b0d"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/ponytail01/ponytail01.mhclo",
+      "sha256": "97fc50b12bcb3b1c7b33edddd8d427a2604ffb06fe79b31132bf47f82d7afbac"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/ponytail01/ponytail01.mhmat",
+      "sha256": "b145f5a7c9606859ad523f5113482a1cf989cf0e26dccc2ea95c377cb1c2557f"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/ponytail01/ponytail01.obj",
+      "sha256": "d9f5fe96fbedbc8006220d87aad0e4a33d15286eb6b21f5929661cdc490ebf5a"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/ponytail01/ponytail01_diffuse.png",
+      "sha256": "dcb364300cac06ce8bef91b2f7c0970baf310898bbdd06b0c6b884ee9306eb97"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short01/short01.mhclo",
+      "sha256": "ae1ffaa98da5753b803b3a173bede4895d2215e6bb94763f3765a71f0e984f35"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short01/short01.mhmat",
+      "sha256": "01e2e12ce3f3d3c859225456660acadcdd27d4f4b4d888bcbd6f11998cadd975"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short01/short01.obj",
+      "sha256": "d998d8416f9b5d5591f1d756f4d292288d000a6951bc0f4d2e8e72727bbc44fa"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short01/short01_diffuse.png",
+      "sha256": "f34a0957184e3d1e911ed59245f874f8d4843f61ee44ff49f43edb4be0196949"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short02/short02.mhclo",
+      "sha256": "625736cdb73e6d094df6e5a2df18f371781f1d2cd37b0ae15795c5d7051c3ec2"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short02/short02.mhmat",
+      "sha256": "2ed04c8aad9c1a35d858ca72091525d32b1da3b61b5a031634dd528fd8530f6d"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short02/short02.obj",
+      "sha256": "48f979114adfa712165a69cc55c45a70831af1fb3cba8e2a89120f0c87407b64"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short02/short02_diffuse.png",
+      "sha256": "47fe33831a3929567c733356dd66243116e05df2ace1f884ddca0080b728229f"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short02/short02_normal.png",
+      "sha256": "2cfac7619f8eec77dd90df979d912415058f4f0fc16940cba40a8eb1ae6d74b5"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short03/short03.mhclo",
+      "sha256": "d80bbb8fd9b06721c481756fb3e1d6dce04fcfc9ca8a379edd4ea3c0d81ed17f"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short03/short03.mhmat",
+      "sha256": "8dcf42b677301ab6a66f96ff41751ecf88fba6c6cd7c564e6953f9c78e40a8fd"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short03/short03.obj",
+      "sha256": "4a9fc385718f2c46fb328ab99d33e3a946cecdb717987c8b324cf2466b59bd9c"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short03/short03_diffuse.png",
+      "sha256": "fe6ed0bb14498a48a2e8fc07e80e2a6f62c8b67686fcd0a7a570d345faec97da"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short04/short04.mhclo",
+      "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short04/short04.mhmat",
+      "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short04/short04.obj",
+      "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/hair/short04/short04_diffuse.png",
+      "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/middleage_caucasian_female/middleage_caucasian_female.mhmat",
+      "sha256": "c01a42ea64ca4207558f5af8eb0991794934e3aaadebba1613c0a6e90d2afa29"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/middleage_caucasian_female/middleage_lightskinned_female_diffuse.png",
+      "sha256": "bcb9c2c8ace23880bc4407602a249abbcf4608b6ba0894e423b031913012a363"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+      "sha256": "113326b7670cb273610314b91e2597b228711adf5f0666660b16fef269bfbe72"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+      "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/old_caucasian_female/old_caucasian_female.mhmat",
+      "sha256": "a88440d9f1225d3b4c963259e6f434eb3be7d3a2932e46ea88cfc675ed20c387"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/old_caucasian_female/old_lightskinned_female_diffuse.png",
+      "sha256": "00c45246c145562b917371e92de44a1fe394bc5f4bd91418addf24b6adff5e9d"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/old_caucasian_male/old_caucasian_male.mhmat",
+      "sha256": "001eccec34180d4eb7369933360116a7ea1022c72674c1b012b988af65002600"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/old_caucasian_male/old_lightskinned_male_diffuse.png",
+      "sha256": "dfb2310ed3e0ad024ea7a3ad321215e2e9e2994cca64043d9f3d07c6543ec847"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/young_caucasian_female/young_caucasian_female.mhmat",
+      "sha256": "0bdea7786201f0b1132a24088336a97496ccdc54e9984db65d253a6a6d66f24f"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+      "sha256": "b2a6ac8cd4f9febdb447368e29c76cd68410bb66e46d9dcfa2d5f75126eea8fc"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/young_caucasian_male/young_caucasian_male.mhmat",
+      "sha256": "6eda60b07ff2afbde078a2535ef3913593d84e9de92b2eb76c30f396a181fe2e"
+    },
+    {
+      "path": "Art/Characters/HumanSources/system/skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+      "sha256": "862a26e335e958b70534cb5f0d7c47ef30ab148a56c42b3e9da969cf76f12963"
+    }
+  ],
+  "note": "The complete hash-bound snapshot is preserved at the local path. Captures do not claim NPC navigation or final dialogue integration."
+}

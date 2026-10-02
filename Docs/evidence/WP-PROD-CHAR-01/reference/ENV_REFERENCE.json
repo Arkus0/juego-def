@@ -1,0 +1,22 @@
+{
+  "status": "Read-only visual calibration from current ENV-01 WIP, not an accepted dependency or CHAR output",
+  "envPR": "https://github.com/Arkus0/juego-def/pull/10",
+  "date": "2026-09-29",
+  "references": [
+    {
+      "source": "C:\\Juego Def\\Docs\\evidence\\WP-PROD-ENV-01\\captures\\cohesion\\wip\\C03_terraza_plaza.jpg",
+      "copy": "ENV01_plaza_reference.jpg",
+      "sha256": "45d76189f230988c3a60f2f30ea3b40a000c2418e33e64f4c6296f25e3bd2cf8"
+    },
+    {
+      "source": "C:\\Juego Def\\Docs\\evidence\\WP-PROD-ENV-01\\captures\\cohesion\\props_after\\ENV_Bench_Street.jpg",
+      "copy": "ENV01_bench_reference.jpg",
+      "sha256": "b166375d5d5aadb1c20be037d327d60e2789acd94366d465cfe8d1dffc85a686"
+    }
+  ],
+  "response": [
+    "Keep original CHAR rig/body-topology pipeline and structural diversity.",
+    "Bring clothing edge construction and accessory fit toward the authored ENV object level: restrained palettes, clear hems/cuffs/zip, shaped footwear, tapered bags and curved functional apron.",
+    "No higher resolution face or cloth textures; no ENV product bytes imported into CHAR."
+  ]
+}

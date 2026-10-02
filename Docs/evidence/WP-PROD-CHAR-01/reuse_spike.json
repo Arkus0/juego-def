@@ -1,0 +1,59 @@
+{
+  "blender": "5.2.1 LTS",
+  "probes": [
+    {
+      "probe": "bad_fullbody_peasant",
+      "sharedBones": 65,
+      "maxRestHeadDeltaMeters": 0.0,
+      "retainedMeshes": [
+        "Male_Peasant_Arms",
+        "Male_Peasant_Body",
+        "Male_Peasant_Feet",
+        "Male_Peasant_Legs"
+      ]
+    },
+    {
+      "probe": "head_peasant",
+      "sharedBones": 65,
+      "maxRestHeadDeltaMeters": 0.0,
+      "retainedMeshes": [
+        "Male_Peasant_Arms",
+        "Male_Peasant_Body",
+        "Male_Peasant_Feet",
+        "Male_Peasant_Legs"
+      ]
+    },
+    {
+      "probe": "head_ranger_stripped",
+      "sharedBones": 65,
+      "maxRestHeadDeltaMeters": 0.0,
+      "retainedMeshes": [
+        "Male_Ranger_Arms",
+        "Male_Ranger_Body",
+        "Male_Ranger_Feet_Boots",
+        "Male_Ranger_Legs"
+      ]
+    },
+    {
+      "probe": "bodytopo",
+      "verts": 1275,
+      "polys": 1220,
+      "doubles_welded": 1,
+      "islands": [
+        1220
+      ],
+      "small_removed": 0,
+      "boundary_count": 114,
+      "trousers": {
+        "verts": 985,
+        "polys": 952,
+        "doubles_welded": 1,
+        "islands": [
+          952
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      }
+    }
+  ]
+}

@@ -1,0 +1,3368 @@
+{
+  "schemaVersion": 2,
+  "inputs": [
+    {
+      "path": "Docs/asset_catalog/char_recipes.json",
+      "sha256": "f90e340dc380d824255ab0165306e2ddf8e8a6389112397e95591bb4dd757a25"
+    },
+    {
+      "path": "Docs/asset_catalog/char_body_profiles.json",
+      "sha256": "832d84c558dd76be55d64fd73b70779b2d8526af639c1ae13d649514bb28659b"
+    },
+    {
+      "path": "Docs/asset_catalog/char_compatibility.json",
+      "sha256": "ab61a35da993e5ba515eb986937aaba94153db44b0f6901f32772cd4dde5a6d3"
+    },
+    {
+      "path": "Tools/char_build.py",
+      "sha256": "beea11ba8f21566be81b0f969bae626881406119c4b48fed1aa9e5a7be564946"
+    },
+    {
+      "path": "Tools/char_shapes.py",
+      "sha256": "66b51787d1af2d28a99e8515de6acd1409524455088a2b0f9f7c5b0bd6fe7e3f"
+    },
+    {
+      "path": "Tools/char_manifest.py",
+      "sha256": "c70499b3c69ef493cd645c4d1f9f92f0c8df17fa1a3d7381422e095c53d6a53f"
+    },
+    {
+      "path": "Tools/char_naturalism.py",
+      "sha256": "0905ae85a64279fb44fcec13bc5b80b45ab70fb02104bbd8ac7b5e713095c01a"
+    },
+    {
+      "path": "Docs/asset_catalog/char_naturalism_forms.json",
+      "sha256": "a7e9c8f76c414a66e2ed98455f68d69936a59304d243551b2e05fa9e6ecf1f45"
+    },
+    {
+      "path": "Tools/vendor/chilyer/body_topo.py",
+      "sha256": "6d8780204ce26fdd35a50f86fbd8146f74cb4e0ccd4a4ce260fa5705d8a684d0"
+    },
+    {
+      "path": "Tools/char_human.py",
+      "sha256": "995a99592e42f07608bca671d8f77ef8f7f9da01d60740be7e7a0cea7e0ac3cb"
+    },
+    {
+      "path": "Tools/char_human_sources.py",
+      "sha256": "61420755e5c6a9256c8f4d084413ef29814eea4e0d911e647eb35e632ccba637"
+    },
+    {
+      "path": "Tools/char_human_textures.py",
+      "sha256": "cbbdc7ac6bee686a49fcf0213a65fdbf8b1bdc45dca7e200817a993e1b7269f9"
+    },
+    {
+      "path": "Docs/evidence/WP-PROD-ASSET-00/catalog.json",
+      "sha256": "be85d27b446489456132e558643c287f2dac3de3ff28a7394ff39880c62c6e7d"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/bruiser.blend",
+      "sha256": "e27b99f44948f2448cf64b7f08a9d8afbdd9aec0693676f858a044b70465e27a"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/dock-worker.blend",
+      "sha256": "7c6f2d833cda1717af46522d8ff11ab8690a38d4ecbe5164555dba8dfe6bfc70"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/eccentric.blend",
+      "sha256": "90a801ad0f7f49d5127dae6f5ca08012575a456e46f82747c3e1ede0cc9f3007"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/elder-woman.blend",
+      "sha256": "1188fb26cca4197056179029b1692d090bf6cfc6b57e7ddc92526efdb982f6c5"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/everyday-pedestrian.blend",
+      "sha256": "0d1a4553833365ebabbd9fe4507000b53af5257fb25b29f116017a2bac7794a6"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/fishmonger.blend",
+      "sha256": "d934f2ff74bb5562b3a9b5d0f75f1682d77a9c87a1317dfd56bcaa10d075a7b7"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/local-fan.blend",
+      "sha256": "db2631198cf8280896d43a7fdc216d29e0851402cbb9cc524697371e2102684d"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/market-worker.blend",
+      "sha256": "8b8a8f8812b532007def2d006af997694e3be9e43efb04329e6f2e956b27b48e"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/mechanic.blend",
+      "sha256": "236bb4fd15e4efc352024e693bb0735075ab2ab00bc33693d77645a2a4fe89e8"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/bruiser.png",
+      "sha256": "b2beb476dc282f9b572776e37d50311fb99103c6218299200b452ac6148991b4"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/dock-worker.png",
+      "sha256": "e3f0ae6e0ebb2f98bc6402881647a5a0a1dfb827b5d14981c49d4516b491fa3d"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/eccentric.png",
+      "sha256": "032748d4c836a54eb23e80f1c47f559d023fe3b3aeacf0bdad461f808758a665"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/elder-woman.png",
+      "sha256": "0c17c70abb1ab5071560fc93a0db49f95a50e7b0384806420cfe7f9132aa8b9c"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/everyday-pedestrian.png",
+      "sha256": "1e43460c82563ad4bad5b5502210418ac1c8445608db7a7db18174bccfe21a86"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/fishmonger.png",
+      "sha256": "269a3111ab0d60ff4466e8bd8353d298a6b4e5ceedf45ff631e82346c41ee046"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/local-fan.png",
+      "sha256": "2e6e15ae97ffd44a5e4c0954c4a5b157f565c91f2b41cd9b52bb74feccdfa3e8"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/market-worker.png",
+      "sha256": "150cb663b8b4ccb744601b8a3dd90ce8ae099df43a6ee00670c58db8c8314d3e"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/mechanic.png",
+      "sha256": "ce01402b21dc55f0af18413d6cf9f05154d81acc32ec90ab791363eac5b0b3db"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/office-worker.png",
+      "sha256": "7108c49ea77bea32a41945aebf614eeeb32eb2737727a4defe4b1951a4888a4b"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/older-resident.png",
+      "sha256": "07367a4ec449d160e0a5dba57fb71d5698f09b40a82812bc72c8896082c15098"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/shopkeeper.png",
+      "sha256": "191d7c76b9243d7cf7f67e243a782309f6a8170a172b8f44567bb7ab2dfd574f"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/student.png",
+      "sha256": "c2213cee9dae18c1d622321364ea05d85809cbfa2e2a8dc14fc8701816882b73"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/waiter-veteran.png",
+      "sha256": "c896c9ca96ae55ce3f6cd7e3e7e760c5f8b5e78537f920b16465da76e69df18f"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/occlusion/younger-resident.png",
+      "sha256": "f95d211a1f75d39de55f9a8699be1fc560be2297954d394174e8cc899e5ba259"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/office-worker.blend",
+      "sha256": "8a3fcbc705feb2aba6bd11623b9365edae6e23da3fe348619fdb697dfa5a01c7"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/older-resident.blend",
+      "sha256": "f88ed8f18b719eadf7986eb48e414d1328f44bee86ce6a517a35d1b0f32555a9"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/shopkeeper.blend",
+      "sha256": "69d933bc1b0e05511a9edc1b450a1931b7c76ddc05e7124ca368c6e1febf3512"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/source_manifest.json",
+      "sha256": "b5b46c917e81047246f688f6921eb52d5d5e152f680259eeda94bc11d15d1ebe"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/student.blend",
+      "sha256": "95a8dcdaf7d571ef2399723f4a0343c75ef0f3ddf9d73cba334df8b095e12e3b"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/waiter-veteran.blend",
+      "sha256": "4e8470475aa8eb4896a956f8804e5013c791038d6db5591b902056de0e1975ea"
+    },
+    {
+      "path": "Art/Characters/HumanHeads/younger-resident.blend",
+      "sha256": "806ca6e05d724e15c8b5d60707c8351eecd0c63995a7e1d9002157bf6551b2d6"
+    },
+    {
+      "path": "Art/Characters/HumanSources/admission.json",
+      "sha256": "88e918015a0c8bdef561cabed04d15c80270d273e9992b5638daf783dde517d7"
+    }
+  ],
+  "variants": [
+    {
+      "verts": 1819,
+      "polys": 1766,
+      "doubles_welded": 0,
+      "islands": [
+        1766
+      ],
+      "small_removed": 0,
+      "boundary_count": 122,
+      "bodyMetrics": {
+        "crown": 1.5499955415725708,
+        "headHeight": 0.21832621097564697,
+        "headsTall": 7.099447815477657,
+        "handLength": 0.1578234711574216,
+        "handOverHead": 0.7228791744799982,
+        "headFactor": 1.1394059191686088,
+        "shoulderJointRatio": 0.17888881048398728,
+        "hipJointRatio": 0.13597622690745986,
+        "headLength": 0.13988142871590845,
+        "pelvisHeight": 0.506613288951459,
+        "family": "short_stocky",
+        "height": 1.55,
+        "shoulderSpan": 0.27727687727946615,
+        "legLength": 0.7366855755655864,
+        "hipSpan": 0.21076254300014854
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/market-worker.blend",
+        "sourceSha256": "8b8a8f8812b532007def2d006af997694e3be9e43efb04329e6f2e956b27b48e",
+        "headHeight": 0.21832621097564694,
+        "join": 1.2716693305969238,
+        "scale": 1.0536740982009332,
+        "neckShift": -0.06503676252472955,
+        "headVertices": 4377,
+        "eyeHeight": 1.4408324366449414,
+        "rigBones": 65
+      },
+      "id": "market-worker",
+      "sourceIds": [
+        "base:regular_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/ponytail01/ponytail01.mhclo",
+        "makehuman:system/hair/ponytail01/ponytail01.mhmat",
+        "makehuman:system/hair/ponytail01/ponytail01.obj",
+        "makehuman:system/hair/ponytail01/ponytail01_diffuse.png",
+        "makehuman:system/skins/young_caucasian_female/young_caucasian_female.mhmat",
+        "makehuman:system/skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Apron_pocket",
+          "vertices": 39,
+          "triangles": 48,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_shoulder_tie_-1",
+          "vertices": 215,
+          "triangles": 272,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_shoulder_tie_1",
+          "vertices": 215,
+          "triangles": 272,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_waist_tie",
+          "vertices": 80,
+          "triangles": 80,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_shoes",
+          "vertices": 668,
+          "triangles": 1176,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_trousers",
+          "vertices": 867,
+          "triangles": 1664,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 3718,
+          "triangles": 5352,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4377,
+          "triangles": 8704,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Shop_apron",
+          "vertices": 513,
+          "triangles": 936,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_sweater",
+          "vertices": 2469,
+          "triangles": 4784,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1622,
+          "triangles": 3200,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 5.36868489465063e-07,
+      "recipe": {
+        "id": "market-worker",
+        "role": "market_shop",
+        "body": "regular_female",
+        "height": 1.55,
+        "top": "sweater",
+        "bottom": "work",
+        "hair": "hair_buns",
+        "accessory": "apron",
+        "skin": "fair",
+        "palette": "market",
+        "tags": [
+          "B0_A",
+          "B0_S",
+          "short_stocky",
+          "functional_apron",
+          "tied_hair"
+        ],
+        "profile": "short_stocky",
+        "footwear": "work_shoes",
+        "headwear": "none",
+        "pose": "ual1:idle_loop",
+        "face": "natural",
+        "workPose": "ual1:counter_idle_loop",
+        "qualityTier": "secondary",
+        "fit": "loose",
+        "stanceBias": 0.03,
+        "slouch": 0.01,
+        "complexion": "freckles",
+        "headForm": "market-worker",
+        "hairStyle": "low_bun",
+        "garmentPattern": "knit"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "bc659ee5ecc94ab09f4bf0a69bf2ca3edbeded334de30d8ec7d2f5c4ca2d39a4",
+      "geometrySha256": "5facecaf22bcf3c2fc3f2149c22e8b0eed84ef6fbc8fad9810fe80264a70e926"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "bodyMetrics": {
+        "crown": 1.9399962425231934,
+        "headHeight": 0.24891161918640137,
+        "headsTall": 7.793915964486964,
+        "handLength": 0.19717760460371606,
+        "handOverHead": 0.7921591014843566,
+        "headFactor": 1.0492262372315742,
+        "shoulderJointRatio": 0.21897635214934766,
+        "hipJointRatio": 0.10317634688938118,
+        "headLength": 0.11975198520720458,
+        "pelvisHeight": 0.5254543050244723,
+        "family": "tall_heavy",
+        "height": 1.94,
+        "shoulderSpan": 0.4248132989821767,
+        "legLength": 0.9510442226403827,
+        "hipSpan": 0.2001617217376878
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/dock-worker.blend",
+        "sourceSha256": "7c6f2d833cda1717af46522d8ff11ab8690a38d4ecbe5164555dba8dfe6bfc70",
+        "headHeight": 0.24891161918640137,
+        "join": 1.631084623336792,
+        "scale": 1.1534380050140378,
+        "neckShift": -0.1167140956220307,
+        "headVertices": 4328,
+        "eyeHeight": 1.8155404320336823,
+        "rigBones": 65
+      },
+      "id": "dock-worker",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/short04/short04.mhclo",
+        "makehuman:system/hair/short04/short04.mhmat",
+        "makehuman:system/hair/short04/short04.obj",
+        "makehuman:system/hair/short04/short04_diffuse.png",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Cap_brim",
+          "vertices": 39,
+          "triangles": 48,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_boots",
+          "vertices": 898,
+          "triangles": 1642,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_trousers",
+          "vertices": 559,
+          "triangles": 1068,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 464,
+          "triangles": 546,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4328,
+          "triangles": 8600,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_sweater",
+          "vertices": 996,
+          "triangles": 1734,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        },
+        {
+          "name": "Work_cap",
+          "vertices": 673,
+          "triangles": 1296,
+          "blendShapes": []
+        },
+        {
+          "name": "Work_vest_panel_sewn",
+          "vertices": 2162,
+          "triangles": 3860,
+          "blendShapes": []
+        },
+        {
+          "name": "Work_vest_sewn_binding",
+          "vertices": 1404,
+          "triangles": 1872,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "dock-worker",
+        "role": "dock_port",
+        "body": "regular_male",
+        "height": 1.94,
+        "top": "sweater",
+        "bottom": "work",
+        "hair": "hair_buzzed",
+        "accessory": "work_vest",
+        "skin": "weathered",
+        "palette": "dock",
+        "tags": [
+          "B0_P",
+          "B0_Q",
+          "tall_heavy",
+          "reflective_vest",
+          "work_boots",
+          "cap"
+        ],
+        "profile": "tall_heavy",
+        "footwear": "work_boots",
+        "headwear": "cap",
+        "pose": "ual1:idle_loop",
+        "qualityTier": "secondary",
+        "fit": "loose",
+        "stanceBias": -0.02,
+        "slouch": 0.01,
+        "complexion": "weathered",
+        "headForm": "dock-worker",
+        "hairStyle": "crop",
+        "garmentPattern": "knit",
+        "face": "mature"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "85101a0c7044add51fe95877fa993941119f95bf6d7513597e91f4b1424cabe2",
+      "geometrySha256": "ed4b532d3acf30b99648c25a147dfa0ae16bc490b2c9b82338e3f892f9f52df1"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "pants": {
+        "verts": 1017,
+        "polys": 984,
+        "doubles_welded": 0,
+        "islands": [
+          984
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      },
+      "bodyMetrics": {
+        "crown": 1.6399966478347778,
+        "headHeight": 0.2248704433441162,
+        "headsTall": 7.2930733957112945,
+        "handLength": 0.1675638116009858,
+        "handOverHead": 0.745157118512748,
+        "headFactor": 1.0905336119986562,
+        "shoulderJointRatio": 0.2011884572607292,
+        "hipJointRatio": 0.10284041972222871,
+        "headLength": 0.12764266273682265,
+        "pelvisHeight": 0.5071650381117966,
+        "family": "older_compact",
+        "height": 1.64,
+        "shoulderSpan": 0.32994839980108503,
+        "legLength": 0.7773911594066202,
+        "hipSpan": 0.16865794598276473
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/older-resident.blend",
+        "sourceSha256": "f88ed8f18b719eadf7986eb48e414d1328f44bee86ce6a517a35d1b0f32555a9",
+        "headHeight": 0.2248704433441162,
+        "join": 1.3551262044906616,
+        "scale": 0.9879405345757452,
+        "neckShift": -0.03820194417449449,
+        "headVertices": 4370,
+        "eyeHeight": 1.527561424818254,
+        "rigBones": 65
+      },
+      "id": "older-resident",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/blue.mhmat",
+        "makehuman:system/eyes/materials/blue_eye.png",
+        "makehuman:system/hair/short04/short04.mhclo",
+        "makehuman:system/hair/short04/short04.mhmat",
+        "makehuman:system/hair/short04/short04.obj",
+        "makehuman:system/hair/short04/short04_diffuse.png",
+        "makehuman:system/skins/old_caucasian_male/old_caucasian_male.mhmat",
+        "makehuman:system/skins/old_caucasian_male/old_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Collar_turnover_-1",
+          "vertices": 24,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Collar_turnover_1",
+          "vertices": 24,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_loafers",
+          "vertices": 608,
+          "triangles": 1058,
+          "blendShapes": []
+        },
+        {
+          "name": "Glasses",
+          "vertices": 248,
+          "triangles": 492,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4370,
+          "triangles": 8680,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Inner_shirt",
+          "vertices": 380,
+          "triangles": 638,
+          "blendShapes": []
+        },
+        {
+          "name": "Outer_cardigan",
+          "vertices": 1332,
+          "triangles": 2470,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 979,
+          "triangles": 1888,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "older-resident",
+        "role": "older_resident",
+        "body": "regular_male",
+        "height": 1.64,
+        "top": "cardigan",
+        "bottom": "straight",
+        "hair": "hair_balding",
+        "accessory": "glasses",
+        "skin": "pale",
+        "palette": "older",
+        "tags": [
+          "B0_V",
+          "B0_L",
+          "older_compact",
+          "grey_balding",
+          "glasses",
+          "cardigan"
+        ],
+        "profile": "older_compact",
+        "footwear": "loafers",
+        "headwear": "none",
+        "pose": "ual1:idle_lookaround_loop",
+        "eyes": "blue",
+        "extras": [
+          "collar"
+        ],
+        "face": "older",
+        "qualityTier": "conversation",
+        "fit": "regular",
+        "stanceBias": 0.04,
+        "slouch": 0.09,
+        "complexion": "age_spots",
+        "headForm": "older-resident",
+        "hairStyle": "receding",
+        "garmentPattern": "cardigan"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "004abf64040397cd45ee0284be5c520b887863018fc715689b2d4c422874618e",
+      "geometrySha256": "f5e85ae8b94c1e6e7eb65a93ccd5f84a0c2cafff779d2009854e501dc50a0868"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "pants": {
+        "verts": 1017,
+        "polys": 984,
+        "doubles_welded": 0,
+        "islands": [
+          984
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      },
+      "bodyMetrics": {
+        "crown": 1.7299964427947998,
+        "headHeight": 0.22657251358032227,
+        "headsTall": 7.63550889495472,
+        "handLength": 0.16987159022686893,
+        "handOverHead": 0.7497449162854775,
+        "headFactor": 1.1368075539115727,
+        "shoulderJointRatio": 0.1952536413689334,
+        "hipJointRatio": 0.09235350422973344,
+        "headLength": 0.12681207106101033,
+        "pelvisHeight": 0.52363442721748,
+        "family": "young_slim",
+        "height": 1.73,
+        "shoulderSpan": 0.3377881087532267,
+        "legLength": 0.8450609109667575,
+        "hipSpan": 0.1597712354910734
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/younger-resident.blend",
+        "sourceSha256": "806ca6e05d724e15c8b5d60707c8351eecd0c63995a7e1d9002157bf6551b2d6",
+        "headHeight": 0.22657251358032224,
+        "join": 1.4434239292144775,
+        "scale": 1.0505223876553624,
+        "neckShift": -0.08177683366548484,
+        "headVertices": 4365,
+        "eyeHeight": 1.6167101834277462,
+        "rigBones": 65
+      },
+      "id": "younger-resident",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/short04/short04.mhclo",
+        "makehuman:system/hair/short04/short04.mhmat",
+        "makehuman:system/hair/short04/short04.obj",
+        "makehuman:system/hair/short04/short04_diffuse.png",
+        "makehuman:system/skins/young_caucasian_male/young_caucasian_male.mhmat",
+        "makehuman:system/skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Backpack",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        },
+        {
+          "name": "Backpack_front_pocket",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        },
+        {
+          "name": "Backpack_strap_-1",
+          "vertices": 177,
+          "triangles": 246,
+          "blendShapes": []
+        },
+        {
+          "name": "Backpack_strap_1",
+          "vertices": 177,
+          "triangles": 246,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_trainers",
+          "vertices": 626,
+          "triangles": 1094,
+          "blendShapes": []
+        },
+        {
+          "name": "Hood_down",
+          "vertices": 224,
+          "triangles": 448,
+          "blendShapes": []
+        },
+        {
+          "name": "Hood_drawcord",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Hood_drawcord.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Hoodie_neck_layer",
+          "vertices": 167,
+          "triangles": 248,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4365,
+          "triangles": 8672,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 979,
+          "triangles": 1888,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_hoodie",
+          "vertices": 1958,
+          "triangles": 3762,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "younger-resident",
+        "role": "younger_casual",
+        "body": "regular_male",
+        "height": 1.73,
+        "top": "hoodie",
+        "bottom": "straight",
+        "hair": "hair_buzzed",
+        "accessory": "backpack",
+        "skin": "olive",
+        "palette": "casual",
+        "tags": [
+          "B0_A",
+          "B0_E",
+          "young_slim",
+          "hoodie",
+          "backpack",
+          "trainers"
+        ],
+        "profile": "young_slim",
+        "footwear": "trainers",
+        "headwear": "none",
+        "pose": "ual1:idle_loop",
+        "face": "clean",
+        "qualityTier": "secondary",
+        "fit": "loose",
+        "stanceBias": -0.04,
+        "slouch": 0.01,
+        "complexion": "clear",
+        "headForm": "younger-resident",
+        "hairStyle": "crop",
+        "garmentPattern": "hoodie"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "4e742893139c8c21bddf5b93f8070e68cfef415dd00d9ac6318d9bdd0a2d4d99",
+      "geometrySha256": "327452c926efae623b6c8ca95e63204ee4e73d5e23bbe39e91934730859e967e"
+    },
+    {
+      "verts": 1819,
+      "polys": 1766,
+      "doubles_welded": 0,
+      "islands": [
+        1766
+      ],
+      "small_removed": 0,
+      "boundary_count": 122,
+      "pants": {
+        "verts": 1056,
+        "polys": 1022,
+        "doubles_welded": 0,
+        "islands": [
+          1022
+        ],
+        "small_removed": 0,
+        "boundary_count": 70
+      },
+      "bodyMetrics": {
+        "crown": 1.7799954414367676,
+        "headHeight": 0.22356271743774414,
+        "headsTall": 7.961951177894614,
+        "handLength": 0.17897547762142132,
+        "handOverHead": 0.8005604855436637,
+        "headFactor": 1.0488504899789597,
+        "shoulderJointRatio": 0.16249988112526356,
+        "hipJointRatio": 0.11847647258005192,
+        "headLength": 0.12456257445576802,
+        "pelvisHeight": 0.535785615339837,
+        "family": "tall_slim",
+        "height": 1.78,
+        "shoulderSpan": 0.2892490635488543,
+        "legLength": 0.89372644267034,
+        "hipSpan": 0.21088758513834674
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/office-worker.blend",
+        "sourceSha256": "8a3fcbc705feb2aba6bd11623b9365edae6e23da3fe348619fdb697dfa5a01c7",
+        "headHeight": 0.2235627174377441,
+        "join": 1.4964327239990234,
+        "scale": 1.0468677171362502,
+        "neckShift": -0.0665553076394615,
+        "headVertices": 4450,
+        "eyeHeight": 1.6682140824938179,
+        "rigBones": 65
+      },
+      "id": "office-worker",
+      "sourceIds": [
+        "base:regular_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/bob01/bob01.mhclo",
+        "makehuman:system/hair/bob01/bob01.mhmat",
+        "makehuman:system/hair/bob01/bob01.obj",
+        "makehuman:system/hair/bob01/bob01_diffuse.png",
+        "makehuman:system/skins/young_caucasian_female/young_caucasian_female.mhmat",
+        "makehuman:system/skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Bag_rear_strap",
+          "vertices": 32,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Bag_strap",
+          "vertices": 32,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_loafers",
+          "vertices": 600,
+          "triangles": 1042,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 5203,
+          "triangles": 8474,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4450,
+          "triangles": 8848,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Inner_shirt",
+          "vertices": 420,
+          "triangles": 720,
+          "blendShapes": []
+        },
+        {
+          "name": "Outer_light_coat",
+          "vertices": 1696,
+          "triangles": 3178,
+          "blendShapes": []
+        },
+        {
+          "name": "Pattern_collar_-1",
+          "vertices": 25,
+          "triangles": 32,
+          "blendShapes": []
+        },
+        {
+          "name": "Pattern_collar_1",
+          "vertices": 25,
+          "triangles": 32,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Shoulder_bag",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 1009,
+          "triangles": 1948,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1622,
+          "triangles": 3200,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 5.36868489465063e-07,
+      "recipe": {
+        "id": "office-worker",
+        "role": "service_office",
+        "body": "regular_female",
+        "height": 1.78,
+        "top": "light_coat",
+        "bottom": "straight",
+        "hair": "hair_bob",
+        "accessory": "shoulder_bag",
+        "skin": "fair",
+        "palette": "office",
+        "tags": [
+          "B0_S",
+          "B0_E",
+          "tall_slim",
+          "light_coat",
+          "shoulder_bag"
+        ],
+        "profile": "tall_slim",
+        "footwear": "loafers",
+        "headwear": "none",
+        "pose": "ual1:idle_lookaround_loop",
+        "qualityTier": "secondary",
+        "fit": "fitted",
+        "stanceBias": 0.025,
+        "slouch": -0.02,
+        "complexion": "mole",
+        "headForm": "office-worker",
+        "hairStyle": "bob",
+        "garmentPattern": "town-coat",
+        "face": "natural"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "9370fb30aec356898b3c5d19cc280d247e013f54b34b03217a800f59fda473a5",
+      "geometrySha256": "9097dfba2b75998d3cb2147fce299e56b7a317be866ce27b27e92032fb2c63f5"
+    },
+    {
+      "verts": 1819,
+      "polys": 1766,
+      "doubles_welded": 0,
+      "islands": [
+        1766
+      ],
+      "small_removed": 0,
+      "boundary_count": 122,
+      "bodyMetrics": {
+        "crown": 1.6499955654144287,
+        "headHeight": 0.22130167484283447,
+        "headsTall": 7.455865693679154,
+        "handLength": 0.1691326721194656,
+        "handOverHead": 0.7642629557122935,
+        "headFactor": 1.0898130894690354,
+        "shoulderJointRatio": 0.16945209854429893,
+        "hipJointRatio": 0.13172996046720342,
+        "headLength": 0.1319983446481315,
+        "pelvisHeight": 0.520533421822988,
+        "family": "adult_medium",
+        "height": 1.65,
+        "shoulderSpan": 0.27959519573372266,
+        "legLength": 0.8053990056109703,
+        "hipSpan": 0.21735385280304922
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/everyday-pedestrian.blend",
+        "sourceSha256": "0d1a4553833365ebabbd9fe4507000b53af5257fb25b29f116017a2bac7794a6",
+        "headHeight": 0.22130167484283447,
+        "join": 1.3686938905715942,
+        "scale": 1.0574473753385545,
+        "neckShift": -0.06590278947570223,
+        "headVertices": 4383,
+        "eyeHeight": 1.5393447244077696,
+        "rigBones": 65
+      },
+      "id": "everyday-pedestrian",
+      "sourceIds": [
+        "base:regular_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/ponytail01/ponytail01.mhclo",
+        "makehuman:system/hair/ponytail01/ponytail01.mhmat",
+        "makehuman:system/hair/ponytail01/ponytail01.obj",
+        "makehuman:system/hair/ponytail01/ponytail01_diffuse.png",
+        "makehuman:system/skins/young_caucasian_female/young_caucasian_female.mhmat",
+        "makehuman:system/skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Donor_ankle_boots",
+          "vertices": 878,
+          "triangles": 1598,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 3718,
+          "triangles": 5352,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4383,
+          "triangles": 8712,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Knee_skirt",
+          "vertices": 528,
+          "triangles": 960,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_sweater",
+          "vertices": 2459,
+          "triangles": 4768,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 2110,
+          "triangles": 4096,
+          "blendShapes": []
+        },
+        {
+          "name": "Wristwatch_band",
+          "vertices": 40,
+          "triangles": 40,
+          "blendShapes": []
+        },
+        {
+          "name": "Wristwatch_case",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 5.36868489465063e-07,
+      "recipe": {
+        "id": "everyday-pedestrian",
+        "role": "neutral_pedestrian",
+        "body": "regular_female",
+        "height": 1.65,
+        "top": "sweater",
+        "bottom": "skirt",
+        "hair": "hair_ponytail_2",
+        "accessory": "watch",
+        "skin": "olive",
+        "palette": "everyday",
+        "tags": [
+          "B0_L",
+          "B0_O",
+          "adult_medium",
+          "knee_skirt",
+          "ankle_boots",
+          "watch"
+        ],
+        "profile": "adult_medium",
+        "footwear": "ankle_boots",
+        "headwear": "none",
+        "pose": "ual1:idle_loop",
+        "qualityTier": "secondary",
+        "fit": "regular",
+        "stanceBias": -0.02,
+        "slouch": 0.01,
+        "complexion": "clear",
+        "headForm": "everyday-pedestrian",
+        "hairStyle": "pony",
+        "garmentPattern": "knit",
+        "face": "natural"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "a63ef9db1ee96a4179e2d03ef27c79e53018458e7d01e5aa00cb03ba8c6bcca1",
+      "geometrySha256": "3ed46b75721cd55d92c43d1357cddd22e48c0708e5b485710301ca97064ef883"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "pants": {
+        "verts": 1017,
+        "polys": 984,
+        "doubles_welded": 0,
+        "islands": [
+          984
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      },
+      "bodyMetrics": {
+        "crown": 1.7199963331222534,
+        "headHeight": 0.23959243297576904,
+        "headsTall": 7.17884246910337,
+        "handLength": 0.17261703533275816,
+        "handOverHead": 0.72046113138396,
+        "headFactor": 1.1380299629256907,
+        "shoulderJointRatio": 0.19966347561662348,
+        "hipJointRatio": 0.10202256837654967,
+        "headLength": 0.13088313826054562,
+        "pelvisHeight": 0.5087184454243808,
+        "family": "waiter_stout",
+        "height": 1.72,
+        "shoulderSpan": 0.3434204450855502,
+        "legLength": 0.8173980900321356,
+        "hipSpan": 0.17547844130536674
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/waiter-veteran.blend",
+        "sourceSha256": "4e8470475aa8eb4896a956f8804e5013c791038d6db5591b902056de0e1975ea",
+        "headHeight": 0.23959243297576902,
+        "join": 1.4204039001464843,
+        "scale": 1.0686119357652861,
+        "neckShift": -0.06272954785196366,
+        "headVertices": 4405,
+        "eyeHeight": 1.600200120107572,
+        "rigBones": 65
+      },
+      "id": "waiter-veteran",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/grey.mhmat",
+        "makehuman:system/eyes/materials/grey_eye.png",
+        "makehuman:system/hair/short01/short01.mhclo",
+        "makehuman:system/hair/short01/short01.mhmat",
+        "makehuman:system/hair/short01/short01.obj",
+        "makehuman:system/hair/short01/short01_diffuse.png",
+        "makehuman:system/skins/old_caucasian_male/old_caucasian_male.mhmat",
+        "makehuman:system/skins/old_caucasian_male/old_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Apron_pocket",
+          "vertices": 39,
+          "triangles": 48,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_waist_tie",
+          "vertices": 80,
+          "triangles": 80,
+          "blendShapes": []
+        },
+        {
+          "name": "Bowtie_knot",
+          "vertices": 62,
+          "triangles": 120,
+          "blendShapes": []
+        },
+        {
+          "name": "Bowtie_wing",
+          "vertices": 4,
+          "triangles": 2,
+          "blendShapes": []
+        },
+        {
+          "name": "Bowtie_wing.001",
+          "vertices": 4,
+          "triangles": 2,
+          "blendShapes": []
+        },
+        {
+          "name": "Collar_turnover_-1",
+          "vertices": 24,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Collar_turnover_1",
+          "vertices": 24,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_loafers",
+          "vertices": 608,
+          "triangles": 1058,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanGroom_Facial_moustache",
+          "vertices": 132,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 2984,
+          "triangles": 3678,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4405,
+          "triangles": 8752,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Shop_apron",
+          "vertices": 432,
+          "triangles": 780,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 979,
+          "triangles": 1888,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_shirt",
+          "vertices": 1003,
+          "triangles": 1738,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        },
+        {
+          "name": "Waistcoat_panel_sewn",
+          "vertices": 1514,
+          "triangles": 2678,
+          "blendShapes": []
+        },
+        {
+          "name": "Waistcoat_sewn_binding",
+          "vertices": 1062,
+          "triangles": 1416,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "waiter-veteran",
+        "role": "hospitality_veteran",
+        "body": "regular_male",
+        "height": 1.72,
+        "top": "shirt",
+        "bottom": "straight",
+        "hair": "hair_simpleparted",
+        "accessory": "waistcoat",
+        "skin": "fair",
+        "palette": "waiter",
+        "tags": [
+          "B0_L",
+          "B0_E",
+          "older_stout",
+          "waistcoat",
+          "bistro_apron",
+          "bowtie"
+        ],
+        "profile": "waiter_stout",
+        "footwear": "loafers",
+        "headwear": "none",
+        "facial": [
+          "moustache"
+        ],
+        "brows": "thick",
+        "extras": [
+          "bistro_apron",
+          "bowtie",
+          "collar"
+        ],
+        "pose": "ual1:idle_loop",
+        "eyes": "grey",
+        "face": "older",
+        "qualityTier": "conversation",
+        "fit": "fitted",
+        "stanceBias": 0.015,
+        "slouch": 0.04,
+        "complexion": "weathered",
+        "headForm": "waiter-veteran",
+        "hairStyle": "sidepart",
+        "garmentPattern": "work-shirt"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "17e879329b5a253ebc9e97ad5cc99e1652ee86983ac5814bff9b374ce475b315",
+      "geometrySha256": "deb01aac830dde19e26d1bb2ba7549b186b712519b0228ec82f95e59e3ef43a1"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "bodyMetrics": {
+        "crown": 1.7599964141845703,
+        "headHeight": 0.23565280437469482,
+        "headsTall": 7.4685994883647755,
+        "handLength": 0.17940200987183383,
+        "handOverHead": 0.7612980051218886,
+        "headFactor": 1.0981071673424647,
+        "shoulderJointRatio": 0.21751726506239535,
+        "hipJointRatio": 0.10059804577646045,
+        "headLength": 0.12572663628629796,
+        "pelvisHeight": 0.5167777256988659,
+        "family": "fisher_sturdy",
+        "height": 1.76,
+        "shoulderSpan": 0.3828296073672206,
+        "legLength": 0.8490909241289537,
+        "hipSpan": 0.17705219476538572
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/fishmonger.blend",
+        "sourceSha256": "d934f2ff74bb5562b3a9b5d0f75f1682d77a9c87a1317dfd56bcaa10d075a7b7",
+        "headHeight": 0.23565280437469482,
+        "join": 1.4643436098098754,
+        "scale": 1.0740961788309609,
+        "neckShift": -0.09970444997528893,
+        "headVertices": 4326,
+        "eyeHeight": 1.642170010876835,
+        "rigBones": 65
+      },
+      "id": "fishmonger",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/blue.mhmat",
+        "makehuman:system/eyes/materials/blue_eye.png",
+        "makehuman:system/hair/short04/short04.mhclo",
+        "makehuman:system/hair/short04/short04.mhmat",
+        "makehuman:system/hair/short04/short04.obj",
+        "makehuman:system/hair/short04/short04_diffuse.png",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Apron_pocket",
+          "vertices": 39,
+          "triangles": 48,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_shoulder_tie_-1",
+          "vertices": 186,
+          "triangles": 233,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_shoulder_tie_1",
+          "vertices": 186,
+          "triangles": 233,
+          "blendShapes": []
+        },
+        {
+          "name": "Apron_waist_tie",
+          "vertices": 80,
+          "triangles": 80,
+          "blendShapes": []
+        },
+        {
+          "name": "Beanie_crown",
+          "vertices": 673,
+          "triangles": 1296,
+          "blendShapes": []
+        },
+        {
+          "name": "Beanie_crown_rim",
+          "vertices": 72,
+          "triangles": 72,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_boots",
+          "vertices": 898,
+          "triangles": 1642,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_trousers",
+          "vertices": 559,
+          "triangles": 1068,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanGroom_Facial_beard",
+          "vertices": 328,
+          "triangles": 560,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 396,
+          "triangles": 466,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4326,
+          "triangles": 8596,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Shop_apron",
+          "vertices": 513,
+          "triangles": 936,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_sweater",
+          "vertices": 1958,
+          "triangles": 3762,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "fishmonger",
+        "role": "market_fish_seller",
+        "body": "regular_male",
+        "height": 1.76,
+        "top": "sweater",
+        "bottom": "work",
+        "hair": "hair_buzzed",
+        "accessory": "apron",
+        "skin": "weathered",
+        "palette": "fishmonger",
+        "tags": [
+          "B0_A",
+          "B0_P",
+          "sturdy",
+          "rubber_apron",
+          "yellow_boots",
+          "beanie",
+          "beard"
+        ],
+        "profile": "fisher_sturdy",
+        "footwear": "work_boots",
+        "headwear": "beanie",
+        "facial": [
+          "beard"
+        ],
+        "brows": "thick",
+        "shoeFabric": "rubber",
+        "pose": "ual2:idle_foldarms_loop",
+        "eyes": "blue",
+        "workPose": "ual1:counter_idle_loop",
+        "qualityTier": "secondary",
+        "fit": "regular",
+        "stanceBias": -0.025,
+        "slouch": 0.01,
+        "complexion": "weathered",
+        "headForm": "fishmonger",
+        "hairStyle": "crop",
+        "garmentPattern": "knit",
+        "face": "mature"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "1459cc01a5d4dc81b3f07b53a6bea9bff5620a2162992e902e48586c69008f64",
+      "geometrySha256": "1581148e8caf1cf6d0434101f5563eb40b90fd00dac597a3dfbb471a0170dff8"
+    },
+    {
+      "verts": 1581,
+      "polys": 1528,
+      "doubles_welded": 0,
+      "islands": [
+        1528
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "pants": {
+        "verts": 1063,
+        "polys": 1028,
+        "doubles_welded": 0,
+        "islands": [
+          1028
+        ],
+        "small_removed": 0,
+        "boundary_count": 72
+      },
+      "bodyMetrics": {
+        "crown": 1.7200039625167847,
+        "headHeight": 0.22686195373535156,
+        "headsTall": 7.581720664026703,
+        "handLength": 0.17714472779782517,
+        "handOverHead": 0.7808481099676828,
+        "headFactor": 1.0765050344143552,
+        "shoulderJointRatio": 0.1710752285815534,
+        "hipJointRatio": 0.1162072868728211,
+        "headLength": 0.1294198908142454,
+        "pelvisHeight": 0.5264029255001182,
+        "family": "athletic_woman",
+        "height": 1.72,
+        "shoulderSpan": 0.2942500768222247,
+        "legLength": 0.8487833051860877,
+        "hipSpan": 0.19987699742121462
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/mechanic.blend",
+        "sourceSha256": "236bb4fd15e4efc352024e693bb0735075ab2ab00bc33693d77645a2a4fe89e8",
+        "headHeight": 0.2268619537353516,
+        "join": 1.433142008781433,
+        "scale": 1.1040235995062522,
+        "neckShift": -0.06612529471979281,
+        "headVertices": 4366,
+        "eyeHeight": 1.6065729883380402,
+        "rigBones": 65
+      },
+      "id": "mechanic",
+      "sourceIds": [
+        "base:superhero_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/ponytail01/ponytail01.mhclo",
+        "makehuman:system/hair/ponytail01/ponytail01.mhmat",
+        "makehuman:system/hair/ponytail01/ponytail01.obj",
+        "makehuman:system/hair/ponytail01/ponytail01_diffuse.png",
+        "makehuman:system/skins/young_caucasian_female/young_caucasian_female.mhmat",
+        "makehuman:system/skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Cap_brim",
+          "vertices": 39,
+          "triangles": 48,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_work_boots",
+          "vertices": 898,
+          "triangles": 1642,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 2693,
+          "triangles": 3697,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4366,
+          "triangles": 8680,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Overall_bib",
+          "vertices": 90,
+          "triangles": 144,
+          "blendShapes": []
+        },
+        {
+          "name": "Overall_button",
+          "vertices": 52,
+          "triangles": 100,
+          "blendShapes": []
+        },
+        {
+          "name": "Overall_button.001",
+          "vertices": 52,
+          "triangles": 100,
+          "blendShapes": []
+        },
+        {
+          "name": "Overall_pocket",
+          "vertices": 14,
+          "triangles": 12,
+          "blendShapes": []
+        },
+        {
+          "name": "Overall_strap_-1",
+          "vertices": 362,
+          "triangles": 572,
+          "blendShapes": []
+        },
+        {
+          "name": "Overall_strap_1",
+          "vertices": 362,
+          "triangles": 572,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 1014,
+          "triangles": 1956,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_tshirt",
+          "vertices": 2259,
+          "triangles": 4364,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1886,
+          "triangles": 3728,
+          "blendShapes": []
+        },
+        {
+          "name": "Work_cap",
+          "vertices": 673,
+          "triangles": 1296,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "mechanic",
+        "role": "workshop_mechanic",
+        "body": "superhero_female",
+        "height": 1.72,
+        "top": "tshirt",
+        "bottom": "overalls",
+        "hair": "hair_ponytail",
+        "accessory": "none",
+        "skin": "fair",
+        "palette": "mechanic",
+        "tags": [
+          "B0_Q",
+          "athletic",
+          "overalls",
+          "ponytail"
+        ],
+        "profile": "athletic_woman",
+        "footwear": "work_boots",
+        "headwear": "cap",
+        "pose": "ual1:idle_talking_loop",
+        "face": "natural",
+        "qualityTier": "secondary",
+        "fit": "regular",
+        "stanceBias": 0.02,
+        "slouch": 0.01,
+        "complexion": "freckles",
+        "headForm": "mechanic",
+        "hairStyle": "pony",
+        "garmentPattern": "work-shirt"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "edcdff11c06b1329ea7257361851a79c59275d1464caedcb0dc1c1ae33cc3e5c",
+      "geometrySha256": "7996b853f6c875a1e9cedfbc8f66eda4fc39ca4e318ae8dd174ebe10823a7487"
+    },
+    {
+      "verts": 1893,
+      "polys": 1836,
+      "doubles_welded": 0,
+      "islands": [
+        1836
+      ],
+      "small_removed": 0,
+      "boundary_count": 132,
+      "pants": {
+        "verts": 1056,
+        "polys": 1022,
+        "doubles_welded": 0,
+        "islands": [
+          1022
+        ],
+        "small_removed": 0,
+        "boundary_count": 70
+      },
+      "bodyMetrics": {
+        "crown": 1.599995493888855,
+        "headHeight": 0.2246253490447998,
+        "headsTall": 7.122951620076273,
+        "handLength": 0.1624888701252991,
+        "handOverHead": 0.7233772627010674,
+        "headFactor": 1.1216998392085877,
+        "shoulderJointRatio": 0.17146079661087035,
+        "hipJointRatio": 0.13562265329333353,
+        "headLength": 0.1373496049504777,
+        "pelvisHeight": 0.5105317233576732,
+        "family": "shopkeeper_woman",
+        "height": 1.6,
+        "shoulderSpan": 0.27433652223497323,
+        "legLength": 0.7662903895992292,
+        "hipSpan": 0.21699562928417182
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/shopkeeper.blend",
+        "sourceSha256": "69d933bc1b0e05511a9edc1b450a1931b7c76ddc05e7124ca368c6e1febf3512",
+        "headHeight": 0.2246253490447998,
+        "join": 1.3153701448440551,
+        "scale": 1.0556573458737677,
+        "neckShift": -0.06919455049188558,
+        "headVertices": 4354,
+        "eyeHeight": 1.4876828219433476,
+        "rigBones": 65
+      },
+      "id": "shopkeeper",
+      "sourceIds": [
+        "base:regular_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/green.mhmat",
+        "makehuman:system/eyes/materials/green_eye.png",
+        "makehuman:system/hair/bob01/bob01.mhclo",
+        "makehuman:system/hair/bob01/bob01.mhmat",
+        "makehuman:system/hair/bob01/bob01.obj",
+        "makehuman:system/hair/bob01/bob01_diffuse.png",
+        "makehuman:system/skins/middleage_caucasian_female/middleage_caucasian_female.mhmat",
+        "makehuman:system/skins/middleage_caucasian_female/middleage_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Donor_loafers",
+          "vertices": 600,
+          "triangles": 1042,
+          "blendShapes": []
+        },
+        {
+          "name": "Glasses",
+          "vertices": 248,
+          "triangles": 492,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 5203,
+          "triangles": 8474,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4354,
+          "triangles": 8656,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Scarf_wrap",
+          "vertices": 196,
+          "triangles": 288,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 962,
+          "triangles": 1846,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_shop_coat",
+          "vertices": 2483,
+          "triangles": 4802,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1622,
+          "triangles": 3200,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 5.36868489465063e-07,
+      "recipe": {
+        "id": "shopkeeper",
+        "role": "small_business_owner",
+        "body": "regular_female",
+        "height": 1.6,
+        "top": "shop_coat",
+        "bottom": "straight",
+        "hair": "hair_long",
+        "accessory": "glasses",
+        "skin": "pale",
+        "palette": "shopkeeper",
+        "tags": [
+          "B0_S",
+          "B0_E",
+          "middle_aged",
+          "shop_coat",
+          "reading_glasses",
+          "scarf"
+        ],
+        "profile": "shopkeeper_woman",
+        "footwear": "loafers",
+        "headwear": "none",
+        "extras": [
+          "scarf"
+        ],
+        "pose": "ual1:idle_loop",
+        "eyes": "green",
+        "face": "mature",
+        "workPose": "ual1:counter_idle_loop",
+        "qualityTier": "conversation",
+        "fit": "regular",
+        "stanceBias": -0.03,
+        "slouch": 0.01,
+        "complexion": "mole",
+        "headForm": "shopkeeper",
+        "hairStyle": "wavy_bob",
+        "garmentPattern": "service-coat"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "3eb92e5d9131d9d9de3da42346f688a9ea7df088d963079b89f1e8a5b5f73b66",
+      "geometrySha256": "cef87e8d117c15eb67a38d39eb31f5af456164948b7bc95156c7c1ed37e6d8b8"
+    },
+    {
+      "verts": 1819,
+      "polys": 1766,
+      "doubles_welded": 0,
+      "islands": [
+        1766
+      ],
+      "small_removed": 0,
+      "boundary_count": 122,
+      "bodyMetrics": {
+        "crown": 1.5299957990646362,
+        "headHeight": 0.21139013767242432,
+        "headsTall": 7.237782310523671,
+        "handLength": 0.15648427369080448,
+        "handOverHead": 0.7402628874450926,
+        "headFactor": 1.075478284429107,
+        "shoulderJointRatio": 0.1675951349230806,
+        "hipJointRatio": 0.13178738068812,
+        "headLength": 0.13401521753612422,
+        "pelvisHeight": 0.508890193528632,
+        "family": "elder_woman",
+        "height": 1.53,
+        "shoulderSpan": 0.25641984195706874,
+        "legLength": 0.7306379931548821,
+        "hipSpan": 0.20163413519541773
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/elder-woman.blend",
+        "sourceSha256": "1188fb26cca4197056179029b1692d090bf6cfc6b57e7ddc92526efdb982f6c5",
+        "headHeight": 0.21139013767242432,
+        "join": 1.2586056613922119,
+        "scale": 0.9802194727792866,
+        "neckShift": -0.06000525297007124,
+        "headVertices": 4427,
+        "eyeHeight": 1.4243007301163852,
+        "rigBones": 65
+      },
+      "id": "elder-woman",
+      "sourceIds": [
+        "base:regular_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/blue.mhmat",
+        "makehuman:system/eyes/materials/blue_eye.png",
+        "makehuman:system/hair/short03/short03.mhclo",
+        "makehuman:system/hair/short03/short03.mhmat",
+        "makehuman:system/hair/short03/short03.obj",
+        "makehuman:system/hair/short03/short03_diffuse.png",
+        "makehuman:system/skins/old_caucasian_female/old_caucasian_female.mhmat",
+        "makehuman:system/skins/old_caucasian_female/old_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Bag_rear_strap",
+          "vertices": 32,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Bag_strap",
+          "vertices": 32,
+          "triangles": 30,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_ankle_boots",
+          "vertices": 878,
+          "triangles": 1598,
+          "blendShapes": []
+        },
+        {
+          "name": "Glasses",
+          "vertices": 248,
+          "triangles": 492,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 1011,
+          "triangles": 1922,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4427,
+          "triangles": 8800,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Inner_shirt",
+          "vertices": 451,
+          "triangles": 773,
+          "blendShapes": []
+        },
+        {
+          "name": "Knee_skirt",
+          "vertices": 528,
+          "triangles": 960,
+          "blendShapes": []
+        },
+        {
+          "name": "Outer_cardigan",
+          "vertices": 1680,
+          "triangles": 3158,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Shoulder_bag",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1848,
+          "triangles": 3572,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 5.36868489465063e-07,
+      "recipe": {
+        "id": "elder-woman",
+        "role": "older_resident_f",
+        "body": "regular_female",
+        "height": 1.53,
+        "top": "cardigan",
+        "bottom": "long_skirt",
+        "hair": "hair_bob",
+        "accessory": "glasses",
+        "skin": "pale",
+        "palette": "elderwoman",
+        "tags": [
+          "B0_V",
+          "B0_L",
+          "older",
+          "stooped",
+          "long_skirt",
+          "cardigan",
+          "handbag"
+        ],
+        "profile": "elder_woman",
+        "footwear": "ankle_boots",
+        "headwear": "none",
+        "extras": [
+          "shoulder_bag"
+        ],
+        "pose": "ual1:idle_loop",
+        "eyes": "blue",
+        "face": "older",
+        "qualityTier": "conversation",
+        "fit": "regular",
+        "stanceBias": 0.025,
+        "slouch": 0.12,
+        "complexion": "age_spots",
+        "headForm": "elder-woman",
+        "hairStyle": "short_waves",
+        "garmentPattern": "cardigan"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "45b381baf3381eb45ba08e0ef78382b70ba7217bae7823e28841e407c426107f",
+      "geometrySha256": "62bf1d7ff22d3215e7e5bd5ab96c7dc5172a8d97f3e5bbeaea5b410ee3ac0ae8"
+    },
+    {
+      "verts": 1819,
+      "polys": 1766,
+      "doubles_welded": 0,
+      "islands": [
+        1766
+      ],
+      "small_removed": 0,
+      "boundary_count": 122,
+      "pants": {
+        "verts": 1056,
+        "polys": 1022,
+        "doubles_welded": 0,
+        "islands": [
+          1022
+        ],
+        "small_removed": 0,
+        "boundary_count": 70
+      },
+      "bodyMetrics": {
+        "crown": 1.6599955558776855,
+        "headHeight": 0.2180633544921875,
+        "headsTall": 7.612446207403261,
+        "handLength": 0.16699191989568107,
+        "handOverHead": 0.7657954280514558,
+        "headFactor": 1.1138585689027587,
+        "shoulderJointRatio": 0.1611468398825369,
+        "hipJointRatio": 0.12213326025640694,
+        "headLength": 0.13238514297828116,
+        "pelvisHeight": 0.5260350553807627,
+        "family": "young_woman",
+        "height": 1.66,
+        "shoulderSpan": 0.26750301782744607,
+        "legLength": 0.8185064151974576,
+        "hipSpan": 0.20274067246022232
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/student.blend",
+        "sourceSha256": "95a8dcdaf7d571ef2399723f4a0343c75ef0f3ddf9d73cba334df8b095e12e3b",
+        "headHeight": 0.21806335449218747,
+        "join": 1.381932201385498,
+        "scale": 1.0418013505759178,
+        "neckShift": -0.06236881654414428,
+        "headVertices": 4463,
+        "eyeHeight": 1.5509638770630485,
+        "rigBones": 65
+      },
+      "id": "student",
+      "sourceIds": [
+        "base:regular_female_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhclo",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.mhmat",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.obj",
+        "makehuman:system/eyebrows/eyebrow002/eyebrow002.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/green.mhmat",
+        "makehuman:system/eyes/materials/green_eye.png",
+        "makehuman:system/hair/bob01/bob01.mhclo",
+        "makehuman:system/hair/bob01/bob01.mhmat",
+        "makehuman:system/hair/bob01/bob01.obj",
+        "makehuman:system/hair/bob01/bob01_diffuse.png",
+        "makehuman:system/skins/young_caucasian_female/young_caucasian_female.mhmat",
+        "makehuman:system/skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+        "outfits:female_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Backpack",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        },
+        {
+          "name": "Backpack_front_pocket",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        },
+        {
+          "name": "Backpack_strap_-1",
+          "vertices": 213,
+          "triangles": 304,
+          "blendShapes": []
+        },
+        {
+          "name": "Backpack_strap_1",
+          "vertices": 213,
+          "triangles": 304,
+          "blendShapes": []
+        },
+        {
+          "name": "Donor_trainers",
+          "vertices": 620,
+          "triangles": 1078,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 5203,
+          "triangles": 8474,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4463,
+          "triangles": 8872,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Inner_shirt",
+          "vertices": 451,
+          "triangles": 772,
+          "blendShapes": []
+        },
+        {
+          "name": "Outer_cardigan",
+          "vertices": 1684,
+          "triangles": 3162,
+          "blendShapes": []
+        },
+        {
+          "name": "Pattern_collar_-1",
+          "vertices": 25,
+          "triangles": 32,
+          "blendShapes": []
+        },
+        {
+          "name": "Pattern_collar_1",
+          "vertices": 25,
+          "triangles": 32,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 1009,
+          "triangles": 1948,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1622,
+          "triangles": 3200,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 5.36868489465063e-07,
+      "recipe": {
+        "id": "student",
+        "role": "young_local_f",
+        "body": "regular_female",
+        "height": 1.66,
+        "top": "cardigan",
+        "bottom": "straight",
+        "hair": "hair_long",
+        "accessory": "backpack",
+        "skin": "fair",
+        "palette": "student",
+        "tags": [
+          "B0_A",
+          "B0_E",
+          "young",
+          "denim_jacket",
+          "backpack"
+        ],
+        "profile": "young_woman",
+        "footwear": "trainers",
+        "headwear": "none",
+        "fabric": "denim",
+        "pose": "ual1:idle_loop",
+        "eyes": "green",
+        "face": "natural",
+        "qualityTier": "secondary",
+        "fit": "regular",
+        "stanceBias": -0.02,
+        "slouch": 0.01,
+        "complexion": "freckles",
+        "headForm": "student",
+        "hairStyle": "bob",
+        "garmentPattern": "denim-jacket"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "283daf65219242944206df72385b5889ca95b93462980e41c84e179b92e2a691",
+      "geometrySha256": "e3fd4878d243e0bc486e3f6e5dcbf7331b0919b63fc021793c9134a8279aaa70"
+    },
+    {
+      "verts": 1210,
+      "polys": 1154,
+      "doubles_welded": 4,
+      "islands": [
+        1154
+      ],
+      "small_removed": 0,
+      "boundary_count": 124,
+      "pants": {
+        "verts": 1017,
+        "polys": 984,
+        "doubles_welded": 0,
+        "islands": [
+          984
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      },
+      "bodyMetrics": {
+        "crown": 1.7299964427947998,
+        "headHeight": 0.2364184856414795,
+        "headsTall": 7.317517655612937,
+        "handLength": 0.17788243718372387,
+        "handOverHead": 0.752404942875222,
+        "headFactor": 1.1145932360055133,
+        "shoulderJointRatio": 0.21736158360426514,
+        "hipJointRatio": 0.1053042161862844,
+        "headLength": 0.12863308283712077,
+        "pelvisHeight": 0.5104857189044685,
+        "family": "fan_bulky",
+        "height": 1.73,
+        "shoulderSpan": 0.37603475937703434,
+        "legLength": 0.8247634403215532,
+        "hipSpan": 0.18217592425074716
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/local-fan.blend",
+        "sourceSha256": "db2631198cf8280896d43a7fdc216d29e0851402cbb9cc524697371e2102684d",
+        "headHeight": 0.23641848564147946,
+        "join": 1.4335779571533203,
+        "scale": 1.086178456631873,
+        "neckShift": -0.10231972098585017,
+        "headVertices": 4320,
+        "eyeHeight": 1.6117872019907586,
+        "rigBones": 65
+      },
+      "id": "local-fan",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/short01/short01.mhclo",
+        "makehuman:system/hair/short01/short01.mhmat",
+        "makehuman:system/hair/short01/short01.obj",
+        "makehuman:system/hair/short01/short01_diffuse.png",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Donor_trainers",
+          "vertices": 626,
+          "triangles": 1094,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanGroom_Facial_muttonchops",
+          "vertices": 194,
+          "triangles": 306,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 2984,
+          "triangles": 3678,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4320,
+          "triangles": 8584,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 979,
+          "triangles": 1888,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_jersey",
+          "vertices": 1782,
+          "triangles": 3400,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 2042,
+          "triangles": 4044,
+          "blendShapes": []
+        },
+        {
+          "name": "Wristwatch_band",
+          "vertices": 40,
+          "triangles": 40,
+          "blendShapes": []
+        },
+        {
+          "name": "Wristwatch_case",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "local-fan",
+        "role": "neighbour_fan",
+        "body": "regular_male",
+        "height": 1.73,
+        "top": "jersey",
+        "bottom": "straight",
+        "hair": "hair_simpleparted",
+        "accessory": "watch",
+        "skin": "fair",
+        "palette": "fan",
+        "tags": [
+          "B0_A",
+          "B0_O",
+          "middle_aged",
+          "heavy",
+          "striped_jersey",
+          "muttonchops"
+        ],
+        "profile": "fan_bulky",
+        "footwear": "trainers",
+        "headwear": "none",
+        "facial": [
+          "muttonchops"
+        ],
+        "brows": "thick",
+        "pose": "ual1:idle_lookaround_loop",
+        "qualityTier": "secondary",
+        "fit": "loose",
+        "stanceBias": 0.035,
+        "slouch": 0.04,
+        "complexion": "weathered",
+        "headForm": "local-fan",
+        "hairStyle": "sidepart",
+        "garmentPattern": "football-shirt",
+        "face": "mature"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "464bf8deebdd2c39b537edc1f7e0a23757f5548f5c74778312d5f800cb5ba481",
+      "geometrySha256": "ee75808c30e6a72de77ec9a35b7f35952c770b218b58300371c29bfec12e4aa8"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "pants": {
+        "verts": 1017,
+        "polys": 984,
+        "doubles_welded": 0,
+        "islands": [
+          984
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      },
+      "bodyMetrics": {
+        "crown": 1.8799962997436523,
+        "headHeight": 0.24343669414520264,
+        "headsTall": 7.722731802389213,
+        "handLength": 0.19026672942827152,
+        "handOverHead": 0.78158607146868,
+        "headFactor": 1.071339611577211,
+        "shoulderJointRatio": 0.22831948114435055,
+        "hipJointRatio": 0.09803371181934532,
+        "headLength": 0.12188076866301192,
+        "pelvisHeight": 0.5237564924804154,
+        "family": "bruiser",
+        "height": 1.88,
+        "shoulderSpan": 0.42923978542222907,
+        "legLength": 0.918670229399593,
+        "hipSpan": 0.18430301950325884
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/bruiser.blend",
+        "sourceSha256": "e27b99f44948f2448cf64b7f08a9d8afbdd9aec0693676f858a044b70465e27a",
+        "headHeight": 0.24343669414520264,
+        "join": 1.5765596055984497,
+        "scale": 1.1489806221032863,
+        "neckShift": -0.11055122960223013,
+        "headVertices": 4319,
+        "eyeHeight": 1.758277953343284,
+        "rigBones": 65
+      },
+      "id": "bruiser",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/brown.mhmat",
+        "makehuman:system/eyes/materials/brown_eye.png",
+        "makehuman:system/hair/short04/short04.mhclo",
+        "makehuman:system/hair/short04/short04.mhmat",
+        "makehuman:system/hair/short04/short04.obj",
+        "makehuman:system/hair/short04/short04_diffuse.png",
+        "makehuman:system/skins/young_caucasian_male/young_caucasian_male.mhmat",
+        "makehuman:system/skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Donor_work_boots",
+          "vertices": 898,
+          "triangles": 1642,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanGroom_Facial_beard",
+          "vertices": 328,
+          "triangles": 560,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4319,
+          "triangles": 8580,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Inner_shirt",
+          "vertices": 372,
+          "triangles": 626,
+          "blendShapes": []
+        },
+        {
+          "name": "Outer_cardigan",
+          "vertices": 1334,
+          "triangles": 2470,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 979,
+          "triangles": 1888,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        },
+        {
+          "name": "Wristwatch_band",
+          "vertices": 40,
+          "triangles": 40,
+          "blendShapes": []
+        },
+        {
+          "name": "Wristwatch_case",
+          "vertices": 56,
+          "triangles": 108,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "bruiser",
+        "role": "imposing_doorman",
+        "body": "regular_male",
+        "height": 1.88,
+        "top": "cardigan",
+        "bottom": "straight",
+        "hair": "hair_buzzed",
+        "accessory": "watch",
+        "skin": "tan",
+        "palette": "bruiser",
+        "tags": [
+          "B0_Q",
+          "B0_E",
+          "imposing",
+          "black_jacket",
+          "beard"
+        ],
+        "profile": "bruiser",
+        "footwear": "work_boots",
+        "headwear": "none",
+        "facial": [
+          "beard"
+        ],
+        "brows": "thick",
+        "fabric": "leather",
+        "pose": "ual2:idle_foldarms_loop",
+        "qualityTier": "secondary",
+        "fit": "fitted",
+        "stanceBias": -0.015,
+        "slouch": -0.02,
+        "complexion": "scar",
+        "headForm": "bruiser",
+        "hairStyle": "crop",
+        "garmentPattern": "cardigan",
+        "face": "clean"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "70b542b2e640a096a969fca0eab52a93bda671f2a42cc38c4fcca59a5fc52f56",
+      "geometrySha256": "573ab5e624f9b597b4e3ea481922b44a3e739680b5c845e613675949be447669"
+    },
+    {
+      "verts": 1402,
+      "polys": 1348,
+      "doubles_welded": 0,
+      "islands": [
+        1348
+      ],
+      "small_removed": 0,
+      "boundary_count": 118,
+      "pants": {
+        "verts": 1017,
+        "polys": 984,
+        "doubles_welded": 0,
+        "islands": [
+          984
+        ],
+        "small_removed": 0,
+        "boundary_count": 68
+      },
+      "bodyMetrics": {
+        "crown": 1.8599963188171387,
+        "headHeight": 0.24292278289794922,
+        "headsTall": 7.656738888910699,
+        "handLength": 0.18293554758424074,
+        "handOverHead": 0.7530604803794428,
+        "headFactor": 1.0982482743261244,
+        "shoulderJointRatio": 0.19633831278784936,
+        "hipJointRatio": 0.09096980634220311,
+        "headLength": 0.12319131590652435,
+        "pelvisHeight": 0.5265433467625641,
+        "family": "eccentric_tall",
+        "height": 1.86,
+        "shoulderSpan": 0.3651885345577524,
+        "legLength": 0.9136140930038895,
+        "hipSpan": 0.16920350582007093
+      },
+      "humanHead": {
+        "source": "Art/Characters/HumanHeads/eccentric.blend",
+        "sourceSha256": "90a801ad0f7f49d5127dae6f5ca08012575a456e46f82747c3e1ede0cc9f3007",
+        "headHeight": 0.24292278289794922,
+        "join": 1.5570735359191894,
+        "scale": 1.0860428446367403,
+        "neckShift": -0.05145965311632218,
+        "headVertices": 4332,
+        "eyeHeight": 1.7385349264718537,
+        "rigBones": 65
+      },
+      "id": "eccentric",
+      "sourceIds": [
+        "base:regular_male_fullbody",
+        "makehuman:hm08.obj",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-left-closure.target.gz",
+        "makehuman:mpfb_targets/expression/units/caucasian/eye-right-closure.target.gz",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhclo",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.mhmat",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.obj",
+        "makehuman:system/eyebrows/eyebrow001/eyebrow001.png",
+        "makehuman:system/eyes/high-poly/high-poly.mhclo",
+        "makehuman:system/eyes/high-poly/high-poly.obj",
+        "makehuman:system/eyes/materials/grey.mhmat",
+        "makehuman:system/eyes/materials/grey_eye.png",
+        "makehuman:system/hair/short04/short04.mhclo",
+        "makehuman:system/hair/short04/short04.mhmat",
+        "makehuman:system/hair/short04/short04.obj",
+        "makehuman:system/hair/short04/short04_diffuse.png",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+        "makehuman:system/skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+        "outfits:male_peasant"
+      ],
+      "bones": 65,
+      "meshes": [
+        {
+          "name": "Donor_loafers",
+          "vertices": 608,
+          "triangles": 1058,
+          "blendShapes": []
+        },
+        {
+          "name": "Glasses",
+          "vertices": 248,
+          "triangles": 492,
+          "blendShapes": []
+        },
+        {
+          "name": "Hat_band",
+          "vertices": 192,
+          "triangles": 380,
+          "blendShapes": []
+        },
+        {
+          "name": "Hat_brim",
+          "vertices": 240,
+          "triangles": 476,
+          "blendShapes": []
+        },
+        {
+          "name": "Hat_crown",
+          "vertices": 192,
+          "triangles": 380,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040,
+          "blendShapes": [
+            "GazeRight",
+            "GazeLeft",
+            "GazeUp",
+            "GazeDown"
+          ]
+        },
+        {
+          "name": "HumanGroom_Facial_moustache",
+          "vertices": 132,
+          "triangles": 192,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 593,
+          "triangles": 694,
+          "blendShapes": []
+        },
+        {
+          "name": "HumanHead",
+          "vertices": 4332,
+          "triangles": 8608,
+          "blendShapes": [
+            "BlinkLeft",
+            "BlinkRight"
+          ]
+        },
+        {
+          "name": "Inner_shirt",
+          "vertices": 348,
+          "triangles": 584,
+          "blendShapes": []
+        },
+        {
+          "name": "Outer_light_coat",
+          "vertices": 1332,
+          "triangles": 2472,
+          "blendShapes": []
+        },
+        {
+          "name": "Pattern_collar_-1",
+          "vertices": 25,
+          "triangles": 32,
+          "blendShapes": []
+        },
+        {
+          "name": "Pattern_collar_1",
+          "vertices": 25,
+          "triangles": 32,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Pocket_welt.001",
+          "vertices": 12,
+          "triangles": 10,
+          "blendShapes": []
+        },
+        {
+          "name": "Scarf_wrap",
+          "vertices": 196,
+          "triangles": 288,
+          "blendShapes": []
+        },
+        {
+          "name": "Straight_trousers",
+          "vertices": 979,
+          "triangles": 1888,
+          "blendShapes": []
+        },
+        {
+          "name": "Top_neck_facing",
+          "vertices": 325,
+          "triangles": 512,
+          "blendShapes": []
+        },
+        {
+          "name": "VisibleSkin",
+          "vertices": 1834,
+          "triangles": 3632,
+          "blendShapes": []
+        }
+      ],
+      "unweightedVertices": 0,
+      "donorRestDelta": 0.0,
+      "recipe": {
+        "id": "eccentric",
+        "role": "memorable_eccentric",
+        "body": "regular_male",
+        "height": 1.86,
+        "top": "light_coat",
+        "bottom": "straight",
+        "hair": "hair_simpleparted",
+        "accessory": "glasses",
+        "skin": "pale",
+        "palette": "eccentric",
+        "tags": [
+          "B0_L",
+          "B0_O",
+          "tall_thin",
+          "trench",
+          "scarf",
+          "fedora",
+          "moustache"
+        ],
+        "profile": "eccentric_tall",
+        "footwear": "loafers",
+        "headwear": "fedora",
+        "facial": [
+          "moustache"
+        ],
+        "brows": "thick",
+        "extras": [
+          "scarf"
+        ],
+        "fabric": "canvas",
+        "pose": "ual1:idle_talking_loop",
+        "eyes": "grey",
+        "face": "mature",
+        "qualityTier": "conversation",
+        "fit": "regular",
+        "stanceBias": 0.035,
+        "slouch": 0.09,
+        "complexion": "age_spots",
+        "headForm": "eccentric",
+        "hairStyle": "receding",
+        "garmentPattern": "town-coat"
+      },
+      "blender": "5.2.1 LTS",
+      "exportSha256": "9b4d34af3331a7400e4a11b5b7f8f34280241f8e5bae3e197a04d358ca762e3b",
+      "geometrySha256": "1ada80aecf3fe68c4005c06837222ccbfb69b5d51d1381125e52512bf798f6a8"
+    }
+  ]
+}

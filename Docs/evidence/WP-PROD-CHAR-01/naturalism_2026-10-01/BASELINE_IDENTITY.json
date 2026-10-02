@@ -1,0 +1,3645 @@
+{
+  "snapshot": "C:\\Juego Def Auditorias\\CHAR_NATURALISM_2026-10-01\\baseline",
+  "preservedManifest": {
+    "root": "C:\\Users\\Usuario\\.codex\\worktrees\\characters-01\\Juego Def",
+    "head": "58631805970b55cff3cb41521f8a50c5af969698",
+    "files": [
+      {
+        "path": "Tools/char_audit.py",
+        "sha256": "a04fe9efb73bcc094e05b9a9233d00c2f7729e45c980ed8e2cc9a8f220ea03fb",
+        "size": 15821
+      },
+      {
+        "path": "Tools/char_build.py",
+        "sha256": "e023fa59e63b0041bf3ca1db493da1ba60bcc14a2f71bbf184b1d2fa366bbb97",
+        "size": 61918
+      },
+      {
+        "path": "Tools/char_manifest.py",
+        "sha256": "4b4335ac378c4c281fa92346ebf2d32842878d2f05edc8e4b408b0dd56291f06",
+        "size": 10439
+      },
+      {
+        "path": "Tools/char_preview.py",
+        "sha256": "961823a51bb30a5bdd9d6f78bb15b06f5dbef04b0afe5bc0826bfb6c86c29ecb",
+        "size": 2764
+      },
+      {
+        "path": "Tools/char_reuse_spike.py",
+        "sha256": "ba05303d21111f34f599e96aa65929992b2ce791d18f073ade4cc6c9a1037257",
+        "size": 6251
+      },
+      {
+        "path": "Tools/char_shapes.py",
+        "sha256": "05e9dc076dd1f9328ff1b4961333d83b10d003a72a57fba2e22f8e842cc0f428",
+        "size": 10368
+      },
+      {
+        "path": "Tools/char_skin.py",
+        "sha256": "6fd817a0f683d8fa863c6ca127ad6ce3a9a8a03d75d7e4095d31fe8de036587d",
+        "size": 9420
+      },
+      {
+        "path": "Tools/char_source_probe.py",
+        "sha256": "d8bb4c939837c3ef5153f44773de3bd10daa10425a31bf6eaf866e62fabe8392",
+        "size": 2151
+      },
+      {
+        "path": "Tools/char_stage.py",
+        "sha256": "73a3fd6aa41acaac4eec91a511a562404f590bb6c64603ed0d3e511c273df15f",
+        "size": 2668
+      },
+      {
+        "path": "Tools/char_textures.py",
+        "sha256": "53c01ce7fbeb4e085b97dfaa0f5aa0a4cbcfb881f10fe710c0990adde42f1ee9",
+        "size": 3209
+      },
+      {
+        "path": "Docs/asset_catalog/char_body_profiles.json",
+        "sha256": "7c7be55dbb318fa1fc0c9b02f65880c1a47e9ec582d0909bdd03db7ea64f5a47",
+        "size": 11795
+      },
+      {
+        "path": "Docs/asset_catalog/char_compatibility.json",
+        "sha256": "211896dbee736f94bc4c9fab69a981aa0101e3b0c5665d01f25e75fb7dc776e9",
+        "size": 23023
+      },
+      {
+        "path": "Docs/asset_catalog/char_recipes.json",
+        "sha256": "86b65062856f9d1ca48d4b19fa8b1d2408045e33e55a5cd10e6d2937197590da",
+        "size": 14957
+      },
+      {
+        "path": "Docs/asset_catalog/lineage.json",
+        "sha256": "ea5bc9824d0f8cd93bd872700de5407b6b11e38c8009f39515d06e22447e65e3",
+        "size": 148783
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-ASSET-00/catalog.json",
+        "sha256": "aa401061d78fc134583dc4a2666609bbf5288004a087794dae49f02bd7009d92",
+        "size": 683132
+      },
+      {
+        "path": "Docs/workpacks/WP-PROD-CHAR-01.md",
+        "sha256": "0974c5f9c578a9646be5224eff8cdeec32522ecd04abd6c6106cfab8ff7aef14",
+        "size": 7782
+      },
+      {
+        "path": "Docs/production/CHAR_FACTORY.md",
+        "sha256": "916718d3a7f9351708aeb3685652f3c468cef0225afede0bac7c55badca4247f",
+        "size": 16251
+      },
+      {
+        "path": "Docs/production/CHAR_COSTUME_RULES.md",
+        "sha256": "f02dc88e2f3da1799ff56fcad3d2c2e783c6a79c165019710735b80b3d0cebf5",
+        "size": 5577
+      },
+      {
+        "path": ".gitattributes",
+        "sha256": "9035ce6e264b47d8e1bb79cda739f80acbbf18c57b4678da2d2e9a3f44a2b575",
+        "size": 1345
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/B0_ROLE_COVERAGE.md",
+        "sha256": "c80ddddd62961e880db19c98cc6d20b396bc9c5dd3bf9a8bba206adb34a77b08",
+        "size": 4240
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/build_inventory.json",
+        "sha256": "d319b68458b13a65bfdeeaad278e3312a950c5bcf1101af82b2f1e9e145202dd",
+        "size": 56492
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/DEPENDENCY_CHECK.md",
+        "sha256": "1cfbd165b650bb61b9b5e870b06cc7cf81ed1b5b3b48d2ae8bc3b329f825015c",
+        "size": 2348
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/FIT_COMPATIBILITY.md",
+        "sha256": "b7175c69e0ba4bbecaeb959e1a2215075c31b0079d596a5754173ac49848cdf1",
+        "size": 7257
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.00_front.png",
+        "sha256": "60d89b477fbfb9dfa7c60dcb213e5b84d7b380db86c1fa58eb4224b7fe269bcf",
+        "size": 1202822
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.00_rear.png",
+        "sha256": "40cf2a4d70cf3b2c4df34b6c7ba8051db71ca72ef1c3f6929079cd0d5e8108b5",
+        "size": 1244760
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.00_side.png",
+        "sha256": "988937bba46d5e14d8d8ec498ea0c0d1a1a4f7c4242408f8c4027021fb0d27d6",
+        "size": 1146661
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.25_front.png",
+        "sha256": "c3b840b4f7a99ef847ad77c7a3d3432891b279fa01e21de0a636db9266ac0996",
+        "size": 1212044
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.25_rear.png",
+        "sha256": "663bb56d9f8ca3c5f811d4320048bdd65cd3c113a99bc51a689d167e1d9da6af",
+        "size": 1231919
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.25_side.png",
+        "sha256": "1d73dc2d437951d159ea569c30a9a52d85c7f7d210571a127cc3327b6a0731c5",
+        "size": 1138808
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.50_front.png",
+        "sha256": "89bfeff4215a3b1730cc4438c3f9e6e76e9b496a529b0eb109a4ee66f3fb3de8",
+        "size": 1205308
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.50_rear.png",
+        "sha256": "36e168055e7e819f7514451e41e0d7bfee09e6305217e0ca0f58650ad5a37d2a",
+        "size": 1247641
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.50_side.png",
+        "sha256": "541038ce39d70b8baab7e6d41f082b8072e4aff8dd99d66cfe493f01367acaa1",
+        "size": 1160733
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.75_front.png",
+        "sha256": "9e2ecd5ee1e2c433af9ed201fbfe9f4d6600edf0e14a8b45621d6aee9c8b50f8",
+        "size": 1213920
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.75_rear.png",
+        "sha256": "d8199902ef5807618d0a2a87d2102588a098044b14e6308a0e48a7bffb95fb3b",
+        "size": 1243247
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Idle_0.75_side.png",
+        "sha256": "bedb894499c546880ac79466d314378557b5463f58042431303edda68865865a",
+        "size": 1142838
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.00_front.png",
+        "sha256": "176414ea1263197dda56f554af18ff1de15d2278e30d3e17b2fb600acdf3e3d1",
+        "size": 1205976
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.00_rear.png",
+        "sha256": "56a9c31d8b1732be8654bd07ff83e0aa6c3a90d78eb7a3eff9c123398561bab7",
+        "size": 1205372
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.00_side.png",
+        "sha256": "01e520d680bea172e4f1aa5d42a02f623ea7931887e7665b334dba48814d0c6b",
+        "size": 1143462
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.25_front.png",
+        "sha256": "6fc63326de88c7e34df2d04705094e39a0fc2e9312fd180d72afaaaad988f181",
+        "size": 1193627
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.25_rear.png",
+        "sha256": "41be46ad8118aa7741741343deb139dae159b65dddfa61adf9baaefe96f99d02",
+        "size": 1205051
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.25_side.png",
+        "sha256": "2418fc4ccb3afe6d5af76089a72d047b5e69c9e338202cf780e7d94ec96d1313",
+        "size": 1146962
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.50_front.png",
+        "sha256": "1d40015279644efdd31f2b319723b9b7cfcc8259c65e670172cfb86e977f6846",
+        "size": 1193906
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.50_rear.png",
+        "sha256": "e9f663d764f07a10ff85d00561523165fe544e74db5e69d9a789d930ac4c1ebd",
+        "size": 1207030
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.50_side.png",
+        "sha256": "ac372e3f093663d5f6653ab698094efacdad75774888923525d5002f98e344fb",
+        "size": 1148293
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.75_front.png",
+        "sha256": "3b82d1b8d627782b472c2dc62b8caba9ebdcf5f16733509373fd8d4aed0796d4",
+        "size": 1202153
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.75_rear.png",
+        "sha256": "557f9a9c58f1755453a261249812818b06a3144854841824e78b033f5fca5a6e",
+        "size": 1209955
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Talking_0.75_side.png",
+        "sha256": "95877f396205cde59fd44dd4d925f03d5d20c86d34a9743fb07cb6711ecb8ceb",
+        "size": 1151375
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.00_front.png",
+        "sha256": "810e7d01327742ee91926aec403d04cbf4e9a5ad42a96ef8482f3741b3c2468b",
+        "size": 1240727
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.00_rear.png",
+        "sha256": "296061b849781a9aa0732b869bbc5b94ce4a31e7d706779e4565b2e4c9d3e0c6",
+        "size": 1204243
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.00_side.png",
+        "sha256": "60920a0ef77bdee4f0d0b1ae9dbba28ab2e6a5d945531bdfe7e0c7ed2f0107be",
+        "size": 1192168
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.25_front.png",
+        "sha256": "9360419051d6c67faa0e2444cb60018a524d5b4ad4c6db5a6102672c5b79ef0f",
+        "size": 1269235
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.25_rear.png",
+        "sha256": "7634d1b59fefe211fa167919cd6688e52dad9ac7926e6ade3f4d4cbf480b7a14",
+        "size": 1236990
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.25_side.png",
+        "sha256": "0a9ece4beb2cc188e34b1ef3b078e94db26607cf7cee7effada6e49f0a6fb35c",
+        "size": 1100268
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.50_front.png",
+        "sha256": "a041daa3721aa685b7c5eb101e9be0059d22ef2c8c1fa5403558dad8694b9da2",
+        "size": 1249790
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.50_rear.png",
+        "sha256": "909772d8ba319617ecd68d379cce1b2bef1c7a6ff3f4845f4fc624c0f7bae967",
+        "size": 1194337
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.50_side.png",
+        "sha256": "4df4ad995efced9c08fb33f61638f87965ec09d25d0709159d0027ccc1d6454e",
+        "size": 1182583
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.75_front.png",
+        "sha256": "744022567372fa49831c7d16a16752003092dc9cac12e5eff2478653063ac7ee",
+        "size": 1265491
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.75_rear.png",
+        "sha256": "1fc68daadcc0d895440450b1bf088c567a562de8e9731e8a2d18a448246016a4",
+        "size": 1239431
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/fit_Walk_0.75_side.png",
+        "sha256": "fa0ef9a405a4d7feff1c266eec0b2ba8d67fdece7a3fda292cf119d1918d3316",
+        "size": 1124522
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_0deg_color_1920.png",
+        "sha256": "6cd9321293d0d730ea39e79563ce571c0e64611c5409d3b0632f02b341832500",
+        "size": 719837
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_0deg_color_640.png",
+        "sha256": "c1a872393ab15b77c0450ffc79cf6c106667d78a99cccc22f3500c8dd3453430",
+        "size": 132316
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_0deg_silhouette_1920.png",
+        "sha256": "f009d20cb96f75fd0438cb2688ff69381644d842c98d83938d429e7f78a90619",
+        "size": 96165
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_0deg_silhouette_640.png",
+        "sha256": "16276a58ac87b8282d6e0077c3ba4b69f9bf14adf0db02b3a3a85321d3844464",
+        "size": 13850
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_45deg_color_1920.png",
+        "sha256": "0567ce35aa0a00d2f66e1dbf997b7ed32e09c30ea596c91dd03022f038931807",
+        "size": 721706
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_45deg_color_640.png",
+        "sha256": "11f8b498d976262c7a0df35860c37204aed7dbced5f05cfae2230f6b6c29ee23",
+        "size": 131251
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_45deg_silhouette_1920.png",
+        "sha256": "1ecb04b184ef155d7b7f806337a9c778e86ddd797b9600822fbeba39f62cb92f",
+        "size": 96084
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_45deg_silhouette_640.png",
+        "sha256": "7ac0a6b1947765e88529a4f40b09aba3b9d0f47952ad4683d30d8f657f1e3a65",
+        "size": 13831
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_90deg_color_1920.png",
+        "sha256": "8abe5cb2b4ccb83e5e26847849b91fae84cecdb04109b6c2f5bd7b0285baaf79",
+        "size": 719161
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_90deg_color_640.png",
+        "sha256": "7d51ec55f7068f722f7fc946119d15412b3ef79384d7b22130339620091d996a",
+        "size": 132562
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_90deg_silhouette_1920.png",
+        "sha256": "c901b2595e8bb48b9620d327e65897b7a66413e278e3d72274c2dad33b2f73ea",
+        "size": 97473
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_10m_90deg_silhouette_640.png",
+        "sha256": "2798035fb93ca0c8e82bcdd32c62a15b51d945b959d4c4fa0bf7e48d211f9e04",
+        "size": 14471
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_0deg_color_1920.png",
+        "sha256": "313f9260c501adf14d5d277851389ba6c120d243ec7ec241c33eb99f5b36f0e3",
+        "size": 416494
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_0deg_color_640.png",
+        "sha256": "1628b7d49a8d0cb9bf764b42e2b639fd628fdb96b7ee285b33b21316636d55b5",
+        "size": 74019
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_0deg_silhouette_1920.png",
+        "sha256": "6f37d9e4ab7757402744a10929664cf5db68c2f4117c8a8b27ab2d6b4be403b3",
+        "size": 90525
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_0deg_silhouette_640.png",
+        "sha256": "1731d353c58648c0c4212ab6bdfb862dac9a6dd02b095771b9eda5fb80b9e853",
+        "size": 12048
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_45deg_color_1920.png",
+        "sha256": "8cc89b693c68a86675fd65989e676f9b486dc248c402a0a495d5d7b70c84ef86",
+        "size": 413756
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_45deg_color_640.png",
+        "sha256": "0e83376b1e54c8b43c2719f8f28a0c90921033fc88086cd422c4b76c18edecd9",
+        "size": 73403
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_45deg_silhouette_1920.png",
+        "sha256": "c8fb1c5997ac7757c37bed62a7be5b4965c7314ddd4d9005af52e5ec6c6ff31b",
+        "size": 90025
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_45deg_silhouette_640.png",
+        "sha256": "e0c0764c570a8279b482bce3751bf47c8b04f28f26c1e8fe974e83208a2d94b2",
+        "size": 11997
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_90deg_color_1920.png",
+        "sha256": "9dbb75cca4ee456d8a0cb7916ee45f3b0acfcb716904947ed93ac31099cd5eea",
+        "size": 414567
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_90deg_color_640.png",
+        "sha256": "dba6b26897a67258977c026ffe9c11de99e448f542788c41e7dd3f4e381a6f14",
+        "size": 74072
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_90deg_silhouette_1920.png",
+        "sha256": "5039486fdaf81e2f29ad586840862cbb3a3102ffdef5e995a848c4805a20a327",
+        "size": 91042
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/group_20m_90deg_silhouette_640.png",
+        "sha256": "8847e51341ae82e912771c9f6cf52a572273f7c242cfc3b4a18cdcffc867c393",
+        "size": 12149
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/ITERATION_2026-09-29.md",
+        "sha256": "1918ad023122f770ef1b26535fc7ad7d3d8c3e6816a9e6afb6c84665c2470b06",
+        "size": 5849
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/negative_cases.json",
+        "sha256": "178fe9d93393dcedd044d7e308acd1daefff0e6b70226bee38cc6d811d550dbd",
+        "size": 7091
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/PRE_REVIEW.md",
+        "sha256": "dac17d75f8c8d2b419cb8da9719f02468e54245d1b710e7ff3a50cdc32f1df14",
+        "size": 4039
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/README.md",
+        "sha256": "def21c9dab57a48ce8616d150eff857aa22d2db43772b2f184f53e9a123d97da",
+        "size": 2876
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/repeatability.json",
+        "sha256": "f6cf932c4be731e40e3db91d4f303ddc51af54f8e28512b6ef27a8e880be5f97",
+        "size": 2628
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reuse_bad_fullbody_peasant.png",
+        "sha256": "1d38cab9dbbaa2519d4f33861a91f94089e8ee0211bfe0802363594395b52caa",
+        "size": 674840
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reuse_bodytopo.png",
+        "sha256": "2a8ed660f52e002c1a88f58f7cecd0345f7d257adc00937ecd42cca5fd02afd9",
+        "size": 667846
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/REUSE_DECISIONS.md",
+        "sha256": "438aaf0ca5704a9cf86c2b8d6897137978565adabd264ba249b969e3528d98b9",
+        "size": 4753
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reuse_head_peasant.png",
+        "sha256": "185713ee4db9f7924c14337238be225880dcba3c3e0d8f1bd2bf466a2c562d63",
+        "size": 671966
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reuse_head_ranger_stripped.png",
+        "sha256": "1c0d28a5fac143226e429186d33c310eb64e49b99f8feccd4f7d8c29bc8c8109",
+        "size": 667519
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reuse_spike.json",
+        "sha256": "977be365f646e30a56c3daa9d93f5a188dde5418aa1c9e482763328c8b4faf48",
+        "size": 1238
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_pose_sweep.json",
+        "sha256": "c49a780686c5c9eb7931471aecbd71b7d7c262d35cec97a184e1344dccb76c51",
+        "size": 47614
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/source_census.json",
+        "sha256": "c69906286f65fdbc54eeccb9d46020a5fa91235eac1d7b9998de000a25e42a8a",
+        "size": 231484
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/stale_recipe_rejection.json",
+        "sha256": "ce8c755f000f4febffb909ca3b37b4da214e239a4130da9f986531bbe4527a45",
+        "size": 169
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/STRUCTURAL_DIVERSITY_BRIEF.md",
+        "sha256": "c2314dfe7e6e40e5625bce087f4210429bc3cf0f56dba40c465c8634361e8b8e",
+        "size": 1847
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/unity_rebuild_validation.json",
+        "sha256": "6dd4a56094a45be5a9e2e8c06bcf6197cb33447d5160eac6fe48ff7273d9fefc",
+        "size": 126298
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/unity_runtime_validation.json",
+        "sha256": "fee18f01f7593b5e346327c56fe28056497a97c20044233983934ab5385144e9",
+        "size": 179492
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/visual_review.json",
+        "sha256": "5bdefed870110475a3056b5b906d266232ec214fb2af87c91b4b3c0f638e0af6",
+        "size": 10740
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/after_faces_conversation.jpg",
+        "sha256": "1d568433aafe80a1ab872d9d8b536866a4d158136d799af2784d3bb9d77336a6",
+        "size": 735613
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/after_silhouette.jpg",
+        "sha256": "c00f1b690e8c05049549b4bf46d76586475c6340e9df922692182edbf8459f84",
+        "size": 55117
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/after_street_recipe_poses.jpg",
+        "sha256": "731386151077dc1e7331116bead9bd8134eb06b7f941f07863b0b2d6976df753",
+        "size": 416667
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/after_walk_10.jpg",
+        "sha256": "fee8eb0cd8e9685c72d6f70b56866cf9f1021cba2f36aa558a5b7a5cbc26d496",
+        "size": 74286
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/after_walk_60.jpg",
+        "sha256": "dc7b0581260b9f964439ac922490e0b1884e04e3ca158034e0ca6f57c0bfb3c5",
+        "size": 75926
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ART_QA_REPORT.md",
+        "sha256": "a79efa79af5ebf4e2def00c80d9c2bea0144435422f38a9efc0365734c12ed27",
+        "size": 11204
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_group0_34.jpg",
+        "sha256": "82bd62a6723467f14fa773ba0fb2d9d3277c1b229eed55db934a52142af28e6c",
+        "size": 252600
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_group1_34.jpg",
+        "sha256": "083e57e2c7a8f827470b7f0b7f61f6b5e2651f4af90cd9ab7ea862030ea74fc0",
+        "size": 264476
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_group2_34.jpg",
+        "sha256": "3e0b9fd6e13b43d0390a830d9cbe1fb0d70a1f84e460f5d699c346c217fefe70",
+        "size": 288752
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_lineup_yaw-40.jpg",
+        "sha256": "2b04bba0931f21a219bd50fa94d3cea40c4fd1a481dbd7f199aefa5374b08514",
+        "size": 336743
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_lineup_yaw0.jpg",
+        "sha256": "b846662ee5be06c20c90d9a1e65524168e6953612310a50b23020a5196186e81",
+        "size": 330374
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_lineup_yaw180.jpg",
+        "sha256": "33acd398900649f63230e4c6add998455d61241e97c59224824a1a793bec7caa",
+        "size": 309595
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/ba_lineup_yaw90.jpg",
+        "sha256": "0cf686df8a5730015b6d936f7506762b9c61710b7dbc41e9192c34a9dbf685fa",
+        "size": 311739
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/before_faces_conversation.jpg",
+        "sha256": "48129e03fbc7de7f12855b81d8f1d0e1e199ad15bb07672898d617188355b2fb",
+        "size": 891306
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/before_street_recipe_poses_2026-09-29.jpg",
+        "sha256": "8c0feca19cf94043766e28f215772669ac37ddc0b0fa77eb054cc033b04145d9",
+        "size": 377828
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/after_bare.jpg",
+        "sha256": "ac0617f0ee58b07fb2efe3d53d261f1270e11a8491e85be89f834ea1de39905c",
+        "size": 192037
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/after_bodies.jpg",
+        "sha256": "b97bdace3ef96084d01d272b8ba46b1e96ba06777a23bf8b5bedcc8ce24dcaff",
+        "size": 1044588
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/after_faces.jpg",
+        "sha256": "e01b53492465f4560683f752a928116a96253579990f768610c34469abf65d6c",
+        "size": 200605
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/apron_walk.jpg",
+        "sha256": "7730e8c30408cfabf51e8725d9a6593f8d1f818f9bea4bea672ecbd88e73f374",
+        "size": 174689
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/before_bodies.jpg",
+        "sha256": "f821be27ac775f337e9c636041612c8b355fc10a41e45c30cf7a47828bf4c012",
+        "size": 1046728
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/CharacterQualityRun.cs",
+        "sha256": "564c990fd6cf1ccf11f417a1d0f69a1fa1c80dcb605f89e2ae377509ce3f7640",
+        "size": 6000
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/comparacion_identidad.jpg",
+        "sha256": "6be72b23fb77d62371158418524964fdd66e79e1c2164c71dc9a2365f4f30e99",
+        "size": 161731
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/distance_color.jpg",
+        "sha256": "6a2e8cab7a03edbdac034b5b6a672d6b20490979924c3c168182c27ed0ee78a8",
+        "size": 342442
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/distance_silhouette.jpg",
+        "sha256": "52e2c8753d492286b1915c49b4f4218d8f8fd945e1ba1f9b1d392042ad9edf56",
+        "size": 239183
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Idle_front_overview.jpg",
+        "sha256": "1c6546c975e6c07d0b6a6459d45959106dcabef4430a994db602c07cf54b5c6f",
+        "size": 391521
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Idle_rear_overview.jpg",
+        "sha256": "89024876d77d0924cf050178c0ea6777ef6c94dd8e58b2518dac99984aaf25e7",
+        "size": 375674
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Idle_side_overview.jpg",
+        "sha256": "9c9754ae52e03a513037ad7fd88d98102f4c332ad3de78afcdf11feb25c88efa",
+        "size": 374792
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Talking_front_overview.jpg",
+        "sha256": "277096d87fd7e50f7f43cdb9e4d6c914d77c469b6773623e6656ef570628e265",
+        "size": 396803
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Talking_rear_overview.jpg",
+        "sha256": "e153358e617967d8fcaccc054ce6fe15c20a614dbd3bdaa6fbe7e11aefe272e7",
+        "size": 372595
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Talking_side_overview.jpg",
+        "sha256": "85ebcca2b7b6b59f83fe3b727f4dda72816edcd376f34ea660488b56dd14dff9",
+        "size": 382557
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Walk_front_overview.jpg",
+        "sha256": "b5596da536d1ae2546ad05282a2f7e67f853253bb426d646173e453e05e3acf7",
+        "size": 400472
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Walk_rear_overview.jpg",
+        "sha256": "d18ed9b30832d773ae63725c240bd3617023964dc37ad746bfa60a66bdf57968",
+        "size": 377682
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/fit_Walk_side_overview.jpg",
+        "sha256": "62657a8870e50960ee713c4fdfe69af7468ae9e61ef6007189194e39c0c6dbb0",
+        "size": 376773
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/INFORME.md",
+        "sha256": "1cae51424669fc4a8294c25622605a06f2c95d10732a2160dcba05e43dc07f68",
+        "size": 10516
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/safety.json",
+        "sha256": "61337a85b4c67771c21dc45fbe046d861bb82c3525fc564e89e0e50d2778df3f",
+        "size": 100
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/scope_check.json",
+        "sha256": "4ce54ab42650324b9b703ee0ce0773b274e0407cfd6cc279151965c08befa675",
+        "size": 45495
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/shader_signature.json",
+        "sha256": "6fb7cbb2cdaa47d2383e580bd545833efef80720df1876900a95f7054193beba",
+        "size": 525
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/validation_checks.json",
+        "sha256": "8e597e0aa7dc9343909760757a58b0f8c8d38f1174d7f8bdf23ba897c58c27d8",
+        "size": 790
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/working_identity.json",
+        "sha256": "d0ffec5788f7c8c9a0ce2d1b4e70c45c2bc741a472a207bb44b096797940dc88",
+        "size": 119835
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reference/ENV01_bench_reference.jpg",
+        "sha256": "b166375d5d5aadb1c20be037d327d60e2789acd94366d465cfe8d1dffc85a686",
+        "size": 66910
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reference/ENV01_plaza_reference.jpg",
+        "sha256": "45d76189f230988c3a60f2f30ea3b40a000c2418e33e64f4c6296f25e3bd2cf8",
+        "size": 184005
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/reference/ENV_REFERENCE.json",
+        "sha256": "7e45270dac2aa71c245fd13219cdc7071fa6ed7d07922ecc907bd347d66edccf",
+        "size": 1119
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/fullbody_1_of_3.jpg",
+        "sha256": "260454c7625b1a14c7e88fca5d8ca497d6d2d8e821f2b2846481283668f3c48b",
+        "size": 307029
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/fullbody_2_of_3.jpg",
+        "sha256": "3f46ac918569f3b80dab437f63f40568f108574724e62b8f09e25c2c56facc09",
+        "size": 302069
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/fullbody_3_of_3.jpg",
+        "sha256": "ec7bfe122781f75f02eb86e7cf4e3b7c786fc0d9e753eed413c46422ecb8a976",
+        "size": 304813
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/heads_1_of_3.jpg",
+        "sha256": "1c787288c81d76e94ec78a7c67704af92c8218e2d7784c99641fd883a6cb612e",
+        "size": 135667
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/heads_2_of_3.jpg",
+        "sha256": "137d45475a8b8270bd1192b6e88b20a2a993257fd2dad78fae98e825d1b0b6a3",
+        "size": 122146
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/heads_3_of_3.jpg",
+        "sha256": "d359ba38a57795e97d6b25e2bfcbc2d22a6b8b22b813f802cfbdc88e0ae91cfc",
+        "size": 138343
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/silhouette_10m.jpg",
+        "sha256": "a8b81cd8c9b85529e499a3b6802fe55a735e3acd33c25456d3c9b835262f1a89",
+        "size": 54051
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/street_idle_recipe_poses.jpg",
+        "sha256": "8c0feca19cf94043766e28f215772669ac37ddc0b0fa77eb054cc033b04145d9",
+        "size": 377828
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/walk_back.jpg",
+        "sha256": "a11c28c6e64ffe571a46a775a1ff6690346759f8e50bfc24ffd71a8fc7ecc0fa",
+        "size": 92893
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/walk_front.jpg",
+        "sha256": "54fdd903da2980ff106c5d94ed848d453e59bdee2d0c0b2fd842a4968e55b8f6",
+        "size": 100837
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/walk_side.jpg",
+        "sha256": "96258f11a440c7452ec8ed8bbb4cceaf69f4acca3d69318ae688f64afcb7640b",
+        "size": 94730
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/review_2026-09-29/walk_threequarter.jpg",
+        "sha256": "108ff8ee4ad78e991880cb8412f827f732042366f9cc87b4fd60317e31276a05",
+        "size": 103453
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/before-fix_espina_eye.jpg",
+        "sha256": "b8e4ec4ef3099b71eaf8ae1db5a466965cb7cb86fb5b09af6abd58a78d9b7a82",
+        "size": 313424
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/before-fix_talk_elder.jpg",
+        "sha256": "02a50abaccf22ca331c15aa7e7a341fdf4cf413a6e1e2041064de81d84c00b7f",
+        "size": 259084
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/before-fix_talk_mechanic.jpg",
+        "sha256": "31113d23055b754f41d096ad37238f958b1f67e5896594ee70f0d31a1df9c472",
+        "size": 183978
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_espina_eye.jpg",
+        "sha256": "a02866eaf01d2d844356a2938ec5fcd1d408791f8c8dc4bb73b5ca3c01616def",
+        "size": 316014
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_espina_game.jpg",
+        "sha256": "6ef5d63a38fff72dd8ec7ea4343f8107f7063fc78998749a16821b0b2ed08d85",
+        "size": 318757
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_plaza_eye.jpg",
+        "sha256": "f9959f2a6377006f842222f7615800bca2230c2faf8820d269359b731e7f6253",
+        "size": 347132
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_talk_eccentric.jpg",
+        "sha256": "02377b48207e3834fb65608a06a2ee612615b89a0cfaef30827bac8c4144b393",
+        "size": 322810
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_talk_elder.jpg",
+        "sha256": "bce59d1c4e56b4c528f5c4174ee66043878d63e6707e9f38d672a726ff3f59a7",
+        "size": 259472
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_talk_mechanic.jpg",
+        "sha256": "fe2d481c72d360619962d9d455f2bdc371a4840a7bb39f35f12e2569a28fe5c5",
+        "size": 182412
+      },
+      {
+        "path": "Docs/evidence/WP-PROD-CHAR-01/artqa_2026-09-30/context_casco/final_talk_waiter.jpg",
+        "sha256": "00cd4484d09a83a1c71023dc870486a7e9a35063027d9c4be04dab65ba84f16a",
+        "size": 149699
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/CivilianFitPreview.controller",
+        "sha256": "0bdfd3ddd09571d8b49f62feb61870c76457bee92e2f35ffc337f628f29297bd",
+        "size": 3618
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/CivilianFitPreview.controller.meta",
+        "sha256": "ce115a451b4f2ee3067a99293a33848d768b01654c56d1ce3c16fa768721b529",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/FitGround.mat",
+        "sha256": "141ce3dc8bf72d3bc7fcad77e7077f4dcede7b75fd380d63c1b4982e40e92c57",
+        "size": 3838
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/FitGround.mat.meta",
+        "sha256": "da8d9baf74c632ffb24e4d2ffade4946ac495ef078300827a1665ad4039d28f7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders.meta",
+        "sha256": "556e50fcaf1051123230f41791f915d4abae2ea684d4c16b965636d8f78be19a",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage.meta",
+        "sha256": "954d542dd06feccea8d16bfd95793cde3961e0d3902eb3ba253af83a02c93482",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures.meta",
+        "sha256": "1c75606c2dc01b1f8c3004e5fa9bbaebf32b3d8d31c3316e3f0fe528cfc463e2",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkin.shader",
+        "sha256": "d98d31a97505c8b87c91b8948985c59ceb6ac846d8c1655052bc9fffa3256b7b",
+        "size": 23042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkin.shader.meta",
+        "sha256": "62c79e398920e9e26ca2a632878f64866600c1ad6317800dedfeeb8c56288d8e",
+        "size": 204
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkinInput.hlsl",
+        "sha256": "9c677ca815c92693624dfb2a7b3352a1ba18f6512281544d8b1d5baf0cb31717",
+        "size": 3242
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/CharSkinInput.hlsl.meta",
+        "sha256": "1866dac869cdef2685e21cb1efe31748c78544c2ceab171637f7f026a86002c0",
+        "size": 161
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/UNITY_LICENSE.md",
+        "sha256": "4be520a425e06c8de56fa8aee1ce957cfe610406456278172a2d18b7c388c2cf",
+        "size": 496
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Shaders/UNITY_LICENSE.md.meta",
+        "sha256": "d2f167e77278b2f72f086c86b6942c0b495af1e0159190c1837eebb59837f458",
+        "size": 158
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble.png",
+        "sha256": "74dd125bdf720564e8c9ca2f7cdc591e14906bf4aac28ad65dd8f168de449890",
+        "size": 308219
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble.png.meta",
+        "sha256": "833a78212db9d5ea7b3415a0811ded3398c726b8de4a6f9a4c8cc169bd827ccc",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble_N.png",
+        "sha256": "c83404f085e638cb7a6b2d63ac2361e9268bd848092dc821407799eb9bd0bc75",
+        "size": 225112
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Cobble_N.png.meta",
+        "sha256": "2d6209cd37a985f9e4b27a8988c448d4db9d7ef451c423f1acc4351aa9fcc57c",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Plaster.png",
+        "sha256": "edb301cae07a6fbb9847e2fed8de045886d6d1382ef88a1a967a2696f7a01d6a",
+        "size": 73307
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Stage/T_Stage_Plaster.png.meta",
+        "sha256": "54dc03755fd020cc94cea4749c3011bb5e5a5c0a72a4edceea7a3d3362d692a4",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas.png",
+        "sha256": "e706f97db4e44d9e0b2f219952192f3f3b7db7eb98def06c7e40d24abf719fa9",
+        "size": 9994
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas.png.meta",
+        "sha256": "9a7a666fc57d45a4a353dee8afce9fe2b13d4357e07207fa70af478f74406089",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas_N.png",
+        "sha256": "a70f679c5adb33022b32247db9b479fc53ce3661fca369dc09304570fcc5ee44",
+        "size": 45124
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Canvas_N.png.meta",
+        "sha256": "496825d36eaf415a963ebce6603cb8d213113b419ddb16f55970650250c77336",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth.png",
+        "sha256": "db68f6e4b33a05f934f25fba9b240563695ef48875b61573289e09f90789d687",
+        "size": 5349
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth.png.meta",
+        "sha256": "18859eaa15976dba5b12c3b085f91b8f43248f40a1733252167826045d7e1e8d",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth_N.png",
+        "sha256": "8bb205e636c5fa294b8288ec02e6fc8fd4c99967b02b1f280c1e42484819b740",
+        "size": 36532
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Cloth_N.png.meta",
+        "sha256": "5f8beb9b21e94ae8c2437198f1b73fce79aa838ef2c89cb862b788f52b1ecc16",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim.png",
+        "sha256": "ba81355791c46aac5bc92beedc05c1ae4e63779eeca7a946cda57590e3261495",
+        "size": 8717
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim.png.meta",
+        "sha256": "a3388808cd77fcae60c323371ddb26df501cd8c04318db0addbf176d7eb2adb4",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim_N.png",
+        "sha256": "0a4e784d5a1cb2c9f7f1d4f993c4eef32ca65afe3ff5f7a5d63ed79eb883718a",
+        "size": 40654
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Denim_N.png.meta",
+        "sha256": "f5296a37767bf8dfb3fb5460ceda176facd166c99ecfa6eaebdbaa5b836f63b0",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit.png",
+        "sha256": "b8ed7375602fa24cd1de39a760f95fd8a1b45a2a10101ee88d884db7a4879c15",
+        "size": 8286
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit.png.meta",
+        "sha256": "826bf805ab115d0658afe9b5487e289b9775bc01c18c871849e8346af7633f2f",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit_N.png",
+        "sha256": "f2bc70d5ba1a00b7a466e06930e487a271fb68b0160fd0d732906ef0cfa9a237",
+        "size": 39899
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Knit_N.png.meta",
+        "sha256": "761e1639feb4cfa9ec11de5c9caf0b7d36011811c8bcc6ef7aa97c88c9018ca9",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather.png",
+        "sha256": "e281bd6d36c8e1f55120ae99b8ba170785b33f7f0227b9aa53e26302e55a56f8",
+        "size": 9189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather.png.meta",
+        "sha256": "f70909fca5fa1f9741695e2f0d2b581b1a72273cde74e93b9ff850ff157c73b4",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather_N.png",
+        "sha256": "cc474e64946cb49e5f60db7de5d15d4fb1ca4ed16d04642757b54c7e4f651cef",
+        "size": 47123
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Characters/Textures/T_CHAR_Leather_N.png.meta",
+        "sha256": "74a79c5393c557fa64981541a2a8e50aa887b219e2b8a37054cad2d29005ec94",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials.meta",
+        "sha256": "92a229d4040a908da80cf55a4e04beb192ac120996b1f2f11b38ff0ba3f5a67c",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models.meta",
+        "sha256": "491ca8de715efd9d92dbc25bbe1d5cd16e36fa13a40aca2de24c578b6db55f84",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion.meta",
+        "sha256": "b0449226d6195588146bb817353821e5a89df89d7a4f7603ac1cefe83dd5310b",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs.meta",
+        "sha256": "4727a6711f3394fc20aa7d558231d314d4e71b266112f43aa4623b81ed122bd0",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures.meta",
+        "sha256": "5ca372ba79d0630088560b52c485ff6aae8da26d39235aa0794e9f628570786c",
+        "size": 172
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-accent.mat",
+        "sha256": "1095c37cfc1e34fea060c2d9737305ffbb390f11ae9265b584f27b0945abc353",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-accent.mat.meta",
+        "sha256": "72d7133d8842fe1fd0ca0a039d5c7c8f972cfaebc83e21f4b925da6f363c2d27",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-beard.mat",
+        "sha256": "636903369345059279074a2ad7492ef90568e1f63beaabef80f4f5aade92b498",
+        "size": 3861
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-beard.mat.meta",
+        "sha256": "815492b5c6d199d7c8383a9f9b0c65f3361c39e66d9ea5b004fd18e40bc63306",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-bottom.mat",
+        "sha256": "00ecb9b66d3909c8e265f86cf906c9c19e43c9cbe17ed1c924b6adb9d490e1de",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-bottom.mat.meta",
+        "sha256": "401ce7d4b362c7145b311b63be310899494c46a6578ff257eab442e61e2479b6",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-eyes.mat",
+        "sha256": "2c1984a3e25729dfcf2cc5ef5de917d1a83b37c277d12d84905384b2bc115910",
+        "size": 3915
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-eyes.mat.meta",
+        "sha256": "5a58831d4a8051f6664ae973b9553f41b064599e9a47cfba7d4a088edd50cc15",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-hair.mat",
+        "sha256": "f20e40a0eab9ea9bc3ea73ec70fc121af90f709b69ca51515f1975f002212e6f",
+        "size": 3861
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-hair.mat.meta",
+        "sha256": "56943b8b962c1c7debbc43a81ef79cde53a96e06f2c8339f62f9fb30fb02986b",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-shoes.mat",
+        "sha256": "f3edad6ef8fb363db56a5c433708ff9613341d1cdbf1dd19704c641c6f1c1508",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-shoes.mat.meta",
+        "sha256": "051d66ddeb72d624d9bc21381aa0ae24a560b12a7b5dc91294b2c75b683ceed7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-skin.mat",
+        "sha256": "fa762bf5fe7cbd35db0c5fd726987ef527c936283aac90dc01292068280a1236",
+        "size": 3997
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-skin.mat.meta",
+        "sha256": "a0ec7efea662964c4ecbbc2948fc35e97f59419b8252565ff443e18fac3a7a16",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-top.mat",
+        "sha256": "c6881850c84780087233880453287cfea2ce20223e7d958bfa5222072bd73f96",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-top.mat.meta",
+        "sha256": "599dfb5c31e65a240d32171e5ff793d03fff080f6fddf0d4a59b9e6ea286d4ad",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-trim.mat",
+        "sha256": "f53959a131d57c55060b920596b456a8c8058ef847db3d933c6b72db11da8921",
+        "size": 4050
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/bruiser-trim.mat.meta",
+        "sha256": "0ba34b784a8c488ab2f26ef47c9bce46dae2d037020f9fd3f804884cf0a07dfa",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-accent.mat",
+        "sha256": "38ee7c16096aa42c30a3b56f778f425bed89411d9928f40e71095a1253e126c7",
+        "size": 4039
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-accent.mat.meta",
+        "sha256": "f64c043a9a5ee9ad93478522ef6e43b8a77fa4a4f612d1193406ef6068650c7c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-bottom.mat",
+        "sha256": "3d744cd5aabb79e9ff60e1718ea97c2bb2855cbcaf5532b26a058ef4ddb1626c",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-bottom.mat.meta",
+        "sha256": "28742125fff287f4a4e5eb4b14ed664b7fb596f7fe8aa278a46be19c89ea8a13",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-eyes.mat",
+        "sha256": "1fcd9393ba8a40c90a9244b658eb12f9f32538cf6758d8afabeb0984bdd1f480",
+        "size": 3915
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-eyes.mat.meta",
+        "sha256": "42b9cb77129d4f1b58be021ffd9dd5ffb1d5567fc87efa64f95953090261c539",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-hair.mat",
+        "sha256": "b5a67f217ab5515286985841a436c670be3a81f029997f19202483fb9aa01d66",
+        "size": 3858
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-hair.mat.meta",
+        "sha256": "535b46723f0f516d2c609b6bfe43319f36ca0730b340c0ace0fa503ff90102f5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-shoes.mat",
+        "sha256": "5e39aa2c1331472ba31adc3d422fb883c2940481301b98bb3a58eaa616bde60b",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-shoes.mat.meta",
+        "sha256": "d543de8cbc8c90193975381557715b448f47e1c2199be3b2d2d3893ea7283fdb",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-skin.mat",
+        "sha256": "5bbbcd2bb12e5a83a16ff4da8fb42cd85720fff58553b43c0efbc306ea2a9bb5",
+        "size": 3994
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-skin.mat.meta",
+        "sha256": "ab7c753792981cb6f796b8535be6f97fd780e5d799ba9d2eae945ba1eb3db912",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-top.mat",
+        "sha256": "018f60e2a96a4e671b509be2f4279e79fb2b9cbe7456ad5d31751f4798669cb7",
+        "size": 4039
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-top.mat.meta",
+        "sha256": "daa55f9c0cf2daa4ece49ce1eb460f2f815eb3d119d7e7311d23e1ec5c4a83b7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-trim.mat",
+        "sha256": "464a95abe6684d465e0a91623ab3557bd93411da04e19ae0cde39a0b0b027681",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/casual-trim.mat.meta",
+        "sha256": "8e2f714cb2a4725ecd678088b46536fac754c1a5e3f78b18571763be0406dea3",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-accent.mat",
+        "sha256": "b173ed622a5eddfa3891baa7e08ccdc8476f559c15193cb66fa9d2b5be768ba7",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-accent.mat.meta",
+        "sha256": "6d2e076451db22c838323dfcc46fcc31c0b3c94bedde693935a167c44d70dd0c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-bottom.mat",
+        "sha256": "fd53c61c9c3d1070adb92eb92d75972ca954abaf9b48d7965aafaf9cb0b9a066",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-bottom.mat.meta",
+        "sha256": "8c8c55b77765983248ce50a13f23e04dc83698c51c874f64d1eb9a4eab9edd16",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-cap.mat",
+        "sha256": "8f2eb9e56e93424528df369e822520f634dc85598510815b5187a43918a06ef7",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-cap.mat.meta",
+        "sha256": "d34b8fc0a81820efa7da74850762f6ddb583aa1a4d6b2ae30a15bd517b108942",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-eyes.mat",
+        "sha256": "7a67dd85be26cfc649d971631432b1c1897fbe4f58cffc3979b9fa1d7160008a",
+        "size": 3914
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-eyes.mat.meta",
+        "sha256": "c7e2c8475d0d0963e209e277949dbc6d8f7790ddf6064907cd15f52f7da7ab24",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-hair.mat",
+        "sha256": "de54a7a82509732af1c0418317dea733df598bf918f629f448ed2f8f85bb7fca",
+        "size": 3854
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-hair.mat.meta",
+        "sha256": "33af34e0a93247dcbcbc6482f40df1bb83d4f1333c317c2e11f7ecd7b083a7a2",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-shoes.mat",
+        "sha256": "1fe800a7ea5ac3fae0fc53fb3c2199b16a40fe98fab2f68b886dc7d6126c744b",
+        "size": 4036
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-shoes.mat.meta",
+        "sha256": "a219fdc0b7452b5c3b563ea7e5d4bba30486cb7409100b020a2bd3d27d2af820",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-skin.mat",
+        "sha256": "8d7aacb9f445bffa46965565aeae286c1b4e7643a91081ea80bd4a698461b619",
+        "size": 4000
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-skin.mat.meta",
+        "sha256": "a9d2fd7f2ab4fd904ee7b547808adb5fc1dfa5e33a0ebc3e0a51e34e181e8843",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-top.mat",
+        "sha256": "62190e546c41b9ce574f000348bb82ee0a408637bfb3a540aa0eb51492dc8dd0",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-top.mat.meta",
+        "sha256": "a7311087b001d4af57d73f1df5752c205ad8ca0ad91c947f785d814333d784b0",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-trim.mat",
+        "sha256": "3918996319f9134928a5c170e347fcd5b2db18d971ce73a60263a8cedc29b7fd",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/dock-trim.mat.meta",
+        "sha256": "f200ae731dfc808854bfbb0e9ec54eca7e3b147f2c8772ca477df74451e2317c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-accent.mat",
+        "sha256": "9e7fa057de24cf35c012f84628d7f6cfff31d186e9bfcc95778bcfe6525a9939",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-accent.mat.meta",
+        "sha256": "f7823fba26bf624ccfb105b020dc25ba21be9df56e082bd3f261c274478ab2ab",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-beard.mat",
+        "sha256": "6f4a6a37be7e9b5f051e71d209190d8b7468b9f9fe1417681e54aee1f591110b",
+        "size": 3862
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-beard.mat.meta",
+        "sha256": "63cd2941504d18264599be97fec77703d6cb1df4aef60d76e07487f292e424a6",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-bottom.mat",
+        "sha256": "d19e79752ee9843f2eea983fdb110704fa1da73633b29ac938499d8d82428836",
+        "size": 4048
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-bottom.mat.meta",
+        "sha256": "e15abc36282366843f4ca0eb24b755132d80ba31230e0523c22df611a511bcce",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-cap.mat",
+        "sha256": "ec8aa63d765a44eb76e1db5eb666f681f31b9898c3ba94b416008a30f8e94273",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-cap.mat.meta",
+        "sha256": "85c81fcf4feaad4b3cbde06ed92ff0d98209ebd38353a6a79b6f5aa12d748436",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-detail.mat",
+        "sha256": "0d5089d6368ca3824beeef8b03916b735839993b3ddaff824f7fc213116a3ecc",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-detail.mat.meta",
+        "sha256": "7820ed33fc84f5fd5a4fa5616000d311baf909e19e3c0467809d3c5ac81067bb",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-eyes.mat",
+        "sha256": "2a705b122a7bb04c92f145ae5b91fd2f0e69d1387363f7a4d946f88f757741ec",
+        "size": 3919
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-eyes.mat.meta",
+        "sha256": "e67d7180751b6c74ea9379da0bb9b67be555a248773f488dbfa20bc154b45ea7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-hair.mat",
+        "sha256": "4d77598c1514b5a73f50cd0578b64c059840271365f6ceaf3133ee9306d5ad51",
+        "size": 3857
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-hair.mat.meta",
+        "sha256": "b53a723db11f456f832bd5011e63a8aea2a17882b4fd54e61fc0963e5da5d846",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-shoes.mat",
+        "sha256": "d2930e44afafcda53e6c2a82cc7b774ec17bfb1c38833a3edf633da6300af52c",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-shoes.mat.meta",
+        "sha256": "bdebc4d0ad70687ac40a162d32966f28ef1168e3a56b7a38cebe9d131f1b8e80",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-skin.mat",
+        "sha256": "dbd95c64738323d59981f6d685c1665c2cc6f97552c7c77323ea53da0b693c07",
+        "size": 3954
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-skin.mat.meta",
+        "sha256": "dc927cfab211d8b7408b0ead14554727d50ae55957606440f65cfda6ec2dce88",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-top.mat",
+        "sha256": "757f079d2f19fb2d9ba99786a5aef138f2019eb13f8db9b16f1436acfa106c28",
+        "size": 4040
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-top.mat.meta",
+        "sha256": "83fd34856b92fcc10c0d1617ef93b69505eda8c85337edb94a327fdaca00a42d",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-trim.mat",
+        "sha256": "918cd412bb3dea15ad87ecb3d4c9785e3fc155d6c28874d975c5fcbc6e700c35",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/eccentric-trim.mat.meta",
+        "sha256": "01ba0cf11240e9b969f14425528bdc06bde94cfa78c7f89d767f1138442915fe",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-accent.mat",
+        "sha256": "781a129a91c96e9a0ad55bd960bf6a46155ec9c116ff1cc319d736006c10c05e",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-accent.mat.meta",
+        "sha256": "7f134aa9f33e3ebaa8e3e44b4fd3b2ee9ccd7254281555523f25f291e38f0938",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-bottom.mat",
+        "sha256": "1534ab4b49ba6e1559de39465185cd60db732b612df83485576be1693f6120c3",
+        "size": 4049
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-bottom.mat.meta",
+        "sha256": "daaaae559dadb309bec3a3df7e1d8b5625944e078c95954f351c7e97bffef360",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-eyes.mat",
+        "sha256": "7f6ee27e7acebd48ef4ab0ee8d2500e033fe7d17aadadf44614a4cfc5ecf65ae",
+        "size": 3920
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-eyes.mat.meta",
+        "sha256": "fd0f9c28f3ff08010e09f59ed1cfa1cf066a4644f60a866b56c5a57bbfa16ae3",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hair.mat",
+        "sha256": "7315ba08ff36e3ec96816074e2fa5a8b34ced6cb9e93355a454a01c7eefc0a2d",
+        "size": 3856
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hair.mat.meta",
+        "sha256": "a2d3cbe40176eb8ac92560715e49759496aa010e2d3b993364a03dbb6b153d9d",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hem.mat",
+        "sha256": "3b148ab7c78b48915609f35c91cd6cea6b434bb9de37d9e780547e1b9efc4592",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-hem.mat.meta",
+        "sha256": "db3991fb43e154f359bed8058c9739e34315ae24726e382a11540a771d494035",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-shoes.mat",
+        "sha256": "4755f97eebb9db35e039339ac8371fa9209371bc703b3f2b41b65184722090dc",
+        "size": 4049
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-shoes.mat.meta",
+        "sha256": "34c4ef70b5464a025d3692a16d46cd652ab2148ead717a3091f80f04d3ca0908",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-skin.mat",
+        "sha256": "2f59e85bc6316e33640fe5dec3fb7a5ca494eb6831ce72b4eeaa2b834c905e03",
+        "size": 3953
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-skin.mat.meta",
+        "sha256": "51813b596d2eb4345255c311612f915120f73eaf6ae777c138b04fff38d63542",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-top.mat",
+        "sha256": "ae392dc41808ce6e5d80a86c6f1576212f79bde7d649a3d7394f81497ada3628",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-top.mat.meta",
+        "sha256": "b2764ce6743c9bc6e140773bef511ca3df55fb7be98fae29c4a9202be9c2cc00",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-trim.mat",
+        "sha256": "f56b172ff2768a130c03817d7e2807bebba2fcb8d007a68854b0157ddd0c472e",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/elderwoman-trim.mat.meta",
+        "sha256": "6be1740ee1cddbea03aa42637fc98f2a55f5a16cefcba821ee7aa00478ea2902",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-bottom.mat",
+        "sha256": "c7c7d47b5c665650863ccdb36d0cc00d7bd22cab64773abacc430035105e32bc",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-bottom.mat.meta",
+        "sha256": "7c73b45a8e78188979e57cddc91a8cfc0202718c7283d0bf89f8196be1ba72c5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-eyes.mat",
+        "sha256": "7305d30d27f08ec95dbdbc71235f0f8037e6b3eae2e065641676dbf26a186726",
+        "size": 3918
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-eyes.mat.meta",
+        "sha256": "1ce03efeed2662b5cff99f07b22b6fc078bab79caab699549c360e549b2ddb60",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hair.mat",
+        "sha256": "85fb1d8fc18e5464e99ee287ee17f8202c2218b4bc2fecaa7ac1cf53113e6ca1",
+        "size": 3857
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hair.mat.meta",
+        "sha256": "5eee43c97e84fab6957bb3e190e9e0ccb2b1478435d59e5b4d999d652e7f7b69",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hem.mat",
+        "sha256": "08d4ae056359203845590e55f66af5610d9c23710cff6960c630a53f89bb732c",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-hem.mat.meta",
+        "sha256": "55aca9bb83dc575c62e66e2159e8f2faba29cfb36a8f59e0c3f5c59b7d1ed669",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-shoes.mat",
+        "sha256": "e6833730247093a2b24c3ec2753c34590c22f04007a37ece4754bf58d2dfb32b",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-shoes.mat.meta",
+        "sha256": "a3d41d29b846592fc1d3d669a65e49787384021dad0803879eef2403519e50a4",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-skin.mat",
+        "sha256": "45c55ace05ec85e93b8c9d01b7d81e4ab2e144f60405163836c60d48115257c3",
+        "size": 3997
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-skin.mat.meta",
+        "sha256": "74afcea1ce960356ec21200042a17a14ef11b0245beff287d41e789a16784116",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-top.mat",
+        "sha256": "f85d815f85bcd96e9db5dacf5fb5879d30ff3e3505039fd4a961ba97bfdfad3f",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-top.mat.meta",
+        "sha256": "1a927a37ff065cb3747bd9b00cf3328de9c65cb77a31ef0088c0236ef748234e",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-trim.mat",
+        "sha256": "1685ce80382c9d4f2c967bc9d2ab9920b9fe86992c7c375daab46e1966782bb7",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/everyday-trim.mat.meta",
+        "sha256": "971de95cde2e165bea96bb279b804134035f370e087192f2cb6d67b03fdea835",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-accent.mat",
+        "sha256": "2346223a7c76a2f32f5469ed31a4ebf8becc0c63aa2862a0378cf88b1bf8888f",
+        "size": 4038
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-accent.mat.meta",
+        "sha256": "61acaf7677c3c7df0127bc01c89cc6090dfdbe852d80d2437d737b2a3ba875a4",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-beard.mat",
+        "sha256": "fd20a71e26b69925ceec8b6efa0709d2c426510d4a9d6728a0a6436e76495614",
+        "size": 3856
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-beard.mat.meta",
+        "sha256": "0042e8bb0616ab4e9988fe1659e4c99bf697be09ce5f4f9fc2f5356600e212b6",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-bottom.mat",
+        "sha256": "041a087f0cae84c0c6b08c307b5674dc70067c33f63c0c244bf63eacf017988f",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-bottom.mat.meta",
+        "sha256": "84aa16d4bb7d1cacf14fc990d7d1d111822118abb579d1baf30ebe734836fb51",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-eyes.mat",
+        "sha256": "c63e15ee2c309e440ae2f9b9481bc72e41598aa291c128f982d7b33bd6e2cb53",
+        "size": 3912
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-eyes.mat.meta",
+        "sha256": "4f08115a3ad0850fbfc4373bf4b8e9a104b115f998327174e1aaa7584b947ee5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-hair.mat",
+        "sha256": "9f06a4eecf43c338575b0a6c34c860a90a2ab1003b6466b444f8a55eb462efc3",
+        "size": 3855
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-hair.mat.meta",
+        "sha256": "3469dc8bdd0d5a8290b18118aff0e1547a4198ddf9fdf904909164a0fb590d8b",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-shoes.mat",
+        "sha256": "6a7e649765c9e73bbd2b5fb312c8a0f54ffe0c11cd1b9a73e7c9b8551334adfd",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-shoes.mat.meta",
+        "sha256": "a3cd8de433c385689a2e87e2d2ef48dc2ff8cacb59179e503fc3cb9f57241333",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-skin.mat",
+        "sha256": "d185a0de0bd01198a115eae6a1691e03d62275f0080dc71215a449bd1b60221a",
+        "size": 3997
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-skin.mat.meta",
+        "sha256": "bdae7d281cc86ca72d1e656145792c9f5888622b7679dc0e6b80e1c9c70bce6c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-top.mat",
+        "sha256": "3350bfd092c4f08f7d63f8219f321947596a8bdeeaa5c612ae8d1e02b7103b96",
+        "size": 4038
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-top.mat.meta",
+        "sha256": "b8c50ec79ca6b18fd28d694cc82d939907471ca009295d4bb59e8af951ae4203",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-trim.mat",
+        "sha256": "4507f886b43c4a2a31946402410bba876fa53c9f025e50bbd12e0ee59a3a1a7a",
+        "size": 4040
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fan-trim.mat.meta",
+        "sha256": "9fcd6c43e6b44a3c8e9164cda1561b8755b24dca4aa1bba42e9b2ad0d3a01406",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-apron.mat",
+        "sha256": "900668c85b9410e21618f5870cd4b9fc741b64b645547276a70bba69e47092d2",
+        "size": 3870
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-apron.mat.meta",
+        "sha256": "7c79666d30eb3b55e163e379fa20596e4504d10774b8d5131e42b92018e3933a",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-beard.mat",
+        "sha256": "3e86d9634f69102b98b4c7a60286762725502d484e08365c5158ea019a3e8373",
+        "size": 3861
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-beard.mat.meta",
+        "sha256": "c08ed408b39bc42e95f81de88c498471f5693987a05860643e406570a22c6815",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-bottom.mat",
+        "sha256": "f4dbb6759475cd12a6810dc48682f8db18359bb66656161764624f784b167ded",
+        "size": 4049
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-bottom.mat.meta",
+        "sha256": "3922a8b25a3ee0485d23a50c6096890d0031600aa30a09be0915d81448c14e31",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-cap.mat",
+        "sha256": "234afa985f703bab46d17969fbbdab7f2cf7d645829776a085ee5fed9031302a",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-cap.mat.meta",
+        "sha256": "ba74f912493d8686c3311b235384664a659e46fa7a4eeb47cdf14d866d2f9633",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-eyes.mat",
+        "sha256": "b7f74effd625a1c5f5fb04e53b657ae0fc2e99fd788e94287cd7304e09eb55fe",
+        "size": 3919
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-eyes.mat.meta",
+        "sha256": "35bfc08616f0991607cd75839b8f0e0edaa7721844113dfb2190370aa8a13298",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-hair.mat",
+        "sha256": "ed15a2310d73c5599d3a40380ab2ff51f9be6e01dd3f5974a9901eed5b05c3db",
+        "size": 3861
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-hair.mat.meta",
+        "sha256": "b0d392b49a2a59a66ebe958bfcefb19d00a05278247dd432d51b2c6ce63e8f63",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-shoes.mat",
+        "sha256": "0b6a7ea8caea513e274410f5974754b610e7cb9990d0ce7261e7a77d46468af0",
+        "size": 3860
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-shoes.mat.meta",
+        "sha256": "1189270cd7b9136cf0d0c1eaa8146b75d70d0d4178c540b77edacde6fb0349b8",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-skin.mat",
+        "sha256": "9692d1d0dd39664c5c7b7c8a37363c10039fa1652793f26053fc7fb905ef8e3c",
+        "size": 4006
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-skin.mat.meta",
+        "sha256": "698a35a3beb872c5ae3d1faa132209c32890abfb86d83958e2b302186317436c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-top.mat",
+        "sha256": "261d4b2086c74a0a944ee3479ed8b6cdce3f14875cca6a857bd1b2b1a14a7321",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-top.mat.meta",
+        "sha256": "11bb0f8456bcbf796fee5537f228eea7b2a8829746750cc81bf3901b70e3d2be",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-trim.mat",
+        "sha256": "b7c75427d8fa2fea65ed3d30fb7f9d3884f9a5365a2c5e113ad30550c4d78394",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/fishmonger-trim.mat.meta",
+        "sha256": "e1fc9ac8202921ada4c3b04aa90b707d78021a3335300442babaf79d2457e595",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-accent.mat",
+        "sha256": "fe53d6e73ac7017dce2e0f9c17c44ce9e8d84b6cc6a3a85c8a1fcd47ad57dfa3",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-accent.mat.meta",
+        "sha256": "e6cbdd75ea6f7e0da7e9fbb773fd4900404f30ea2fea114fe4d250a1136953f3",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-bottom.mat",
+        "sha256": "5a733ccb38d19dd0713834b77a67a6b4fb7f5428dee3f7b755b66282b10fc9f7",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-bottom.mat.meta",
+        "sha256": "f75b75be5925d297b3af880e484990303aeb8e7655e7872094e387a773faeae1",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-eyes.mat",
+        "sha256": "fd9f6cd93c3e3418a98fb09ecfc19610269926c1f03a0aa667538e50549180fc",
+        "size": 3916
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-eyes.mat.meta",
+        "sha256": "e97a6349489ad6da68196432ab4e7b4db4a23a2ddf240970619553ce709746e7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-hair.mat",
+        "sha256": "810751f6c169f565bab1ffe46addece68773939b57c9e189647c9f54028d0c2d",
+        "size": 3857
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-hair.mat.meta",
+        "sha256": "cc1dabf3f277555f230518c92fb1fa50875ca62f4bffcccea614ea121ae8fb2f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-shoes.mat",
+        "sha256": "f919307c4a5b4ccb0b91c9d1f8325b3d66ba4deb3bc37d14c352d0c35d210a67",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-shoes.mat.meta",
+        "sha256": "4dfca562f433ac7d232cd5830fbd9400f1184a460c85dcab8897ff87dee1fa48",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-skin.mat",
+        "sha256": "a6adac32eb5f5882fe51923a79624abeaf53bae5886ef724cea3167b962a5198",
+        "size": 4001
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-skin.mat.meta",
+        "sha256": "69e331719dd32419cb7910e0fe168c14bc69e27638c587ba681b590150698353",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-top.mat",
+        "sha256": "bfd18bd334510a49c8d6d358fa9df1c23a8425f052f06dabae403f5c2a17869b",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-top.mat.meta",
+        "sha256": "ec8041dffef828a5f3bd71449cee0cba98f3a7c94f010e8766588fc2a3b8b339",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-trim.mat",
+        "sha256": "e82aa2d98250308e7735103e0699c21acff50cca1d2a26d9ed782fbda1ba6894",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/market-trim.mat.meta",
+        "sha256": "274cd798ebb47e316ea4d9c422e45fe39bb5a494017ba6e5793d7a7919f9e3c8",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-accent.mat",
+        "sha256": "34e90e726f0d534524e292a87c013058fd0c17255e9c6633e688b725ac00b425",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-accent.mat.meta",
+        "sha256": "763f5812e5dd658e9025d38f9210b2edb8e12b0a6b3bc06aca65e0402f0f6e3c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-bottom.mat",
+        "sha256": "430b0e24eba0586ece8301848c01689cb58b1e2714752332354a9398beb0c98a",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-bottom.mat.meta",
+        "sha256": "76889bffa14520bcddbe47c9e35bc5c849bffea5867f2b642dc8d046821ecb00",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-cap.mat",
+        "sha256": "f6c1ab9b4c028d07a24221d2a674b33f49d859c55971fd26a87d2ac1c260b153",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-cap.mat.meta",
+        "sha256": "011829e7bcd52c53bc5951a8d3e466fed9db44344b861607db408a8738ba3ccc",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-eyes.mat",
+        "sha256": "6bf6532ed9030b712541144c929774a69a11d51b50f5bbdb9afd8b397eaf4447",
+        "size": 3917
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-eyes.mat.meta",
+        "sha256": "ecb9adc9867f91c3c6518b00a12d322f17caaa4fe033992d4dc754cf2ecd604e",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-hair.mat",
+        "sha256": "ac7b2b2dd1bfc996a1f8c13dfcc476fd715e0b77860f2fda1208483d777cf76f",
+        "size": 3860
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-hair.mat.meta",
+        "sha256": "f99415dd185020d24995112b49539dafffd72e9eab8bb4e5de94a0f331b69c5f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-shoes.mat",
+        "sha256": "e072d5a054e4b3f65a9668ad4629d07c43d768b7c717b976487129f3cd1ad1cd",
+        "size": 4046
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-shoes.mat.meta",
+        "sha256": "52f7b9b91db46a5a9f54ddf23cfd87d3fc06be691f8089a12161bf162df6e818",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-skin.mat",
+        "sha256": "1e5e6a4108e277f0ebde84247484416fc26f59acc68bbd9efcd835415bb31176",
+        "size": 4003
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-skin.mat.meta",
+        "sha256": "9b1a710156fff646ce6cde9e556a0735c163ad4d38e4448826efe147a319bc21",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-top.mat",
+        "sha256": "ae434937a78273902ff29cd590ad58085d1ff2f4fa76e2a12bdce1bd2d84011a",
+        "size": 4039
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-top.mat.meta",
+        "sha256": "0bc91e435d4d458ee6744db420b83b48a9a5305b0e86ed2ca04481ffd3c143ea",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-trim.mat",
+        "sha256": "1c309224265a037cd372ea832ed1e4c3667c5b9aef9da164955d6a170694b10d",
+        "size": 4040
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/mechanic-trim.mat.meta",
+        "sha256": "fd675247ff836731fbaad89c0030a1a292799b6b17d083465ada4fe999bd8fc6",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-accent.mat",
+        "sha256": "1e623cd32d0345d49d07dd81bbc0b53631804b78320c417fbe5fd081c4edee3d",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-accent.mat.meta",
+        "sha256": "a95b18152e41f12d74bd3be6d2162e8ba3ec5f1d2a1463d52ad9422f58737aa8",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-bottom.mat",
+        "sha256": "5834dc989ac0668b7bd3f19ab5671e71ca845ea50f255152627422c779288315",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-bottom.mat.meta",
+        "sha256": "d4e2987078ccf7212e06bac5acd088be58a6027bdeb89cf3ff875e1c35f89cbd",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-eyes.mat",
+        "sha256": "65cf2161d276588d4e10d1140b4ac29b82e331ab518e0bcd64f5b800f1d8d9e5",
+        "size": 3916
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-eyes.mat.meta",
+        "sha256": "2b14041063201ffd6b4784686ce38660495daa5e9540ab42df33de5bd8a1eb04",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-hair.mat",
+        "sha256": "04e6c57703d31aff922599dcdead82edc1fb130eb114b52d0015b02140b13e7c",
+        "size": 3858
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-hair.mat.meta",
+        "sha256": "49870dc10cfcc89c1832ab9c3b6431bebad07b690c69f3c2a0726b2a65e9c37b",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-shoes.mat",
+        "sha256": "db6ced017970a6e2e95bc34cce904a74c51e52ee96a4484a0f7d7ae148c0796d",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-shoes.mat.meta",
+        "sha256": "e044283415401ae1e09d990c84f0cb509f4af81f9c38a4799461250109782cbb",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-skin.mat",
+        "sha256": "0ddc9bedf72c16417e1bda63fe45de91886aff2a3973d4677c85ce1616258c66",
+        "size": 4001
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-skin.mat.meta",
+        "sha256": "7700cb14f3dd883dcfb6d218380a3e80778d3263c533ab0caf6585fd1e6c568b",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-top.mat",
+        "sha256": "e76ece9151be85de17296925a6ef92994e89911ac07d1a4186be58b189933f1b",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-top.mat.meta",
+        "sha256": "7db4f65265515229af3b282cce4d01ffd0e82237a9c38347e314e907ea82d1e1",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-trim.mat",
+        "sha256": "f17120012ab6d96995a59952cc001982e21774b9d445d3974b935a8cc8aca375",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/office-trim.mat.meta",
+        "sha256": "aa54ebfaf068ffe4b0151f5c8a8775719661899302ab6d82c58444887f9f7f93",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-accent.mat",
+        "sha256": "f6495177d5866ee1e1913410d574fd176fdc03d72ab5a0f3d54086cf78bdaba0",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-accent.mat.meta",
+        "sha256": "a262af032eb57591ba83ea522265dab4af1230cff947a539f6cbad2b8b005f8d",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-bottom.mat",
+        "sha256": "b639c8c2ff0b76413db3d2d24b7d9b5732d434a5ccb0f3770978b8b5a0299e3e",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-bottom.mat.meta",
+        "sha256": "d1f303f883ea317f2c41fa056ef64d80d2c5024ebc8f24da5c560296a87439dc",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-eyes.mat",
+        "sha256": "3f252190a5fbb79f13346f1cf18cef33f49f619f7e3aaca4800eac63d8c0685c",
+        "size": 3915
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-eyes.mat.meta",
+        "sha256": "a015af0487756387b4c129dee46cb54f6de5c302e3f5fbc7c79f0e9a132a5ce9",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-hair.mat",
+        "sha256": "0e7b60df4ef868019ebc089e732a72f129dfe24236bd154fb453a9a8be5b1de0",
+        "size": 3855
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-hair.mat.meta",
+        "sha256": "08210eb5355de92b5f971fbe9cddec34340bb09ae39a961b0ab1fa88ec978853",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-shoes.mat",
+        "sha256": "f9b1701494497158d119216da0cb90c70c80216d3d960ffe3b3047147a65dc47",
+        "size": 4040
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-shoes.mat.meta",
+        "sha256": "0dafc385814e9063605fdaace0e581a49601af5aa6e1ff8db1828b5e8ea13e8f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-skin.mat",
+        "sha256": "3ab5177ff3b728a0ec757b117adf8f36b8b05173cfb1e979068c287ec23b8dfe",
+        "size": 3950
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-skin.mat.meta",
+        "sha256": "2a96acdd967da2c79cfa073d1266d318ff9f310b85455872f365aa785f00c50d",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-top.mat",
+        "sha256": "b07718e9cae4ad0078fc94f04b58e62daae0997f348aaea2da25d9a2ea8ab58c",
+        "size": 4040
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-top.mat.meta",
+        "sha256": "26d61b4baff0d3bd8bcd24048403ed1df2654b2b17fdddc28d0d2f60ae2dfb0d",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-trim.mat",
+        "sha256": "706b92157a999c744395a246c3fa9ecddcff792ef4400dabea2f59738a839a2b",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/older-trim.mat.meta",
+        "sha256": "a2219fe6853b7b42283b08745420769d3bc37aec586b5a01c3f7aaf676e93c97",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/reflective.mat",
+        "sha256": "33514d44dc5046e0c84df5f33b9adc573a618fe8aa2efe5594c53604066815b7",
+        "size": 3854
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/reflective.mat.meta",
+        "sha256": "f12f9039654dbb5138b6980ee5c1aca1ec60f7a8457cab24d13296f59fc092ae",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-accent.mat",
+        "sha256": "a7c9c711eeb574b71264bbac07733c1f0f86b8cb93f3effaff0fcca10fe1cc20",
+        "size": 4031
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-accent.mat.meta",
+        "sha256": "5b63a2ee2e04a667b76a2931a345d5b4cb11be486a4165b2a2a2fbddfeee6fd7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-bottom.mat",
+        "sha256": "bded25540a643449f7690e09d6de2e63536e0b4e6c8104493ee85dfbbfb97bf4",
+        "size": 4050
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-bottom.mat.meta",
+        "sha256": "856558a151c03063196bbd4ddf90422db7055b47671281e7863c4aab62819a4d",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-detail.mat",
+        "sha256": "d5e0d89682a8f093e41bcdfcb86dcb2ee86e67b1869f7c43c539fa7852f48fbe",
+        "size": 4050
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-detail.mat.meta",
+        "sha256": "06dcd87efaac0a518f8f280270937fbcc7b022dec5507364abc90f3605033388",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-eyes.mat",
+        "sha256": "cfb131d5978a0a9a902d9d7ef0657015b8f7b7b71457a9cbea421dbe4ee35ad7",
+        "size": 3919
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-eyes.mat.meta",
+        "sha256": "a62feb54a2596f3eda0a1edc5a584a620676704e83820c634e9f8c2be45aea92",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-hair.mat",
+        "sha256": "c71ead3e1ca3f99794c70b978809ed044ddf1990a33aa2c0851caaa6feac9bef",
+        "size": 3861
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-hair.mat.meta",
+        "sha256": "013507eeff25b19cf02180ffe68ac9c7318f6f6cf345e93d2f0bfd327dd7472c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-shoes.mat",
+        "sha256": "1c696def1627a41f76b0053fc87e54bcb063bc3d8a19a0fb79e3d3c73e430947",
+        "size": 4049
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-shoes.mat.meta",
+        "sha256": "50e6736f43e1f87c6172ad1a3fd76bc762233da4367251355011aa21e8155fd2",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-skin.mat",
+        "sha256": "1fd38573fd6fd3408a9fc310feab23d9923b43cc6489fe494d7ced44703fae50",
+        "size": 3956
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-skin.mat.meta",
+        "sha256": "b45997baa29d5a999dc3187eb8d241ed7adb821e4f6b2a91e944e03333bedf40",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-top.mat",
+        "sha256": "a885dc6c846225db551b2fcf791921f3f53541fe1a9ccd4d811097bebd23fe9a",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/shopkeeper-top.mat.meta",
+        "sha256": "87753b3199d15f4fe49a5a28a102eddd72be3fe58141edb4b6df177dddd507de",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/sole.mat",
+        "sha256": "262316c4282ee762a305dbe896167cb17fe41eac2a363d50fa3e5721e2e228e4",
+        "size": 3849
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/sole.mat.meta",
+        "sha256": "d147a549666ce3580b6fb6a467721a85cb4e0d6811e1ff37657f045994adfc1c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-accent.mat",
+        "sha256": "3992626457c96f7203436f41a4c9e0d2651d303abc7f418c129b17d09fa6e511",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-accent.mat.meta",
+        "sha256": "b53a305cbab11a357478988930feadb0ad97c373a0e843af28758ef7344000f6",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-bottom.mat",
+        "sha256": "012dbb6852849f301b0f54f0ae310bb6905e699fbecf3d7c2deffb744490c364",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-bottom.mat.meta",
+        "sha256": "7f8eb37ef8b59fba046582b969e9b8cd1d440983cc115abbcb588fafb466d8fb",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-detail.mat",
+        "sha256": "dd07aaf72ce556e69d83c3f2471587c7a0b33d501a2943e563b82e71c7045d12",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-detail.mat.meta",
+        "sha256": "cf2491fcfc78a07640a732a8d7dc9f756a4d14f5314962f8c2c7906e0b3bfa1c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-eyes.mat",
+        "sha256": "388ea2a78284f5447fb7d83a4008b19715948b6561343a105995e02629409f2b",
+        "size": 3917
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-eyes.mat.meta",
+        "sha256": "8032956b7245796ea1d7f5407d13609d5d5faf6f6a1df7ca7ca0d27dcd649612",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-hair.mat",
+        "sha256": "f5bcde69f224b7c4d58c678ef05654a21057f3619427ee417a68a2b1179f5d42",
+        "size": 3858
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-hair.mat.meta",
+        "sha256": "95349cba2045e721be440217f0d2bcd5b37ade5bd5113bc963fa67d896798cbb",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-shoes.mat",
+        "sha256": "e31aa50362342105c426244a7a58a6a8279038c7e0606fb02087b6b65e97fd8a",
+        "size": 4043
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-shoes.mat.meta",
+        "sha256": "834cc5ccb7dd142445a4b9b2fe2dcd6f6305b526fe1eaae9d8ede4d290894992",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-skin.mat",
+        "sha256": "74760448519ab0225282c0aecfd98b479f24a3f886c9505c3aac697c5eecc0fb",
+        "size": 4000
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-skin.mat.meta",
+        "sha256": "9e31bd2abc016703a3946214264219c1b4698740097253f56f65a89e51d2a8d4",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-top.mat",
+        "sha256": "1b63841d268ddf7f302389586c82cbd334f3914f794f6abf430b1b99364fffed",
+        "size": 4039
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-top.mat.meta",
+        "sha256": "cda7cdcb836736bcee1c3120aa483c0a9a9a9218227a4371172e55f3309de1cf",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-trim.mat",
+        "sha256": "cff8cb6f5585e42a12779eeffcc36e45742cfff8d3a7fbd000b0de60f44aace6",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/student-trim.mat.meta",
+        "sha256": "38a3ac48253ef6a618d3d91cb4c2510b49734097046eaea9168b1e458bc287f5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-accent.mat",
+        "sha256": "a0405940f75b50458e40aa524ef32e37cfa6685ea2e0ce920f26b320bce8a397",
+        "size": 4041
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-accent.mat.meta",
+        "sha256": "5b766e641cea65bc715e10be4092d4d63dacf234a0fbb61c8324c834fb719591",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-beard.mat",
+        "sha256": "1e8dad343c67c0e8f901da26afa704756345a00a2473ea462a7ac81d306b94fc",
+        "size": 3858
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-beard.mat.meta",
+        "sha256": "73e4cc1fd06a2fff3313ff2fd45dd673cec712553f402e56b4b6918efc6fa4bf",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-bottom.mat",
+        "sha256": "775d0d91767748be7184d15e63f9f22174b5b81129d9aab175ec2962721cdff8",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-bottom.mat.meta",
+        "sha256": "2922fbc394c143a80a9e8d688589e48826aead80f2cf5d3cdee636bc526ef4b1",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-detail.mat",
+        "sha256": "10768ea6e11b4966813b532982c045624153140868f08ecde0dfedab6a96bd97",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-detail.mat.meta",
+        "sha256": "46dd5806cd328ff626ff7d51d6b6fb29c26c1b27dd32f7321b40488f2fee5d3f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-eyes.mat",
+        "sha256": "3ca779fe74f6c0eeb10ba18fd3f4cd7aff53ed3c642d217dcc123ff4eeb31878",
+        "size": 3916
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-eyes.mat.meta",
+        "sha256": "eeba7a2d126e82b39d2ac4b34d925b5d5bc988884e5258f7fd7123da5dae07f1",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-hair.mat",
+        "sha256": "264ba47837bba477579a94bd7429d3694388e4b1b27b26987196afcf8ef6d552",
+        "size": 3855
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-hair.mat.meta",
+        "sha256": "404bdf1ea625610fa50032cd7985b15c2922df22360189ec08d48d0c764176cc",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-outer.mat",
+        "sha256": "0bc5476f381ad9577f8b22d5a1129ed7c55e99ca6bc03b529141652b3e19299b",
+        "size": 4044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-outer.mat.meta",
+        "sha256": "154eeaf8b00bb901e91f8ea7800cad26422e4f6c1fec852209c0b28104c3d9e7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-shoes.mat",
+        "sha256": "ff16c65bb63bd6ec79deac83e6bbc0ed06ccc904843386a62b25b87bf1241b13",
+        "size": 4047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-shoes.mat.meta",
+        "sha256": "ed59346e3375329d514718309a528764fa15b65779afb27694cadd695e449e7c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-skin.mat",
+        "sha256": "4435f5d8036097467841dee1ea34a9de31dde5df56f969283c2ed743dfead14c",
+        "size": 4001
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-skin.mat.meta",
+        "sha256": "7084503f9f9bda3f6a90832da3df6729a7bd81ce09f89e382bd9b6d837ef04aa",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-top.mat",
+        "sha256": "7810fd94d02123b831d9c720104442fe98497a5da11bc251a32389b73ac44de4",
+        "size": 4042
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-top.mat.meta",
+        "sha256": "c0498744227307540012f56f6be4e1ba4ebd9bb33d071391c7b5bbb3c6ce37d2",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-trim.mat",
+        "sha256": "12021e44c1549cf17de16af5f17bfe192f4d239edef2ecde0fe3352514b0e790",
+        "size": 4045
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Materials/waiter-trim.mat.meta",
+        "sha256": "bf49063950919e4f18bebf58ebaed11acfdfeef7ee16666931a5c5f9188b2298",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/bruiser.fbx",
+        "sha256": "1aedeb64e7211451baa99f484f077f336e26584a979308ae29e9288785334165",
+        "size": 1716652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/bruiser.fbx.meta",
+        "sha256": "b4d0eb9d7cf1c1f6f2f4ddd8b8a0ec4691f3713d9213494bea676b8001723641",
+        "size": 22754
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/dock-worker.fbx",
+        "sha256": "441ae0dc3ec394ac204715503aae83e666699d078fa8e80782b9ebbf19acbcb3",
+        "size": 1501068
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/dock-worker.fbx.meta",
+        "sha256": "97444d42422b0ba2421479b8bc40e6909e91e84ed286ed2d4d148613226b8fb1",
+        "size": 22161
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/eccentric.fbx",
+        "sha256": "8c9af1e1e77348bfcf2fd4bf817ac99dd060b3c5ae3ac64cb5150d27eb3e6d0e",
+        "size": 1910908
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/eccentric.fbx.meta",
+        "sha256": "47732a9802cb8b6d109568df642b3a50c388d210679a5e0809a5502ff473c392",
+        "size": 23271
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/elder-woman.fbx",
+        "sha256": "a912740f68eba677e779d5d5b7ff3e3a070857f8b795077b68053ec3974024e8",
+        "size": 1917468
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/elder-woman.fbx.meta",
+        "sha256": "bd82fcc34203d0735d57cb036d693fbb2040e182b287b6cb0e07881fcab52f8a",
+        "size": 22880
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/everyday-pedestrian.fbx",
+        "sha256": "71215dad385013cc3e0e8dbeeda2fddf024d1d358a9f1df18813817a3d389621",
+        "size": 1553404
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/everyday-pedestrian.fbx.meta",
+        "sha256": "76fe06436e5cd754a7fd0153388d86c19c622ad8c3b4e3b2ea4f3ccdaf716216",
+        "size": 22031
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/fishmonger.fbx",
+        "sha256": "37a8e78ed6a5e06675e03d7887af6f85c29ed8274ced5f82dfab0854f964d4a8",
+        "size": 1865052
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/fishmonger.fbx.meta",
+        "sha256": "6400d89d69c6f82ac7d66c0a3b1a6c5bfa295c00f70703b247d791e4886a7667",
+        "size": 23143
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/local-fan.fbx",
+        "sha256": "19cded886b35723d8748d42b8cc23902bde0baf8309b36aaf340cd1fdd26d8fd",
+        "size": 1540956
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/local-fan.fbx.meta",
+        "sha256": "3c11f63fef9125c087c871c3a0dd86ace7818e0912e1ee3d16da7d960fb6f945",
+        "size": 22154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/market-worker.fbx",
+        "sha256": "11f7cf1691b6d8d4ea8c3275daaa8d82ddfe0ed05e578c2e4292c1a3882c9ca5",
+        "size": 1821900
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/market-worker.fbx.meta",
+        "sha256": "54bdbf7d2953fdf26c6206704b73586f13a7e321ff2398cf57228583bda7ade1",
+        "size": 22543
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/mechanic.fbx",
+        "sha256": "ee27c3006e82bac8d9304f9d841e19b0d1e6ee212ef263f3a076203e4f3ccadd",
+        "size": 2148652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/mechanic.fbx.meta",
+        "sha256": "3e53e23a2b71379a4739b424d7ef376100c12ab35b2791db6a2b6f17fd5f6b3c",
+        "size": 23070
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/office-worker.fbx",
+        "sha256": "560c0976e8155db6d793ee3b9a8868c0070a25b4c1f979ecd7205b214c5ccd1e",
+        "size": 1856652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/office-worker.fbx.meta",
+        "sha256": "30e1474ababdeb267e4d128d61eb5e6e6319c20d7ca5e46a562cedacba79c4a5",
+        "size": 22717
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/older-resident.fbx",
+        "sha256": "af8b5f193851bc42157dbdf441a94247b097ad8b057fa63d0f09a235dd278098",
+        "size": 1662060
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/older-resident.fbx.meta",
+        "sha256": "c23b4f950ed49ec4db0a433120ff145cf6667843c543c563816e7c68a3f516b6",
+        "size": 22570
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/shopkeeper.fbx",
+        "sha256": "de3e174b4e3995c5c65b13ae3cfeea21d8df417943f7f68f08d494d9d314145a",
+        "size": 1605404
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/shopkeeper.fbx.meta",
+        "sha256": "1e28b42924dca2294d42cfa9ea8a75a1412e2518f07f0c9fa4ff7b62a397133a",
+        "size": 21918
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/student.fbx",
+        "sha256": "53f71f478be9482d13d714b8963ccebdaffcf95f800da18bf8267d44f442ffc0",
+        "size": 1898988
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/student.fbx.meta",
+        "sha256": "1bce9c91cfc1cee82b0565fe6a6f61aa7fc64e280ff71b537bd3c45a31a84ea3",
+        "size": 22915
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/waiter-veteran.fbx",
+        "sha256": "d0fcdc0624add3c137c4866184b130392b48a2465d3c256be4816a38dc65e13f",
+        "size": 2166188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/waiter-veteran.fbx.meta",
+        "sha256": "7ac1238cf3b9977eafd6e1cca5e8146c84ba1230a5019f43b4f62ac125be9e97",
+        "size": 23708
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/younger-resident.fbx",
+        "sha256": "9109e770c670e6ca2a1b437b532e1330f509eb0256ac5b0da80febc6c72a4506",
+        "size": 1862412
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Models/younger-resident.fbx.meta",
+        "sha256": "24e6cf457a2e62cbc806ce3cb9bbc7f3fb0856c18cb308ddd8315cad638dbd60",
+        "size": 22240
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser.overrideController",
+        "sha256": "98afdb86564b3e674a330fe2c373a08b5f857505c4b814e7911cbb12522e4a3a",
+        "size": 856
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser.overrideController.meta",
+        "sha256": "be4b9bdfc5a83a659d3bc54cc6356a139ecafdf6db2f56b435b0056f5c8cf81a",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Idle.anim",
+        "sha256": "36dc1ed49be8a1e0b60299f1cd5bc6569f956b1f1bc9126cc1dededc268bbeea",
+        "size": 4906841
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Idle.anim.meta",
+        "sha256": "a7fd27b019bf2213541b23061821e959dd177684ee2eb2c21c228f61403cf9e2",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Talking.anim",
+        "sha256": "760a32192e1d9749cf4e8122b9ac1a87ec51a8ee76c66c1ada3b843867cf7c0b",
+        "size": 5691868
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Talking.anim.meta",
+        "sha256": "ad8ed949285935504ca8affc2c1c8a256ba10a953504e8e38e0f668149cef8a6",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Walk.anim",
+        "sha256": "048450670b61b7ad7e395ec053345b231f82839539cefdbf2f68101e6ef0f8da",
+        "size": 2657851
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_bruiser_Walk.anim.meta",
+        "sha256": "d3f5adb9234e4dc11c6ef5b67c74905f4f39e3a189e1f619b081f7dad56c6e7a",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker.overrideController",
+        "sha256": "d08bd99d1c67d0a6741053761dfb19c943d6fe4e1af1834d40fe60de2ef3a7e1",
+        "size": 860
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker.overrideController.meta",
+        "sha256": "489f430944df7ac1914c1af79683185e7fed995f6460c533b704acd4549fc4b0",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Idle.anim",
+        "sha256": "b8add4a3b949169272b9281e7f925d30006fe0cd5a3f339662ab998a3cbe9457",
+        "size": 4893051
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Idle.anim.meta",
+        "sha256": "b60614c3ba4a87af02a6e6bb416b010f21ee631ac96292d6056193f1db4529ad",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Talking.anim",
+        "sha256": "353e2a46e6542e0379feb88bbb92dd15aaa5c3e8be6bb36dd6d47b503eb047b2",
+        "size": 5690590
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Talking.anim.meta",
+        "sha256": "9d7da25575c256b30dd60ca234f10069c2bf0fb0b0e0078194d0b311fd52cbc4",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Walk.anim",
+        "sha256": "43989ecb340314b6fdb1131cef4e42ed5d748272fd01a9b80169976a58d1154e",
+        "size": 2657215
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_dock-worker_Walk.anim.meta",
+        "sha256": "ca2475c35c507017e90e79f57c59e9d32be2cc86a8951958e27c5aec09824413",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric.overrideController",
+        "sha256": "8f08bc7defe85cdafb11c33023d4f7b61ba1c237b2c6fc5ffba966a72035ea7a",
+        "size": 858
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric.overrideController.meta",
+        "sha256": "3d8ca2341c7658ccbf0a3b4ccdcc8e3d4b62fd06b76e3e74f7531dcbc40e7490",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Idle.anim",
+        "sha256": "9a591f5cdb548151b15de7f9faf82f98295a056cb8da643f78713e5174b254d3",
+        "size": 5690267
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Idle.anim.meta",
+        "sha256": "5b30dcb540d5fa8eecbd2110fb863ef74133768700e38dc39700229cf770550f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Talking.anim",
+        "sha256": "15d0d219b54bfc59351acafa6d63ecefa4be3ef67dd5619b5724d54797f0b135",
+        "size": 5692076
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Talking.anim.meta",
+        "sha256": "4781e1b82ab0821d7aab1df2e4e53b68c55a703f5813847a3cffef359f77fff8",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Walk.anim",
+        "sha256": "2fbdbbd57537bdc670c5bd7c58847ef6ceb25b135e78bd89fd55ab8ff4656355",
+        "size": 2657271
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_eccentric_Walk.anim.meta",
+        "sha256": "293fb2d7c1476ee8d66bc9751f700a6cf21f15956d360cfd9a929d6113e40e67",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman.overrideController",
+        "sha256": "71225ee43e32a8bac6090e3debd261ca9e4d74004a7d7c678e489946f4adacbf",
+        "size": 860
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman.overrideController.meta",
+        "sha256": "cabc7ac51904768bb3d6849511b315a2ea951b1c97bb600889596cf78c421c26",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Idle.anim",
+        "sha256": "b4eb63d9ebe4ebf9ec064908fa0508e64b50d3e526fd9846a2386e6e6f9bbae1",
+        "size": 4893167
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Idle.anim.meta",
+        "sha256": "c2ae79200957795b1274f2a88ef690b90bff98e96f7bc47dd5819c00ee6ce74f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Talking.anim",
+        "sha256": "8341ba3922abdc0649fa94655b22a774a3ca559fd03ddc85d2e2fb91841616f1",
+        "size": 5692032
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Talking.anim.meta",
+        "sha256": "a4c077360f8729e954de7e28a6b797da3aff73cb546f7beea1228d4469dc438b",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Walk.anim",
+        "sha256": "725f7549cd8db41b4cfbc011a398f7d8ce56da42c96054ef05fbdd55c4ad40f2",
+        "size": 2657939
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_elder-woman_Walk.anim.meta",
+        "sha256": "263e4c2c3abe5aa675729ec42204dae17dcb380cdf02f325f86f31eac5388529",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian.overrideController",
+        "sha256": "5d0cad55a1b5f41161116dcbe6a184aae765e929cdae5853e8be1d355c6aa703",
+        "size": 868
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian.overrideController.meta",
+        "sha256": "a6e89a47f53a256be787a1067e43065fd56d79b08ce81cd3e6d50887a10ed17d",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Idle.anim",
+        "sha256": "021cc83ea0fb70a5e1822c63788b46fb68312ac88976018cd903bd31c1156d21",
+        "size": 4893059
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Idle.anim.meta",
+        "sha256": "617e111bb0a33011262379940d0763ae43cc10f8bc77825d69f54735f75e5a91",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Talking.anim",
+        "sha256": "0518d0f17dbb9faf62010c758625e9698a6f1eea4835661f877e5f53a640cbc5",
+        "size": 5690598
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Talking.anim.meta",
+        "sha256": "a1e3adc9228e3d58af8f08437eb1f341c6bac8f9dd6561bc73693c9e2c25b419",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Walk.anim",
+        "sha256": "03c9547503fbc8230a7a66c4ac5bb6fa81e1685f6b1740167e050d53b8e3b0ee",
+        "size": 2657223
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_everyday-pedestrian_Walk.anim.meta",
+        "sha256": "631721af9d8a2697a8aa5fe8414765a4e29f39d8ee1eb642950abb573971715f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger.overrideController",
+        "sha256": "a4900ec07b6a41360aff06112438c456a9c7221531cc134a0e80c039ee8a2ff8",
+        "size": 859
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger.overrideController.meta",
+        "sha256": "53b6324e68b04198fc24d915e448ea02925002cf0fe41d5c67eec59e2772dde0",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Idle.anim",
+        "sha256": "a469a2a0147765fa06981d70ed6bcc61e9fe64803977be62d007d608d06325d5",
+        "size": 4906718
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Idle.anim.meta",
+        "sha256": "24df073a528fef47cf614a9883385985c4738287d0f4adfe0ecf108759c31241",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Talking.anim",
+        "sha256": "d7345214a6f06d933194646a2fe35c586d2b5b91b371ca2eec786b5a0a348cb2",
+        "size": 5691635
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Talking.anim.meta",
+        "sha256": "599776518dc8e2b3d75c7bcc60214ca4e906648c852508e4a32c7d20534f9894",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Walk.anim",
+        "sha256": "221331bdd262c11c1b05dce631fc566ce426c22707efbda1a5be3ba84de1fff0",
+        "size": 2657802
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_fishmonger_Walk.anim.meta",
+        "sha256": "404711c9b95bca5e7740b8aa50147219b5bc1dbfcf3f382c34aac302003ce6f5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan.overrideController",
+        "sha256": "5672649b8690aaddb5c2aad11ed017e0ec3ef19017a679adaf76cd3d28d99611",
+        "size": 858
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan.overrideController.meta",
+        "sha256": "c665df88b30fc137cb33f40520be0973cc94bd88421fe48d7a9d006d69bfb18f",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Idle.anim",
+        "sha256": "b7f6e0712ec5e346c0a5c38909ae3b426cb586c58c0f615dcc25a9974d82e5ab",
+        "size": 8831941
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Idle.anim.meta",
+        "sha256": "5be5516d11c823a76277a36096d8da90279fa037b282d7ad6f32e1c2232e5aee",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Talking.anim",
+        "sha256": "0011e1900f445f0afda1d20ccff2cb9077a4bc8d668773ffc19a50774c912227",
+        "size": 5691504
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Talking.anim.meta",
+        "sha256": "ebe014a3e4fcc3879473c5fcb3a27c069040cc961211e8cdc7f3f628928837b1",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Walk.anim",
+        "sha256": "df98b554c321d4f43510202fcb35654d2f2023562dc74bb4ce6fc9913f4dad68",
+        "size": 2657209
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_local-fan_Walk.anim.meta",
+        "sha256": "b37ebd473924147825a69e156a97c10eaa0886322a4beba5d80a26edf4eabea0",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker.overrideController",
+        "sha256": "324666f28d6e3a294c38f6272514ed860c688e480903eefb76c2fbfa6eaf16cf",
+        "size": 862
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker.overrideController.meta",
+        "sha256": "5b6a9150e6e2555f76d50609a26f2e0cfcfe51122063bf88bfea36021c60aff4",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Idle.anim",
+        "sha256": "7f425e61dddb2d6f18db81b11bdfad6913f86affc02d3c77a4af0230a9efd72a",
+        "size": 4893039
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Idle.anim.meta",
+        "sha256": "5e5665f8df2236eb5e3c6b8b7824875a2b4a38b3827391c4fbd9cfab8e5f44e5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Talking.anim",
+        "sha256": "e7da2027b4d761171dcf1cf916336b9a5239a3b586c18b783c543c428d37ffd8",
+        "size": 5691510
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Talking.anim.meta",
+        "sha256": "aa3e622f0919818ee8eedf5c11458376cdd07a3e9eb69d2e6f819e85fcdd2a89",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Walk.anim",
+        "sha256": "e09b23f4d7d3b0e843d6d51e50724d71653431725abe74a0ca01e9db9fb200d9",
+        "size": 2657637
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_market-worker_Walk.anim.meta",
+        "sha256": "0920582081e59994aeaa04f220c63dfc1349fbb5350ff412365c40fc367e6946",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic.overrideController",
+        "sha256": "d5877c6e88b53f82863de68f3dfce85185b04323137aaac5098a4bbfe38d0af4",
+        "size": 857
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic.overrideController.meta",
+        "sha256": "13c318520f2150a30a9ee84d0e33465a1d25f6fffb23e06a094def9d9143e721",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Idle.anim",
+        "sha256": "f389dfebd20a7c0f7792966650f9f0d3dbab220161917f621c689f556624d0e8",
+        "size": 5690168
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Idle.anim.meta",
+        "sha256": "211a32b37b031826f02cdf4148f2ae9717bac9485de90341261717049f83ba9c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Talking.anim",
+        "sha256": "9229fddd9c8e6f5a6eb1d10c04f9cd39a2bbb9815267a142ee4c5d6ff0010399",
+        "size": 5690413
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Talking.anim.meta",
+        "sha256": "9ed343167353a1516a86a30c02d3cdb62f1798aab3efdf426f1c311c1c5eaf33",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Walk.anim",
+        "sha256": "7dc89196d500186e164848db85b10b4ec41256f5c283805bc9867120eca1afb8",
+        "size": 2657140
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_mechanic_Walk.anim.meta",
+        "sha256": "3747602ec148324981c2281bb96ea611b58bd62b581ab6a6c09a95d6f23f0283",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker.overrideController",
+        "sha256": "e347f163fdacbc744e2aaa7d576380ff93c70e0718a714245ed4b5d78a01ddaf",
+        "size": 862
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker.overrideController.meta",
+        "sha256": "e348ab3f5ea4acad4371fa6b2620cae69df4949ff9966f0a3c2272759c1c090b",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Idle.anim",
+        "sha256": "32e412eb0dcbb598e4abfe01882e83d9c80fa2bfdca61fab6448fab48057dc94",
+        "size": 8832223
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Idle.anim.meta",
+        "sha256": "376f4cc1277412adeb321a74aa05e710509ed33ce553b36d98b783752b87f03f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Talking.anim",
+        "sha256": "a0e787c34bf4f6f2ec84906810ca02e398f1d44ee6f898762ce30b1f5148b376",
+        "size": 5691716
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Talking.anim.meta",
+        "sha256": "72655bb10d88d23251b0d54a4cbebdd22379f77e9afcd098c5ab9f8e1e550e23",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Walk.anim",
+        "sha256": "054a8617cb303dacb3107a72a1700c5b47851051cb2d0e70fe7ff23c30bc4a18",
+        "size": 2657755
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_office-worker_Walk.anim.meta",
+        "sha256": "1b19ab5c57099850181c8961fa52af1a002a8075b1e498b5fd561c77459980e8",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident.overrideController",
+        "sha256": "8cf6bd0a0103d641b6807b3c1e6c160d63b9a63042b46bd24215ff14f1b9c533",
+        "size": 863
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident.overrideController.meta",
+        "sha256": "ea21a7d0f3539de1487476fcbd7d082b43261af589142d39383b42e74d327013",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Idle.anim",
+        "sha256": "ef35641303828d3927b5b0e9dc4e44db98b50d9f82393f8f76abbb77d67e2b80",
+        "size": 8831712
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Idle.anim.meta",
+        "sha256": "bd0fc125471b44005321c63631d46e012ab04ffc8f35ac45dd77287d9f5e6d40",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Talking.anim",
+        "sha256": "532953a8d5e4dc78fd7c8c5a189788518687bce2ec4fd6d94ed778728ddc8f14",
+        "size": 5690999
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Talking.anim.meta",
+        "sha256": "b496efe27e9e7451f5424f8db5c7cd02b45391b8c4379411c0dca6c1f06db593",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Walk.anim",
+        "sha256": "973d0d5c76d5967cef97ae9b304aa46971d5d8c605d394bf9a394a087f1fef6a",
+        "size": 2657150
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_older-resident_Walk.anim.meta",
+        "sha256": "864578c0c70361debe25468b29eb1c3249ee3ae5f245f7d82c9612083c572a7e",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper.overrideController",
+        "sha256": "03f83eeddaac6648e0c9ef4998034092e309dc1375e91a398e11aa3428a2dbf3",
+        "size": 859
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper.overrideController.meta",
+        "sha256": "116b3847cdb6294efbdf4bc015d9dfca451420e65a304deb46188d0838b5ff8c",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Idle.anim",
+        "sha256": "8e5ee4e88db70a61c61342cf57bf61ec9214bebd62ca413d9bf77b546d165d91",
+        "size": 4893044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Idle.anim.meta",
+        "sha256": "e8a88db11ce8bbc5cb8a4d006390b8ed16f3146005029eeb13a8ee9dfcaeb180",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Talking.anim",
+        "sha256": "307ab25d7a66ab251425df2d75a6686b2b4c111e2658a0bfff036b89c10ee07e",
+        "size": 5691633
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Talking.anim.meta",
+        "sha256": "ae5ec5ee7f02bad86f2dd7549680b0f973674c98e09898dff375e2639647d40c",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Walk.anim",
+        "sha256": "6af50a828719a18f08e0bba77a219ce0377b219dd6b2dc5f431f59a58ebae82f",
+        "size": 2657692
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_shopkeeper_Walk.anim.meta",
+        "sha256": "d7251bdcdc0c0fd048be1d44ec3fd5da629dd6a9e200c604dea74b635c27b0b2",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student.overrideController",
+        "sha256": "d897e26252520859f323ea43c3d96191d669117ce5bf27b71c416e86ba1187e1",
+        "size": 856
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student.overrideController.meta",
+        "sha256": "d81402c449269550f61c2d48c5376e79423278ad3cbfa6336eb5872c8a511a3c",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Idle.anim",
+        "sha256": "0a9829277a8571fdd448f24a7ed5dabdb78057e41a29c7f69a63170281480b2c",
+        "size": 4893047
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Idle.anim.meta",
+        "sha256": "f64420a4bd868a8610c8b4180162c6fcb48d8ab8f42238db2eaa1a5a3a947498",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Talking.anim",
+        "sha256": "272338bfaa2717f6976180062f5c68edf0cefd405142d28680f17f467d2e7a6e",
+        "size": 5690586
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Talking.anim.meta",
+        "sha256": "d15b6e758aee4ea85bc72b31fa0e7e1872d00725a50d2db5a945c3a02b2da15b",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Walk.anim",
+        "sha256": "258db2f53e889616f4fc49d99fbe91dea5974d805758524709d338ea4d9b0710",
+        "size": 2657211
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_student_Walk.anim.meta",
+        "sha256": "8d1ab73754a926f90e49e0b7be0af137dca9c3ee9c518146dcd9c3fe0c5f81a2",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran.overrideController",
+        "sha256": "d11a80378e08adcdbc585255fe04a02afeba988d1a47a4708cd18996a051586b",
+        "size": 863
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran.overrideController.meta",
+        "sha256": "69c3a72558245016c287018e7539d0dcb82e761ba24c66410c2293ab8c8d1fa6",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Idle.anim",
+        "sha256": "da2d702e6dd240ac532b60adfbd6ea83ac350e03f432a2026bc6af843ba37422",
+        "size": 4893212
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Idle.anim.meta",
+        "sha256": "86c173e87cfd6280bb19bd49c1866bf27f16343978163de9038ad8c0a404e19a",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Talking.anim",
+        "sha256": "e3b00e43b7c2aeede21b93861f9751633366055bb585633032f9cd8451530a1e",
+        "size": 5691497
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Talking.anim.meta",
+        "sha256": "ed1627ce2a6e96f82006b7b5dc8078463905732304e8b2828a68b8025a7c6558",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Walk.anim",
+        "sha256": "a8c0a2090bb2409b5099b88b2ad17fe1e1a13c115aef0a577ef82a18a303a7fa",
+        "size": 2657630
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_waiter-veteran_Walk.anim.meta",
+        "sha256": "2e54c0cbba50e8091a5948dbaf66e7f2a83d4306f73ee57fbdca0f0bd2cc2fd7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident.overrideController",
+        "sha256": "8534996fa30732dd95f24e6cc762df2889458fc719496b673aa298bee1001430",
+        "size": 865
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident.overrideController.meta",
+        "sha256": "7652cd0b1149efcfef7aff28380133eea18cd56c229b8d51b7ff30a8a960e928",
+        "size": 189
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Idle.anim",
+        "sha256": "66d7a4d933a87f8ba7e90ead74127b139c6a1366d7f2caa78d945f736a3a1675",
+        "size": 4893044
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Idle.anim.meta",
+        "sha256": "8cf650d49abc7de2ecaceb77d5d81c45c8eae4e845dad0ec42f447bdf925ae50",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Talking.anim",
+        "sha256": "3195409454f4c38af9b36dffd8de26644fb39b05fa58b0ed0215313a8a6d9e56",
+        "size": 5690539
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Talking.anim.meta",
+        "sha256": "a988425490c2eb9d9c47d579fdc252cc2b33ace992d6e68f03e2e0ddeb98c791",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Walk.anim",
+        "sha256": "bb78672999ab8452f3badd513ed2e397c011a258639e1e2e460659da160d5ee2",
+        "size": 2657202
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/char_younger-resident_Walk.anim.meta",
+        "sha256": "c427df5276fb73fe55ca5b998e174f7b27ecd8c55a71187c4e5aefb28d92b369",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_counter_idle_loop.anim",
+        "sha256": "c1bf41f4d0e7f0d4e500e37b8727e56d652e398b537e499532d328871b613dbf",
+        "size": 5197704
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_counter_idle_loop.anim.meta",
+        "sha256": "22b773bfedeb49f269c5517ed7f10048adfc54c06ca539a0cf2104940136dee1",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_lookaround_loop.anim",
+        "sha256": "b9a658d4b02c38e544c13d7c5bc99d3eb956ae266bb9d9dbf357a8b09e52df14",
+        "size": 8831051
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_lookaround_loop.anim.meta",
+        "sha256": "310d2eb81095d1bd9c0fb97bb9412e244e1d6888e107be323283fd90be2c4907",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_loop.anim",
+        "sha256": "6630f96a3cedcec80d44261195e189c4206b6a5360086208c3c1978002670e98",
+        "size": 4892472
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_loop.anim.meta",
+        "sha256": "58fb13682b7d934790d2b7d076ce69a90c9391b54814786fec3f74cd45be9eee",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_talking_loop.anim",
+        "sha256": "254500b21072c8559f689153db2dc52decc0917afe5e5cb95304f182974e1662",
+        "size": 5689768
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_talking_loop.anim.meta",
+        "sha256": "013241a0ac6647d56d8be205ae005acc4a9e4812ef9d11f5c88af7f43efd4c9f",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_tired_loop.anim",
+        "sha256": "5cd8fe72849c09fd122e716384fabad44c4112649b45a6a09889e5cc7ac119e0",
+        "size": 4478886
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_idle_tired_loop.anim.meta",
+        "sha256": "782b8e8036eabe640d4ad59fbe44b7d8564878f06994d35202abb6fd2ee4fdc7",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_formal_loop.anim",
+        "sha256": "a4b23eeaace1fd45fa2f1202c845b4db341cebfbcc61fa4bd35b8d544653f9bb",
+        "size": 2660585
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_formal_loop.anim.meta",
+        "sha256": "23cf620593fcb36d779c583de99601f57ea15e5e6c98854375cc6a71244a4283",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_loop.anim",
+        "sha256": "d18a8e03f876268e331d984e0c083fc103e5235aecce4d02a99241ffbe72a326",
+        "size": 2656700
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual1_walk_loop.anim.meta",
+        "sha256": "0c0853929aed6b5dcf377238e5e13bf113b82c32a0b1c069f753d94a900d9699",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_foldarms_loop.anim",
+        "sha256": "847003d9fb2d51d589bd5b558e3dd13196e35ffde56c2dfd6fd0026b88a38ea2",
+        "size": 4905903
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_foldarms_loop.anim.meta",
+        "sha256": "17cadfce15f3ebdc5ca52bfd1153b687316f9bae89f029bcceedc0aec5ac3bad",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_talkingphone_loop.anim",
+        "sha256": "7f7500dfc8e50ffbf5f4f87ed8f1b5df2183bbba203235d212f6c4bb1dce6cfb",
+        "size": 5683701
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Motion/civ_ual2_idle_talkingphone_loop.anim.meta",
+        "sha256": "32435ddbe1016eb01870ca08be916ef8eb3497bb1d0bf50ddb8957054d2038f5",
+        "size": 188
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/bruiser.prefab",
+        "sha256": "319a6dc4718b0cf440fb75ab89be10fe7479feb0f10acf19e2304a9d82e35fa9",
+        "size": 8641
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/bruiser.prefab.meta",
+        "sha256": "a5a4e307ae4156e3c158a572cf2bfa2e9339f8a764dcbc49f0aa362b09731846",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/dock-worker.prefab",
+        "sha256": "2c53c21efac08f563e7320cea1c0ebdecf66bb2bdc37f4194c616dc094714e1d",
+        "size": 8087
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/dock-worker.prefab.meta",
+        "sha256": "4e78dc82e0620dda963ad2a684b2e3841b99882745712911173dea1dbc6f0d1f",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/eccentric.prefab",
+        "sha256": "eea01d6a901ce321409a9a6af4386cd7dbb70ff894f3050377b839a7483e0c67",
+        "size": 9933
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/eccentric.prefab.meta",
+        "sha256": "052b9b9ddff7fdcd5d391e31413b189337da91918f4be5b44fcab95e04fa5977",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/elder-woman.prefab",
+        "sha256": "e8cc0e9da24e833c94b70303bdfa23885ae618198eafdc6723ef292c7b485be4",
+        "size": 10850
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/elder-woman.prefab.meta",
+        "sha256": "d45afaaba405e72496a423a071a3b53b65ccd4874c408162b982298cff74261b",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/everyday-pedestrian.prefab",
+        "sha256": "52f68a0b69efc61de7cb3521f74db253bcd6d893d5b3b7168b871a6e777485e1",
+        "size": 7415
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/everyday-pedestrian.prefab.meta",
+        "sha256": "632b2b2e8ea6989223c9f988c96e4f24294cb8cf2b7005da6c21a45680458dc2",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/fishmonger.prefab",
+        "sha256": "4b1623714e9ee8afaca8c3461bea306e8ad25135ca85d62021ac6882ee1d18fc",
+        "size": 9991
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/fishmonger.prefab.meta",
+        "sha256": "ffc76f54a7061094adb23253da4ec6cebaeb36b9a2f0f865878f1ae3b5624a37",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/local-fan.prefab",
+        "sha256": "574f40af0144b087b87fb292138092ba647032a16e521a0ff802a9d8479fa155",
+        "size": 8471
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/local-fan.prefab.meta",
+        "sha256": "0d2d5ec08f7ad761ad21ddd9cd672ca5976ef42c97e36d91e215cc769f458169",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/market-worker.prefab",
+        "sha256": "94ae2ea1379a456f577469a42baf2cf66f33be642ff562ac3a509be9a80fa36e",
+        "size": 9464
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/market-worker.prefab.meta",
+        "sha256": "0602ac8ad58e7cbc915d495f61cc9689ec2d448ec529573f01162e6636d10ac7",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/mechanic.prefab",
+        "sha256": "1d8bf13b2807a5ec90c51426fb0089e982895084bd0b1ae0c4ee3428449bb3d3",
+        "size": 9748
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/mechanic.prefab.meta",
+        "sha256": "effc34ee5c65523a8d5f95a909783daa40af089aa5a4f84cf6d26f74d6be2010",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/office-worker.prefab",
+        "sha256": "abd3ae60f4b5c0e9d65e21908db591d388f4221e0e7939afef73c958954f151e",
+        "size": 9030
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/office-worker.prefab.meta",
+        "sha256": "efcdb08904fab3acb7a71ab5d0e58cc496834875bf6408a02f5f20ba9019876a",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/older-resident.prefab",
+        "sha256": "b51112f65ea4e9974b87b6c548efdd60711397530bb10d64bf25070aa4a82b80",
+        "size": 8218
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/older-resident.prefab.meta",
+        "sha256": "9d6c6cae515a5f5503269171be1a1b215bb162a054196934d7aca16a2827d635",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/shopkeeper.prefab",
+        "sha256": "ed2aac06852db19adeb5c01c02cdfe98ea8e5baf2aff154eabf0b3a093e5ca87",
+        "size": 7551
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/shopkeeper.prefab.meta",
+        "sha256": "911f9f4c54b7e29f386e26f0baa331f313e9fc052fbb132e9249f5dacbcc4123",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/student.prefab",
+        "sha256": "5efa3677e77fe761b7d21d1fd244264404a33e94155e0f9a4a6730e07c9f22b2",
+        "size": 9314
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/student.prefab.meta",
+        "sha256": "e75ed979f176e600045b2d8ee29d520a9c1c405107728fdc9f6c9cdddd7cad16",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/waiter-veteran.prefab",
+        "sha256": "45463bd04c3f96ef9e535e1d0bbb4d542bbee5949e4b2028ae3cdc9f8adfd01d",
+        "size": 11919
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/waiter-veteran.prefab.meta",
+        "sha256": "928d08126a4f89495feae74bc5727bd4e8f0b4767e3ea5d24407f4f7e56912a8",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/younger-resident.prefab",
+        "sha256": "a040c4abff0341158ac3304ff476501637d18999b8cf10c6f5802ff2cde18a0e",
+        "size": 10767
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Prefabs/younger-resident.prefab.meta",
+        "sha256": "9db1b0e2dcec1fe4fb47b64c23a12d80d654045ecf5f73152fc45a02c396b386",
+        "size": 154
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_blue.png",
+        "sha256": "79f93e7d1acd7cdfe958ce12d8ebea09fef5aed4ce31d3b55fe6367a133c63a4",
+        "size": 31216
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_blue.png.meta",
+        "sha256": "c32601135d553918de3fc97da53e6efc1d0110b97157e441c371424e493e7921",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_green.png",
+        "sha256": "e3974a3db94ab074df1697aec0d61cf92054044795927aef4a4b8faa44f357e4",
+        "size": 30900
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_green.png.meta",
+        "sha256": "0281e3e5bf978b86978200de8d4101da7e12dfd85e5d0e659ee5a159c31db950",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_grey.png",
+        "sha256": "f8d23f3a5c7ae786b91c712ffb7b590c887acf40313319158cf2c5a5cd16a002",
+        "size": 31139
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Eye_grey.png.meta",
+        "sha256": "234ebb4ba35283980cc79b7194ab2784eddf33ffb8fa169999056ffe4d112129",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female.jpg",
+        "sha256": "e419a54b6e839ea133fe8e3dcfafbf5cb930d02af156645b55fb4fceb766b389",
+        "size": 76795
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female.jpg.meta",
+        "sha256": "2544f762d41e36bb1f6abe198451d79837e68dacaa0a03cc3dec2c404540e358",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_mature.jpg",
+        "sha256": "214dec06efcd5c9b4201e6367a6c02cdef6495e5d118e217f640398cafb87f1a",
+        "size": 76196
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_mature.jpg.meta",
+        "sha256": "d0e4b87713b0c8f29548354a8c8eca6becc70dfff153b4292321cc766eadb19d",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_natural.jpg",
+        "sha256": "3705b8547bd68967d2d2dbb9d2060b2e78eaf09bd1f22f531b05c3f26e6b2262",
+        "size": 76542
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_natural.jpg.meta",
+        "sha256": "63c2f02d35dd5a49d738f8b643c194c3c2fdf197532746e619f803b3502f3736",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_older.jpg",
+        "sha256": "dff3beba48d6b6dcee4e5bbc2806698b4706f65d8f45d6831629fd61629d915d",
+        "size": 75803
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_female_older.jpg.meta",
+        "sha256": "9f094192d0cf065bd71033d483de549483d40f7b7af9a8a4aca80785c023a583",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male.jpg",
+        "sha256": "eeb0404ed6ad0ee99a312d1cc4118fbbb5fedb8e57d907c08e93cb703d0255c9",
+        "size": 75548
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male.jpg.meta",
+        "sha256": "ccf8c8ebb137d0347ec2829fbd7bdd299cc239f155859571ff900609b9dd85a7",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_clean.jpg",
+        "sha256": "94f9697a753da46063603be72e38498bc7af96de1cbf40d6e33801fbdbd14922",
+        "size": 75221
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_clean.jpg.meta",
+        "sha256": "c8ffb381aa0477281abca9e0aa8ec1eeb81c5419d5f0a7d699f40f256039633a",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_mature.jpg",
+        "sha256": "613263d762c9c65bfb4fe138d4d1e4f149358f44a6e430936f8befcc9d805992",
+        "size": 75610
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_mature.jpg.meta",
+        "sha256": "ac89e520f13a00d2ce7f77f2a30d55790c6edfdf77d4d833e6c1010298acf270",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_older.jpg",
+        "sha256": "86a8662cc2241bc65d6f3105da649a7eab43a0a5fe53f4c06b0fd6aa9c7c429f",
+        "size": 74793
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_regular_male_older.jpg.meta",
+        "sha256": "681ab609244ff495d64b12a0709d1cfc7bf4e05aadb0932fe70ac93b11beb7f8",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female.jpg",
+        "sha256": "4da1fcdba758faae5dc911ae0b36fee98f1795e65bb57b66079d8485dcdc9982",
+        "size": 74558
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female.jpg.meta",
+        "sha256": "2f36a2c51d04d80cefc619509566169a9b79ddebba8cf77e5adf5da8659d8a59",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_mature.jpg",
+        "sha256": "db89e3ba4ff55b94eaff1f08b752fd9bfc07fcdcdd30853e23f500381e9efdc4",
+        "size": 73996
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_mature.jpg.meta",
+        "sha256": "2dd401e295f4177c82016b249f0a4c3922d71f051e900689ce1fbdbbee0eb674",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_natural.jpg",
+        "sha256": "f53a51b1484b8c3f847097602593bffa8829b5d6b93151cc1d1d41cb4be9b990",
+        "size": 74283
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_natural.jpg.meta",
+        "sha256": "53d258ff774adb6c87f51bf6fecb843ce8f2315218931a8ead283e6c6d126244",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_older.jpg",
+        "sha256": "745460aebd9abda1ac9c37f6c9d194cbd84c6acb674100200efa96275ae407aa",
+        "size": 73647
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_female_older.jpg.meta",
+        "sha256": "a731348dea19d8044cfb7a0131e01d446b96e3693d776a9520772f0e13d3ba77",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male.jpg",
+        "sha256": "b081877261e89e7126629581c1fa528867fe314bef9e4d76a830dbca8770483c",
+        "size": 76360
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male.jpg.meta",
+        "sha256": "21e8491d732602eb9a19701c9cc37522d4025ebccb8bb506fdad91c17533ed93",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_clean.jpg",
+        "sha256": "9309914c72ccc81809a83f02ec078e4935e8e05b519f68646857843957b6cd55",
+        "size": 76013
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_clean.jpg.meta",
+        "sha256": "6d38ead506c3e025cab9b5e70cdb34c26ce9d4076b048190d5977de1895e4083",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_mature.jpg",
+        "sha256": "1dc39887929075d16dbd4b0abe402f5e1216955358676a3732f99f9b4974b3b3",
+        "size": 76251
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_mature.jpg.meta",
+        "sha256": "46683d027e1aedf00ad89e59b9277f942fae1da14f896d4a88f3c6e9e44befdd",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_older.jpg",
+        "sha256": "30cacce44e5a31eeb7ee35675bae315046e9800588ebfc73cd3ef394a08f0e94",
+        "size": 75602
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Derived/CHAR/Textures/T_CHAR_Skin_superhero_male_older.jpg.meta",
+        "sha256": "c84bd61f7ba772d16974925b03260a65044fcec7badd9ba4ec61a1580b090e87",
+        "size": 2652
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharFactory.cs",
+        "sha256": "b4fec6acc476a03f85fe807a6b18f7ad8e9a9bfaceebdc6f12a73f18fcd8fd6d",
+        "size": 21384
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharFactory.cs.meta",
+        "sha256": "e057365ef2a86c2fc078eb19327deca3c3f153651fd9417fc2c7282f12233017",
+        "size": 59
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharPosture.cs",
+        "sha256": "a609fb1a937bedb5fc422618c3e8692d9c69f902892ab794d38bae51e61a64cb",
+        "size": 11230
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharPosture.cs.meta",
+        "sha256": "d60af363fd0bf5260f3cf233efb5e4425c62993f78be757278979dee9cf67d91",
+        "size": 59
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharReview.cs",
+        "sha256": "699a338d1a3f1a161f445ca88d69afaf0cd29c1a87f295b6e00fc0603bd45356",
+        "size": 26737
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharReview.cs.meta",
+        "sha256": "b31de2341ed341da313e7814e57b5efd6bb10316fd1033357a3f51fba6d17c4d",
+        "size": 59
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharValidation.cs",
+        "sha256": "71f2593046f21720d6eb7461a8b49f27fd39d49fd388ed71e98a5ccaf3f6b85a",
+        "size": 16373
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Editor/Char/CharValidation.cs.meta",
+        "sha256": "e5a1a45992e3fea59c0523a74e00818fe730a230c99c71491c54e3541713d2af",
+        "size": 59
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/CHAR/CivilianFitPreview.unity",
+        "sha256": "28b7534f9d7bc66a3b106a46b583fe55a7eba2faa3c4c1a3b60fabdbc07b81fe",
+        "size": 47382
+      },
+      {
+        "path": "Unity/JuegoDef/Assets/JuegoDef/Scenes/CHAR/CivilianFitPreview.unity.meta",
+        "sha256": "e6a23dcb69a966f7780a079afdf8454328376c46afe840c0e76222b795abb02d",
+        "size": 155
+      }
+    ]
+  },
+  "note": "Before portraits are the preserved pre-naturalism CHAR WIP, rendered through the same CharReview capture configuration; this was not an accepted art baseline."
+}

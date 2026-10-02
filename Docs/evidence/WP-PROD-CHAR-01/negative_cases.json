@@ -1,0 +1,300 @@
+{
+  "positiveRecipes": 15,
+  "cases": [
+    {
+      "case": "unsupported body",
+      "result": "REJECT",
+      "reason": "Unsupported body family: teen_male"
+    },
+    {
+      "case": "hair mismatch",
+      "result": "REJECT",
+      "reason": "Hair/body mismatch: hair_balding/regular_female"
+    },
+    {
+      "case": "body profile mismatch",
+      "result": "REJECT",
+      "reason": "Body/profile mismatch"
+    },
+    {
+      "case": "unknown profile",
+      "result": "REJECT",
+      "reason": "Unsupported body profile"
+    },
+    {
+      "case": "unsupported top",
+      "result": "REJECT",
+      "reason": "Unsupported top: armour"
+    },
+    {
+      "case": "invalid output path",
+      "result": "REJECT",
+      "reason": "Invalid/duplicate generated identity: ../escape"
+    },
+    {
+      "case": "unknown palette",
+      "result": "REJECT",
+      "reason": "Unknown palette"
+    },
+    {
+      "case": "non-finite height",
+      "result": "REJECT",
+      "reason": "Height/profile disagreement"
+    },
+    {
+      "case": "wrong height",
+      "result": "REJECT",
+      "reason": "Height/profile disagreement"
+    },
+    {
+      "case": "unsupported bottom",
+      "result": "REJECT",
+      "reason": "Unsupported bottom"
+    },
+    {
+      "case": "unsupported accessory",
+      "result": "REJECT",
+      "reason": "Unsupported accessory"
+    },
+    {
+      "case": "unsupported footwear",
+      "result": "REJECT",
+      "reason": "Unsupported footwear"
+    },
+    {
+      "case": "unsupported headwear",
+      "result": "REJECT",
+      "reason": "Unsupported headwear"
+    },
+    {
+      "case": "unknown authored head",
+      "result": "REJECT",
+      "reason": "Unknown authored head form"
+    },
+    {
+      "case": "wrong authored head sex",
+      "result": "REJECT",
+      "reason": "Authored head form has incompatible source family"
+    },
+    {
+      "case": "unknown everyday hair",
+      "result": "REJECT",
+      "reason": "Unknown authored hair style"
+    },
+    {
+      "case": "unknown garment pattern",
+      "result": "REJECT",
+      "reason": "Unknown authored garment pattern"
+    },
+    {
+      "case": "duplicate output",
+      "result": "REJECT",
+      "reason": "Invalid/duplicate generated identity: market-worker"
+    },
+    {
+      "case": "vest over unsupported layer",
+      "result": "REJECT",
+      "reason": "Work vest requires covered sweater fit"
+    },
+    {
+      "case": "bad material color",
+      "result": "REJECT",
+      "reason": "Invalid palette market"
+    },
+    {
+      "case": "unsafe palette path",
+      "result": "REJECT",
+      "reason": "Invalid palette identity"
+    },
+    {
+      "case": "empty batch",
+      "result": "REJECT",
+      "reason": "Empty recipe batch"
+    },
+    {
+      "case": "facial hair on a female body",
+      "result": "REJECT",
+      "reason": "Unsupported facial hair for regular_female"
+    },
+    {
+      "case": "thick brows on a female body",
+      "result": "REJECT",
+      "reason": "Unsupported brows"
+    },
+    {
+      "case": "unknown facial hair",
+      "result": "REJECT",
+      "reason": "Unsupported facial hair for regular_male"
+    },
+    {
+      "case": "unknown skin tone",
+      "result": "REJECT",
+      "reason": "Unsupported skin tone green"
+    },
+    {
+      "case": "trainers with a formal coat",
+      "result": "REJECT",
+      "reason": "Trainers need a casual top (office-worker)"
+    },
+    {
+      "case": "work boots with a skirt",
+      "result": "REJECT",
+      "reason": "Footwear work_boots does not go with skirt (everyday-pedestrian)"
+    },
+    {
+      "case": "donor work trousers on a superhero body",
+      "result": "REJECT",
+      "reason": "Unsupported bottom"
+    },
+    {
+      "case": "waistcoat without a shirt",
+      "result": "REJECT",
+      "reason": "Waistcoat requires a shirt underneath"
+    },
+    {
+      "case": "overalls over a hoodie",
+      "result": "REJECT",
+      "reason": "Overalls need a plain layer underneath"
+    },
+    {
+      "case": "over-saturated garment colour",
+      "result": "REJECT",
+      "reason": "Palette market.top is too saturated (1.00 > 0.66)"
+    },
+    {
+      "case": "pure black garment",
+      "result": "REJECT",
+      "reason": "Palette office.bottom is pure black/white (value 0.00)"
+    },
+    {
+      "case": "pale leather shoes",
+      "result": "REJECT",
+      "reason": "Leather shoes must be dark enough to read as footwear (market-worker)"
+    },
+    {
+      "case": "unsupported palette role",
+      "result": "REJECT",
+      "reason": "Unknown palette role(s) glow in market"
+    },
+    {
+      "case": "gym superhero body for a civilian",
+      "result": "REJECT",
+      "reason": "Body family superhero_male is not admitted for civilians (bruiser)"
+    },
+    {
+      "case": "neck layer that reads as bare skin",
+      "result": "REJECT",
+      "reason": "Layer at the neck of elder-woman (E4DCC8) reads as bare skin; use a cooler or deeper colour"
+    },
+    {
+      "case": "light warm tee under an open jacket",
+      "result": "REJECT",
+      "reason": "Light warm inner layer under an open outer layer of student (E6E4DD) reads as a bare torso in warm sun; use a cool tint or a mid value"
+    },
+    {
+      "case": "undefined garment fit",
+      "result": "REJECT",
+      "reason": "Unknown garment fit"
+    },
+    {
+      "case": "unknown visual quality tier",
+      "result": "REJECT",
+      "reason": "Unknown visual quality tier"
+    },
+    {
+      "case": "unknown complexion",
+      "result": "REJECT",
+      "reason": "Unknown complexion"
+    },
+    {
+      "case": "non-finite asymmetry",
+      "result": "REJECT",
+      "reason": "Invalid posture stanceBias"
+    },
+    {
+      "case": "impossible resting lean",
+      "result": "REJECT",
+      "reason": "Invalid posture slouch"
+    },
+    {
+      "case": "unknown face variant",
+      "result": "REJECT",
+      "reason": "Unsupported face variant anime for elder-woman"
+    },
+    {
+      "case": "male grooming variant on a woman",
+      "result": "REJECT",
+      "reason": "Unsupported face variant clean for elder-woman"
+    },
+    {
+      "case": "hips 37% wider than the source body",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: hipJointRatio 0.193 is 1.93x the source body (allowed 0.88-1.12)"
+    },
+    {
+      "case": "shoulders 25% wider",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: shoulderJointRatio 0.265 is 1.25x the source body (allowed 0.90-1.12)"
+    },
+    {
+      "case": "head too small for the body",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: headLength 0.095 outside 0.108-0.150"
+    },
+    {
+      "case": "legs too long",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: pelvisHeight 0.580 outside 0.495-0.548"
+    },
+    {
+      "case": "legs too short",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: pelvisHeight 0.460 outside 0.495-0.548"
+    },
+    {
+      "case": "pin head: 8.6 heads tall (raw Quaternius male)",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: headsTall 8.600 outside 6.900-8.000"
+    },
+    {
+      "case": "oversized hands: one head long",
+      "result": "REJECT",
+      "reason": "Non-human proportions for probe: handOverHead 1.000 outside 0.700-0.900"
+    },
+    {
+      "case": "missing anatomical bundle",
+      "result": "REJECT",
+      "reason": "Unadmitted anatomical head form market-worker"
+    },
+    {
+      "case": "unadmitted head license",
+      "result": "REJECT",
+      "reason": "Unadmitted anatomical tool/asset provenance"
+    },
+    {
+      "case": "unadmitted authoring version",
+      "result": "REJECT",
+      "reason": "Unadmitted anatomical tool/asset provenance"
+    },
+    {
+      "case": "anatomical head sex mismatch",
+      "result": "REJECT",
+      "reason": "Anatomical head/body sex mismatch"
+    },
+    {
+      "case": "unmatched source hair bundle",
+      "result": "REJECT",
+      "reason": "Hair style requires a matching admitted head/hair bundle"
+    },
+    {
+      "case": "changed anatomical bundle bytes",
+      "result": "REJECT",
+      "reason": "Changed anatomical head bundle"
+    },
+    {
+      "case": "changed raw anatomical input",
+      "result": "REJECT",
+      "reason": "Changed CC0 anatomical source eyebrows/eyebrow002/eyebrow002.mhclo"
+    }
+  ]
+}

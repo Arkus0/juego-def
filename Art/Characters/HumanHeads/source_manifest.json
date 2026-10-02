@@ -1,0 +1,1725 @@
+{
+  "schemaVersion": 1,
+  "mpfbVersion": "2.0.17",
+  "mpfbCommit": "afb9f530a7c2741dedb8df0ebae2e0b183caec21",
+  "assetLicense": "CC0-1.0",
+  "systemPackSha256": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107",
+  "heads": [
+    {
+      "id": "market-worker",
+      "sex": "female",
+      "skin": "young_caucasian_female",
+      "hair": "ponytail01",
+      "hairStyle": "low_bun",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/market-worker.png",
+        "sha256": "150cb663b8b4ccb744601b8a3dd90ce8ae099df43a6ee00670c58db8c8314d3e"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.5192089080810547,
+      "eyeHeight": 1.4156065649331961,
+      "cut": 1.2320042217853375,
+      "targets": {
+        "head/head-scale-horiz-incr": 0.2,
+        "chin/chin-width-incr": 0.2,
+        "chin/chin-prominent-decr": 0.105,
+        "nose/nose-volume-decr": 0.24,
+        "nose/nose-scale-horiz-incr": 0.16,
+        "mouth/mouth-scale-horiz-incr": 0.1,
+        "cheek/l-cheek-volume-incr": 0.24,
+        "eyes/l-eye-trans-in": 0.032,
+        "cheek/r-cheek-volume-incr": 0.24,
+        "eyes/r-eye-trans-in": 0.032,
+        "head/head-round": 0.17,
+        "mouth/mouth-angles-up": 0.648,
+        "expression/units/caucasian/mouth-upward-retraction": 0.14,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/market-worker.blend",
+      "sha256": "8b8a8f8812b532007def2d006af997694e3be9e43efb04329e6f2e956b27b48e",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4574,
+          "triangles": 9096
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 3718,
+          "triangles": 5352
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.mhclo",
+          "sha256": "97fc50b12bcb3b1c7b33edddd8d427a2604ffb06fe79b31132bf47f82d7afbac"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.mhmat",
+          "sha256": "b145f5a7c9606859ad523f5113482a1cf989cf0e26dccc2ea95c377cb1c2557f"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.obj",
+          "sha256": "d9f5fe96fbedbc8006220d87aad0e4a33d15286eb6b21f5929661cdc490ebf5a"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01_diffuse.png",
+          "sha256": "dcb364300cac06ce8bef91b2f7c0970baf310898bbdd06b0c6b884ee9306eb97"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_caucasian_female.mhmat",
+          "sha256": "0bdea7786201f0b1132a24088336a97496ccdc54e9984db65d253a6a6d66f24f"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+          "sha256": "b2a6ac8cd4f9febdb447368e29c76cd68410bb66e46d9dcfa2d5f75126eea8fc"
+        }
+      ]
+    },
+    {
+      "id": "dock-worker",
+      "sex": "male",
+      "skin": "middleage_caucasian_male",
+      "hair": "short04",
+      "hairStyle": "crop",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/dock-worker.png",
+        "sha256": "e3f0ae6e0ebb2f98bc6402881647a5a0a1dfb827b5d14981c49d4516b491fa3d"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.7391963005065918,
+      "eyeHeight": 1.631296431547717,
+      "cut": 1.443396562588842,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.04,
+        "chin/chin-width-incr": 0.325,
+        "chin/chin-prominent-incr": 0.18,
+        "nose/nose-volume-incr": 0.24,
+        "nose/nose-scale-horiz-incr": 0.24,
+        "mouth/mouth-scale-horiz-decr": 0.2,
+        "cheek/l-cheek-volume-decr": 0.12,
+        "eyes/l-eye-trans-out": 0.032,
+        "cheek/r-cheek-volume-decr": 0.12,
+        "eyes/r-eye-trans-out": 0.032,
+        "head/head-square": 0.18,
+        "mouth/mouth-angles-down": 0.315,
+        "expression/units/caucasian/eyebrows-left-down": 0.24,
+        "expression/units/caucasian/eyebrows-right-down": 0.24,
+        "expression/units/caucasian/eye-left-closure": 0.1,
+        "expression/units/caucasian/eye-right-closure": 0.1
+      },
+      "path": "Art/Characters/HumanHeads/dock-worker.blend",
+      "sha256": "7c6f2d833cda1717af46522d8ff11ab8690a38d4ecbe5164555dba8dfe6bfc70",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4520,
+          "triangles": 8980
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short04/short04.mhclo",
+          "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+        },
+        {
+          "path": "hair/short04/short04.mhmat",
+          "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+        },
+        {
+          "path": "hair/short04/short04.obj",
+          "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+        },
+        {
+          "path": "hair/short04/short04_diffuse.png",
+          "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+          "sha256": "113326b7670cb273610314b91e2597b228711adf5f0666660b16fef269bfbe72"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+          "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb"
+        }
+      ]
+    },
+    {
+      "id": "older-resident",
+      "sex": "male",
+      "skin": "old_caucasian_male",
+      "hair": "short04",
+      "hairStyle": "receding",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/older-resident.png",
+        "sha256": "07367a4ec449d160e0a5dba57fb71d5698f09b40a82812bc72c8896082c15098"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.7294622659683228,
+      "eyeHeight": 1.615654584496541,
+      "cut": 1.4218469030247594,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.16,
+        "chin/chin-width-decr": 0.275,
+        "chin/chin-prominent-decr": 0.135,
+        "nose/nose-volume-incr": 0.26,
+        "nose/nose-scale-horiz-incr": 0.12,
+        "mouth/mouth-scale-horiz-decr": 0.2,
+        "cheek/l-cheek-volume-decr": 0.24,
+        "eyes/l-eye-trans-in": 0.112,
+        "cheek/r-cheek-volume-decr": 0.24,
+        "eyes/r-eye-trans-in": 0.112,
+        "head/head-oval": 0.2,
+        "nose/nose-curve-convex": 0.18,
+        "mouth/mouth-angles-up": 0.54,
+        "expression/units/caucasian/mouth-upward-retraction": 0.14,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/older-resident.blend",
+      "sha256": "f88ed8f18b719eadf7986eb48e414d1328f44bee86ce6a517a35d1b0f32555a9",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4570,
+          "triangles": 9078
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short04/short04.mhclo",
+          "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+        },
+        {
+          "path": "hair/short04/short04.mhmat",
+          "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+        },
+        {
+          "path": "hair/short04/short04.obj",
+          "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+        },
+        {
+          "path": "hair/short04/short04_diffuse.png",
+          "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+        },
+        {
+          "path": "skins/old_caucasian_male/old_caucasian_male.mhmat",
+          "sha256": "001eccec34180d4eb7369933360116a7ea1022c72674c1b012b988af65002600"
+        },
+        {
+          "path": "skins/old_caucasian_male/old_lightskinned_male_diffuse.png",
+          "sha256": "dfb2310ed3e0ad024ea7a3ad321215e2e9e2994cca64043d9f3d07c6543ec847"
+        }
+      ]
+    },
+    {
+      "id": "younger-resident",
+      "sex": "male",
+      "skin": "young_caucasian_male",
+      "hair": "short04",
+      "hairStyle": "crop",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/younger-resident.png",
+        "sha256": "f95d211a1f75d39de55f9a8699be1fc560be2297954d394174e8cc899e5ba259"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.6479727029800415,
+      "eyeHeight": 1.5401346805624496,
+      "cut": 1.3522966581448577,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.08,
+        "chin/chin-width-decr": 0.225,
+        "chin/chin-prominent-decr": 0.045,
+        "nose/nose-volume-decr": 0.24,
+        "nose/nose-scale-horiz-decr": 0.28,
+        "mouth/mouth-scale-horiz-incr": 0.12,
+        "cheek/l-cheek-volume-incr": 0.12,
+        "eyes/l-eye-trans-out": 0.096,
+        "cheek/r-cheek-volume-incr": 0.12,
+        "eyes/r-eye-trans-out": 0.096,
+        "mouth/mouth-angles-up": 0.81,
+        "expression/units/caucasian/mouth-upward-retraction": 0.26,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/younger-resident.blend",
+      "sha256": "806ca6e05d724e15c8b5d60707c8351eecd0c63995a7e1d9002157bf6551b2d6",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4546,
+          "triangles": 9032
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short04/short04.mhclo",
+          "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+        },
+        {
+          "path": "hair/short04/short04.mhmat",
+          "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+        },
+        {
+          "path": "hair/short04/short04.obj",
+          "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+        },
+        {
+          "path": "hair/short04/short04_diffuse.png",
+          "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+        },
+        {
+          "path": "skins/young_caucasian_male/young_caucasian_male.mhmat",
+          "sha256": "6eda60b07ff2afbde078a2535ef3913593d84e9de92b2eb76c30f396a181fe2e"
+        },
+        {
+          "path": "skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+          "sha256": "862a26e335e958b70534cb5f0d7c47ef30ab148a56c42b3e9da969cf76f12963"
+        }
+      ]
+    },
+    {
+      "id": "office-worker",
+      "sex": "female",
+      "skin": "young_caucasian_female",
+      "hair": "bob01",
+      "hairStyle": "bob",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/office-worker.png",
+        "sha256": "7108c49ea77bea32a41945aebf614eeeb32eb2737727a4defe4b1951a4888a4b"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.5223288536071777,
+      "eyeHeight": 1.4155518875310296,
+      "cut": 1.2287749214548813,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.18,
+        "chin/chin-width-decr": 0.175,
+        "chin/chin-prominent-incr": 0.165,
+        "nose/nose-volume-incr": 0.18,
+        "nose/nose-scale-horiz-decr": 0.18,
+        "mouth/mouth-scale-horiz-decr": 0.18,
+        "cheek/l-cheek-volume-decr": 0.096,
+        "eyes/l-eye-trans-in": 0.064,
+        "cheek/r-cheek-volume-decr": 0.096,
+        "eyes/r-eye-trans-in": 0.064,
+        "head/head-oval": 0.2,
+        "mouth/mouth-angles-up": 0.432,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/office-worker.blend",
+      "sha256": "8a3fcbc705feb2aba6bd11623b9365edae6e23da3fe348619fdb697dfa5a01c7",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4582,
+          "triangles": 9108
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 5203,
+          "triangles": 8474
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/bob01/bob01.mhclo",
+          "sha256": "a295b11ab6c7808afa1e01d0c79fb595bbbd7885f65252766486c9fcf6d158c5"
+        },
+        {
+          "path": "hair/bob01/bob01.mhmat",
+          "sha256": "9c3015044a832fb9a72a5d2f28218914ebfbdf6725cfd237cc53a3d95f054e3b"
+        },
+        {
+          "path": "hair/bob01/bob01.obj",
+          "sha256": "d7fb73806f47ee37ba3c37bcfadff40a91ba99635d08c3e02d94b4acbf97c231"
+        },
+        {
+          "path": "hair/bob01/bob01_diffuse.png",
+          "sha256": "2b38bc7a028e06e8e633accb7fe2dd1b2bacbb9d32463df73f39f82e63ef9009"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_caucasian_female.mhmat",
+          "sha256": "0bdea7786201f0b1132a24088336a97496ccdc54e9984db65d253a6a6d66f24f"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+          "sha256": "b2a6ac8cd4f9febdb447368e29c76cd68410bb66e46d9dcfa2d5f75126eea8fc"
+        }
+      ]
+    },
+    {
+      "id": "everyday-pedestrian",
+      "sex": "female",
+      "skin": "young_caucasian_female",
+      "hair": "ponytail01",
+      "hairStyle": "pony",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/everyday-pedestrian.png",
+        "sha256": "1e43460c82563ad4bad5b5502210418ac1c8445608db7a7db18174bccfe21a86"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.5202288627624512,
+      "eyeHeight": 1.4155892939271784,
+      "cut": 1.2309497250919055,
+      "targets": {
+        "head/head-scale-horiz-incr": 0.08,
+        "chin/chin-width-incr": 0.25,
+        "chin/chin-prominent-incr": 0.135,
+        "nose/nose-volume-incr": 0.04,
+        "nose/nose-scale-horiz-incr": 0.2,
+        "mouth/mouth-scale-horiz-incr": 0.2,
+        "cheek/l-cheek-volume-decr": 0.072,
+        "eyes/l-eye-trans-out": 0.064,
+        "cheek/r-cheek-volume-decr": 0.072,
+        "eyes/r-eye-trans-out": 0.064,
+        "mouth/mouth-angles-up": 0.738,
+        "expression/units/caucasian/mouth-upward-retraction": 0.26,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/everyday-pedestrian.blend",
+      "sha256": "0d1a4553833365ebabbd9fe4507000b53af5257fb25b29f116017a2bac7794a6",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4576,
+          "triangles": 9100
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 3718,
+          "triangles": 5352
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.mhclo",
+          "sha256": "97fc50b12bcb3b1c7b33edddd8d427a2604ffb06fe79b31132bf47f82d7afbac"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.mhmat",
+          "sha256": "b145f5a7c9606859ad523f5113482a1cf989cf0e26dccc2ea95c377cb1c2557f"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.obj",
+          "sha256": "d9f5fe96fbedbc8006220d87aad0e4a33d15286eb6b21f5929661cdc490ebf5a"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01_diffuse.png",
+          "sha256": "dcb364300cac06ce8bef91b2f7c0970baf310898bbdd06b0c6b884ee9306eb97"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_caucasian_female.mhmat",
+          "sha256": "0bdea7786201f0b1132a24088336a97496ccdc54e9984db65d253a6a6d66f24f"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+          "sha256": "b2a6ac8cd4f9febdb447368e29c76cd68410bb66e46d9dcfa2d5f75126eea8fc"
+        }
+      ]
+    },
+    {
+      "id": "waiter-veteran",
+      "sex": "male",
+      "skin": "old_caucasian_male",
+      "hair": "short01",
+      "hairStyle": "sidepart",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/waiter-veteran.png",
+        "sha256": "c896c9ca96ae55ce3f6cd7e3e7e760c5f8b5e78537f920b16465da76e69df18f"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.7278022766113281,
+      "eyeHeight": 1.615697767501487,
+      "cut": 1.4235932583916457,
+      "targets": {
+        "head/head-scale-horiz-incr": 0.14,
+        "chin/chin-width-incr": 0.05,
+        "chin/chin-prominent-incr": 0.045,
+        "nose/nose-volume-incr": 0.2,
+        "nose/nose-scale-horiz-incr": 0.32,
+        "mouth/mouth-scale-horiz-incr": 0.16,
+        "cheek/l-cheek-volume-incr": 0.192,
+        "eyes/l-eye-trans-in": 0.096,
+        "cheek/r-cheek-volume-incr": 0.192,
+        "eyes/r-eye-trans-in": 0.096,
+        "mouth/mouth-angles-up": 0.675,
+        "expression/units/caucasian/mouth-upward-retraction": 0.14,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/waiter-veteran.blend",
+      "sha256": "4e8470475aa8eb4896a956f8804e5013c791038d6db5591b902056de0e1975ea",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4566,
+          "triangles": 9066
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 2984,
+          "triangles": 3678
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short01/short01.mhclo",
+          "sha256": "ae1ffaa98da5753b803b3a173bede4895d2215e6bb94763f3765a71f0e984f35"
+        },
+        {
+          "path": "hair/short01/short01.mhmat",
+          "sha256": "01e2e12ce3f3d3c859225456660acadcdd27d4f4b4d888bcbd6f11998cadd975"
+        },
+        {
+          "path": "hair/short01/short01.obj",
+          "sha256": "d998d8416f9b5d5591f1d756f4d292288d000a6951bc0f4d2e8e72727bbc44fa"
+        },
+        {
+          "path": "hair/short01/short01_diffuse.png",
+          "sha256": "f34a0957184e3d1e911ed59245f874f8d4843f61ee44ff49f43edb4be0196949"
+        },
+        {
+          "path": "skins/old_caucasian_male/old_caucasian_male.mhmat",
+          "sha256": "001eccec34180d4eb7369933360116a7ea1022c72674c1b012b988af65002600"
+        },
+        {
+          "path": "skins/old_caucasian_male/old_lightskinned_male_diffuse.png",
+          "sha256": "dfb2310ed3e0ad024ea7a3ad321215e2e9e2994cca64043d9f3d07c6543ec847"
+        }
+      ]
+    },
+    {
+      "id": "fishmonger",
+      "sex": "male",
+      "skin": "middleage_caucasian_male",
+      "hair": "short04",
+      "hairStyle": "crop",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/fishmonger.png",
+        "sha256": "269a3111ab0d60ff4466e8bd8353d298a6b4e5ceedf45ff631e82346c41ee046"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.7410062551498413,
+      "eyeHeight": 1.6313080693546094,
+      "cut": 1.4416098835593774,
+      "targets": {
+        "head/head-scale-horiz-incr": 0.04,
+        "chin/chin-width-incr": 0.275,
+        "chin/chin-prominent-incr": 0.21,
+        "nose/nose-volume-incr": 0.24,
+        "nose/nose-scale-horiz-decr": 0.08,
+        "mouth/mouth-scale-horiz-decr": 0.16,
+        "cheek/l-cheek-volume-decr": 0.168,
+        "cheek/r-cheek-volume-decr": 0.168,
+        "mouth/mouth-angles-up": 0.612,
+        "expression/units/caucasian/mouth-upward-retraction": 0.14,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/fishmonger.blend",
+      "sha256": "d934f2ff74bb5562b3a9b5d0f75f1682d77a9c87a1317dfd56bcaa10d075a7b7",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4524,
+          "triangles": 8988
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short04/short04.mhclo",
+          "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+        },
+        {
+          "path": "hair/short04/short04.mhmat",
+          "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+        },
+        {
+          "path": "hair/short04/short04.obj",
+          "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+        },
+        {
+          "path": "hair/short04/short04_diffuse.png",
+          "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+          "sha256": "113326b7670cb273610314b91e2597b228711adf5f0666660b16fef269bfbe72"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+          "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb"
+        }
+      ]
+    },
+    {
+      "id": "mechanic",
+      "sex": "female",
+      "skin": "young_caucasian_female",
+      "hair": "ponytail01",
+      "hairStyle": "pony",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/mechanic.png",
+        "sha256": "ce01402b21dc55f0af18413d6cf9f05154d81acc32ec90ab791363eac5b0b3db"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.518320918083191,
+      "eyeHeight": 1.4155776642991187,
+      "cut": 1.2328344105150464,
+      "targets": {
+        "chin/chin-width-incr": 0.3,
+        "chin/chin-prominent-incr": 0.18,
+        "nose/nose-volume-incr": 0.06,
+        "nose/nose-scale-horiz-incr": 0.04,
+        "mouth/mouth-scale-horiz-decr": 0.04,
+        "cheek/l-cheek-volume-decr": 0.216,
+        "eyes/l-eye-trans-in": 0.032,
+        "cheek/r-cheek-volume-decr": 0.216,
+        "eyes/r-eye-trans-in": 0.032,
+        "head/head-square": 0.18,
+        "mouth/mouth-angles-down": 0.108,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/mechanic.blend",
+      "sha256": "236bb4fd15e4efc352024e693bb0735075ab2ab00bc33693d77645a2a4fe89e8",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4572,
+          "triangles": 9092
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 3718,
+          "triangles": 5352
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.mhclo",
+          "sha256": "97fc50b12bcb3b1c7b33edddd8d427a2604ffb06fe79b31132bf47f82d7afbac"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.mhmat",
+          "sha256": "b145f5a7c9606859ad523f5113482a1cf989cf0e26dccc2ea95c377cb1c2557f"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01.obj",
+          "sha256": "d9f5fe96fbedbc8006220d87aad0e4a33d15286eb6b21f5929661cdc490ebf5a"
+        },
+        {
+          "path": "hair/ponytail01/ponytail01_diffuse.png",
+          "sha256": "dcb364300cac06ce8bef91b2f7c0970baf310898bbdd06b0c6b884ee9306eb97"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_caucasian_female.mhmat",
+          "sha256": "0bdea7786201f0b1132a24088336a97496ccdc54e9984db65d253a6a6d66f24f"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+          "sha256": "b2a6ac8cd4f9febdb447368e29c76cd68410bb66e46d9dcfa2d5f75126eea8fc"
+        }
+      ]
+    },
+    {
+      "id": "shopkeeper",
+      "sex": "female",
+      "skin": "middleage_caucasian_female",
+      "hair": "bob01",
+      "hairStyle": "wavy_bob",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/shopkeeper.png",
+        "sha256": "191d7c76b9243d7cf7f67e243a782309f6a8170a172b8f44567bb7ab2dfd574f"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.6027318239212036,
+      "eyeHeight": 1.4963406024122596,
+      "cut": 1.3099493809033156,
+      "targets": {
+        "head/head-scale-horiz-incr": 0.18,
+        "chin/chin-width-incr": 0.15,
+        "chin/chin-prominent-decr": 0.09,
+        "nose/nose-volume-decr": 0.08,
+        "nose/nose-scale-horiz-incr": 0.16,
+        "mouth/mouth-scale-horiz-decr": 0.14,
+        "cheek/l-cheek-volume-incr": 0.144,
+        "eyes/l-eye-trans-in": 0.096,
+        "cheek/r-cheek-volume-incr": 0.144,
+        "eyes/r-eye-trans-in": 0.096,
+        "head/head-round": 0.17,
+        "mouth/mouth-angles-up": 0.54,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/shopkeeper.blend",
+      "sha256": "69d933bc1b0e05511a9edc1b450a1931b7c76ddc05e7124ca368c6e1febf3512",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4553,
+          "triangles": 9052
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 5203,
+          "triangles": 8474
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/bob01/bob01.mhclo",
+          "sha256": "a295b11ab6c7808afa1e01d0c79fb595bbbd7885f65252766486c9fcf6d158c5"
+        },
+        {
+          "path": "hair/bob01/bob01.mhmat",
+          "sha256": "9c3015044a832fb9a72a5d2f28218914ebfbdf6725cfd237cc53a3d95f054e3b"
+        },
+        {
+          "path": "hair/bob01/bob01.obj",
+          "sha256": "d7fb73806f47ee37ba3c37bcfadff40a91ba99635d08c3e02d94b4acbf97c231"
+        },
+        {
+          "path": "hair/bob01/bob01_diffuse.png",
+          "sha256": "2b38bc7a028e06e8e633accb7fe2dd1b2bacbb9d32463df73f39f82e63ef9009"
+        },
+        {
+          "path": "skins/middleage_caucasian_female/middleage_caucasian_female.mhmat",
+          "sha256": "c01a42ea64ca4207558f5af8eb0991794934e3aaadebba1613c0a6e90d2afa29"
+        },
+        {
+          "path": "skins/middleage_caucasian_female/middleage_lightskinned_female_diffuse.png",
+          "sha256": "bcb9c2c8ace23880bc4407602a249abbcf4608b6ba0894e423b031913012a363"
+        }
+      ]
+    },
+    {
+      "id": "elder-woman",
+      "sex": "female",
+      "skin": "old_caucasian_female",
+      "hair": "short03",
+      "hairStyle": "short_waves",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/elder-woman.png",
+        "sha256": "0c17c70abb1ab5071560fc93a0db49f95a50e7b0384806420cfe7f9132aa8b9c"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.598616123199463,
+      "eyeHeight": 1.4907881604101425,
+      "cut": 1.302960197620822,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.12,
+        "chin/chin-width-decr": 0.3,
+        "chin/chin-prominent-decr": 0.15,
+        "nose/nose-volume-incr": 0.26,
+        "nose/nose-scale-horiz-decr": 0.14,
+        "mouth/mouth-scale-horiz-decr": 0.24,
+        "cheek/l-cheek-volume-decr": 0.312,
+        "eyes/l-eye-trans-in": 0.064,
+        "cheek/r-cheek-volume-decr": 0.312,
+        "eyes/r-eye-trans-in": 0.064,
+        "mouth/mouth-angles-up": 0.585,
+        "expression/units/caucasian/mouth-upward-retraction": 0.14,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/elder-woman.blend",
+      "sha256": "1188fb26cca4197056179029b1692d090bf6cfc6b57e7ddc92526efdb982f6c5",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4568,
+          "triangles": 9082
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 1011,
+          "triangles": 1922
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short03/short03.mhclo",
+          "sha256": "d80bbb8fd9b06721c481756fb3e1d6dce04fcfc9ca8a379edd4ea3c0d81ed17f"
+        },
+        {
+          "path": "hair/short03/short03.mhmat",
+          "sha256": "8dcf42b677301ab6a66f96ff41751ecf88fba6c6cd7c564e6953f9c78e40a8fd"
+        },
+        {
+          "path": "hair/short03/short03.obj",
+          "sha256": "4a9fc385718f2c46fb328ab99d33e3a946cecdb717987c8b324cf2466b59bd9c"
+        },
+        {
+          "path": "hair/short03/short03_diffuse.png",
+          "sha256": "fe6ed0bb14498a48a2e8fc07e80e2a6f62c8b67686fcd0a7a570d345faec97da"
+        },
+        {
+          "path": "skins/old_caucasian_female/old_caucasian_female.mhmat",
+          "sha256": "a88440d9f1225d3b4c963259e6f434eb3be7d3a2932e46ea88cfc675ed20c387"
+        },
+        {
+          "path": "skins/old_caucasian_female/old_lightskinned_female_diffuse.png",
+          "sha256": "00c45246c145562b917371e92de44a1fe394bc5f4bd91418addf24b6adff5e9d"
+        }
+      ]
+    },
+    {
+      "id": "student",
+      "sex": "female",
+      "skin": "young_caucasian_female",
+      "hair": "bob01",
+      "hairStyle": "bob",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/student.png",
+        "sha256": "c2213cee9dae18c1d622321364ea05d85809cbfa2e2a8dc14fc8701816882b73"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.5202288627624512,
+      "eyeHeight": 1.4155719843798114,
+      "cut": 1.2309151059971715,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.04,
+        "chin/chin-width-decr": 0.2,
+        "chin/chin-prominent-decr": 0.045,
+        "nose/nose-volume-decr": 0.22,
+        "nose/nose-scale-horiz-decr": 0.28,
+        "mouth/mouth-scale-horiz-incr": 0.16,
+        "cheek/l-cheek-volume-incr": 0.192,
+        "eyes/l-eye-trans-out": 0.128,
+        "cheek/r-cheek-volume-incr": 0.192,
+        "eyes/r-eye-trans-out": 0.128,
+        "mouth/mouth-angles-up": 0.9,
+        "expression/units/caucasian/mouth-upward-retraction": 0.26,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/student.blend",
+      "sha256": "95a8dcdaf7d571ef2399723f4a0343c75ef0f3ddf9d73cba334df8b095e12e3b",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4576,
+          "triangles": 9100
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 5203,
+          "triangles": 8474
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhclo",
+          "sha256": "550781113f5c3971e7e200450d7d94e2290d43e9449a42667d2bf972c1eb0593"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.mhmat",
+          "sha256": "57fc4d1f089be90b2ab4774bdc7c077b5a519f33a293e57ee74762c7714a3b34"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.obj",
+          "sha256": "7fe4e036311c41802bd6889acb02d1b06184a0dd759ac72e1d9fba1037243667"
+        },
+        {
+          "path": "eyebrows/eyebrow002/eyebrow002.png",
+          "sha256": "1de4e4cb69b3f4324390219ffbeb17a0b2555104d3211d1ac667655b69b64038"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/bob01/bob01.mhclo",
+          "sha256": "a295b11ab6c7808afa1e01d0c79fb595bbbd7885f65252766486c9fcf6d158c5"
+        },
+        {
+          "path": "hair/bob01/bob01.mhmat",
+          "sha256": "9c3015044a832fb9a72a5d2f28218914ebfbdf6725cfd237cc53a3d95f054e3b"
+        },
+        {
+          "path": "hair/bob01/bob01.obj",
+          "sha256": "d7fb73806f47ee37ba3c37bcfadff40a91ba99635d08c3e02d94b4acbf97c231"
+        },
+        {
+          "path": "hair/bob01/bob01_diffuse.png",
+          "sha256": "2b38bc7a028e06e8e633accb7fe2dd1b2bacbb9d32463df73f39f82e63ef9009"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_caucasian_female.mhmat",
+          "sha256": "0bdea7786201f0b1132a24088336a97496ccdc54e9984db65d253a6a6d66f24f"
+        },
+        {
+          "path": "skins/young_caucasian_female/young_lightskinned_female_diffuse.png",
+          "sha256": "b2a6ac8cd4f9febdb447368e29c76cd68410bb66e46d9dcfa2d5f75126eea8fc"
+        }
+      ]
+    },
+    {
+      "id": "local-fan",
+      "sex": "male",
+      "skin": "middleage_caucasian_male",
+      "hair": "short01",
+      "hairStyle": "sidepart",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/local-fan.png",
+        "sha256": "2e6e15ae97ffd44a5e4c0954c4a5b157f565c91f2b41cd9b52bb74feccdfa3e8"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.7401643991470337,
+      "eyeHeight": 1.6313339927814956,
+      "cut": 1.4425035864159574,
+      "targets": {
+        "head/head-scale-horiz-incr": 0.22,
+        "chin/chin-width-incr": 0.3,
+        "chin/chin-prominent-decr": 0.06,
+        "nose/nose-volume-decr": 0.18,
+        "nose/nose-scale-horiz-incr": 0.2,
+        "mouth/mouth-scale-horiz-incr": 0.24,
+        "cheek/l-cheek-volume-incr": 0.24,
+        "eyes/l-eye-trans-out": 0.048,
+        "cheek/r-cheek-volume-incr": 0.24,
+        "eyes/r-eye-trans-out": 0.048,
+        "head/head-round": 0.17,
+        "mouth/mouth-angles-up": 0.855,
+        "expression/units/caucasian/mouth-upward-retraction": 0.26,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/local-fan.blend",
+      "sha256": "db2631198cf8280896d43a7fdc216d29e0851402cbb9cc524697371e2102684d",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4522,
+          "triangles": 8984
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 2984,
+          "triangles": 3678
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short01/short01.mhclo",
+          "sha256": "ae1ffaa98da5753b803b3a173bede4895d2215e6bb94763f3765a71f0e984f35"
+        },
+        {
+          "path": "hair/short01/short01.mhmat",
+          "sha256": "01e2e12ce3f3d3c859225456660acadcdd27d4f4b4d888bcbd6f11998cadd975"
+        },
+        {
+          "path": "hair/short01/short01.obj",
+          "sha256": "d998d8416f9b5d5591f1d756f4d292288d000a6951bc0f4d2e8e72727bbc44fa"
+        },
+        {
+          "path": "hair/short01/short01_diffuse.png",
+          "sha256": "f34a0957184e3d1e911ed59245f874f8d4843f61ee44ff49f43edb4be0196949"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+          "sha256": "113326b7670cb273610314b91e2597b228711adf5f0666660b16fef269bfbe72"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+          "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb"
+        }
+      ]
+    },
+    {
+      "id": "bruiser",
+      "sex": "male",
+      "skin": "young_caucasian_male",
+      "hair": "short04",
+      "hairStyle": "crop",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/bruiser.png",
+        "sha256": "b2beb476dc282f9b572776e37d50311fb99103c6218299200b452ac6148991b4"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.6460647583007812,
+      "eyeHeight": 1.5401288140985303,
+      "cut": 1.3541928698962793,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.12,
+        "chin/chin-width-incr": 0.35,
+        "chin/chin-prominent-incr": 0.255,
+        "nose/nose-volume-incr": 0.04,
+        "nose/nose-scale-horiz-incr": 0.24,
+        "mouth/mouth-scale-horiz-decr": 0.28,
+        "cheek/l-cheek-volume-decr": 0.288,
+        "eyes/l-eye-trans-in": 0.096,
+        "cheek/r-cheek-volume-decr": 0.288,
+        "eyes/r-eye-trans-in": 0.096,
+        "head/head-square": 0.18,
+        "mouth/mouth-angles-down": 0.45,
+        "expression/units/caucasian/eyebrows-left-down": 0.24,
+        "expression/units/caucasian/eyebrows-right-down": 0.24,
+        "expression/units/caucasian/eye-left-closure": 0.1,
+        "expression/units/caucasian/eye-right-closure": 0.1
+      },
+      "path": "Art/Characters/HumanHeads/bruiser.blend",
+      "sha256": "e27b99f44948f2448cf64b7f08a9d8afbdd9aec0693676f858a044b70465e27a",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4534,
+          "triangles": 9008
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short04/short04.mhclo",
+          "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+        },
+        {
+          "path": "hair/short04/short04.mhmat",
+          "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+        },
+        {
+          "path": "hair/short04/short04.obj",
+          "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+        },
+        {
+          "path": "hair/short04/short04_diffuse.png",
+          "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+        },
+        {
+          "path": "skins/young_caucasian_male/young_caucasian_male.mhmat",
+          "sha256": "6eda60b07ff2afbde078a2535ef3913593d84e9de92b2eb76c30f396a181fe2e"
+        },
+        {
+          "path": "skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+          "sha256": "862a26e335e958b70534cb5f0d7c47ef30ab148a56c42b3e9da969cf76f12963"
+        }
+      ]
+    },
+    {
+      "id": "eccentric",
+      "sex": "male",
+      "skin": "middleage_caucasian_male",
+      "hair": "short04",
+      "hairStyle": "receding",
+      "occlusion": {
+        "path": "Art/Characters/HumanHeads/occlusion/eccentric.png",
+        "sha256": "032748d4c836a54eb23e80f1c47f559d023fe3b3aeacf0bdad461f808758a665"
+      },
+      "blinkSources": [
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-left-closure.target.gz",
+          "sha256": "ff0d21ceb6da55fe51e03b48a7562a650924fea9bef0c686fcd7aa44d16422ed"
+        },
+        {
+          "path": "src/mpfb/data/targets/expression/units/caucasian/eye-right-closure.target.gz",
+          "sha256": "2b7be6bc65845d77e5f83b7bf852090854747e448644997795fa59b6cf76122d"
+        }
+      ],
+      "crown": 1.7431062459945679,
+      "eyeHeight": 1.6312677563357174,
+      "cut": 1.4394292666768669,
+      "targets": {
+        "head/head-scale-horiz-decr": 0.24,
+        "chin/chin-width-decr": 0.275,
+        "chin/chin-prominent-incr": 0.225,
+        "nose/nose-volume-incr": 0.32,
+        "nose/nose-scale-horiz-decr": 0.28,
+        "mouth/mouth-scale-horiz-decr": 0.2,
+        "cheek/l-cheek-volume-decr": 0.336,
+        "eyes/l-eye-trans-out": 0.032,
+        "cheek/r-cheek-volume-decr": 0.336,
+        "eyes/r-eye-trans-out": 0.032,
+        "head/head-oval": 0.2,
+        "nose/nose-curve-convex": 0.18,
+        "mouth/mouth-angles-up": 0.36,
+        "expression/units/caucasian/eye-left-closure": 0.07,
+        "expression/units/caucasian/eye-right-closure": 0.07
+      },
+      "path": "Art/Characters/HumanHeads/eccentric.blend",
+      "sha256": "90a801ad0f7f49d5127dae6f5ca08012575a456e46f82747c3e1ede0cc9f3007",
+      "meshes": [
+        {
+          "name": "HumanHead",
+          "vertices": 4530,
+          "triangles": 9000
+        },
+        {
+          "name": "HumanEyes",
+          "vertices": 1064,
+          "triangles": 2040
+        },
+        {
+          "name": "HumanBrows",
+          "vertices": 124,
+          "triangles": 192
+        },
+        {
+          "name": "HumanHair",
+          "vertices": 865,
+          "triangles": 1050
+        }
+      ],
+      "sourceFiles": [
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+          "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+          "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.obj",
+          "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513"
+        },
+        {
+          "path": "eyebrows/eyebrow001/eyebrow001.png",
+          "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.mhclo",
+          "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+        },
+        {
+          "path": "eyes/high-poly/high-poly.obj",
+          "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+        },
+        {
+          "path": "hair/short04/short04.mhclo",
+          "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157"
+        },
+        {
+          "path": "hair/short04/short04.mhmat",
+          "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97"
+        },
+        {
+          "path": "hair/short04/short04.obj",
+          "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de"
+        },
+        {
+          "path": "hair/short04/short04_diffuse.png",
+          "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+          "sha256": "113326b7670cb273610314b91e2597b228711adf5f0666660b16fef269bfbe72"
+        },
+        {
+          "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+          "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb"
+        }
+      ]
+    }
+  ]
+}

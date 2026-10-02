@@ -1,0 +1,362 @@
+{
+  "unity": "6000.3.24f1",
+  "playMode": true,
+  "scene": "Assets/JuegoDef/Scenes/CHAR/ENV01CharacterReview.unity",
+  "renderer": "Assets/JuegoDef/Rendering/JD_URP.asset",
+  "captures": [
+    {
+      "file": "plaza_player_55fov.png",
+      "station": "plaza",
+      "mode": "actual ENV player camera; checkpoint boom",
+      "fov": 55.0,
+      "position": [
+        113.012108,
+        2.61751938,
+        178.053772
+      ],
+      "rotation": [
+        16.2235622,
+        269.232147,
+        8.891818E-07
+      ],
+      "ids": [
+        "market-worker",
+        "dock-worker",
+        "older-resident",
+        "younger-resident",
+        "office-worker"
+      ]
+    },
+    {
+      "file": "plaza_conversation_market-worker.png",
+      "station": "plaza",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        110.5,
+        1.665,
+        176.5
+      ],
+      "rotation": [
+        1.34788823,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "market-worker"
+      ]
+    },
+    {
+      "file": "plaza_conversation_dock-worker.png",
+      "station": "plaza",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        110.5,
+        2.055,
+        177.25
+      ],
+      "rotation": [
+        1.34788823,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "dock-worker"
+      ]
+    },
+    {
+      "file": "plaza_conversation_older-resident.png",
+      "station": "plaza",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        110.5,
+        1.755,
+        178.0
+      ],
+      "rotation": [
+        1.34788823,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "older-resident"
+      ]
+    },
+    {
+      "file": "plaza_conversation_younger-resident.png",
+      "station": "plaza",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        110.5,
+        1.845,
+        178.75
+      ],
+      "rotation": [
+        1.34788823,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "younger-resident"
+      ]
+    },
+    {
+      "file": "plaza_conversation_office-worker.png",
+      "station": "plaza",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        110.5,
+        1.895,
+        179.5
+      ],
+      "rotation": [
+        1.34788823,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "office-worker"
+      ]
+    },
+    {
+      "file": "arco_player_55fov.png",
+      "station": "arco",
+      "mode": "actual ENV player camera; checkpoint boom",
+      "fov": 55.0,
+      "position": [
+        119.0292,
+        5.499142,
+        128.75
+      ],
+      "rotation": [
+        16.2631474,
+        82.82314,
+        1.77872175E-06
+      ],
+      "ids": [
+        "everyday-pedestrian",
+        "waiter-veteran",
+        "fishmonger",
+        "mechanic",
+        "shopkeeper"
+      ]
+    },
+    {
+      "file": "arco_conversation_everyday-pedestrian.png",
+      "station": "arco",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        121.5,
+        4.83935928,
+        128.35
+      ],
+      "rotation": [
+        1.34788823,
+        90.0,
+        -5.33756257E-08
+      ],
+      "ids": [
+        "everyday-pedestrian"
+      ]
+    },
+    {
+      "file": "arco_conversation_waiter-veteran.png",
+      "station": "arco",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        121.5,
+        4.81792831,
+        129.1
+      ],
+      "rotation": [
+        1.34788823,
+        90.0,
+        -5.33756257E-08
+      ],
+      "ids": [
+        "waiter-veteran"
+      ]
+    },
+    {
+      "file": "arco_conversation_fishmonger.png",
+      "station": "arco",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        121.5,
+        4.76182032,
+        129.85
+      ],
+      "rotation": [
+        1.34788823,
+        90.0,
+        -5.33756257E-08
+      ],
+      "ids": [
+        "fishmonger"
+      ]
+    },
+    {
+      "file": "arco_conversation_mechanic.png",
+      "station": "arco",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        121.5,
+        4.6382,
+        130.6
+      ],
+      "rotation": [
+        1.34788823,
+        90.0,
+        -5.33756257E-08
+      ],
+      "ids": [
+        "mechanic"
+      ]
+    },
+    {
+      "file": "arco_conversation_shopkeeper.png",
+      "station": "arco",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        121.5,
+        4.384498,
+        131.35
+      ],
+      "rotation": [
+        1.34788823,
+        90.0,
+        -5.33756257E-08
+      ],
+      "ids": [
+        "shopkeeper"
+      ]
+    },
+    {
+      "file": "workshop_player_55fov.png",
+      "station": "workshop",
+      "mode": "actual ENV player camera; checkpoint boom",
+      "fov": 55.0,
+      "position": [
+        57.9708061,
+        8.012853,
+        84.5
+      ],
+      "rotation": [
+        16.2631378,
+        262.823151,
+        -8.89360763E-07
+      ],
+      "ids": [
+        "elder-woman",
+        "student",
+        "local-fan",
+        "bruiser",
+        "eccentric"
+      ]
+    },
+    {
+      "file": "workshop_conversation_elder-woman.png",
+      "station": "workshop",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        55.5,
+        7.216033,
+        82.5
+      ],
+      "rotation": [
+        1.34788549,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "elder-woman"
+      ]
+    },
+    {
+      "file": "workshop_conversation_student.png",
+      "station": "workshop",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        55.5,
+        7.1838336,
+        83.25
+      ],
+      "rotation": [
+        1.34788549,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "student"
+      ]
+    },
+    {
+      "file": "workshop_conversation_local-fan.png",
+      "station": "workshop",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        55.5,
+        7.14733362,
+        84.0
+      ],
+      "rotation": [
+        1.34788549,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "local-fan"
+      ]
+    },
+    {
+      "file": "workshop_conversation_bruiser.png",
+      "station": "workshop",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        55.5,
+        7.190833,
+        84.75
+      ],
+      "rotation": [
+        1.34788549,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "bruiser"
+      ]
+    },
+    {
+      "file": "workshop_conversation_eccentric.png",
+      "station": "workshop",
+      "mode": "conversation; same camera and scene lighting",
+      "fov": 55.0,
+      "position": [
+        55.5,
+        7.099167,
+        85.5
+      ],
+      "rotation": [
+        1.34788549,
+        270.0,
+        5.33756257E-08
+      ],
+      "ids": [
+        "eccentric"
+      ]
+    }
+  ]
+}

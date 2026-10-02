@@ -1,0 +1,80 @@
+{
+  "method": "Two independent Blender factory-reset batch builds; hash includes mesh positions/topology/UV layers/smooth flags/material slots/weights, complete blend-shape coordinates and rest bone matrices. FBX timestamps and polygon enumeration/start-corner order excluded; winding preserved.",
+  "variants": [
+    {
+      "id": "market-worker",
+      "semanticSha256": "5facecaf22bcf3c2fc3f2149c22e8b0eed84ef6fbc8fad9810fe80264a70e926",
+      "match": true
+    },
+    {
+      "id": "dock-worker",
+      "semanticSha256": "ed4b532d3acf30b99648c25a147dfa0ae16bc490b2c9b82338e3f892f9f52df1",
+      "match": true
+    },
+    {
+      "id": "older-resident",
+      "semanticSha256": "f5e85ae8b94c1e6e7eb65a93ccd5f84a0c2cafff779d2009854e501dc50a0868",
+      "match": true
+    },
+    {
+      "id": "younger-resident",
+      "semanticSha256": "327452c926efae623b6c8ca95e63204ee4e73d5e23bbe39e91934730859e967e",
+      "match": true
+    },
+    {
+      "id": "office-worker",
+      "semanticSha256": "9097dfba2b75998d3cb2147fce299e56b7a317be866ce27b27e92032fb2c63f5",
+      "match": true
+    },
+    {
+      "id": "everyday-pedestrian",
+      "semanticSha256": "3ed46b75721cd55d92c43d1357cddd22e48c0708e5b485710301ca97064ef883",
+      "match": true
+    },
+    {
+      "id": "waiter-veteran",
+      "semanticSha256": "deb01aac830dde19e26d1bb2ba7549b186b712519b0228ec82f95e59e3ef43a1",
+      "match": true
+    },
+    {
+      "id": "fishmonger",
+      "semanticSha256": "1581148e8caf1cf6d0434101f5563eb40b90fd00dac597a3dfbb471a0170dff8",
+      "match": true
+    },
+    {
+      "id": "mechanic",
+      "semanticSha256": "7996b853f6c875a1e9cedfbc8f66eda4fc39ca4e318ae8dd174ebe10823a7487",
+      "match": true
+    },
+    {
+      "id": "shopkeeper",
+      "semanticSha256": "cef87e8d117c15eb67a38d39eb31f5af456164948b7bc95156c7c1ed37e6d8b8",
+      "match": true
+    },
+    {
+      "id": "elder-woman",
+      "semanticSha256": "62bf1d7ff22d3215e7e5bd5ab96c7dc5172a8d97f3e5bbeaea5b410ee3ac0ae8",
+      "match": true
+    },
+    {
+      "id": "student",
+      "semanticSha256": "e3fd4878d243e0bc486e3f6e5dcbf7331b0919b63fc021793c9134a8279aaa70",
+      "match": true
+    },
+    {
+      "id": "local-fan",
+      "semanticSha256": "ee75808c30e6a72de77ec9a35b7f35952c770b218b58300371c29bfec12e4aa8",
+      "match": true
+    },
+    {
+      "id": "bruiser",
+      "semanticSha256": "573ab5e624f9b597b4e3ea481922b44a3e739680b5c845e613675949be447669",
+      "match": true
+    },
+    {
+      "id": "eccentric",
+      "semanticSha256": "1ada80aecf3fe68c4005c06837222ccbfb69b5d51d1381125e52512bf798f6a8",
+      "match": true
+    }
+  ]
+}

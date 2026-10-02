@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: char_bruiser
+  m_Controller: {fileID: 9100000, guid: 7529cd02507b5b04db59bd8464682618, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3f879bc0c3478f043b18c41e2ac14b78, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 691639cb3f20cf74b9015e6d0c2daea5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e9741ad5a1543f24e95b6dd7c413e4ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 63d470a019f1ccf46b3573f5503a2a05, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e2da34ad5a7751143845afdeca299cc8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e7b415e6ff0ef9648a0c67d758e97bcf, type: 2}

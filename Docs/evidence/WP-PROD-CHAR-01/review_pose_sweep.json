@@ -1,0 +1,1627 @@
+{
+    "unity": "6000.3.24f1",
+    "variants": 15,
+    "problems": [],
+    "samples": [
+        {
+            "id": "market-worker",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.031413257122039798,
+            "height": 1.5635557174682618,
+            "width": 0.49878183007240298,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.029135823249816896,
+            "height": 1.5513278245925904,
+            "width": 0.49767962098121645,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.030340969562530519,
+            "height": 1.5624985694885255,
+            "width": 0.49788206815719607,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.029156744480133058,
+            "height": 1.551374912261963,
+            "width": 0.4977710247039795,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.036871910095214847,
+            "height": 1.55509614944458,
+            "width": 0.4931533932685852,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.0097847580909729,
+            "height": 1.5601286888122559,
+            "width": 0.5106317400932312,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.040775835514068606,
+            "height": 1.5579140186309815,
+            "width": 0.49299871921539309,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.004845917224884033,
+            "height": 1.5447437763214112,
+            "width": 0.5105968713760376,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.035345256328582767,
+            "height": 1.5625343322753907,
+            "width": 0.5115649104118347,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.032948970794677737,
+            "height": 1.5551319122314454,
+            "width": 0.49514061212539675,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03445857763290405,
+            "height": 1.5629866123199463,
+            "width": 0.5012958645820618,
+            "finite": true
+        },
+        {
+            "id": "market-worker",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03149557113647461,
+            "height": 1.5544973611831666,
+            "width": 0.5065679550170898,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.037832438945770267,
+            "height": 1.9774103164672852,
+            "width": 0.7596810460090637,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.03579854965209961,
+            "height": 1.9626871347427369,
+            "width": 0.7225850820541382,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03643953800201416,
+            "height": 1.976096749305725,
+            "width": 0.7597749829292297,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03582388162612915,
+            "height": 1.9627087116241456,
+            "width": 0.7225630879402161,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.03184992074966431,
+            "height": 1.9555978775024415,
+            "width": 0.7830013632774353,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.010892033576965332,
+            "height": 1.979614019393921,
+            "width": 0.8080762624740601,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.026641011238098146,
+            "height": 1.9500929117202759,
+            "width": 0.775094747543335,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.006415367126464844,
+            "height": 1.9629251956939698,
+            "width": 0.8069489598274231,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.040731608867645267,
+            "height": 1.9807770252227784,
+            "width": 0.7503780126571655,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03915208578109741,
+            "height": 1.9741787910461426,
+            "width": 0.7333950996398926,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.040539562702178958,
+            "height": 1.9828734397888184,
+            "width": 0.7375985980033875,
+            "finite": true
+        },
+        {
+            "id": "dock-worker",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.04002797603607178,
+            "height": 1.9737175703048707,
+            "width": 0.7421932816505432,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.03032749891281128,
+            "height": 1.6474583148956299,
+            "width": 0.6915421485900879,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.021800458431243898,
+            "height": 1.630589246749878,
+            "width": 0.6579035520553589,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.032332658767700198,
+            "height": 1.643008828163147,
+            "width": 0.6833661198616028,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03236156702041626,
+            "height": 1.6360094547271729,
+            "width": 0.6543784141540527,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.018816649913787843,
+            "height": 1.6220030784606934,
+            "width": 0.6150031089782715,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.008265256881713868,
+            "height": 1.6473921537399293,
+            "width": 0.6353781223297119,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.019708991050720216,
+            "height": 1.6224488019943238,
+            "width": 0.6094579696655273,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.004540145397186279,
+            "height": 1.6345858573913575,
+            "width": 0.6349263191223145,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.041101694107055667,
+            "height": 1.6539998054504395,
+            "width": 0.6057108044624329,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03975224494934082,
+            "height": 1.6474545001983643,
+            "width": 0.5922963619232178,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.04110032320022583,
+            "height": 1.6560895442962647,
+            "width": 0.5969621539115906,
+            "finite": true
+        },
+        {
+            "id": "older-resident",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.040654122829437259,
+            "height": 1.6494600772857667,
+            "width": 0.6000134348869324,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.03351151943206787,
+            "height": 1.735565185546875,
+            "width": 0.591936469078064,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.032523930072784427,
+            "height": 1.7238478660583497,
+            "width": 0.5596591830253601,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.0323333740234375,
+            "height": 1.7344030141830445,
+            "width": 0.5919485688209534,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03254222869873047,
+            "height": 1.7239643335342408,
+            "width": 0.5596203804016113,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.027094364166259767,
+            "height": 1.7153393030166627,
+            "width": 0.602296769618988,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.01039278507232666,
+            "height": 1.737892985343933,
+            "width": 0.6224396228790283,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.022104918956756593,
+            "height": 1.710064172744751,
+            "width": 0.598713219165802,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.003764808177947998,
+            "height": 1.7233552932739258,
+            "width": 0.6221224069595337,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03288906812667847,
+            "height": 1.7333812713623047,
+            "width": 0.6118350028991699,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03188556432723999,
+            "height": 1.726684331893921,
+            "width": 0.5948771238327026,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03268420696258545,
+            "height": 1.7340964078903199,
+            "width": 0.6008253693580627,
+            "finite": true
+        },
+        {
+            "id": "younger-resident",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03253656625747681,
+            "height": 1.7278356552124024,
+            "width": 0.6047412157058716,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.03349560499191284,
+            "height": 1.8004581928253174,
+            "width": 0.644397497177124,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.041947007179260257,
+            "height": 1.7990981340408326,
+            "width": 0.6314067840576172,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03393447399139404,
+            "height": 1.7908422946929932,
+            "width": 0.6242339015007019,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.026185452938079835,
+            "height": 1.7803516387939454,
+            "width": 0.6262131929397583,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.04066586494445801,
+            "height": 1.7928104400634766,
+            "width": 0.6016641855239868,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.013811230659484864,
+            "height": 1.8051553964614869,
+            "width": 0.601842999458313,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.04257643222808838,
+            "height": 1.793729305267334,
+            "width": 0.5867841243743897,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.004620254039764404,
+            "height": 1.7859396934509278,
+            "width": 0.6046526432037354,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03805530071258545,
+            "height": 1.8020355701446534,
+            "width": 0.6048116683959961,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03583592176437378,
+            "height": 1.7935307025909424,
+            "width": 0.589553713798523,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03695160150527954,
+            "height": 1.8022136688232422,
+            "width": 0.610552191734314,
+            "finite": true
+        },
+        {
+            "id": "office-worker",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03416663408279419,
+            "height": 1.7925126552581788,
+            "width": 0.6127394437789917,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.038250863552093509,
+            "height": 1.6673543453216553,
+            "width": 0.5169503092765808,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.03601187467575073,
+            "height": 1.6543867588043213,
+            "width": 0.5104109048843384,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.036992788314819339,
+            "height": 1.6660921573638917,
+            "width": 0.5163094997406006,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.036029279232025149,
+            "height": 1.6544277667999268,
+            "width": 0.5103983879089356,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.0397723913192749,
+            "height": 1.6539031267166138,
+            "width": 0.5217134952545166,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.010492086410522461,
+            "height": 1.6599739789962769,
+            "width": 0.5196366310119629,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.041162848472595218,
+            "height": 1.6544418334960938,
+            "width": 0.5213094353675842,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.0021191835403442384,
+            "height": 1.646385669708252,
+            "width": 0.5190511345863342,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03953272104263306,
+            "height": 1.6638007164001465,
+            "width": 0.5176873207092285,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03722715377807617,
+            "height": 1.6557717323303223,
+            "width": 0.5181890726089478,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.038535356521606448,
+            "height": 1.663720726966858,
+            "width": 0.5120623707771301,
+            "finite": true
+        },
+        {
+            "id": "everyday-pedestrian",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03559219837188721,
+            "height": 1.6553138494491578,
+            "width": 0.5156658291816711,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.025316715240478517,
+            "height": 1.7354017496109009,
+            "width": 0.5907344222068787,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.023892998695373536,
+            "height": 1.7223871946334839,
+            "width": 0.5724950432777405,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.024937093257904054,
+            "height": 1.7350897789001465,
+            "width": 0.5908359885215759,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.023910701274871827,
+            "height": 1.7223589420318604,
+            "width": 0.5724636912345886,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.023549199104309083,
+            "height": 1.7192530632019044,
+            "width": 0.6047548651695252,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.009547591209411621,
+            "height": 1.7432827949523926,
+            "width": 0.6247748732566834,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.02253812551498413,
+            "height": 1.7177972793579102,
+            "width": 0.600346565246582,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.005544841289520264,
+            "height": 1.728219747543335,
+            "width": 0.624157190322876,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.037740886211395267,
+            "height": 1.7446904182434083,
+            "width": 0.603053629398346,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.0364682674407959,
+            "height": 1.7393890619277955,
+            "width": 0.585484504699707,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03766500949859619,
+            "height": 1.7471355199813843,
+            "width": 0.5915229916572571,
+            "finite": true
+        },
+        {
+            "id": "waiter-veteran",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03732329607009888,
+            "height": 1.7392582893371583,
+            "width": 0.5968116521835327,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.036019325256347659,
+            "height": 1.7824769020080567,
+            "width": 0.5310431718826294,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.033711910247802737,
+            "height": 1.7707996368408204,
+            "width": 0.5232125520706177,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.029800117015838624,
+            "height": 1.776172161102295,
+            "width": 0.5310617089271545,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03375118970870972,
+            "height": 1.770965814590454,
+            "width": 0.5232147574424744,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.02810269594192505,
+            "height": 1.7612407207489014,
+            "width": 0.6645030379295349,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.009449779987335205,
+            "height": 1.7827863693237305,
+            "width": 0.685340940952301,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.023692846298217775,
+            "height": 1.7566299438476563,
+            "width": 0.6593979597091675,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.005607724189758301,
+            "height": 1.7682031393051148,
+            "width": 0.6844225525856018,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03594350814819336,
+            "height": 1.7831649780273438,
+            "width": 0.6559739708900452,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03463512659072876,
+            "height": 1.7774665355682374,
+            "width": 0.6353934407234192,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.035781145095825198,
+            "height": 1.7850635051727296,
+            "width": 0.6404532790184021,
+            "finite": true
+        },
+        {
+            "id": "fishmonger",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03541070222854614,
+            "height": 1.7771599292755128,
+            "width": 0.6482322216033936,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.036718666553497317,
+            "height": 1.7521841526031495,
+            "width": 0.532922089099884,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.034470558166503909,
+            "height": 1.744710922241211,
+            "width": 0.5197962522506714,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03563570976257324,
+            "height": 1.7527766227722169,
+            "width": 0.5264155864715576,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03416484594345093,
+            "height": 1.7445857524871827,
+            "width": 0.528369128704071,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.039492130279541019,
+            "height": 1.7432305812835694,
+            "width": 0.49322301149368288,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.012227118015289307,
+            "height": 1.7537758350372315,
+            "width": 0.5160329341888428,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.04202401638031006,
+            "height": 1.7448731660842896,
+            "width": 0.4915875196456909,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.0031259655952453615,
+            "height": 1.7382621765136719,
+            "width": 0.5149132609367371,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03796267509460449,
+            "height": 1.753434658050537,
+            "width": 0.5329779982566834,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.035714566707611087,
+            "height": 1.745948314666748,
+            "width": 0.5198571681976318,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.036882638931274417,
+            "height": 1.754035234451294,
+            "width": 0.5264816880226135,
+            "finite": true
+        },
+        {
+            "id": "mechanic",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03409034013748169,
+            "height": 1.7445313930511475,
+            "width": 0.5284460783004761,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.03802978992462158,
+            "height": 1.6333096027374268,
+            "width": 0.47476619482040408,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.035510122776031497,
+            "height": 1.6194252967834473,
+            "width": 0.44994908571243288,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03674584627151489,
+            "height": 1.6320765018463135,
+            "width": 0.47498905658721926,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03552567958831787,
+            "height": 1.619404911994934,
+            "width": 0.45007434487342837,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.03843116760253906,
+            "height": 1.6191983222961426,
+            "width": 0.4693031311035156,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.009304940700531006,
+            "height": 1.6241459846496583,
+            "width": 0.4867507219314575,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.0386810302734375,
+            "height": 1.6186786890029908,
+            "width": 0.4701179563999176,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.002463817596435547,
+            "height": 1.6117780208587647,
+            "width": 0.48731690645217898,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03868567943572998,
+            "height": 1.6293774843215943,
+            "width": 0.496324360370636,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03631877899169922,
+            "height": 1.621882438659668,
+            "width": 0.4818916320800781,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03786689043045044,
+            "height": 1.6302900314331055,
+            "width": 0.4869775176048279,
+            "finite": true
+        },
+        {
+            "id": "shopkeeper",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.0348474383354187,
+            "height": 1.6203935146331788,
+            "width": 0.4917184114456177,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.034557342529296878,
+            "height": 1.5486849546432496,
+            "width": 0.5696746706962586,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.032417356967926028,
+            "height": 1.5357913970947266,
+            "width": 0.5703675150871277,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03575444221496582,
+            "height": 1.5499364137649537,
+            "width": 0.5712103247642517,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.032482922077178958,
+            "height": 1.5358214378356934,
+            "width": 0.5703448057174683,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.03209155797958374,
+            "height": 1.5304534435272217,
+            "width": 0.5856401920318604,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.008962690830230713,
+            "height": 1.5391404628753663,
+            "width": 0.5817445516586304,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.03635531663894653,
+            "height": 1.5340290069580079,
+            "width": 0.5979194641113281,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": -0.0005279779434204102,
+            "height": 1.5299955606460572,
+            "width": 0.5898513793945313,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.038081467151641849,
+            "height": 1.5445141792297364,
+            "width": 0.5900202989578247,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.036222755908966067,
+            "height": 1.537856101989746,
+            "width": 0.5914090275764465,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03749805688858032,
+            "height": 1.546248197555542,
+            "width": 0.5902665853500366,
+            "finite": true
+        },
+        {
+            "id": "elder-woman",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03655487298965454,
+            "height": 1.5391511917114258,
+            "width": 0.5924485325813294,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.03915607929229736,
+            "height": 1.689549207687378,
+            "width": 0.4827020764350891,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.03744298219680786,
+            "height": 1.6765649318695069,
+            "width": 0.4515659213066101,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03795671463012695,
+            "height": 1.6883713006973267,
+            "width": 0.48295748233795168,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.03746020793914795,
+            "height": 1.6765795946121216,
+            "width": 0.4516696631908417,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.03925216197967529,
+            "height": 1.6749833822250367,
+            "width": 0.47923994064331057,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.011439800262451172,
+            "height": 1.6833717823028565,
+            "width": 0.5012733936309815,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.03911304473876953,
+            "height": 1.6741185188293458,
+            "width": 0.4774327278137207,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.0013805627822875977,
+            "height": 1.6696900129318238,
+            "width": 0.5001102685928345,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.0396120548248291,
+            "height": 1.6860074996948243,
+            "width": 0.5142793655395508,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.037446439266204837,
+            "height": 1.678056001663208,
+            "width": 0.4998018741607666,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03857654333114624,
+            "height": 1.685987949371338,
+            "width": 0.5059446096420288,
+            "finite": true
+        },
+        {
+            "id": "student",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03580355644226074,
+            "height": 1.6768474578857422,
+            "width": 0.5077513456344605,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.024047493934631349,
+            "height": 1.7444175481796265,
+            "width": 0.7600073218345642,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.02812594175338745,
+            "height": 1.7357330322265626,
+            "width": 0.7343775629997253,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.026642799377441407,
+            "height": 1.7346835136413575,
+            "width": 0.7502621412277222,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.026907265186309816,
+            "height": 1.7364411354064942,
+            "width": 0.7339063286781311,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.024657368659973146,
+            "height": 1.732430338859558,
+            "width": 0.694165050983429,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.009391248226165772,
+            "height": 1.7563698291778565,
+            "width": 0.7153379321098328,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.024265646934509279,
+            "height": 1.7316193580627442,
+            "width": 0.687934160232544,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.006715953350067139,
+            "height": 1.7405712604522706,
+            "width": 0.7149558067321777,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.0418471097946167,
+            "height": 1.7624655961990357,
+            "width": 0.6619057655334473,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.04035305976867676,
+            "height": 1.757066249847412,
+            "width": 0.646953284740448,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.041622161865234378,
+            "height": 1.7643413543701172,
+            "width": 0.6511636972427368,
+            "finite": true
+        },
+        {
+            "id": "local-fan",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.04115384817123413,
+            "height": 1.7557077407836915,
+            "width": 0.6554341912269592,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.03492319583892822,
+            "height": 1.887490153312683,
+            "width": 0.6289409399032593,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.032490551471710208,
+            "height": 1.874847650527954,
+            "width": 0.6190722584724426,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.03280705213546753,
+            "height": 1.8853206634521485,
+            "width": 0.628962516784668,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.032531023025512698,
+            "height": 1.8750572204589844,
+            "width": 0.6190762519836426,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.0316159725189209,
+            "height": 1.869566798210144,
+            "width": 0.7744624614715576,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.010639607906341553,
+            "height": 1.8916122913360596,
+            "width": 0.7981500625610352,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.02659839391708374,
+            "height": 1.864171028137207,
+            "width": 0.7668024301528931,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.007633805274963379,
+            "height": 1.873450756072998,
+            "width": 0.7971916198730469,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.03654700517654419,
+            "height": 1.8889060020446778,
+            "width": 0.7491116523742676,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.03513973951339722,
+            "height": 1.8818495273590088,
+            "width": 0.7318274974822998,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.03641068935394287,
+            "height": 1.8906015157699586,
+            "width": 0.7350732684135437,
+            "finite": true
+        },
+        {
+            "id": "bruiser",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.03601580858230591,
+            "height": 1.882230281829834,
+            "width": 0.7401506900787354,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Idle",
+            "phase": 0.0,
+            "minY": -0.05256938934326172,
+            "height": 1.9411933422088624,
+            "width": 0.6689400672912598,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Idle",
+            "phase": 0.25,
+            "minY": -0.0512087345123291,
+            "height": 1.9362021684646607,
+            "width": 0.652123212814331,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Idle",
+            "phase": 0.5,
+            "minY": -0.05238312482833862,
+            "height": 1.9449362754821778,
+            "width": 0.6574053168296814,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Idle",
+            "phase": 0.75,
+            "minY": -0.052020370960235599,
+            "height": 1.9357268810272217,
+            "width": 0.6612169146537781,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Walk",
+            "phase": 0.0,
+            "minY": -0.01899564266204834,
+            "height": 1.8929780721664429,
+            "width": 0.6588699817657471,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Walk",
+            "phase": 0.25,
+            "minY": -0.01005786657333374,
+            "height": 1.9277632236480713,
+            "width": 0.684165894985199,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Walk",
+            "phase": 0.5,
+            "minY": -0.018386363983154298,
+            "height": 1.8926137685775757,
+            "width": 0.6542928814888,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Walk",
+            "phase": 0.75,
+            "minY": 0.004225313663482666,
+            "height": 1.9149301052093506,
+            "width": 0.6833008527755737,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Talking",
+            "phase": 0.0,
+            "minY": -0.04564499855041504,
+            "height": 1.9346845149993897,
+            "width": 0.6691173315048218,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Talking",
+            "phase": 0.25,
+            "minY": -0.04437929391860962,
+            "height": 1.9296605587005616,
+            "width": 0.6523295640945435,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Talking",
+            "phase": 0.5,
+            "minY": -0.045600175857543948,
+            "height": 1.9386495351791382,
+            "width": 0.6575055122375488,
+            "finite": true
+        },
+        {
+            "id": "eccentric",
+            "motion": "Talking",
+            "phase": 0.75,
+            "minY": -0.04529774188995361,
+            "height": 1.9295858144760132,
+            "width": 0.6613157987594605,
+            "finite": true
+        }
+    ]
+}

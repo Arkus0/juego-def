@@ -1,0 +1,98 @@
+{
+  "playMode": true,
+  "canonicalPlayer": "Player",
+  "variants": 15,
+  "rows": [
+    {
+      "id": "market-worker",
+      "left": -10.0,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "dock-worker",
+      "left": -10.0,
+      "right": 9.179567,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "older-resident",
+      "left": -9.926932,
+      "right": 9.429686,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "younger-resident",
+      "left": -10.0,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "office-worker",
+      "left": -10.0,
+      "right": 9.541824,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "everyday-pedestrian",
+      "left": -10.0,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "waiter-veteran",
+      "left": -8.777945,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "fishmonger",
+      "left": -8.996478,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "mechanic",
+      "left": -9.08809948,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "shopkeeper",
+      "left": -8.938806,
+      "right": 10.0,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "elder-woman",
+      "left": -10.0,
+      "right": 9.300178,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "student",
+      "left": -10.0,
+      "right": 9.532784,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "local-fan",
+      "left": -10.0,
+      "right": 9.547788,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "bruiser",
+      "left": -10.0,
+      "right": 9.512922,
+      "usesOptionalTarget": false
+    },
+    {
+      "id": "eccentric",
+      "left": -10.0,
+      "right": 9.092229,
+      "usesOptionalTarget": false
+    }
+  ],
+  "note": "The existing GC2 ShortcutPlayer authority; temporary Play Mode player placement is restored; no new player or movement authority."
+}

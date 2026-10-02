@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 2,
+  "rig": "Quaternius universal 65 bones; Unity Humanoid required on derived FBX",
+  "bodies": [
+    {
+      "id": "regular_male",
+      "source": "base:regular_male_fullbody",
+      "reuse": "CREATE_DERIVED",
+      "garments": [
+        "sweater",
+        "cardigan",
+        "hoodie",
+        "light_coat",
+        "tshirt",
+        "shirt",
+        "shop_coat",
+        "jersey"
+      ],
+      "hair": [
+        "hair_balding",
+        "hair_buzzed",
+        "hair_slickback",
+        "hair_simpleparted"
+      ],
+      "donor": "outfits:male_peasant",
+      "nativeHeight": 1.81008,
+      "profiles": [
+        "tall_heavy",
+        "older_compact",
+        "young_slim"
+      ],
+      "workDonor": true,
+      "bottoms": [
+        "straight",
+        "work",
+        "skirt",
+        "long_skirt",
+        "overalls"
+      ],
+      "facial": [
+        "beard",
+        "moustache",
+        "muttonchops"
+      ],
+      "brows": [
+        "thick"
+      ],
+      "handScale": 0.92
+    },
+    {
+      "id": "regular_female",
+      "source": "base:regular_female_fullbody",
+      "reuse": "CREATE_DERIVED",
+      "garments": [
+        "sweater",
+        "cardigan",
+        "hoodie",
+        "light_coat",
+        "tshirt",
+        "shirt",
+        "shop_coat",
+        "jersey"
+      ],
+      "hair": [
+        "hair_bob",
+        "hair_buns",
+        "hair_ponytail",
+        "hair_ponytail_2",
+        "hair_long",
+        "hair_buzzedfemale"
+      ],
+      "donor": "outfits:female_peasant",
+      "nativeHeight": 1.76642,
+      "profiles": [
+        "short_stocky",
+        "tall_slim",
+        "adult_medium"
+      ],
+      "workDonor": true,
+      "bottoms": [
+        "straight",
+        "work",
+        "skirt",
+        "long_skirt",
+        "overalls"
+      ],
+      "facial": [],
+      "brows": [],
+      "handScale": 1.0
+    },
+    {
+      "id": "superhero_male",
+      "source": "base:superhero_male_fullbody",
+      "reuse": "CREATE_DERIVED",
+      "garments": [
+        "sweater",
+        "cardigan",
+        "hoodie",
+        "light_coat",
+        "tshirt",
+        "shirt",
+        "shop_coat",
+        "jersey"
+      ],
+      "hair": [
+        "hair_balding",
+        "hair_buzzed",
+        "hair_slickback",
+        "hair_simpleparted"
+      ],
+      "facial": [
+        "beard",
+        "moustache",
+        "muttonchops"
+      ],
+      "brows": [
+        "thick"
+      ],
+      "donor": "outfits:male_peasant",
+      "refitDonor": true,
+      "workDonor": false,
+      "bottoms": [
+        "straight",
+        "overalls"
+      ],
+      "nativeHeight": 1.81008,
+      "profiles": [],
+      "note": "Broad musculature (chest +20% vs Regular). Rest skeleton differs up to 24 mm in the legs: donor footwear is refit through its own bone weights (bounded 35 mm), trousers derive from the body. 2026-09-30 art QA: its gym sculpt (lats, deltoids, arm mass) breaks the cast anatomy language; build broad men on regular_male with shoulders/neckScale/armGirth instead.",
+      "handScale": 0.9,
+      "civilianUse": "NOT_FOR_CIVILIANS"
+    },
+    {
+      "id": "superhero_female",
+      "source": "base:superhero_female_fullbody",
+      "reuse": "CREATE_DERIVED",
+      "garments": [
+        "sweater",
+        "cardigan",
+        "hoodie",
+        "light_coat",
+        "tshirt",
+        "shirt",
+        "shop_coat",
+        "jersey"
+      ],
+      "hair": [
+        "hair_bob",
+        "hair_buns",
+        "hair_ponytail",
+        "hair_ponytail_2",
+        "hair_long",
+        "hair_buzzedfemale"
+      ],
+      "facial": [],
+      "brows": [],
+      "donor": "outfits:female_peasant",
+      "workDonor": false,
+      "bottoms": [
+        "straight",
+        "skirt",
+        "long_skirt",
+        "overalls"
+      ],
+      "nativeHeight": 1.76664,
+      "profiles": [],
+      "note": "Athletic build, fuller hips/thighs. Rest skeleton identical to Regular Female (0 mm) so donor footwear is direct; trousers derive from the body.",
+      "handScale": 1.0
+    }
+  ],
+  "wardrobe": [
+    {
+      "id": "bodytopo_tops",
+      "reuse": "CREATE_DERIVED",
+      "assumption": "Body-derived topology and inherited weights; covered body removed with overlapping cuff/neck seams.",
+      "unitySafe": [
+        "palette selection",
+        "uniform whole-character scale"
+      ],
+      "sourceNeeds": [
+        "body-topology fitting and shared weight inheritance",
+        "thin double-sided surfaces; never coincident inner shells",
+        "covered-body masks and layered-cloth masks",
+        "existing rig anatomical warp applied equally to meshes and bones"
+      ],
+      "failures": [
+        "unsupported body family",
+        "neck/cuff holes",
+        "visible body under fabric"
+      ],
+      "animation": "Accepted ANIM-01 idle_loop, walk_loop, idle_talking_loop; four phases and three views on all six seed prefabs."
+    },
+    {
+      "id": "peasant_lower",
+      "reuse": "ADAPTABLE",
+      "assumption": "Matching Regular rest skeleton: 65 bones and rest-head delta below 0.1 mm. Work trouser hems and five footwear cuts derive from the matching Peasant donor.",
+      "unitySafe": [
+        "palette selection"
+      ],
+      "sourceNeeds": [
+        "remove upper boot cuffs",
+        "extend trouser hems",
+        "check identical rest skeleton before rebind"
+      ],
+      "failures": [
+        "wrong body/sex/rest rig",
+        "ankle gap",
+        "calf deformation"
+      ],
+      "animation": "Same final prefab pose sweep as tops"
+    },
+    {
+      "id": "source_hair",
+      "reuse": "ADAPTABLE",
+      "assumption": "Origin-at-zero mesh normalized to world coordinates, weighted rigidly to Head. Explicit body compatibility list.",
+      "unitySafe": [
+        "hair tint"
+      ],
+      "sourceNeeds": [
+        "normalize world geometry",
+        "rotate Origin-at-zero hair 180 degrees about Blender Z to match rigged body",
+        "bind to Head preserving rest coordinates",
+        "apply same anatomical/head warp"
+      ],
+      "failures": [
+        "teen/adult mismatch",
+        "sex-specific scalp fit",
+        "hair through collar"
+      ],
+      "animation": "Head remains attached under humanoid retarget"
+    },
+    {
+      "id": "accessories",
+      "reuse": "CREATE_DERIVED",
+      "allowed": [
+        "apron",
+        "work_vest",
+        "glasses",
+        "backpack",
+        "shoulder_bag",
+        "watch",
+        "cap"
+      ],
+      "assumption": "Actual outer vest, apron bib/waist/pocket/straps, rigid glasses/bags/cap/watch, weighted straps. Body/cloth masks and weights belong to shared garment recipes, never hand-corrected per exported NPC.",
+      "unitySafe": [
+        "palette selection"
+      ],
+      "sourceNeeds": [
+        "source topology fitting",
+        "pose sweep"
+      ],
+      "failures": [
+        "vest over incompatible top",
+        "apron through hips",
+        "glasses fit"
+      ],
+      "animation": "Idle/walk/talking posed inspection required. No sitting, running, crouching or extreme gesture admission."
+    },
+    {
+      "id": "knee_skirt",
+      "reuse": "CREATE_DERIVED",
+      "assumption": "Knee-length gently pleated ring surface hung from the pelvis, visible lower-leg mask; no cloth simulation.",
+      "failures": [
+        "long/narrow skirt crossing knees",
+        "leg exposure above masked overlap"
+      ],
+      "animation": "Same three-motion seed sweep; no extreme movement admission."
+    }
+  ],
+  "rejected": [
+    {
+      "combination": "full body plus unmasked outfit",
+      "reason": "Vendor readme and real donor probe: body protrudes through clothing. Factory always removes covered body."
+    },
+    {
+      "combination": "teen/superhero with Regular garments",
+      "reason": "Rest/proportion fit not admitted. Reject before export; no silent scale substitution."
+    },
+    {
+      "combination": "unchanged Peasant/Ranger as final civilian",
+      "reason": "Tunic/corset/hood/armour silhouette contradicts B0 ordinary civilian brief."
+    },
+    {
+      "combination": "work_vest with tshirt/cardigan/shirt",
+      "reason": "Only sweater-under-vest recipe has a covered fit path."
+    },
+    {
+      "combination": "flattened body-topology garment with baked inner Solidify shell",
+      "reason": "Coincident inner/outer surfaces produced patchy z-fighting. Shared garment path removes static inner shell and uses double-sided URP cloth."
+    },
+    {
+      "combination": "apron lower panel using nearest thigh weights",
+      "reason": "Walk split and folded the work apron. Shared apron pattern now has a continuous pelvis-hung draped panel, long hem and a front pocket; no per-NPC mesh fix."
+    },
+    {
+      "combination": "inner shirt flattened beyond outer cardigan/coat",
+      "reason": "Front layers intersected and side panels became corrugated. Shared fitting preserves parallel body-derived layers with measured offsets and clean opening cuts."
+    }
+  ],
+  "limits": {
+    "heightMin": 1.5,
+    "heightMax": 1.95
+  },
+  "validationBoundary": "Only testedCombinations have retained fit evidence. Selecting admitted component families permits AUTHORING, not automatic fit admission of their Cartesian product. Every new combination needs runtime capture/identity and visual review before population use. 2026-09-30 Owner correction: all fifteen listed combinations have current Play-Mode evidence (180 samples, 60 sheets), repeated Blender/Unity builds and 1,080 dense safety poses. See Docs/evidence/WP-PROD-CHAR-01/correction_2026-09-30/INFORME.md for visual limitations. No independent PASS or Owner subjective acceptance is issued.",
+  "testedCombinations": [
+    {
+      "id": "market-worker",
+      "body": "regular_female",
+      "top": "sweater",
+      "bottom": "work",
+      "hair": "hair_buns",
+      "accessory": "apron",
+      "profile": "short_stocky",
+      "footwear": "work_shoes",
+      "headwear": "none",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ],
+      "skin": "fair"
+    },
+    {
+      "id": "dock-worker",
+      "body": "regular_male",
+      "top": "sweater",
+      "bottom": "work",
+      "hair": "hair_buzzed",
+      "accessory": "work_vest",
+      "profile": "tall_heavy",
+      "footwear": "work_boots",
+      "headwear": "cap",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ],
+      "skin": "weathered"
+    },
+    {
+      "id": "older-resident",
+      "body": "regular_male",
+      "top": "cardigan",
+      "bottom": "straight",
+      "hair": "hair_balding",
+      "accessory": "glasses",
+      "profile": "older_compact",
+      "footwear": "loafers",
+      "headwear": "none",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ],
+      "skin": "pale"
+    },
+    {
+      "id": "younger-resident",
+      "body": "regular_male",
+      "top": "hoodie",
+      "bottom": "straight",
+      "hair": "hair_buzzed",
+      "accessory": "backpack",
+      "profile": "young_slim",
+      "footwear": "trainers",
+      "headwear": "none",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ],
+      "skin": "olive"
+    },
+    {
+      "id": "office-worker",
+      "body": "regular_female",
+      "top": "light_coat",
+      "bottom": "straight",
+      "hair": "hair_bob",
+      "accessory": "shoulder_bag",
+      "profile": "tall_slim",
+      "footwear": "loafers",
+      "headwear": "none",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ],
+      "skin": "fair"
+    },
+    {
+      "id": "everyday-pedestrian",
+      "body": "regular_female",
+      "top": "sweater",
+      "bottom": "skirt",
+      "hair": "hair_ponytail_2",
+      "accessory": "watch",
+      "profile": "adult_medium",
+      "footwear": "ankle_boots",
+      "headwear": "none",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ],
+      "skin": "olive"
+    },
+    {
+      "id": "waiter-veteran",
+      "body": "regular_male",
+      "top": "shirt",
+      "bottom": "straight",
+      "hair": "hair_slickback",
+      "accessory": "waistcoat",
+      "profile": "waiter_stout",
+      "footwear": "loafers",
+      "headwear": "none",
+      "facial": [
+        "moustache"
+      ],
+      "brows": "thick",
+      "extras": [
+        "bistro_apron",
+        "bowtie",
+        "collar"
+      ],
+      "skin": "fair",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "fishmonger",
+      "body": "regular_male",
+      "top": "sweater",
+      "bottom": "work",
+      "hair": "hair_buzzed",
+      "accessory": "apron",
+      "profile": "fisher_sturdy",
+      "footwear": "work_boots",
+      "headwear": "beanie",
+      "facial": [
+        "beard"
+      ],
+      "brows": "thick",
+      "skin": "weathered",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "mechanic",
+      "body": "superhero_female",
+      "top": "tshirt",
+      "bottom": "overalls",
+      "hair": "hair_ponytail",
+      "accessory": "none",
+      "profile": "athletic_woman",
+      "footwear": "work_boots",
+      "headwear": "cap",
+      "skin": "fair",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "shopkeeper",
+      "body": "regular_female",
+      "top": "shop_coat",
+      "bottom": "straight",
+      "hair": "hair_long",
+      "accessory": "glasses",
+      "profile": "shopkeeper_woman",
+      "footwear": "loafers",
+      "headwear": "none",
+      "extras": [
+        "scarf"
+      ],
+      "skin": "pale",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "elder-woman",
+      "body": "regular_female",
+      "top": "cardigan",
+      "bottom": "long_skirt",
+      "hair": "hair_buns",
+      "accessory": "glasses",
+      "profile": "elder_woman",
+      "footwear": "ankle_boots",
+      "headwear": "none",
+      "extras": [
+        "shoulder_bag"
+      ],
+      "skin": "pale",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "student",
+      "body": "regular_female",
+      "top": "cardigan",
+      "bottom": "straight",
+      "hair": "hair_long",
+      "accessory": "backpack",
+      "profile": "young_woman",
+      "footwear": "trainers",
+      "headwear": "none",
+      "skin": "fair",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "local-fan",
+      "body": "regular_male",
+      "top": "jersey",
+      "bottom": "straight",
+      "hair": "hair_simpleparted",
+      "accessory": "watch",
+      "profile": "fan_bulky",
+      "footwear": "trainers",
+      "headwear": "none",
+      "facial": [
+        "muttonchops"
+      ],
+      "brows": "thick",
+      "skin": "fair",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "bruiser",
+      "body": "superhero_male",
+      "top": "cardigan",
+      "bottom": "straight",
+      "hair": "hair_buzzed",
+      "accessory": "watch",
+      "profile": "bruiser",
+      "footwear": "work_boots",
+      "headwear": "none",
+      "facial": [
+        "beard"
+      ],
+      "brows": "thick",
+      "skin": "tan",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    },
+    {
+      "id": "eccentric",
+      "body": "regular_male",
+      "top": "light_coat",
+      "bottom": "straight",
+      "hair": "hair_simpleparted",
+      "accessory": "glasses",
+      "profile": "eccentric_tall",
+      "footwear": "loafers",
+      "headwear": "fedora",
+      "facial": [
+        "moustache"
+      ],
+      "brows": "thick",
+      "extras": [
+        "scarf"
+      ],
+      "skin": "pale",
+      "status": "WORKER_RUNTIME_VALIDATED_2026-09-30_PENDING_OWNER_AND_INDEPENDENT_REVIEW",
+      "motions": [
+        "ual1:idle_loop",
+        "ual1:walk_loop",
+        "ual1:idle_talking_loop"
+      ]
+    }
+  ],
+  "vocabulary": {
+    "bottoms": [
+      "straight",
+      "work",
+      "skirt",
+      "long_skirt",
+      "overalls"
+    ],
+    "accessories": [
+      "none",
+      "apron",
+      "bistro_apron",
+      "work_vest",
+      "waistcoat",
+      "glasses",
+      "backpack",
+      "shoulder_bag",
+      "watch"
+    ],
+    "extras": [
+      "glasses",
+      "watch",
+      "collar",
+      "scarf",
+      "tie",
+      "bowtie",
+      "backpack",
+      "shoulder_bag",
+      "waistcoat",
+      "bistro_apron"
+    ],
+    "footwear": [
+      "work_shoes",
+      "work_boots",
+      "loafers",
+      "trainers",
+      "ankle_boots"
+    ],
+    "headwear": [
+      "none",
+      "cap",
+      "beret",
+      "beanie",
+      "flatcap",
+      "fedora"
+    ],
+    "facial": [
+      "beard",
+      "moustache",
+      "muttonchops"
+    ],
+    "brows": [
+      "default",
+      "thick"
+    ],
+    "eyes": [
+      "brown",
+      "blue",
+      "green",
+      "grey"
+    ],
+    "faces": {
+      "female": [
+        "default",
+        "natural",
+        "mature",
+        "older"
+      ],
+      "male": [
+        "default",
+        "clean",
+        "mature",
+        "older"
+      ],
+      "note": "Skin atlas face variants from Tools/char_skin.py (make-up, grooming, age lines painted over the same derived atlas)."
+    }
+  },
+  "anthropometry": {
+    "note": "Measured on the unmodified source bodies (rest-pose joint spacing / crown height). Build fails outside the envelope. headsTall/handOverHead (2026-09-29 art QA): Quaternius sources measure 8.0-8.6 heads tall with male hands one head long; the envelope now fails small heads and oversized hands.",
+    "native": {
+      "regular_male": {
+        "shoulderJoint": 0.212,
+        "hipJoint": 0.1,
+        "headHeight": 0.223
+      },
+      "regular_female": {
+        "shoulderJoint": 0.172,
+        "hipJoint": 0.126,
+        "headHeight": 0.221
+      },
+      "superhero_male": {
+        "shoulderJoint": 0.234,
+        "hipJoint": 0.126,
+        "headHeight": 0.223
+      },
+      "superhero_female": {
+        "shoulderJoint": 0.172,
+        "hipJoint": 0.126,
+        "headHeight": 0.221
+      }
+    },
+    "limits": {
+      "shoulderJointRatio": [
+        0.9,
+        1.12
+      ],
+      "hipJointRatio": [
+        0.88,
+        1.12
+      ],
+      "headLength": [
+        0.108,
+        0.15
+      ],
+      "pelvisHeight": [
+        0.495,
+        0.548
+      ],
+      "headsTall": [
+        6.9,
+        8.0
+      ],
+      "handOverHead": [
+        0.7,
+        0.9
+      ]
+    },
+    "headHeight": {
+      "note": "Absolute head height (crown to eye line x2, metres) by family, scaled mildly with stature: base*(height/refHeight)^exponent. Head size varies far less than stature; a constant ratio made tall men pin-headed. char_shapes.solve_head derives the head factor; a profile may pin headHeight or tweak with head.",
+      "regular_male": {
+        "base": 0.234,
+        "refHeight": 1.75,
+        "exponent": 0.5
+      },
+      "superhero_male": {
+        "base": 0.234,
+        "refHeight": 1.75,
+        "exponent": 0.5
+      },
+      "regular_female": {
+        "base": 0.222,
+        "refHeight": 1.65,
+        "exponent": 0.5
+      },
+      "superhero_female": {
+        "base": 0.222,
+        "refHeight": 1.65,
+        "exponent": 0.5
+      }
+    }
+  },
+  "outfitRules": {
+    "note": "Ordinary northern-Spain wardrobes: shoes, trousers and top are chosen together (see Docs/production/CHAR_COSTUME_RULES.md).",
+    "footwearByBottom": {
+      "straight": [
+        "loafers",
+        "trainers",
+        "work_shoes",
+        "ankle_boots",
+        "work_boots"
+      ],
+      "work": [
+        "work_shoes",
+        "work_boots"
+      ],
+      "overalls": [
+        "work_boots",
+        "work_shoes"
+      ],
+      "skirt": [
+        "ankle_boots",
+        "loafers",
+        "work_shoes"
+      ],
+      "long_skirt": [
+        "ankle_boots",
+        "loafers",
+        "work_shoes"
+      ]
+    },
+    "trainersRequireTop": [
+      "hoodie",
+      "jersey",
+      "tshirt",
+      "cardigan",
+      "sweater"
+    ],
+    "formalBottomShoeMaxLuma": 0.34
+  },
+  "skinTones": {
+    "note": "Tints multiply the derived pale atlas T_CHAR_Skin_<body>.jpg (Tools/char_skin.py). Unity CharFactory mirrors this table.",
+    "baseRgb": [
+      241,
+      189,
+      156
+    ],
+    "tones": {
+      "pale": "FFFFFF",
+      "fair": "F3EDE8",
+      "olive": "E5D3C2",
+      "weathered": "EDC2B8",
+      "tan": "D2B3A0",
+      "brown": "A89080"
+    }
+  }
+}

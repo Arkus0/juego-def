@@ -5,6 +5,7 @@ Unity/JuegoDef/**/*.asset         text eol=lf
 Unity/JuegoDef/**/*.mat           text eol=lf
 Unity/JuegoDef/**/*.meta          text eol=lf
 Unity/JuegoDef/**/*.controller    text eol=lf
+Unity/JuegoDef/**/*.overrideController text eol=lf
 Unity/JuegoDef/**/*.anim          text eol=lf
 Unity/JuegoDef/**/*.json          text eol=lf
 Unity/JuegoDef/**/*.txt           text eol=lf
@@ -19,9 +20,27 @@ Unity/JuegoDef/**/*.asmdef        text eol=lf
 Docs/asset_catalog/anim*.json      text eol=lf
 Docs/evidence/WP-PROD-ANIM-01/*.json text eol=lf
 Docs/evidence/WP-PROD-ANIM-01/captures/*.txt text eol=lf
+Docs/asset_catalog/char*.json      text eol=lf
+Docs/evidence/WP-PROD-CHAR-01/*.json text eol=lf
+# Byte-bound evidence metadata must survive a Windows checkout unchanged.
+Docs/evidence/WP-PROD-ASSET-00/catalog.json -text
+Docs/evidence/WP-PROD-CHAR-01/*.json -text
+Docs/evidence/WP-PROD-CHAR-01/**/*.json -text
+Docs/evidence/WP-PROD-CHAR-01/**/*.txt -text
+Tools/Char*.cs                   text eol=lf
+Unity/JuegoDef/**/*.shader       text eol=lf
+Unity/JuegoDef/**/*.hlsl          text eol=lf
+# Preserve the audited unmodified vendor snapshot byte-for-byte.
+Tools/vendor/chilyer/body_topo.py -text
+Tools/vendor/chilyer/LICENSE -text
+Art/Characters/HumanSources/** -text
+Art/Characters/HumanHeads/*.json -text
 
 *.png   binary
 *.jpg   binary
+*.gif   binary
+*.gz    binary
 *.fbx   binary
+*.blend binary
 *.wav   binary
 *.ogg   binary

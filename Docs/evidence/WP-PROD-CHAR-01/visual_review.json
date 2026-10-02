@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 3,
+  "runtimeReportSha256": "f0991a9d74c3e8ebd4e6c2e931864973682ca80bc7c00282ccb85f5474ec959b",
+  "comparisonReference": "naturalism_2026-10-01/ENV01/CALIBRATION_IDENTITY.json",
+  "variants": 15,
+  "reviewKind": "Worker visual inspection of current anatomical/polish candidate; not independent PASS or final Owner acceptance",
+  "observations": [
+    "All fifteen civilians inspected in Idle/Walk/Talking at four phases from front, side and rear: 180 poses and 540 tiles. No severe body-through-cloth or broken limb deformation observed in these admitted samples. Profile-only shoulder-facing failures and disconnected vest bindings found during pre-review were corrected before the current captures.",
+    "Bare front/three-quarter/profile views and complete portraits expose real anatomical eyes/lids/brows, lips, nose, jaw and age differences. Current CC0 heads replace the rejected Quaternius heads. Female faces have no facial-hair geometry or upper-lip marks reading as moustaches. Calm/welcoming, smiling and grumpy resting moods remain restrained; some anatomical family resemblance remains.",
+    "Fifteen conversation views and three player views inspected under actual unchanged ENV sun/renderer/volumes and 55-degree camera in the isolated snapshot. Eyes are more integrated and facial planes retain volume; shadowed stations and fabric weave are more contrasty than the studio fixture. Final subjective ENV/retro quality acceptance remains with the Owner.",
+    "Full unmasked throat support weights, concealed-clavicle crop before facing measurement, 20 mm skin/facing overlap and supporting-shirt apron/overall ribbons remove large shoulder intersections. Vest edge bindings share corners with bounded rounding. Angular lapels/neckline edges and small rear inner-collar peeks remain close-up art limits; clothes remain the weakest surface.",
+    "All 24 distance sheets inspected at native 640/1920 widths, each containing three separate camera batches of five people. Height, mass, apron/skirt/jacket/hat/bag and role cues carry identity. Fine facial detail is not individually readable at 20m/640 and is not claimed.",
+    "Separate ordinary Play-Mode live recording reviewed at open and near-closed lid frames; 95 frames over eight seconds use Animator/LateUpdate, with no direct sampling calls or error. Controlled fifteen-person living audit verifies per-ID irregular blink, two closures, four ocular shapes, target bounds/absence/invalid time and disable restoration. Actual GC2 Player attention is also observed for all fifteen in ENV.",
+    "Breathing and weight shifts remain owned by the admitted Animator. Hands/feet stay attached; Talking retains functioning fingers and shared ANIM dynamics. Resting expression plus blink/gaze does not certify lipsync, facial dialogue acting, autonomous navigation or final town dialogue integration.",
+    "Aprons/skirts remain weighted low-poly sheets with limited lateral volume. No cloth collision, arbitrary contacts, running/sitting or arbitrary blending is admitted. Current finite/bounds checks and empty problems are not a waiver for an observed visual or fit failure."
+  ],
+  "captures": [
+    {
+      "path": "fit_Idle_0.00_front.png",
+      "sha256": "85aa88ec354458771631be19097fcb2754ba3850fa7c50758ee07d6ca1df88e4"
+    },
+    {
+      "path": "fit_Idle_0.00_rear.png",
+      "sha256": "e7f1c9a29d750b3d1b36f5f0bdc4880bca08d84d6816f635db3d1b6a82acc453"
+    },
+    {
+      "path": "fit_Idle_0.00_side.png",
+      "sha256": "3d778f8ca91b3770770d7c559546767a66fce2e6298288c6bea8604c7ab6abd1"
+    },
+    {
+      "path": "fit_Idle_0.25_front.png",
+      "sha256": "9bd88586fb3f28510dda308f9308122ce8c15039af8186f0ec56f76e2b87f0db"
+    },
+    {
+      "path": "fit_Idle_0.25_rear.png",
+      "sha256": "7c84dc19276b33704797e30721c7977d553a4f6e304ea157fa4f0ee89dd34fa0"
+    },
+    {
+      "path": "fit_Idle_0.25_side.png",
+      "sha256": "c1c000d9692393336797bc8d42a3363f04d9c1a80a96561960cb414d816604ff"
+    },
+    {
+      "path": "fit_Idle_0.50_front.png",
+      "sha256": "f6539638635d4351d750ec4af91c4d0d38c64a93c461e672e13217dec280e1c0"
+    },
+    {
+      "path": "fit_Idle_0.50_rear.png",
+      "sha256": "2ad55cc203f58f29495861ca7044d0164f1efd9ee88cda45605034b9bc068c85"
+    },
+    {
+      "path": "fit_Idle_0.50_side.png",
+      "sha256": "9d59f5a746a33946c3f098dea5186265edac219b43bc3efe4349060f75278d44"
+    },
+    {
+      "path": "fit_Idle_0.75_front.png",
+      "sha256": "7318bb03155de24bf3b4c0d1b92847b641af8fcb9751bd776818441c01105a8a"
+    },
+    {
+      "path": "fit_Idle_0.75_rear.png",
+      "sha256": "bcfb83c91562916fba798056b3f9fe6501b3ace863522a53f178893f93b0a53b"
+    },
+    {
+      "path": "fit_Idle_0.75_side.png",
+      "sha256": "21107f29474a314bf3923fc5f73fc9f09238d03fdae8dc572728a85309a0ecab"
+    },
+    {
+      "path": "fit_Talking_0.00_front.png",
+      "sha256": "4758616b5f234944203fceead53a4a24ebdec679cbc890bbec65951311145be7"
+    },
+    {
+      "path": "fit_Talking_0.00_rear.png",
+      "sha256": "133cf021438c78c0ecdaa8b4609f571909da559ea867d722be2cf5d8ea3627d0"
+    },
+    {
+      "path": "fit_Talking_0.00_side.png",
+      "sha256": "ddfcac09ea6acd0208c189a162dcc14501d9c09be6319c5a755e0486ab724f57"
+    },
+    {
+      "path": "fit_Talking_0.25_front.png",
+      "sha256": "b5b923f705d811d37adec35759a4ac0aee48f15cd16bf1c51cb182b3741116bc"
+    },
+    {
+      "path": "fit_Talking_0.25_rear.png",
+      "sha256": "da860f51a61bd2413461f00f7189d50321742125e8e11888943052e21be252f6"
+    },
+    {
+      "path": "fit_Talking_0.25_side.png",
+      "sha256": "811cf9ef7be70c2007c94a21fe56c366a7c389f1cd4cd67a72731b135a8c1493"
+    },
+    {
+      "path": "fit_Talking_0.50_front.png",
+      "sha256": "797a2cb01d0ba0657ca2ba5ac9e8bcdfefcb3793bbddc23deea7d47f707e3e67"
+    },
+    {
+      "path": "fit_Talking_0.50_rear.png",
+      "sha256": "8e77ea98e552143ad3b5abe0863f8c55dc4bce17f55ce3eef0bd9f821e5e1565"
+    },
+    {
+      "path": "fit_Talking_0.50_side.png",
+      "sha256": "fb6ac99b38afbd6ada513ce61cff8470b82833d85bafbd85ff55da1dfcb30c28"
+    },
+    {
+      "path": "fit_Talking_0.75_front.png",
+      "sha256": "fe562a84007ea7705c9a2e5f857c7b1c5773478813a6770c3a0c149d3d79db93"
+    },
+    {
+      "path": "fit_Talking_0.75_rear.png",
+      "sha256": "fb75ebc38493d3af43c44bbe67c9f32a942fc8004878c68554cb9873c735be74"
+    },
+    {
+      "path": "fit_Talking_0.75_side.png",
+      "sha256": "4c17c1d36f3887d1e8e02c46740a3e944d84c208970e58b0de2cbd76770b907f"
+    },
+    {
+      "path": "fit_Walk_0.00_front.png",
+      "sha256": "a49325a631ae211bafd1291cd76fd2db233b5f00993a243981837b6af4af79f0"
+    },
+    {
+      "path": "fit_Walk_0.00_rear.png",
+      "sha256": "f0def938924b796e6c8d959cfe0e789341d55c1a50c613b9bc2990f2a8a84e34"
+    },
+    {
+      "path": "fit_Walk_0.00_side.png",
+      "sha256": "3b611506ac6eb7dccd1d63333dad68977047d00a46c52c2643fc7db709654919"
+    },
+    {
+      "path": "fit_Walk_0.25_front.png",
+      "sha256": "ce4730166643c823840d153ad002c028bfe76d09e3d2162313fc9f38d49d5021"
+    },
+    {
+      "path": "fit_Walk_0.25_rear.png",
+      "sha256": "5cecb14be43b785dcb518d828483c6505e7db537a160883141a5dc24f5a5bf6d"
+    },
+    {
+      "path": "fit_Walk_0.25_side.png",
+      "sha256": "ba9136d756bc1c1f2d175a9ed0bbf499342c17157fdf1683df352137c568488b"
+    },
+    {
+      "path": "fit_Walk_0.50_front.png",
+      "sha256": "000d4abb73a287ee3c4557ba0d8a9c26caac8e5bc12e6986ea0408e59f5e4912"
+    },
+    {
+      "path": "fit_Walk_0.50_rear.png",
+      "sha256": "b846cec35dd9bb52ff7756e10b33b2144e26ff00e0070d6dcd426985656be81e"
+    },
+    {
+      "path": "fit_Walk_0.50_side.png",
+      "sha256": "1bf23765cb052ab031762a4203e69640bcc43302a77699cf5bb7d9af295b7b8c"
+    },
+    {
+      "path": "fit_Walk_0.75_front.png",
+      "sha256": "2487a1d2d667992373011fe649626c7e762564e7ca3817bf5e15bbd1fce5d88e"
+    },
+    {
+      "path": "fit_Walk_0.75_rear.png",
+      "sha256": "bd1a814ae48bb40c7bfceaa09cdf11ce8b30f248fa85ca14bfc31d3b99765e74"
+    },
+    {
+      "path": "fit_Walk_0.75_side.png",
+      "sha256": "0201d532a8185f6e032c26e4246376dd95e4822925ed5fcc85d930fc8859288f"
+    },
+    {
+      "path": "group_10m_0deg_color_1920.png",
+      "sha256": "322e541e9f738c779d3819064e466a9ade1d4d2bc32bd9ffcdf8a1cff96cbd98"
+    },
+    {
+      "path": "group_10m_0deg_color_640.png",
+      "sha256": "db529cf76b6e865b2f36502a21ea6b74164bc1b76b670c09c6d11a47191ec414"
+    },
+    {
+      "path": "group_10m_0deg_silhouette_1920.png",
+      "sha256": "c6171ce0bd482232fdf505627bf2ab3597eb4931c4a023da23aa93b6260f2d39"
+    },
+    {
+      "path": "group_10m_0deg_silhouette_640.png",
+      "sha256": "e7d19f8ccf49048517edb5bd7037c196147d09c50a7f6ac1153bd143a42545c0"
+    },
+    {
+      "path": "group_10m_45deg_color_1920.png",
+      "sha256": "2dc36ab2b9bb8c78370b0d5929c736cb7669ef4e01e913f2cd5b37d0109dbf2f"
+    },
+    {
+      "path": "group_10m_45deg_color_640.png",
+      "sha256": "d2811aca91db78909b8007f8bff78166b43b40c28f683bdf03366faa5894c127"
+    },
+    {
+      "path": "group_10m_45deg_silhouette_1920.png",
+      "sha256": "7609f5bddd19c401450e2189e0b60b98e48c624ac55ac183df0cbab031f243fb"
+    },
+    {
+      "path": "group_10m_45deg_silhouette_640.png",
+      "sha256": "cebd98cec84bebea62dc78fbc0207524ec8d05bbb1c95d926f3d1c157840f714"
+    },
+    {
+      "path": "group_10m_90deg_color_1920.png",
+      "sha256": "0908bdf4dc62ac428a24360e0dc2c6add9886197ab2def60fb192a7d1ace0e55"
+    },
+    {
+      "path": "group_10m_90deg_color_640.png",
+      "sha256": "90aea00306a905bc9f6f2ffa4b17e10b2e29e7b8580b68320d58b94298945a02"
+    },
+    {
+      "path": "group_10m_90deg_silhouette_1920.png",
+      "sha256": "00596af0dcc7847eb16f2d1fcb786dbf095f0070d3c13a66b2c2864d9504a533"
+    },
+    {
+      "path": "group_10m_90deg_silhouette_640.png",
+      "sha256": "067b73634daf348eed28d9e10e448a13bea336c4a2d419681f179c0c43f475c7"
+    },
+    {
+      "path": "group_20m_0deg_color_1920.png",
+      "sha256": "d3f5377764051d26d9f34630e223bc3852c32f4583dc78735033b760709904d3"
+    },
+    {
+      "path": "group_20m_0deg_color_640.png",
+      "sha256": "26268a4438dbbaa1a58069a9ee709576ff42227ea1f6e6f34867dc178882eef9"
+    },
+    {
+      "path": "group_20m_0deg_silhouette_1920.png",
+      "sha256": "dcd7cecdd4d0e4d39f2ea4f11fb70e865a2465b720e9faf6c1d26f6ab742b0b9"
+    },
+    {
+      "path": "group_20m_0deg_silhouette_640.png",
+      "sha256": "108f8ea63a2c1003aa1ca069eaf6da55564af0e33162f44c7180add683412885"
+    },
+    {
+      "path": "group_20m_45deg_color_1920.png",
+      "sha256": "74165f9113887385f92506a97a32ece93dd42610788b5ea6f6c22151bac53b11"
+    },
+    {
+      "path": "group_20m_45deg_color_640.png",
+      "sha256": "337b92fe09d1c32ca40e32c5a8e861edf07d3c867966cb45ab78c9e815810faf"
+    },
+    {
+      "path": "group_20m_45deg_silhouette_1920.png",
+      "sha256": "5b05738549d5071799b60d3270273aaf6376026dea8f71a8109b10dea9bf5f23"
+    },
+    {
+      "path": "group_20m_45deg_silhouette_640.png",
+      "sha256": "4d4fcfea7bb038b317d28d4f3ff57075c8cbcc71cda336a84733f786cd6f4da7"
+    },
+    {
+      "path": "group_20m_90deg_color_1920.png",
+      "sha256": "3e9460aa8531b4f9830ede4f16c0b52964868f65875435bb9c9d1915b8746d4c"
+    },
+    {
+      "path": "group_20m_90deg_color_640.png",
+      "sha256": "2ecdcd9146208fe9f6d0feca1280d349d3f88da5cbad67665b3c05724076fb09"
+    },
+    {
+      "path": "group_20m_90deg_silhouette_1920.png",
+      "sha256": "9529ecd3905a777f03b9b6a0f7efd11fa6dc780f9d2611c07a141352ba8f3201"
+    },
+    {
+      "path": "group_20m_90deg_silhouette_640.png",
+      "sha256": "f611d8bd33bf8a58dd7ab7442ef39ea8a40ef1035d3ade359e4ad15f68626185"
+    }
+  ]
+}

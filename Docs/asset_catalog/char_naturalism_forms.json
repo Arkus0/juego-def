@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "heads": {
+    "market-worker": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.93,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": 0.004,
+      "bridgeSupport": -0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.003,
+      "expression": {
+        "mood": "welcoming",
+        "smile": 0.72,
+        "browInner": 0.001,
+        "browOuter": 0.0015,
+        "asymmetry": 0
+      }
+    },
+    "dock-worker": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.95,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": 0.002,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.0045,
+      "expression": {
+        "mood": "grumpy",
+        "smile": -0.35,
+        "browInner": -0.0045,
+        "browOuter": 0.001,
+        "asymmetry": 0
+      }
+    },
+    "older-resident": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.94,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": -0.003,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0004,
+      "browSlope": -0.001,
+      "browThickness": 0.003,
+      "expression": {
+        "mood": "welcoming",
+        "smile": 0.6,
+        "browInner": 0.001,
+        "browOuter": 0.0005,
+        "asymmetry": 0.0004
+      }
+    },
+    "younger-resident": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.95,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": -0.001,
+      "bridgeSupport": 0.0,
+      "lowerLid": 0.0001,
+      "browSlope": 0.001,
+      "browThickness": 0.0035,
+      "expression": {
+        "mood": "happy",
+        "smile": 0.9,
+        "browInner": 0.001,
+        "browOuter": 0.002,
+        "asymmetry": 0
+      }
+    },
+    "office-worker": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.94,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": -0.003,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.0028,
+      "expression": {
+        "mood": "relaxed",
+        "smile": 0.48,
+        "browInner": 0.0005,
+        "browOuter": 0.001,
+        "asymmetry": 0
+      }
+    },
+    "everyday-pedestrian": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.96,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": 0.002,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": 0.001,
+      "browThickness": 0.0032,
+      "expression": {
+        "mood": "happy",
+        "smile": 0.82,
+        "browInner": 0.001,
+        "browOuter": 0.002,
+        "asymmetry": 0.0003
+      }
+    },
+    "waiter-veteran": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.93,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": 0.001,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.0038,
+      "expression": {
+        "mood": "welcoming",
+        "smile": 0.75,
+        "browInner": 0.0015,
+        "browOuter": 0.001,
+        "asymmetry": 0.0003
+      }
+    },
+    "fishmonger": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.96,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": 0.003,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.004,
+      "expression": {
+        "mood": "welcoming",
+        "smile": 0.68,
+        "browInner": 0.0005,
+        "browOuter": 0.001,
+        "asymmetry": 0
+      }
+    },
+    "mechanic": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.95,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": -0.001,
+      "bridgeSupport": -0.0005,
+      "lowerLid": 0.0001,
+      "browSlope": 0.001,
+      "browThickness": 0.0036,
+      "expression": {
+        "mood": "focused",
+        "smile": -0.12,
+        "browInner": -0.002,
+        "browOuter": 0.0005,
+        "asymmetry": 0.0005
+      }
+    },
+    "shopkeeper": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.96,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": 0.004,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.0032,
+      "expression": {
+        "mood": "wry",
+        "smile": 0.6,
+        "browInner": 0.001,
+        "browOuter": 0.002,
+        "asymmetry": 0.001
+      }
+    },
+    "elder-woman": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.94,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": -0.003,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0004,
+      "browSlope": -0.001,
+      "browThickness": 0.0027,
+      "expression": {
+        "mood": "welcoming",
+        "smile": 0.65,
+        "browInner": 0.001,
+        "browOuter": 0.0005,
+        "asymmetry": 0
+      }
+    },
+    "student": {
+      "sex": "female",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.95,
+      "lipRelief": 0.32,
+      "mouthCorner": 0,
+      "cheekSupport": 0.0,
+      "bridgeSupport": -0.001,
+      "lowerLid": 0.0001,
+      "browSlope": 0.001,
+      "browThickness": 0.0028,
+      "expression": {
+        "mood": "happy",
+        "smile": 1.0,
+        "browInner": 0.0015,
+        "browOuter": 0.002,
+        "asymmetry": 0
+      }
+    },
+    "local-fan": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.98,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": 0.005,
+      "bridgeSupport": -0.001,
+      "lowerLid": 0.0001,
+      "browSlope": 0.001,
+      "browThickness": 0.0042,
+      "expression": {
+        "mood": "happy",
+        "smile": 0.95,
+        "browInner": 0.001,
+        "browOuter": 0.0015,
+        "asymmetry": 0
+      }
+    },
+    "bruiser": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.92,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": -0.003,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.0044,
+      "expression": {
+        "mood": "grumpy",
+        "smile": -0.5,
+        "browInner": -0.0055,
+        "browOuter": 0.0005,
+        "asymmetry": 0
+      }
+    },
+    "eccentric": {
+      "sex": "male",
+      "eyeAperture": 1.0,
+      "eyeWidth": 0.94,
+      "lipRelief": 0.5,
+      "mouthCorner": 0,
+      "cheekSupport": -0.004,
+      "bridgeSupport": 0.001,
+      "lowerLid": 0.0001,
+      "browSlope": -0.001,
+      "browThickness": 0.003,
+      "expression": {
+        "mood": "wry",
+        "smile": 0.4,
+        "browInner": 0.001,
+        "browOuter": 0.0025,
+        "asymmetry": 0.0015
+      }
+    }
+  },
+  "hairStyles": [
+    "crop",
+    "receding",
+    "sidepart",
+    "low_bun",
+    "pony",
+    "bob",
+    "wavy_bob",
+    "short_waves"
+  ],
+  "garmentPatterns": {
+    "knit": {
+      "foldDepth": 0.004,
+      "collar": "none",
+      "pockets": "none"
+    },
+    "work-shirt": {
+      "foldDepth": 0.003,
+      "collar": "none",
+      "pockets": "none"
+    },
+    "cardigan": {
+      "foldDepth": 0.003,
+      "collar": "none",
+      "pockets": "none"
+    },
+    "denim-jacket": {
+      "foldDepth": 0.004,
+      "collar": "denim",
+      "pockets": "chest"
+    },
+    "town-coat": {
+      "foldDepth": 0.002,
+      "collar": "lapel",
+      "pockets": "none"
+    },
+    "hoodie": {
+      "foldDepth": 0.006,
+      "collar": "none",
+      "pockets": "none"
+    },
+    "service-coat": {
+      "foldDepth": 0.002,
+      "collar": "none",
+      "pockets": "none"
+    },
+    "football-shirt": {
+      "foldDepth": 0.002,
+      "collar": "none",
+      "pockets": "none"
+    }
+  }
+}

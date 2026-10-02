@@ -1,0 +1,26 @@
+{
+  "unity": "6000.3.24f1",
+  "colorSpace": "Linear",
+  "property": "_SpecColor",
+  "shaderPropertyFlags": "None",
+  "given": [
+    0.4,
+    0.6,
+    0.18,
+    0.9
+  ],
+  "observedSetColorGetVector": [
+    0.4,
+    0.6,
+    0.18,
+    0.9
+  ],
+  "observedSetVectorGetVector": [
+    0.4,
+    0.6,
+    0.18,
+    0.9
+  ],
+  "scope": "CPU material storage check; shader support/rendering separately validated",
+  "reference": "https://docs.unity3d.com/cn/6000.0/ScriptReference/Material.SetColor.html"
+}
