@@ -1,0 +1,86 @@
+{
+ "source": "authored scene export (not the seed)",
+ "zones_m2": {
+  "CASCO": 31526,
+  "MERCADO": 24620,
+  "MUELLE": 23316,
+  "TALLERES": 12654,
+  "VIVIENDAS": 29452
+ },
+ "envelope_m2": 121568,
+ "largest_to_smallest": 2.49,
+ "public_network_m": 2973,
+ "public_plus_conditional_exterior_m": 3203,
+ "grade_share": {
+  "comfortable": 0.808,
+  "perceptible": 0.136,
+  "strong": 0.055
+ },
+ "buildings_in_scene": 178,
+ "buildings_planned": 200,
+ "buildings_pending_manual_placement": [
+  "C34",
+  "C35",
+  "M23",
+  "M24",
+  "M25",
+  "MW16",
+  "MW18",
+  "MW19",
+  "MW20",
+  "MW21",
+  "MW22",
+  "MW23",
+  "MW24",
+  "UE06",
+  "UE07",
+  "UE08",
+  "VN31",
+  "VN33",
+  "VN34",
+  "VN36",
+  "VN37",
+  "VN38"
+ ],
+ "buildings_by_zone_in_scene": {
+  "CASCO": 43,
+  "MERCADO": 38,
+  "MUELLE": 26,
+  "TALLERES": 19,
+  "VIVIENDAS": 52
+ },
+ "accessible_share_planned_ledger": 0.6,
+ "footprint_m2": 27596,
+ "footprint_share": 0.227,
+ "building_overlaps": 0,
+ "buildings_intruding_streets": [],
+ "buildings_blocking_seams": [],
+ "navmesh": {
+  "triangles": 5330,
+  "vertices": 11404
+ },
+ "nodes_not_on_navmesh": [],
+ "public_pairs_without_navmesh_path": [],
+ "neighbour_routes_navmesh_m": {
+  "CASCO-MERCADO (U03)": 85.51,
+  "MERCADO-MUELLE (U01/U02)": 95.35,
+  "CASCO-VIVIENDAS (U05)": 141.15,
+  "MERCADO-VIVIENDAS (U04)": 144.3,
+  "MUELLE-TALLERES (U06)": 137.46,
+  "TALLERES-VIVIENDAS (U07)": 106.48
+ },
+ "extreme_route_navmesh_m": 522.09,
+ "checks": {
+  "envelope<=max": true,
+  "public_plus_conditional<=max": true,
+  "neighbours<=max (navmesh)": true,
+  "extreme<=max (navmesh)": true,
+  "largest>=2x_smallest": true,
+  "all_public_pairs_navigable": true,
+  "no_building_overlaps": true,
+  "no_buildings_on_streets": true,
+  "seams_free": true,
+  "all_planned_buildings_in_scene": false
+ },
+ "all_checks_pass": false
+}

@@ -47,3 +47,7 @@ Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity
 Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_Casco_District.unity.meta
 Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District/
 Unity/JuegoDef/Assets/JuegoDef/Derived/ENV/District.meta
+
+# city_ivanix: layout captures are not redistributed; review renders are local
+Tools/city_ivanix/references/
+Tools/city_ivanix/reconstruction/*.png

@@ -1,0 +1,208 @@
+{
+  "schema": "juego-def.city-ivx-nav/1",
+  "agent": "Humanoid",
+  "bake_s": 7.9,
+  "navmesh_triangles": 15545,
+  "complete": 18,
+  "total": 18,
+  "paths": [
+    {
+      "from": "plaza",
+      "to": "spawn_pension",
+      "status": "PathComplete",
+      "length_m": 32.8,
+      "snap": [
+        12.0,
+        8.02,
+        40.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "puerta_muelle_alta",
+      "status": "PathComplete",
+      "length_m": 44.6,
+      "snap": [
+        5.2,
+        6.23,
+        51.5
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "antepuerto",
+      "status": "PathComplete",
+      "length_m": 66.3,
+      "snap": [
+        5.0,
+        2.67,
+        72.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "muelle_madera",
+      "status": "PathComplete",
+      "length_m": 98.0,
+      "snap": [
+        1.0,
+        2.67,
+        86.5
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "puerta_puente",
+      "status": "PathComplete",
+      "length_m": 132.7,
+      "snap": [
+        5.0,
+        4.58,
+        -122.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "puente_sur_orilla",
+      "status": "PathComplete",
+      "length_m": 168.0,
+      "snap": [
+        5.1,
+        2.17,
+        -157.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "puerta_este",
+      "status": "PathComplete",
+      "length_m": 84.1,
+      "snap": [
+        76.0,
+        5.58,
+        -39.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "puente_este_orilla",
+      "status": "PathComplete",
+      "length_m": 106.9,
+      "snap": [
+        96.08,
+        3.62,
+        -50.31
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "alto_anillo_bajo",
+      "status": "PathComplete",
+      "length_m": 218.0,
+      "snap": [
+        -140.0,
+        14.08,
+        -60.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "alto_anillo_alto",
+      "status": "PathComplete",
+      "length_m": 338.3,
+      "snap": [
+        -116.0,
+        17.58,
+        -12.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "alto_explanada_torre",
+      "status": "PathComplete",
+      "length_m": 308.6,
+      "snap": [
+        -129.0,
+        19.08,
+        -12.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "finca_patio",
+      "status": "PathComplete",
+      "length_m": 49.7,
+      "snap": [
+        42.7,
+        12.96,
+        40.4
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "hotel",
+      "status": "PathComplete",
+      "length_m": 70.7,
+      "snap": [
+        16.0,
+        8.05,
+        -48.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "comandancia",
+      "status": "PathComplete",
+      "length_m": 120.6,
+      "snap": [
+        24.0,
+        6.37,
+        -100.0
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "cultura",
+      "status": "PathComplete",
+      "length_m": 163.8,
+      "snap": [
+        -119.85,
+        13.5,
+        56.98
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "paseo_este",
+      "status": "PathComplete",
+      "length_m": 232.6,
+      "snap": [
+        98.16,
+        11.83,
+        22.44
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "paseo_oeste",
+      "status": "PathComplete",
+      "length_m": 279.1,
+      "snap": [
+        -200.22,
+        16.42,
+        -20.48
+      ]
+    },
+    {
+      "from": "plaza",
+      "to": "orilla_sur_carretera",
+      "status": "PathComplete",
+      "length_m": 181.0,
+      "snap": [
+        5.0,
+        2.25,
+        -170.0
+      ]
+    }
+  ]
+}
