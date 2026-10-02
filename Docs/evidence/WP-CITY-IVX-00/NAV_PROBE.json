@@ -1,8 +1,8 @@
 {
   "schema": "juego-def.city-ivx-nav/1",
   "agent": "Humanoid",
-  "bake_s": 5.2,
-  "navmesh_triangles": 12106,
+  "bake_s": 5.4,
+  "navmesh_triangles": 12088,
   "complete": 18,
   "total": 18,
   "paths": [
@@ -54,7 +54,7 @@
       "from": "plaza",
       "to": "puerta_puente",
       "status": "PathComplete",
-      "length_m": 132.9,
+      "length_m": 133.0,
       "snap": [
         5.0,
         4.53,
@@ -65,7 +65,7 @@
       "from": "plaza",
       "to": "puente_sur_orilla",
       "status": "PathComplete",
-      "length_m": 168.0,
+      "length_m": 168.1,
       "snap": [
         5.1,
         2.12,
@@ -98,7 +98,7 @@
       "from": "plaza",
       "to": "alto_anillo_bajo",
       "status": "PathComplete",
-      "length_m": 195.6,
+      "length_m": 196.3,
       "snap": [
         -140.0,
         14.03,
@@ -142,7 +142,7 @@
       "from": "plaza",
       "to": "hotel",
       "status": "PathComplete",
-      "length_m": 70.7,
+      "length_m": 70.8,
       "snap": [
         16.0,
         8.06,
@@ -153,7 +153,7 @@
       "from": "plaza",
       "to": "comandancia",
       "status": "PathComplete",
-      "length_m": 117.2,
+      "length_m": 117.3,
       "snap": [
         24.0,
         6.35,
@@ -197,7 +197,7 @@
       "from": "plaza",
       "to": "orilla_sur_carretera",
       "status": "PathComplete",
-      "length_m": 181.0,
+      "length_m": 181.1,
       "snap": [
         5.0,
         2.2,

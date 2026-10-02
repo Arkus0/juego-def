@@ -1,0 +1,35 @@
+{
+ "schema": "juego-def.city-paving/1",
+ "origin": [
+  -315.39,
+  -205.0
+ ],
+ "texel": 0.125,
+ "size": [
+  4320,
+  2680
+ ],
+ "classes": [
+  "canto",
+  "canto_viejo",
+  "huerta",
+  "suelo",
+  "roca",
+  "prado",
+  "losa",
+  "adoquin",
+  "muelle",
+  "patio",
+  "camino",
+  "abanico",
+  "granito"
+ ],
+ "painted": {
+  "losa_through": 13168,
+  "abanico": 6806,
+  "plaza_granito": 5506,
+  "alcorque_rim": 2225,
+  "alcorque": 1292
+ },
+ "fans": 6
+}

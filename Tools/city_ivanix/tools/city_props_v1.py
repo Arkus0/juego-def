@@ -106,6 +106,12 @@ def main():
     def yaw(v):
         return math.degrees(math.atan2(v[0], v[1]))
 
+    # --- the plaza's fountain first: the square is built round it, the market sets up round it
+    for rr in range(0, 14):
+        cand = [np.array([math.cos(a), math.sin(a)]) * rr for a in np.linspace(0, 2 * math.pi, 12, endpoint=False)] if rr else [np.zeros(2)]
+        if any(put("ENV_Fountain_Monument", q[0], q[1], 0, "PLAZA", clear=8.2) for q in cand):
+            break
+
     # --- weekly market (mercadillo, around 2000): each stall one entity (table, skirt, canvas roof and produce built
     #     together), only in the main square where the layout has its stalls; stock behind, the vendors' van at the edge
     stall_pts = []
@@ -188,10 +194,6 @@ def main():
 
     # --- plaza: fountain, kiosk, phone box, lamps, trees with bench rings
     plaza = np.array([0.0, 0.0])
-    for rr in range(0, 14):
-        cand = [plaza + np.array([math.cos(a), math.sin(a)]) * rr for a in np.linspace(0, 2 * math.pi, 12, endpoint=False)] if rr else [plaza]
-        if any(put("ENV_Fountain_Monument", q[0], q[1], 0, "PLAZA", clear=8.2) for q in cand):
-            break
     for name, ang in (("ENV_Kiosk_Plaza", 140), ("ENV_Phone_Booth", 300), ("CITY_Buzon_Correos", 312), ("ENV_Recycling_Bins", 230)):
         for rr in (22, 24, 26, 20, 28):
             q = plaza + np.array([math.cos(math.radians(ang)), math.sin(math.radians(ang))]) * rr

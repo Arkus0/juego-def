@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CITY_Ground_DC
+  m_Shader: {fileID: 4800000, guid: bc0d38da7e13e3840ae9fe354c25e35e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ClassMap:
+        m_Texture: {fileID: 2800000, guid: 1536b4643c8bf844fa83fedebfc3dc51, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseMap:
+        m_Texture: {fileID: 2800000, guid: c612de82b4b0fa841a03f7a1396839fa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T0:
+        m_Texture: {fileID: 2800000, guid: ebfd7b0ff3d4bd84592e03eb9bc028d7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T1:
+        m_Texture: {fileID: 2800000, guid: ebfd7b0ff3d4bd84592e03eb9bc028d7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T10:
+        m_Texture: {fileID: 2800000, guid: cf9ca871eb2ded3439941ecb396afa49, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T11:
+        m_Texture: {fileID: 2800000, guid: fae2c0008dae22641a4b5dde49fac08f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T12:
+        m_Texture: {fileID: 2800000, guid: a622d133cd01bf345ac0605934a946ea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T2:
+        m_Texture: {fileID: 2800000, guid: cb9bba593eaf0ab4db3160c344c9accd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T3:
+        m_Texture: {fileID: 2800000, guid: cf9ca871eb2ded3439941ecb396afa49, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T4:
+        m_Texture: {fileID: 2800000, guid: 47de2020e8133b1418d73c3ab14d1ed5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T5:
+        m_Texture: {fileID: 2800000, guid: cb9bba593eaf0ab4db3160c344c9accd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T6:
+        m_Texture: {fileID: 2800000, guid: 64c93c1a6fbb3134e897dc600a0292a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T7:
+        m_Texture: {fileID: 2800000, guid: 4dd25c05d3deec943b8ccd63dedcfa95, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T8:
+        m_Texture: {fileID: 2800000, guid: cf9ca871eb2ded3439941ecb396afa49, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _T9:
+        m_Texture: {fileID: 2800000, guid: f1427842e46571c4a94b364b6e6fa8a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AmbientScale: 1.08
+    - _Band: 0.17
+    - _Cutoff: 0.5
+    - _Gloss: 18
+    - _MacroAmount: 0.1
+    - _MacroScale: 0.06
+    - _MipBias: 0.3
+    - _SpecAmount: 0.1
+    - _SunScale: 1
+    - _WarpAmp: 0.24
+    - _WarpFine: 0.07
+    - _WarpFreq: 0.17
+    - _Wrap: 0.35
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _C0: {r: 0.89411765, g: 0.87058824, b: 0.83137256, a: 1}
+    - _C1: {r: 0.7882353, g: 0.7607843, b: 0.7137255, a: 1}
+    - _C10: {r: 0.654902, g: 0.6313726, b: 0.5882353, a: 1}
+    - _C11: {r: 1, g: 1, b: 1, a: 1}
+    - _C12: {r: 1, g: 1, b: 1, a: 1}
+    - _C2: {r: 0.7247059, g: 0.7972549, b: 0.68470585, a: 1}
+    - _C3: {r: 0.5568628, g: 0.5333333, b: 0.49411762, a: 1}
+    - _C4: {r: 0.8117647, g: 0.78431374, b: 0.7294118, a: 1}
+    - _C5: {r: 0.7247059, g: 0.7972549, b: 0.68470585, a: 1}
+    - _C6: {r: 0.83137256, g: 0.80784315, b: 0.7647059, a: 1}
+    - _C7: {r: 0.85490197, g: 0.8392157, b: 0.8117647, a: 1}
+    - _C8: {r: 0.72156864, g: 0.7058823, b: 0.67058825, a: 1}
+    - _C9: {r: 0.9490196, g: 0.9411765, b: 0.91764706, a: 1}
+    - _MapOrigin: {r: -315.39, g: -205, b: 0.125, a: 0}
+    - _MapSize: {r: 4320, g: 2680, b: 0, a: 0}
+    - _ST0: {r: 1, g: 1, b: 0, a: 0}
+    - _ST1: {r: 1, g: 1, b: 0, a: 0}
+    - _ST10: {r: 1, g: 1, b: 0, a: 0}
+    - _ST11: {r: 1.6666666, g: 1.6666666, b: 0, a: 0}
+    - _ST12: {r: 1, g: 1, b: 0, a: 0}
+    - _ST2: {r: 1, g: 1, b: 0, a: 0}
+    - _ST3: {r: 1, g: 1, b: 0, a: 0}
+    - _ST4: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _ST5: {r: 1, g: 1, b: 0, a: 0}
+    - _ST6: {r: 1, g: 1, b: 0, a: 0}
+    - _ST7: {r: 1, g: 1, b: 0, a: 0}
+    - _ST8: {r: 1, g: 1, b: 0, a: 0}
+    - _ST9: {r: 1, g: 1, b: 0, a: 0}
+    - _ShadeColor: {r: 0.8, g: 0.83, b: 0.92, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

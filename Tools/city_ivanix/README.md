@@ -12,8 +12,10 @@ Rule: **Ivanix decides the urban composition · ENV01 decides the architecture �
 | 1. Trace the layout from the calibrated top capture (water, island, paving, yards, gardens, towers, wall, roofs) | `tools/trace_layout.py` | `reconstruction/layout_trace_v1.json` |
 | 2. Street plan: streets, rings and squares authored over the layout's open corridors (level design decision) | `tools/street_plan.py` | `reconstruction/street_plan_v1.json` |
 | 3. Seed v4: admitted footprints, programme (large interiors), parcel pass (frontage on streets, party walls, kit bays scaled to the plot, tapias), one way in per building, El Alto terraces, Torre, Finca, paseo maritimo on the XV wall, antepuerto and pier, bridges, south bank | `tools/city_seed_v4.py` (uses `open_space_streets.py`, `frontage_lines.py`) | `reconstruction/city_seed_v4.json` |
-| 4. Props: market, plaza, paseo, port, doorsteps, terraces | `tools/city_props_v1.py` | `reconstruction/city_props_v1.json` |
-| 5. Unity (editor menu `JuegoDef/CITY/...`): seed scenes, dress (light + props), afternoon look, NavMesh probe | `Editor/City/CityIvanix{Seed,Dress,Look,Nav}.cs` | `Scenes/CITY_IVX/*`, `Docs/evidence/WP-CITY-IVX-00/NAV_PROBE.json` |
+| 4. Props: the fountain first, market stalls, plaza, paseo, port, doorsteps, terraces, cars, containers, finca palms | `tools/city_props_v1.py` | `reconstruction/city_props_v1.json` |
+| 5. Paving as laid by hand (12.5 cm class map: main-street flags through junctions, fans at mouths, plaza ring and bands, tree pits) | `tools/paving_map.py` | `City/Ground/CITY_PavingMap.png`, `reconstruction/paving_map_v1.json` |
+| 6. Own props (Dreamcast+ style guide `Docs/design/CITY_STYLE_DCPLUS.md`): painted textures, then the Blender builds | `tools/{props,vehicle,ground}_textures.py`, `blender/build_{vehicles,street,nature}.py` | `City/Props/{Textures,Meshes}`, `City/Ground/TX_*` |
+| 7. Unity (menu `JuegoDef/CITY/...`), in order: props library; seed scenes; dress (every prop an entity: `CityEntities`); shopfronts; DC export → `tools/dc_textures.py` → DC convert; paving; NavMesh probe; semantic + overlap audit | `Editor/City/{CityPropsLibrary,CityIvanixSeed,CityIvanixDress,CityShopfronts,CityDcPlus,CityPaving,CityIvanixNav,CityIvanixLint}.cs` | `Scenes/CITY_IVX/*`, `Docs/evidence/WP-CITY-IVX-00/{DRESS_ENTITIES,NAV_PROBE,LINT}.json` |
 
 Steps 3–4 are deterministic: rerunning them reproduces the committed JSON byte for byte. The seeders are one-shot;
 once the Owner accepts the layout the scenes become the authority and are edited by hand.
@@ -36,4 +38,8 @@ The layout captures are **not** redistributed. Tools that draw over them (`trace
 - ground by meaning: granite flags (Calle Mayor, Muelle), setts (Plaza Mayor), river cobbles (streets), old cobbles
   (lanes, El Alto), grey setts (quay), earth (yards), meadow and huerta outside; no stray patches;
 - building bases reach the lowest ground under the whole plan and sink 0.3 m;
-- doorstep props stand clear of the real facade face (walls and rejas stand up to 0.85 m proud of the plot line).
+- doorstep props stand clear of the real facade face (walls and rejas stand up to 0.85 m proud of the plot line);
+- every object is an entity: seated on its own footprint, pushed out of what it touches (facades, railings, parapets,
+  other objects, the solid plan of each building) by at most a short shift and on the same level, or not placed; a
+  tree that does not fit is planted younger; boats are moored to the nearest bollards;
+- paving changes run along hand-laid lines with a granite band at every joint; never on a straight bisector.
