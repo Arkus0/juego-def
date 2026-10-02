@@ -595,7 +595,9 @@ def main():
         return False
 
     tower_pts = [Point(*t["pos"]) for t in tr["towers"] if t["outer_wall"]] + [Point(*q) for q in ANTE_INNER + [ANTE[3], ANTE[4]]]
-    fixed = unary_union([wall.buffer(WALL_HALF + 0.1), arms.buffer(WALL_HALF + 0.1), finca_poly.buffer(0.4)] + [q.buffer(3.4) for q in tower_pts])
+    # mitred: the wall body is built from straight boxes, its corners are sharp (antepuerto junctions)
+    fixed = unary_union([wall.buffer(WALL_HALF + 0.3, join_style=2, mitre_limit=4.0), arms.buffer(WALL_HALF + 0.3, join_style=2, mitre_limit=4.0),
+                         finca_poly.buffer(0.4)] + [q.buffer(3.5) for q in tower_pts])
     removed, trims = [], 0
     for it in range(16):
         changed = False
@@ -693,35 +695,47 @@ def main():
                  "on_tramo": sum(1 for b in buildings if b.get("line") is not None), "interior": sum(1 for b in buildings if b.get("line") is None)}
     print("orientation coherence:", COHERENCE)
 
-    # ---- tapias: the street edge between facades is closed by garden walls with a gate; alleys stay open
+    # ---- tapias: a garden wall closes the street edge only BETWEEN two facades of the same tramo (<= 25 m), with a
+    # yard or huerta behind it; never at a street's end, inside a square, in front of an alley or free-standing
+    # (owner walk 2026-10-02: "ese muro en mitad")
+    plazas_any = unary_union([Polygon(pl["poly"]).buffer(1.0) for pl in plan["plazas"]])
+    st_pts = np.vstack([st["pts"] for st in STREETS])
+    st_hw = np.concatenate([st["hw"] for st in STREETS])
+
+    def off_street(q):
+        """Behind the street wall: farther from every street's centreline than its half width + 1.5 m."""
+        dd = np.hypot(*(st_pts - q).T) - st_hw
+        return float(dd.min()) > 1.5
     TAPIAS = []
     for li, L in enumerate(LINES):
         occ_ = sorted([(b["s0"], b["s1"]) for b in buildings if b.get("line") == li and b["front"] == 0.0])
-        free_, cur = [], 0.0
-        for a0, a1 in occ_:
-            if a0 - cur > 1.2:
-                free_.append((cur, a0))
-            cur = max(cur, a1)
-        if L["s"][-1] - cur > 1.2:
-            free_.append((cur, float(L["s"][-1])))
+        free_ = []
+        for (a0, a1), (b0, b1) in zip(occ_[:-1], occ_[1:]):
+            if b0 - a1 > 1.2:
+                free_.append((a1, b0))
         for f0, f1 in free_:
-            if f1 - f0 > 45:
+            if f1 - f0 > 25:
                 continue
-            ss = np.linspace(f0 + 0.2, f1 - 0.2, max(2, int((f1 - f0) // 1.0) + 1))
-            pts_, ok_ = [], True
+            ss = np.linspace(f0 + 0.15, f1 - 0.15, max(2, int((f1 - f0) // 1.0) + 1))
+            pts_, ok_ = [], 0
+            inner_ss = ss[(ss > f0 + 0.6) & (ss < f1 - 0.6)]
             for sv in ss:
                 P, T, N = at(li, sv)
-                inner = P - N * 1.6
-                pi_ = Point(*inner)
-                if pub_lanes.contains(pi_) or not tw.contains(pi_) or fixed.contains(pi_) or water.contains(pi_):
-                    ok_ = False      # an alley mouth, the wall or the water: no tapia here
-                    if len(pts_) >= 2:
-                        TAPIAS.append({"pts": pts_, "gate": len(pts_) >= 6})
-                    pts_ = []
-                    continue
+                pi_ = Point(*(P - N * 1.6))
+                if not tw.contains(pi_) or fixed.contains(pi_) or water.contains(pi_) or plazas_any.contains(Point(*P)):
+                    pts_ = None      # an alley mouth, the wall, the water or a square: leave the gap open
+                    break
+                ok_ += 1 if off_street(P - N * 1.6) else 0
                 qq = P - N * 0.3
+                if sv in inner_ss and any(foot(b_)[3].buffer(0.05).contains(Point(*qq)) for b_ in buildings if abs(b_["mid"][0] - qq[0]) < 20 and abs(b_["mid"][1] - qq[1]) < 20):
+                    pts_ = None      # a house stands across this gap: it is its own wall
+                    break
                 pts_.append([round(float(qq[0]), 2), round(ground(*qq), 2), round(float(qq[1]), 2)])
-            if len(pts_) >= 2:
+            if pts_ and len(pts_) >= 2:
+                run_ = LineString([(q[0], q[2]) for q in (pts_[1:-1] if len(pts_) >= 4 else pts_)])
+                if any(foot(b_)[3].buffer(0.35).intersects(run_) for b_ in buildings if abs(b_["mid"][0] - pts_[0][0]) < 30 and abs(b_["mid"][1] - pts_[0][2]) < 30):   # facades stand ~0.4 m proud of the plot
+                    pts_ = None      # the run would cut through a house corner
+            if pts_ and len(pts_) >= 2 and ok_ >= len(pts_) // 2:
                 TAPIAS.append({"pts": pts_, "gate": len(pts_) >= 6})
     print("tapias:", len(TAPIAS), "runs,", round(sum(len(t["pts"]) for t in TAPIAS)), "m")
     for b in buildings:
@@ -756,9 +770,11 @@ def main():
         door_y = ground(*(mid + n * 1.5))
         xd = np.array([n[1], -n[0]])
         o = mid - xd * b["W"] / 2
-        back = mid - n * b["D"]
+        # the stone base reaches the lowest ground under the whole plan (4 x 4 samples) and sinks 0.3 m into it,
+        # so no corner of a building floats over a falling street (owner walk 2026-10-02)
+        low = min(ground(*(o + xd * b["W"] * u - n * b["D"] * v)) for u in (0.0, 0.33, 0.66, 1.0) for v in (0.0, 0.33, 0.66, 1.0))
         b["frontage_mid"][1] = round(door_y, 2)
-        b["spec"]["basement"] = round(max(0.0, min(4.0, door_y - min(ground(*back), ground(*o), ground(*(o + xd * b["W"]))))), 2)
+        b["spec"]["basement"] = round(max(0.3, min(5.0, door_y - low + 0.3)), 2)
         if not b["door"] and b["main"] and b["class"] != "QUEST":
             b["class"] = "AMBIENT"            # no reachable way in: an ordinary closed house
         b.pop("paving", None)
@@ -880,7 +896,30 @@ def main():
     minx, minz, maxx, maxz = land.bounds
     cols, rows = int((maxx - minx) / CELL) + 1, int((maxz - minz) / CELL) + 1
     lp = prep(land)
-    cells = []
+    # ---- ground by meaning (owner review: "suelo diferenciado y coherente, un toque para orientarse"): granite flags
+    # on the Calle Mayor and the Muelle, setts in the Plaza Mayor, river cobbles in the streets, old cobbles in lanes
+    # and on El Alto, grey setts on the quay, earth in the yards behind the tapias, huertas and meadows outside. Each
+    # is a continuous region; stray single cells are absorbed by their surroundings.
+    from scipy.spatial import cKDTree
+    from scipy import ndimage
+    CL = {"canto": 0, "canto_viejo": 1, "huerta": 2, "suelo": 3, "roca": 4, "prado": 5, "losa": 6, "adoquin": 7, "muelle": 8, "patio": 9, "camino": 10}
+    MAIN = {"MAYOR", "MUELLE"}
+    LANES = {"POZO", "MURALLA_SUR", "MEDIO", "SOLANA", "ANILLO_ALTO", "ANILLO_BAJO", "PASEO_NORTE"}
+    ROADS = {"CAMINO_RIBERA", "RIBERA_NORTE"}
+    sp_pts, sp_hw, sp_kind = [], [], []
+    for st in STREETS:
+        kind = "losa" if st["id"] in MAIN else "camino" if st["id"] in ROADS else "canto_viejo" if (st["id"] in LANES or st["id"].startswith("LANE_")) else "canto"
+        for q, hq in zip(st["pts"], st["hw"]):
+            sp_pts.append(q)
+            sp_hw.append(hq)
+            sp_kind.append(CL[kind])
+    tree = cKDTree(np.array(sp_pts))
+    sp_hw, sp_kind = np.array(sp_hw), np.array(sp_kind)
+    plazas_poly = prep(unary_union([Polygon(pl["poly"]).buffer(0.6) for pl in plan["plazas"]]))
+    houses = prep(unary_union([placed(b) for b in buildings]).buffer(0.3))
+    opp = prep(op)
+    grid = np.full((rows, cols), -1, np.int16)
+    hgt = np.zeros((rows, cols), np.float32)
     for j in range(rows):
         for i in range(cols):
             x, z = minx + (i + 0.5) * CELL, minz + (j + 0.5) * CELL
@@ -889,26 +928,49 @@ def main():
                 continue
             if corridor.contains(pt) and not tw.contains(pt):
                 continue                                  # the bridge deck was traced as land: it is river
-            if south_bank.contains(pt) and not (isl.contains(pt) or banks.contains(pt)):
-                cells.append([i, j, 2.1 if south_road.contains(pt) else round(2.0 + 0.02 * max(0.0, -150.0 - z), 2), 0 if south_road.contains(pt) else 5])
-                continue
             if PIER_WATER[0] <= x <= PIER_WATER[2] and PIER_WATER[1] <= z <= PIER_WATER[3]:
                 continue
-            if ante.contains(pt):
-                cells.append([i, j, QUAY_Y, 0])
+            d, k = tree.query((x, z))
+            on_street = d <= sp_hw[k] + 1.0
+            if south_bank.contains(pt) and not (isl.contains(pt) or banks.contains(pt)):
+                grid[j, i] = CL["camino"] if south_road.contains(pt) else CL["prado"]
+                hgt[j, i] = 2.1 if south_road.contains(pt) else round(2.0 + 0.02 * max(0.0, -150.0 - z), 2)
                 continue
-            inside = tw.contains(pt)
-            if pv.contains(pt):
-                cls = 0                                   # canto rodado (public)
+            hgt[j, i] = round(QUAY_Y if ante.contains(pt) else ground(x, z), 2)
+            if ante.contains(pt):
+                grid[j, i] = CL["muelle"]
+            elif not tw.contains(pt):
+                grid[j, i] = CL["camino"] if (on_street and sp_kind[k] == CL["camino"]) else (CL["roca"] if isl.contains(pt) else CL["prado"])
+            elif plazas_poly.contains(pt):
+                grid[j, i] = CL["adoquin"]
+            elif on_street:
+                grid[j, i] = int(sp_kind[k])
             elif gr.contains(pt):
-                cls = 2                                   # huerta / grass
-            elif yd.contains(pt):
-                cls = 1 if inside else 2                  # old cobbles inside the town; field outside
-            elif inside:
-                cls = 3                                   # ground under/around buildings
+                grid[j, i] = CL["huerta"]
+            elif houses.contains(pt):
+                grid[j, i] = CL["suelo"]
+            elif opp.contains(pt):
+                grid[j, i] = CL["canto_viejo"]             # open ground off the streets: plazuelas, ring of El Alto
             else:
-                cls = 4 if isl.contains(pt) else 5        # shore rock / bank grass
-            cells.append([i, j, round(ground(x, z), 2), cls])
+                grid[j, i] = CL["patio"]                   # behind the street wall: yards and corrals
+    # absorb stray patches (under 8 cells) into the surrounding ground
+    for cls in (CL["canto"], CL["canto_viejo"], CL["losa"], CL["adoquin"], CL["patio"], CL["huerta"], CL["camino"]):
+        lab, n = ndimage.label(grid == cls)
+        sizes = ndimage.sum(np.ones_like(lab), lab, index=np.arange(1, n + 1))
+        for comp, size in enumerate(sizes, start=1):
+            if size >= 8:
+                continue
+            ys, xs = np.nonzero(lab == comp)
+            ring = []
+            for y_, x_ in zip(ys, xs):
+                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    yy, xx = y_ + dy, x_ + dx
+                    if 0 <= yy < rows and 0 <= xx < cols and grid[yy, xx] >= 0 and grid[yy, xx] != cls and grid[yy, xx] != CL["suelo"]:
+                        ring.append(int(grid[yy, xx]))
+            if ring:
+                grid[ys, xs] = max(set(ring), key=ring.count)
+    cells = [[int(i), int(j), float(hgt[j, i]), int(grid[j, i])] for j in range(rows) for i in range(cols) if grid[j, i] >= 0]
+    print("ground classes:", {k: int((grid == v).sum()) for k, v in CL.items()})
 
     wall_pts = []
     for k in range(int(wall.length // 2.0) + 1):
@@ -923,7 +985,19 @@ def main():
     ytop = np.array([ymax[[(i + d) % m for d in range(-k, k + 1)]].mean() for i in range(m)]) + PASEO_UP
     gate_xy = [np.array([g[0], g[1]]) for g in (GATE_N, tr["landmarks_m"]["south_gate"], EAST_GATE)]
     gap = [any(np.hypot(q[0] - g[0], q[2] - g[1]) < 5.5 for g in gate_xy) for q in wall_pts]
-    paseo_pts = [[q[0], q[1], q[2], round(float(ytop[i]), 2), bool(gap[i])] for i, q in enumerate(wall_pts)]
+    # a house standing against the wall's inner face is the paseo's parapet there: no railing in front of it
+    houses_now = prep(unary_union([placed(b) for b in buildings]).buffer(0.25))
+    ring_now = LineString([(q[0], q[2]) for q in wall_pts] + [(wall_pts[0][0], wall_pts[0][2])])
+    abut = []
+    for i, q in enumerate(wall_pts):
+        a_ = np.array([q[0], q[2]])
+        b_ = np.array([wall_pts[(i + 1) % len(wall_pts)][0], wall_pts[(i + 1) % len(wall_pts)][2]])
+        t_ = (b_ - a_) / max(1e-6, np.linalg.norm(b_ - a_))
+        inn = np.array([-t_[1], t_[0]])
+        if not tw.contains(Point(*(a_ + inn * 6))):
+            inn = -inn
+        abut.append(bool(houses_now.contains(Point(*(a_ + inn * (WALL_HALF + 0.9))))))   # within 0.7 m of the wall face
+    paseo_pts = [[q[0], q[1], q[2], round(float(ytop[i]), 2), bool(gap[i]), abut[i]] for i, q in enumerate(wall_pts)]
 
     def top_at(x, z):
         i = min(range(m), key=lambda j: (wall_pts[j][0] - x) ** 2 + (wall_pts[j][2] - z) ** 2)
@@ -948,7 +1022,8 @@ def main():
         """Retaining wall on a circle where no house holds the step, with stairs at the gaps nearest the targets."""
         n = 720
         pts = [(kx + radius * math.cos(2 * math.pi * i / n), kz + radius * math.sin(2 * math.pi * i / n)) for i in range(n)]
-        free = [not foot.contains(Point(*q)) for q in pts]
+        pts_out = [(kx + (radius + 0.95) * math.cos(2 * math.pi * i / n), kz + (radius + 0.95) * math.sin(2 * math.pi * i / n)) for i in range(n)]
+        free = [not foot.contains(Point(*q)) and not foot.contains(Point(*qo)) for q, qo in zip(pts, pts_out)]
         stairs = []
         for tdeg in targets:
             best = None
@@ -957,7 +1032,10 @@ def main():
                 q = np.array(pts[i])
                 out = np.array([math.cos(ang), math.sin(ang)])
                 side = np.array([-out[1], out[0]])
-                fp = Polygon([q - side * 1.4, q + side * 1.4, q + side * 1.4 + out * stair_len, q - side * 1.4 + out * stair_len])
+                # the flight plus a 2.5 m landing at its foot must be clear of houses
+                fp = Polygon([q - side * 1.5, q + side * 1.5, q + side * 1.5 + out * (stair_len + 2.5), q - side * 1.5 + out * (stair_len + 2.5)])
+                # and the arrival on the upper level must be open too (a house beside the landing pinches it shut)
+                fp = fp.union(Polygon([q - side * 1.6, q + side * 1.6, q + side * 1.6 - out * 3.0, q - side * 1.6 - out * 3.0]))
                 span = int(math.ceil(1.6 / (2 * math.pi * radius / n)))
                 if not all(free[(i + d) % n] for d in range(-span, span + 1)) or fp.intersects(foot) or not tw.contains(fp.centroid):
                     continue
@@ -1004,7 +1082,7 @@ def main():
         run = math.ceil(drop / 0.15) * 0.32
         c0 = a + inner * (WALL_HALF + 0.05)
         fp = Polygon([c0 - t * 1.3, c0 - t * 1.3 + inner * 2.3, c0 + t * (run + 0.6) + inner * 2.3, c0 + t * (run + 0.6)])
-        if fp.intersects(foot_all.buffer(0.3)) or not tw.contains(fp.centroid) or fp.intersects(fixed.difference(wall.buffer(WALL_HALF + 0.1))):
+        if fp.intersects(foot_all.buffer(0.3)) or not tw.contains(fp.centroid) or fp.intersects(fixed.difference(unary_union([wall.buffer(WALL_HALF + 0.4), arms.buffer(WALL_HALF + 0.4)]))):
             return None
         landing = a + inner * (WALL_HALF + 1.15)
         return {"landing": [round(float(landing[0]), 2), round(float(ytop[i]), 2), round(float(landing[1]), 2)],
@@ -1050,12 +1128,27 @@ def main():
         bridge("puente_sur", gates[1]["pos"], BRIDGES[0][2], 4.0),
         bridge("puente_este", gates[2]["pos"], BRIDGES[1][2], 3.6),
     ]
+    keep_open = []
+    for t_ in terraces:
+        for st in t_["stairs"]:
+            a_ = np.array([st["top"][0], st["top"][2]])
+            keep_open.append(LineString([a_ - np.array(st["dir"]) * 3.0, a_ + np.array(st["dir"]) * 12.0]).buffer(3.2))
+    for st in paseo_stairs:
+        a_ = np.array([st["landing"][0], st["landing"][2]])
+        keep_open.append(LineString([a_, a_ + np.array(st["dir"]) * 12.0]).buffer(3.2))
+    for g_ in gates:
+        keep_open.append(Point(g_["pos"][0], g_["pos"][2]).buffer(9.0))
+    keep_open = unary_union(keep_open)
+    n_before = len(TAPIAS)
+    TAPIAS = [t_ for t_ in TAPIAS if not LineString([(q[0], q[2]) for q in t_["pts"]]).intersects(keep_open)]
+    print("tapias kept clear of stairs, landings and gates:", n_before, "->", len(TAPIAS))
+
     doc = {
         "schema": "juego-def.city-seed-ivanix/4",
         "provenance": "Ivanix88 'Medieval City Pack Demo' layout (public commercial-use reply by the author; Owner decision 2026-10-02). Own architecture (ENV01).",
         "rules": "Ivanix: urban composition · ENV01: architecture · gameplay: interiors",
         "terrain": {"origin": [round(minx, 3), round(minz, 3)], "cell": CELL, "cols": cols, "rows": rows, "cells": cells,
-                    "classes": ["canto", "canto_viejo", "huerta", "suelo", "roca", "prado"]},
+                    "classes": ["canto", "canto_viejo", "huerta", "suelo", "roca", "prado", "losa", "adoquin", "muelle", "patio", "camino"]},
         "river_wall": {"points": wall_pts, "thickness": 2.4, "parapet": 1.0, "base_y": 1.2},
         "paseo": {"points": paseo_pts, "half_width": WALL_HALF, "base_y": 1.2, "stairs": paseo_stairs},
         "towers": towers, "gates": gates, "bridges": bridges, "terraces": terraces, "keep": KEEP.tolist(),

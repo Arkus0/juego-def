@@ -22,6 +22,11 @@ SEED = ROOT / "reconstruction" / "city_seed_v4.json"
 OUT = ROOT / "reconstruction" / "city_props_v1.json"
 
 
+DOORSTEP_DEPTH = {"ENV_Net_Pile": 1.33, "ENV_Prop_Rope_Coil": 0.8, "ENV_Crate_Fish": 0.4, "ENV_Prop_Bucket": 0.35, "ENV_Prop_Barrel": 0.65,
+                  "ENV_Prop_Crate_Wooden": 0.91, "ENV_AFrame_Board": 0.6, "ENV_Planter_Box": 0.45, "ENV_Plant_Geranium": 0.45,
+                  "ENV_Planter_Pot": 0.52, "ENV_Plant_Hydrangea": 0.98, "ENV_Bench_Stone": 0.48, "ENV_Pot_Tin": 0.35, "ENV_Prop_Bucket_Wood": 0.4}
+
+
 def rnd(key):
     return int(hashlib.md5(key.encode()).hexdigest()[:8], 16) / 0xFFFFFFFF
 
@@ -125,6 +130,12 @@ def main():
 
     # --- paseo maritimo on the wall: lamps on the town edge, benches facing the sea, bins; terraces on two cubos
     pz = sd.get("paseo")
+    landings = [np.array([st["landing"][0], st["landing"][2]]) for st in (pz or {}).get("stairs", [])]
+    landings += [np.array([st["top"][0], st["top"][2]]) for t_ in sd["terraces"] for st in t_["stairs"]]
+
+    def near_landing(q):
+        return any(np.hypot(*(q - l_)) < 3.2 for l_ in landings)
+
     if pz:
         ptsP = pz["points"]
         half = pz["half_width"]
@@ -134,7 +145,7 @@ def main():
         acc = 0.0
         for i in range(mP):
             a, b = ptsP[i], ptsP[(i + 1) % mP]
-            if a[4] or b[4]:
+            if a[4] or b[4] or (len(a) > 5 and (a[5] or b[5])):
                 continue
             t = np.array([b[0] - a[0], b[2] - a[2]])
             L = float(np.linalg.norm(t))
@@ -147,13 +158,13 @@ def main():
             k = int(acc // 2)
             if k % 12 == 0:
                 q = c + inn * (half - 0.45)
-                put("ENV_Lamp_Post", q[0], q[1], yaw(-inn), "PASEO", clear=0.0, force=True)
+                near_landing(q) or put("ENV_Lamp_Post", q[0], q[1], yaw(-inn), "PASEO", clear=0.0, force=True)
             elif k % 18 == 6:
                 q = c + inn * (half - 0.75)
-                put("ENV_Bench_Street", q[0], q[1], yaw(-inn), "PASEO", clear=0.0, force=True)
+                near_landing(q) or put("ENV_Bench_Street", q[0], q[1], yaw(-inn), "PASEO", clear=0.0, force=True)
             elif k % 30 == 15:
                 q = c + inn * (half - 0.4)
-                put("ENV_Bin_Street", q[0], q[1], 0, "PASEO", clear=0.0, force=True)
+                near_landing(q) or put("ENV_Bin_Street", q[0], q[1], 0, "PASEO", clear=0.0, force=True)
         cubos = sorted(sd["towers"], key=lambda t: np.hypot(t["pos"][0], t["pos"][1]))
         for j, t in enumerate(cubos):
             c = np.array(t["pos"], float)
@@ -178,7 +189,7 @@ def main():
     for name, ang in (("ENV_Kiosk_Plaza", 140), ("ENV_Phone_Booth", 300), ("ENV_Recycling_Bins", 230)):
         for rr in (22, 24, 26, 20, 28):
             q = plaza + np.array([math.cos(math.radians(ang)), math.sin(math.radians(ang))]) * rr
-            if pv.contains(Point(*q)) and put(name, q[0], q[1], yaw(plaza - q), "PLAZA", clear=1.2):
+            if pv.contains(Point(*q)) and put(name, q[0], q[1], yaw(plaza - q), "PLAZA", clear=1.2, sclear=4.2 if name == "ENV_Kiosk_Plaza" else 1.2):
                 break
     for a in np.linspace(0, 2 * math.pi, 10, endpoint=False):
         for rr in (26, 29, 23, 32):
@@ -194,14 +205,14 @@ def main():
         near_plaza = c.distance(Point(0, 0)) < 40
         if g.area <= 70:
             m = ("ENV_Tree_Plaza", "ENV_Tree_Plaza_B", "ENV_Tree_Plaza_C")[gi % 3] if near_plaza else ("ENV_Tree_Common_A", "ENV_Tree_Common_B", "ENV_Tree_Common_C")[gi % 3]
-            if put(m, c.x, c.y, 360 * rnd(f"t{gi}"), "ARBOLADO", clear=1.5) and near_plaza and rnd(f"br{gi}") < 0.4:
+            if put(m, c.x, c.y, 360 * rnd(f"t{gi}"), "ARBOLADO", clear=1.5, sclear=3.0) and near_plaza and rnd(f"br{gi}") < 0.4:
                 put("ENV_Tree_Bench_Ring", c.x, c.y, 0, "ARBOLADO", clear=0.0, force=True)
         else:
             # huerta: a couple of fruit trees and shrubs inside the garden
             for j in range(min(4, int(g.area // 40))):
                 q = g.representative_point() if j == 0 else Point(*(np.array(g.centroid.coords[0]) + (np.array([rnd(f"hx{gi}{j}"), rnd(f"hz{gi}{j}")]) - 0.5) * math.sqrt(g.area)))
                 if g.contains(q):
-                    put(("ENV_Hill_Tree", "ENV_Shrub_Garden", "ENV_Plant_Bush", "ENV_Hill_Tree_B")[j % 4], q.x, q.y, 360 * rnd(f"hr{gi}{j}"), "HUERTAS", clear=1.2)
+                    put(("ENV_Hill_Tree", "ENV_Shrub_Garden", "ENV_Plant_Bush", "ENV_Hill_Tree_B")[j % 4], q.x, q.y, 360 * rnd(f"hr{gi}{j}"), "HUERTAS", clear=1.2, sclear=3.0 if j % 4 in (0, 3) else 1.2)
 
     # --- frontages: bar terraces on the plaza and the main axis; doorstep life elsewhere
     for bid, (r, b, n, xd) in rects.items():
@@ -223,15 +234,18 @@ def main():
         roll = rnd("door" + bid)
         if roll < 0.45:
             side = 1 if rnd("side" + bid) > 0.5 else -1
-            t = mid + xd * (side * (w / 2 - 0.45)) + n * 0.45
             kind = b["kind"]
             if kind == "ribera":
                 m = ("ENV_Net_Pile", "ENV_Prop_Rope_Coil", "ENV_Crate_Fish", "ENV_Prop_Bucket")[int(roll * 40) % 4]
             elif sp["type"] == "mixed_commercial":
                 m = ("ENV_Prop_Barrel", "ENV_Prop_Crate_Wooden", "ENV_AFrame_Board", "ENV_Planter_Box")[int(roll * 40) % 4]
             else:
-                m = ("ENV_Plant_Geranium", "ENV_Planter_Pot", "ENV_Plant_Hydrangea", "ENV_Prop_Bench", "ENV_Pot_Tin", "ENV_Prop_Bucket_Wood")[int(roll * 60) % 6]
-            put(m, t[0], t[1], yaw(n) + (90 if m == "ENV_Prop_Bench" else 0), "PORTALES", clear=0.25, sclear=0.3)
+                # the stone poyo by the door, hortensias, pots: a lived doorstep in the north
+                m = ("ENV_Plant_Geranium", "ENV_Planter_Pot", "ENV_Plant_Hydrangea", "ENV_Bench_Stone", "ENV_Pot_Tin", "ENV_Prop_Bucket_Wood")[int(roll * 60) % 6]
+            depth = DOORSTEP_DEPTH.get(m, 0.6)
+            along = 0.6 + (0.9 if m == "ENV_Bench_Stone" else 0.0)
+            t = mid + xd * (side * (w / 2 - along)) + n * (1.0 + depth / 2)   # the facade face and its rejas stand up to 0.85 m proud of the plot line
+            put(m, t[0], t[1], yaw(n), "PORTALES", clear=0.3, sclear=0.25 + depth / 2)
 
     # --- main axis lamps (north gate to south gate), on the street edge
     for z in np.arange(-118, 52, 22):

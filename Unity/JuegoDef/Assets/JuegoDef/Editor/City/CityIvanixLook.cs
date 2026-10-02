@@ -11,9 +11,10 @@ namespace JuegoDef.City
 {
     /// <summary>
     /// The town's light (owner review 2026-10-02: "falta una hora clara, sombras legibles, contacto, haze controlado"):
-    /// a late-September afternoon on the Cantabrian coast. The sea is north (the antepuerto), so the sun comes from the
-    /// west-south-west, low (28 deg) and warm, raking the north-south Calle Mayor; a cool sky fills the shade; marine
-    /// haze only beyond ~70 m; grading pushes cool shadows against warm highlights. City-owned assets: ENV01's presets
+    /// a late-September afternoon on the Cantabrian coast, ENV01's Atlantic register (owner: "norte de España, no
+    /// Andalucía"). The sea is north (the antepuerto), so a veiled sun comes from the west-south-west, low (28 deg),
+    /// raking the north-south Calle Mayor; a high cloud cover and a cool sky fill the shade; grey marine mist from
+    /// ~30 m; restrained colour. City-owned assets: ENV01's presets
     /// are left untouched. Shadows: 4096 map, 4 cascades, 120 m.
     /// </summary>
     public static class CityIvanixLook
@@ -35,26 +36,26 @@ namespace JuegoDef.City
             if (!sun) { sun = new GameObject("Directional Light").AddComponent<Light>(); sun.type = LightType.Directional; }
             sun.transform.rotation = Quaternion.Euler(28f, 62f, 0f);
             sun.useColorTemperature = true;
-            sun.colorTemperature = 4300f;
-            sun.intensity = 2.6f;
+            sun.colorTemperature = 5300f;          // veiled Atlantic sun, not a golden Mediterranean one
+            sun.intensity = 1.65f;
             sun.shadows = LightShadows.Soft;
-            sun.shadowStrength = 1.0f;
+            sun.shadowStrength = 0.78f;
             sun.shadowBias = 0.03f;
             sun.shadowNormalBias = 0.25f;
             RenderSettings.sun = sun;
 
             // ambient: cool sky, neutral equator, warm low ground bounce; lower than ENV day so shade has body
             RenderSettings.ambientMode = AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = EnvKit.Hex("#7A91B2");
-            RenderSettings.ambientEquatorColor = EnvKit.Hex("#8C847A");
-            RenderSettings.ambientGroundColor = EnvKit.Hex("#4A3E33");
-            RenderSettings.reflectionIntensity = 0.75f;
+            RenderSettings.ambientSkyColor = EnvKit.Hex("#8E9DB2");
+            RenderSettings.ambientEquatorColor = EnvKit.Hex("#8C8980");
+            RenderSettings.ambientGroundColor = EnvKit.Hex("#564B40");
+            RenderSettings.reflectionIntensity = 0.85f;
             // marine haze: clear street, soft distance
             RenderSettings.fog = true;
             RenderSettings.fogMode = FogMode.Linear;
-            RenderSettings.fogColor = EnvKit.Hex("#B4BEC4");
-            RenderSettings.fogStartDistance = 70f;
-            RenderSettings.fogEndDistance = 700f;
+            RenderSettings.fogColor = EnvKit.Hex("#B7BEC0");   // grey marine mist
+            RenderSettings.fogStartDistance = 28f;
+            RenderSettings.fogEndDistance = 380f;
             RenderSettings.skybox = Sky();
             Shader.SetGlobalVector("_JD_SunDir", -sun.transform.forward);
 
@@ -81,7 +82,7 @@ namespace JuegoDef.City
             EditorSceneManager.MarkSceneDirty(baseScene);
             EditorSceneManager.SaveScene(baseScene);
             AssetDatabase.SaveAssets();
-            return $"JD_CITY_IVX_LOOK afternoon: sun 28/62 4300K, fog 70-700, shadows 4096x4 120m, surface variants on {swapped} renderers";
+            return $"JD_CITY_IVX_LOOK Atlantic afternoon: sun 28/62 5300K 1.65, mist 28-380, shadows 4096x4 120m, surface variants on {swapped} renderers";
         }
 
         /// <summary>City-owned variants of the ground and stone materials (ENV01's kit stays as reviewed): the cobbles and
@@ -92,14 +93,23 @@ namespace JuegoDef.City
             Material Variant(Material src)
             {
                 string tweak = src.name.StartsWith("ENV_Pave_Canto") || src.name.StartsWith("ENV_Ground_Canto") ? "Humedo"
-                             : src.name.StartsWith("ENV_Pave_Losa") || src.name.StartsWith("ENV_Ground_Setts") ? "Humedo"
-                             : src.name.StartsWith("ENV_Mason_") || src.name.StartsWith("ENV_RiverWall_") ? "Relieve" : null;
+                             : src.name.StartsWith("ENV_Pave_Losa") || src.name.StartsWith("ENV_Ground_Setts") || src.name.StartsWith("ENV_Pave_Adoquin") ? "Humedo"
+                             : src.name.StartsWith("ENV_Mason_") || src.name.StartsWith("ENV_RiverWall_") ? "Relieve"
+                             : src.name == "ENV_Ground_Grass" ? "Prado" : null;
                 if (tweak == null || src.shader.name != "JuegoDef/ENV/Weathered Lit") return null;
                 var path = $"{Folder}/CITY_{src.name.Substring(4)}_{tweak}.mat";
                 var m = AssetDatabase.LoadAssetAtPath<Material>(path);
                 if (!m) { m = new Material(src); AssetDatabase.CreateAsset(m, path); }
                 m.CopyPropertiesFromMaterial(src);
                 if (tweak == "Humedo") { m.SetFloat("_Roughness", src.name.Contains("Viejo") ? 0.8f : 0.74f); }
+                else if (tweak == "Prado")
+                {
+                    // Atlantic meadow: large-scale tonal variation so the 4 m tile does not repeat at distance, a cooler green
+                    m.SetFloat("_MacroScale", 0.022f);
+                    m.SetFloat("_MacroAmount", 0.32f);
+                    m.SetFloat("_DetailTone", 0.16f);
+                    m.SetColor("_BaseColor", src.GetColor("_BaseColor") * new Color(0.88f, 0.95f, 0.9f, 1f));
+                }
                 else { m.SetFloat("_BumpScale", Mathf.Max(1.35f, src.GetFloat("_BumpScale") * 1.4f)); m.SetFloat("_Roughness", 0.92f); }
                 EditorUtility.SetDirty(m);
                 return m;
@@ -130,15 +140,15 @@ namespace JuegoDef.City
             var m = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (!m) { m = new Material(sh); AssetDatabase.CreateAsset(m, path); }
             m.shader = sh;
-            m.SetColor("_ZenithColor", EnvKit.Hex("#557DAA"));
-            m.SetColor("_HorizonColor", EnvKit.Hex("#D2C7B4"));
+            m.SetColor("_ZenithColor", EnvKit.Hex("#7489A0"));
+            m.SetColor("_HorizonColor", EnvKit.Hex("#C3C7C5"));
             m.SetColor("_GroundColor", EnvKit.Hex("#4A3E33") * 1.6f);
-            m.SetColor("_SunColor", EnvKit.Hex("#FFD3A0"));
-            m.SetColor("_CloudLit", EnvKit.Hex("#FFF1DE"));
-            m.SetColor("_CloudShade", EnvKit.Hex("#8C95A3"));
-            m.SetFloat("_CloudCoverage", 0.4f);
+            m.SetColor("_SunColor", EnvKit.Hex("#FFEBD2"));
+            m.SetColor("_CloudLit", EnvKit.Hex("#F3F0EA"));
+            m.SetColor("_CloudShade", EnvKit.Hex("#9AA2AC"));
+            m.SetFloat("_CloudCoverage", 0.66f);
             m.SetFloat("_Exposure", 1.0f);
-            m.SetFloat("_SunGlow", 0.7f);
+            m.SetFloat("_SunGlow", 0.35f);
             m.SetTexture("_NoiseMap", EnvKit.Tex("T_ENV_Weather_Noise"));
             EditorUtility.SetDirty(m);
             return m;
@@ -157,16 +167,16 @@ namespace JuegoDef.City
             }
             Get<Tonemapping>().mode.Override(TonemappingMode.Neutral);
             var ca = Get<ColorAdjustments>();
-            ca.postExposure.Override(0.1f);
-            ca.contrast.Override(24f);
-            ca.saturation.Override(8f);
+            ca.postExposure.Override(0.12f);
+            ca.contrast.Override(16f);
+            ca.saturation.Override(-2f);
             var wb = Get<WhiteBalance>();
-            wb.temperature.Override(6f);
+            wb.temperature.Override(-2f);
             wb.tint.Override(0f);
             var smh = Get<ShadowsMidtonesHighlights>();
-            smh.shadows.Override(new Vector4(0.92f, 0.97f, 1.10f, -0.04f));
+            smh.shadows.Override(new Vector4(0.95f, 0.98f, 1.06f, -0.02f));
             smh.midtones.Override(new Vector4(1.0f, 1.0f, 1.0f, 0f));
-            smh.highlights.Override(new Vector4(1.07f, 1.0f, 0.91f, 0f));
+            smh.highlights.Override(new Vector4(1.03f, 1.0f, 0.96f, 0f));
             var bloom = Get<Bloom>();
             bloom.threshold.Override(1.0f);
             bloom.intensity.Override(0.25f);

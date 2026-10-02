@@ -214,28 +214,82 @@ namespace JuegoDef.City
                     if (h.TryGetValue(Key(ci + di, cj + dj), out var v) && Mathf.Abs(v.y - self) < 0.6f) { sum += v.y; n++; }
                 return n > 0 ? sum / n : self;
             }
-            string[] mats = { "ENV_Pave_Canto", "ENV_Pave_Canto_Viejo", "ENV_Ground_Grass", "ENV_Ground_Canto_Old", "ENV_RiverWall_Canto", "ENV_Ground_Grass" };
-            string[] names = { "CANTO", "CANTO_VIEJO", "HUERTA", "SUELO", "ROCA", "PRADO" };
+
+            // shoreline: the land outline follows the trace, not the 1 m grid. Boundary corners (land on one side, water
+            // on the other) are relaxed along the outline; the bank drops to the water as a sloped rock revetment.
+            var edges = new List<(long a, long b, Vector2 outN)>();
+            foreach (var kv in h)
+            {
+                int i = (int)(kv.Key >> 32), j = (int)(kv.Key & 0xffffffff);
+                if (!h.ContainsKey(Key(i, j - 1))) edges.Add((Key(i + 1, j), Key(i, j), new Vector2(0, -1)));
+                if (!h.ContainsKey(Key(i + 1, j))) edges.Add((Key(i + 1, j + 1), Key(i + 1, j), new Vector2(1, 0)));
+                if (!h.ContainsKey(Key(i, j + 1))) edges.Add((Key(i, j + 1), Key(i + 1, j + 1), new Vector2(0, 1)));
+                if (!h.ContainsKey(Key(i - 1, j))) edges.Add((Key(i, j), Key(i, j + 1), new Vector2(-1, 0)));
+            }
+            var nbr = new Dictionary<long, List<long>>();
+            var outN = new Dictionary<long, Vector2>();
+            foreach (var e in edges)
+            {
+                if (!nbr.TryGetValue(e.a, out var la)) nbr[e.a] = la = new List<long>();
+                if (!nbr.TryGetValue(e.b, out var lb)) nbr[e.b] = lb = new List<long>();
+                la.Add(e.b); lb.Add(e.a);
+                outN[e.a] = (outN.TryGetValue(e.a, out var na) ? na : Vector2.zero) + e.outN;
+                outN[e.b] = (outN.TryGetValue(e.b, out var nb) ? nb : Vector2.zero) + e.outN;
+            }
+            Vector2 Grid(long k) => new Vector2(ox + (int)(k >> 32) * cell, oz + (int)(k & 0xffffffff) * cell);
+            var xz = nbr.Keys.ToDictionary(k => k, Grid);
+            for (int it = 0; it < 6; it++)
+            {
+                var nxt = new Dictionary<long, Vector2>(xz);
+                foreach (var kv in nbr)
+                    if (kv.Value.Count == 2) nxt[kv.Key] = 0.5f * xz[kv.Key] + 0.25f * (xz[kv.Value[0]] + xz[kv.Value[1]]);
+                xz = nxt;
+            }
+
+            // ground by meaning (seed v4 classes): streets, lanes, huertas, under buildings, shore rock, meadow, the Calle
+            // Mayor's granite flags, the Plaza Mayor's setts, the quay, yards behind the tapias, the roads outside
+            string[] mats = { "ENV_Pave_Canto", "ENV_Pave_Canto_Viejo", "ENV_Ground_Grass", "ENV_Ground_Canto_Old", "ENV_RiverWall_Canto", "ENV_Ground_Grass",
+                              "ENV_Pave_Losa", "ENV_Pave_Adoquin", "ENV_Ground_Setts_Grey", "ENV_Ground_Earth", "ENV_Ground_Setts_Old" };
+            string[] names = { "CANTO", "CANTO_VIEJO", "HUERTA", "SUELO", "ROCA", "PRADO", "LOSA", "ADOQUIN", "MUELLE", "PATIO", "CAMINO" };
             const int Chunk = 64;
             var builders = new Dictionary<(int cls, int cx, int cz), MB>();
+            var shore = new MB();
             foreach (var kv in h)
             {
                 int i = (int)(kv.Key >> 32), j = (int)(kv.Key & 0xffffffff);
                 var key = (kv.Value.cls, i / Chunk, j / Chunk);
                 if (!builders.TryGetValue(key, out var mb)) builders[key] = mb = new MB();
                 float self = kv.Value.y;
-                Vector3 V(int ci, int cj) => new Vector3(ox + ci * cell, Corner(ci, cj, self), oz + cj * cell);
+                Vector3 V(int ci, int cj)
+                {
+                    var k = Key(ci, cj);
+                    var p2 = xz.TryGetValue(k, out var q) ? q : new Vector2(ox + ci * cell, oz + cj * cell);
+                    return new Vector3(p2.x, Corner(ci, cj, self), p2.y);
+                }
                 Vector3 a = V(i, j), b = V(i + 1, j), c = V(i + 1, j + 1), d = V(i, j + 1);
                 mb.Quad(a, d, c, b, true);
-                float Drop(int ni, int nj) => h.TryGetValue(Key(ni, nj), out var nv) ? (self - nv.y > 0.6f ? nv.y - 0.2f : float.NaN) : -1.5f;
+                // internal drops (terraces, quays) keep a vertical face of the cell's own surface
+                float Drop(int ni, int nj) => h.TryGetValue(Key(ni, nj), out var nv) ? (self - nv.y > 0.6f ? nv.y - 0.2f : float.NaN) : float.NaN;
                 float s0 = Drop(i, j - 1), s1 = Drop(i + 1, j), s2 = Drop(i, j + 1), s3 = Drop(i - 1, j);
                 if (!float.IsNaN(s0)) mb.Skirt(b, a, s0);
                 if (!float.IsNaN(s1)) mb.Skirt(c, b, s1);
                 if (!float.IsNaN(s2)) mb.Skirt(d, c, s2);
                 if (!float.IsNaN(s3)) mb.Skirt(a, d, s3);
+                // to the water: a rock revetment sloping 1.4 m out and down below the surface
+                Vector3 Toe(int ci, int cj, Vector3 top)
+                {
+                    var n2 = outN.TryGetValue(Key(ci, cj), out var nn) && nn.sqrMagnitude > 1e-4f ? nn.normalized : Vector2.zero;
+                    return new Vector3(top.x + n2.x * 1.4f, -1.4f, top.z + n2.y * 1.4f);
+                }
+                void Bank(Vector3 p0, int i0, int j0, Vector3 p1, int i1, int j1) => shore.QuadUV(p0, Toe(i0, j0, p0), Toe(i1, j1, p1), p1);
+                if (!h.ContainsKey(Key(i, j - 1))) Bank(b, i + 1, j, a, i, j);
+                if (!h.ContainsKey(Key(i + 1, j))) Bank(c, i + 1, j + 1, b, i + 1, j);
+                if (!h.ContainsKey(Key(i, j + 1))) Bank(d, i, j + 1, c, i + 1, j + 1);
+                if (!h.ContainsKey(Key(i - 1, j))) Bank(a, i, j, d, i, j + 1);
             }
             foreach (var kv in builders)
                 MeshObject($"TERRAIN_{names[kv.Key.cls]}_{kv.Key.cx}_{kv.Key.cz}", parent, kv.Value.ToMesh(), EnvKit.Mat(mats[kv.Key.cls]), true);
+            MeshObject("TERRAIN_ORILLA_ESCOLLERA", parent, shore.ToMesh(), EnvKit.Mat("ENV_RiverWall_Canto"), true);
         }
 
         static void BuildWater(Transform parent)
@@ -343,7 +397,11 @@ namespace JuegoDef.City
             var cheek = EnvKit.Mat("ENV_Mason_Silleria_Arenisca");
             float half = (float)paseo["half_width"], baseY = (float)paseo["base_y"];
             Identity(parent.gameObject, "PASEO_MURALLA", "PublicSpace:paseo", "muralla del s. XV adaptada como paseo marítimo");
-            var pts = ((JArray)paseo["points"]).Select(p => (pos: new Vector3((float)p[0], (float)p[3], (float)p[2]), gap: (bool)p[4])).ToList();
+            var pts = ((JArray)paseo["points"]).Select(p => (pos: new Vector3((float)p[0], (float)p[3], (float)p[2]), gap: (bool)p[4], abut: p.Count() > 5 && (bool)p[5])).ToList();
+            // the quay railing's own painted iron, built continuous along each run (no 2 m modules overlapping at joints)
+            var railProto = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/JuegoDef/Derived/ENV/Modules/ENV_Railing_Quay_2m.prefab");
+            var iron = railProto ? railProto.GetComponentInChildren<Renderer>().sharedMaterial : EnvKit.Mat("ENV_Metal_Iron");
+            var coping = EnvKit.Mat("ENV_Mason_Silleria_Gris");
             var landings = ((JArray)paseo["stairs"]).Select(s => new Vector3((float)s["landing"][0], 0, (float)s["landing"][2])).ToList();
             // ring orientation: the town is on the left of the walking direction when the ring runs counter-clockwise
             float area = 0;
@@ -351,11 +409,25 @@ namespace JuegoDef.City
             float leftIsTown = area > 0 ? 1f : -1f;
 
             var towerXZ = towers.Select(t0 => new Vector2((float)t0["pos"][0], (float)t0["pos"][1])).ToList();
-            void Run(List<(Vector3 pos, bool gap)> line, bool closed, string name, Func<Vector3, Vector3, Vector3> inward)
+            void Rail(Transform g, Vector3 a, Vector3 b, bool startPost, bool endPost)
+            {
+                // two painted iron rails (hand rail at 1.0 m, mid rail at 0.5 m) and a post at the start of each 2 m bay
+                var d = b - a;
+                float L = d.magnitude;
+                if (L < 0.05f) return;
+                var r = Quaternion.LookRotation(d / L);
+                foreach (float h in new[] { 1.0f, 0.5f })
+                    Box("BARANDILLA", g, (a + b) / 2f + Vector3.up * h, r, new Vector3(0.05f, h > 0.9f ? 0.06f : 0.04f, L + 0.03f), iron, h > 0.9f);
+                if (startPost) Box("POSTE", g, a + Vector3.up * 0.51f, Quaternion.LookRotation(new Vector3(d.x, 0, d.z).normalized), new Vector3(0.06f, 1.02f, 0.06f), iron, false);
+                if (endPost) Box("POSTE", g, b + Vector3.up * 0.51f, Quaternion.LookRotation(new Vector3(d.x, 0, d.z).normalized), new Vector3(0.06f, 1.02f, 0.06f), iron, false);
+            }
+
+            void Run(List<(Vector3 pos, bool gap, bool abut)> line, bool closed, string name, Func<Vector3, Vector3, Vector3> inward)
             {
                 var g = new GameObject(name).transform;
                 g.SetParent(parent, false);
                 int n = closed ? line.Count : line.Count - 1;
+                bool railOpen = false;
                 for (int i = 0; i < n; i++)
                 {
                     var A = line[i]; var B = line[(i + 1) % line.Count];
@@ -367,10 +439,10 @@ namespace JuegoDef.City
                             var end = A.gap ? B.pos : A.pos;
                             var other = A.gap ? A.pos : B.pos;
                             var d0 = new Vector3(other.x - end.x, 0, other.z - end.z).normalized;
-                            var cr = EnvKit.Place("ENV_Railing_Quay_2m", g, end + d0 * 0.1f, 0);
-                            cr.transform.rotation = Quaternion.LookRotation(d0);
-                            cr.transform.localScale = new Vector3(half * 2f / 2.02f, 1, 1);
+                            var side = new Vector3(-d0.z, 0, d0.x);
+                            Rail(g, end + d0 * 0.1f - side * (half - 0.1f), end + d0 * 0.1f + side * (half - 0.1f), true, true);
                         }
+                        railOpen = false;
                         continue;
                     }
                     var a3 = A.pos; var b3 = B.pos;
@@ -383,20 +455,28 @@ namespace JuegoDef.City
                     var dir3 = (b3 - a3).normalized;
                     var pitch = Quaternion.LookRotation(dir3);
                     float low = Mathf.Min(a3.y, b3.y);
+                    float len3 = (b3 - a3).magnitude;
                     Box("MURO", g, new Vector3(mid.x, (low - 0.3f + baseY) / 2f, mid.z), Quaternion.LookRotation(t), new Vector3(half * 2f, low - 0.3f - baseY, len + 0.08f), body, true);
-                    Box("ADARVE", g, mid - Vector3.up * 0.15f, pitch, new Vector3(half * 2f, 0.3f, (b3 - a3).magnitude + 0.06f), deckMat, true);
-                    // at a cubo the sea parapet opens onto the lookout (the cubo's own parapet rings its outer bulge)
+                    Box("ADARVE", g, mid - Vector3.up * 0.15f, pitch, new Vector3(half * 2f, 0.3f, len3 + 0.06f), deckMat, true);
+                    // sea parapet: continuous ashlar with a coping; at a cubo it opens onto the lookout
                     if (!towerXZ.Any(tp => Vector2.Distance(tp, new Vector2(mid.x, mid.z)) < 3.6f))
                     {
-                        var sea = EnvKit.Place("ENV_Parapet_Stone_2m", g, mid - inn * (half - 0.26f), 0);
-                        sea.transform.rotation = pitch * Quaternion.Euler(0, -90, 0);
-                        sea.transform.localScale = new Vector3((b3 - a3).magnitude / 2f + 0.02f, 1, 1);
+                        Box("PARAPETO", g, mid - inn * (half - 0.25f) + Vector3.up * 0.45f, pitch, new Vector3(0.5f, 0.9f, len3 + 0.02f), cheek, true);
+                        Box("ALBARDILLA", g, mid - inn * (half - 0.25f) + Vector3.up * 0.94f, pitch, new Vector3(0.62f, 0.08f, len3 + 0.02f), coping, false);
                     }
-                    var railPos = mid + inn * (half - 0.08f);
-                    if (landings.Any(l => Vector2.Distance(new Vector2(l.x, l.z), new Vector2(railPos.x, railPos.z)) < 1.9f)) continue;   // opening onto the stairs
-                    var rail = EnvKit.Place("ENV_Railing_Quay_2m", g, railPos, 0);
-                    rail.transform.rotation = pitch * Quaternion.Euler(0, -90, 0);
-                    rail.transform.localScale = new Vector3((b3 - a3).magnitude / 2.02f + 0.01f, 1, 1);
+                    // town-side railing, continuous; none where a house stands against the wall or the stairs open
+                    var ra = a3 + inn * (half - 0.08f);
+                    var rb = b3 + inn * (half - 0.08f);
+                    bool stairs = landings.Any(l => Vector2.Distance(new Vector2(l.x, l.z), new Vector2((ra.x + rb.x) / 2, (ra.z + rb.z) / 2)) < 1.9f);
+                    bool house = A.abut || B.abut;
+                    if (stairs || house)
+                    {
+                        if (railOpen) Box("POSTE", g, ra + Vector3.up * 0.51f, Quaternion.LookRotation(t), new Vector3(0.06f, 1.02f, 0.06f), iron, false);
+                        railOpen = false;
+                        continue;
+                    }
+                    Rail(g, ra, rb, true, false);
+                    railOpen = true;
                 }
             }
 
@@ -407,7 +487,7 @@ namespace JuegoDef.City
             foreach (JObject sp in spurs)
             {
                 var sPts = (JArray)sp["points"]; var tops = (JArray)sp["tops"];
-                var line = sPts.Select((p, i) => (pos: new Vector3((float)p[0], (float)tops[i], (float)p[2]), gap: false)).ToList();
+                var line = sPts.Select((p, i) => (pos: new Vector3((float)p[0], (float)tops[i], (float)p[2]), gap: false, abut: false)).ToList();
                 // the forecourt side is the "town" side of an arm: railing there, stone parapet towards the sea
                 Run(line, false, $"PASEO_ESPIGON_{k++}", (p, t) => { var l = new Vector3(-t.z, 0, t.x); return Vector3.Dot(anteC - p, l) > 0 ? l : -l; });
             }
@@ -445,9 +525,10 @@ namespace JuegoDef.City
                     float ang = s * 30f * Mathf.Deg2Rad;
                     var dirOut = new Vector3(Mathf.Cos(ang), 0, Mathf.Sin(ang));
                     if (Vector3.Dot(dirOut, -townDir) * 3.05f < half + 0.25f) continue;   // only the bulge beyond the deck's sea edge
-                    var pp = EnvKit.Place("ENV_Parapet_Stone_2m", cg, new Vector3(p.x, top, p.z) + dirOut * 3.05f, 0);
-                    pp.transform.rotation = Quaternion.LookRotation(dirOut);
-                    pp.transform.localScale = new Vector3(0.82f, 1, 1);
+                    var tang = Vector3.Cross(Vector3.up, dirOut);
+                    float chord = 2f * 3.05f * Mathf.Sin(15f * Mathf.Deg2Rad) + 0.04f;
+                    Box("PARAPETO_CUBO", cg, new Vector3(p.x, top + 0.45f, p.z) + dirOut * 3.05f, Quaternion.LookRotation(tang), new Vector3(0.5f, 0.9f, chord), cheek, true);
+                    Box("ALBARDILLA", cg, new Vector3(p.x, top + 0.94f, p.z) + dirOut * 3.05f, Quaternion.LookRotation(tang), new Vector3(0.62f, 0.08f, chord), coping, false);
                 }
             }
 
@@ -770,6 +851,16 @@ namespace JuegoDef.City
                 int i = v.Count;
                 v.Add(a); v.Add(b); v.Add(c); v.Add(d);
                 foreach (var p in new[] { a, b, c, d }) uv.Add(worldUv ? new Vector2(p.x, p.z) * 0.25f : Vector2.zero);
+                t.Add(i); t.Add(i + 1); t.Add(i + 2); t.Add(i); t.Add(i + 2); t.Add(i + 3);
+            }
+
+            public void QuadUV(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
+            {
+                // a = top start, b = toe start, c = toe end, d = top end
+                int i = v.Count;
+                v.Add(a); v.Add(b); v.Add(c); v.Add(d);
+                float u0 = (a.x + a.z) * 0.25f, u1 = (d.x + d.z) * 0.25f, dv = Vector3.Distance(a, b) * 0.25f;
+                uv.Add(new Vector2(u0, 0)); uv.Add(new Vector2(u0, -dv)); uv.Add(new Vector2(u1, -dv)); uv.Add(new Vector2(u1, 0));
                 t.Add(i); t.Add(i + 1); t.Add(i + 2); t.Add(i); t.Add(i + 2); t.Add(i + 3);
             }
 

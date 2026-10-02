@@ -528,6 +528,10 @@ namespace JuegoDef.Env
                     Join("DoorFrame_Flat_WoodDark");
                     Join("ENV_Door_Balcony");
                     Join("Balcony_Simple_Straight");
+                    // the module is the front rail only: close both sides over the 1 m projection (owner walk 2026-10-02:
+                    // "terrazas sin barandillas laterales")
+                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", new Vector3(0, 0, 0.5f), 90, new Vector3(0.5f, 1, 1)));
+                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", new Vector3(0, 0, 0.5f), -90, new Vector3(0.5f, 1, 1)));
                     Join("Floor_WoodDark_Half3", new Vector3(0, 0, 1f));
                     break;
                 case 'N':

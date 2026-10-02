@@ -1,8 +1,8 @@
 {
   "schema": "juego-def.city-ivx-nav/1",
   "agent": "Humanoid",
-  "bake_s": 7.9,
-  "navmesh_triangles": 15545,
+  "bake_s": 5.4,
+  "navmesh_triangles": 11968,
   "complete": 18,
   "total": 18,
   "paths": [
@@ -24,7 +24,7 @@
       "length_m": 44.6,
       "snap": [
         5.2,
-        6.23,
+        6.22,
         51.5
       ]
     },
@@ -32,10 +32,10 @@
       "from": "plaza",
       "to": "antepuerto",
       "status": "PathComplete",
-      "length_m": 66.3,
+      "length_m": 66.4,
       "snap": [
         5.0,
-        2.67,
+        2.62,
         72.0
       ]
     },
@@ -43,10 +43,10 @@
       "from": "plaza",
       "to": "muelle_madera",
       "status": "PathComplete",
-      "length_m": 98.0,
+      "length_m": 97.2,
       "snap": [
         1.0,
-        2.67,
+        2.62,
         86.5
       ]
     },
@@ -57,7 +57,7 @@
       "length_m": 132.7,
       "snap": [
         5.0,
-        4.58,
+        4.56,
         -122.0
       ]
     },
@@ -65,10 +65,10 @@
       "from": "plaza",
       "to": "puente_sur_orilla",
       "status": "PathComplete",
-      "length_m": 168.0,
+      "length_m": 167.7,
       "snap": [
         5.1,
-        2.17,
+        2.12,
         -157.0
       ]
     },
@@ -79,7 +79,7 @@
       "length_m": 84.1,
       "snap": [
         76.0,
-        5.58,
+        5.56,
         -39.0
       ]
     },
@@ -91,17 +91,17 @@
       "snap": [
         96.08,
         3.62,
-        -50.31
+        -50.3
       ]
     },
     {
       "from": "plaza",
       "to": "alto_anillo_bajo",
       "status": "PathComplete",
-      "length_m": 218.0,
+      "length_m": 195.3,
       "snap": [
         -140.0,
-        14.08,
+        14.03,
         -60.0
       ]
     },
@@ -109,10 +109,10 @@
       "from": "plaza",
       "to": "alto_anillo_alto",
       "status": "PathComplete",
-      "length_m": 338.3,
+      "length_m": 308.4,
       "snap": [
         -116.0,
-        17.58,
+        17.53,
         -12.0
       ]
     },
@@ -120,10 +120,10 @@
       "from": "plaza",
       "to": "alto_explanada_torre",
       "status": "PathComplete",
-      "length_m": 308.6,
+      "length_m": 278.8,
       "snap": [
         -129.0,
-        19.08,
+        19.03,
         -12.0
       ]
     },
@@ -134,7 +134,7 @@
       "length_m": 49.7,
       "snap": [
         42.7,
-        12.96,
+        12.95,
         40.4
       ]
     },
@@ -145,7 +145,7 @@
       "length_m": 70.7,
       "snap": [
         16.0,
-        8.05,
+        8.06,
         -48.0
       ]
     },
@@ -153,10 +153,10 @@
       "from": "plaza",
       "to": "comandancia",
       "status": "PathComplete",
-      "length_m": 120.6,
+      "length_m": 117.2,
       "snap": [
         24.0,
-        6.37,
+        6.35,
         -100.0
       ]
     },
@@ -164,10 +164,10 @@
       "from": "plaza",
       "to": "cultura",
       "status": "PathComplete",
-      "length_m": 163.8,
+      "length_m": 140.9,
       "snap": [
-        -119.85,
-        13.5,
+        -119.83,
+        13.46,
         56.98
       ]
     },
@@ -175,10 +175,10 @@
       "from": "plaza",
       "to": "paseo_este",
       "status": "PathComplete",
-      "length_m": 232.6,
+      "length_m": 106.7,
       "snap": [
         98.16,
-        11.83,
+        11.85,
         22.44
       ]
     },
@@ -186,10 +186,10 @@
       "from": "plaza",
       "to": "paseo_oeste",
       "status": "PathComplete",
-      "length_m": 279.1,
+      "length_m": 263.9,
       "snap": [
         -200.22,
-        16.42,
+        16.45,
         -20.48
       ]
     },
@@ -197,10 +197,10 @@
       "from": "plaza",
       "to": "orilla_sur_carretera",
       "status": "PathComplete",
-      "length_m": 181.0,
+      "length_m": 180.7,
       "snap": [
         5.0,
-        2.25,
+        2.2,
         -170.0
       ]
     }

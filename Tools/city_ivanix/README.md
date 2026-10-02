@@ -25,5 +25,15 @@ The layout captures are **not** redistributed. Tools that draw over them (`trace
 
 ## Metrics (seed v4)
 
-270 buildings, 61 % semantic buildings accessible, 0 footprint overlaps, neighbours on a street tramo differ by
-4° (p50) / 14° (p90); NavMesh 18/18 anchor paths complete.
+268 buildings, 60 % semantic buildings accessible, 0 footprint overlaps, neighbours on a street tramo differ by
+4° (p50) / 14° (p90); NavMesh 18/18 anchor paths complete; semantic + overlap audit (`CityIvanixLint`) clean.
+
+## Rules the pass enforces (owner walks 2026-10-02)
+
+- one way in per building; consolidated programmes keep the door on their main cell;
+- tapias only between two facades of the same tramo, with a yard behind; never across a stair, landing or gate;
+- stairs need an open arrival above and a landing below; paseo furniture stays off landings;
+- ground by meaning: granite flags (Calle Mayor, Muelle), setts (Plaza Mayor), river cobbles (streets), old cobbles
+  (lanes, El Alto), grey setts (quay), earth (yards), meadow and huerta outside; no stray patches;
+- building bases reach the lowest ground under the whole plan and sink 0.3 m;
+- doorstep props stand clear of the real facade face (walls and rejas stand up to 0.85 m proud of the plot line).
