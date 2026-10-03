@@ -1,0 +1,128 @@
+{
+  "schema": "juego-def.city-views/1",
+  "framing": "game framing measured in Play Mode on the scene's GC2 shot: camera 3 m behind the Player, 2.0 m above the feet, 0.5 m over the right shoulder, level (pitch 0 unless stated), FOV 55; Player standing at the feet point",
+  "tool": "JuegoDef.City.CityViews.Capture(VIEWS.json, outDir, prefix)",
+  "views": [
+    {
+      "id": "V1_llegada_muelle",
+      "feet": [
+        2,
+        9.5,
+        26
+      ],
+      "yaw": 184.4,
+      "pitch": 2,
+      "look_at": [
+        0,
+        0
+      ],
+      "note": "Primera vista: se entra a la plaza por la calle que sube de la Puerta del Muelle. Remate esperado: fuente y boca de la Calle Mayor."
+    },
+    {
+      "id": "V2_plaza_desde_calle_mayor",
+      "feet": [
+        -2,
+        9.5,
+        -22
+      ],
+      "yaw": 20.7,
+      "pitch": 2,
+      "look_at": [
+        12,
+        15
+      ],
+      "note": "Quien sube por la Calle Mayor desemboca en la plaza. Remate esperado: torre de la iglesia."
+    },
+    {
+      "id": "V3_iglesia",
+      "feet": [
+        -4,
+        9.5,
+        -6
+      ],
+      "yaw": 40.6,
+      "pitch": 2,
+      "look_at": [
+        20,
+        22
+      ],
+      "note": "Fachada de la Iglesia y su atrio desde el centro-sur de la plaza."
+    },
+    {
+      "id": "V4_consistorial",
+      "feet": [
+        20,
+        9.5,
+        13
+      ],
+      "yaw": 276.0,
+      "pitch": 2,
+      "look_at": [
+        -18,
+        17
+      ],
+      "note": "Casa Consistorial desde el lado de la Iglesia, a través de la plaza."
+    },
+    {
+      "id": "V5_mercado",
+      "feet": [
+        6,
+        9.5,
+        -2
+      ],
+      "yaw": 81.9,
+      "pitch": 2,
+      "look_at": [
+        34,
+        2
+      ],
+      "note": "Mercado de Abastos desde la fuente."
+    },
+    {
+      "id": "V6_eje_calle_mayor",
+      "feet": [
+        0,
+        9.5,
+        14
+      ],
+      "yaw": 183.2,
+      "pitch": 2,
+      "look_at": [
+        -3,
+        -40
+      ],
+      "note": "El eje de la plaza a la Calle Mayor: la boca de la calle debe leerse."
+    },
+    {
+      "id": "V7_calle_mayor_sidreria",
+      "feet": [
+        -3,
+        9.5,
+        -20
+      ],
+      "yaw": 181.4,
+      "pitch": 2,
+      "look_at": [
+        -4,
+        -60
+      ],
+      "note": "Arranque de la Calle Mayor: sidrería, bar, terrazas."
+    },
+    {
+      "id": "V8_calle_mayor_vuelta",
+      "feet": [
+        0,
+        7.5,
+        -70
+      ],
+      "yaw": 358.1,
+      "pitch": 2,
+      "look_at": [
+        -2,
+        -10
+      ],
+      "note": "Desde la bocacalle del abanico mirando al norte, de vuelta a la plaza. Remate esperado: plaza, fuente y, al fondo, la Puerta del Muelle."
+    }
+  ],
+  "repeatability": "re-run 2026-10-03 on the same scenes: lower half (ground, buildings, props) identical pixel for pixel; only the animated cloud sky differs"
+}

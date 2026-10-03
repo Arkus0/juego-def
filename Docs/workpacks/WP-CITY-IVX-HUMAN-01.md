@@ -15,6 +15,21 @@ Worktree: `C:\Users\Usuario\juego-def-wt\city` · rama `worker/city-skeleton-00`
 
 Prioridades, en este orden: **1. humano / semántico** · 2. assets al nivel · 3. que el Dreamcast+ se note.
 
+### Añadido del Owner (2026-10-03, durante el Paso 1)
+
+Viendo una captura de Shenmue 2 junto a la Calle Mayor actual:
+
+> "Creo el tema de la luz, y sobretodo, texturas con cada superficie pintada, es clave."
+>
+> "Es que es eso. Me da igual lo que haya que cambiar, me da igual la calidad, me da igual si tenemos que quitar assets
+> quaternius o no, quiero que el juego parezca un spin off de shenmue 2. Como un DLC con el mismo estilo gráfico."
+
+Consecuencia: el **look Shenmue 2** deja de ser la prioridad 3 y pasa a objetivo de primer orden, a la par de lo humano
+(en Shenmue la densidad tiene sentido: cada objeto es de la tienda de al lado; ambas cosas son el mismo trabajo). La barra
+de la sección 8 pasa a ser "parece Shenmue 2": luz horneada y textura pintada en cada superficie; Quaternius y el kit
+dejan de ser obligatorios. Lectura del Worker, pendiente de confirmar en el checkpoint del brief: es el **estilo gráfico**
+de Shenmue 2 sobre el mismo pueblo cantábrico de 1999–2003 (sin estética asiática ni marcas reales, sección 6).
+
 ---
 
 ## 0. Postura (léelo antes de tocar nada)
