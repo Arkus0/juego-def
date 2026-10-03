@@ -1,7 +1,7 @@
 # Plaza Mayor y arranque de la Calle Mayor — brief de lugar v1
 
-Estado: **PARA VISTO BUENO DEL OWNER** (checkpoint obligatorio del Paso 2 de `WP-CITY-IVX-HUMAN-01`; no se construye
-nada del corte antes). Vista cenital anotada: [`PLAZA_MAYOR_PLAN.jpg`](PLAZA_MAYOR_PLAN.jpg). Diario del paseo y vistas
+Estado: **APROBADO POR EL OWNER (2026-10-03)**: brief sí; martes 12:30 con mercadillo; primero la esquina de prueba V7 con cámara Shenmue y 640×480 4:3; "Shenmue 2 gráficamente, pero en un pueblo cántabro: como haría el equipo un DLC de Shenmue 2 en Cantabria". (Checkpoint del Paso 2 de `WP-CITY-IVX-HUMAN-01`.)
+Vista cenital anotada: [`PLAZA_MAYOR_PLAN.jpg`](PLAZA_MAYOR_PLAN.jpg). Diario del paseo y vistas
 "antes": `Docs/evidence/WP-CITY-IVX-HUMAN-01/`.
 
 ## 0. El objetivo de imagen: un DLC de Shenmue 2 en un pueblo cántabro

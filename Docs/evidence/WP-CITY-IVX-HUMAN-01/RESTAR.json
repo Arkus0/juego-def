@@ -1,0 +1,1129 @@
+{
+  "schema": "juego-def.city-ivx-restar/1",
+  "wp": "WP-CITY-IVX-HUMAN-01",
+  "step": 3,
+  "box": "x[-45,45] z[-75,35]",
+  "count": 112,
+  "removed": [
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "PLAZA",
+      "pos": [
+        23.0,
+        9.46,
+        0.0
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "PLAZA",
+      "pos": [
+        23.46,
+        9.05,
+        17.05
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "PLAZA",
+      "pos": [
+        -8.03,
+        9.67,
+        -24.73
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "PLAZA",
+      "pos": [
+        7.11,
+        9.63,
+        -21.87
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "CITY_Market_Stall_Ropa",
+      "parent": "MERCADO",
+      "pos": [
+        -2.4,
+        9.88,
+        10.89
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        -2.7,
+        9.86,
+        12.12
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        0.79,
+        9.87,
+        11.07
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Crate_Fish",
+      "parent": "MERCADO",
+      "pos": [
+        0.39,
+        9.85,
+        12.3
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Ropa",
+      "parent": "MERCADO",
+      "pos": [
+        3.98,
+        9.82,
+        11.26
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        3.4,
+        9.82,
+        12.48
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        -12.14,
+        9.88,
+        4.49
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Crate_Fish",
+      "parent": "MERCADO",
+      "pos": [
+        -11.87,
+        9.9,
+        5.72
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Ropa",
+      "parent": "MERCADO",
+      "pos": [
+        -9.13,
+        9.94,
+        3.43
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        -8.28,
+        9.96,
+        4.46
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Fruta",
+      "parent": "MERCADO",
+      "pos": [
+        -11.38,
+        9.93,
+        1.99
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        -12.66,
+        9.92,
+        2.15
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Ropa",
+      "parent": "MERCADO",
+      "pos": [
+        -11.02,
+        9.94,
+        -0.53
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        -12.24,
+        9.94,
+        -0.84
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        -10.57,
+        9.95,
+        -3.69
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Crate_Fish",
+      "parent": "MERCADO",
+      "pos": [
+        -11.77,
+        9.94,
+        -4.14
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Fruta",
+      "parent": "MERCADO",
+      "pos": [
+        -9.26,
+        9.94,
+        -8.17
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Crate_Fish",
+      "parent": "MERCADO",
+      "pos": [
+        -10.52,
+        9.93,
+        -8.73
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        -6.84,
+        9.94,
+        -10.27
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        -7.52,
+        9.93,
+        -11.33
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        8.65,
+        9.91,
+        4.56
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        9.97,
+        9.89,
+        4.98
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Fruta",
+      "parent": "MERCADO",
+      "pos": [
+        10.83,
+        9.87,
+        2.22
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        11.73,
+        9.86,
+        3.09
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Fruta",
+      "parent": "MERCADO",
+      "pos": [
+        13.01,
+        9.82,
+        -0.12
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        14.23,
+        9.81,
+        0.41
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Fruta",
+      "parent": "MERCADO",
+      "pos": [
+        15.2,
+        9.75,
+        -2.46
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        15.83,
+        9.76,
+        -1.3
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        5.93,
+        9.96,
+        -6.24
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Crate_Fish",
+      "parent": "MERCADO",
+      "pos": [
+        7.13,
+        9.96,
+        -5.72
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        1.13,
+        9.88,
+        -14.73
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Crate_Fish",
+      "parent": "MERCADO",
+      "pos": [
+        1.64,
+        9.86,
+        -15.88
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Ropa",
+      "parent": "MERCADO",
+      "pos": [
+        4.0,
+        9.89,
+        -13.32
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        4.72,
+        9.88,
+        -14.36
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Ropa",
+      "parent": "MERCADO",
+      "pos": [
+        6.88,
+        9.88,
+        -11.91
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        6.99,
+        9.87,
+        -13.24
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Market_Stall_Quesos",
+      "parent": "MERCADO",
+      "pos": [
+        9.75,
+        9.85,
+        -10.5
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Box_Cardboard",
+      "parent": "MERCADO",
+      "pos": [
+        10.3,
+        9.84,
+        -11.61
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "CITY_Van_Plata",
+      "parent": "MERCADO",
+      "pos": [
+        19.64,
+        9.62,
+        -3.18
+      ],
+      "why": "mercadillo radial sembrado: se rehace como calle de puestos (viñeta 1)"
+    },
+    {
+      "obj": "ENV_Planter_Pot",
+      "parent": "PORTALES",
+      "pos": [
+        -5.07,
+        8.51,
+        28.82
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "ENV_Prop_Crate_Wooden",
+      "parent": "PORTALES",
+      "pos": [
+        -33.44,
+        10.21,
+        -12.05
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "ENV_Bench_Stone",
+      "parent": "PORTALES",
+      "pos": [
+        -24.7,
+        9.9,
+        -19.64
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "CITY_Butane",
+      "parent": "PORTALES",
+      "pos": [
+        -22.36,
+        9.87,
+        -20.78
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "ENV_Prop_Bucket_Wood",
+      "parent": "PORTALES",
+      "pos": [
+        42.45,
+        7.65,
+        -32.08
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "ENV_AFrame_Board",
+      "parent": "PORTALES",
+      "pos": [
+        -27.05,
+        9.69,
+        -35.96
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "CITY_Butane",
+      "parent": "PORTALES",
+      "pos": [
+        9.88,
+        9.12,
+        -31.78
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "CITY_Hortensia_Azul",
+      "parent": "PORTALES",
+      "pos": [
+        36.07,
+        7.11,
+        -59.98
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "CITY_Butane",
+      "parent": "PORTALES",
+      "pos": [
+        26.12,
+        7.12,
+        -65.65
+      ],
+      "why": "objeto de portal por regla, sin dueño"
+    },
+    {
+      "obj": "CITY_Terrace_Set",
+      "parent": "TERRAZAS",
+      "pos": [
+        -7.01,
+        9.59,
+        -26.14
+      ],
+      "why": "terraza sin dueño"
+    },
+    {
+      "obj": "CITY_Terrace_Set",
+      "parent": "TERRAZAS",
+      "pos": [
+        -6.88,
+        9.47,
+        -29.08
+      ],
+      "why": "terraza sin dueño"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "FAROLAS",
+      "pos": [
+        2.8,
+        6.7,
+        -74.0
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "FAROLAS",
+      "pos": [
+        -3.5,
+        8.26,
+        -52.0
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "FAROLAS",
+      "pos": [
+        -3.5,
+        9.45,
+        -30.0
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "FAROLAS",
+      "pos": [
+        -4.5,
+        9.77,
+        14.0
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "ENV_Lamp_Post",
+      "parent": "FAROLAS",
+      "pos": [
+        3.5,
+        9.75,
+        14.0
+      ],
+      "why": "farola exenta: en calle estrecha y plaza van faroles de pared"
+    },
+    {
+      "obj": "CITY_Van_Rojo",
+      "parent": "VEHICULOS",
+      "pos": [
+        0.57,
+        8.35,
+        -48.67
+      ],
+      "why": "furgoneta aparcada en el eje de la Calle Mayor; asset bajo la barra"
+    },
+    {
+      "obj": "ENV_Planter_Pot",
+      "parent": "Dressing",
+      "pos": [
+        -17.63,
+        9.48,
+        14.02
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Plant_Hydrangea",
+      "parent": "Dressing",
+      "pos": [
+        -17.63,
+        9.84,
+        14.02
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_FarmCrate_Apple",
+      "parent": "Dressing",
+      "pos": [
+        -35.64,
+        9.77,
+        11.77
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_FarmCrate_Carrot",
+      "parent": "Dressing",
+      "pos": [
+        -35.13,
+        9.77,
+        11.6
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_FarmCrate_Apple",
+      "parent": "Dressing",
+      "pos": [
+        -35.41,
+        10.1,
+        11.69
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_Bucket",
+      "parent": "Dressing",
+      "pos": [
+        -8.77,
+        9.34,
+        -34.85
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_Bucket_Wood",
+      "parent": "Dressing",
+      "pos": [
+        -8.79,
+        9.34,
+        -35.3
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_Rope_Coil",
+      "parent": "Dressing",
+      "pos": [
+        -8.79,
+        9.34,
+        -34.46
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Pot_Glazed",
+      "parent": "Dressing",
+      "pos": [
+        -5.35,
+        7.31,
+        -69.55
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Plant_Laurel",
+      "parent": "Dressing",
+      "pos": [
+        -5.35,
+        7.64,
+        -69.55
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Bicycle",
+      "parent": "Dressing",
+      "pos": [
+        -5.3,
+        7.31,
+        -70.05
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Planter_Box",
+      "parent": "Dressing",
+      "pos": [
+        -28.35,
+        8.71,
+        -61.75
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Plant_Geranium",
+      "parent": "Dressing",
+      "pos": [
+        -28.35,
+        8.91,
+        -61.75
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Pot_Glazed",
+      "parent": "Dressing",
+      "pos": [
+        -35.73,
+        8.84,
+        -60.78
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Plant_Laurel",
+      "parent": "Dressing",
+      "pos": [
+        -35.73,
+        9.17,
+        -60.78
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_AFrame_Board",
+      "parent": "Dressing",
+      "pos": [
+        -4.66,
+        7.89,
+        33.95
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Cafe_Table",
+      "parent": "Dressing",
+      "pos": [
+        -4.76,
+        7.89,
+        34.13
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Cafe_Chair",
+      "parent": "Dressing",
+      "pos": [
+        -4.55,
+        7.89,
+        34.8
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_Barrel_Apples",
+      "parent": "Dressing",
+      "pos": [
+        32.49,
+        8.06,
+        -36.54
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Prop_Bag",
+      "parent": "Dressing",
+      "pos": [
+        32.96,
+        8.06,
+        -36.59
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Planter_Pot",
+      "parent": "Dressing",
+      "pos": [
+        36.18,
+        7.16,
+        -54.36
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Plant_Fern",
+      "parent": "Dressing",
+      "pos": [
+        36.18,
+        7.52,
+        -54.36
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Bench_Stone",
+      "parent": "Dressing",
+      "pos": [
+        36.07,
+        7.16,
+        -53.74
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Pot_Tin",
+      "parent": "Dressing",
+      "pos": [
+        23.67,
+        7.1,
+        -66.83
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Plant_Geranium",
+      "parent": "Dressing",
+      "pos": [
+        23.67,
+        7.39,
+        -66.83
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "ENV_Bicycle",
+      "parent": "Dressing",
+      "pos": [
+        21.18,
+        7.1,
+        -67.15
+      ],
+      "why": "objeto suelto a pie de calle puesto por regla"
+    },
+    {
+      "obj": "GENERO_barriles",
+      "parent": "SHOP_R0085",
+      "pos": [
+        -32.88,
+        9.75,
+        11.05
+      ],
+      "why": "barriles en la puerta: estética de aldea medieval; la sidrería tendrá su barril-mesa"
+    },
+    {
+      "obj": "GENERO_barriles",
+      "parent": "SHOP_R0152",
+      "pos": [
+        -8.62,
+        9.42,
+        -32.33
+      ],
+      "why": "barriles en la puerta: estética de aldea medieval; la sidrería tendrá su barril-mesa"
+    },
+    {
+      "obj": "R0032",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0032)"
+    },
+    {
+      "obj": "R0013",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0013)"
+    },
+    {
+      "obj": "R0037",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0037)"
+    },
+    {
+      "obj": "R0051",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0051)"
+    },
+    {
+      "obj": "R0056",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0056)"
+    },
+    {
+      "obj": "R0062",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0062)"
+    },
+    {
+      "obj": "R0080",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0080)"
+    },
+    {
+      "obj": "R0117",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0117)"
+    },
+    {
+      "obj": "R0138",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0138)"
+    },
+    {
+      "obj": "R0139",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0139)"
+    },
+    {
+      "obj": "R0140",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0140)"
+    },
+    {
+      "obj": "R0156",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0156)"
+    },
+    {
+      "obj": "R0191",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0191)"
+    },
+    {
+      "obj": "M0183_03",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_M0183_03)"
+    },
+    {
+      "obj": "M0286_00",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_M0286_00)"
+    },
+    {
+      "obj": "R0013_1",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0013_1)"
+    },
+    {
+      "obj": "R0051_2",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0051_2)"
+    },
+    {
+      "obj": "R0113_1",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0113_1)"
+    },
+    {
+      "obj": "R0117_1",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0117_1)"
+    },
+    {
+      "obj": "R0117_2",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0117_2)"
+    },
+    {
+      "obj": "R0158_1",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0158_1)"
+    },
+    {
+      "obj": "R0214_1",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_R0214_1)"
+    },
+    {
+      "obj": "M0183_03_1",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_M0183_03_1)"
+    },
+    {
+      "obj": "M0183_03_2",
+      "parent": "CITY_IVX_Buildings",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_M0183_03_2)"
+    }
+  ]
+}
