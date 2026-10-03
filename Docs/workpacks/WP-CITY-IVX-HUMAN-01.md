@@ -98,6 +98,9 @@ después.
   poder retirarse: la plaza vacía también debe funcionar);
 - la lista de viñetas (paso 6).
 
+**Checkpoint del Owner (obligatorio):** al terminar el brief, parar y enviárselo al Owner con la vista anotada y el
+diario del paseo. No se construye nada del corte hasta su visto bueno al brief.
+
 **Paso 3 — Restar.** Quita todo lo que no tenga dueño ni motivo. Quitar cuenta como avance; una calle tranquila y
 limpia es mejor que una llena de relleno.
 
