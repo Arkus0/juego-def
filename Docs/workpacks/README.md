@@ -89,6 +89,7 @@ pilot -- evidence only --> later Director semantic capability disposition
 | `WP-CITY-SKELETON-00` | Fase 0: whole Mapa F1 walkable blockout, budgets re-measured from the scene | CITY-MASTER-00 + bootstrap + ENV kit (ENV chain) |
 | `WP-CITY-B0-01` | Fase 1: B0 Mercado–Muelle finished sector + interior kit v1 (absorbs CASCO-V2 pilot) | CITY-SKELETON-00 |
 | ~~`WP-PROD-ENV-CASCO-V2-00`~~ | **Superseded 2026-10-01** by `WP-CITY-B0-01` | — |
+| `WP-CITY-IVX-HUMAN-01` | Ivanix-layout town track: Plaza Mayor + Calle Mayor slice authored by hand (generator frozen), owner walk PASS as the gate | city_ivanix pipeline (`effe9af`…`bca8d27`), Owner walk 2026-10-03 |
 | `WP-PROD-ASSET-00` ✅ | Shared asset catalogue, research spikes, intake, lineage, discovery and validators | **PASS / accepted** |
 | `WP-M0-00` | Small retained GC2 gameplay integration fixture | Bootstrap PASS; parallel |
 | `WP-PROD-ENV-01` | Environment asset/assembly factory serving accepted CITY/B0 demand | ASSET-00 + CITY-URBAN-00 |
