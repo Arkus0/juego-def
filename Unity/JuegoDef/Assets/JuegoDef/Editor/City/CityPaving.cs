@@ -78,6 +78,9 @@ namespace JuegoDef.City
             // for the paving (Tools/city_ivanix/tools/ground_textures.py)
             Painted(mat, 11, Dir + "/TX_Ground_Abanico.png", 2f / 1.8f, new Color(0.95f, 0.94f, 0.92f));     // setts a touch large: the fan reads at play distance
             Painted(mat, 12, Dir + "/TX_Ground_Granito.png", 1f, new Color(0.8f, 0.8f, 0.79f));
+            // the granite flags of the Calle Mayor and the Muelle: dressed slabs in courses, painted with their wear
+            // (WP-CITY-IVX-HUMAN-01, Shenmue 2 look; tools/paint_plaza.py), not the irregular garden flags
+            Painted(mat, 6, Dir + "/TX_Ground_LosaGranito.png", 1f, new Color(0.97f, 0.96f, 0.94f));
             if (noise) mat.SetTexture("_NoiseMap", noise);
             EditorUtility.SetDirty(mat);
 

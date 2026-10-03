@@ -1,8 +1,8 @@
 {
   "schema": "juego-def.city-ivx-nav/1",
   "agent": "Humanoid",
-  "bake_s": 5.1,
-  "navmesh_triangles": 11699,
+  "bake_s": 4.9,
+  "navmesh_triangles": 11705,
   "complete": 18,
   "total": 18,
   "paths": [
@@ -142,7 +142,7 @@
       "from": "plaza",
       "to": "hotel",
       "status": "PathComplete",
-      "length_m": 68.7,
+      "length_m": 68.8,
       "snap": [
         16.0,
         8.1,

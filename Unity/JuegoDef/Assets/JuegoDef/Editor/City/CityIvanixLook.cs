@@ -21,7 +21,7 @@ namespace JuegoDef.City
     {
         const string Folder = CityIvanixSeed.SceneDir + "/Lighting";
 
-        [MenuItem("JuegoDef/CITY/Ivanix town: apply afternoon light")]
+        [MenuItem("JuegoDef/CITY/Ivanix town: apply the town light (Shenmue midday)")]
         static void Menu() => Debug.Log(Apply());
 
         public static string Apply()
@@ -31,31 +31,33 @@ namespace JuegoDef.City
             SceneManager.SetActiveScene(baseScene);
             if (!AssetDatabase.IsValidFolder(Folder)) AssetDatabase.CreateFolder(CityIvanixSeed.SceneDir, "Lighting");
 
-            // sun: afternoon from WSW (azimuth ~250 deg), the light travels towards ENE
+            // sun: the authored moment is Tuesday 12 September 2000, 12:30 (Plaza Mayor brief): at 43.4 N the sun stands
+            // ~42 deg high in the SE (azimuth ~140), so the light travels towards the NW. Shenmue 2 daylight (Owner
+            // 2026-10-03): high key, clear, saturated; shadows read but are never black.
             var sun = baseScene.GetRootGameObjects().SelectMany(r => r.GetComponentsInChildren<Light>(true)).FirstOrDefault(l => l.type == LightType.Directional);
             if (!sun) { sun = new GameObject("Directional Light").AddComponent<Light>(); sun.type = LightType.Directional; }
-            sun.transform.rotation = Quaternion.Euler(28f, 62f, 0f);
+            sun.transform.rotation = Quaternion.Euler(42f, 320f, 0f);
             sun.useColorTemperature = true;
-            sun.colorTemperature = 5300f;          // veiled Atlantic sun, not a golden Mediterranean one
-            sun.intensity = 1.65f;
+            sun.colorTemperature = 5600f;          // clear midday, still northern: not a golden Mediterranean sun
+            sun.intensity = 1.9f;
             sun.shadows = LightShadows.Soft;
-            sun.shadowStrength = 0.78f;
+            sun.shadowStrength = 0.62f;
             sun.shadowBias = 0.03f;
             sun.shadowNormalBias = 0.25f;
             RenderSettings.sun = sun;
 
-            // ambient: cool sky, neutral equator, warm low ground bounce; lower than ENV day so shade has body
+            // ambient: generous, as Dreamcast daylight: blue sky, warm bounce off the stone; shade keeps its colour
             RenderSettings.ambientMode = AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = EnvKit.Hex("#8E9DB2");
-            RenderSettings.ambientEquatorColor = EnvKit.Hex("#8C8980");
-            RenderSettings.ambientGroundColor = EnvKit.Hex("#564B40");
+            RenderSettings.ambientSkyColor = EnvKit.Hex("#A3B6CE");
+            RenderSettings.ambientEquatorColor = EnvKit.Hex("#ADA796");
+            RenderSettings.ambientGroundColor = EnvKit.Hex("#73654F");
             RenderSettings.reflectionIntensity = 0.85f;
-            // marine haze: clear street, soft distance
+            // haze only far away: the street and the plaza are crisp, the hills soften
             RenderSettings.fog = true;
             RenderSettings.fogMode = FogMode.Linear;
-            RenderSettings.fogColor = EnvKit.Hex("#B7BEC0");   // grey marine mist
-            RenderSettings.fogStartDistance = 28f;
-            RenderSettings.fogEndDistance = 380f;
+            RenderSettings.fogColor = EnvKit.Hex("#C8D2D8");   // light sea haze
+            RenderSettings.fogStartDistance = 90f;
+            RenderSettings.fogEndDistance = 520f;
             RenderSettings.skybox = Sky();
             Shader.SetGlobalVector("_JD_SunDir", -sun.transform.forward);
 
@@ -82,7 +84,7 @@ namespace JuegoDef.City
             EditorSceneManager.MarkSceneDirty(baseScene);
             EditorSceneManager.SaveScene(baseScene);
             AssetDatabase.SaveAssets();
-            return $"JD_CITY_IVX_LOOK Atlantic afternoon: sun 28/62 5300K 1.65, mist 28-380, shadows 4096x4 120m, surface variants on {swapped} renderers";
+            return $"JD_CITY_IVX_LOOK Shenmue midday: sun 42/320 5600K 1.9, haze 90-520, shadows 4096x4 120m, surface variants on {swapped} renderers";
         }
 
         /// <summary>City-owned variants of the ground and stone materials (ENV01's kit stays as reviewed): the cobbles and
@@ -140,13 +142,13 @@ namespace JuegoDef.City
             var m = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (!m) { m = new Material(sh); AssetDatabase.CreateAsset(m, path); }
             m.shader = sh;
-            m.SetColor("_ZenithColor", EnvKit.Hex("#7489A0"));
-            m.SetColor("_HorizonColor", EnvKit.Hex("#C3C7C5"));
+            m.SetColor("_ZenithColor", EnvKit.Hex("#5C86BA"));
+            m.SetColor("_HorizonColor", EnvKit.Hex("#CBD8E0"));
             m.SetColor("_GroundColor", EnvKit.Hex("#4A3E33") * 1.6f);
             m.SetColor("_SunColor", EnvKit.Hex("#FFEBD2"));
             m.SetColor("_CloudLit", EnvKit.Hex("#F3F0EA"));
             m.SetColor("_CloudShade", EnvKit.Hex("#9AA2AC"));
-            m.SetFloat("_CloudCoverage", 0.66f);
+            m.SetFloat("_CloudCoverage", 0.48f);
             m.SetFloat("_Exposure", 1.0f);
             m.SetFloat("_SunGlow", 0.35f);
             m.SetTexture("_NoiseMap", EnvKit.Tex("T_ENV_Weather_Noise"));
@@ -167,11 +169,11 @@ namespace JuegoDef.City
             }
             Get<Tonemapping>().mode.Override(TonemappingMode.Neutral);
             var ca = Get<ColorAdjustments>();
-            ca.postExposure.Override(0.12f);
-            ca.contrast.Override(16f);
-            ca.saturation.Override(-2f);
+            ca.postExposure.Override(0.18f);
+            ca.contrast.Override(10f);
+            ca.saturation.Override(14f);
             var wb = Get<WhiteBalance>();
-            wb.temperature.Override(-2f);
+            wb.temperature.Override(4f);
             wb.tint.Override(0f);
             var smh = Get<ShadowsMidtonesHighlights>();
             smh.shadows.Override(new Vector4(0.95f, 0.98f, 1.06f, -0.02f));
@@ -180,7 +182,7 @@ namespace JuegoDef.City
             var bloom = Get<Bloom>();
             bloom.threshold.Override(1.0f);
             bloom.intensity.Override(0.25f);
-            Get<Vignette>().intensity.Override(0.2f);
+            Get<Vignette>().intensity.Override(0f);
             EditorUtility.SetDirty(p);
             return p;
         }

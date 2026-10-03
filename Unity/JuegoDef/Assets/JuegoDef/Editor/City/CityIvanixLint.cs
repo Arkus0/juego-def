@@ -74,11 +74,15 @@ namespace JuegoDef.City
                 }
             // 3) props inside houses or floating
             CityEntities.IndexBuildings(buildingsRoot ? buildingsRoot.transform : null);
+            // hand-authored slices (AUTHORED_*) group their objects by vignette: the objects are one level further down
+            IEnumerable<Transform> PropsOf(Transform group) => group.name.StartsWith("AUTHORED_")
+                ? group.Cast<Transform>().SelectMany(v => v.Cast<Transform>()) : group.Cast<Transform>();
             if (propsRoot)
                 foreach (Transform group in propsRoot.transform)
-                foreach (Transform prop in group)
+                foreach (Transform prop in PropsOf(group))
                 {
                     if (group.name == "AMARRAS") continue;          // mooring lines hang between a boat and a bollard
+                    if (prop.name.StartsWith("BANDERINES")) continue;   // pennant cords hang from facade to facade by design
                     var rs = prop.GetComponentsInChildren<Renderer>();
                     if (rs.Length == 0) continue;
                     var b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds);

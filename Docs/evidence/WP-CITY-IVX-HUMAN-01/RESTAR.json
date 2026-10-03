@@ -3,7 +3,7 @@
   "wp": "WP-CITY-IVX-HUMAN-01",
   "step": 3,
   "box": "x[-45,45] z[-75,35]",
-  "count": 112,
+  "count": 116,
   "removed": [
     {
       "obj": "ENV_Lamp_Post",
@@ -1124,6 +1124,26 @@
         0.0
       ],
       "why": "edificio huérfano enterrado en el origen, bajo la plaza (duplicado de BLD_M0183_03_2)"
+    },
+    {
+      "obj": "ENV_Awning",
+      "parent": "BLD_R0124/Dressing",
+      "why": "toldo desplegado en una tienda cerrada desde 1998 (Se traspasa)"
+    },
+    {
+      "obj": "ENV_Awning",
+      "parent": "BLD_R0124/Dressing",
+      "why": "toldo desplegado en una tienda cerrada desde 1998 (Se traspasa)"
+    },
+    {
+      "obj": "ENV_Awning",
+      "parent": "BLD_R0124/Dressing",
+      "why": "toldo desplegado en una tienda cerrada desde 1998 (Se traspasa)"
+    },
+    {
+      "obj": "ENV_Sign_Panel (Librería El Faro)",
+      "parent": "BLD_R0124/Dressing",
+      "why": "rótulo vivo de otra tienda sobre el local cerrado; ahí queda el fantasma de Tejidos Lavín"
     }
   ]
 }
