@@ -27,3 +27,5 @@ Docs/evidence/WP-PROD-ANIM-01/captures/*.txt text eol=lf
 *.ogg   binary
 Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity filter=lfs diff=lfs merge=lfs -text
 Unity/JuegoDef/Assets/JuegoDef/Scenes/ENV/ENV01_REFERENCE.unity filter=lfs diff=lfs merge=lfs -text
+Unity/JuegoDef/Assets/JuegoDef/Scenes/CITY_IVX/*.unity filter=lfs diff=lfs merge=lfs -text
+Unity/JuegoDef/Assets/JuegoDef/Scenes/CITY_IVX/CITY_IVX_NavMesh.asset filter=lfs diff=lfs merge=lfs -text

@@ -29,6 +29,7 @@ namespace JuegoDef.City
 
         public static string Dress(string propsPath)
         {
+            CityIvanixSeed.RefuseIfFrozen("CityIvanixDress.Dress");
             if (File.Exists(PropsScene)) throw new InvalidOperationException("JD_CITY_IVX_ALREADY_DRESSED: the props scene is authored now.");
             CityIvanixSeed.Open();
             var baseScene = SceneManager.GetSceneByPath(CityIvanixSeed.BaseScene);

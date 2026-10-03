@@ -20,6 +20,15 @@ Rule: **Ivanix decides the urban composition · ENV01 decides the architecture �
 Steps 3–4 are deterministic: rerunning them reproduces the committed JSON byte for byte. The seeders are one-shot;
 once the Owner accepts the layout the scenes become the authority and are edited by hand.
 
+## Frozen (WP-CITY-IVX-HUMAN-01, 2026-10-03)
+
+The `Scenes/CITY_IVX/*.unity` scenes and `CITY_IVX_NavMesh.asset` are versioned in git LFS and are the town's only
+authority. The town is authored by hand from here on, one slice at a time (`Docs/workpacks/WP-CITY-IVX-HUMAN-01.md`).
+`CityIvanixSeed.Seed`, `CityIvanixDress.Dress` and `CityShopfronts.Apply` refuse to run (`JD_CITY_IVX_FROZEN`), even
+after the scenes are deleted; deleting a scene to reseed it is forbidden. The seed/props/signs JSON above is history,
+not authority. Still usable as checks or look passes: `CityIvanixLint.Run`, `CityIvanixNav.BakeAndProbe`,
+`CityEntities` (`Settle`, `Resolve`, `InsidePlan`), `CityDcPlus.Export/Convert`, `CityPaving.Apply`.
+
 ## Captures
 
 The layout captures are **not** redistributed. Tools that draw over them (`trace_layout.py`, review images) read

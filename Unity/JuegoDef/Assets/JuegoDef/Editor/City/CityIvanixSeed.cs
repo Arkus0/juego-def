@@ -27,6 +27,16 @@ namespace JuegoDef.City
         public const string BuildingsScene = SceneDir + "/CITY_IVX_Buildings.unity";
         public static string DefaultSeed => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../Tools/city_ivanix/reconstruction/city_seed_v4.json"));
 
+        /// <summary>From WP-CITY-IVX-HUMAN-01 the CITY_IVX scenes are authored by hand and versioned in LFS: the tools that
+        /// write town content (seed, dress, shopfronts) refuse to run, even after the scenes are deleted. Tools that only
+        /// check or re-light (lint, NavMesh probe, DC convert, paving map) stay usable.</summary>
+        public static readonly bool Frozen = true;
+
+        public static void RefuseIfFrozen(string tool)
+        {
+            if (Frozen) throw new InvalidOperationException($"JD_CITY_IVX_FROZEN: {tool} would rewrite the hand-authored town (WP-CITY-IVX-HUMAN-01); edit the scenes by hand.");
+        }
+
         static readonly string[] Palettes = { "core_lime_chestnut", "core_sandstone_chestnut", "core_ochre_chestnut", "core_lime_oxblood", "core_cream_oxblood" };
         static readonly Dictionary<string, string> KindStreet = new Dictionary<string, string>
         {
@@ -38,6 +48,7 @@ namespace JuegoDef.City
 
         public static string Seed(string seedPath)
         {
+            RefuseIfFrozen("CityIvanixSeed.Seed");
             if (File.Exists(BaseScene)) throw new InvalidOperationException("JD_CITY_IVX_ALREADY_SEEDED: the authored scenes own the town now.");
             var doc = JObject.Parse(File.ReadAllText(seedPath));
             Directory.CreateDirectory(SceneDir);

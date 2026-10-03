@@ -30,6 +30,7 @@ namespace JuegoDef.City
 
         public static string Apply()
         {
+            CityIvanixSeed.RefuseIfFrozen("CityShopfronts.Apply");
             var doc = JObject.Parse(File.ReadAllText(SignsJson));
             var root = GameObject.Find("CITY_IVX_Buildings");
             CityEntities.IndexBuildings(root.transform);
