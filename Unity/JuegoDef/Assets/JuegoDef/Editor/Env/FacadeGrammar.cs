@@ -527,12 +527,14 @@ namespace JuegoDef.Env
                     Wall("Door_Flat");
                     Join("DoorFrame_Flat_WoodDark");
                     Join("ENV_Door_Balcony");
-                    Join("Balcony_Simple_Straight");
-                    // the module is the front rail only: close both sides over the 1 m projection (owner walk 2026-10-02:
-                    // "terrazas sin barandillas laterales")
-                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", new Vector3(0, 0, 0.5f), 90, new Vector3(0.5f, 1, 1)));
-                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", new Vector3(0, 0, 0.5f), -90, new Vector3(0.5f, 1, 1)));
-                    Join("Floor_WoodDark_Half3", new Vector3(0, 0, 1f));
+                    // a timber balcony as a joiner builds it: 1.64 m centred on its door, so both side rails are anchored
+                    // inside the bay's quoins and clear of the next bay's balcony (owner walks 2026-10-02: "terrazas sin
+                    // barandillas laterales", then "las barandillas nuevas" running into the corner stones)
+                    const float bw = 0.82f;
+                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", Vector3.zero, 0, new Vector3(bw, 1, 1)));
+                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", new Vector3(bw - 1f, 0, 0.5f), 90, new Vector3(0.5f, 1, 1)));
+                    parts.Add(new EnvPart("Balcony_Simple_Straight", "joinery", new Vector3(1f - bw, 0, 0.5f), -90, new Vector3(0.5f, 1, 1)));
+                    parts.Add(new EnvPart("Floor_WoodDark_Half3", "joinery", new Vector3(0, 0, 1f), 0, new Vector3(bw, 1, 1)));
                     break;
                 case 'N':
                     // door onto the solana (the gallery itself is placed by the assembler across the top floor)

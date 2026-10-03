@@ -1,3 +1,396 @@
 {
-  "items": []
+  "items": [
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Ground_Grass.png",
+      "normal": null,
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Ground_Grass_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_RoundRocks_Neutral.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_RoundRocks_Normal.png",
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_RoundRocks_Neutral_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Canto_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Canto_Normal.png",
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Stone_Canto_BaseColor_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Pave_Flags_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Pave_Flags_Normal.png",
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Pave_Flags_BaseColor_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Ground_Earth.png",
+      "normal": null,
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Ground_Earth_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Pave_Canto_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Pave_Canto_Normal.png",
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Pave_Canto_BaseColor_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Pave_Setts_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Pave_Setts_Normal.png",
+      "kind": "ground",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Pave_Setts_BaseColor_dc.png",
+      "max": 1024
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Ashlar_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Ashlar_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Stone_Ashlar_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Iron.png",
+      "normal": null,
+      "kind": "metal",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Iron_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_WoodTrim_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_WoodTrim_Normal.png",
+      "kind": "wood",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_WoodTrim_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Rubble_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Rubble_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Stone_Rubble_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_RockTrim_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_RockTrim_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_RockTrim_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Trim_Painted.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_WoodTrim_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Trim_Painted_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Plaster_Neutral.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_Plaster_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Plaster_Neutral_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_PaintWear.png",
+      "normal": null,
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_PaintWear_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_RoundTiles_Neutral.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_RoundTiles_Normal.png",
+      "kind": "roof",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_RoundTiles_Neutral_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_MetalOrnaments_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_Normal_Default.png",
+      "kind": "metal",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_MetalOrnaments_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Terracotta.png",
+      "normal": null,
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Terracotta_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Nature\\Textures\\Leaves_NormalTree_C.png",
+      "normal": null,
+      "kind": "foliage",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\Leaves_NormalTree_C_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Nature\\Textures\\Flowers.png",
+      "normal": null,
+      "kind": "foliage",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\Flowers_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Galvanised.png",
+      "normal": null,
+      "kind": "metal",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Galvanised_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_VineLeaf.png",
+      "normal": null,
+      "kind": "foliage",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_VineLeaf_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Sign_Board.png",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Sign_Board_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Blade_hostal_torre.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Blade_hostal_torre_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_UnevenBrick_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\MedievalVillage\\Materials\\T_UnevenBrick_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_UnevenBrick_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Laja_BaseColor.jpg",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Stone_Laja_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Stone_Laja_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Granite.png",
+      "normal": null,
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Granite_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Ghost_ghost_chocolates.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Ghost_ghost_chocolates_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_se_alquila.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_se_alquila_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Ghost_ghost_hotel.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Ghost_ghost_hotel_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Nature\\Textures\\Bark_NormalTree.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Nature\\Textures\\Bark_NormalTree_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\Bark_NormalTree_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Leaves_Box.png",
+      "normal": null,
+      "kind": "foliage",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Leaves_Box_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_vado.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_vado_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Ghost_ghost_abonos.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Ghost_ghost_abonos_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_horario.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_horario_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Ghost_ghost_anis.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Ghost_ghost_anis_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_pinchos.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_pinchos_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Furniture_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Furniture_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_Trim_Furniture_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Metal_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Metal_Normal.png",
+      "kind": "metal",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_Trim_Metal_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_traspaso.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_traspaso_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Props_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Props_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_Trim_Props_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Sign_farmacia_mier.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Sign_farmacia_mier_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Cross_Pharmacy.jpg",
+      "normal": null,
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Cross_Pharmacy_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_jubilacion.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_jubilacion_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Sign_caja_rural_valle.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Sign_caja_rural_valle_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Cloth_BaseColor.png",
+      "normal": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Props\\Textures\\T_Trim_Cloth_Normal.png",
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_Trim_Cloth_BaseColor_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Blade_peluqueria_loli.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Blade_peluqueria_loli_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_se_vende.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_se_vende_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Sign_libreria_faro.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Sign_libreria_faro_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Canvas_Sage.png",
+      "normal": null,
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Canvas_Sage_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\ThirdParty\\Quaternius\\Nature\\Textures\\Leaves.png",
+      "normal": null,
+      "kind": "foliage",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\Leaves_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Blade_bar_puente.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Blade_bar_puente_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Notice_menu.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Notice_menu_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Sign_barberia_tono.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Sign_barberia_tono_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Textures\\T_ENV_Canvas_Blue.png",
+      "normal": null,
+      "kind": "wall",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Canvas_Blue_dc.png",
+      "max": 512
+    },
+    {
+      "albedo": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\Derived\\ENV\\Signs\\T_ENV_Blade_ultramarinos_remedios.jpg",
+      "normal": null,
+      "kind": "sign",
+      "out": "C:\\Users\\Usuario\\juego-def-wt\\city\\Unity\\JuegoDef\\Assets\\JuegoDef\\City\\DCTextures\\T_ENV_Blade_ultramarinos_remedios_dc.png",
+      "max": 512
+    }
+  ]
 }

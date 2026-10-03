@@ -134,6 +134,19 @@ namespace JuegoDef.City
                 }
 
                 // what the shop puts out, beside the door, never in the way
+                // the shop's sign, blade and awning come first: wall-mounted additions of the house that they would cover
+                // or cut through (air conditioners, boxes, plaques, dishes, lanterns) are taken down
+                Physics.SyncTransforms();
+                foreach (var el in g.GetComponentsInChildren<Renderer>().Where(r => r.name.StartsWith("ROTULO") || r.name.StartsWith("BANDEROLA") || r.name.StartsWith("TOLDO")).ToList())
+                {
+                    var eb = el.bounds; eb.Expand(0.06f);
+                    foreach (var other in bld.GetComponentsInChildren<Renderer>(true).Where(r => r && WallAddition(r.transform) && r.bounds.Intersects(eb)).ToList())
+                    {
+                        var top = other.transform;
+                        while (top.parent != null && top.parent != bld && WallAddition(top.parent)) top = top.parent;
+                        if (top) Object.DestroyImmediate(top.gameObject);
+                    }
+                }
                 string kind = (string)rec["goods"];
                 if (kind != null && Goods(g, bld, own, kind, u0, u1, face, ref goods)) { }
             }
@@ -141,6 +154,14 @@ namespace JuegoDef.City
             EditorSceneManager.SaveScene(root.scene);
             AssetDatabase.SaveAssets();
             return $"JD_CITY_SHOPFRONTS fascias={fascias} blades={blades} awnings={awnings} goods={goods} skipped={skipped}";
+        }
+
+        static bool WallAddition(Transform t)
+        {
+            var n = t.name;
+            return n.StartsWith("ENV_AC_Unit") || n.StartsWith("ENV_Telecom_Box") || n.StartsWith("ENV_Alarm_Box") || n.StartsWith("ENV_Satellite")
+                || n.StartsWith("ENV_Extractor_Vent") || n.StartsWith("ENV_Sign_Panel") || n.StartsWith("ENV_Plaque") || n.StartsWith("ENV_Wall_Lantern")
+                || n.StartsWith("ENV_Gas_Pipe") || n.StartsWith("Prop_Vine");
         }
 
         static int BaysOf(Transform bld)

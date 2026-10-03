@@ -63,6 +63,7 @@ namespace JuegoDef.City
             if (doc["terraces"] is JArray terr) BuildTerraces(terr, Group(root, "EL_ALTO_TERRACES"));
             if (doc["finca"] is JObject finca) BuildFinca(finca, Group(root, "FINCA_DEL_CACIQUE"));
             if (doc["tapias"] is JArray tapias) BuildTapias(tapias, Group(root, "TAPIAS"));
+            TrimRailings(root.transform);
             var spawn = (JArray)doc["spawn"];
             EnvStreet.BringPlayer(new JObject { ["_spawnWorld"] = new JArray((float)spawn[0], (float)spawn[1] + 0.05f, (float)spawn[2]) });
             EditorSceneManager.SaveScene(baseScene, BaseScene);
@@ -416,10 +417,11 @@ namespace JuegoDef.City
                 float L = d.magnitude;
                 if (L < 0.05f) return;
                 var r = Quaternion.LookRotation(d / L);
+                // every bar and post has a body: what stands on the paseo keeps clear of all of the railing, not just its top
                 foreach (float h in new[] { 1.0f, 0.5f })
-                    Box("BARANDILLA", g, (a + b) / 2f + Vector3.up * h, r, new Vector3(0.05f, h > 0.9f ? 0.06f : 0.04f, L + 0.03f), iron, h > 0.9f);
-                if (startPost) Box("POSTE", g, a + Vector3.up * 0.51f, Quaternion.LookRotation(new Vector3(d.x, 0, d.z).normalized), new Vector3(0.06f, 1.02f, 0.06f), iron, false);
-                if (endPost) Box("POSTE", g, b + Vector3.up * 0.51f, Quaternion.LookRotation(new Vector3(d.x, 0, d.z).normalized), new Vector3(0.06f, 1.02f, 0.06f), iron, false);
+                    Box("BARANDILLA", g, (a + b) / 2f + Vector3.up * h, r, new Vector3(0.05f, h > 0.9f ? 0.06f : 0.04f, L + 0.03f), iron, true);
+                if (startPost) Box("POSTE", g, a + Vector3.up * 0.51f, Quaternion.LookRotation(new Vector3(d.x, 0, d.z).normalized), new Vector3(0.06f, 1.02f, 0.06f), iron, true);
+                if (endPost) Box("POSTE", g, b + Vector3.up * 0.51f, Quaternion.LookRotation(new Vector3(d.x, 0, d.z).normalized), new Vector3(0.06f, 1.02f, 0.06f), iron, true);
             }
 
             void Run(List<(Vector3 pos, bool gap, bool abut)> line, bool closed, string name, Func<Vector3, Vector3, Vector3> inward)
@@ -808,6 +810,52 @@ namespace JuegoDef.City
             if (mat) go.GetComponent<MeshRenderer>().sharedMaterial = mat;
             go.isStatic = true;
             return go;
+        }
+
+        /// <summary>The railings as a smith fits them: a bar that runs into masonry (a cubo, its lookout floor, a stair's
+        /// pretil, the adarve, a parapet) stops at the stone face and is fixed there; a post standing in masonry goes.
+        /// Owner walk 2026-10-02: "sigue habiendo colisiones ... la barandilla de la foto".</summary>
+        static int TrimRailings(Transform root)
+        {
+            Physics.SyncTransforms();
+            int cut = 0;
+            bool Masonry(Collider c) => c.name != "BARANDILLA" && c.name != "POSTE" && !c.name.StartsWith("TERRAIN") && !c.name.StartsWith("RIVERBED");
+            foreach (var post in root.GetComponentsInChildren<Transform>(true).Where(t => t.name == "POSTE").ToList())
+            {
+                var half = post.lossyScale * 0.5f - new Vector3(0.01f, 0.06f, 0.01f);
+                if (Physics.OverlapBox(post.position, half, post.rotation).Any(Masonry)) { UnityEngine.Object.DestroyImmediate(post.gameObject); cut++; }
+            }
+            foreach (var bar in root.GetComponentsInChildren<Transform>(true).Where(t => t.name == "BARANDILLA").ToList())
+            {
+                float L = bar.lossyScale.z;
+                var half = new Vector3(bar.lossyScale.x * 0.5f - 0.005f, bar.lossyScale.y * 0.5f - 0.005f, 0.025f);
+                int n = Mathf.Max(2, Mathf.CeilToInt(L / 0.05f));
+                var free = new bool[n];
+                bool any = false;
+                for (int k = 0; k < n; k++)
+                {
+                    float t = -L / 2f + (k + 0.5f) * L / n;
+                    free[k] = !Physics.OverlapBox(bar.position + bar.forward * t, half, bar.rotation).Any(Masonry);
+                    any |= !free[k];
+                }
+                if (!any) continue;
+                var mat = bar.GetComponent<MeshRenderer>().sharedMaterial;
+                // the free runs of the bar become bars of their own, ending at the stone faces
+                for (int k = 0; k < n;)
+                {
+                    if (!free[k]) { k++; continue; }
+                    int k0 = k;
+                    while (k < n && free[k]) k++;
+                    float t0 = -L / 2f + k0 * L / n, t1 = -L / 2f + k * L / n;
+                    if (t1 - t0 < 0.15f) continue;
+                    var piece = Box("BARANDILLA", bar.parent, bar.position + bar.forward * ((t0 + t1) / 2f), bar.rotation,
+                                    new Vector3(bar.lossyScale.x, bar.lossyScale.y, t1 - t0), mat, true);
+                }
+                UnityEngine.Object.DestroyImmediate(bar.gameObject);
+                cut++;
+            }
+            Physics.SyncTransforms();
+            return cut;
         }
 
         // ---------------------------------------------------------------- helpers
