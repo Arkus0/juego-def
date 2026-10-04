@@ -42,8 +42,8 @@ Material:
     - _CloudLit: {r: 0.9529412, g: 0.9411765, b: 0.91764706, a: 1}
     - _CloudShade: {r: 0.6039216, g: 0.63529414, b: 0.6745098, a: 1}
     - _GroundColor: {r: 0.46431375, g: 0.3890196, b: 0.32000002, a: 1.6}
-    - _HorizonColor: {r: 0.79607844, g: 0.84705883, b: 0.8784314, a: 1}
+    - _HorizonColor: {r: 0.6627451, g: 0.76862746, b: 0.87058824, a: 1}
     - _SunColor: {r: 1, g: 0.92156863, b: 0.8235294, a: 1}
-    - _ZenithColor: {r: 0.36078432, g: 0.5254902, b: 0.7294118, a: 1}
+    - _ZenithColor: {r: 0.24705882, g: 0.43529412, b: 0.72156864, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

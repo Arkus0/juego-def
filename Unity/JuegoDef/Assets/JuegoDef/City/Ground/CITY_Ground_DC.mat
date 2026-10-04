@@ -36,23 +36,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T0:
-        m_Texture: {fileID: 2800000, guid: ebfd7b0ff3d4bd84592e03eb9bc028d7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90f737aa63b5f6042884414f7dbc972b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T1:
-        m_Texture: {fileID: 2800000, guid: ebfd7b0ff3d4bd84592e03eb9bc028d7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90411a60fc1ddda46bcfa8096f59b687, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T10:
-        m_Texture: {fileID: 2800000, guid: cf9ca871eb2ded3439941ecb396afa49, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90411a60fc1ddda46bcfa8096f59b687, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T11:
-        m_Texture: {fileID: 2800000, guid: fae2c0008dae22641a4b5dde49fac08f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 342472b0558f8a645a535f5cc0b60957, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T12:
-        m_Texture: {fileID: 2800000, guid: a622d133cd01bf345ac0605934a946ea, type: 3}
+        m_Texture: {fileID: 2800000, guid: 487be5a64845a6d4c85fa4001268f538, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2:
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T3:
-        m_Texture: {fileID: 2800000, guid: cf9ca871eb2ded3439941ecb396afa49, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90411a60fc1ddda46bcfa8096f59b687, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T4:
@@ -72,15 +72,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T6:
-        m_Texture: {fileID: 2800000, guid: 70e2e88e3f82c52429e3b103502df044, type: 3}
+        m_Texture: {fileID: 2800000, guid: 487be5a64845a6d4c85fa4001268f538, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T7:
-        m_Texture: {fileID: 2800000, guid: 4dd25c05d3deec943b8ccd63dedcfa95, type: 3}
+        m_Texture: {fileID: 2800000, guid: 342472b0558f8a645a535f5cc0b60957, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T8:
-        m_Texture: {fileID: 2800000, guid: cf9ca871eb2ded3439941ecb396afa49, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90411a60fc1ddda46bcfa8096f59b687, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T9:
@@ -104,32 +104,32 @@ Material:
     - _Wrap: 0.35
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _C0: {r: 0.89411765, g: 0.87058824, b: 0.83137256, a: 1}
-    - _C1: {r: 0.7882353, g: 0.7607843, b: 0.7137255, a: 1}
+    - _C0: {r: 1, g: 1, b: 1, a: 1}
+    - _C1: {r: 1, g: 1, b: 1, a: 1}
     - _C10: {r: 0.654902, g: 0.6313726, b: 0.5882353, a: 1}
-    - _C11: {r: 0.95, g: 0.94, b: 0.92, a: 1}
-    - _C12: {r: 0.8, g: 0.8, b: 0.79, a: 1}
+    - _C11: {r: 0.97, g: 0.97, b: 0.97, a: 1}
+    - _C12: {r: 0.92, g: 0.92, b: 0.9, a: 1}
     - _C2: {r: 0.7247059, g: 0.7972549, b: 0.68470585, a: 1}
     - _C3: {r: 0.5568628, g: 0.5333333, b: 0.49411762, a: 1}
     - _C4: {r: 0.8117647, g: 0.78431374, b: 0.7294118, a: 1}
     - _C5: {r: 0.7247059, g: 0.7972549, b: 0.68470585, a: 1}
-    - _C6: {r: 0.97, g: 0.96, b: 0.94, a: 1}
-    - _C7: {r: 0.85490197, g: 0.8392157, b: 0.8117647, a: 1}
+    - _C6: {r: 1, g: 1, b: 1, a: 1}
+    - _C7: {r: 1, g: 1, b: 1, a: 1}
     - _C8: {r: 0.72156864, g: 0.7058823, b: 0.67058825, a: 1}
     - _C9: {r: 0.9490196, g: 0.9411765, b: 0.91764706, a: 1}
     - _MapOrigin: {r: -315.39, g: -205, b: 0.125, a: 0}
     - _MapSize: {r: 4320, g: 2680, b: 0, a: 0}
-    - _ST0: {r: 1, g: 1, b: 0, a: 0}
+    - _ST0: {r: 0.8333333, g: 0.8333333, b: 0, a: 0}
     - _ST1: {r: 1, g: 1, b: 0, a: 0}
     - _ST10: {r: 1, g: 1, b: 0, a: 0}
-    - _ST11: {r: 1.1111112, g: 1.1111112, b: 0, a: 0}
-    - _ST12: {r: 1, g: 1, b: 0, a: 0}
+    - _ST11: {r: 2.2, g: 2.2, b: 0, a: 0}
+    - _ST12: {r: 2, g: 2, b: 0, a: 0}
     - _ST2: {r: 1, g: 1, b: 0, a: 0}
     - _ST3: {r: 1, g: 1, b: 0, a: 0}
     - _ST4: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _ST5: {r: 1, g: 1, b: 0, a: 0}
     - _ST6: {r: 1, g: 1, b: 0, a: 0}
-    - _ST7: {r: 1, g: 1, b: 0, a: 0}
+    - _ST7: {r: 2, g: 2, b: 0, a: 0}
     - _ST8: {r: 1, g: 1, b: 0, a: 0}
     - _ST9: {r: 1, g: 1, b: 0, a: 0}
     - _ShadeColor: {r: 0.8, g: 0.83, b: 0.92, a: 1}

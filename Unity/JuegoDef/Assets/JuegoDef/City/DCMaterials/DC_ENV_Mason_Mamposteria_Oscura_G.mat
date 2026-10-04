@@ -24,8 +24,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 7b32ee6db5668bd4bab302ddbc2827cb, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
+        m_Texture: {fileID: 2800000, guid: b4d8f29a019394740863223fbf3f65d8, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
@@ -42,16 +42,16 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _Gloss: 18
-    - _MacroAmount: 0.15121791
+    - _MacroAmount: 0
     - _MacroScale: 0.05548092
-    - _MipBias: 0.3
+    - _MipBias: 0
     - _SpecAmount: 0
     - _SunScale: 1
-    - _WorldUV: 1
-    - _Wrap: 0.35
+    - _WorldUV: 0
+    - _Wrap: 0.25
     m_Colors:
     - _BaseColor: {r: 0.67058825, g: 0.6392157, b: 0.5960784, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 0.8, g: 0.83, b: 0.92, a: 1}
+    - _ShadeColor: {r: 0.7, g: 0.75, b: 0.9, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

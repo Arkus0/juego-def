@@ -1,0 +1,38 @@
+{
+ "shenmue2/sim-shenmue2-0005.jpg": {
+  "sat": 0.32,
+  "val": 0.42,
+  "Lstd": 0.195,
+  "HF": 5.5
+ },
+ "corner/g3_V7_arriba.jpg": {
+  "sat": 0.21,
+  "val": 0.61,
+  "Lstd": 0.191,
+  "HF": 3.72
+ },
+ "corner/k4_V7_arriba.jpg": {
+  "sat": 0.32,
+  "val": 0.57,
+  "Lstd": 0.172,
+  "HF": 3.5
+ },
+ "shenmue2/sim-shenmue2-0007.jpg": {
+  "sat": 0.25,
+  "val": 0.34,
+  "Lstd": 0.264,
+  "HF": 4.49
+ },
+ "corner/g3_SID.jpg": {
+  "sat": 0.21,
+  "val": 0.59,
+  "Lstd": 0.175,
+  "HF": 4.15
+ },
+ "corner/k4_SID.jpg": {
+  "sat": 0.29,
+  "val": 0.57,
+  "Lstd": 0.136,
+  "HF": 4.57
+ }
+}

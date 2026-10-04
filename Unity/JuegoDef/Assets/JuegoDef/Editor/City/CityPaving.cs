@@ -78,9 +78,16 @@ namespace JuegoDef.City
             // for the paving (Tools/city_ivanix/tools/ground_textures.py)
             Painted(mat, 11, Dir + "/TX_Ground_Abanico.png", 2f / 1.8f, new Color(0.95f, 0.94f, 0.92f));     // setts a touch large: the fan reads at play distance
             Painted(mat, 12, Dir + "/TX_Ground_Granito.png", 1f, new Color(0.8f, 0.8f, 0.79f));
-            // the granite flags of the Calle Mayor and the Muelle: dressed slabs in courses, painted with their wear
-            // (WP-CITY-IVX-HUMAN-01, Shenmue 2 look; tools/paint_plaza.py), not the irregular garden flags
-            Painted(mat, 6, Dir + "/TX_Ground_LosaGranito.png", 1f, new Color(0.97f, 0.96f, 0.94f));
+            // the Shenmue 2 kit (WP-CITY-IVX-HUMAN-01, Owner 2026-10-03; tools/shenmue_kit.py): photographed surfaces at
+            // Dreamcast size replace the stylised ones where people walk. Tile sizes from the photos: setts 1 m, large
+            // setts 2.4 m, river cobbles and granite flags 2 m (ST = 2 m / tile)
+            const string SK = "Assets/JuegoDef/City/ShenmueKit/Textures";
+            Painted(mat, 0, SK + "/SK_Canto.png", 2f / 2.4f, Color.white);             // streets: large granite setts
+            Painted(mat, 1, SK + "/SK_Canto_Rodado.png", 1f, Color.white);             // lanes and El Alto: river cobbles
+            Painted(mat, 6, SK + "/SK_Losa_Granito.png", 1f, Color.white);             // Calle Mayor and Muelle: granite flags
+            Painted(mat, 7, SK + "/SK_Adoquin.png", 2f, Color.white);                  // Plaza Mayor: small granite setts
+            Painted(mat, 11, SK + "/SK_Adoquin.png", 2.2f, new Color(0.97f, 0.97f, 0.97f));   // the fans at the mouths
+            Painted(mat, 12, SK + "/SK_Losa_Granito.png", 2f, new Color(0.92f, 0.92f, 0.9f)); // bands, kerbs and rims
             if (noise) mat.SetTexture("_NoiseMap", noise);
             EditorUtility.SetDirty(mat);
 

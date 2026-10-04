@@ -1,0 +1,152 @@
+{
+  "schema": "juego-def.provenance/1",
+  "use": "source photographs for Tools/city_ivanix/tools/shenmue_kit.py (City/ShenmueKit/Textures); originals not committed",
+  "license": "CC0 1.0 (Poly Haven, https://polyhaven.com/license)",
+  "retrieved": "2026-10-03",
+  "resolution_used": "1k diffuse + 1k AO jpg",
+  "sources": [
+    {
+      "id": "blue_painted_planks",
+      "url": "https://polyhaven.com/a/blue_painted_planks",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "id": "clay_roof_tiles_03",
+      "url": "https://polyhaven.com/a/clay_roof_tiles_03",
+      "authors": [
+        "Amal Kumar"
+      ],
+      "dimensions_mm": [
+        2599.9999046325684,
+        2599.9999046325684
+      ]
+    },
+    {
+      "id": "cobblestone_05",
+      "url": "https://polyhaven.com/a/cobblestone_05",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        2400.0000953674316,
+        2400.0000953674316
+      ]
+    },
+    {
+      "id": "cobblestone_square",
+      "url": "https://polyhaven.com/a/cobblestone_square",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "id": "distressed_painted_planks",
+      "url": "https://polyhaven.com/a/distressed_painted_planks",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        1599.9999046325684,
+        1599.9999046325684
+      ]
+    },
+    {
+      "id": "granite_tile_04",
+      "url": "https://polyhaven.com/a/granite_tile_04",
+      "authors": [
+        "Amal Kumar"
+      ],
+      "dimensions_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "green_rough_planks",
+      "url": "https://polyhaven.com/a/green_rough_planks",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        1500,
+        1500
+      ]
+    },
+    {
+      "id": "large_pebbles",
+      "url": "https://polyhaven.com/a/large_pebbles",
+      "authors": [
+        "Charlotte Baglioni"
+      ],
+      "dimensions_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "large_sandstone_blocks",
+      "url": "https://polyhaven.com/a/large_sandstone_blocks",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        3000,
+        3000.000238418579
+      ]
+    },
+    {
+      "id": "medieval_blocks_03",
+      "url": "https://polyhaven.com/a/medieval_blocks_03",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "dimensions_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "old_stone_wall",
+      "url": "https://polyhaven.com/a/old_stone_wall",
+      "authors": [
+        "Charlotte Baglioni"
+      ],
+      "dimensions_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "painted_plaster_wall",
+      "url": "https://polyhaven.com/a/painted_plaster_wall",
+      "authors": [
+        "Amal Kumar"
+      ],
+      "dimensions_mm": [
+        2000,
+        2000
+      ]
+    },
+    {
+      "id": "plaster_stone_wall_01",
+      "url": "https://polyhaven.com/a/plaster_stone_wall_01",
+      "authors": [
+        "Charlotte Baglioni"
+      ],
+      "dimensions_mm": [
+        2299.999952316284,
+        2299.999952316284
+      ]
+    }
+  ]
+}

@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 70318566b8785054c9e9278082e067a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: de64332824d99a044853e4a3d672e655, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -44,14 +44,14 @@ Material:
     - _Gloss: 18
     - _MacroAmount: 0
     - _MacroScale: 0.06
-    - _MipBias: 0.3
+    - _MipBias: 0
     - _SpecAmount: 0
     - _SunScale: 1
     - _WorldUV: 0
-    - _Wrap: 0.35
+    - _Wrap: 0.25
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadeColor: {r: 0.8, g: 0.83, b: 0.92, a: 1}
+    - _ShadeColor: {r: 0.7, g: 0.75, b: 0.9, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -48,10 +48,10 @@ Material:
     - _SpecAmount: 0
     - _SunScale: 1
     - _WorldUV: 0
-    - _Wrap: 0.35
+    - _Wrap: 0.25
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.35, g: 1.4, b: 0.55, a: 1}
-    - _ShadeColor: {r: 0.8, g: 0.83, b: 0.92, a: 1}
+    - _ShadeColor: {r: 0.7, g: 0.75, b: 0.9, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

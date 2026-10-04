@@ -39,9 +39,9 @@ namespace JuegoDef.City
             sun.transform.rotation = Quaternion.Euler(42f, 320f, 0f);
             sun.useColorTemperature = true;
             sun.colorTemperature = 5600f;          // clear midday, still northern: not a golden Mediterranean sun
-            sun.intensity = 1.9f;
+            sun.intensity = 1.6f;
             sun.shadows = LightShadows.Soft;
-            sun.shadowStrength = 0.62f;
+            sun.shadowStrength = 0.45f;          // cast shadows soft: Dreamcast light lived in the vertex colours
             sun.shadowBias = 0.03f;
             sun.shadowNormalBias = 0.25f;
             RenderSettings.sun = sun;
@@ -84,7 +84,7 @@ namespace JuegoDef.City
             EditorSceneManager.MarkSceneDirty(baseScene);
             EditorSceneManager.SaveScene(baseScene);
             AssetDatabase.SaveAssets();
-            return $"JD_CITY_IVX_LOOK Shenmue midday: sun 42/320 5600K 1.9, haze 90-520, shadows 4096x4 120m, surface variants on {swapped} renderers";
+            return $"JD_CITY_IVX_LOOK Shenmue midday: sun 42/320 5600K 1.6, haze 90-520, shadows 4096x4 120m, surface variants on {swapped} renderers";
         }
 
         /// <summary>City-owned variants of the ground and stone materials (ENV01's kit stays as reviewed): the cobbles and
@@ -142,8 +142,8 @@ namespace JuegoDef.City
             var m = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (!m) { m = new Material(sh); AssetDatabase.CreateAsset(m, path); }
             m.shader = sh;
-            m.SetColor("_ZenithColor", EnvKit.Hex("#5C86BA"));
-            m.SetColor("_HorizonColor", EnvKit.Hex("#CBD8E0"));
+            m.SetColor("_ZenithColor", EnvKit.Hex("#3F6FB8"));
+            m.SetColor("_HorizonColor", EnvKit.Hex("#A9C4DE"));
             m.SetColor("_GroundColor", EnvKit.Hex("#4A3E33") * 1.6f);
             m.SetColor("_SunColor", EnvKit.Hex("#FFEBD2"));
             m.SetColor("_CloudLit", EnvKit.Hex("#F3F0EA"));
@@ -169,9 +169,9 @@ namespace JuegoDef.City
             }
             Get<Tonemapping>().mode.Override(TonemappingMode.Neutral);
             var ca = Get<ColorAdjustments>();
-            ca.postExposure.Override(0.18f);
-            ca.contrast.Override(10f);
-            ca.saturation.Override(14f);
+            ca.postExposure.Override(-0.25f);
+            ca.contrast.Override(18f);
+            ca.saturation.Override(26f);
             var wb = Get<WhiteBalance>();
             wb.temperature.Override(4f);
             wb.tint.Override(0f);
