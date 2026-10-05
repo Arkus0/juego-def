@@ -1,0 +1,8 @@
+{
+  "target": "ENTRANCE_UNRESOLVED",
+  "locked": "BAKERY_UNRESOLVED",
+  "mustPreserve": "every saved scene object except the resolved entrance, including the bakery",
+  "operation": "setback-local",
+  "authority": "authored scene, not a rebuild",
+  "dependsOn": "SemanticEditHonda01 PASS"
+}

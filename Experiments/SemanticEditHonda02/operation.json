@@ -1,0 +1,8 @@
+{
+  "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity",
+  "requiresPriorPass": "Experiments/SemanticEditHonda01/result.json",
+  "targetNameContains": "door",
+  "lockedNameContains": "bakery",
+  "localOffset": [0, 0, -0.4],
+  "note": "Snapshot first. Narrow targetNameContains until exactly one entrance matches, and lockedNameContains until exactly one bakery matches. Do not add facade or building ids unless the run cannot proceed without them."
+}
