@@ -43,6 +43,14 @@ namespace JuegoDef.EditorTools
             }
 
             var target = matches[0];
+            if (target.transform.childCount > 0)
+            {
+                Write(Path.Combine(dir, "children.json"), Children(target));
+                Write(Path.Combine(dir, "result.json"), Result(PathOf(target.transform), false, false, "", "", -1, "FAIL", "group root, not a prop; see children.json. VEHICULOS-style parents are refused."));
+                Debug.LogError("SemanticEditHonda01 FAIL group " + target.name + " children=" + target.transform.childCount);
+                return;
+            }
+
             var before = Capture(scene, target);
             Write(Path.Combine(dir, "before.json"), before.Json);
             if (!apply)
@@ -69,6 +77,20 @@ namespace JuegoDef.EditorTools
             var pass = moved && clear && same;
             Write(Path.Combine(dir, "result.json"), Result(before.Path, moved, clear, before.Hash, after.Hash, unintended, pass ? "PASS" : "FAIL", pass ? "" : "move, passage, or preservation failed"));
             Debug.Log("SemanticEditHonda01 " + (pass ? "PASS" : "FAIL") + " hashSame=" + same + " clear=" + clear);
+        }
+
+        static string Children(GameObject target)
+        {
+            var builder = new StringBuilder();
+            builder.Append("{\n  \"group\": ").Append(Q(PathOf(target.transform))).Append(",\n  \"children\": [\n");
+            for (var i = 0; i < target.transform.childCount; i++)
+            {
+                var child = target.transform.GetChild(i);
+                if (i > 0) builder.Append(",\n");
+                builder.Append("    { \"name\": ").Append(Q(child.name)).Append(", \"path\": ").Append(Q(PathOf(child))).Append(", \"childCount\": ").Append(child.childCount).Append(" }");
+            }
+            builder.Append("\n  ]\n}");
+            return builder.ToString();
         }
 
         static CaptureResult Capture(Scene scene, GameObject target)

@@ -6,5 +6,5 @@
     "min": [0, 0, 0],
     "max": [0, 0, 0]
   },
-  "note": "passageAabb is a placeholder. Snapshot first, then set this box to the walk corridor the prop must leave. A zero box fails closed."
+  "note": "A group root such as VEHICULOS is not a target. Snapshot now fails if the match has children and writes their names. Set nameContains to one child that blocks the Honda walk. A zero passage box still fails closed."
 }
