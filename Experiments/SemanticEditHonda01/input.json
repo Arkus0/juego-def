@@ -1,0 +1,6 @@
+{
+  "target": "PROP_CONTAINER_X",
+  "mustPreserve": "every saved scene object except the resolved target",
+  "operation": "move",
+  "authority": "authored scene, not a rebuild"
+}

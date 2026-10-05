@@ -1,0 +1,10 @@
+{
+  "scene": "Assets/JuegoDef/Scenes/ENV/ENV01_AUTHORED.unity",
+  "nameContains": "container",
+  "offset": [1.5, 0, 0],
+  "passageAabb": {
+    "min": [0, 0, 0],
+    "max": [0, 0, 0]
+  },
+  "note": "passageAabb is a placeholder. Snapshot first, then set this box to the walk corridor the prop must leave. A zero box fails closed."
+}
