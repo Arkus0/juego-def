@@ -45,3 +45,13 @@ Además: raster nítido 480×360 con point filtering y sin MSAA (el 640×480 bil
 - NPCs adicionales con `CityNPC` en el paseo de muralla y el muelle (la plaza ya tiene vida de la capa Props).
 - Variante noche (hay exploración de look nocturno en el worktree principal, `night-20260931`).
 - Si algún día la demo sale de local: añadir las 3 escenas a Build Settings (el bootstrap ya contempla el fallback por nombre).
+
+## Pase de polish (2026-10-06)
+
+Auditoría semántica y de acabado sobre la demo completa (159 NPCs + 750 unidades de props + 54 escaparates):
+
+- **Colocación de NPCs: limpia.** Los "enterrados/empotrados" del barrido automático eran disfraz intencional: los que miran escaparate se inclinan sobre cajas del género correcto (pescado→cajas de pescado, frutería→cajas de fruta), los "talker" están sobre la tarima de la terraza y los sentados van en sus bancos. 38 NPCs visibles en el encuadre del spawn.
+- **Escaparates consistentes:** rótulo vs género sin contradicciones en los 54 (Modas Carmen con vestidos en exposición y letrero ABIERTO, Caja Cantábrica, Farmacia, Óptica Norte, Pescados Hnos. Ruiz...).
+- **Acabado NPC:** todos los personajes usan el shader del pueblo (`JuegoDef/City/PSX Atlantic`) con atlas de 128 px — coherentes con el entorno. El pase de polish (`Editor/City/PSXDemoPolish.cs`, menú `JuegoDef/CITY/PSX Demo: polish materials`) fuerza Point filtering en las texturas de la familia PSX (2 venían en Bilinear) y verifica que el vertex-snap `_Resolution` esté a 480×360 en todos los materiales (lo estaba).
+- **Falsos fallos documentados:** los tendederos "flotantes" cuelgan entre plantas altas a propósito; los decals de suelo están bajo el mobiliario a propósito; el plano azul que parecía cubrir la calle baja era el envés del suelo visto desde una cámara mal colocada.
+- **Causa de los NullReferenceException en consola (importante):** no es la demo. Se disparan cuando se **compila código estando en Play Mode** (el domain reload deja unidades del kernel GC2 con `Character` nulo, `TUnitMotion.OnEnable`/`UnitPlayerDirectional.OnUpdate`). Tras un ciclo limpio stop→play, la demo corre con 0 errores (verificado también en CITY_B_Base). Regla de trabajo: no compilar en Play.
