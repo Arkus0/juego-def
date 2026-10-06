@@ -44,6 +44,13 @@ namespace JuegoDef.City
                     }
                 }
 
+                if (mat.HasProperty("_MipBias") && mat.GetFloat("_MipBias") > 0.1f)
+                {
+                    mat.SetFloat("_MipBias", 0.1f);
+                    EditorUtility.SetDirty(mat);
+                    matsFixed++;
+                }
+
                 foreach (var slot in TextureSlots)
                 {
                     if (!mat.HasProperty(slot)) continue;

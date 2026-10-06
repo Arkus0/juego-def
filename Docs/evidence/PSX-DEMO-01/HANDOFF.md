@@ -47,6 +47,13 @@ Además: raster nítido 480×360 con point filtering y sin MSAA (el 640×480 bil
 - **No se añade física global a props/NPCs** (decisión de diseño: coste con 159 NPCs, y el dressing autorado perdería intención). Lo que sí se mantiene: player con CharacterController contra el mundo, NPCs andadores por NavMesh, sentados como poses estáticas.
 - Nota GC2: `MoveToDirection` con priority 100 ignora la resistencia (los walk-tests fantasmas de ayer venían de eso); priority 0 respeta colliders. `PSXDemoWalkTest` corregido a 0.
 
+## FASE 1 — definición de imagen (2026-10-06, plan `PLAN_DEFINICION_PS1.md`)
+
+- **Escalado entero + retícula:** nuevo `Runtime/City/PSXDemoScreen.cs` (en la Main Camera de la demo; CityRetroScreen del Owner intacto). El 480×360 se muestra ahora al mayor múltiplo entero que cabe (×2 en ventana grande) con pillarbox, en vez de estirado → cada píxel del juego cae en píxeles enteros de pantalla. F10 retícula sutil (una línea por píxel de juego), F11 vuelve al estirado.
+- **Detalle recuperado en muros:** `CITY_PSXAtlantic.shader` lerp anti-shimmer 0,62→0,80 (la pintura de edad de los enfoscados vuelve a verse; los rótulos ya eran nítidos). `CityLook.groundCalm` 0,35→0,15 en la escena demo (pavimento con junta de losa individual).
+- **Mip bias:** barrido en `PSXDemoPolish` (clamp ≤0,1) — la familia PSX no usa `_MipBias` (era del kit DC), así que 0 cambios: documentado.
+- **Verificado:** game view plaza (antes `f1_before_gv_plaza` / después `f1_after_gv_plaza`) y close-ups de fachada antes/después — carteles legibles, sillería definida, pavimento con losas individuales. Sin shimmer mareante en el recorrido.
+
 ## Siguientes pasos sugeridos (no hechos aquí a propósito)
 
 - NPCs adicionales con `CityNPC` en el paseo de muralla y el muelle (la plaza ya tiene vida de la capa Props).
