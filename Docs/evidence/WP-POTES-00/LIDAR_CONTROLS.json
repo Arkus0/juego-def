@@ -1,0 +1,7668 @@
+{
+  "status": "HEIGHT_OBSERVATIONS_AVAILABLE_ROOF_GRAPH_INCOMPLETE",
+  "source_crop": "sources/LIDAR_S01.csv.gz",
+  "attribution": "Obra derivada de LiDAR-PNOA-cob3 2022-2025 CC-BY 4.0 scne.es",
+  "buildings": [
+    {
+      "building_id": "POT-B004",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 116,
+      "point_height_percentiles_m": {
+        "p05": 300.888,
+        "p50": 301.528,
+        "p95": 302.768
+      },
+      "observed_height_range_m": [
+        300.808,
+        303.258
+      ],
+      "source_record_indices": [
+        5064052,
+        5064495,
+        5064496,
+        5064497,
+        5064498,
+        5069235,
+        5069236,
+        5069237,
+        5069238,
+        5069239,
+        5069240,
+        5069727,
+        5069728,
+        5069729,
+        5069730,
+        5069731,
+        5069732,
+        5069733,
+        5069734,
+        5074442,
+        5074443,
+        5074444,
+        5074445,
+        5074446,
+        5074447,
+        5074448,
+        5074449,
+        5074450,
+        5074451,
+        5074452,
+        5074928,
+        5074929,
+        5074930,
+        5074931,
+        5074932,
+        5074933,
+        5074934,
+        5074935,
+        5074936,
+        5074937,
+        5074938,
+        5074939,
+        5074940,
+        5074941,
+        5079740,
+        5079742,
+        5079743,
+        5079744,
+        5079745,
+        5079746,
+        5079747,
+        5079748,
+        5079749,
+        5079750,
+        5079751,
+        5079752,
+        5079753,
+        5079754,
+        5079755,
+        5079756,
+        5079757,
+        5080224,
+        5080225,
+        5080226,
+        5080227,
+        5080228,
+        5080229,
+        5080230,
+        5080231,
+        5080232,
+        5080233,
+        5080234,
+        5080235,
+        5080236,
+        5080237,
+        5080238,
+        5080239,
+        5080240,
+        5080241,
+        5084718,
+        5084720,
+        5084722,
+        5084723,
+        5084724,
+        5084725,
+        5084726,
+        5084727,
+        5084728,
+        5084729,
+        5084730,
+        5084731,
+        5084732,
+        5084733,
+        5084734,
+        5084735,
+        5085208,
+        5085209,
+        5085210,
+        5085211,
+        5085212,
+        5085213,
+        5085214,
+        5085215,
+        5085216,
+        5085217,
+        5085218,
+        5085219,
+        5089069,
+        5089071,
+        5089072,
+        5089073,
+        5089074,
+        5089075,
+        5089076,
+        5089547,
+        5089548
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B004-CIMAVILLA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 25,
+          "ground_class_height_range_m": [
+            292.758,
+            293.698
+          ],
+          "samples": [
+            {
+              "source_record_index": 5080243,
+              "local_xz": [
+                -36.822455,
+                -102.10189
+              ],
+              "orthometric_height_m": 292.908
+            },
+            {
+              "source_record_index": 5080244,
+              "local_xz": [
+                -36.772455,
+                -101.53189
+              ],
+              "orthometric_height_m": 292.788
+            },
+            {
+              "source_record_index": 5080245,
+              "local_xz": [
+                -36.712455,
+                -100.95189
+              ],
+              "orthometric_height_m": 292.768
+            },
+            {
+              "source_record_index": 5084711,
+              "local_xz": [
+                -35.582455,
+                -100.59189
+              ],
+              "orthometric_height_m": 292.758
+            },
+            {
+              "source_record_index": 5084713,
+              "local_xz": [
+                -35.632455,
+                -101.17189
+              ],
+              "orthometric_height_m": 292.818
+            },
+            {
+              "source_record_index": 5084715,
+              "local_xz": [
+                -35.682455,
+                -101.75189
+              ],
+              "orthometric_height_m": 292.918
+            },
+            {
+              "source_record_index": 5084717,
+              "local_xz": [
+                -35.732455,
+                -102.33189
+              ],
+              "orthometric_height_m": 292.918
+            },
+            {
+              "source_record_index": 5084719,
+              "local_xz": [
+                -35.792455,
+                -102.90189
+              ],
+              "orthometric_height_m": 293.018
+            },
+            {
+              "source_record_index": 5085220,
+              "local_xz": [
+                -35.102455,
+                -104.38189
+              ],
+              "orthometric_height_m": 293.168
+            },
+            {
+              "source_record_index": 5085221,
+              "local_xz": [
+                -35.052455,
+                -103.80189
+              ],
+              "orthometric_height_m": 293.138
+            },
+            {
+              "source_record_index": 5085223,
+              "local_xz": [
+                -35.002455,
+                -103.23189
+              ],
+              "orthometric_height_m": 293.078
+            },
+            {
+              "source_record_index": 5085225,
+              "local_xz": [
+                -34.942455,
+                -102.66189
+              ],
+              "orthometric_height_m": 292.988
+            },
+            {
+              "source_record_index": 5085226,
+              "local_xz": [
+                -34.892455,
+                -102.09189
+              ],
+              "orthometric_height_m": 292.978
+            },
+            {
+              "source_record_index": 5085227,
+              "local_xz": [
+                -34.842455,
+                -101.51189
+              ],
+              "orthometric_height_m": 292.918
+            },
+            {
+              "source_record_index": 5089065,
+              "local_xz": [
+                -33.992455,
+                -104.08189
+              ],
+              "orthometric_height_m": 293.218
+            },
+            {
+              "source_record_index": 5089066,
+              "local_xz": [
+                -34.042455,
+                -104.66189
+              ],
+              "orthometric_height_m": 293.238
+            },
+            {
+              "source_record_index": 5089067,
+              "local_xz": [
+                -34.092455,
+                -105.23189
+              ],
+              "orthometric_height_m": 293.268
+            },
+            {
+              "source_record_index": 5089068,
+              "local_xz": [
+                -34.152455,
+                -105.80189
+              ],
+              "orthometric_height_m": 293.388
+            },
+            {
+              "source_record_index": 5089070,
+              "local_xz": [
+                -34.202455,
+                -106.38189
+              ],
+              "orthometric_height_m": 293.378
+            },
+            {
+              "source_record_index": 5089549,
+              "local_xz": [
+                -33.412455,
+                -108.35189
+              ],
+              "orthometric_height_m": 293.568
+            },
+            {
+              "source_record_index": 5089551,
+              "local_xz": [
+                -33.352455,
+                -107.77189
+              ],
+              "orthometric_height_m": 293.538
+            },
+            {
+              "source_record_index": 5089552,
+              "local_xz": [
+                -33.302455,
+                -107.20189
+              ],
+              "orthometric_height_m": 293.488
+            },
+            {
+              "source_record_index": 5089553,
+              "local_xz": [
+                -33.252455,
+                -106.63189
+              ],
+              "orthometric_height_m": 293.438
+            },
+            {
+              "source_record_index": 5089554,
+              "local_xz": [
+                -33.192455,
+                -106.05189
+              ],
+              "orthometric_height_m": 293.388
+            },
+            {
+              "source_record_index": 5092675,
+              "local_xz": [
+                -32.132455,
+                -109.00189
+              ],
+              "orthometric_height_m": 293.698
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        },
+        {
+          "observation_id": "POT-B004-CANTABRA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 34,
+          "ground_class_height_range_m": [
+            291.728,
+            293.018
+          ],
+          "samples": [
+            {
+              "source_record_index": 5058890,
+              "local_xz": [
+                -45.832455,
+                -103.97189
+              ],
+              "orthometric_height_m": 291.728
+            },
+            {
+              "source_record_index": 5058892,
+              "local_xz": [
+                -45.892455,
+                -104.55189
+              ],
+              "orthometric_height_m": 291.818
+            },
+            {
+              "source_record_index": 5059353,
+              "local_xz": [
+                -45.052455,
+                -105.38189
+              ],
+              "orthometric_height_m": 292.088
+            },
+            {
+              "source_record_index": 5059354,
+              "local_xz": [
+                -45.002455,
+                -104.80189
+              ],
+              "orthometric_height_m": 292.048
+            },
+            {
+              "source_record_index": 5059355,
+              "local_xz": [
+                -44.952455,
+                -104.22189
+              ],
+              "orthometric_height_m": 291.968
+            },
+            {
+              "source_record_index": 5059356,
+              "local_xz": [
+                -44.892455,
+                -103.65189
+              ],
+              "orthometric_height_m": 291.858
+            },
+            {
+              "source_record_index": 5064047,
+              "local_xz": [
+                -43.762455,
+                -103.24189
+              ],
+              "orthometric_height_m": 291.998
+            },
+            {
+              "source_record_index": 5064048,
+              "local_xz": [
+                -43.812455,
+                -103.82189
+              ],
+              "orthometric_height_m": 292.028
+            },
+            {
+              "source_record_index": 5064502,
+              "local_xz": [
+                -42.982455,
+                -103.43189
+              ],
+              "orthometric_height_m": 292.088
+            },
+            {
+              "source_record_index": 5064503,
+              "local_xz": [
+                -42.932455,
+                -102.86189
+              ],
+              "orthometric_height_m": 292.098
+            },
+            {
+              "source_record_index": 5069231,
+              "local_xz": [
+                -41.922455,
+                -102.50189
+              ],
+              "orthometric_height_m": 292.198
+            },
+            {
+              "source_record_index": 5069232,
+              "local_xz": [
+                -41.972455,
+                -103.07189
+              ],
+              "orthometric_height_m": 292.228
+            },
+            {
+              "source_record_index": 5069233,
+              "local_xz": [
+                -42.022455,
+                -103.65189
+              ],
+              "orthometric_height_m": 292.268
+            },
+            {
+              "source_record_index": 5069739,
+              "local_xz": [
+                -41.182455,
+                -102.91189
+              ],
+              "orthometric_height_m": 292.348
+            },
+            {
+              "source_record_index": 5069740,
+              "local_xz": [
+                -41.122455,
+                -102.34189
+              ],
+              "orthometric_height_m": 292.318
+            },
+            {
+              "source_record_index": 5074437,
+              "local_xz": [
+                -40.012455,
+                -101.92189
+              ],
+              "orthometric_height_m": 292.478
+            },
+            {
+              "source_record_index": 5074438,
+              "local_xz": [
+                -40.062455,
+                -102.50189
+              ],
+              "orthometric_height_m": 292.478
+            },
+            {
+              "source_record_index": 5074943,
+              "local_xz": [
+                -39.142455,
+                -102.80189
+              ],
+              "orthometric_height_m": 292.868
+            },
+            {
+              "source_record_index": 5074944,
+              "local_xz": [
+                -39.072455,
+                -102.23189
+              ],
+              "orthometric_height_m": 292.608
+            },
+            {
+              "source_record_index": 5074945,
+              "local_xz": [
+                -39.022455,
+                -101.65189
+              ],
+              "orthometric_height_m": 292.598
+            },
+            {
+              "source_record_index": 5079736,
+              "local_xz": [
+                -37.722455,
+                -100.89189
+              ],
+              "orthometric_height_m": 292.728
+            },
+            {
+              "source_record_index": 5079737,
+              "local_xz": [
+                -37.772455,
+                -101.46189
+              ],
+              "orthometric_height_m": 292.788
+            },
+            {
+              "source_record_index": 5079738,
+              "local_xz": [
+                -37.822455,
+                -102.04189
+              ],
+              "orthometric_height_m": 292.768
+            },
+            {
+              "source_record_index": 5080243,
+              "local_xz": [
+                -36.822455,
+                -102.10189
+              ],
+              "orthometric_height_m": 292.908
+            },
+            {
+              "source_record_index": 5080244,
+              "local_xz": [
+                -36.772455,
+                -101.53189
+              ],
+              "orthometric_height_m": 292.788
+            },
+            {
+              "source_record_index": 5080245,
+              "local_xz": [
+                -36.712455,
+                -100.95189
+              ],
+              "orthometric_height_m": 292.768
+            },
+            {
+              "source_record_index": 5084711,
+              "local_xz": [
+                -35.582455,
+                -100.59189
+              ],
+              "orthometric_height_m": 292.758
+            },
+            {
+              "source_record_index": 5084713,
+              "local_xz": [
+                -35.632455,
+                -101.17189
+              ],
+              "orthometric_height_m": 292.818
+            },
+            {
+              "source_record_index": 5084715,
+              "local_xz": [
+                -35.682455,
+                -101.75189
+              ],
+              "orthometric_height_m": 292.918
+            },
+            {
+              "source_record_index": 5084717,
+              "local_xz": [
+                -35.732455,
+                -102.33189
+              ],
+              "orthometric_height_m": 292.918
+            },
+            {
+              "source_record_index": 5084719,
+              "local_xz": [
+                -35.792455,
+                -102.90189
+              ],
+              "orthometric_height_m": 293.018
+            },
+            {
+              "source_record_index": 5085225,
+              "local_xz": [
+                -34.942455,
+                -102.66189
+              ],
+              "orthometric_height_m": 292.988
+            },
+            {
+              "source_record_index": 5085226,
+              "local_xz": [
+                -34.892455,
+                -102.09189
+              ],
+              "orthometric_height_m": 292.978
+            },
+            {
+              "source_record_index": 5085227,
+              "local_xz": [
+                -34.842455,
+                -101.51189
+              ],
+              "orthometric_height_m": 292.918
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B005",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 62,
+      "point_height_percentiles_m": {
+        "p05": 301.348,
+        "p50": 302.488,
+        "p95": 303.978
+      },
+      "observed_height_range_m": [
+        301.288,
+        304.118
+      ],
+      "source_record_indices": [
+        5080222,
+        5080223,
+        5084736,
+        5084737,
+        5084738,
+        5084739,
+        5084740,
+        5084741,
+        5085198,
+        5085199,
+        5085200,
+        5085201,
+        5085202,
+        5085203,
+        5085204,
+        5085205,
+        5085206,
+        5085207,
+        5089077,
+        5089078,
+        5089079,
+        5089080,
+        5089081,
+        5089082,
+        5089083,
+        5089084,
+        5089085,
+        5089086,
+        5089087,
+        5089088,
+        5089089,
+        5089090,
+        5089091,
+        5089530,
+        5089531,
+        5089532,
+        5089533,
+        5089534,
+        5089535,
+        5089536,
+        5089537,
+        5089538,
+        5089539,
+        5089540,
+        5089541,
+        5089542,
+        5089543,
+        5089544,
+        5089545,
+        5089546,
+        5092679,
+        5092681,
+        5092682,
+        5092683,
+        5092684,
+        5092685,
+        5092686,
+        5092687,
+        5092688,
+        5093131,
+        5093132,
+        5093133
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B005-CIMAVILLA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 17,
+          "ground_class_height_range_m": [
+            293.538,
+            294.558
+          ],
+          "samples": [
+            {
+              "source_record_index": 5089549,
+              "local_xz": [
+                -33.412455,
+                -108.35189
+              ],
+              "orthometric_height_m": 293.568
+            },
+            {
+              "source_record_index": 5089551,
+              "local_xz": [
+                -33.352455,
+                -107.77189
+              ],
+              "orthometric_height_m": 293.538
+            },
+            {
+              "source_record_index": 5092675,
+              "local_xz": [
+                -32.132455,
+                -109.00189
+              ],
+              "orthometric_height_m": 293.698
+            },
+            {
+              "source_record_index": 5092676,
+              "local_xz": [
+                -32.192455,
+                -109.57189
+              ],
+              "orthometric_height_m": 293.768
+            },
+            {
+              "source_record_index": 5092677,
+              "local_xz": [
+                -32.242455,
+                -110.14189
+              ],
+              "orthometric_height_m": 293.838
+            },
+            {
+              "source_record_index": 5092678,
+              "local_xz": [
+                -32.302455,
+                -110.72189
+              ],
+              "orthometric_height_m": 293.918
+            },
+            {
+              "source_record_index": 5092680,
+              "local_xz": [
+                -32.352455,
+                -111.30189
+              ],
+              "orthometric_height_m": 293.988
+            },
+            {
+              "source_record_index": 5093130,
+              "local_xz": [
+                -31.712455,
+                -115.17189
+              ],
+              "orthometric_height_m": 294.548
+            },
+            {
+              "source_record_index": 5093134,
+              "local_xz": [
+                -31.552455,
+                -113.46189
+              ],
+              "orthometric_height_m": 294.328
+            },
+            {
+              "source_record_index": 5093136,
+              "local_xz": [
+                -31.492455,
+                -112.88189
+              ],
+              "orthometric_height_m": 294.268
+            },
+            {
+              "source_record_index": 5093137,
+              "local_xz": [
+                -31.432455,
+                -112.31189
+              ],
+              "orthometric_height_m": 294.158
+            },
+            {
+              "source_record_index": 5093138,
+              "local_xz": [
+                -31.382455,
+                -111.73189
+              ],
+              "orthometric_height_m": 294.148
+            },
+            {
+              "source_record_index": 5093139,
+              "local_xz": [
+                -31.322455,
+                -111.16189
+              ],
+              "orthometric_height_m": 293.998
+            },
+            {
+              "source_record_index": 5095839,
+              "local_xz": [
+                -30.412455,
+                -113.65189
+              ],
+              "orthometric_height_m": 294.358
+            },
+            {
+              "source_record_index": 5095841,
+              "local_xz": [
+                -30.462455,
+                -114.22189
+              ],
+              "orthometric_height_m": 294.428
+            },
+            {
+              "source_record_index": 5095842,
+              "local_xz": [
+                -30.522455,
+                -114.80189
+              ],
+              "orthometric_height_m": 294.498
+            },
+            {
+              "source_record_index": 5095843,
+              "local_xz": [
+                -30.572455,
+                -115.38189
+              ],
+              "orthometric_height_m": 294.558
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        },
+        {
+          "observation_id": "POT-B005-GARDEN-RETURN",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 12,
+          "ground_class_height_range_m": [
+            294.268,
+            295.318
+          ],
+          "samples": [
+            {
+              "source_record_index": 5089094,
+              "local_xz": [
+                -35.362455,
+                -118.43189
+              ],
+              "orthometric_height_m": 295.318
+            },
+            {
+              "source_record_index": 5089096,
+              "local_xz": [
+                -35.412455,
+                -119.00189
+              ],
+              "orthometric_height_m": 295.307
+            },
+            {
+              "source_record_index": 5089525,
+              "local_xz": [
+                -34.422455,
+                -118.66189
+              ],
+              "orthometric_height_m": 295.298
+            },
+            {
+              "source_record_index": 5089527,
+              "local_xz": [
+                -34.382455,
+                -118.09189
+              ],
+              "orthometric_height_m": 295.318
+            },
+            {
+              "source_record_index": 5093128,
+              "local_xz": [
+                -31.772455,
+                -115.74189
+              ],
+              "orthometric_height_m": 294.648
+            },
+            {
+              "source_record_index": 5093130,
+              "local_xz": [
+                -31.712455,
+                -115.17189
+              ],
+              "orthometric_height_m": 294.548
+            },
+            {
+              "source_record_index": 5093134,
+              "local_xz": [
+                -31.552455,
+                -113.46189
+              ],
+              "orthometric_height_m": 294.328
+            },
+            {
+              "source_record_index": 5093136,
+              "local_xz": [
+                -31.492455,
+                -112.88189
+              ],
+              "orthometric_height_m": 294.268
+            },
+            {
+              "source_record_index": 5095839,
+              "local_xz": [
+                -30.412455,
+                -113.65189
+              ],
+              "orthometric_height_m": 294.358
+            },
+            {
+              "source_record_index": 5095841,
+              "local_xz": [
+                -30.462455,
+                -114.22189
+              ],
+              "orthometric_height_m": 294.428
+            },
+            {
+              "source_record_index": 5095842,
+              "local_xz": [
+                -30.522455,
+                -114.80189
+              ],
+              "orthometric_height_m": 294.498
+            },
+            {
+              "source_record_index": 5095843,
+              "local_xz": [
+                -30.572455,
+                -115.38189
+              ],
+              "orthometric_height_m": 294.558
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B006",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 309,
+      "point_height_percentiles_m": {
+        "p05": 299.447,
+        "p50": 301.197,
+        "p95": 303.388
+      },
+      "observed_height_range_m": [
+        299.017,
+        304.678
+      ],
+      "source_record_indices": [
+        5037642,
+        5037643,
+        5037644,
+        5038104,
+        5038105,
+        5038106,
+        5038107,
+        5038108,
+        5043049,
+        5043050,
+        5043051,
+        5043052,
+        5043053,
+        5043054,
+        5043055,
+        5043522,
+        5043523,
+        5043524,
+        5043525,
+        5043526,
+        5043527,
+        5043528,
+        5043529,
+        5043530,
+        5043531,
+        5048327,
+        5048328,
+        5048329,
+        5048330,
+        5048331,
+        5048332,
+        5048333,
+        5048334,
+        5048335,
+        5048336,
+        5048337,
+        5048338,
+        5048786,
+        5048787,
+        5048788,
+        5048789,
+        5048790,
+        5048791,
+        5048792,
+        5048793,
+        5048794,
+        5048795,
+        5048796,
+        5048797,
+        5048798,
+        5048799,
+        5048800,
+        5048801,
+        5053640,
+        5053641,
+        5053642,
+        5053643,
+        5053644,
+        5053645,
+        5053646,
+        5053647,
+        5053648,
+        5053649,
+        5053650,
+        5053651,
+        5053652,
+        5053653,
+        5053654,
+        5053655,
+        5053656,
+        5054063,
+        5054064,
+        5054065,
+        5054066,
+        5054067,
+        5054068,
+        5054069,
+        5054070,
+        5054071,
+        5054072,
+        5054073,
+        5054074,
+        5054075,
+        5054076,
+        5054077,
+        5054078,
+        5054079,
+        5054080,
+        5054081,
+        5058891,
+        5058893,
+        5058894,
+        5058895,
+        5058896,
+        5058897,
+        5058898,
+        5058899,
+        5058900,
+        5058901,
+        5058902,
+        5058903,
+        5058904,
+        5058905,
+        5058906,
+        5058907,
+        5058908,
+        5058909,
+        5058910,
+        5058911,
+        5058912,
+        5058913,
+        5059331,
+        5059332,
+        5059333,
+        5059334,
+        5059335,
+        5059336,
+        5059337,
+        5059338,
+        5059339,
+        5059340,
+        5059341,
+        5059342,
+        5059343,
+        5059344,
+        5059345,
+        5059346,
+        5059347,
+        5059348,
+        5059349,
+        5059350,
+        5059351,
+        5059352,
+        5064053,
+        5064054,
+        5064055,
+        5064056,
+        5064057,
+        5064058,
+        5064059,
+        5064060,
+        5064061,
+        5064062,
+        5064063,
+        5064064,
+        5064065,
+        5064066,
+        5064067,
+        5064069,
+        5064071,
+        5064073,
+        5064074,
+        5064075,
+        5064076,
+        5064078,
+        5064473,
+        5064474,
+        5064475,
+        5064476,
+        5064477,
+        5064478,
+        5064479,
+        5064480,
+        5064482,
+        5064483,
+        5064484,
+        5064485,
+        5064486,
+        5064487,
+        5064488,
+        5064489,
+        5064490,
+        5064491,
+        5064492,
+        5064493,
+        5064494,
+        5069241,
+        5069242,
+        5069243,
+        5069244,
+        5069245,
+        5069246,
+        5069247,
+        5069248,
+        5069249,
+        5069250,
+        5069251,
+        5069252,
+        5069253,
+        5069254,
+        5069255,
+        5069256,
+        5069257,
+        5069258,
+        5069259,
+        5069260,
+        5069261,
+        5069703,
+        5069704,
+        5069705,
+        5069706,
+        5069707,
+        5069708,
+        5069709,
+        5069710,
+        5069711,
+        5069712,
+        5069713,
+        5069714,
+        5069715,
+        5069716,
+        5069717,
+        5069718,
+        5069719,
+        5069720,
+        5069721,
+        5069722,
+        5069723,
+        5069724,
+        5069725,
+        5069726,
+        5074453,
+        5074454,
+        5074455,
+        5074456,
+        5074457,
+        5074458,
+        5074459,
+        5074460,
+        5074461,
+        5074462,
+        5074463,
+        5074464,
+        5074465,
+        5074466,
+        5074467,
+        5074468,
+        5074469,
+        5074470,
+        5074471,
+        5074472,
+        5074473,
+        5074474,
+        5074475,
+        5074476,
+        5074477,
+        5074907,
+        5074908,
+        5074909,
+        5074910,
+        5074911,
+        5074912,
+        5074913,
+        5074914,
+        5074915,
+        5074916,
+        5074917,
+        5074918,
+        5074919,
+        5074920,
+        5074921,
+        5074922,
+        5074923,
+        5074924,
+        5074925,
+        5074926,
+        5074927,
+        5079758,
+        5079759,
+        5079760,
+        5079761,
+        5079762,
+        5079763,
+        5079764,
+        5079765,
+        5079766,
+        5079767,
+        5079768,
+        5079769,
+        5079770,
+        5079771,
+        5079772,
+        5079773,
+        5080210,
+        5080211,
+        5080212,
+        5080213,
+        5080214,
+        5080215,
+        5080216,
+        5080217,
+        5080218,
+        5080219,
+        5080220,
+        5080221,
+        5084742,
+        5084743,
+        5084744,
+        5084745,
+        5084746,
+        5084747,
+        5084748,
+        5084749,
+        5085193,
+        5085194,
+        5085195,
+        5085196,
+        5085197,
+        5089092
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B006-UPPER-SOPORTAL",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 9,
+          "ground_class_height_range_m": [
+            291.728,
+            292.628
+          ],
+          "samples": [
+            {
+              "source_record_index": 5032450,
+              "local_xz": [
+                -53.832455,
+                -112.41189
+              ],
+              "orthometric_height_m": 291.957
+            },
+            {
+              "source_record_index": 5032911,
+              "local_xz": [
+                -53.372455,
+                -113.05189
+              ],
+              "orthometric_height_m": 291.987
+            },
+            {
+              "source_record_index": 5032913,
+              "local_xz": [
+                -53.332455,
+                -112.47189
+              ],
+              "orthometric_height_m": 292.037
+            },
+            {
+              "source_record_index": 5037649,
+              "local_xz": [
+                -52.672455,
+                -113.03189
+              ],
+              "orthometric_height_m": 292.027
+            },
+            {
+              "source_record_index": 5058890,
+              "local_xz": [
+                -45.832455,
+                -103.97189
+              ],
+              "orthometric_height_m": 291.728
+            },
+            {
+              "source_record_index": 5059354,
+              "local_xz": [
+                -45.002455,
+                -104.80189
+              ],
+              "orthometric_height_m": 292.048
+            },
+            {
+              "source_record_index": 5059355,
+              "local_xz": [
+                -44.952455,
+                -104.22189
+              ],
+              "orthometric_height_m": 291.968
+            },
+            {
+              "source_record_index": 5059356,
+              "local_xz": [
+                -44.892455,
+                -103.65189
+              ],
+              "orthometric_height_m": 291.858
+            },
+            {
+              "source_record_index": 5064051,
+              "local_xz": [
+                -43.952455,
+                -104.95189
+              ],
+              "orthometric_height_m": 292.628
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B007",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 268,
+      "point_height_percentiles_m": {
+        "p05": 301.377,
+        "p50": 303.487,
+        "p95": 304.677
+      },
+      "observed_height_range_m": [
+        298.927,
+        304.897
+      ],
+      "source_record_indices": [
+        5022383,
+        5027143,
+        5027144,
+        5027145,
+        5027146,
+        5027586,
+        5027587,
+        5027588,
+        5027589,
+        5027590,
+        5027591,
+        5032457,
+        5032458,
+        5032459,
+        5032460,
+        5032461,
+        5032462,
+        5032463,
+        5032464,
+        5032465,
+        5032466,
+        5032896,
+        5032897,
+        5032898,
+        5032899,
+        5032900,
+        5032901,
+        5032902,
+        5032903,
+        5032904,
+        5032905,
+        5032906,
+        5037650,
+        5037651,
+        5037652,
+        5037653,
+        5037654,
+        5037655,
+        5037656,
+        5037657,
+        5037658,
+        5037659,
+        5037660,
+        5037661,
+        5037662,
+        5037663,
+        5038086,
+        5038087,
+        5038088,
+        5038089,
+        5038090,
+        5038091,
+        5038092,
+        5038093,
+        5038094,
+        5038095,
+        5038096,
+        5038097,
+        5038098,
+        5038099,
+        5038100,
+        5038101,
+        5038102,
+        5038103,
+        5043056,
+        5043057,
+        5043058,
+        5043059,
+        5043060,
+        5043061,
+        5043062,
+        5043063,
+        5043064,
+        5043065,
+        5043066,
+        5043067,
+        5043068,
+        5043069,
+        5043070,
+        5043071,
+        5043072,
+        5043073,
+        5043505,
+        5043506,
+        5043507,
+        5043508,
+        5043509,
+        5043510,
+        5043511,
+        5043512,
+        5043513,
+        5043514,
+        5043515,
+        5043516,
+        5043517,
+        5043518,
+        5043519,
+        5043520,
+        5043521,
+        5048339,
+        5048340,
+        5048341,
+        5048342,
+        5048343,
+        5048344,
+        5048345,
+        5048346,
+        5048347,
+        5048348,
+        5048349,
+        5048350,
+        5048351,
+        5048352,
+        5048353,
+        5048354,
+        5048355,
+        5048356,
+        5048357,
+        5048358,
+        5048768,
+        5048769,
+        5048770,
+        5048771,
+        5048772,
+        5048773,
+        5048774,
+        5048775,
+        5048776,
+        5048777,
+        5048778,
+        5048779,
+        5048780,
+        5048781,
+        5048782,
+        5048783,
+        5048784,
+        5048785,
+        5053657,
+        5053658,
+        5053659,
+        5053660,
+        5053661,
+        5053662,
+        5053663,
+        5053664,
+        5053665,
+        5053666,
+        5053667,
+        5053668,
+        5053669,
+        5053670,
+        5053671,
+        5053672,
+        5053673,
+        5054046,
+        5054047,
+        5054048,
+        5054049,
+        5054050,
+        5054051,
+        5054052,
+        5054053,
+        5054054,
+        5054055,
+        5054056,
+        5054057,
+        5054058,
+        5054059,
+        5054060,
+        5054061,
+        5054062,
+        5058914,
+        5058915,
+        5058916,
+        5058917,
+        5058918,
+        5058919,
+        5058920,
+        5058921,
+        5058922,
+        5058923,
+        5058924,
+        5058925,
+        5058926,
+        5058927,
+        5058928,
+        5058929,
+        5059315,
+        5059316,
+        5059317,
+        5059318,
+        5059319,
+        5059320,
+        5059321,
+        5059322,
+        5059323,
+        5059324,
+        5059325,
+        5059326,
+        5059327,
+        5059328,
+        5059329,
+        5059330,
+        5064077,
+        5064079,
+        5064080,
+        5064081,
+        5064082,
+        5064083,
+        5064084,
+        5064085,
+        5064086,
+        5064087,
+        5064088,
+        5064089,
+        5064090,
+        5064091,
+        5064092,
+        5064093,
+        5064458,
+        5064459,
+        5064460,
+        5064461,
+        5064462,
+        5064463,
+        5064464,
+        5064465,
+        5064466,
+        5064467,
+        5064468,
+        5064469,
+        5064470,
+        5064471,
+        5064472,
+        5069262,
+        5069263,
+        5069264,
+        5069265,
+        5069266,
+        5069267,
+        5069268,
+        5069269,
+        5069270,
+        5069271,
+        5069272,
+        5069273,
+        5069274,
+        5069275,
+        5069692,
+        5069694,
+        5069695,
+        5069696,
+        5069697,
+        5069698,
+        5069699,
+        5069700,
+        5069701,
+        5069702,
+        5074478,
+        5074479,
+        5074480,
+        5074481,
+        5074482,
+        5074483,
+        5074484,
+        5074903,
+        5074905,
+        5074906
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B007-CANTABRA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 20,
+          "ground_class_height_range_m": [
+            291.186,
+            292.037
+          ],
+          "samples": [
+            {
+              "source_record_index": 5012096,
+              "local_xz": [
+                -58.242455,
+                -117.56189
+              ],
+              "orthometric_height_m": 291.186
+            },
+            {
+              "source_record_index": 5016776,
+              "local_xz": [
+                -57.752455,
+                -118.68189
+              ],
+              "orthometric_height_m": 291.786
+            },
+            {
+              "source_record_index": 5016782,
+              "local_xz": [
+                -57.842455,
+                -119.84189
+              ],
+              "orthometric_height_m": 291.656
+            },
+            {
+              "source_record_index": 5017202,
+              "local_xz": [
+                -57.422455,
+                -119.24189
+              ],
+              "orthometric_height_m": 291.746
+            },
+            {
+              "source_record_index": 5017204,
+              "local_xz": [
+                -57.382455,
+                -118.66189
+              ],
+              "orthometric_height_m": 291.846
+            },
+            {
+              "source_record_index": 5021945,
+              "local_xz": [
+                -56.612455,
+                -116.02189
+              ],
+              "orthometric_height_m": 291.907
+            },
+            {
+              "source_record_index": 5021948,
+              "local_xz": [
+                -56.702455,
+                -117.18189
+              ],
+              "orthometric_height_m": 291.916
+            },
+            {
+              "source_record_index": 5021949,
+              "local_xz": [
+                -56.752455,
+                -117.75189
+              ],
+              "orthometric_height_m": 291.946
+            },
+            {
+              "source_record_index": 5022389,
+              "local_xz": [
+                -56.152455,
+                -116.66189
+              ],
+              "orthometric_height_m": 291.907
+            },
+            {
+              "source_record_index": 5022390,
+              "local_xz": [
+                -56.112455,
+                -116.08189
+              ],
+              "orthometric_height_m": 291.947
+            },
+            {
+              "source_record_index": 5022393,
+              "local_xz": [
+                -56.012455,
+                -114.93189
+              ],
+              "orthometric_height_m": 291.917
+            },
+            {
+              "source_record_index": 5027136,
+              "local_xz": [
+                -55.342455,
+                -114.69189
+              ],
+              "orthometric_height_m": 291.957
+            },
+            {
+              "source_record_index": 5027137,
+              "local_xz": [
+                -55.382455,
+                -115.27189
+              ],
+              "orthometric_height_m": 291.917
+            },
+            {
+              "source_record_index": 5027138,
+              "local_xz": [
+                -55.432455,
+                -115.85189
+              ],
+              "orthometric_height_m": 291.947
+            },
+            {
+              "source_record_index": 5027595,
+              "local_xz": [
+                -54.832455,
+                -115.08189
+              ],
+              "orthometric_height_m": 291.977
+            },
+            {
+              "source_record_index": 5027596,
+              "local_xz": [
+                -54.792455,
+                -114.50189
+              ],
+              "orthometric_height_m": 291.987
+            },
+            {
+              "source_record_index": 5027597,
+              "local_xz": [
+                -54.742455,
+                -113.94189
+              ],
+              "orthometric_height_m": 291.997
+            },
+            {
+              "source_record_index": 5032450,
+              "local_xz": [
+                -53.832455,
+                -112.41189
+              ],
+              "orthometric_height_m": 291.957
+            },
+            {
+              "source_record_index": 5032452,
+              "local_xz": [
+                -53.932455,
+                -113.56189
+              ],
+              "orthometric_height_m": 292.007
+            },
+            {
+              "source_record_index": 5032913,
+              "local_xz": [
+                -53.332455,
+                -112.47189
+              ],
+              "orthometric_height_m": 292.037
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B041",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 297,
+      "point_height_percentiles_m": {
+        "p05": 286.946,
+        "p50": 289.306,
+        "p95": 290.486
+      },
+      "observed_height_range_m": [
+        284.997,
+        291.326
+      ],
+      "source_record_indices": [
+        4792800,
+        4792801,
+        4792802,
+        4792803,
+        4792804,
+        4793403,
+        4793404,
+        4793405,
+        4793406,
+        4793407,
+        4793408,
+        4793409,
+        4793410,
+        4793411,
+        4793412,
+        4793413,
+        4793414,
+        4793415,
+        4793416,
+        4793417,
+        4798379,
+        4798380,
+        4798381,
+        4798382,
+        4798383,
+        4798384,
+        4798385,
+        4798386,
+        4798387,
+        4798388,
+        4798389,
+        4798390,
+        4798391,
+        4798392,
+        4798393,
+        4798394,
+        4798980,
+        4798981,
+        4798982,
+        4798983,
+        4798984,
+        4798985,
+        4798986,
+        4798987,
+        4798988,
+        4798989,
+        4798990,
+        4798991,
+        4798992,
+        4798993,
+        4803984,
+        4803985,
+        4803986,
+        4803987,
+        4803988,
+        4803989,
+        4803990,
+        4803991,
+        4803992,
+        4803993,
+        4803994,
+        4803995,
+        4803996,
+        4803997,
+        4803998,
+        4804576,
+        4804577,
+        4804578,
+        4804579,
+        4804580,
+        4804581,
+        4804582,
+        4804583,
+        4804584,
+        4804585,
+        4804586,
+        4804587,
+        4804588,
+        4804589,
+        4809756,
+        4809757,
+        4809758,
+        4809759,
+        4809760,
+        4809761,
+        4809762,
+        4809763,
+        4809764,
+        4809765,
+        4809766,
+        4809767,
+        4809768,
+        4809769,
+        4810319,
+        4810320,
+        4810321,
+        4810322,
+        4810323,
+        4810324,
+        4810325,
+        4810326,
+        4810327,
+        4810328,
+        4810329,
+        4810330,
+        4810331,
+        4810332,
+        4815359,
+        4815360,
+        4815361,
+        4815362,
+        4815363,
+        4815364,
+        4815365,
+        4815366,
+        4815367,
+        4815368,
+        4815369,
+        4815370,
+        4815371,
+        4815372,
+        4815922,
+        4815923,
+        4815924,
+        4815925,
+        4815926,
+        4815927,
+        4815928,
+        4815929,
+        4815930,
+        4815931,
+        4815932,
+        4815933,
+        4815934,
+        4815935,
+        4820949,
+        4820950,
+        4820951,
+        4820952,
+        4820953,
+        4820954,
+        4820955,
+        4820956,
+        4820957,
+        4820958,
+        4820959,
+        4820960,
+        4820961,
+        4820962,
+        4821499,
+        4821500,
+        4821501,
+        4821502,
+        4821503,
+        4821504,
+        4821505,
+        4821506,
+        4821507,
+        4821508,
+        4821509,
+        4821510,
+        4821511,
+        4821512,
+        4826296,
+        4826297,
+        4826298,
+        4826299,
+        4826300,
+        4826301,
+        4826302,
+        4826303,
+        4826304,
+        4826305,
+        4826306,
+        4826307,
+        4826308,
+        4826309,
+        4826854,
+        4826855,
+        4826856,
+        4826857,
+        4826858,
+        4826859,
+        4826860,
+        4826861,
+        4826862,
+        4826863,
+        4826864,
+        4826865,
+        4826866,
+        4826867,
+        4831731,
+        4831732,
+        4831733,
+        4831734,
+        4831735,
+        4831736,
+        4831737,
+        4831738,
+        4831739,
+        4831740,
+        4831741,
+        4831742,
+        4831743,
+        4831744,
+        4832281,
+        4832282,
+        4832283,
+        4832284,
+        4832285,
+        4832286,
+        4832287,
+        4832288,
+        4832289,
+        4832290,
+        4832291,
+        4832292,
+        4832293,
+        4832294,
+        4837250,
+        4837251,
+        4837252,
+        4837253,
+        4837254,
+        4837255,
+        4837256,
+        4837257,
+        4837258,
+        4837259,
+        4837260,
+        4837261,
+        4837262,
+        4837263,
+        4837825,
+        4837826,
+        4837827,
+        4837828,
+        4837829,
+        4837830,
+        4837831,
+        4837832,
+        4837833,
+        4837834,
+        4837835,
+        4837836,
+        4837837,
+        4842807,
+        4842808,
+        4842809,
+        4842810,
+        4842811,
+        4842812,
+        4842813,
+        4842814,
+        4842815,
+        4842816,
+        4842817,
+        4842818,
+        4842819,
+        4842820,
+        4842821,
+        4842822,
+        4842823,
+        4843378,
+        4843380,
+        4843381,
+        4843382,
+        4843383,
+        4843384,
+        4843385,
+        4843386,
+        4843387,
+        4843388,
+        4843389,
+        4843390,
+        4843391,
+        4843392,
+        4843393,
+        4843394,
+        4843395,
+        4843396,
+        4843397,
+        4843398,
+        4843399,
+        4843400,
+        4843401,
+        4843402,
+        4843403,
+        4843404,
+        4843405,
+        4848264,
+        4848265,
+        4848266,
+        4848267,
+        4848268,
+        4848270,
+        4848272
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B041-RIVER-WALK",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 24,
+          "ground_class_height_range_m": [
+            281.297,
+            286.086
+          ],
+          "samples": [
+            {
+              "source_record_index": 4837248,
+              "local_xz": [
+                -78.612455,
+                -91.55189
+              ],
+              "orthometric_height_m": 281.307
+            },
+            {
+              "source_record_index": 4837265,
+              "local_xz": [
+                -79.682455,
+                -101.26189
+              ],
+              "orthometric_height_m": 286.086
+            },
+            {
+              "source_record_index": 4837821,
+              "local_xz": [
+                -79.322455,
+                -101.35189
+              ],
+              "orthometric_height_m": 285.946
+            },
+            {
+              "source_record_index": 4837823,
+              "local_xz": [
+                -79.282455,
+                -100.77189
+              ],
+              "orthometric_height_m": 285.966
+            },
+            {
+              "source_record_index": 4837840,
+              "local_xz": [
+                -78.252455,
+                -91.64189
+              ],
+              "orthometric_height_m": 281.317
+            },
+            {
+              "source_record_index": 4842804,
+              "local_xz": [
+                -77.852455,
+                -91.35189
+              ],
+              "orthometric_height_m": 281.337
+            },
+            {
+              "source_record_index": 4842806,
+              "local_xz": [
+                -77.892455,
+                -91.93189
+              ],
+              "orthometric_height_m": 281.347
+            },
+            {
+              "source_record_index": 4843374,
+              "local_xz": [
+                -78.702455,
+                -101.44189
+              ],
+              "orthometric_height_m": 285.766
+            },
+            {
+              "source_record_index": 4843377,
+              "local_xz": [
+                -78.652455,
+                -100.86189
+              ],
+              "orthometric_height_m": 285.776
+            },
+            {
+              "source_record_index": 4843409,
+              "local_xz": [
+                -77.652455,
+                -91.72189
+              ],
+              "orthometric_height_m": 281.367
+            },
+            {
+              "source_record_index": 4843410,
+              "local_xz": [
+                -77.602455,
+                -91.15189
+              ],
+              "orthometric_height_m": 281.297
+            },
+            {
+              "source_record_index": 4848261,
+              "local_xz": [
+                -77.182455,
+                -91.50189
+              ],
+              "orthometric_height_m": 281.357
+            },
+            {
+              "source_record_index": 4848263,
+              "local_xz": [
+                -77.232455,
+                -92.09189
+              ],
+              "orthometric_height_m": 281.367
+            },
+            {
+              "source_record_index": 4848284,
+              "local_xz": [
+                -78.172455,
+                -100.65189
+              ],
+              "orthometric_height_m": 285.596
+            },
+            {
+              "source_record_index": 4848285,
+              "local_xz": [
+                -78.222455,
+                -101.23189
+              ],
+              "orthometric_height_m": 285.646
+            },
+            {
+              "source_record_index": 4848845,
+              "local_xz": [
+                -77.932455,
+                -101.14189
+              ],
+              "orthometric_height_m": 285.556
+            },
+            {
+              "source_record_index": 4848862,
+              "local_xz": [
+                -76.942455,
+                -91.99189
+              ],
+              "orthometric_height_m": 281.417
+            },
+            {
+              "source_record_index": 4848863,
+              "local_xz": [
+                -76.902455,
+                -91.42189
+              ],
+              "orthometric_height_m": 281.357
+            },
+            {
+              "source_record_index": 4853666,
+              "local_xz": [
+                -76.752455,
+                -91.52189
+              ],
+              "orthometric_height_m": 281.367
+            },
+            {
+              "source_record_index": 4853668,
+              "local_xz": [
+                -76.802455,
+                -92.10189
+              ],
+              "orthometric_height_m": 281.417
+            },
+            {
+              "source_record_index": 4853685,
+              "local_xz": [
+                -77.782455,
+                -101.25189
+              ],
+              "orthometric_height_m": 285.506
+            },
+            {
+              "source_record_index": 4854246,
+              "local_xz": [
+                -76.512455,
+                -92.06189
+              ],
+              "orthometric_height_m": 281.397
+            },
+            {
+              "source_record_index": 4854247,
+              "local_xz": [
+                -76.472455,
+                -91.49189
+              ],
+              "orthometric_height_m": 281.367
+            },
+            {
+              "source_record_index": 4859057,
+              "local_xz": [
+                -76.122455,
+                -92.16189
+              ],
+              "orthometric_height_m": 281.437
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B042",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 488,
+      "point_height_percentiles_m": {
+        "p05": 294.489,
+        "p50": 295.088,
+        "p95": 295.939
+      },
+      "observed_height_range_m": [
+        292.749,
+        298.259
+      ],
+      "source_record_indices": [
+        4976225,
+        4976226,
+        4980916,
+        4980917,
+        4980918,
+        4981440,
+        4981441,
+        4981442,
+        4981443,
+        4981444,
+        4981445,
+        4986086,
+        4986087,
+        4986088,
+        4986089,
+        4986090,
+        4986091,
+        4986092,
+        4986620,
+        4986621,
+        4986622,
+        4986623,
+        4986624,
+        4986625,
+        4986626,
+        4986627,
+        4991160,
+        4991161,
+        4991162,
+        4991163,
+        4991164,
+        4991165,
+        4991166,
+        4991167,
+        4991168,
+        4991675,
+        4991676,
+        4991677,
+        4991678,
+        4991679,
+        4991680,
+        4991681,
+        4991682,
+        4991683,
+        4991684,
+        4991685,
+        4996324,
+        4996325,
+        4996326,
+        4996327,
+        4996328,
+        4996329,
+        4996330,
+        4996331,
+        4996332,
+        4996333,
+        4996334,
+        4996335,
+        4996336,
+        4996828,
+        4996829,
+        4996830,
+        4996831,
+        4996832,
+        4996833,
+        4996834,
+        4996835,
+        4996836,
+        4996837,
+        4996838,
+        4996839,
+        4996840,
+        4996841,
+        4996842,
+        5001530,
+        5001531,
+        5001532,
+        5001533,
+        5001534,
+        5001535,
+        5001536,
+        5001537,
+        5001538,
+        5001539,
+        5001540,
+        5001541,
+        5001542,
+        5001543,
+        5001544,
+        5001545,
+        5001546,
+        5002034,
+        5002035,
+        5002036,
+        5002037,
+        5002038,
+        5002039,
+        5002040,
+        5002041,
+        5002042,
+        5002043,
+        5002044,
+        5002045,
+        5002046,
+        5002047,
+        5002048,
+        5002049,
+        5002050,
+        5002051,
+        5006600,
+        5006601,
+        5006602,
+        5006603,
+        5006604,
+        5006605,
+        5006606,
+        5006607,
+        5006608,
+        5006609,
+        5006610,
+        5006611,
+        5006612,
+        5006613,
+        5006614,
+        5006615,
+        5006616,
+        5006617,
+        5007096,
+        5007097,
+        5007098,
+        5007099,
+        5007100,
+        5007101,
+        5007102,
+        5007103,
+        5007104,
+        5007105,
+        5007106,
+        5007107,
+        5007108,
+        5007109,
+        5007110,
+        5007111,
+        5007112,
+        5007113,
+        5011624,
+        5011625,
+        5011626,
+        5011627,
+        5011628,
+        5011629,
+        5011630,
+        5011631,
+        5011632,
+        5011633,
+        5011634,
+        5011635,
+        5011636,
+        5011637,
+        5011638,
+        5011639,
+        5011640,
+        5011641,
+        5011642,
+        5012151,
+        5012152,
+        5012153,
+        5012154,
+        5012155,
+        5012156,
+        5012157,
+        5012158,
+        5012159,
+        5012160,
+        5012161,
+        5012162,
+        5012163,
+        5012164,
+        5012165,
+        5012166,
+        5012167,
+        5012168,
+        5016705,
+        5016706,
+        5016707,
+        5016708,
+        5016709,
+        5016710,
+        5016711,
+        5016712,
+        5016713,
+        5016714,
+        5016715,
+        5016716,
+        5016717,
+        5016718,
+        5016719,
+        5016720,
+        5016721,
+        5017254,
+        5017255,
+        5017256,
+        5017257,
+        5017258,
+        5017259,
+        5017260,
+        5017261,
+        5017262,
+        5017263,
+        5017264,
+        5017265,
+        5017266,
+        5017267,
+        5017268,
+        5017269,
+        5017270,
+        5021883,
+        5021884,
+        5021885,
+        5021886,
+        5021887,
+        5021888,
+        5021889,
+        5021890,
+        5021891,
+        5021892,
+        5021893,
+        5021894,
+        5021895,
+        5021896,
+        5021897,
+        5021898,
+        5021899,
+        5022436,
+        5022437,
+        5022438,
+        5022439,
+        5022440,
+        5022441,
+        5022442,
+        5022443,
+        5022444,
+        5022445,
+        5022446,
+        5022447,
+        5022448,
+        5022449,
+        5022450,
+        5022451,
+        5027076,
+        5027077,
+        5027078,
+        5027079,
+        5027080,
+        5027081,
+        5027082,
+        5027083,
+        5027084,
+        5027085,
+        5027086,
+        5027087,
+        5027088,
+        5027089,
+        5027090,
+        5027091,
+        5027645,
+        5027646,
+        5027647,
+        5027648,
+        5027649,
+        5027650,
+        5027651,
+        5027652,
+        5027653,
+        5027654,
+        5027655,
+        5027656,
+        5027657,
+        5027658,
+        5027659,
+        5027660,
+        5032392,
+        5032393,
+        5032394,
+        5032395,
+        5032396,
+        5032397,
+        5032398,
+        5032399,
+        5032400,
+        5032401,
+        5032402,
+        5032403,
+        5032404,
+        5032405,
+        5032406,
+        5032955,
+        5032956,
+        5032957,
+        5032958,
+        5032959,
+        5032960,
+        5032961,
+        5032962,
+        5032963,
+        5032964,
+        5032965,
+        5032966,
+        5032967,
+        5032968,
+        5032969,
+        5032970,
+        5037592,
+        5037593,
+        5037594,
+        5037595,
+        5037596,
+        5037597,
+        5037598,
+        5037599,
+        5037600,
+        5037601,
+        5037602,
+        5037603,
+        5037604,
+        5037605,
+        5037606,
+        5038146,
+        5038147,
+        5038148,
+        5038149,
+        5038150,
+        5038151,
+        5038152,
+        5038153,
+        5038154,
+        5038155,
+        5038156,
+        5038157,
+        5038158,
+        5038159,
+        5038160,
+        5042998,
+        5042999,
+        5043000,
+        5043001,
+        5043002,
+        5043003,
+        5043004,
+        5043005,
+        5043006,
+        5043007,
+        5043008,
+        5043009,
+        5043010,
+        5043011,
+        5043568,
+        5043569,
+        5043570,
+        5043571,
+        5043572,
+        5043573,
+        5043574,
+        5043575,
+        5043576,
+        5043577,
+        5043578,
+        5043579,
+        5043580,
+        5043581,
+        5048275,
+        5048277,
+        5048278,
+        5048279,
+        5048280,
+        5048281,
+        5048282,
+        5048283,
+        5048284,
+        5048285,
+        5048286,
+        5048287,
+        5048288,
+        5048289,
+        5048838,
+        5048839,
+        5048840,
+        5048841,
+        5048842,
+        5048843,
+        5048844,
+        5048845,
+        5048846,
+        5048847,
+        5048848,
+        5048849,
+        5048850,
+        5048851,
+        5053588,
+        5053590,
+        5053591,
+        5053592,
+        5053593,
+        5053594,
+        5053595,
+        5053596,
+        5053597,
+        5053598,
+        5053599,
+        5053600,
+        5053601,
+        5053602,
+        5053603,
+        5054117,
+        5054118,
+        5054119,
+        5054120,
+        5054121,
+        5054122,
+        5054123,
+        5054124,
+        5054125,
+        5054126,
+        5054127,
+        5054128,
+        5054129,
+        5054130,
+        5054131,
+        5058841,
+        5058842,
+        5058844,
+        5058845,
+        5058846,
+        5058847,
+        5058848,
+        5058849,
+        5058850,
+        5058851,
+        5058852,
+        5058853,
+        5058854,
+        5058855,
+        5058856,
+        5059389,
+        5059390,
+        5059391,
+        5059392,
+        5059393,
+        5059394,
+        5059395,
+        5059396,
+        5059397,
+        5059398,
+        5059399,
+        5059400,
+        5059401,
+        5059402,
+        5064001,
+        5064003,
+        5064004,
+        5064005,
+        5064006,
+        5064007,
+        5064008,
+        5064009,
+        5064010,
+        5064011,
+        5064012,
+        5064013,
+        5064536,
+        5064537,
+        5064538,
+        5064539,
+        5064540,
+        5064541,
+        5064542,
+        5064543,
+        5064544,
+        5069192,
+        5069194,
+        5069196,
+        5069197,
+        5069198,
+        5069199,
+        5069779,
+        5069780,
+        5069781,
+        5069782
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B042-RIVER",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 65,
+          "ground_class_height_range_m": [
+            280.429,
+            281.278
+          ],
+          "samples": [
+            {
+              "source_record_index": 4960092,
+              "local_xz": [
+                -63.842455,
+                -88.24189
+              ],
+              "orthometric_height_m": 281.248
+            },
+            {
+              "source_record_index": 4960093,
+              "local_xz": [
+                -63.892455,
+                -88.82189
+              ],
+              "orthometric_height_m": 281.278
+            },
+            {
+              "source_record_index": 4960615,
+              "local_xz": [
+                -63.502455,
+                -89.17189
+              ],
+              "orthometric_height_m": 281.258
+            },
+            {
+              "source_record_index": 4960616,
+              "local_xz": [
+                -63.462455,
+                -88.59189
+              ],
+              "orthometric_height_m": 281.238
+            },
+            {
+              "source_record_index": 4960619,
+              "local_xz": [
+                -63.292455,
+                -86.87189
+              ],
+              "orthometric_height_m": 280.688
+            },
+            {
+              "source_record_index": 4965315,
+              "local_xz": [
+                -62.842455,
+                -86.83189
+              ],
+              "orthometric_height_m": 280.658
+            },
+            {
+              "source_record_index": 4965317,
+              "local_xz": [
+                -62.972455,
+                -87.98189
+              ],
+              "orthometric_height_m": 281.208
+            },
+            {
+              "source_record_index": 4965318,
+              "local_xz": [
+                -63.022455,
+                -88.55189
+              ],
+              "orthometric_height_m": 281.238
+            },
+            {
+              "source_record_index": 4965319,
+              "local_xz": [
+                -63.062455,
+                -89.13189
+              ],
+              "orthometric_height_m": 281.248
+            },
+            {
+              "source_record_index": 4965827,
+              "local_xz": [
+                -62.762455,
+                -89.49189
+              ],
+              "orthometric_height_m": 281.088
+            },
+            {
+              "source_record_index": 4965831,
+              "local_xz": [
+                -62.682455,
+                -88.33189
+              ],
+              "orthometric_height_m": 281.218
+            },
+            {
+              "source_record_index": 4965832,
+              "local_xz": [
+                -62.632455,
+                -87.76189
+              ],
+              "orthometric_height_m": 281.188
+            },
+            {
+              "source_record_index": 4965834,
+              "local_xz": [
+                -62.502455,
+                -86.61189
+              ],
+              "orthometric_height_m": 280.688
+            },
+            {
+              "source_record_index": 4970502,
+              "local_xz": [
+                -62.152455,
+                -86.52189
+              ],
+              "orthometric_height_m": 280.658
+            },
+            {
+              "source_record_index": 4970504,
+              "local_xz": [
+                -62.282455,
+                -87.67189
+              ],
+              "orthometric_height_m": 281.178
+            },
+            {
+              "source_record_index": 4980910,
+              "local_xz": [
+                -60.622455,
+                -86.23189
+              ],
+              "orthometric_height_m": 280.708
+            },
+            {
+              "source_record_index": 4986083,
+              "local_xz": [
+                -59.852455,
+                -86.87189
+              ],
+              "orthometric_height_m": 281.048
+            },
+            {
+              "source_record_index": 4986630,
+              "local_xz": [
+                -59.592455,
+                -86.72189
+              ],
+              "orthometric_height_m": 281.058
+            },
+            {
+              "source_record_index": 4991154,
+              "local_xz": [
+                -59.102455,
+                -85.71189
+              ],
+              "orthometric_height_m": 280.948
+            },
+            {
+              "source_record_index": 4991155,
+              "local_xz": [
+                -59.162455,
+                -86.28189
+              ],
+              "orthometric_height_m": 281.048
+            },
+            {
+              "source_record_index": 4991687,
+              "local_xz": [
+                -58.802455,
+                -86.57189
+              ],
+              "orthometric_height_m": 281.018
+            },
+            {
+              "source_record_index": 4996320,
+              "local_xz": [
+                -58.182455,
+                -85.73189
+              ],
+              "orthometric_height_m": 281.008
+            },
+            {
+              "source_record_index": 4996321,
+              "local_xz": [
+                -58.232455,
+                -86.31189
+              ],
+              "orthometric_height_m": 281.068
+            },
+            {
+              "source_record_index": 4996846,
+              "local_xz": [
+                -57.652455,
+                -85.69189
+              ],
+              "orthometric_height_m": 281.008
+            },
+            {
+              "source_record_index": 4996848,
+              "local_xz": [
+                -57.532455,
+                -84.54189
+              ],
+              "orthometric_height_m": 280.658
+            },
+            {
+              "source_record_index": 5001525,
+              "local_xz": [
+                -57.162455,
+                -84.64189
+              ],
+              "orthometric_height_m": 280.678
+            },
+            {
+              "source_record_index": 5001526,
+              "local_xz": [
+                -57.202455,
+                -85.21189
+              ],
+              "orthometric_height_m": 280.698
+            },
+            {
+              "source_record_index": 5002055,
+              "local_xz": [
+                -56.852455,
+                -85.04189
+              ],
+              "orthometric_height_m": 280.738
+            },
+            {
+              "source_record_index": 5002056,
+              "local_xz": [
+                -56.802455,
+                -84.47189
+              ],
+              "orthometric_height_m": 280.678
+            },
+            {
+              "source_record_index": 5006595,
+              "local_xz": [
+                -56.262455,
+                -84.27189
+              ],
+              "orthometric_height_m": 280.648
+            },
+            {
+              "source_record_index": 5006596,
+              "local_xz": [
+                -56.312455,
+                -84.85189
+              ],
+              "orthometric_height_m": 280.728
+            },
+            {
+              "source_record_index": 5007117,
+              "local_xz": [
+                -55.962455,
+                -84.55189
+              ],
+              "orthometric_height_m": 280.658
+            },
+            {
+              "source_record_index": 5007118,
+              "local_xz": [
+                -55.912455,
+                -83.98189
+              ],
+              "orthometric_height_m": 280.638
+            },
+            {
+              "source_record_index": 5011618,
+              "local_xz": [
+                -55.382455,
+                -83.81189
+              ],
+              "orthometric_height_m": 280.598
+            },
+            {
+              "source_record_index": 5011619,
+              "local_xz": [
+                -55.432455,
+                -84.40189
+              ],
+              "orthometric_height_m": 280.708
+            },
+            {
+              "source_record_index": 5012172,
+              "local_xz": [
+                -54.832455,
+                -84.34189
+              ],
+              "orthometric_height_m": 280.798
+            },
+            {
+              "source_record_index": 5012173,
+              "local_xz": [
+                -54.772455,
+                -83.77189
+              ],
+              "orthometric_height_m": 280.638
+            },
+            {
+              "source_record_index": 5016700,
+              "local_xz": [
+                -54.122455,
+                -83.18189
+              ],
+              "orthometric_height_m": 280.628
+            },
+            {
+              "source_record_index": 5016701,
+              "local_xz": [
+                -54.172455,
+                -83.75189
+              ],
+              "orthometric_height_m": 280.638
+            },
+            {
+              "source_record_index": 5017274,
+              "local_xz": [
+                -53.772455,
+                -83.74189
+              ],
+              "orthometric_height_m": 280.638
+            },
+            {
+              "source_record_index": 5017275,
+              "local_xz": [
+                -53.722455,
+                -83.16189
+              ],
+              "orthometric_height_m": 280.658
+            },
+            {
+              "source_record_index": 5021878,
+              "local_xz": [
+                -53.142455,
+                -82.78189
+              ],
+              "orthometric_height_m": 280.658
+            },
+            {
+              "source_record_index": 5021879,
+              "local_xz": [
+                -53.192455,
+                -83.36189
+              ],
+              "orthometric_height_m": 280.638
+            },
+            {
+              "source_record_index": 5022456,
+              "local_xz": [
+                -52.672455,
+                -83.46189
+              ],
+              "orthometric_height_m": 280.768
+            },
+            {
+              "source_record_index": 5022457,
+              "local_xz": [
+                -52.612455,
+                -82.89189
+              ],
+              "orthometric_height_m": 280.598
+            },
+            {
+              "source_record_index": 5027071,
+              "local_xz": [
+                -51.952455,
+                -82.62189
+              ],
+              "orthometric_height_m": 280.669
+            },
+            {
+              "source_record_index": 5032973,
+              "local_xz": [
+                -50.112455,
+                -82.73189
+              ],
+              "orthometric_height_m": 280.979
+            },
+            {
+              "source_record_index": 5032975,
+              "local_xz": [
+                -49.982455,
+                -81.57189
+              ],
+              "orthometric_height_m": 280.519
+            },
+            {
+              "source_record_index": 5037587,
+              "local_xz": [
+                -49.292455,
+                -81.54189
+              ],
+              "orthometric_height_m": 280.449
+            },
+            {
+              "source_record_index": 5037589,
+              "local_xz": [
+                -49.432455,
+                -82.68189
+              ],
+              "orthometric_height_m": 281.009
+            },
+            {
+              "source_record_index": 5038164,
+              "local_xz": [
+                -48.702455,
+                -81.63189
+              ],
+              "orthometric_height_m": 280.509
+            },
+            {
+              "source_record_index": 5038165,
+              "local_xz": [
+                -48.642455,
+                -81.05189
+              ],
+              "orthometric_height_m": 280.429
+            },
+            {
+              "source_record_index": 5042993,
+              "local_xz": [
+                -47.872455,
+                -80.92189
+              ],
+              "orthometric_height_m": 280.499
+            },
+            {
+              "source_record_index": 5042994,
+              "local_xz": [
+                -47.922455,
+                -81.50189
+              ],
+              "orthometric_height_m": 280.529
+            },
+            {
+              "source_record_index": 5043585,
+              "local_xz": [
+                -47.212455,
+                -81.22189
+              ],
+              "orthometric_height_m": 280.479
+            },
+            {
+              "source_record_index": 5043586,
+              "local_xz": [
+                -47.162455,
+                -80.64189
+              ],
+              "orthometric_height_m": 280.439
+            },
+            {
+              "source_record_index": 5048270,
+              "local_xz": [
+                -46.202455,
+                -80.08189
+              ],
+              "orthometric_height_m": 280.439
+            },
+            {
+              "source_record_index": 5048271,
+              "local_xz": [
+                -46.252455,
+                -80.66189
+              ],
+              "orthometric_height_m": 280.469
+            },
+            {
+              "source_record_index": 5048855,
+              "local_xz": [
+                -45.472455,
+                -80.41189
+              ],
+              "orthometric_height_m": 280.479
+            },
+            {
+              "source_record_index": 5048856,
+              "local_xz": [
+                -45.422455,
+                -79.83189
+              ],
+              "orthometric_height_m": 280.479
+            },
+            {
+              "source_record_index": 5053586,
+              "local_xz": [
+                -44.732455,
+                -80.42189
+              ],
+              "orthometric_height_m": 280.569
+            },
+            {
+              "source_record_index": 5058839,
+              "local_xz": [
+                -43.082455,
+                -79.94189
+              ],
+              "orthometric_height_m": 280.889
+            },
+            {
+              "source_record_index": 5059405,
+              "local_xz": [
+                -42.102455,
+                -79.67189
+              ],
+              "orthometric_height_m": 280.959
+            },
+            {
+              "source_record_index": 5063998,
+              "local_xz": [
+                -41.032455,
+                -79.83189
+              ],
+              "orthometric_height_m": 280.949
+            },
+            {
+              "source_record_index": 5064000,
+              "local_xz": [
+                -41.082455,
+                -80.41189
+              ],
+              "orthometric_height_m": 280.969
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B043",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 191,
+      "point_height_percentiles_m": {
+        "p05": 298.127,
+        "p50": 298.687,
+        "p95": 299.407
+      },
+      "observed_height_range_m": [
+        297.997,
+        300.467
+      ],
+      "source_record_indices": [
+        4965347,
+        4965797,
+        4965798,
+        4965799,
+        4970539,
+        4970540,
+        4970541,
+        4970542,
+        4970543,
+        4970544,
+        4970545,
+        4970985,
+        4970986,
+        4970987,
+        4970988,
+        4970989,
+        4970990,
+        4970991,
+        4970992,
+        4970993,
+        4975753,
+        4975754,
+        4975755,
+        4975756,
+        4975757,
+        4975758,
+        4975759,
+        4975760,
+        4975761,
+        4976189,
+        4976190,
+        4976191,
+        4976192,
+        4976193,
+        4976194,
+        4976195,
+        4976196,
+        4976197,
+        4976198,
+        4980944,
+        4980945,
+        4980946,
+        4980947,
+        4980948,
+        4980949,
+        4980950,
+        4980951,
+        4980952,
+        4980953,
+        4980954,
+        4980955,
+        4981406,
+        4981407,
+        4981408,
+        4981409,
+        4981410,
+        4981411,
+        4981412,
+        4981413,
+        4981414,
+        4981415,
+        4981416,
+        4981417,
+        4986116,
+        4986117,
+        4986118,
+        4986119,
+        4986120,
+        4986121,
+        4986122,
+        4986123,
+        4986124,
+        4986125,
+        4986589,
+        4986590,
+        4986591,
+        4986592,
+        4986593,
+        4986594,
+        4986595,
+        4986596,
+        4986597,
+        4986598,
+        4991187,
+        4991188,
+        4991189,
+        4991190,
+        4991191,
+        4991192,
+        4991193,
+        4991194,
+        4991195,
+        4991196,
+        4991648,
+        4991649,
+        4991650,
+        4991651,
+        4991652,
+        4991653,
+        4991654,
+        4991655,
+        4991656,
+        4991657,
+        4996352,
+        4996353,
+        4996354,
+        4996355,
+        4996356,
+        4996357,
+        4996358,
+        4996359,
+        4996360,
+        4996361,
+        4996806,
+        4996807,
+        4996808,
+        4996809,
+        4996810,
+        4996811,
+        4996812,
+        4996813,
+        4996814,
+        4996815,
+        4996816,
+        5001560,
+        5001561,
+        5001562,
+        5001563,
+        5001564,
+        5001565,
+        5001566,
+        5001567,
+        5001568,
+        5001569,
+        5001570,
+        5002013,
+        5002014,
+        5002015,
+        5002016,
+        5002017,
+        5002018,
+        5002019,
+        5002020,
+        5002021,
+        5002022,
+        5002023,
+        5006627,
+        5006628,
+        5006629,
+        5006630,
+        5006631,
+        5006632,
+        5006633,
+        5006634,
+        5006635,
+        5006636,
+        5006637,
+        5007075,
+        5007076,
+        5007077,
+        5007078,
+        5007079,
+        5007080,
+        5007081,
+        5007082,
+        5007083,
+        5007084,
+        5007085,
+        5007086,
+        5011652,
+        5011655,
+        5011657,
+        5011659,
+        5011660,
+        5011661,
+        5011662,
+        5011663,
+        5011664,
+        5011665,
+        5011666,
+        5011667,
+        5012119,
+        5012120,
+        5012121,
+        5012122,
+        5012124,
+        5012126,
+        5012128,
+        5012130,
+        5016745,
+        5016747
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B043-SOUTH",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 38,
+          "ground_class_height_range_m": [
+            284.707,
+            290.447
+          ],
+          "samples": [
+            {
+              "source_record_index": 4955389,
+              "local_xz": [
+                -65.982455,
+                -106.33189
+              ],
+              "orthometric_height_m": 284.707
+            },
+            {
+              "source_record_index": 4960134,
+              "local_xz": [
+                -65.482455,
+                -106.08189
+              ],
+              "orthometric_height_m": 284.807
+            },
+            {
+              "source_record_index": 4960138,
+              "local_xz": [
+                -65.892455,
+                -107.11189
+              ],
+              "orthometric_height_m": 289.467
+            },
+            {
+              "source_record_index": 4960576,
+              "local_xz": [
+                -65.522455,
+                -107.46189
+              ],
+              "orthometric_height_m": 289.557
+            },
+            {
+              "source_record_index": 4965357,
+              "local_xz": [
+                -65.122455,
+                -108.01189
+              ],
+              "orthometric_height_m": 289.627
+            },
+            {
+              "source_record_index": 4965790,
+              "local_xz": [
+                -64.792455,
+                -107.77189
+              ],
+              "orthometric_height_m": 289.637
+            },
+            {
+              "source_record_index": 4970550,
+              "local_xz": [
+                -64.492455,
+                -108.28189
+              ],
+              "orthometric_height_m": 289.687
+            },
+            {
+              "source_record_index": 4970982,
+              "local_xz": [
+                -64.242455,
+                -108.13189
+              ],
+              "orthometric_height_m": 289.697
+            },
+            {
+              "source_record_index": 4975764,
+              "local_xz": [
+                -63.882455,
+                -108.09189
+              ],
+              "orthometric_height_m": 289.797
+            },
+            {
+              "source_record_index": 4976187,
+              "local_xz": [
+                -63.492455,
+                -107.82189
+              ],
+              "orthometric_height_m": 289.807
+            },
+            {
+              "source_record_index": 4980958,
+              "local_xz": [
+                -62.962455,
+                -107.97189
+              ],
+              "orthometric_height_m": 289.897
+            },
+            {
+              "source_record_index": 4981404,
+              "local_xz": [
+                -62.522455,
+                -108.06189
+              ],
+              "orthometric_height_m": 289.937
+            },
+            {
+              "source_record_index": 4986128,
+              "local_xz": [
+                -62.142455,
+                -108.04189
+              ],
+              "orthometric_height_m": 289.977
+            },
+            {
+              "source_record_index": 4986587,
+              "local_xz": [
+                -61.902455,
+                -107.89189
+              ],
+              "orthometric_height_m": 290.027
+            },
+            {
+              "source_record_index": 4991199,
+              "local_xz": [
+                -61.462455,
+                -107.46189
+              ],
+              "orthometric_height_m": 290.017
+            },
+            {
+              "source_record_index": 4991200,
+              "local_xz": [
+                -61.502455,
+                -108.04189
+              ],
+              "orthometric_height_m": 290.047
+            },
+            {
+              "source_record_index": 4991646,
+              "local_xz": [
+                -61.122455,
+                -107.72189
+              ],
+              "orthometric_height_m": 290.057
+            },
+            {
+              "source_record_index": 4996804,
+              "local_xz": [
+                -60.012455,
+                -107.42189
+              ],
+              "orthometric_height_m": 289.987
+            },
+            {
+              "source_record_index": 5006640,
+              "local_xz": [
+                -58.792455,
+                -107.75189
+              ],
+              "orthometric_height_m": 290.147
+            },
+            {
+              "source_record_index": 5007073,
+              "local_xz": [
+                -58.462455,
+                -107.42189
+              ],
+              "orthometric_height_m": 290.157
+            },
+            {
+              "source_record_index": 5011671,
+              "local_xz": [
+                -57.962455,
+                -107.68189
+              ],
+              "orthometric_height_m": 290.187
+            },
+            {
+              "source_record_index": 5012117,
+              "local_xz": [
+                -57.342455,
+                -107.21189
+              ],
+              "orthometric_height_m": 290.267
+            },
+            {
+              "source_record_index": 5016744,
+              "local_xz": [
+                -56.542455,
+                -104.90189
+              ],
+              "orthometric_height_m": 290.337
+            },
+            {
+              "source_record_index": 5016746,
+              "local_xz": [
+                -56.592455,
+                -105.47189
+              ],
+              "orthometric_height_m": 290.327
+            },
+            {
+              "source_record_index": 5016750,
+              "local_xz": [
+                -56.682455,
+                -106.62189
+              ],
+              "orthometric_height_m": 290.327
+            },
+            {
+              "source_record_index": 5016752,
+              "local_xz": [
+                -56.722455,
+                -107.20189
+              ],
+              "orthometric_height_m": 290.277
+            },
+            {
+              "source_record_index": 5017227,
+              "local_xz": [
+                -56.342455,
+                -107.18189
+              ],
+              "orthometric_height_m": 290.317
+            },
+            {
+              "source_record_index": 5017228,
+              "local_xz": [
+                -56.302455,
+                -106.61189
+              ],
+              "orthometric_height_m": 290.337
+            },
+            {
+              "source_record_index": 5017229,
+              "local_xz": [
+                -56.252455,
+                -106.04189
+              ],
+              "orthometric_height_m": 290.377
+            },
+            {
+              "source_record_index": 5017230,
+              "local_xz": [
+                -56.202455,
+                -105.46189
+              ],
+              "orthometric_height_m": 290.357
+            },
+            {
+              "source_record_index": 5017231,
+              "local_xz": [
+                -56.152455,
+                -104.88189
+              ],
+              "orthometric_height_m": 290.307
+            },
+            {
+              "source_record_index": 5021923,
+              "local_xz": [
+                -55.622455,
+                -105.09189
+              ],
+              "orthometric_height_m": 290.327
+            },
+            {
+              "source_record_index": 5021924,
+              "local_xz": [
+                -55.672455,
+                -105.66189
+              ],
+              "orthometric_height_m": 290.397
+            },
+            {
+              "source_record_index": 5021925,
+              "local_xz": [
+                -55.712455,
+                -106.24189
+              ],
+              "orthometric_height_m": 290.397
+            },
+            {
+              "source_record_index": 5021926,
+              "local_xz": [
+                -55.762455,
+                -106.82189
+              ],
+              "orthometric_height_m": 290.367
+            },
+            {
+              "source_record_index": 5021927,
+              "local_xz": [
+                -55.812455,
+                -107.40189
+              ],
+              "orthometric_height_m": 290.367
+            },
+            {
+              "source_record_index": 5022411,
+              "local_xz": [
+                -55.202455,
+                -106.31189
+              ],
+              "orthometric_height_m": 290.427
+            },
+            {
+              "source_record_index": 5022412,
+              "local_xz": [
+                -55.162455,
+                -105.74189
+              ],
+              "orthometric_height_m": 290.447
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B044",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 315,
+      "point_height_percentiles_m": {
+        "p05": 296.767,
+        "p50": 297.618,
+        "p95": 298.558
+      },
+      "observed_height_range_m": [
+        289.228,
+        299.018
+      ],
+      "source_record_indices": [
+        5022422,
+        5022423,
+        5022424,
+        5022425,
+        5027101,
+        5027102,
+        5027103,
+        5027104,
+        5027105,
+        5027106,
+        5027107,
+        5027626,
+        5027627,
+        5027628,
+        5027629,
+        5027630,
+        5027631,
+        5027632,
+        5027633,
+        5027634,
+        5027635,
+        5032416,
+        5032417,
+        5032418,
+        5032419,
+        5032420,
+        5032421,
+        5032422,
+        5032423,
+        5032424,
+        5032425,
+        5032426,
+        5032933,
+        5032934,
+        5032935,
+        5032936,
+        5032937,
+        5032938,
+        5032939,
+        5032940,
+        5032941,
+        5032942,
+        5032943,
+        5032944,
+        5032945,
+        5037615,
+        5037616,
+        5037617,
+        5037618,
+        5037619,
+        5037620,
+        5037621,
+        5037622,
+        5037623,
+        5037624,
+        5037625,
+        5037626,
+        5037627,
+        5037628,
+        5037629,
+        5038118,
+        5038120,
+        5038121,
+        5038122,
+        5038123,
+        5038124,
+        5038125,
+        5038126,
+        5038127,
+        5038128,
+        5038129,
+        5038130,
+        5038131,
+        5038132,
+        5038133,
+        5038134,
+        5038135,
+        5043022,
+        5043023,
+        5043024,
+        5043025,
+        5043026,
+        5043027,
+        5043028,
+        5043029,
+        5043030,
+        5043031,
+        5043032,
+        5043033,
+        5043034,
+        5043035,
+        5043036,
+        5043037,
+        5043038,
+        5043039,
+        5043539,
+        5043541,
+        5043542,
+        5043543,
+        5043544,
+        5043545,
+        5043546,
+        5043547,
+        5043548,
+        5043549,
+        5043550,
+        5043551,
+        5043552,
+        5043553,
+        5043554,
+        5043555,
+        5043556,
+        5043557,
+        5043558,
+        5043559,
+        5048298,
+        5048299,
+        5048300,
+        5048301,
+        5048302,
+        5048303,
+        5048304,
+        5048305,
+        5048306,
+        5048307,
+        5048308,
+        5048309,
+        5048310,
+        5048311,
+        5048312,
+        5048313,
+        5048314,
+        5048315,
+        5048316,
+        5048317,
+        5048809,
+        5048811,
+        5048812,
+        5048813,
+        5048814,
+        5048815,
+        5048816,
+        5048817,
+        5048818,
+        5048819,
+        5048820,
+        5048821,
+        5048822,
+        5048823,
+        5048824,
+        5048825,
+        5048826,
+        5048827,
+        5048828,
+        5048829,
+        5048830,
+        5048832,
+        5053610,
+        5053611,
+        5053612,
+        5053613,
+        5053614,
+        5053615,
+        5053616,
+        5053617,
+        5053618,
+        5053619,
+        5053620,
+        5053621,
+        5053622,
+        5053623,
+        5053624,
+        5053625,
+        5053626,
+        5053627,
+        5053628,
+        5053629,
+        5053630,
+        5053631,
+        5053632,
+        5054087,
+        5054089,
+        5054090,
+        5054091,
+        5054092,
+        5054093,
+        5054094,
+        5054095,
+        5054096,
+        5054097,
+        5054098,
+        5054099,
+        5054100,
+        5054101,
+        5054102,
+        5054103,
+        5054104,
+        5054105,
+        5054106,
+        5054107,
+        5054108,
+        5054109,
+        5054110,
+        5058864,
+        5058865,
+        5058866,
+        5058867,
+        5058868,
+        5058869,
+        5058870,
+        5058871,
+        5058872,
+        5058873,
+        5058874,
+        5058875,
+        5058876,
+        5058877,
+        5058878,
+        5058879,
+        5058880,
+        5058881,
+        5058882,
+        5058883,
+        5058884,
+        5059361,
+        5059362,
+        5059363,
+        5059364,
+        5059365,
+        5059366,
+        5059367,
+        5059368,
+        5059369,
+        5059370,
+        5059371,
+        5059372,
+        5059373,
+        5059374,
+        5059375,
+        5059376,
+        5059377,
+        5059378,
+        5059379,
+        5059380,
+        5064024,
+        5064026,
+        5064027,
+        5064028,
+        5064029,
+        5064030,
+        5064031,
+        5064032,
+        5064033,
+        5064034,
+        5064035,
+        5064036,
+        5064037,
+        5064038,
+        5064039,
+        5064040,
+        5064041,
+        5064042,
+        5064508,
+        5064509,
+        5064510,
+        5064511,
+        5064512,
+        5064513,
+        5064514,
+        5064515,
+        5064516,
+        5064517,
+        5064518,
+        5064519,
+        5064520,
+        5064521,
+        5064522,
+        5069214,
+        5069216,
+        5069217,
+        5069218,
+        5069219,
+        5069220,
+        5069221,
+        5069222,
+        5069223,
+        5069224,
+        5069225,
+        5069226,
+        5069745,
+        5069747,
+        5069748,
+        5069749,
+        5069750,
+        5069751,
+        5069752,
+        5069753,
+        5069754,
+        5069755,
+        5069756,
+        5069757,
+        5069759,
+        5074423,
+        5074425,
+        5074427,
+        5074428,
+        5074429,
+        5074430,
+        5074431,
+        5074432,
+        5074951,
+        5074952,
+        5074953,
+        5074954,
+        5079730
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B044-JUNCTION-FRONT",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 34,
+          "ground_class_height_range_m": [
+            286.687,
+            291.027
+          ],
+          "samples": [
+            {
+              "source_record_index": 5011649,
+              "local_xz": [
+                -56.992455,
+                -98.60189
+              ],
+              "orthometric_height_m": 286.687
+            },
+            {
+              "source_record_index": 5011651,
+              "local_xz": [
+                -57.052455,
+                -99.16189
+              ],
+              "orthometric_height_m": 286.967
+            },
+            {
+              "source_record_index": 5012136,
+              "local_xz": [
+                -56.662455,
+                -100.34189
+              ],
+              "orthometric_height_m": 288.517
+            },
+            {
+              "source_record_index": 5016732,
+              "local_xz": [
+                -55.912455,
+                -99.19189
+              ],
+              "orthometric_height_m": 287.787
+            },
+            {
+              "source_record_index": 5017236,
+              "local_xz": [
+                -55.922455,
+                -102.00189
+              ],
+              "orthometric_height_m": 290.297
+            },
+            {
+              "source_record_index": 5021907,
+              "local_xz": [
+                -54.892455,
+                -98.23189
+              ],
+              "orthometric_height_m": 287.868
+            },
+            {
+              "source_record_index": 5021915,
+              "local_xz": [
+                -55.292455,
+                -101.04189
+              ],
+              "orthometric_height_m": 290.367
+            },
+            {
+              "source_record_index": 5021917,
+              "local_xz": [
+                -55.342455,
+                -101.62189
+              ],
+              "orthometric_height_m": 290.307
+            },
+            {
+              "source_record_index": 5021918,
+              "local_xz": [
+                -55.382455,
+                -102.20189
+              ],
+              "orthometric_height_m": 290.277
+            },
+            {
+              "source_record_index": 5021919,
+              "local_xz": [
+                -55.432455,
+                -102.78189
+              ],
+              "orthometric_height_m": 290.267
+            },
+            {
+              "source_record_index": 5022416,
+              "local_xz": [
+                -54.962455,
+                -103.44189
+              ],
+              "orthometric_height_m": 290.327
+            },
+            {
+              "source_record_index": 5022417,
+              "local_xz": [
+                -54.922455,
+                -102.87189
+              ],
+              "orthometric_height_m": 290.297
+            },
+            {
+              "source_record_index": 5022418,
+              "local_xz": [
+                -54.872455,
+                -102.30189
+              ],
+              "orthometric_height_m": 290.267
+            },
+            {
+              "source_record_index": 5022420,
+              "local_xz": [
+                -54.822455,
+                -101.72189
+              ],
+              "orthometric_height_m": 290.287
+            },
+            {
+              "source_record_index": 5027110,
+              "local_xz": [
+                -54.242455,
+                -102.62189
+              ],
+              "orthometric_height_m": 290.277
+            },
+            {
+              "source_record_index": 5027111,
+              "local_xz": [
+                -54.292455,
+                -103.20189
+              ],
+              "orthometric_height_m": 290.287
+            },
+            {
+              "source_record_index": 5027112,
+              "local_xz": [
+                -54.342455,
+                -103.77189
+              ],
+              "orthometric_height_m": 290.317
+            },
+            {
+              "source_record_index": 5027621,
+              "local_xz": [
+                -53.832455,
+                -104.17189
+              ],
+              "orthometric_height_m": 290.377
+            },
+            {
+              "source_record_index": 5027622,
+              "local_xz": [
+                -53.782455,
+                -103.60189
+              ],
+              "orthometric_height_m": 290.427
+            },
+            {
+              "source_record_index": 5027624,
+              "local_xz": [
+                -53.732455,
+                -103.02189
+              ],
+              "orthometric_height_m": 290.287
+            },
+            {
+              "source_record_index": 5032430,
+              "local_xz": [
+                -53.042455,
+                -103.80189
+              ],
+              "orthometric_height_m": 290.547
+            },
+            {
+              "source_record_index": 5032433,
+              "local_xz": [
+                -53.142455,
+                -104.95189
+              ],
+              "orthometric_height_m": 290.677
+            },
+            {
+              "source_record_index": 5032927,
+              "local_xz": [
+                -52.672455,
+                -105.59189
+              ],
+              "orthometric_height_m": 290.697
+            },
+            {
+              "source_record_index": 5032928,
+              "local_xz": [
+                -52.622455,
+                -105.02189
+              ],
+              "orthometric_height_m": 290.737
+            },
+            {
+              "source_record_index": 5032930,
+              "local_xz": [
+                -52.582455,
+                -104.44189
+              ],
+              "orthometric_height_m": 290.757
+            },
+            {
+              "source_record_index": 5037632,
+              "local_xz": [
+                -51.932455,
+                -105.00189
+              ],
+              "orthometric_height_m": 290.847
+            },
+            {
+              "source_record_index": 5037633,
+              "local_xz": [
+                -51.982455,
+                -105.57189
+              ],
+              "orthometric_height_m": 290.797
+            },
+            {
+              "source_record_index": 5037634,
+              "local_xz": [
+                -52.022455,
+                -106.16189
+              ],
+              "orthometric_height_m": 290.757
+            },
+            {
+              "source_record_index": 5038115,
+              "local_xz": [
+                -51.452455,
+                -106.20189
+              ],
+              "orthometric_height_m": 290.827
+            },
+            {
+              "source_record_index": 5038116,
+              "local_xz": [
+                -51.402455,
+                -105.62189
+              ],
+              "orthometric_height_m": 290.837
+            },
+            {
+              "source_record_index": 5038117,
+              "local_xz": [
+                -51.362455,
+                -105.04189
+              ],
+              "orthometric_height_m": 290.907
+            },
+            {
+              "source_record_index": 5043040,
+              "local_xz": [
+                -50.532455,
+                -104.37189
+              ],
+              "orthometric_height_m": 291.027
+            },
+            {
+              "source_record_index": 5043041,
+              "local_xz": [
+                -50.572455,
+                -104.96189
+              ],
+              "orthometric_height_m": 290.997
+            },
+            {
+              "source_record_index": 5043042,
+              "local_xz": [
+                -50.622455,
+                -105.53189
+              ],
+              "orthometric_height_m": 290.927
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        },
+        {
+          "observation_id": "POT-B044-UPHILL-RETURN",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 59,
+          "ground_class_height_range_m": [
+            290.677,
+            292.598
+          ],
+          "samples": [
+            {
+              "source_record_index": 5032433,
+              "local_xz": [
+                -53.142455,
+                -104.95189
+              ],
+              "orthometric_height_m": 290.677
+            },
+            {
+              "source_record_index": 5032927,
+              "local_xz": [
+                -52.672455,
+                -105.59189
+              ],
+              "orthometric_height_m": 290.697
+            },
+            {
+              "source_record_index": 5032928,
+              "local_xz": [
+                -52.622455,
+                -105.02189
+              ],
+              "orthometric_height_m": 290.737
+            },
+            {
+              "source_record_index": 5032930,
+              "local_xz": [
+                -52.582455,
+                -104.44189
+              ],
+              "orthometric_height_m": 290.757
+            },
+            {
+              "source_record_index": 5037632,
+              "local_xz": [
+                -51.932455,
+                -105.00189
+              ],
+              "orthometric_height_m": 290.847
+            },
+            {
+              "source_record_index": 5037633,
+              "local_xz": [
+                -51.982455,
+                -105.57189
+              ],
+              "orthometric_height_m": 290.797
+            },
+            {
+              "source_record_index": 5037634,
+              "local_xz": [
+                -52.022455,
+                -106.16189
+              ],
+              "orthometric_height_m": 290.757
+            },
+            {
+              "source_record_index": 5038115,
+              "local_xz": [
+                -51.452455,
+                -106.20189
+              ],
+              "orthometric_height_m": 290.827
+            },
+            {
+              "source_record_index": 5038116,
+              "local_xz": [
+                -51.402455,
+                -105.62189
+              ],
+              "orthometric_height_m": 290.837
+            },
+            {
+              "source_record_index": 5038117,
+              "local_xz": [
+                -51.362455,
+                -105.04189
+              ],
+              "orthometric_height_m": 290.907
+            },
+            {
+              "source_record_index": 5043040,
+              "local_xz": [
+                -50.532455,
+                -104.37189
+              ],
+              "orthometric_height_m": 291.027
+            },
+            {
+              "source_record_index": 5043041,
+              "local_xz": [
+                -50.572455,
+                -104.96189
+              ],
+              "orthometric_height_m": 290.997
+            },
+            {
+              "source_record_index": 5043042,
+              "local_xz": [
+                -50.622455,
+                -105.53189
+              ],
+              "orthometric_height_m": 290.927
+            },
+            {
+              "source_record_index": 5043537,
+              "local_xz": [
+                -49.942455,
+                -105.22189
+              ],
+              "orthometric_height_m": 291.047
+            },
+            {
+              "source_record_index": 5043538,
+              "local_xz": [
+                -49.902455,
+                -104.64189
+              ],
+              "orthometric_height_m": 291.107
+            },
+            {
+              "source_record_index": 5043540,
+              "local_xz": [
+                -49.852455,
+                -104.07189
+              ],
+              "orthometric_height_m": 291.148
+            },
+            {
+              "source_record_index": 5048318,
+              "local_xz": [
+                -48.892455,
+                -103.52189
+              ],
+              "orthometric_height_m": 291.238
+            },
+            {
+              "source_record_index": 5048319,
+              "local_xz": [
+                -48.942455,
+                -104.10189
+              ],
+              "orthometric_height_m": 291.298
+            },
+            {
+              "source_record_index": 5048320,
+              "local_xz": [
+                -48.982455,
+                -104.68189
+              ],
+              "orthometric_height_m": 291.228
+            },
+            {
+              "source_record_index": 5048807,
+              "local_xz": [
+                -48.232455,
+                -104.41189
+              ],
+              "orthometric_height_m": 291.318
+            },
+            {
+              "source_record_index": 5048808,
+              "local_xz": [
+                -48.182455,
+                -103.83189
+              ],
+              "orthometric_height_m": 291.328
+            },
+            {
+              "source_record_index": 5048810,
+              "local_xz": [
+                -48.142455,
+                -103.25189
+              ],
+              "orthometric_height_m": 291.438
+            },
+            {
+              "source_record_index": 5053634,
+              "local_xz": [
+                -47.392455,
+                -103.29189
+              ],
+              "orthometric_height_m": 291.488
+            },
+            {
+              "source_record_index": 5053635,
+              "local_xz": [
+                -47.432455,
+                -103.86189
+              ],
+              "orthometric_height_m": 291.418
+            },
+            {
+              "source_record_index": 5053637,
+              "local_xz": [
+                -47.482455,
+                -104.43189
+              ],
+              "orthometric_height_m": 291.438
+            },
+            {
+              "source_record_index": 5054085,
+              "local_xz": [
+                -46.822455,
+                -103.81189
+              ],
+              "orthometric_height_m": 291.498
+            },
+            {
+              "source_record_index": 5054086,
+              "local_xz": [
+                -46.772455,
+                -103.24189
+              ],
+              "orthometric_height_m": 291.518
+            },
+            {
+              "source_record_index": 5054088,
+              "local_xz": [
+                -46.732455,
+                -102.66189
+              ],
+              "orthometric_height_m": 291.588
+            },
+            {
+              "source_record_index": 5058886,
+              "local_xz": [
+                -45.692455,
+                -102.24189
+              ],
+              "orthometric_height_m": 291.818
+            },
+            {
+              "source_record_index": 5058887,
+              "local_xz": [
+                -45.742455,
+                -102.82189
+              ],
+              "orthometric_height_m": 291.728
+            },
+            {
+              "source_record_index": 5058888,
+              "local_xz": [
+                -45.782455,
+                -103.39189
+              ],
+              "orthometric_height_m": 291.718
+            },
+            {
+              "source_record_index": 5059357,
+              "local_xz": [
+                -44.842455,
+                -103.08189
+              ],
+              "orthometric_height_m": 291.868
+            },
+            {
+              "source_record_index": 5059358,
+              "local_xz": [
+                -44.802455,
+                -102.50189
+              ],
+              "orthometric_height_m": 291.898
+            },
+            {
+              "source_record_index": 5059360,
+              "local_xz": [
+                -44.752455,
+                -101.92189
+              ],
+              "orthometric_height_m": 291.908
+            },
+            {
+              "source_record_index": 5064044,
+              "local_xz": [
+                -43.622455,
+                -101.52189
+              ],
+              "orthometric_height_m": 292.058
+            },
+            {
+              "source_record_index": 5064045,
+              "local_xz": [
+                -43.662455,
+                -102.09189
+              ],
+              "orthometric_height_m": 292.008
+            },
+            {
+              "source_record_index": 5064046,
+              "local_xz": [
+                -43.712455,
+                -102.67189
+              ],
+              "orthometric_height_m": 292.008
+            },
+            {
+              "source_record_index": 5064504,
+              "local_xz": [
+                -42.882455,
+                -102.28189
+              ],
+              "orthometric_height_m": 292.088
+            },
+            {
+              "source_record_index": 5064505,
+              "local_xz": [
+                -42.842455,
+                -101.70189
+              ],
+              "orthometric_height_m": 292.168
+            },
+            {
+              "source_record_index": 5064507,
+              "local_xz": [
+                -42.792455,
+                -101.12189
+              ],
+              "orthometric_height_m": 292.188
+            },
+            {
+              "source_record_index": 5069228,
+              "local_xz": [
+                -41.782455,
+                -100.76189
+              ],
+              "orthometric_height_m": 292.328
+            },
+            {
+              "source_record_index": 5069229,
+              "local_xz": [
+                -41.822455,
+                -101.34189
+              ],
+              "orthometric_height_m": 292.238
+            },
+            {
+              "source_record_index": 5069230,
+              "local_xz": [
+                -41.872455,
+                -101.92189
+              ],
+              "orthometric_height_m": 292.238
+            },
+            {
+              "source_record_index": 5069742,
+              "local_xz": [
+                -41.032455,
+                -101.20189
+              ],
+              "orthometric_height_m": 292.348
+            },
+            {
+              "source_record_index": 5069744,
+              "local_xz": [
+                -40.982455,
+                -100.62189
+              ],
+              "orthometric_height_m": 292.348
+            },
+            {
+              "source_record_index": 5069746,
+              "local_xz": [
+                -40.932455,
+                -100.04189
+              ],
+              "orthometric_height_m": 292.388
+            },
+            {
+              "source_record_index": 5074434,
+              "local_xz": [
+                -39.862455,
+                -100.20189
+              ],
+              "orthometric_height_m": 292.478
+            },
+            {
+              "source_record_index": 5074435,
+              "local_xz": [
+                -39.912455,
+                -100.77189
+              ],
+              "orthometric_height_m": 292.458
+            },
+            {
+              "source_record_index": 5074947,
+              "local_xz": [
+                -38.922455,
+                -100.49189
+              ],
+              "orthometric_height_m": 292.588
+            },
+            {
+              "source_record_index": 5074948,
+              "local_xz": [
+                -38.872455,
+                -99.92189
+              ],
+              "orthometric_height_m": 292.568
+            },
+            {
+              "source_record_index": 5074950,
+              "local_xz": [
+                -38.822455,
+                -99.35189
+              ],
+              "orthometric_height_m": 292.538
+            },
+            {
+              "source_record_index": 5079728,
+              "local_xz": [
+                -37.412455,
+                -97.43189
+              ],
+              "orthometric_height_m": 292.459
+            },
+            {
+              "source_record_index": 5079733,
+              "local_xz": [
+                -37.552455,
+                -99.17189
+              ],
+              "orthometric_height_m": 292.338
+            },
+            {
+              "source_record_index": 5079734,
+              "local_xz": [
+                -37.612455,
+                -99.74189
+              ],
+              "orthometric_height_m": 292.578
+            },
+            {
+              "source_record_index": 5080247,
+              "local_xz": [
+                -36.602455,
+                -99.80189
+              ],
+              "orthometric_height_m": 292.598
+            },
+            {
+              "source_record_index": 5080248,
+              "local_xz": [
+                -36.552455,
+                -99.23189
+              ],
+              "orthometric_height_m": 292.558
+            },
+            {
+              "source_record_index": 5080249,
+              "local_xz": [
+                -36.492455,
+                -98.65189
+              ],
+              "orthometric_height_m": 292.379
+            },
+            {
+              "source_record_index": 5080250,
+              "local_xz": [
+                -36.452455,
+                -98.08189
+              ],
+              "orthometric_height_m": 292.469
+            },
+            {
+              "source_record_index": 5080251,
+              "local_xz": [
+                -36.392455,
+                -97.50189
+              ],
+              "orthometric_height_m": 292.419
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B045",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 258,
+      "point_height_percentiles_m": {
+        "p05": 298.029,
+        "p50": 298.579,
+        "p95": 304.859
+      },
+      "observed_height_range_m": [
+        297.62,
+        306.699
+      ],
+      "source_record_indices": [
+        5064014,
+        5064015,
+        5064016,
+        5064017,
+        5064531,
+        5064532,
+        5064533,
+        5064534,
+        5064535,
+        5069200,
+        5069201,
+        5069202,
+        5069203,
+        5069204,
+        5069205,
+        5069206,
+        5069770,
+        5069771,
+        5069772,
+        5069773,
+        5069774,
+        5069775,
+        5069776,
+        5069777,
+        5069778,
+        5074405,
+        5074406,
+        5074407,
+        5074408,
+        5074409,
+        5074410,
+        5074411,
+        5074412,
+        5074413,
+        5074414,
+        5074415,
+        5074416,
+        5074963,
+        5074964,
+        5074965,
+        5074966,
+        5074967,
+        5074968,
+        5074969,
+        5074970,
+        5074971,
+        5074972,
+        5074973,
+        5074974,
+        5074975,
+        5074976,
+        5074977,
+        5074978,
+        5079703,
+        5079704,
+        5079705,
+        5079706,
+        5079707,
+        5079708,
+        5079709,
+        5079710,
+        5079711,
+        5079712,
+        5079713,
+        5079714,
+        5079715,
+        5079716,
+        5079717,
+        5079718,
+        5079719,
+        5079720,
+        5080256,
+        5080257,
+        5080258,
+        5080259,
+        5080260,
+        5080261,
+        5080262,
+        5080263,
+        5080264,
+        5080265,
+        5080266,
+        5080267,
+        5080268,
+        5080269,
+        5080270,
+        5080271,
+        5080272,
+        5080273,
+        5080274,
+        5080275,
+        5080276,
+        5084676,
+        5084678,
+        5084679,
+        5084680,
+        5084681,
+        5084682,
+        5084683,
+        5084684,
+        5084685,
+        5084686,
+        5084687,
+        5084688,
+        5084689,
+        5084690,
+        5084691,
+        5084692,
+        5084693,
+        5084694,
+        5084695,
+        5084696,
+        5084697,
+        5084698,
+        5084699,
+        5084700,
+        5084701,
+        5085236,
+        5085238,
+        5085239,
+        5085240,
+        5085241,
+        5085242,
+        5085243,
+        5085244,
+        5085245,
+        5085246,
+        5085247,
+        5085248,
+        5085249,
+        5085250,
+        5085251,
+        5085252,
+        5085253,
+        5085254,
+        5085255,
+        5085256,
+        5085257,
+        5085258,
+        5085259,
+        5085260,
+        5085261,
+        5085262,
+        5089024,
+        5089025,
+        5089026,
+        5089027,
+        5089028,
+        5089029,
+        5089030,
+        5089031,
+        5089032,
+        5089033,
+        5089034,
+        5089035,
+        5089036,
+        5089037,
+        5089038,
+        5089039,
+        5089040,
+        5089041,
+        5089042,
+        5089043,
+        5089044,
+        5089045,
+        5089046,
+        5089047,
+        5089048,
+        5089049,
+        5089572,
+        5089574,
+        5089575,
+        5089576,
+        5089577,
+        5089579,
+        5089580,
+        5089581,
+        5089582,
+        5089583,
+        5089584,
+        5089585,
+        5089586,
+        5089587,
+        5089588,
+        5089589,
+        5089590,
+        5089591,
+        5089592,
+        5089593,
+        5089594,
+        5089595,
+        5089596,
+        5089597,
+        5092627,
+        5092628,
+        5092629,
+        5092630,
+        5092631,
+        5092632,
+        5092633,
+        5092634,
+        5092635,
+        5092636,
+        5092637,
+        5092638,
+        5092639,
+        5092640,
+        5092641,
+        5092642,
+        5092643,
+        5092644,
+        5092645,
+        5092647,
+        5092649,
+        5093169,
+        5093171,
+        5093172,
+        5093173,
+        5093174,
+        5093175,
+        5093176,
+        5093177,
+        5093178,
+        5093179,
+        5093180,
+        5093181,
+        5093182,
+        5093183,
+        5093184,
+        5093185,
+        5093186,
+        5093187,
+        5095785,
+        5095786,
+        5095787,
+        5095788,
+        5095789,
+        5095790,
+        5095791,
+        5095792,
+        5095793,
+        5095794,
+        5095796,
+        5095797,
+        5095798,
+        5095799,
+        5095800,
+        5096339,
+        5096340,
+        5096341,
+        5096342,
+        5096343,
+        5096344,
+        5096345,
+        5096346,
+        5098745,
+        5098746,
+        5098747
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B045-LANE",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 22,
+          "ground_class_height_range_m": [
+            290.779,
+            292.589
+          ],
+          "samples": [
+            {
+              "source_record_index": 5064022,
+              "local_xz": [
+                -42.622455,
+                -90.60189
+              ],
+              "orthometric_height_m": 290.779
+            },
+            {
+              "source_record_index": 5064525,
+              "local_xz": [
+                -41.882455,
+                -91.36189
+              ],
+              "orthometric_height_m": 290.939
+            },
+            {
+              "source_record_index": 5064527,
+              "local_xz": [
+                -41.832455,
+                -90.78189
+              ],
+              "orthometric_height_m": 290.919
+            },
+            {
+              "source_record_index": 5069210,
+              "local_xz": [
+                -40.942455,
+                -91.57189
+              ],
+              "orthometric_height_m": 291.249
+            },
+            {
+              "source_record_index": 5069211,
+              "local_xz": [
+                -40.982455,
+                -92.15189
+              ],
+              "orthometric_height_m": 291.219
+            },
+            {
+              "source_record_index": 5069212,
+              "local_xz": [
+                -41.042455,
+                -92.72189
+              ],
+              "orthometric_height_m": 291.299
+            },
+            {
+              "source_record_index": 5069761,
+              "local_xz": [
+                -40.342455,
+                -93.72189
+              ],
+              "orthometric_height_m": 291.589
+            },
+            {
+              "source_record_index": 5069766,
+              "local_xz": [
+                -40.222455,
+                -92.57189
+              ],
+              "orthometric_height_m": 291.319
+            },
+            {
+              "source_record_index": 5074420,
+              "local_xz": [
+                -39.292455,
+                -93.88189
+              ],
+              "orthometric_height_m": 291.869
+            },
+            {
+              "source_record_index": 5074421,
+              "local_xz": [
+                -39.342455,
+                -94.45189
+              ],
+              "orthometric_height_m": 291.949
+            },
+            {
+              "source_record_index": 5074422,
+              "local_xz": [
+                -39.402455,
+                -95.03189
+              ],
+              "orthometric_height_m": 292.129
+            },
+            {
+              "source_record_index": 5074958,
+              "local_xz": [
+                -38.462455,
+                -95.33189
+              ],
+              "orthometric_height_m": 292.349
+            },
+            {
+              "source_record_index": 5074961,
+              "local_xz": [
+                -38.412455,
+                -94.75189
+              ],
+              "orthometric_height_m": 292.289
+            },
+            {
+              "source_record_index": 5079725,
+              "local_xz": [
+                -37.312455,
+                -96.27189
+              ],
+              "orthometric_height_m": 292.399
+            },
+            {
+              "source_record_index": 5079726,
+              "local_xz": [
+                -37.362455,
+                -96.85189
+              ],
+              "orthometric_height_m": 292.389
+            },
+            {
+              "source_record_index": 5079728,
+              "local_xz": [
+                -37.412455,
+                -97.43189
+              ],
+              "orthometric_height_m": 292.459
+            },
+            {
+              "source_record_index": 5080249,
+              "local_xz": [
+                -36.492455,
+                -98.65189
+              ],
+              "orthometric_height_m": 292.379
+            },
+            {
+              "source_record_index": 5080250,
+              "local_xz": [
+                -36.452455,
+                -98.08189
+              ],
+              "orthometric_height_m": 292.469
+            },
+            {
+              "source_record_index": 5080251,
+              "local_xz": [
+                -36.392455,
+                -97.50189
+              ],
+              "orthometric_height_m": 292.419
+            },
+            {
+              "source_record_index": 5080254,
+              "local_xz": [
+                -36.352455,
+                -96.93189
+              ],
+              "orthometric_height_m": 292.409
+            },
+            {
+              "source_record_index": 5084706,
+              "local_xz": [
+                -35.372455,
+                -98.29189
+              ],
+              "orthometric_height_m": 292.569
+            },
+            {
+              "source_record_index": 5084708,
+              "local_xz": [
+                -35.422455,
+                -98.87189
+              ],
+              "orthometric_height_m": 292.589
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B046",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 152,
+      "point_height_percentiles_m": {
+        "p05": 302.979,
+        "p50": 304.119,
+        "p95": 305.929
+      },
+      "observed_height_range_m": [
+        298.069,
+        307.069
+      ],
+      "source_record_indices": [
+        5085235,
+        5085237,
+        5089050,
+        5089051,
+        5089052,
+        5089053,
+        5089054,
+        5089563,
+        5089564,
+        5089565,
+        5089566,
+        5089567,
+        5089568,
+        5089569,
+        5089570,
+        5089571,
+        5089573,
+        5092651,
+        5092652,
+        5092653,
+        5092654,
+        5092655,
+        5092656,
+        5092657,
+        5092658,
+        5092659,
+        5092660,
+        5092661,
+        5092662,
+        5092663,
+        5092664,
+        5092665,
+        5093151,
+        5093152,
+        5093153,
+        5093154,
+        5093155,
+        5093156,
+        5093157,
+        5093158,
+        5093159,
+        5093160,
+        5093161,
+        5093162,
+        5093163,
+        5093164,
+        5093165,
+        5093166,
+        5093167,
+        5093168,
+        5093170,
+        5095801,
+        5095802,
+        5095803,
+        5095804,
+        5095805,
+        5095806,
+        5095807,
+        5095808,
+        5095809,
+        5095810,
+        5095811,
+        5095812,
+        5095813,
+        5095814,
+        5095815,
+        5095816,
+        5095817,
+        5095818,
+        5095819,
+        5095820,
+        5096318,
+        5096319,
+        5096320,
+        5096321,
+        5096322,
+        5096323,
+        5096324,
+        5096325,
+        5096326,
+        5096327,
+        5096328,
+        5096329,
+        5096330,
+        5096331,
+        5096332,
+        5096333,
+        5096334,
+        5096335,
+        5096336,
+        5096338,
+        5098748,
+        5098749,
+        5098750,
+        5098751,
+        5098752,
+        5098753,
+        5098754,
+        5098755,
+        5098756,
+        5098757,
+        5098759,
+        5098760,
+        5098761,
+        5098762,
+        5098763,
+        5098764,
+        5098765,
+        5098766,
+        5098767,
+        5099296,
+        5099297,
+        5099298,
+        5099299,
+        5099300,
+        5099301,
+        5099302,
+        5099303,
+        5099304,
+        5099305,
+        5099306,
+        5099307,
+        5099308,
+        5099309,
+        5099310,
+        5099311,
+        5099312,
+        5099313,
+        5099314,
+        5099315,
+        5101511,
+        5101512,
+        5101513,
+        5101514,
+        5101515,
+        5101516,
+        5101517,
+        5101518,
+        5101519,
+        5101520,
+        5101521,
+        5101522,
+        5102038,
+        5102039,
+        5102040,
+        5102041,
+        5102042,
+        5102043,
+        5102044,
+        5102045,
+        5104226,
+        5104227
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B046-CANTABRA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 7,
+          "ground_class_height_range_m": [
+            293.268,
+            293.749
+          ],
+          "samples": [
+            {
+              "source_record_index": 5089556,
+              "local_xz": [
+                -33.092455,
+                -104.90189
+              ],
+              "orthometric_height_m": 293.308
+            },
+            {
+              "source_record_index": 5089557,
+              "local_xz": [
+                -33.042455,
+                -104.32189
+              ],
+              "orthometric_height_m": 293.268
+            },
+            {
+              "source_record_index": 5092669,
+              "local_xz": [
+                -31.832455,
+                -105.55189
+              ],
+              "orthometric_height_m": 293.488
+            },
+            {
+              "source_record_index": 5092670,
+              "local_xz": [
+                -31.872455,
+                -106.13189
+              ],
+              "orthometric_height_m": 293.488
+            },
+            {
+              "source_record_index": 5093149,
+              "local_xz": [
+                -30.842455,
+                -105.98189
+              ],
+              "orthometric_height_m": 293.528
+            },
+            {
+              "source_record_index": 5096316,
+              "local_xz": [
+                -28.722455,
+                -105.19189
+              ],
+              "orthometric_height_m": 293.649
+            },
+            {
+              "source_record_index": 5099294,
+              "local_xz": [
+                -26.642455,
+                -104.45189
+              ],
+              "orthometric_height_m": 293.749
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B047",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 349,
+      "point_height_percentiles_m": {
+        "p05": 297.63,
+        "p50": 304.579,
+        "p95": 306.99
+      },
+      "observed_height_range_m": [
+        297.1,
+        309.47
+      ],
+      "source_record_indices": [
+        5089598,
+        5089599,
+        5089600,
+        5089601,
+        5092620,
+        5092621,
+        5092622,
+        5092623,
+        5092624,
+        5092625,
+        5092626,
+        5093188,
+        5093189,
+        5093190,
+        5093191,
+        5093192,
+        5093193,
+        5093194,
+        5093195,
+        5093196,
+        5093197,
+        5093198,
+        5093199,
+        5093200,
+        5093201,
+        5095765,
+        5095766,
+        5095767,
+        5095768,
+        5095769,
+        5095770,
+        5095771,
+        5095772,
+        5095773,
+        5095774,
+        5095775,
+        5095776,
+        5095777,
+        5095778,
+        5095779,
+        5095780,
+        5095781,
+        5095782,
+        5095783,
+        5095784,
+        5096347,
+        5096348,
+        5096349,
+        5096350,
+        5096351,
+        5096352,
+        5096353,
+        5096354,
+        5096355,
+        5096356,
+        5096357,
+        5096358,
+        5096359,
+        5096360,
+        5096361,
+        5096362,
+        5096363,
+        5096364,
+        5096365,
+        5096366,
+        5096367,
+        5096368,
+        5096369,
+        5098719,
+        5098720,
+        5098721,
+        5098722,
+        5098723,
+        5098724,
+        5098725,
+        5098726,
+        5098727,
+        5098728,
+        5098729,
+        5098730,
+        5098731,
+        5098732,
+        5098733,
+        5098734,
+        5098735,
+        5098736,
+        5098737,
+        5098738,
+        5098739,
+        5098740,
+        5098741,
+        5098742,
+        5098743,
+        5098744,
+        5099316,
+        5099317,
+        5099318,
+        5099319,
+        5099320,
+        5099321,
+        5099322,
+        5099323,
+        5099324,
+        5099325,
+        5099326,
+        5099327,
+        5099328,
+        5099329,
+        5099330,
+        5099331,
+        5099332,
+        5099333,
+        5099334,
+        5099335,
+        5099336,
+        5099337,
+        5099338,
+        5099339,
+        5099340,
+        5099341,
+        5099342,
+        5099343,
+        5099344,
+        5099346,
+        5101482,
+        5101483,
+        5101484,
+        5101485,
+        5101486,
+        5101487,
+        5101488,
+        5101489,
+        5101490,
+        5101491,
+        5101492,
+        5101493,
+        5101494,
+        5101495,
+        5101496,
+        5101497,
+        5101498,
+        5101499,
+        5101500,
+        5101501,
+        5101502,
+        5101503,
+        5101504,
+        5101505,
+        5101506,
+        5101507,
+        5101508,
+        5101509,
+        5101510,
+        5102046,
+        5102047,
+        5102048,
+        5102049,
+        5102050,
+        5102051,
+        5102052,
+        5102053,
+        5102054,
+        5102055,
+        5102056,
+        5102057,
+        5102058,
+        5102059,
+        5102060,
+        5102061,
+        5102062,
+        5102063,
+        5102064,
+        5102065,
+        5102066,
+        5102067,
+        5102068,
+        5102069,
+        5102070,
+        5102071,
+        5102072,
+        5102073,
+        5102074,
+        5102075,
+        5102076,
+        5102077,
+        5102078,
+        5104190,
+        5104191,
+        5104192,
+        5104193,
+        5104194,
+        5104195,
+        5104196,
+        5104197,
+        5104198,
+        5104199,
+        5104200,
+        5104201,
+        5104202,
+        5104203,
+        5104204,
+        5104205,
+        5104206,
+        5104207,
+        5104208,
+        5104209,
+        5104210,
+        5104211,
+        5104212,
+        5104213,
+        5104214,
+        5104215,
+        5104216,
+        5104217,
+        5104218,
+        5104219,
+        5104220,
+        5104221,
+        5104222,
+        5104223,
+        5104224,
+        5104225,
+        5104748,
+        5104749,
+        5104750,
+        5104751,
+        5104752,
+        5104753,
+        5104754,
+        5104755,
+        5104756,
+        5104757,
+        5104758,
+        5104759,
+        5104760,
+        5104761,
+        5104762,
+        5104763,
+        5104764,
+        5104765,
+        5104766,
+        5104767,
+        5104768,
+        5104769,
+        5104770,
+        5104771,
+        5104772,
+        5104773,
+        5104774,
+        5104775,
+        5104776,
+        5104777,
+        5104778,
+        5104779,
+        5104780,
+        5106762,
+        5106764,
+        5106765,
+        5106766,
+        5106767,
+        5106768,
+        5106769,
+        5106770,
+        5106771,
+        5106772,
+        5106773,
+        5106774,
+        5106775,
+        5106776,
+        5106777,
+        5106778,
+        5106779,
+        5106780,
+        5106781,
+        5106782,
+        5106783,
+        5106784,
+        5106785,
+        5106786,
+        5106787,
+        5106788,
+        5106789,
+        5106790,
+        5107331,
+        5107332,
+        5107333,
+        5107334,
+        5107335,
+        5107336,
+        5107337,
+        5107338,
+        5107339,
+        5107340,
+        5107341,
+        5107342,
+        5107343,
+        5107344,
+        5107345,
+        5107346,
+        5107347,
+        5107348,
+        5107349,
+        5107350,
+        5107351,
+        5107352,
+        5107353,
+        5109209,
+        5109210,
+        5109211,
+        5109212,
+        5109213,
+        5109214,
+        5109215,
+        5109216,
+        5109217,
+        5109218,
+        5109219,
+        5109220,
+        5109221,
+        5109222,
+        5109223,
+        5109224,
+        5109758,
+        5109759,
+        5109760,
+        5109761,
+        5109762,
+        5109763,
+        5109764,
+        5109765,
+        5109766,
+        5109767,
+        5109768,
+        5109769,
+        5109770,
+        5109771,
+        5109772,
+        5109773,
+        5109774,
+        5111352,
+        5111353,
+        5111354,
+        5111355,
+        5111356,
+        5111357,
+        5111358,
+        5111359,
+        5111870,
+        5111871
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B047-CANTABRA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 0,
+          "ground_class_height_range_m": null,
+          "samples": [],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B048",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 399,
+      "point_height_percentiles_m": {
+        "p05": 297.101,
+        "p50": 305.2,
+        "p95": 307.73
+      },
+      "observed_height_range_m": [
+        297.06,
+        308.44
+      ],
+      "source_record_indices": [
+        5101478,
+        5101479,
+        5101480,
+        5101481,
+        5102079,
+        5102080,
+        5102081,
+        5102082,
+        5102083,
+        5102084,
+        5102085,
+        5102086,
+        5102087,
+        5104175,
+        5104176,
+        5104177,
+        5104178,
+        5104179,
+        5104180,
+        5104181,
+        5104182,
+        5104183,
+        5104184,
+        5104185,
+        5104186,
+        5104187,
+        5104188,
+        5104189,
+        5104781,
+        5104782,
+        5104783,
+        5104784,
+        5104785,
+        5104786,
+        5104787,
+        5104788,
+        5104789,
+        5104790,
+        5104791,
+        5104792,
+        5104793,
+        5104794,
+        5104795,
+        5104796,
+        5104797,
+        5104798,
+        5104799,
+        5106741,
+        5106742,
+        5106743,
+        5106744,
+        5106745,
+        5106746,
+        5106747,
+        5106748,
+        5106749,
+        5106750,
+        5106751,
+        5106752,
+        5106753,
+        5106754,
+        5106755,
+        5106756,
+        5106757,
+        5106758,
+        5106759,
+        5106760,
+        5106761,
+        5106763,
+        5107354,
+        5107355,
+        5107356,
+        5107358,
+        5107359,
+        5107360,
+        5107361,
+        5107362,
+        5107363,
+        5107364,
+        5107365,
+        5107366,
+        5107367,
+        5107368,
+        5107369,
+        5107370,
+        5107371,
+        5107372,
+        5107373,
+        5107374,
+        5107375,
+        5107376,
+        5107377,
+        5107378,
+        5107379,
+        5107380,
+        5107381,
+        5107382,
+        5107383,
+        5107384,
+        5107385,
+        5107386,
+        5107387,
+        5107388,
+        5109177,
+        5109178,
+        5109179,
+        5109180,
+        5109181,
+        5109182,
+        5109183,
+        5109184,
+        5109185,
+        5109186,
+        5109187,
+        5109188,
+        5109189,
+        5109190,
+        5109191,
+        5109192,
+        5109193,
+        5109194,
+        5109195,
+        5109196,
+        5109197,
+        5109198,
+        5109199,
+        5109200,
+        5109201,
+        5109202,
+        5109203,
+        5109204,
+        5109205,
+        5109206,
+        5109207,
+        5109208,
+        5109775,
+        5109776,
+        5109777,
+        5109778,
+        5109779,
+        5109780,
+        5109781,
+        5109782,
+        5109783,
+        5109784,
+        5109785,
+        5109786,
+        5109787,
+        5109788,
+        5109789,
+        5109790,
+        5109791,
+        5109792,
+        5109793,
+        5109794,
+        5109795,
+        5109796,
+        5109797,
+        5109798,
+        5109799,
+        5109800,
+        5109801,
+        5109802,
+        5109803,
+        5109804,
+        5109805,
+        5109806,
+        5111319,
+        5111320,
+        5111321,
+        5111322,
+        5111323,
+        5111324,
+        5111325,
+        5111326,
+        5111327,
+        5111328,
+        5111329,
+        5111330,
+        5111331,
+        5111332,
+        5111333,
+        5111334,
+        5111335,
+        5111336,
+        5111337,
+        5111338,
+        5111339,
+        5111340,
+        5111341,
+        5111342,
+        5111343,
+        5111344,
+        5111345,
+        5111346,
+        5111347,
+        5111348,
+        5111349,
+        5111350,
+        5111351,
+        5111872,
+        5111873,
+        5111874,
+        5111875,
+        5111876,
+        5111877,
+        5111878,
+        5111879,
+        5111880,
+        5111881,
+        5111882,
+        5111883,
+        5111884,
+        5111885,
+        5111886,
+        5111887,
+        5111888,
+        5111889,
+        5111890,
+        5111891,
+        5111892,
+        5111893,
+        5111894,
+        5111895,
+        5111896,
+        5111897,
+        5111898,
+        5111899,
+        5111900,
+        5111901,
+        5111902,
+        5111903,
+        5111904,
+        5111905,
+        5111906,
+        5113306,
+        5113307,
+        5113308,
+        5113309,
+        5113310,
+        5113311,
+        5113312,
+        5113313,
+        5113314,
+        5113315,
+        5113316,
+        5113317,
+        5113318,
+        5113319,
+        5113320,
+        5113321,
+        5113322,
+        5113323,
+        5113324,
+        5113325,
+        5113326,
+        5113327,
+        5113328,
+        5113329,
+        5113330,
+        5113331,
+        5113332,
+        5113333,
+        5113334,
+        5113335,
+        5113336,
+        5113337,
+        5113338,
+        5113339,
+        5113340,
+        5113341,
+        5113342,
+        5113853,
+        5113854,
+        5113855,
+        5113856,
+        5113857,
+        5113858,
+        5113859,
+        5113860,
+        5113861,
+        5113862,
+        5113863,
+        5113864,
+        5113865,
+        5113866,
+        5113867,
+        5113868,
+        5113869,
+        5113870,
+        5113871,
+        5113872,
+        5113873,
+        5113874,
+        5113875,
+        5113876,
+        5113877,
+        5113878,
+        5113879,
+        5113880,
+        5113881,
+        5113882,
+        5113883,
+        5113884,
+        5115215,
+        5115216,
+        5115217,
+        5115218,
+        5115219,
+        5115220,
+        5115221,
+        5115222,
+        5115223,
+        5115224,
+        5115225,
+        5115226,
+        5115227,
+        5115228,
+        5115229,
+        5115230,
+        5115231,
+        5115232,
+        5115233,
+        5115234,
+        5115235,
+        5115236,
+        5115237,
+        5115238,
+        5115239,
+        5115744,
+        5115745,
+        5115746,
+        5115747,
+        5115748,
+        5115749,
+        5115750,
+        5115751,
+        5115752,
+        5115753,
+        5115754,
+        5115755,
+        5115756,
+        5115757,
+        5115758,
+        5115759,
+        5115760,
+        5115761,
+        5115762,
+        5115763,
+        5115764,
+        5117013,
+        5117014,
+        5117015,
+        5117016,
+        5117017,
+        5117018,
+        5117019,
+        5117020,
+        5117021,
+        5117022,
+        5117023,
+        5117024,
+        5117025,
+        5117026,
+        5117027,
+        5117028,
+        5117029,
+        5117525,
+        5117526,
+        5117527,
+        5117528,
+        5117529,
+        5117530,
+        5117531,
+        5117533,
+        5117534,
+        5117535,
+        5117536,
+        5117537,
+        5117538,
+        5117539,
+        5117540,
+        5117541,
+        5118675,
+        5118677,
+        5118678,
+        5118679,
+        5118680,
+        5118681,
+        5118683,
+        5118684,
+        5118685,
+        5119221,
+        5119222,
+        5119223,
+        5119224,
+        5119225,
+        5119226,
+        5120216
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B048-CANTABRA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 0,
+          "ground_class_height_range_m": null,
+          "samples": [],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B049",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 333,
+      "point_height_percentiles_m": {
+        "p05": 297.711,
+        "p50": 304.131,
+        "p95": 305.741
+      },
+      "observed_height_range_m": [
+        297.671,
+        305.971
+      ],
+      "source_record_indices": [
+        5109174,
+        5109175,
+        5109176,
+        5109807,
+        5109808,
+        5109809,
+        5109810,
+        5109811,
+        5109812,
+        5111307,
+        5111308,
+        5111309,
+        5111310,
+        5111311,
+        5111312,
+        5111313,
+        5111314,
+        5111315,
+        5111316,
+        5111317,
+        5111318,
+        5111907,
+        5111908,
+        5111909,
+        5111910,
+        5111911,
+        5111912,
+        5111913,
+        5111914,
+        5111915,
+        5111916,
+        5111917,
+        5111918,
+        5111919,
+        5111920,
+        5111921,
+        5111922,
+        5113284,
+        5113286,
+        5113288,
+        5113289,
+        5113290,
+        5113291,
+        5113292,
+        5113293,
+        5113294,
+        5113295,
+        5113296,
+        5113297,
+        5113298,
+        5113299,
+        5113300,
+        5113301,
+        5113302,
+        5113303,
+        5113304,
+        5113305,
+        5113885,
+        5113886,
+        5113887,
+        5113888,
+        5113889,
+        5113890,
+        5113891,
+        5113892,
+        5113893,
+        5113894,
+        5113895,
+        5113896,
+        5113897,
+        5113898,
+        5113899,
+        5113900,
+        5113901,
+        5113902,
+        5113903,
+        5113904,
+        5113905,
+        5113906,
+        5113907,
+        5113908,
+        5115189,
+        5115190,
+        5115191,
+        5115192,
+        5115193,
+        5115194,
+        5115195,
+        5115196,
+        5115197,
+        5115198,
+        5115199,
+        5115200,
+        5115201,
+        5115202,
+        5115203,
+        5115204,
+        5115205,
+        5115206,
+        5115207,
+        5115208,
+        5115209,
+        5115210,
+        5115211,
+        5115212,
+        5115213,
+        5115214,
+        5115765,
+        5115766,
+        5115767,
+        5115768,
+        5115769,
+        5115770,
+        5115771,
+        5115772,
+        5115773,
+        5115774,
+        5115775,
+        5115776,
+        5115777,
+        5115778,
+        5115779,
+        5115780,
+        5115781,
+        5115782,
+        5115783,
+        5115784,
+        5115785,
+        5115786,
+        5115787,
+        5115788,
+        5116988,
+        5116989,
+        5116990,
+        5116991,
+        5116992,
+        5116993,
+        5116994,
+        5116995,
+        5116996,
+        5116997,
+        5116998,
+        5116999,
+        5117000,
+        5117001,
+        5117002,
+        5117003,
+        5117004,
+        5117005,
+        5117006,
+        5117007,
+        5117008,
+        5117009,
+        5117010,
+        5117011,
+        5117012,
+        5117542,
+        5117543,
+        5117544,
+        5117545,
+        5117546,
+        5117547,
+        5117548,
+        5117549,
+        5117550,
+        5117551,
+        5117552,
+        5117553,
+        5117554,
+        5117555,
+        5117556,
+        5117557,
+        5117558,
+        5117559,
+        5117560,
+        5117561,
+        5117562,
+        5117563,
+        5117564,
+        5117565,
+        5118649,
+        5118650,
+        5118651,
+        5118652,
+        5118653,
+        5118654,
+        5118655,
+        5118656,
+        5118657,
+        5118658,
+        5118659,
+        5118660,
+        5118661,
+        5118662,
+        5118663,
+        5118664,
+        5118665,
+        5118666,
+        5118667,
+        5118668,
+        5118669,
+        5118670,
+        5118671,
+        5118672,
+        5118673,
+        5118674,
+        5118676,
+        5119227,
+        5119228,
+        5119229,
+        5119230,
+        5119231,
+        5119232,
+        5119233,
+        5119234,
+        5119235,
+        5119236,
+        5119237,
+        5119238,
+        5119239,
+        5119240,
+        5119241,
+        5119242,
+        5119243,
+        5119244,
+        5119245,
+        5119246,
+        5119247,
+        5119248,
+        5119249,
+        5119250,
+        5119251,
+        5120189,
+        5120190,
+        5120191,
+        5120192,
+        5120193,
+        5120194,
+        5120195,
+        5120196,
+        5120197,
+        5120198,
+        5120199,
+        5120200,
+        5120201,
+        5120202,
+        5120203,
+        5120204,
+        5120205,
+        5120207,
+        5120208,
+        5120209,
+        5120210,
+        5120211,
+        5120212,
+        5120213,
+        5120214,
+        5120215,
+        5120735,
+        5120736,
+        5120737,
+        5120738,
+        5120739,
+        5120740,
+        5120741,
+        5120742,
+        5120743,
+        5120744,
+        5120745,
+        5120746,
+        5120747,
+        5120748,
+        5120749,
+        5120750,
+        5120751,
+        5120752,
+        5120753,
+        5120754,
+        5120755,
+        5120756,
+        5121618,
+        5121619,
+        5121620,
+        5121621,
+        5121622,
+        5121623,
+        5121624,
+        5121625,
+        5121626,
+        5121627,
+        5121628,
+        5121629,
+        5121630,
+        5121631,
+        5121632,
+        5121633,
+        5121634,
+        5121635,
+        5122138,
+        5122139,
+        5122140,
+        5122141,
+        5122142,
+        5122143,
+        5122144,
+        5122145,
+        5122146,
+        5122147,
+        5122148,
+        5122149,
+        5122150,
+        5122922,
+        5122923,
+        5122924,
+        5122925,
+        5122926,
+        5122927,
+        5122928,
+        5122929,
+        5122930,
+        5122931,
+        5122932,
+        5122933,
+        5123458,
+        5123459,
+        5123460,
+        5123461,
+        5123462,
+        5123463,
+        5123464,
+        5123465,
+        5124115,
+        5124116
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B049-CANTABRA",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 4,
+          "ground_class_height_range_m": [
+            293.551,
+            293.68
+          ],
+          "samples": [
+            {
+              "source_record_index": 5120733,
+              "local_xz": [
+                -5.572455,
+                -96.27189
+              ],
+              "orthometric_height_m": 293.68
+            },
+            {
+              "source_record_index": 5122936,
+              "local_xz": [
+                -2.502455,
+                -95.30189
+              ],
+              "orthometric_height_m": 293.65
+            },
+            {
+              "source_record_index": 5123456,
+              "local_xz": [
+                -1.692455,
+                -94.85189
+              ],
+              "orthometric_height_m": 293.561
+            },
+            {
+              "source_record_index": 5124121,
+              "local_xz": [
+                -0.722455,
+                -94.36189
+              ],
+              "orthometric_height_m": 293.551
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    },
+    {
+      "building_id": "POT-B050",
+      "state": "DERIVED",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU"
+      ],
+      "confidence": "medium",
+      "building_class_point_count": 324,
+      "point_height_percentiles_m": {
+        "p05": 302.622,
+        "p50": 303.581,
+        "p95": 304.871
+      },
+      "observed_height_range_m": [
+        302.502,
+        305.481
+      ],
+      "source_record_indices": [
+        5115188,
+        5115789,
+        5115790,
+        5115791,
+        5115792,
+        5116979,
+        5116980,
+        5116981,
+        5116982,
+        5116983,
+        5116984,
+        5116985,
+        5116986,
+        5116987,
+        5117566,
+        5117567,
+        5117568,
+        5117569,
+        5117570,
+        5117571,
+        5117572,
+        5117573,
+        5117574,
+        5117575,
+        5117576,
+        5118633,
+        5118635,
+        5118636,
+        5118637,
+        5118638,
+        5118639,
+        5118640,
+        5118641,
+        5118642,
+        5118643,
+        5118644,
+        5118645,
+        5118646,
+        5118647,
+        5118648,
+        5119252,
+        5119253,
+        5119254,
+        5119255,
+        5119256,
+        5119257,
+        5119258,
+        5119259,
+        5119260,
+        5119261,
+        5119262,
+        5119263,
+        5119264,
+        5119265,
+        5119266,
+        5119267,
+        5120172,
+        5120174,
+        5120175,
+        5120176,
+        5120177,
+        5120178,
+        5120179,
+        5120180,
+        5120181,
+        5120182,
+        5120183,
+        5120184,
+        5120185,
+        5120186,
+        5120187,
+        5120188,
+        5120757,
+        5120758,
+        5120759,
+        5120760,
+        5120761,
+        5120762,
+        5120763,
+        5120764,
+        5120765,
+        5120766,
+        5120767,
+        5120768,
+        5120769,
+        5120770,
+        5120771,
+        5120772,
+        5120773,
+        5120774,
+        5120775,
+        5121594,
+        5121596,
+        5121597,
+        5121598,
+        5121599,
+        5121600,
+        5121601,
+        5121602,
+        5121603,
+        5121604,
+        5121605,
+        5121606,
+        5121607,
+        5121608,
+        5121609,
+        5121610,
+        5121611,
+        5121612,
+        5121613,
+        5121614,
+        5121615,
+        5121616,
+        5121617,
+        5122151,
+        5122152,
+        5122153,
+        5122154,
+        5122155,
+        5122156,
+        5122157,
+        5122158,
+        5122159,
+        5122160,
+        5122161,
+        5122162,
+        5122163,
+        5122164,
+        5122165,
+        5122166,
+        5122167,
+        5122168,
+        5122169,
+        5122170,
+        5122171,
+        5122172,
+        5122173,
+        5122894,
+        5122896,
+        5122897,
+        5122898,
+        5122899,
+        5122900,
+        5122901,
+        5122902,
+        5122903,
+        5122904,
+        5122905,
+        5122906,
+        5122907,
+        5122908,
+        5122909,
+        5122910,
+        5122911,
+        5122912,
+        5122913,
+        5122914,
+        5122915,
+        5122916,
+        5122917,
+        5122918,
+        5122919,
+        5122920,
+        5122921,
+        5123466,
+        5123467,
+        5123468,
+        5123469,
+        5123470,
+        5123471,
+        5123472,
+        5123473,
+        5123474,
+        5123475,
+        5123476,
+        5123477,
+        5123478,
+        5123479,
+        5123480,
+        5123481,
+        5123482,
+        5123483,
+        5123484,
+        5123485,
+        5123486,
+        5123487,
+        5123488,
+        5123489,
+        5123490,
+        5123491,
+        5123492,
+        5123493,
+        5124087,
+        5124088,
+        5124089,
+        5124090,
+        5124091,
+        5124092,
+        5124093,
+        5124094,
+        5124095,
+        5124096,
+        5124097,
+        5124098,
+        5124099,
+        5124100,
+        5124101,
+        5124102,
+        5124103,
+        5124104,
+        5124105,
+        5124106,
+        5124107,
+        5124108,
+        5124109,
+        5124110,
+        5124111,
+        5124112,
+        5124113,
+        5124114,
+        5124677,
+        5124678,
+        5124679,
+        5124680,
+        5124681,
+        5124682,
+        5124683,
+        5124684,
+        5124685,
+        5124686,
+        5124687,
+        5124688,
+        5124689,
+        5124690,
+        5124691,
+        5124692,
+        5124693,
+        5124694,
+        5124695,
+        5124696,
+        5124697,
+        5124698,
+        5124699,
+        5124700,
+        5124701,
+        5124702,
+        5124703,
+        5124704,
+        5124705,
+        5125276,
+        5125278,
+        5125279,
+        5125280,
+        5125281,
+        5125282,
+        5125283,
+        5125284,
+        5125285,
+        5125286,
+        5125287,
+        5125288,
+        5125289,
+        5125290,
+        5125291,
+        5125292,
+        5125293,
+        5125294,
+        5125295,
+        5125296,
+        5125297,
+        5125298,
+        5125859,
+        5125860,
+        5125861,
+        5125862,
+        5125863,
+        5125864,
+        5125865,
+        5125866,
+        5125867,
+        5125868,
+        5125869,
+        5125870,
+        5125871,
+        5125872,
+        5125873,
+        5125874,
+        5125875,
+        5125876,
+        5126356,
+        5126357,
+        5126358,
+        5126359,
+        5126360,
+        5126361,
+        5126362,
+        5126363,
+        5126364,
+        5126365,
+        5126366,
+        5126367,
+        5126368,
+        5126369,
+        5126943,
+        5126944,
+        5126945,
+        5126946,
+        5126947,
+        5126948,
+        5126949,
+        5126950,
+        5126951,
+        5126952,
+        5126953,
+        5126954,
+        5127324,
+        5127325,
+        5127326,
+        5127327,
+        5127328,
+        5127329,
+        5127331,
+        5127333,
+        5127932
+      ],
+      "ground_near_registered_fronts": [
+        {
+          "observation_id": "POT-B050-ROAD",
+          "state": "DERIVED",
+          "confidence": "medium",
+          "ground_class_point_count": 34,
+          "ground_class_height_range_m": [
+            292.972,
+            293.441
+          ],
+          "samples": [
+            {
+              "source_record_index": 5124081,
+              "local_xz": [
+                1.147545,
+                -74.21189
+              ],
+              "orthometric_height_m": 293.012
+            },
+            {
+              "source_record_index": 5124082,
+              "local_xz": [
+                1.097545,
+                -74.78189
+              ],
+              "orthometric_height_m": 293.002
+            },
+            {
+              "source_record_index": 5124084,
+              "local_xz": [
+                1.047545,
+                -75.35189
+              ],
+              "orthometric_height_m": 292.972
+            },
+            {
+              "source_record_index": 5124086,
+              "local_xz": [
+                0.987545,
+                -75.93189
+              ],
+              "orthometric_height_m": 292.982
+            },
+            {
+              "source_record_index": 5124707,
+              "local_xz": [
+                1.757545,
+                -77.69189
+              ],
+              "orthometric_height_m": 293.052
+            },
+            {
+              "source_record_index": 5124710,
+              "local_xz": [
+                1.807545,
+                -77.12189
+              ],
+              "orthometric_height_m": 293.012
+            },
+            {
+              "source_record_index": 5124712,
+              "local_xz": [
+                1.867545,
+                -76.55189
+              ],
+              "orthometric_height_m": 293.002
+            },
+            {
+              "source_record_index": 5124713,
+              "local_xz": [
+                1.917545,
+                -75.98189
+              ],
+              "orthometric_height_m": 293.042
+            },
+            {
+              "source_record_index": 5125272,
+              "local_xz": [
+                2.827545,
+                -78.63189
+              ],
+              "orthometric_height_m": 293.062
+            },
+            {
+              "source_record_index": 5125273,
+              "local_xz": [
+                2.767545,
+                -79.20189
+              ],
+              "orthometric_height_m": 293.092
+            },
+            {
+              "source_record_index": 5125275,
+              "local_xz": [
+                2.717545,
+                -79.78189
+              ],
+              "orthometric_height_m": 293.132
+            },
+            {
+              "source_record_index": 5125277,
+              "local_xz": [
+                2.677545,
+                -80.35189
+              ],
+              "orthometric_height_m": 292.972
+            },
+            {
+              "source_record_index": 5125878,
+              "local_xz": [
+                3.407545,
+                -81.81189
+              ],
+              "orthometric_height_m": 293.192
+            },
+            {
+              "source_record_index": 5125881,
+              "local_xz": [
+                3.457545,
+                -81.23189
+              ],
+              "orthometric_height_m": 293.222
+            },
+            {
+              "source_record_index": 5125882,
+              "local_xz": [
+                3.517545,
+                -80.66189
+              ],
+              "orthometric_height_m": 293.162
+            },
+            {
+              "source_record_index": 5125883,
+              "local_xz": [
+                3.567545,
+                -80.08189
+              ],
+              "orthometric_height_m": 293.162
+            },
+            {
+              "source_record_index": 5126351,
+              "local_xz": [
+                4.287545,
+                -81.90189
+              ],
+              "orthometric_height_m": 293.232
+            },
+            {
+              "source_record_index": 5126352,
+              "local_xz": [
+                4.237545,
+                -82.47189
+              ],
+              "orthometric_height_m": 293.232
+            },
+            {
+              "source_record_index": 5126353,
+              "local_xz": [
+                4.187545,
+                -83.05189
+              ],
+              "orthometric_height_m": 293.261
+            },
+            {
+              "source_record_index": 5126355,
+              "local_xz": [
+                4.127545,
+                -83.62189
+              ],
+              "orthometric_height_m": 293.291
+            },
+            {
+              "source_record_index": 5126956,
+              "local_xz": [
+                4.717545,
+                -84.79189
+              ],
+              "orthometric_height_m": 293.321
+            },
+            {
+              "source_record_index": 5126957,
+              "local_xz": [
+                4.767545,
+                -84.22189
+              ],
+              "orthometric_height_m": 293.341
+            },
+            {
+              "source_record_index": 5126958,
+              "local_xz": [
+                4.817545,
+                -83.65189
+              ],
+              "orthometric_height_m": 293.301
+            },
+            {
+              "source_record_index": 5127319,
+              "local_xz": [
+                5.607545,
+                -85.00189
+              ],
+              "orthometric_height_m": 293.321
+            },
+            {
+              "source_record_index": 5127320,
+              "local_xz": [
+                5.547545,
+                -85.58189
+              ],
+              "orthometric_height_m": 293.371
+            },
+            {
+              "source_record_index": 5127321,
+              "local_xz": [
+                5.497545,
+                -86.15189
+              ],
+              "orthometric_height_m": 293.381
+            },
+            {
+              "source_record_index": 5127323,
+              "local_xz": [
+                5.437545,
+                -86.72189
+              ],
+              "orthometric_height_m": 293.391
+            },
+            {
+              "source_record_index": 5127929,
+              "local_xz": [
+                6.037545,
+                -90.15189
+              ],
+              "orthometric_height_m": 293.401
+            },
+            {
+              "source_record_index": 5127931,
+              "local_xz": [
+                6.087545,
+                -89.57189
+              ],
+              "orthometric_height_m": 293.441
+            },
+            {
+              "source_record_index": 5127934,
+              "local_xz": [
+                6.197545,
+                -88.42189
+              ],
+              "orthometric_height_m": 293.391
+            },
+            {
+              "source_record_index": 5127935,
+              "local_xz": [
+                6.247545,
+                -87.85189
+              ],
+              "orthometric_height_m": 293.411
+            },
+            {
+              "source_record_index": 5127936,
+              "local_xz": [
+                6.307545,
+                -87.28189
+              ],
+              "orthometric_height_m": 293.351
+            },
+            {
+              "source_record_index": 5128274,
+              "local_xz": [
+                7.147545,
+                -88.95189
+              ],
+              "orthometric_height_m": 293.321
+            },
+            {
+              "source_record_index": 5128275,
+              "local_xz": [
+                7.087545,
+                -89.53189
+              ],
+              "orthometric_height_m": 293.391
+            }
+          ],
+          "caution": "Ground-class returns within 1.5 m of registered wall chain, outside footprint. Inspect spatial levels; these are not door thresholds and may include both sides of a retaining step."
+        }
+      ],
+      "roof_graph_state": "UNKNOWN",
+      "caution": "Distribution of building-class returns in unchanged footprint, not ridge/eave extrema or a solved roof graph. Do not turn percentiles into facade heights."
+    }
+  ],
+  "public_class_point_counts": {
+    "2": 7509,
+    "17": 706
+  },
+  "unresolved": "Select and identify actual street/deck/landing samples; classification alone does not certify point roles or stair/threshold geometry."
+}

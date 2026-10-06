@@ -1,0 +1,128 @@
+{
+  "status": "WORK_IN_PROGRESS_NOT_FROZEN",
+  "primary_initial_outer_polygon_local": [
+    [
+      -95,
+      -72
+    ],
+    [
+      -66,
+      -72
+    ],
+    [
+      -27,
+      -46
+    ],
+    [
+      -27,
+      -14
+    ],
+    [
+      -8,
+      14
+    ],
+    [
+      26,
+      10
+    ],
+    [
+      29,
+      -22
+    ],
+    [
+      30,
+      -38
+    ],
+    [
+      42,
+      -57
+    ],
+    [
+      68,
+      -54
+    ],
+    [
+      69,
+      -66
+    ],
+    [
+      25,
+      -82
+    ],
+    [
+      13,
+      -117
+    ],
+    [
+      8,
+      -131
+    ],
+    [
+      -6,
+      -140
+    ],
+    [
+      1,
+      -150
+    ],
+    [
+      1,
+      -159
+    ],
+    [
+      4,
+      -169
+    ],
+    [
+      23,
+      -179
+    ],
+    [
+      25,
+      -185
+    ],
+    [
+      -5,
+      -182
+    ],
+    [
+      -36,
+      -157
+    ],
+    [
+      -65,
+      -157
+    ],
+    [
+      -80,
+      -137
+    ],
+    [
+      -84,
+      -122
+    ],
+    [
+      -88,
+      -102
+    ]
+  ],
+  "local_origin_epsg25830": [
+    367985.1524553847,
+    4779218.261889531
+  ],
+  "outer_boundary_adjustment": "Starting study boundary; retain whole exterior source components touched by >=50% of area; include San Cayetano 10 (8094017UN6789S) at the El Sol return node. Move boundary to complete source edges; retain all interior fabric, never delete an inner component. No modification of building geometry.",
+  "explicit_outer_members": [
+    "8094017UN6789S"
+  ],
+  "membership_tolerance_m": 0.005,
+  "note": "The half-area criterion is only a reproducible initial outer-edge selection, not a partial-footprint inventory. Final membership uses whole pinned source components and is visually audited. Sub-millimetre source overlaps remain reported rather than modifying real building geometry.",
+  "exclusion_reason_8193301": "Outer seam follows Cimavilla / western Solana passage. 2023 declined narrow cadastral record conflicts with larger old photographed facade; excluded at the outer perimeter with adjoining eastern row, never deleted from inside the selected fabric.",
+  "whole_public_space_way_ids": [
+    329379237
+  ],
+  "outer_return_axis_way_ids": [
+    160513617,
+    1563886624
+  ],
+  "return_axis_guard_policy": "Only the canonical Cervantes return axis within 2 m of the study boundary receives a 1 m boundary guard. This controls the outer cut, not actual road width. All source building bodies remain unmodified."
+}

@@ -1,0 +1,4763 @@
+{
+  "schema": "potes-dreamcast-roof-structure-v1",
+  "status": "CONSTRUCTION_ESTIMATES_PENDING_WORKER_PRE_REVIEW",
+  "coordinate_convention": "Local X east, Z north. Plane equation H=a*X+b*Z+c gives orthometric metres; Unity Y=H-280.",
+  "authority": "Direct Owner structural brief, OWNER_STRUCTURE_CLARIFICATION.md. No third gate; no Owner boundary/sector approval inferred.",
+  "source_role": "Manual selected construction planes backed by locked building-class returns, source parts and pictures. A small residual does not certify semantic physical roof topology.",
+  "fixed_controls_not_procedural_layout": true,
+  "buildings": [
+    {
+      "building_id": "POT-B004",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8093401UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Corner roof planes, high party seam and diagonal hip",
+      "planes": [
+        {
+          "id": "POT-B004-P01",
+          "height_equation": [
+            0.04378,
+            -0.26902,
+            274.73107
+          ],
+          "point_records": [
+            5064052,
+            5064495,
+            5064496,
+            5064497,
+            5064498,
+            5069235,
+            5069236,
+            5069237,
+            5069238,
+            5069239,
+            5069240,
+            5069727,
+            5069728,
+            5069729,
+            5069730,
+            5069731,
+            5069732,
+            5069733,
+            5069734,
+            5074442,
+            5074443,
+            5074444,
+            5074445,
+            5074446,
+            5074447,
+            5074448,
+            5074449,
+            5074450,
+            5074451,
+            5074452,
+            5074928,
+            5074929,
+            5074930,
+            5074931,
+            5074932,
+            5074933,
+            5074934,
+            5074935,
+            5074936,
+            5074937,
+            5074938,
+            5074939,
+            5074940,
+            5074941,
+            5079740,
+            5079742,
+            5079743,
+            5079744,
+            5079745,
+            5079746,
+            5079747,
+            5079748,
+            5079750,
+            5079751,
+            5079752,
+            5079753,
+            5079754,
+            5079755,
+            5079756,
+            5079757,
+            5080224,
+            5080225,
+            5080226,
+            5080227,
+            5080228,
+            5080229,
+            5080230,
+            5080231,
+            5080232,
+            5080233,
+            5080234,
+            5080235,
+            5080236,
+            5080237,
+            5080238,
+            5080239,
+            5084718,
+            5084720,
+            5084722,
+            5084723,
+            5084724
+          ],
+          "support_count": 81,
+          "support_residual95_m": 0.17,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B004-P02",
+          "height_equation": [
+            -0.23779,
+            -0.19201,
+            272.25252
+          ],
+          "point_records": [
+            5079749,
+            5080240,
+            5080241,
+            5084725,
+            5084726,
+            5084727,
+            5084728,
+            5084729,
+            5084730,
+            5084731,
+            5084732,
+            5084733,
+            5084734,
+            5085209,
+            5085210,
+            5085211,
+            5085212,
+            5085213,
+            5085214,
+            5085215,
+            5085216,
+            5085217,
+            5085218,
+            5085219,
+            5089069,
+            5089071,
+            5089072,
+            5089073,
+            5089074,
+            5089075,
+            5089076,
+            5089547,
+            5089548
+          ],
+          "support_count": 33,
+          "support_residual95_m": 0.126,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -45.12945538474014,
+                    -105.06938953138888
+                  ],
+                  [
+                    -36.169455384719186,
+                    -101.90938953123987
+                  ],
+                  [
+                    -33.62945538474014,
+                    -108.93938953150064
+                  ],
+                  [
+                    -36.87945538474014,
+                    -111.15938953123987
+                  ],
+                  [
+                    -37.37945538474014,
+                    -111.50938953086734
+                  ],
+                  [
+                    -39.23945538472617,
+                    -112.77938953135163
+                  ],
+                  [
+                    -44.749455384735484,
+                    -105.56938953138888
+                  ],
+                  [
+                    -45.12945538474014,
+                    -105.06938953138888
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B004-P01",
+            "POT-B004-P02"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B004-P01",
+            "POT-B004-P02"
+          ],
+          "local_xz_height": [
+            [
+              -39.5403,
+              -112.3857,
+              303.234
+            ],
+            [
+              -36.729,
+              -102.1067,
+              300.592
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Two pitched surfaces turn the visible corner; high southern/party seam continues toward B005/B006. Do not impose a centred generic gable.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B005",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8093402UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Narrow pitched roof connected to the western high seam",
+      "planes": [
+        {
+          "id": "POT-B005-P01",
+          "height_equation": [
+            -0.35802,
+            -0.13572,
+            274.37504
+          ],
+          "point_records": [
+            5080222,
+            5080223,
+            5084736,
+            5085206,
+            5085207,
+            5089077,
+            5089078,
+            5089079,
+            5089080,
+            5089082,
+            5089084,
+            5089090,
+            5089091,
+            5089530,
+            5089531,
+            5089533,
+            5089535,
+            5089537,
+            5089538,
+            5089539,
+            5089540,
+            5089541,
+            5089542,
+            5089543,
+            5089544,
+            5089545,
+            5089546,
+            5092679,
+            5092681,
+            5092682,
+            5092683,
+            5092684,
+            5092685,
+            5092686,
+            5092687,
+            5092688,
+            5093131,
+            5093132,
+            5093133
+          ],
+          "support_count": 39,
+          "support_residual95_m": 0.098,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -39.23945538472617,
+                    -112.77938953135163
+                  ],
+                  [
+                    -37.37945538474014,
+                    -111.50938953086734
+                  ],
+                  [
+                    -36.87945538474014,
+                    -111.15938953123987
+                  ],
+                  [
+                    -33.62945538474014,
+                    -108.93938953150064
+                  ],
+                  [
+                    -31.499455384735484,
+                    -114.25938953086734
+                  ],
+                  [
+                    -35.529455384705216,
+                    -117.6393895316869
+                  ],
+                  [
+                    -37.3494553847122,
+                    -115.25938953086734
+                  ],
+                  [
+                    -39.23945538472617,
+                    -112.77938953135163
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B005-P01"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [],
+      "construction_note": "Retain the observed eastward/northward fall and higher western party seam. This is a fixed structural approximation; hidden fine valley treatment is not a new research task.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B006",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8093403UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Three source domains with distinct major roof levels/falls",
+      "planes": [
+        {
+          "id": "POT-B006-P01",
+          "height_equation": [
+            0.23157,
+            -0.23143,
+            286.32625
+          ],
+          "point_records": [
+            5037642,
+            5037643,
+            5037644,
+            5038104,
+            5038105,
+            5038106,
+            5038107,
+            5038108,
+            5043049,
+            5043050,
+            5043051,
+            5043052,
+            5043053,
+            5043054,
+            5043055,
+            5043522,
+            5043523,
+            5043524,
+            5043525,
+            5043526,
+            5043527,
+            5043528,
+            5043529,
+            5043530,
+            5043531,
+            5048327,
+            5048328,
+            5048329,
+            5048330,
+            5048331,
+            5048332,
+            5048333,
+            5048334,
+            5048335,
+            5048336,
+            5048337,
+            5048338,
+            5048786,
+            5048787,
+            5048788,
+            5048790,
+            5048792,
+            5048793,
+            5048794,
+            5048795,
+            5048796,
+            5048797,
+            5048798,
+            5048799,
+            5048800,
+            5048801,
+            5053640,
+            5053641,
+            5053642,
+            5053643,
+            5053644,
+            5053645,
+            5053646,
+            5053647,
+            5053648,
+            5053650,
+            5053654,
+            5053655,
+            5053656,
+            5054063,
+            5054064,
+            5054065,
+            5054072,
+            5054073,
+            5054074,
+            5054075,
+            5054076,
+            5054077,
+            5054078,
+            5054079,
+            5054080,
+            5054081,
+            5058891,
+            5058893,
+            5058894,
+            5058895,
+            5058896,
+            5058897,
+            5058898,
+            5058899,
+            5058900,
+            5058902,
+            5058910,
+            5058911,
+            5058912,
+            5058913,
+            5059334,
+            5059335,
+            5059339,
+            5059346,
+            5059347,
+            5059348,
+            5059349,
+            5059350,
+            5059352,
+            5064057,
+            5064058,
+            5064059,
+            5064065,
+            5064066,
+            5064067,
+            5064484,
+            5064485,
+            5064489,
+            5064490,
+            5064491,
+            5069244,
+            5069245,
+            5069246,
+            5069247,
+            5069248,
+            5069722,
+            5069723,
+            5080218,
+            5080220,
+            5080221
+          ],
+          "support_count": 121,
+          "support_residual95_m": 0.112,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B006-P02",
+          "height_equation": [
+            -0.22176,
+            0.26057,
+            321.66492
+          ],
+          "point_records": [
+            5059331,
+            5059332,
+            5059333,
+            5064069,
+            5064075,
+            5064076,
+            5064078,
+            5064473,
+            5064475,
+            5064480,
+            5064482,
+            5064483,
+            5069249,
+            5069260,
+            5069261,
+            5069704,
+            5069705,
+            5069706,
+            5069707,
+            5069709,
+            5069711,
+            5069714,
+            5069720,
+            5069721,
+            5069724,
+            5069725,
+            5074457,
+            5074460,
+            5074461,
+            5074462,
+            5074468,
+            5074470,
+            5074471,
+            5074472,
+            5074473,
+            5074474,
+            5074475,
+            5074476,
+            5074477,
+            5074907,
+            5074908,
+            5074909,
+            5074910,
+            5074911,
+            5074912,
+            5074913,
+            5074914,
+            5074915,
+            5074916,
+            5074917,
+            5074919,
+            5074921,
+            5074922,
+            5074923,
+            5074925,
+            5079762,
+            5079763,
+            5079764,
+            5079765,
+            5079766,
+            5079767,
+            5079768,
+            5079769,
+            5079770,
+            5079771,
+            5079772,
+            5079773,
+            5080210,
+            5080211,
+            5080212,
+            5080213,
+            5080214,
+            5080215,
+            5080216,
+            5080217,
+            5080219,
+            5084745,
+            5084746,
+            5084747,
+            5084748,
+            5084749,
+            5085193,
+            5085195
+          ],
+          "support_count": 83,
+          "support_residual95_m": 0.107,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "part1+part3",
+          "source_part_numbers": [
+            1,
+            3
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -53.93995538470335,
+                    -110.77938953135163
+                  ],
+                  [
+                    -46.06945538474247,
+                    -103.60938953142613
+                  ],
+                  [
+                    -45.12945538474014,
+                    -105.06938953138888
+                  ],
+                  [
+                    -52.60995538474526,
+                    -111.82938953116536
+                  ],
+                  [
+                    -53.93995538470335,
+                    -110.77938953135163
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -52.60995538474526,
+                    -111.82938953116536
+                  ],
+                  [
+                    -45.12945538474014,
+                    -105.06938953138888
+                  ],
+                  [
+                    -44.749455384735484,
+                    -105.56938953138888
+                  ],
+                  [
+                    -39.23945538472617,
+                    -112.77938953135163
+                  ],
+                  [
+                    -44.8494553847122,
+                    -118.7093895310536
+                  ],
+                  [
+                    -48.15945538470987,
+                    -115.77938953135163
+                  ],
+                  [
+                    -52.10995538474526,
+                    -112.27938953135163
+                  ],
+                  [
+                    -52.60995538474526,
+                    -111.82938953116536
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B006-P01"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part2",
+          "source_part_numbers": [
+            2
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -44.8494553847122,
+                    -118.7093895310536
+                  ],
+                  [
+                    -39.23945538472617,
+                    -112.77938953135163
+                  ],
+                  [
+                    -37.3494553847122,
+                    -115.25938953086734
+                  ],
+                  [
+                    -35.529455384705216,
+                    -117.6393895316869
+                  ],
+                  [
+                    -41.04945538472384,
+                    -122.06938953138888
+                  ],
+                  [
+                    -41.54945538472384,
+                    -121.6293895309791
+                  ],
+                  [
+                    -44.8494553847122,
+                    -118.7093895310536
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B006-P02"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [],
+      "construction_note": "Main part3 and projecting porch domain fall toward the street; part2 retains the lower return fall. Do not flatten the three parts or put upper openings on the porch perimeter.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B007",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8093404UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Main pitched front plus two hip/return surfaces",
+      "planes": [
+        {
+          "id": "POT-B007-P01",
+          "height_equation": [
+            0.28078,
+            -0.18061,
+            296.0159
+          ],
+          "point_records": [
+            5022383,
+            5027143,
+            5027144,
+            5027145,
+            5027146,
+            5027586,
+            5027587,
+            5027588,
+            5027589,
+            5027590,
+            5027591,
+            5032457,
+            5032458,
+            5032459,
+            5032460,
+            5032461,
+            5032462,
+            5032463,
+            5032464,
+            5032465,
+            5032466,
+            5032896,
+            5032897,
+            5032898,
+            5032899,
+            5032900,
+            5032901,
+            5032902,
+            5032903,
+            5032904,
+            5032905,
+            5032906,
+            5037650,
+            5037651,
+            5037652,
+            5037653,
+            5037654,
+            5037655,
+            5037656,
+            5037657,
+            5037658,
+            5037659,
+            5037660,
+            5037661,
+            5037662,
+            5037663,
+            5038086,
+            5038087,
+            5038088,
+            5038089,
+            5038090,
+            5038091,
+            5038092,
+            5038093,
+            5038094,
+            5038095,
+            5038096,
+            5038097,
+            5038098,
+            5038099,
+            5038100,
+            5038101,
+            5038102,
+            5043056,
+            5043058,
+            5043059,
+            5043060,
+            5043061,
+            5043062,
+            5043063,
+            5043064,
+            5043065,
+            5043066,
+            5043067,
+            5043068,
+            5043069,
+            5043070,
+            5043071,
+            5043072,
+            5043073,
+            5043507,
+            5043508,
+            5043509,
+            5043510,
+            5043511,
+            5043512,
+            5043513,
+            5043514,
+            5043515,
+            5043516,
+            5043517,
+            5043518,
+            5043519,
+            5043520,
+            5048339,
+            5048341,
+            5048342,
+            5048343,
+            5048344,
+            5048345,
+            5048346,
+            5048348,
+            5048350,
+            5048353,
+            5048768,
+            5048777,
+            5048778,
+            5048779,
+            5048780,
+            5048781,
+            5048782,
+            5048783,
+            5053658,
+            5053660,
+            5053661,
+            5053671,
+            5053672,
+            5054049,
+            5054061,
+            5058914,
+            5058916,
+            5058917,
+            5058918,
+            5058919,
+            5058920,
+            5058925,
+            5058926,
+            5059320,
+            5059321,
+            5059322,
+            5059323
+          ],
+          "support_count": 131,
+          "support_residual95_m": 0.107,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B007-P02",
+          "height_equation": [
+            -0.20641,
+            -0.20809,
+            269.52265
+          ],
+          "point_records": [
+            5048347,
+            5048349,
+            5048773,
+            5048774,
+            5048775,
+            5048776,
+            5053662,
+            5053663,
+            5053664,
+            5053665,
+            5053666,
+            5053667,
+            5054052,
+            5054053,
+            5054054,
+            5054055,
+            5054056,
+            5054057,
+            5054058,
+            5054059,
+            5058921,
+            5058922,
+            5058923,
+            5058924,
+            5059324,
+            5059325,
+            5059326,
+            5059327,
+            5059328,
+            5059329,
+            5064077,
+            5064079,
+            5064081,
+            5064082,
+            5064083,
+            5064085,
+            5064086,
+            5064087,
+            5064088,
+            5064462,
+            5064463,
+            5064464,
+            5064465,
+            5064466,
+            5064467,
+            5064468,
+            5064469,
+            5064470,
+            5064471,
+            5069262,
+            5069264,
+            5069266,
+            5069267,
+            5069268,
+            5069269,
+            5069270,
+            5069271,
+            5069272,
+            5069273,
+            5069692,
+            5069694,
+            5069695,
+            5069696,
+            5069697,
+            5069698,
+            5069699,
+            5069700,
+            5069701,
+            5074478,
+            5074480,
+            5074482,
+            5074483,
+            5074484,
+            5074903,
+            5074905
+          ],
+          "support_count": 75,
+          "support_residual95_m": 0.132,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B007-P03",
+          "height_equation": [
+            0.16121,
+            0.266,
+            344.83245
+          ],
+          "point_records": [
+            5043505,
+            5043506,
+            5048352,
+            5048354,
+            5048355,
+            5048356,
+            5048357,
+            5048358,
+            5048769,
+            5048770,
+            5048771,
+            5048772,
+            5053668,
+            5053669,
+            5053670,
+            5053673,
+            5054046,
+            5054047,
+            5054048,
+            5054050,
+            5054051,
+            5058927,
+            5058928,
+            5058929,
+            5059315,
+            5059316,
+            5059317,
+            5059318,
+            5059319,
+            5064089,
+            5064090,
+            5064091,
+            5064092,
+            5064093,
+            5064458,
+            5064459,
+            5064460,
+            5064461,
+            5069274,
+            5069275
+          ],
+          "support_count": 40,
+          "support_residual95_m": 0.057,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -54.169955384742934,
+                    -121.02888953126967
+                  ],
+                  [
+                    -57.40995538473362,
+                    -118.86888953112066
+                  ],
+                  [
+                    -52.60995538474526,
+                    -111.82938953116536
+                  ],
+                  [
+                    -52.10995538474526,
+                    -112.27938953135163
+                  ],
+                  [
+                    -48.15945538470987,
+                    -115.77938953135163
+                  ],
+                  [
+                    -44.8494553847122,
+                    -118.7093895310536
+                  ],
+                  [
+                    -41.54945538472384,
+                    -121.6293895309791
+                  ],
+                  [
+                    -41.04945538472384,
+                    -122.06938953138888
+                  ],
+                  [
+                    -42.88945538474945,
+                    -124.06888953130692
+                  ],
+                  [
+                    -43.32945538475178,
+                    -124.56888953130692
+                  ],
+                  [
+                    -45.32945538475178,
+                    -126.86888953112066
+                  ],
+                  [
+                    -52.339955384726636,
+                    -122.2488895310089
+                  ],
+                  [
+                    -53.669955384742934,
+                    -121.36888953112066
+                  ],
+                  [
+                    -54.169955384742934,
+                    -121.02888953126967
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B007-P01",
+            "POT-B007-P02",
+            "POT-B007-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B007-P01",
+            "POT-B007-P02"
+          ],
+          "local_xz_height": [
+            [
+              -47.2968,
+              -125.5724,
+              305.416
+            ],
+            [
+              -47.8329,
+              -116.0685,
+              303.549
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Three major tile planes form the fixed shell over the irregular footprint. Retain the adjoining B006/B008 seam context; no new union of bodies.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B041",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "CAT-BU",
+        "CAT-PHOTO:8193801UN6789S",
+        "IGN-LIDAR-2023-NPC03",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Two principal north/south tile planes with an explicit game ridge",
+      "ridge_local_xz_height": [
+        [
+          -81.0719,
+          -91.6728,
+          290.7
+        ],
+        [
+          -81.8542,
+          -99.7238,
+          290.7
+        ]
+      ],
+      "eave_control_height_m": 288.5,
+      "source_geometry_local": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.48935538472142,
+              -92.50618953164667
+            ],
+            [
+              -78.61995538475458,
+              -99.88838953152299
+            ],
+            [
+              -78.67025538469898,
+              -100.2477395310998
+            ],
+            [
+              -85.03810538473772,
+              -99.19978953152895
+            ],
+            [
+              -84.65445538470522,
+              -90.83938953094184
+            ],
+            [
+              -77.48935538472142,
+              -92.50618953164667
+            ]
+          ]
+        ]
+      },
+      "construction_note": "Ridge endpoints use the midpoints of the actual north and south source end chains; eaves remain on the original footprint. Roof direction follows the visible two-plane shop roof. Heights/centred ridge are explicit game estimates, not claims that the physical metric ridge is recovered. Do not absorb foreground roofs or B051."
+    },
+    {
+      "building_id": "POT-B042",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193802UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Long main tile roof with east hip and gallery returns",
+      "planes": [
+        {
+          "id": "POT-B042-P01",
+          "height_equation": [
+            0.13996,
+            -0.26553,
+            279.69589
+          ],
+          "point_records": [
+            4980916,
+            4980918,
+            4981442,
+            4981443,
+            4981444,
+            4981445,
+            4986086,
+            4986087,
+            4986088,
+            4986089,
+            4986624,
+            4986625,
+            4986626,
+            4986627,
+            4991160,
+            4991161,
+            4991162,
+            4991163,
+            4991681,
+            4991682,
+            4991683,
+            4991684,
+            4991685,
+            4996324,
+            4996325,
+            4996326,
+            4996327,
+            4996328,
+            4996329,
+            4996837,
+            4996838,
+            4996839,
+            4996840,
+            4996841,
+            4996842,
+            5001530,
+            5001531,
+            5001532,
+            5001533,
+            5001534,
+            5001535,
+            5001536,
+            5001537,
+            5002044,
+            5002045,
+            5002046,
+            5002047,
+            5002048,
+            5002049,
+            5002050,
+            5002051,
+            5006600,
+            5006601,
+            5006602,
+            5006603,
+            5006604,
+            5006605,
+            5006606,
+            5006607,
+            5006608,
+            5007105,
+            5007106,
+            5007107,
+            5007108,
+            5007109,
+            5007110,
+            5007111,
+            5007112,
+            5007113,
+            5011624,
+            5011625,
+            5011626,
+            5011627,
+            5011628,
+            5011629,
+            5011630,
+            5011631,
+            5011632,
+            5011634,
+            5012160,
+            5012161,
+            5012162,
+            5012163,
+            5012164,
+            5012165,
+            5012166,
+            5012167,
+            5012168,
+            5016705,
+            5016706,
+            5016707,
+            5016708,
+            5016709,
+            5016710,
+            5016711,
+            5016712,
+            5016713,
+            5017262,
+            5017263,
+            5017264,
+            5017265,
+            5017266,
+            5017267,
+            5017268,
+            5017269,
+            5017270,
+            5021883,
+            5021885,
+            5021886,
+            5021887,
+            5021888,
+            5021889,
+            5021890,
+            5021891,
+            5022444,
+            5022445,
+            5022446,
+            5022447,
+            5022448,
+            5022449,
+            5022451,
+            5027076,
+            5027077,
+            5027079,
+            5027080,
+            5027081,
+            5027082,
+            5027083,
+            5027653,
+            5027654,
+            5027655,
+            5027656,
+            5027657,
+            5027659,
+            5027660,
+            5032392,
+            5032393,
+            5032397,
+            5032398,
+            5032399,
+            5032962,
+            5032963,
+            5032964,
+            5032968,
+            5032969,
+            5032970,
+            5037593,
+            5037594,
+            5037598,
+            5037599,
+            5038152,
+            5038153,
+            5038158,
+            5038159,
+            5042999,
+            5043000,
+            5043001,
+            5043006,
+            5043573,
+            5043578,
+            5043579,
+            5043580,
+            5048278,
+            5048279,
+            5048280,
+            5048281,
+            5048282,
+            5048284,
+            5048843,
+            5048844,
+            5048845,
+            5048846,
+            5048847,
+            5053595
+          ],
+          "support_count": 174,
+          "support_residual95_m": 0.141,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B042-P02",
+          "height_equation": [
+            -0.10567,
+            0.23893,
+            311.30529
+          ],
+          "point_records": [
+            5001542,
+            5001543,
+            5001544,
+            5001545,
+            5001546,
+            5002034,
+            5002035,
+            5002036,
+            5002037,
+            5002038,
+            5002039,
+            5002040,
+            5002041,
+            5006609,
+            5006610,
+            5006611,
+            5006612,
+            5006613,
+            5006614,
+            5006615,
+            5006616,
+            5006617,
+            5007096,
+            5007097,
+            5007098,
+            5007099,
+            5007100,
+            5007101,
+            5007102,
+            5007103,
+            5007104,
+            5011635,
+            5011636,
+            5011637,
+            5011638,
+            5011639,
+            5011640,
+            5011641,
+            5011642,
+            5012151,
+            5012152,
+            5012153,
+            5012154,
+            5012155,
+            5012156,
+            5012157,
+            5012159,
+            5016714,
+            5016715,
+            5016716,
+            5016717,
+            5016718,
+            5016719,
+            5016720,
+            5016721,
+            5017254,
+            5017255,
+            5017256,
+            5017257,
+            5017258,
+            5017259,
+            5017260,
+            5017261,
+            5021892,
+            5021893,
+            5021894,
+            5021895,
+            5021896,
+            5021897,
+            5021898,
+            5021899,
+            5022436,
+            5022437,
+            5022438,
+            5022439,
+            5022440,
+            5022441,
+            5022442,
+            5022443,
+            5027084,
+            5027085,
+            5027086,
+            5027087,
+            5027088,
+            5027089,
+            5027090,
+            5027091,
+            5027645,
+            5027646,
+            5027647,
+            5027648,
+            5027649,
+            5027650,
+            5027651,
+            5027652,
+            5032400,
+            5032401,
+            5032402,
+            5032403,
+            5032404,
+            5032405,
+            5032406,
+            5032955,
+            5032956,
+            5032957,
+            5032958,
+            5032959,
+            5032960,
+            5032961,
+            5037597,
+            5037600,
+            5037601,
+            5037602,
+            5037605,
+            5037606,
+            5038146,
+            5038147,
+            5038154,
+            5038155,
+            5043003,
+            5043010,
+            5043011,
+            5043568,
+            5043569,
+            5043570,
+            5043576,
+            5048287,
+            5048288,
+            5048289,
+            5048838,
+            5048839,
+            5048840,
+            5048841,
+            5053592,
+            5053598,
+            5053601,
+            5053602,
+            5053603,
+            5054117,
+            5054118,
+            5054120,
+            5054121,
+            5054126,
+            5054128,
+            5058852,
+            5058853,
+            5059391,
+            5059392
+          ],
+          "support_count": 148,
+          "support_residual95_m": 0.143,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B042-P03",
+          "height_equation": [
+            -0.18664,
+            -0.0976,
+            278.57305
+          ],
+          "point_records": [
+            5011633,
+            5012158,
+            5043004,
+            5043005,
+            5043575,
+            5048285,
+            5048842,
+            5053594,
+            5053596,
+            5053597,
+            5053599,
+            5053600,
+            5054119,
+            5054122,
+            5054123,
+            5054124,
+            5054125,
+            5054127,
+            5058845,
+            5058846,
+            5058847,
+            5058848,
+            5058849,
+            5058850,
+            5058851,
+            5058855,
+            5059393,
+            5059394,
+            5059395,
+            5059396,
+            5059397,
+            5059398,
+            5059399,
+            5059400,
+            5059401,
+            5059402,
+            5064001,
+            5064003,
+            5064004,
+            5064005,
+            5064006,
+            5064007,
+            5064008,
+            5064009,
+            5064010,
+            5064011,
+            5064013,
+            5064537,
+            5064538,
+            5064539,
+            5064540,
+            5064541,
+            5064542,
+            5064543,
+            5064544,
+            5069192,
+            5069194,
+            5069196,
+            5069197,
+            5069199,
+            5069780,
+            5069782
+          ],
+          "support_count": 62,
+          "support_residual95_m": 0.122,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -55.05345538473921,
+                    -85.0998895317316
+                  ],
+                  [
+                    -45.1904553847271,
+                    -81.0668895309791
+                  ],
+                  [
+                    -43.25145538471406,
+                    -80.27438953146338
+                  ],
+                  [
+                    -42.27545538474806,
+                    -79.87538953125477
+                  ],
+                  [
+                    -40.54845538473455,
+                    -83.22988953161985
+                  ],
+                  [
+                    -39.469455384707544,
+                    -85.32588953152299
+                  ],
+                  [
+                    -39.40945538470987,
+                    -85.4288895316422
+                  ],
+                  [
+                    -41.45195538474945,
+                    -86.25288953166455
+                  ],
+                  [
+                    -43.18945538473781,
+                    -86.95338953100145
+                  ],
+                  [
+                    -57.78395538474433,
+                    -96.04938953090459
+                  ],
+                  [
+                    -58.71995538473129,
+                    -96.63288953155279
+                  ],
+                  [
+                    -59.08245538471965,
+                    -95.86338953115046
+                  ],
+                  [
+                    -59.2529553847271,
+                    -95.50188953150064
+                  ],
+                  [
+                    -62.152455384726636,
+                    -89.3508895309642
+                  ],
+                  [
+                    -62.685455384722445,
+                    -88.220389530994
+                  ],
+                  [
+                    -55.05345538473921,
+                    -85.0998895317316
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B042-P01",
+            "POT-B042-P02",
+            "POT-B042-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B042-P01",
+            "POT-B042-P02"
+          ],
+          "local_xz_height": [
+            [
+              -60.783,
+              -92.2561,
+              295.685
+            ],
+            [
+              -40.8886,
+              -82.5692,
+              295.898
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        },
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B042-P01",
+            "POT-B042-P03"
+          ],
+          "local_xz_height": [
+            [
+              -50.4854,
+              -91.5006,
+              296.926
+            ],
+            [
+              -45.1021,
+              -81.0308,
+              294.9
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Retain long diagonal main ridge/falls and eastern hip on the unchanged irregular body. Open wooden river solanas return at the east wall; backing windows remain discrete. Do not absorb the low neighbouring annex.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B043",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193803UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Two principal opposing tile planes",
+      "planes": [
+        {
+          "id": "POT-B043-P01",
+          "height_equation": [
+            0.16722,
+            -0.35995,
+            272.06053
+          ],
+          "point_records": [
+            4965347,
+            4965797,
+            4965798,
+            4965799,
+            4970539,
+            4970540,
+            4970541,
+            4970543,
+            4970990,
+            4970991,
+            4970992,
+            4970993,
+            4975753,
+            4975754,
+            4975755,
+            4975756,
+            4975757,
+            4976192,
+            4976194,
+            4976195,
+            4976196,
+            4976197,
+            4976198,
+            4980944,
+            4980945,
+            4980946,
+            4980947,
+            4980948,
+            4980950,
+            4980952,
+            4981412,
+            4981413,
+            4981414,
+            4981415,
+            4981416,
+            4981417,
+            4986116,
+            4986117,
+            4986118,
+            4986119,
+            4986120,
+            4986121,
+            4986593,
+            4986595,
+            4986596,
+            4986597,
+            4986598,
+            4991187,
+            4991188,
+            4991189,
+            4991190,
+            4991191,
+            4991192,
+            4991193,
+            4991652,
+            4991653,
+            4991654,
+            4991655,
+            4991656,
+            4991657,
+            4996352,
+            4996353,
+            4996354,
+            4996355,
+            4996356,
+            4996357,
+            4996810,
+            4996811,
+            4996812,
+            4996813,
+            4996814,
+            4996815,
+            4996816,
+            5001560,
+            5001561,
+            5001562,
+            5001563,
+            5001564,
+            5001565,
+            5001566,
+            5002017,
+            5002018,
+            5002019,
+            5002020,
+            5002021,
+            5002022,
+            5002023,
+            5006627,
+            5006628,
+            5006629,
+            5006630,
+            5006631,
+            5006632,
+            5006633,
+            5007080,
+            5007081,
+            5007082,
+            5007083,
+            5007084,
+            5007085,
+            5007086,
+            5011652,
+            5011655,
+            5011657,
+            5011659,
+            5011660,
+            5011661,
+            5011662,
+            5011663,
+            5012126,
+            5012128,
+            5012130
+          ],
+          "support_count": 112,
+          "support_residual95_m": 0.118,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B043-P02",
+          "height_equation": [
+            -0.03287,
+            0.40591,
+            339.47669
+          ],
+          "point_records": [
+            4970542,
+            4970985,
+            4970989,
+            4975759,
+            4975760,
+            4975761,
+            4976189,
+            4976190,
+            4976191,
+            4980953,
+            4980954,
+            4980955,
+            4981406,
+            4981407,
+            4981408,
+            4981410,
+            4986122,
+            4986123,
+            4986124,
+            4986125,
+            4986589,
+            4986590,
+            4986591,
+            4986592,
+            4991194,
+            4991195,
+            4991196,
+            4991648,
+            4991649,
+            4991650,
+            4991651,
+            4996358,
+            4996359,
+            4996360,
+            4996361,
+            4996806,
+            4996807,
+            4996808,
+            4996809,
+            5001567,
+            5001568,
+            5001569,
+            5001570,
+            5002013,
+            5002014,
+            5002015,
+            5002016,
+            5006634,
+            5006635,
+            5006636,
+            5006637,
+            5007075,
+            5007076,
+            5007077,
+            5007078,
+            5007079,
+            5011664,
+            5011665,
+            5011666,
+            5011667,
+            5012119,
+            5012120,
+            5012121,
+            5012122,
+            5012124,
+            5016745,
+            5016747
+          ],
+          "support_count": 67,
+          "support_residual95_m": 0.085,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -64.59845538472291,
+                    -106.82988953124732
+                  ],
+                  [
+                    -65.33345538470894,
+                    -102.34588953107595
+                  ],
+                  [
+                    -57.47245538473362,
+                    -99.20238953083754
+                  ],
+                  [
+                    -57.28995538473828,
+                    -100.64938953146338
+                  ],
+                  [
+                    -56.5994553847122,
+                    -106.15538953151554
+                  ],
+                  [
+                    -64.59845538472291,
+                    -106.82988953124732
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B043-P01",
+            "POT-B043-P02"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B043-P01",
+            "POT-B043-P02"
+          ],
+          "local_xz_height": [
+            [
+              -64.9012,
+              -104.9829,
+              298.996
+            ],
+            [
+              -57.0052,
+              -102.92,
+              299.574
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Fixed ridge runs across the irregular attached house; keep south eaves and white facade rhythm.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B044",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193804UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Three major tile planes on stone wedge",
+      "planes": [
+        {
+          "id": "POT-B044-P01",
+          "height_equation": [
+            -0.15597,
+            0.35745,
+            325.97381
+          ],
+          "point_records": [
+            5038118,
+            5038120,
+            5038121,
+            5038122,
+            5043031,
+            5043032,
+            5043033,
+            5043034,
+            5043035,
+            5043036,
+            5043037,
+            5043038,
+            5043039,
+            5043539,
+            5043541,
+            5043542,
+            5043543,
+            5043544,
+            5043545,
+            5043546,
+            5043547,
+            5043548,
+            5043549,
+            5048308,
+            5048309,
+            5048310,
+            5048311,
+            5048312,
+            5048313,
+            5048314,
+            5048315,
+            5048316,
+            5048317,
+            5048809,
+            5048811,
+            5048812,
+            5048813,
+            5048814,
+            5048815,
+            5048816,
+            5048817,
+            5048818,
+            5048819,
+            5053622,
+            5053623,
+            5053630,
+            5053631,
+            5053632,
+            5054087,
+            5054089,
+            5054091,
+            5054097,
+            5054098,
+            5054099,
+            5058874,
+            5058875,
+            5058876,
+            5058877,
+            5058878,
+            5058879,
+            5058883,
+            5058884,
+            5059361,
+            5059362,
+            5059363,
+            5059364,
+            5059365,
+            5059366,
+            5059367,
+            5059368,
+            5059369,
+            5059370,
+            5064032,
+            5064033,
+            5064034,
+            5064035,
+            5064036,
+            5064037,
+            5064038,
+            5064039,
+            5064040,
+            5064041,
+            5064042,
+            5064508,
+            5064509,
+            5064510,
+            5064511,
+            5064512,
+            5064513,
+            5064514,
+            5064515,
+            5064516,
+            5064517,
+            5064518,
+            5069216,
+            5069217,
+            5069218,
+            5069219,
+            5069220,
+            5069221,
+            5069222,
+            5069223,
+            5069224,
+            5069225,
+            5069226,
+            5069745,
+            5069748,
+            5069750,
+            5069751,
+            5069752,
+            5069753,
+            5069754,
+            5069755,
+            5069756,
+            5069757,
+            5069759,
+            5074423,
+            5074425,
+            5074427,
+            5074428,
+            5074429,
+            5074430,
+            5074431,
+            5074432,
+            5074951,
+            5074952,
+            5074953,
+            5074954,
+            5079730
+          ],
+          "support_count": 129,
+          "support_residual95_m": 0.135,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B044-P02",
+          "height_equation": [
+            0.25514,
+            -0.31068,
+            280.35317
+          ],
+          "point_records": [
+            5022424,
+            5022425,
+            5027101,
+            5027102,
+            5027632,
+            5027633,
+            5027634,
+            5027635,
+            5032416,
+            5032417,
+            5032418,
+            5032419,
+            5032420,
+            5032940,
+            5032941,
+            5032942,
+            5032943,
+            5032944,
+            5032945,
+            5037615,
+            5037616,
+            5037617,
+            5037618,
+            5037619,
+            5037620,
+            5037621,
+            5038128,
+            5038129,
+            5038130,
+            5038131,
+            5038132,
+            5038133,
+            5038134,
+            5038135,
+            5043022,
+            5043023,
+            5043024,
+            5043025,
+            5043026,
+            5043027,
+            5043028,
+            5043029,
+            5043030,
+            5043550,
+            5043551,
+            5043552,
+            5043553,
+            5043557,
+            5043558,
+            5043559,
+            5048298,
+            5048299,
+            5048301,
+            5048306,
+            5048307,
+            5048820,
+            5048825,
+            5048826,
+            5048828,
+            5048829,
+            5048830,
+            5053611,
+            5053612,
+            5053614,
+            5053618,
+            5053619,
+            5053620,
+            5054100,
+            5054101,
+            5054102,
+            5054108,
+            5054109,
+            5054110,
+            5058864,
+            5058865,
+            5058866,
+            5058867,
+            5058868,
+            5058872,
+            5058873,
+            5059371,
+            5059372,
+            5059373,
+            5059374,
+            5059375,
+            5059376,
+            5059377,
+            5059378,
+            5059379,
+            5059380,
+            5064024,
+            5064026,
+            5064028,
+            5064029,
+            5064030,
+            5064031,
+            5064519,
+            5064520,
+            5064521,
+            5064522,
+            5069214
+          ],
+          "support_count": 101,
+          "support_residual95_m": 0.12,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B044-P03",
+          "height_equation": [
+            0.18383,
+            0.11188,
+            318.16755
+          ],
+          "point_records": [
+            5022422,
+            5022423,
+            5027104,
+            5027105,
+            5027106,
+            5027107,
+            5027626,
+            5027627,
+            5027628,
+            5027630,
+            5032422,
+            5032423,
+            5032424,
+            5032425,
+            5032426,
+            5032934,
+            5032935,
+            5032936,
+            5032937,
+            5037625,
+            5037626,
+            5037627,
+            5037628,
+            5037629,
+            5038123,
+            5038124,
+            5043554,
+            5043555,
+            5043556,
+            5048303,
+            5048304,
+            5048305,
+            5048821,
+            5048822,
+            5053621,
+            5053624,
+            5053625,
+            5053626,
+            5053627,
+            5053628,
+            5053629,
+            5054090,
+            5054092,
+            5054093,
+            5054094,
+            5054095,
+            5058882
+          ],
+          "support_count": 47,
+          "support_residual95_m": 0.128,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -55.60995538474526,
+                    -99.06888953130692
+                  ],
+                  [
+                    -50.249455384735484,
+                    -94.06888953130692
+                  ],
+                  [
+                    -44.40945538470987,
+                    -89.5088895317167
+                  ],
+                  [
+                    -39.359455384721514,
+                    -96.03888953104615
+                  ],
+                  [
+                    -37.669455384719186,
+                    -98.22938953153789
+                  ],
+                  [
+                    -37.40945538470987,
+                    -98.54938953090459
+                  ],
+                  [
+                    -46.0094553847448,
+                    -102.02938953135163
+                  ],
+                  [
+                    -51.72945538471686,
+                    -104.8893895316869
+                  ],
+                  [
+                    -55.28995538473828,
+                    -100.86938953120261
+                  ],
+                  [
+                    -55.60995538474526,
+                    -99.06888953130692
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B044-P01",
+            "POT-B044-P02",
+            "POT-B044-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B044-P01",
+            "POT-B044-P02"
+          ],
+          "local_xz_height": [
+            [
+              -41.2141,
+              -93.6407,
+              298.93
+            ],
+            [
+              -54.4688,
+              -101.7965,
+              298.082
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        },
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B044-P01",
+            "POT-B044-P03"
+          ],
+          "local_xz_height": [
+            [
+              -43.0161,
+              -91.3106,
+              300.044
+            ],
+            [
+              -52.3352,
+              -104.2055,
+              296.888
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        },
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B044-P02",
+            "POT-B044-P03"
+          ],
+          "local_xz_height": [
+            [
+              -55.354,
+              -98.8302,
+              296.935
+            ],
+            [
+              -39.2966,
+              -96.1204,
+              300.19
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Retain the non-rectangular junction and roof-plane convergence. Side door, lower shop and gallery remain at different public levels.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B045",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193805UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Low shallow pitched shop roof",
+      "planes": [
+        {
+          "id": "POT-B045-P01",
+          "height_equation": [
+            0.04214,
+            -0.12301,
+            289.43599
+          ],
+          "point_records": [
+            5064014,
+            5064016,
+            5064532,
+            5064533,
+            5064534,
+            5064535,
+            5069200,
+            5069201,
+            5069202,
+            5069203,
+            5069204,
+            5069773,
+            5069774,
+            5069775,
+            5069776,
+            5069777,
+            5069778,
+            5074405,
+            5074406,
+            5074407,
+            5074408,
+            5074409,
+            5074410,
+            5074411,
+            5074969,
+            5074970,
+            5074971,
+            5074972,
+            5074973,
+            5074974,
+            5074975,
+            5074976,
+            5074977,
+            5074978,
+            5079703,
+            5079704,
+            5079705,
+            5079706,
+            5079707,
+            5079708,
+            5079709,
+            5079710,
+            5079711,
+            5079712,
+            5079713,
+            5080264,
+            5080265,
+            5080267,
+            5080268,
+            5080269,
+            5080270,
+            5080271,
+            5080272,
+            5080273,
+            5080274,
+            5080275,
+            5080276,
+            5084676,
+            5084678,
+            5084679,
+            5084680,
+            5084681,
+            5084682,
+            5084683,
+            5084684,
+            5084685,
+            5084686,
+            5084690,
+            5084691,
+            5084692,
+            5085247,
+            5085248,
+            5085254,
+            5085255,
+            5085256,
+            5085257,
+            5085258,
+            5085259,
+            5085260,
+            5085261,
+            5085262,
+            5089024,
+            5089025,
+            5089026,
+            5089027,
+            5089028,
+            5089029,
+            5089030,
+            5089031,
+            5089032,
+            5089033,
+            5089034,
+            5089035,
+            5089036,
+            5089037,
+            5089038,
+            5089039,
+            5092628,
+            5096340
+          ],
+          "support_count": 99,
+          "support_residual95_m": 0.129,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B045-P03",
+          "height_equation": [
+            0.05386,
+            0.09458,
+            309.40608
+          ],
+          "point_records": [
+            5074967,
+            5074968,
+            5079714,
+            5079715,
+            5079716,
+            5079717,
+            5080256,
+            5080260,
+            5080261,
+            5080262,
+            5080263,
+            5084687,
+            5084688,
+            5084694,
+            5084695,
+            5084696,
+            5084697,
+            5084701,
+            5085241,
+            5085242,
+            5085243,
+            5085251,
+            5085252,
+            5089040,
+            5089041,
+            5089042,
+            5089043,
+            5089044,
+            5089045,
+            5089046,
+            5089577,
+            5089579,
+            5089580,
+            5089581,
+            5089582,
+            5089583
+          ],
+          "support_count": 36,
+          "support_residual95_m": 0.132,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -39.40945538470987,
+                    -85.4288895316422
+                  ],
+                  [
+                    -32.059455384733155,
+                    -82.01888953149319
+                  ],
+                  [
+                    -31.78945538471453,
+                    -82.52888953126967
+                  ],
+                  [
+                    -29.70945538469823,
+                    -86.51888953149319
+                  ],
+                  [
+                    -28.1794553847285,
+                    -89.43888953141868
+                  ],
+                  [
+                    -26.758955384721048,
+                    -92.14888953138143
+                  ],
+                  [
+                    -27.26945538475411,
+                    -92.46888953167945
+                  ],
+                  [
+                    -34.949455384747125,
+                    -97.31888953130692
+                  ],
+                  [
+                    -35.449455384747125,
+                    -97.62888953089714
+                  ],
+                  [
+                    -35.949455384747125,
+                    -97.0088895317167
+                  ],
+                  [
+                    -37.669455384719186,
+                    -94.84888953156769
+                  ],
+                  [
+                    -43.36945538473083,
+                    -87.6788895316422
+                  ],
+                  [
+                    -43.69545538473176,
+                    -87.26878953166306
+                  ],
+                  [
+                    -43.18920538475504,
+                    -86.95328953117132
+                  ],
+                  [
+                    -39.40945538470987,
+                    -85.4288895316422
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B045-P01",
+            "POT-B045-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B045-P01",
+            "POT-B045-P03"
+          ],
+          "local_xz_height": [
+            [
+              -41.9047,
+              -89.5214,
+              298.682
+            ],
+            [
+              -27.7362,
+              -90.2846,
+              299.373
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Keep the whole two-storey shop low. The few high points near the tall neighbour are not authority to raise the main roof. Tiled shop canopy is a separate fixed attachment.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B046",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193806UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Tall roof with two major falls and high rear continuation",
+      "planes": [
+        {
+          "id": "POT-B046-P01",
+          "height_equation": [
+            0.28788,
+            0.14753,
+            327.58377
+          ],
+          "point_records": [
+            5085235,
+            5089050,
+            5089051,
+            5089052,
+            5089053,
+            5089054,
+            5089563,
+            5089564,
+            5089565,
+            5089566,
+            5089567,
+            5089568,
+            5089569,
+            5089570,
+            5089571,
+            5092651,
+            5092652,
+            5092653,
+            5092654,
+            5092655,
+            5092656,
+            5092657,
+            5092658,
+            5092659,
+            5092660,
+            5092661,
+            5092662,
+            5092663,
+            5092664,
+            5092665,
+            5093151,
+            5093152,
+            5093153,
+            5093154,
+            5093155,
+            5093156,
+            5093157,
+            5093158,
+            5093159,
+            5093160,
+            5093161,
+            5093162,
+            5093163,
+            5093164,
+            5093165,
+            5093166,
+            5093167,
+            5093168,
+            5095803,
+            5095804,
+            5095805,
+            5095806,
+            5095807,
+            5095808,
+            5095809,
+            5095810,
+            5095811,
+            5095812,
+            5095813,
+            5095814,
+            5095815,
+            5095816,
+            5095817,
+            5095818,
+            5096322,
+            5096323,
+            5096324,
+            5096325,
+            5096326,
+            5096327,
+            5096328,
+            5096329,
+            5096330,
+            5096331,
+            5096332,
+            5096333,
+            5096334,
+            5096335,
+            5096336,
+            5098749,
+            5098750,
+            5098751,
+            5098752,
+            5098753,
+            5098754,
+            5098755,
+            5098756,
+            5098757,
+            5098759,
+            5098760,
+            5098761,
+            5099306,
+            5099307,
+            5099308,
+            5099309,
+            5099310,
+            5099311,
+            5101511,
+            5101512,
+            5101513
+          ],
+          "support_count": 100,
+          "support_residual95_m": 0.098,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B046-P02",
+          "height_equation": [
+            -0.14256,
+            0.41228,
+            341.78496
+          ],
+          "point_records": [
+            5095819,
+            5095820,
+            5096318,
+            5096319,
+            5096320,
+            5096321,
+            5098762,
+            5098763,
+            5098764,
+            5098765,
+            5098766,
+            5098767,
+            5099296,
+            5099297,
+            5099298,
+            5099299,
+            5099300,
+            5099301,
+            5099303,
+            5099304,
+            5099305,
+            5099312,
+            5099313,
+            5099314,
+            5101515,
+            5101516,
+            5101517,
+            5101518,
+            5101519,
+            5101520,
+            5101521,
+            5101522,
+            5102038,
+            5102039,
+            5102040,
+            5102041
+          ],
+          "support_count": 36,
+          "support_residual95_m": 0.059,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "footprint",
+          "source_part_numbers": null,
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -35.449455384747125,
+                    -97.62888953089714
+                  ],
+                  [
+                    -34.949455384747125,
+                    -97.31888953130692
+                  ],
+                  [
+                    -27.26945538475411,
+                    -92.46888953167945
+                  ],
+                  [
+                    -26.758955384721048,
+                    -92.14888953138143
+                  ],
+                  [
+                    -26.288955384748988,
+                    -93.02888953126967
+                  ],
+                  [
+                    -24.078955384728033,
+                    -99.18938953150064
+                  ],
+                  [
+                    -23.228955384751316,
+                    -101.5593895316124
+                  ],
+                  [
+                    -31.779455384705216,
+                    -104.79938953090459
+                  ],
+                  [
+                    -35.449455384747125,
+                    -97.62888953089714
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B046-P01",
+            "POT-B046-P02"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "footprint",
+          "planes": [
+            "POT-B046-P01",
+            "POT-B046-P02"
+          ],
+          "local_xz_height": [
+            [
+              -31.3714,
+              -104.6448,
+              303.114
+            ],
+            [
+              -25.5293,
+              -95.1465,
+              306.197
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "The two selected planes retain the nonuniform rise toward the rear, rather than a flat uniform extrusion. Front remains rendered/ashlar.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B047",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193807UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Low river roof, intermediate return and tall pitched main shell",
+      "planes": [
+        {
+          "id": "POT-B047-part1-FLAT",
+          "height_equation": [
+            0,
+            0,
+            297.7
+          ],
+          "point_records": [],
+          "support_count": 0,
+          "support_residual95_m": null,
+          "interpretation": "Explicit rounded game construction estimate informed by source-part height distribution; not a surveyed roof height."
+        },
+        {
+          "id": "POT-B047-part2-FLAT",
+          "height_equation": [
+            0,
+            0,
+            303.5
+          ],
+          "point_records": [],
+          "support_count": 0,
+          "support_residual95_m": null,
+          "interpretation": "Explicit rounded game construction estimate informed by source-part height distribution; not a surveyed roof height."
+        },
+        {
+          "id": "POT-B047-P01",
+          "height_equation": [
+            -0.1097,
+            0.30314,
+            332.42989
+          ],
+          "point_records": [
+            5101506,
+            5101507,
+            5101508,
+            5101509,
+            5101510,
+            5102046,
+            5102047,
+            5102048,
+            5102049,
+            5102050,
+            5102051,
+            5102052,
+            5102053,
+            5102054,
+            5104209,
+            5104211,
+            5104212,
+            5104213,
+            5104214,
+            5104215,
+            5104216,
+            5104217,
+            5104218,
+            5104219,
+            5104220,
+            5104221,
+            5104222,
+            5104223,
+            5104748,
+            5104750,
+            5104752,
+            5104753,
+            5104754,
+            5104755,
+            5104756,
+            5104757,
+            5104758,
+            5104759,
+            5104760,
+            5104761,
+            5104762,
+            5104763,
+            5104764,
+            5104765,
+            5104766,
+            5106773,
+            5106774,
+            5106775,
+            5106776,
+            5106777,
+            5106778,
+            5106779,
+            5106780,
+            5106781,
+            5106782,
+            5106783,
+            5106784,
+            5106785,
+            5106786,
+            5106787,
+            5106788,
+            5106789,
+            5106790,
+            5107331,
+            5107333,
+            5107334,
+            5107335,
+            5107336,
+            5107337,
+            5107338,
+            5107339,
+            5107340,
+            5107341,
+            5107342,
+            5107343,
+            5107344,
+            5107345,
+            5107346,
+            5107347,
+            5107348,
+            5107349,
+            5109210,
+            5109212,
+            5109213,
+            5109214,
+            5109215,
+            5109216,
+            5109217,
+            5109218,
+            5109219,
+            5109220,
+            5109221,
+            5109222,
+            5109223,
+            5109224,
+            5109758,
+            5109760,
+            5109763,
+            5109765,
+            5109766,
+            5109768,
+            5109770
+          ],
+          "support_count": 102,
+          "support_residual95_m": 0.098,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B047-P03",
+          "height_equation": [
+            0.13827,
+            -0.32266,
+            280.60128
+          ],
+          "point_records": [
+            5096348,
+            5098739,
+            5098741,
+            5098742,
+            5098743,
+            5098744,
+            5099316,
+            5099317,
+            5099318,
+            5099319,
+            5099320,
+            5099321,
+            5099322,
+            5099324,
+            5101496,
+            5101498,
+            5101499,
+            5101500,
+            5101501,
+            5101502,
+            5101503,
+            5101504,
+            5101505,
+            5102055,
+            5102056,
+            5102057,
+            5102058,
+            5102059,
+            5102060,
+            5102061,
+            5102062,
+            5102063,
+            5104198,
+            5104200,
+            5104201,
+            5104202,
+            5104203,
+            5104204,
+            5104205,
+            5104206,
+            5104207,
+            5104767,
+            5104768,
+            5104769,
+            5104770,
+            5104771,
+            5104772,
+            5104773,
+            5104774,
+            5104775,
+            5106766,
+            5106768,
+            5106769,
+            5106770,
+            5106771,
+            5106772,
+            5107350,
+            5107351
+          ],
+          "support_count": 58,
+          "support_residual95_m": 0.076,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "part1",
+          "source_part_numbers": [
+            1
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -32.059455384733155,
+                    -82.01888953149319
+                  ],
+                  [
+                    -29.338955384737346,
+                    -80.61888953112066
+                  ],
+                  [
+                    -24.438955384714063,
+                    -78.09888953156769
+                  ],
+                  [
+                    -24.218955384742003,
+                    -78.56888953130692
+                  ],
+                  [
+                    -23.328955384728033,
+                    -80.4288895316422
+                  ],
+                  [
+                    -22.078955384728033,
+                    -83.06888953130692
+                  ],
+                  [
+                    -22.588955384737346,
+                    -83.29888953082263
+                  ],
+                  [
+                    -25.67895538470475,
+                    -84.69888953119516
+                  ],
+                  [
+                    -29.189455384737812,
+                    -86.28888953104615
+                  ],
+                  [
+                    -29.70945538469823,
+                    -86.51888953149319
+                  ],
+                  [
+                    -31.78945538471453,
+                    -82.52888953126967
+                  ],
+                  [
+                    -32.059455384733155,
+                    -82.01888953149319
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B047-part1-FLAT"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part2",
+          "source_part_numbers": [
+            2
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -29.70945538469823,
+                    -86.51888953149319
+                  ],
+                  [
+                    -29.189455384737812,
+                    -86.28888953104615
+                  ],
+                  [
+                    -25.67895538470475,
+                    -84.69888953119516
+                  ],
+                  [
+                    -22.588955384737346,
+                    -83.29888953082263
+                  ],
+                  [
+                    -22.078955384728033,
+                    -83.06888953130692
+                  ],
+                  [
+                    -20.608955384697765,
+                    -86.14888953138143
+                  ],
+                  [
+                    -27.668955384753644,
+                    -89.21888953167945
+                  ],
+                  [
+                    -28.1794553847285,
+                    -89.43888953141868
+                  ],
+                  [
+                    -29.70945538469823,
+                    -86.51888953149319
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B047-part2-FLAT"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part3+part4",
+          "source_part_numbers": [
+            3,
+            4
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -24.078955384728033,
+                    -99.18938953150064
+                  ],
+                  [
+                    -23.588955384737346,
+                    -99.02938953135163
+                  ],
+                  [
+                    -22.608955384697765,
+                    -98.71938953083009
+                  ],
+                  [
+                    -18.608955384697765,
+                    -97.43938953150064
+                  ],
+                  [
+                    -17.228955384751316,
+                    -96.99938953109086
+                  ],
+                  [
+                    -16.718955384742003,
+                    -96.82938953116536
+                  ],
+                  [
+                    -15.988955384702422,
+                    -98.82938953116536
+                  ],
+                  [
+                    -23.228955384751316,
+                    -101.5593895316124
+                  ],
+                  [
+                    -24.078955384728033,
+                    -99.18938953150064
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -28.1794553847285,
+                    -89.43888953141868
+                  ],
+                  [
+                    -27.668955384753644,
+                    -89.21888953167945
+                  ],
+                  [
+                    -20.608955384697765,
+                    -86.14888953138143
+                  ],
+                  [
+                    -20.528955384739675,
+                    -86.38888953160495
+                  ],
+                  [
+                    -19.92895538470475,
+                    -88.02888953126967
+                  ],
+                  [
+                    -16.718955384742003,
+                    -96.82938953116536
+                  ],
+                  [
+                    -17.228955384751316,
+                    -96.99938953109086
+                  ],
+                  [
+                    -18.608955384697765,
+                    -97.43938953150064
+                  ],
+                  [
+                    -22.608955384697765,
+                    -98.71938953083009
+                  ],
+                  [
+                    -23.588955384737346,
+                    -99.02938953135163
+                  ],
+                  [
+                    -24.078955384728033,
+                    -99.18938953150064
+                  ],
+                  [
+                    -26.288955384748988,
+                    -93.02888953126967
+                  ],
+                  [
+                    -26.758955384721048,
+                    -92.14888953138143
+                  ],
+                  [
+                    -28.1794553847285,
+                    -89.43888953141868
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B047-P01",
+            "POT-B047-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "part3+part4",
+          "planes": [
+            "POT-B047-P01",
+            "POT-B047-P03"
+          ],
+          "local_xz_height": [
+            [
+              -19.0724,
+              -90.3771,
+              307.125
+            ],
+            [
+              -26.2237,
+              -93.2108,
+              307.051
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Preserve all four source parts; low river roof, intermediate connection and tall main/upper-glazing mass remain distinct. Flat levels are explicit rounded game estimates, not certified flat physical planes.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B048",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193808UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Low river roof, intermediate terrace and tall pitched street shell",
+      "planes": [
+        {
+          "id": "POT-B048-part1-FLAT",
+          "height_equation": [
+            0,
+            0,
+            297.2
+          ],
+          "point_records": [],
+          "support_count": 0,
+          "support_residual95_m": null,
+          "interpretation": "Explicit rounded game construction estimate informed by source-part height distribution; not a surveyed roof height."
+        },
+        {
+          "id": "POT-B048-part2-FLAT",
+          "height_equation": [
+            0,
+            0,
+            305.0
+          ],
+          "point_records": [],
+          "support_count": 0,
+          "support_residual95_m": null,
+          "interpretation": "Explicit rounded game construction estimate informed by source-part height distribution; not a surveyed roof height."
+        },
+        {
+          "id": "POT-B048-P02",
+          "height_equation": [
+            -0.17573,
+            0.44402,
+            346.37905
+          ],
+          "point_records": [
+            5111348,
+            5111349,
+            5111350,
+            5111872,
+            5111873,
+            5111874,
+            5111875,
+            5111876,
+            5111880,
+            5111881,
+            5113332,
+            5113333,
+            5113334,
+            5113336,
+            5113337,
+            5113338,
+            5113339,
+            5113340,
+            5113341,
+            5113342,
+            5113853,
+            5113854,
+            5113855,
+            5113856,
+            5113857,
+            5113858,
+            5113859,
+            5113861,
+            5113862,
+            5115229,
+            5115230,
+            5115231,
+            5115232,
+            5115233,
+            5115234,
+            5115235,
+            5115236,
+            5115237,
+            5115238,
+            5115239,
+            5115744,
+            5115745,
+            5115746,
+            5115747,
+            5115749,
+            5115755,
+            5117019,
+            5117020,
+            5117021,
+            5117026,
+            5117027,
+            5117028,
+            5117029,
+            5117525,
+            5117526,
+            5117527,
+            5117529,
+            5117531,
+            5117533,
+            5117534,
+            5117536,
+            5117537,
+            5118677,
+            5118679,
+            5118680,
+            5118681,
+            5118683,
+            5118684,
+            5118685,
+            5119221,
+            5119222,
+            5119223,
+            5119225
+          ],
+          "support_count": 73,
+          "support_residual95_m": 0.086,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B048-P03",
+          "height_equation": [
+            0.17931,
+            -0.43418,
+            270.28504
+          ],
+          "point_records": [
+            5107385,
+            5107386,
+            5109206,
+            5109207,
+            5109208,
+            5109775,
+            5109780,
+            5109781,
+            5109782,
+            5111334,
+            5111338,
+            5111339,
+            5111341,
+            5111347,
+            5111882,
+            5111887,
+            5111888,
+            5111889,
+            5111890,
+            5113309,
+            5113317,
+            5113323,
+            5113324,
+            5113326,
+            5113327,
+            5113328,
+            5113329,
+            5113330,
+            5113331,
+            5113863,
+            5113864,
+            5113865,
+            5113870,
+            5113871,
+            5113881,
+            5113883,
+            5113884,
+            5115220,
+            5115221,
+            5115228,
+            5115756,
+            5115759,
+            5115760,
+            5115761,
+            5115762,
+            5117014,
+            5117016,
+            5117017,
+            5117018,
+            5117540
+          ],
+          "support_count": 50,
+          "support_residual95_m": 0.113,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "part1",
+          "source_part_numbers": [
+            1
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -24.438955384714063,
+                    -78.09888953156769
+                  ],
+                  [
+                    -17.758955384721048,
+                    -74.65888953115791
+                  ],
+                  [
+                    -17.478955384751316,
+                    -75.12888953089714
+                  ],
+                  [
+                    -16.468955384742003,
+                    -76.85888953134418
+                  ],
+                  [
+                    -16.98895538470242,
+                    -77.13888953160495
+                  ],
+                  [
+                    -22.828955384728033,
+                    -80.1688895309344
+                  ],
+                  [
+                    -23.328955384728033,
+                    -80.4288895316422
+                  ],
+                  [
+                    -24.218955384742003,
+                    -78.56888953130692
+                  ],
+                  [
+                    -24.438955384714063,
+                    -78.09888953156769
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B048-part1-FLAT"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part2",
+          "source_part_numbers": [
+            2
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -23.328955384728033,
+                    -80.4288895316422
+                  ],
+                  [
+                    -22.828955384728033,
+                    -80.1688895309344
+                  ],
+                  [
+                    -16.98895538470242,
+                    -77.13888953160495
+                  ],
+                  [
+                    -16.468955384742003,
+                    -76.85888953134418
+                  ],
+                  [
+                    -14.368955384707078,
+                    -80.46888953167945
+                  ],
+                  [
+                    -12.81895538471872,
+                    -83.11888953112066
+                  ],
+                  [
+                    -12.048955384700093,
+                    -84.4288895316422
+                  ],
+                  [
+                    -11.978955384751316,
+                    -84.59888953156769
+                  ],
+                  [
+                    -19.92895538470475,
+                    -88.02888953126967
+                  ],
+                  [
+                    -20.528955384739675,
+                    -86.38888953160495
+                  ],
+                  [
+                    -20.608955384697765,
+                    -86.14888953138143
+                  ],
+                  [
+                    -22.078955384728033,
+                    -83.06888953130692
+                  ],
+                  [
+                    -23.328955384728033,
+                    -80.4288895316422
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B048-part2-FLAT"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part3",
+          "source_part_numbers": [
+            3
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -19.92895538470475,
+                    -88.02888953126967
+                  ],
+                  [
+                    -11.978955384751316,
+                    -84.59888953156769
+                  ],
+                  [
+                    -8.968955384742003,
+                    -91.38888953160495
+                  ],
+                  [
+                    -7.148955384735018,
+                    -95.48938953131437
+                  ],
+                  [
+                    -15.988955384702422,
+                    -98.82938953116536
+                  ],
+                  [
+                    -16.718955384742003,
+                    -96.82938953116536
+                  ],
+                  [
+                    -19.92895538470475,
+                    -88.02888953126967
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B048-P02",
+            "POT-B048-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "part3",
+          "planes": [
+            "POT-B048-P02",
+            "POT-B048-P03"
+          ],
+          "local_xz_height": [
+            [
+              -9.3882,
+              -90.4432,
+              307.87
+            ],
+            [
+              -17.8069,
+              -93.8467,
+              307.838
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Preserve the three source domains and large river/street height difference. Intermediate terrace and low roof are fixed approximate game levels; do not raise them to the street roof.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B049",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193809UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Two low river domains, intermediate domain and taller street shell",
+      "planes": [
+        {
+          "id": "POT-B049-part1+part2-FLAT",
+          "height_equation": [
+            0,
+            0,
+            297.8
+          ],
+          "point_records": [],
+          "support_count": 0,
+          "support_residual95_m": null,
+          "interpretation": "Explicit rounded game construction estimate informed by source-part height distribution; not a surveyed roof height."
+        },
+        {
+          "id": "POT-B049-part3-FLAT",
+          "height_equation": [
+            0,
+            0,
+            303.6
+          ],
+          "point_records": [],
+          "support_count": 0,
+          "support_residual95_m": null,
+          "interpretation": "Explicit rounded game construction estimate informed by source-part height distribution; not a surveyed roof height."
+        },
+        {
+          "id": "POT-B049-P01",
+          "height_equation": [
+            0.11977,
+            -0.22847,
+            286.65168
+          ],
+          "point_records": [
+            5113301,
+            5113304,
+            5113305,
+            5113885,
+            5113886,
+            5113887,
+            5113888,
+            5113889,
+            5113890,
+            5115205,
+            5115207,
+            5115208,
+            5115209,
+            5115210,
+            5115211,
+            5115212,
+            5115213,
+            5115214,
+            5115765,
+            5115766,
+            5115767,
+            5115768,
+            5115769,
+            5115770,
+            5115771,
+            5115772,
+            5115773,
+            5115774,
+            5115775,
+            5115776,
+            5115777,
+            5115778,
+            5116994,
+            5116996,
+            5116997,
+            5116998,
+            5116999,
+            5117000,
+            5117001,
+            5117002,
+            5117003,
+            5117004,
+            5117005,
+            5117006,
+            5117007,
+            5117008,
+            5117009,
+            5117010,
+            5117011,
+            5117012,
+            5117542,
+            5117543,
+            5117544,
+            5117545,
+            5117546,
+            5117547,
+            5117548,
+            5117549,
+            5117550,
+            5117551,
+            5117552,
+            5117553,
+            5117554,
+            5117555,
+            5117556,
+            5117557,
+            5117558,
+            5117559,
+            5117560,
+            5117561,
+            5117562,
+            5118652,
+            5118654,
+            5118655,
+            5118656,
+            5118657,
+            5118658,
+            5118659,
+            5118660,
+            5118661,
+            5118662,
+            5118663,
+            5118664,
+            5118665,
+            5118666,
+            5118667,
+            5118668,
+            5118669,
+            5118670,
+            5119235,
+            5119236,
+            5119237,
+            5119238,
+            5119239,
+            5119240,
+            5119241,
+            5119242,
+            5119243,
+            5119244,
+            5119245,
+            5119246,
+            5119247,
+            5119248,
+            5120193,
+            5120194,
+            5120195,
+            5120196,
+            5120197,
+            5120198,
+            5120199,
+            5120200,
+            5120201,
+            5120202,
+            5120748,
+            5120751,
+            5120752,
+            5121620,
+            5121621
+          ],
+          "support_count": 118,
+          "support_residual95_m": 0.121,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B049-P03",
+          "height_equation": [
+            -0.10491,
+            0.20042,
+            322.52442
+          ],
+          "point_records": [
+            5118672,
+            5118673,
+            5118674,
+            5119231,
+            5119232,
+            5119233,
+            5119234,
+            5120204,
+            5120205,
+            5120207,
+            5120735,
+            5120736,
+            5120737,
+            5120738,
+            5120739,
+            5120740,
+            5120741,
+            5120742,
+            5120744,
+            5120745,
+            5120746,
+            5120750,
+            5121623,
+            5121624,
+            5121625,
+            5121630,
+            5121631,
+            5121634,
+            5121635,
+            5122138,
+            5122139,
+            5122140,
+            5122141,
+            5122147,
+            5122148,
+            5122922,
+            5122932,
+            5122933,
+            5123458
+          ],
+          "support_count": 39,
+          "support_residual95_m": 0.124,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "part1+part2",
+          "source_part_numbers": [
+            1,
+            2
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -14.94295538472943,
+                    -79.4823895310983
+                  ],
+                  [
+                    -16.468955384742003,
+                    -76.85888953134418
+                  ],
+                  [
+                    -17.478955384751316,
+                    -75.12888953089714
+                  ],
+                  [
+                    -17.758955384721048,
+                    -74.65888953115791
+                  ],
+                  [
+                    -11.048955384700093,
+                    -71.20888953097165
+                  ],
+                  [
+                    -10.778955384739675,
+                    -71.68888953141868
+                  ],
+                  [
+                    -9.858955384697765,
+                    -73.33888953085989
+                  ],
+                  [
+                    -8.294955384742934,
+                    -76.1633895309642
+                  ],
+                  [
+                    -14.94295538472943,
+                    -79.4823895310983
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -14.19195538474014,
+                    -80.77138953097165
+                  ],
+                  [
+                    -14.368955384707078,
+                    -80.46888953167945
+                  ],
+                  [
+                    -14.94295538472943,
+                    -79.4823895310983
+                  ],
+                  [
+                    -8.294955384742934,
+                    -76.1633895309642
+                  ],
+                  [
+                    -7.6989553847233765,
+                    -77.23888953123242
+                  ],
+                  [
+                    -7.523955384735018,
+                    -77.55288953147829
+                  ],
+                  [
+                    -14.19195538474014,
+                    -80.77138953097165
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B049-part1+part2-FLAT"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part3",
+          "source_part_numbers": [
+            3
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -13.519955384719651,
+                    -81.92038953118026
+                  ],
+                  [
+                    -14.19195538474014,
+                    -80.77138953097165
+                  ],
+                  [
+                    -7.523955384735018,
+                    -77.55288953147829
+                  ],
+                  [
+                    -6.843455384718254,
+                    -78.77238953113556
+                  ],
+                  [
+                    -13.519955384719651,
+                    -81.92038953118026
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B049-part3-FLAT"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part4+part5",
+          "source_part_numbers": [
+            4,
+            5
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -10.700955384701956,
+                    -87.4813895309344
+                  ],
+                  [
+                    -11.978955384751316,
+                    -84.59888953156769
+                  ],
+                  [
+                    -12.048955384700093,
+                    -84.4288895316422
+                  ],
+                  [
+                    -12.81895538471872,
+                    -83.11888953112066
+                  ],
+                  [
+                    -13.519955384719651,
+                    -81.92038953118026
+                  ],
+                  [
+                    -6.843455384718254,
+                    -78.77238953113556
+                  ],
+                  [
+                    -6.20895538473269,
+                    -79.90888953115791
+                  ],
+                  [
+                    -4.246455384709407,
+                    -84.82338953111321
+                  ],
+                  [
+                    -10.700955384701956,
+                    -87.4813895309344
+                  ]
+                ]
+              ]
+            },
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -4.246455384709407,
+                    -84.82338953111321
+                  ],
+                  [
+                    -2.6589553847443312,
+                    -88.79888953082263
+                  ],
+                  [
+                    -0.92895538470475,
+                    -93.13888953160495
+                  ],
+                  [
+                    -7.148955384735018,
+                    -95.48938953131437
+                  ],
+                  [
+                    -8.968955384742003,
+                    -91.38888953160495
+                  ],
+                  [
+                    -10.700955384701956,
+                    -87.4813895309344
+                  ],
+                  [
+                    -4.246455384709407,
+                    -84.82338953111321
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B049-P01",
+            "POT-B049-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [
+        {
+          "domain": "part4+part5",
+          "planes": [
+            "POT-B049-P01",
+            "POT-B049-P03"
+          ],
+          "local_xz_height": [
+            [
+              -10.0659,
+              -88.9141,
+              305.76
+            ],
+            [
+              -3.9023,
+              -85.6852,
+              305.761
+            ]
+          ],
+          "state": "VISUAL_ESTIMATE",
+          "role": "Fixed major construction ridge/hip junction estimate, not field-certified topology"
+        }
+      ],
+      "construction_note": "Keep five source parts and tiered massing. Two principal street windows and the upper glazing belong to this front; B048 balconies do not.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    },
+    {
+      "building_id": "POT-B050",
+      "state": "VISUAL_ESTIMATE",
+      "confidence": "medium",
+      "sources": [
+        "IGN-LIDAR-2023-NPC03",
+        "CAT-BU-PART",
+        "IGN-PNOA",
+        "CAT-PHOTO:8193810UN6789S",
+        "OWNER-STRUCTURE-CLARIFICATION"
+      ],
+      "major_structure": "Broad east-falling main roof and lower north/return domain",
+      "planes": [
+        {
+          "id": "POT-B050-P03",
+          "height_equation": [
+            -0.25533,
+            -0.22914,
+            284.97979
+          ],
+          "point_records": [
+            5116987,
+            5117568,
+            5117569,
+            5117570,
+            5117571,
+            5117572,
+            5117573,
+            5117574,
+            5117575,
+            5117576,
+            5118633,
+            5118635,
+            5118636,
+            5118637,
+            5118638,
+            5118639,
+            5118640,
+            5118641,
+            5118642,
+            5119261,
+            5119262,
+            5119263,
+            5119264,
+            5119265,
+            5119266,
+            5119267,
+            5120172,
+            5120174,
+            5120175,
+            5120176,
+            5120177,
+            5120757,
+            5120758,
+            5120759,
+            5120760,
+            5120761,
+            5121603,
+            5121604,
+            5121605,
+            5121606,
+            5121607,
+            5121608,
+            5122170,
+            5122171,
+            5122172,
+            5122173
+          ],
+          "support_count": 46,
+          "support_residual95_m": 0.158,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        },
+        {
+          "id": "POT-B050-P01",
+          "height_equation": [
+            -0.36184,
+            -0.14823,
+            291.33583
+          ],
+          "point_records": [
+            5121609,
+            5121610,
+            5121611,
+            5121612,
+            5121613,
+            5121614,
+            5121615,
+            5121616,
+            5121617,
+            5122153,
+            5122154,
+            5122155,
+            5122156,
+            5122157,
+            5122158,
+            5122159,
+            5122160,
+            5122161,
+            5122162,
+            5122163,
+            5122164,
+            5122165,
+            5122166,
+            5122167,
+            5122168,
+            5122894,
+            5122896,
+            5122897,
+            5122898,
+            5122899,
+            5122900,
+            5122901,
+            5122902,
+            5122903,
+            5122904,
+            5122905,
+            5122906,
+            5122907,
+            5122908,
+            5122909,
+            5122910,
+            5122911,
+            5122912,
+            5122913,
+            5122914,
+            5122915,
+            5122916,
+            5122917,
+            5123473,
+            5123474,
+            5123475,
+            5123476,
+            5123477,
+            5123478,
+            5123479,
+            5123480,
+            5123481,
+            5123482,
+            5123483,
+            5123484,
+            5123485,
+            5123486,
+            5123487,
+            5123488,
+            5123489,
+            5123490,
+            5123491,
+            5123492,
+            5123493,
+            5124087,
+            5124088,
+            5124089,
+            5124090,
+            5124091,
+            5124092,
+            5124093,
+            5124094,
+            5124095,
+            5124096,
+            5124097,
+            5124098,
+            5124099,
+            5124100,
+            5124101,
+            5124102,
+            5124103,
+            5124104,
+            5124105,
+            5124688,
+            5124689,
+            5124690,
+            5124691,
+            5124692,
+            5124693,
+            5124694,
+            5124695,
+            5124696,
+            5124697,
+            5124698,
+            5124699,
+            5124700,
+            5124702,
+            5124704,
+            5124705,
+            5125276,
+            5125278,
+            5125279,
+            5125280,
+            5125281,
+            5125282,
+            5125283,
+            5125284,
+            5125285,
+            5125286,
+            5125287,
+            5125288,
+            5125289,
+            5125290,
+            5125866,
+            5125867,
+            5125868,
+            5125869,
+            5125870,
+            5125871,
+            5125872,
+            5125873,
+            5125874,
+            5125875,
+            5125876,
+            5126356,
+            5126357,
+            5126358,
+            5126359,
+            5126360,
+            5126361,
+            5126362,
+            5126363,
+            5126948,
+            5126949,
+            5126950,
+            5126951,
+            5126952,
+            5126953,
+            5126954,
+            5127324,
+            5127325,
+            5127326,
+            5127327,
+            5127932
+          ],
+          "support_count": 149,
+          "support_residual95_m": 0.096,
+          "interpretation": "Manually selected major construction plane estimate; LiDAR building class alone does not certify a roof-plane role."
+        }
+      ],
+      "domains": [
+        {
+          "id": "part1",
+          "source_part_numbers": [
+            1
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -11.048955384700093,
+                    -71.20888953097165
+                  ],
+                  [
+                    -6.808455384743866,
+                    -69.02888953126967
+                  ],
+                  [
+                    -5.438455384748522,
+                    -68.31888953130692
+                  ],
+                  [
+                    -2.8779553847271018,
+                    -70.27888953126967
+                  ],
+                  [
+                    -9.858955384697765,
+                    -73.33888953085989
+                  ],
+                  [
+                    -10.778955384739675,
+                    -71.68888953141868
+                  ],
+                  [
+                    -11.048955384700093,
+                    -71.20888953097165
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B050-P03"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        },
+        {
+          "id": "part2",
+          "source_part_numbers": [
+            2
+          ],
+          "source_geometry_local": [
+            {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -9.858955384697765,
+                    -73.33888953085989
+                  ],
+                  [
+                    -2.8779553847271018,
+                    -70.27888953126967
+                  ],
+                  [
+                    -1.6279553847271018,
+                    -71.23888953123242
+                  ],
+                  [
+                    -0.8579553847084753,
+                    -73.12888953089714
+                  ],
+                  [
+                    5.701544615265448,
+                    -89.1688895309344
+                  ],
+                  [
+                    4.711544615274761,
+                    -89.46888953167945
+                  ],
+                  [
+                    5.181544615246821,
+                    -90.8288895310834
+                  ],
+                  [
+                    -0.92895538470475,
+                    -93.13888953160495
+                  ],
+                  [
+                    -2.6589553847443312,
+                    -88.79888953082263
+                  ],
+                  [
+                    -6.20895538473269,
+                    -79.90888953115791
+                  ],
+                  [
+                    -7.6989553847233765,
+                    -77.23888953123242
+                  ],
+                  [
+                    -9.858955384697765,
+                    -73.33888953085989
+                  ]
+                ]
+              ]
+            }
+          ],
+          "plane_ids": [
+            "POT-B050-P01"
+          ],
+          "construction": "Use the lower envelope of these selected opposing/hip planes only inside this source domain; single-plane domains retain the indicated fall. Do not apply low-annex planes to the whole body."
+        }
+      ],
+      "junction_controls": [],
+      "construction_note": "Use these distinct single-fall domains over the two original parts. Do not replace the long east-facing fall by a generic centred gable. Curved north return retains its own wall geometry.",
+      "caveat": "These fixed, source-backed game controls implement the Owner structural brief. They do not promote unseen physical roof vertices to measured facts. Retain source wall/part outlines and do not use an oriented rectangle as a ridge."
+    }
+  ]
+}

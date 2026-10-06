@@ -1,0 +1,41 @@
+{
+  "source_id": "IGN-LIDAR-2023-NPC03",
+  "disposition": "USE",
+  "catalog_url": "https://centrodedescargas.cnig.es/CentroDescargas/detalleArchivo?sec=12974974",
+  "acquired_utc": "2026-10-01",
+  "file": "PNOA_2023_CANT_367-4780_H30_NPC03.LAZ",
+  "raw_bytes": 61587847,
+  "raw_sha256": "8f87d0eebdd17c2382b458e4789f72bc4d75ce61c14cee539a1555f64fa49241",
+  "source_crs": "EPSG:25830",
+  "heights": "Orthometric, metres; source classes retained",
+  "license_url": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+  "license": "CC-BY 4.0 compatible IGN geographic-information license, as displayed on this exact CNIG catalog record",
+  "attribution": "Obra derivada de LiDAR-PNOA-cob3 2022-2025 CC-BY 4.0 scne.es",
+  "crop_bounds_metric": [
+    367894,
+    4779089,
+    367998,
+    4779153
+  ],
+  "crop_file": "LIDAR_S01.csv.gz",
+  "crop_sha256": "ace0554c486f65a3618d863878e84a6a8b197e4fbef9e16fc29b84b1e2b1f78e",
+  "crop_point_count": 22521,
+  "crop_class_counts": {
+    "2": 7509,
+    "3": 1005,
+    "4": 654,
+    "5": 1073,
+    "6": 10703,
+    "7": 35,
+    "14": 4,
+    "15": 14,
+    "17": 706,
+    "64": 817,
+    "67": 1
+  },
+  "crop_method": "Inclusive metric bbox, all source records/classes/returns retained in source order; XY 0.01 m and Z 0.001 m source precision. No sampling, interpolation, class rewrite or roof fitting.",
+  "tools": {
+    "laspy": "2.7.0"
+  },
+  "regional_zip": "REJECT for production: its separately bundled license restricts commercial use. The retained crop comes exclusively from independently downloaded official CNIG bytes."
+}

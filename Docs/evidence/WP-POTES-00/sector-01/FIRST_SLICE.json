@@ -1,0 +1,20 @@
+{
+  "ids": [
+    "POT-B004",
+    "POT-B005",
+    "POT-B006",
+    "POT-B007",
+    "POT-B041",
+    "POT-B042",
+    "POT-B043",
+    "POT-B044",
+    "POT-B045",
+    "POT-B046",
+    "POT-B047",
+    "POT-B048",
+    "POT-B049",
+    "POT-B050"
+  ],
+  "status": "NOT_READY_REFERENCE_GAPS",
+  "geometry_scope": "Whole original bodies only; every First Slice member belongs to Sector 01."
+}
