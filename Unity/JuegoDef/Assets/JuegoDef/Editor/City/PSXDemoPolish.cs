@@ -44,6 +44,19 @@ namespace JuegoDef.City
                     }
                 }
 
+                // Fase 2 (contraste): deepen the cool shadow tint, but only where it still holds the kit default —
+                // a material with a hand-set tint is an authored decision and stays.
+                if (mat.HasProperty("_ShadowTint"))
+                {
+                    var st = mat.GetVector("_ShadowTint");
+                    if (Mathf.Abs(st.x - 0.60f) < 0.005f && Mathf.Abs(st.y - 0.66f) < 0.005f && Mathf.Abs(st.z - 0.80f) < 0.005f)
+                    {
+                        mat.SetVector("_ShadowTint", new Vector4(0.50f, 0.57f, 0.72f, 1f));
+                        EditorUtility.SetDirty(mat);
+                        matsFixed++;
+                    }
+                }
+
                 if (mat.HasProperty("_MipBias") && mat.GetFloat("_MipBias") > 0.1f)
                 {
                     mat.SetFloat("_MipBias", 0.1f);

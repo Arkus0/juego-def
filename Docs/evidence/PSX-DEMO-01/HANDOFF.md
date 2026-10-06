@@ -54,6 +54,13 @@ Además: raster nítido 480×360 con point filtering y sin MSAA (el 640×480 bil
 - **Mip bias:** barrido en `PSXDemoPolish` (clamp ≤0,1) — la familia PSX no usa `_MipBias` (era del kit DC), así que 0 cambios: documentado.
 - **Verificado:** game view plaza (antes `f1_before_gv_plaza` / después `f1_after_gv_plaza`) y close-ups de fachada antes/después — carteles legibles, sillería definida, pavimento con losas individuales. Sin shimmer mareante en el recorrido.
 
+## FASE 2 — contraste (2026-10-06)
+
+- Aplicado y guardado en la escena demo: `CityLook.sky` (0,98/0,96/0,92)→(0,90/0,88/0,84), `bounce` (0,58/0,53/0,47)→(0,52/0,48/0,43), `RenderSettings.ambientIntensity` 1,0→0,92 (solo afecta a materiales URP estándar — los PSX usan su propio ambiente).
+- **Hallazgo:** los materiales del kit ya traen `_ShadowTint` (0,16/0,22/0,32) — mucho más profundo que el default del shader — así que el bloque de barrido de `PSXDemoPolish` (que profundiza solo materiales con el default 0,60/0,66/0,80) es un no-op de seguridad. Resultado: la fase 2 es sutil (−3% luminancia media en V8) porque las sombras del kit ya eran profundas.
+- LDR verificado: máximo de píxel 236/255 en plaza a pleno sol.
+- **Conclusión honesta:** el "lavado" perceptible restante viene del cielo (degradado vacío) y de la bruma de media distancia → la fase 3 (cielo con carácter + bruma de hitos 107→150) es donde está el salto visible.
+
 ## Siguientes pasos sugeridos (no hechos aquí a propósito)
 
 - NPCs adicionales con `CityNPC` en el paseo de muralla y el muelle (la plaza ya tiene vida de la capa Props).
