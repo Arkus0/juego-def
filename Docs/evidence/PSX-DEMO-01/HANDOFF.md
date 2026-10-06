@@ -40,6 +40,13 @@ Además: raster nítido 480×360 con point filtering y sin MSAA (el 640×480 bil
 - Caminata real 17 m por la Calle Mayor cuesta abajo (blend de andar activo, colisión y pendiente OK).
 - Capturas del recorrido en `Assets/Screenshots/` (gitignored, evidencia local): plaza, fuente, mercado, Calle Mayor con mar al fondo.
 
+## Físicas de dressing (2026-10-06, tarde)
+
+- **Colliders de asientos y mesas:** 72 unidades (bancos de calle y de piedra, sillas, mesas, veladores) no tenían collider y el jugador las atravesaba. `Editor/City/PSXDemoDressing.cs` → menú `JuegoDef/CITY/PSX Demo: colliders for benches and tables` añade BoxCollider en la raíz de cada unidad, dimensionado a sus bounds de render (misma convención que los 26 bancos que ya lo llevaban). Verificado: el player se frena contra el banco del Rincón.
+- **Settle por pelvis:** los NPCs no tienen físicas (van puestos a mano o por NavMesh); sentarlos "a ojo" provocó el fallo de los pensionistas dentro del banco de piedra. Menú `JuegoDef/CITY/PSX Demo: settle selected by pelvis`: con los NPC seleccionados, lee el hueso de pelvis, lanza un rayo al suelo bajo ellos (ignorando sus propios colliders) y baja/sube el transform hasta apoyar la cadera a 3 cm de la superficie. Validado contra el arreglo manual (delta 0,000).
+- **No se añade física global a props/NPCs** (decisión de diseño: coste con 159 NPCs, y el dressing autorado perdería intención). Lo que sí se mantiene: player con CharacterController contra el mundo, NPCs andadores por NavMesh, sentados como poses estáticas.
+- Nota GC2: `MoveToDirection` con priority 100 ignora la resistencia (los walk-tests fantasmas de ayer venían de eso); priority 0 respeta colliders. `PSXDemoWalkTest` corregido a 0.
+
 ## Siguientes pasos sugeridos (no hechos aquí a propósito)
 
 - NPCs adicionales con `CityNPC` en el paseo de muralla y el muelle (la plaza ya tiene vida de la capa Props).

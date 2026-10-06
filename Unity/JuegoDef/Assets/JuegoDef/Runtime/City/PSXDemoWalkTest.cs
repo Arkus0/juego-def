@@ -17,7 +17,7 @@ namespace JuegoDef.City
             var character = GetComponent<GameCreator.Runtime.Characters.Character>();
             if (character == null || character.Motion == null) return;
             bool walk = autoWalk || (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.wKey.isPressed);
-            if (walk) character.Motion.MoveToDirection(direction.normalized, Space.World, 100);
+            if (walk) character.Motion.MoveToDirection(direction.normalized, Space.World, 0);
         }
     }
 }
